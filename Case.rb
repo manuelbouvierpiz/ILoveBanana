@@ -3,7 +3,7 @@
 # Implémentation de la classe Case
 
 # == Classe Case : 
-#	- connaît on état
+#	- connaît son état
 #	- sait se décrire (toString), changer son état (bleu et rouge)
 class Case
 	
