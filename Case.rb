@@ -30,11 +30,13 @@ class Case
 	# * Méthode d'instance qui met l'état de la Case sur bleu
 	def bleu()
 		@etat = 'B'
+		return self	# Pour éviter l'entorse à l'encapsulation
 	end
 	
 	# * Méthode d'instance qui met l'état de la Case sur bleu
 	def rouge()
 		@etat = 'R'
+		return self	# Pour éviter l'entorse à l'encapsulation
 	end
 	
 end
