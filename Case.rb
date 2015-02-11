@@ -4,6 +4,7 @@
 
 # == Classe Case : 
 #	- connaît on état
+#	- sait se décrire (to_s), changer son état (bleu et rouge)
 class Case
 	
 	# Variables
@@ -21,8 +22,8 @@ class Case
 	end
 	
 	# * Méthode d'instance qui retourne une chaine de caractères décrivant la +Case+
-	# * +Retourne+ : un +String+ décrivant la +Case+
-	def toString()		# :nodoc:
+	# * +Retourne+ : une chaine de caractères décrivant la +Case+
+	def to_s()		# :nodoc:
 		return etat
 	end
 	
@@ -32,7 +33,7 @@ class Case
 	end
 	
 	# * Méthode d'instance qui met l'état de la Case sur bleu
-	def rouge
+	def rouge()
 		@etat = 'R'
 	end
 	
