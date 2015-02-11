@@ -22,7 +22,7 @@ class Case
 	
 	# * Méthode d'instance qui retourne une chaine de caractères décrivant la +Case+
 	# * +Retourne+ : un +String+ décrivant la +Case+
-	def toString()	# :nodoc:
+	def toString()		# :nodoc:
 		return etat
 	end
 	
