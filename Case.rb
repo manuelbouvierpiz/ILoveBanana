@@ -10,18 +10,30 @@ class Case
 	
 	# * Variable d'instance qui représente l'état de la case
 	# * Peut être ' ' (vide), 'B', (bleu) ou 'R' (rouge)
-	@etat
+	# * Accessible en lecture uniquement
+	attr :etat, false
 
 	# Méthodes
 
 	# * Méthode d'instance qui initialise la +Case+
-	def initialize()
+	def initialize()	# :nodoc:
 		@etat = ' '
 	end
 	
 	# * Méthode d'instance qui retourne une chaine de caractères décrivant la +Case+
 	# * +Retourne+ : un +String+ décrivant la +Case+
-	def toString()
+	def toString()	# :nodoc:
 		return etat
 	end
+	
+	# * Méthode d'instance qui met l'état de la Case sur bleu
+	def bleu()
+		@etat = 'B'
+	end
+	
+	# * Méthode d'instance qui met l'état de la Case sur bleu
+	def rouge
+		@etat = 'R'
+	end
+	
 end
