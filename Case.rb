@@ -4,13 +4,13 @@
 
 # == Classe Case : 
 #	- connaît son état
-#	- sait se décrire (to_s), changer son état (bleu et rouge)
+#	- sait se décrire (to_s), changer son état (setBleu, setRouge, setVide, setHypothese, setNonHypothese), donner son état (estBleu?, estRouge?, estVide?, estHypothese?)
 class Case
 	
 	# Variables
 	
-	# * Variable d'instance qui représente l'état de la case
-	# * Peut être ' ' (vide), 'B', (bleu) ou 'R' (rouge)
+	# * Variable d'instance qui représente l'état de la +Case+
+	# * Peut être ' ' (vide), 'B', (bleu) ou 'R' (rouge), 'b' (bleu hypothèse), 'r' (rouge hypothèse)
 	# * Accessible en lecture uniquement
 	attr :etat, false
 
@@ -27,16 +27,45 @@ class Case
 		return etat
 	end
 	
-	# * Méthode d'instance qui met l'état de la Case sur bleu
-	def bleu()
+	# * Méthode d'instance qui met l'état de la +Case+ sur bleu
+	def setBleu()
 		@etat = 'B'
 		return self	# Pour éviter l'entorse à l'encapsulation
 	end
 	
-	# * Méthode d'instance qui met l'état de la Case sur bleu
-	def rouge()
+	# * Méthode d'instance qui met l'état de la +Case+ sur rouge
+	def setRouge()
 		@etat = 'R'
 		return self	# Pour éviter l'entorse à l'encapsulation
 	end
 	
+	# * Méthode d'instance qui met l'état de la +Case+ sur vide
+	def setVide()
+		@etat = ' '
+		return self	# Pour éviter l'entorse à l'encapsulation
+	end
+	
+	# * Méthode d'instance qui met la +Case+ en état d'hypothèse
+	# * <b>/!\ Une case bleue n'est ni rouge ni vide mais peut être une case hypothésée /!\</b>
+	def setHypothese()
+		case @etat
+		when 'R'
+			@etat = 'r'
+		when 'B'
+			@etat = 'b'
+		return self	# Pour éviter l'entorse à l'encapsulation
+	end
+	
+	# * Méthode d'instance qui met la +Case+ en état de non hypothèse
+	# *  <b>/!\ Une case bleue n'est ni rouge ni vide mais peut être une case hypothésée /!\</b>
+	def setNonHypothese()
+		case @etat
+		when 'r'
+			@etat = 'R'
+		when 'b'
+			@etat = 'B'
+		return self	# Pour éviter l'entorse à l'encapsulation
+	end
+	
+	# * Méthode d'instance qui renvoie +true+ si la +Case+ est bleue
 end
