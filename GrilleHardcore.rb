@@ -22,14 +22,15 @@ Class GrilleHarcore < Grille
   # * ===== Attributs :
   # - unTempsMax : un flottant représentant le temps maximum de la résolution de la +GrilleHardcore+
   # - unNbClicsMax : un entier représentant le nombre de clics maximum pour résoudre la +GrilleHardcore+
-  def GrilleHardcore.nouvelle(unTempsMax, unNbClicsMax)
-    new(unTempsMax, unNbClicsMax)
+  def GrilleHardcore.creer(uneDifficulte, uneTaille, unTempsMax, unNbClicsMax)
+    new(uneDiffculte, uneTaille, unTempsMax, unNbClicsMax)
   end
   
   private_method :new
   
   # Méthode d'instance qui intialise le temps maximum et le nombre maximum de clics associés à la +GrilleHardcore+
-  def initialize(unTempsMax, unNbClicsMax)  # :nodoc
+  def initialize(uneDifficulte, uneTaille, unTempsMax, unNbClicsMax)  # :nodoc
+    super(uneDiffculte, uneTaille)
     tempsMax, nbClicsMax = unTempsMax, unNbClicsMax
   end
 
