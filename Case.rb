@@ -10,7 +10,7 @@ class Case
 	# Variables
 	
 	# * Variable d'instance qui représente l'état de la +Case+
-	# * Peut être ' ' (vide), 'B', (bleu) ou 'R' (rouge), 'b' (bleu hypothèse), 'r' (rouge hypothèse)
+	# * Peut être 'V' (vide), 'B', (bleu) ou 'R' (rouge), 'v' (vide hypothèse), 'b' (bleu hypothèse), 'r' (rouge hypothèse)
 	# * Accessible en lecture uniquement
 	attr :etat, false
 
@@ -18,7 +18,7 @@ class Case
 
 	# * Méthode d'instance qui initialise la +Case+
 	def initialize()	# :nodoc:
-		@etat = ' '
+		@etat = 'V'
 	end
 	
 	# * Méthode d'instance qui retourne une chaine de caractères décrivant la +Case+
@@ -29,43 +29,84 @@ class Case
 	
 	# * Méthode d'instance qui met l'état de la +Case+ sur bleu
 	def setBleu()
-		@etat = 'B'
+		if estHypothese?
+			@etat = 'b'
+		else
+			@etat = 'B'
 		return self	# Pour éviter l'entorse à l'encapsulation
 	end
 	
 	# * Méthode d'instance qui met l'état de la +Case+ sur rouge
 	def setRouge()
-		@etat = 'R'
+		if estHypothese?
+			@etat = 'r'
+		else
+			@etat = 'R'
+		end
 		return self	# Pour éviter l'entorse à l'encapsulation
 	end
 	
 	# * Méthode d'instance qui met l'état de la +Case+ sur vide
 	def setVide()
-		@etat = ' '
+		if estHypothese?
+			@etat = 'v'
+		else
+			@etat = 'V'
+		end
 		return self	# Pour éviter l'entorse à l'encapsulation
 	end
 	
 	# * Méthode d'instance qui met la +Case+ en état d'hypothèse
 	# * <b>/!\ Une case bleue n'est ni rouge ni vide mais peut être une case hypothésée /!\</b>
 	def setHypothese()
-		case @etat
-		when 'R'
-			@etat = 'r'
-		when 'B'
-			@etat = 'b'
+		@etat.downcase!
 		return self	# Pour éviter l'entorse à l'encapsulation
 	end
 	
 	# * Méthode d'instance qui met la +Case+ en état de non hypothèse
 	# *  <b>/!\ Une case bleue n'est ni rouge ni vide mais peut être une case hypothésée /!\</b>
 	def setNonHypothese()
-		case @etat
-		when 'r'
-			@etat = 'R'
-		when 'b'
-			@etat = 'B'
+		@etat.upcase!
 		return self	# Pour éviter l'entorse à l'encapsulation
 	end
 	
 	# * Méthode d'instance qui renvoie +true+ si la +Case+ est bleue
+	# * <b>/!\ Une case bleue n'est ni rouge ni vide mais peut être une case hypothésée /!\</b>
+	def estBleu?()
+		unResultat = false
+		if @etat.upcase == 'B'
+			unResultat = true
+		end
+		return unResultat
+	end
+	
+	# * Méthode d'instance qui renvoie +true+ si la +Case+ est rouge
+	# * <b>/!\ Une case rouge n'est ni bleue ni vide mais peut être une case hypothésée /!\</b>
+	def estRouge?()
+		unResultat = false
+		if @etat.upcase == 'R'
+			unResultat = true
+		end
+		return unResultat
+	end
+	
+	# * Méthode d'instance qui renvoie +true+ si la +Case+ est vide
+	# * <b>/!\ Une case bleue n'est ni rouge ni vide mais peut être une case hypothésée /!\</b>
+	def estVide?()
+		unResultat = false
+		if @etat.upcase == 'V'
+			unResultat = true
+		end
+		return unResultat
+	end
+	
+	# * Méthode d'instance qui renvoie +true+ si la +Case+ est en état d'hypothèse
+	# * <b>/!\ Une case hypothésée peut être bleue, rouge ou vide /!\</b>
+	def estHypothese?()
+		unResultat = false
+		if @etat.downcase == @etat	# Si c'est une minuscule, la Case est en état d'hypothèse
+			unResultat = true
+		end
+		return unResultat
+	end
 end
