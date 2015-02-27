@@ -5,21 +5,23 @@
 #======Class Grille=====
 #
 #
-require 'matrix' 
+load 'case.rb'
 Class Grille
   #variable
   #*idGrille - l'id du grille
-  #*case - matrice
-  #** 0 - rien dans le case
-  #** 1 - le premier couleur 
-  #** 2 - le deuxieme couleur
+  #*matrice - matrice de case
+  #** nil - rien dans le case
+  #** 0 - case bleu
+  #** 1 - case rouge
+  #matriceCorrect -matrice de reponse
   #*difficulte - difficulte du jeu
   #** 7 niveau de difficulte  [0-6]
   #*taille - taille de matrice
   #**4 taille de matrice
   #*** 4*4 6*6 8*8 10*10
   @idGrille
-  @case
+  @matrice
+  @matriceCorrect
   @difficulte
   @taille
   
@@ -30,22 +32,48 @@ Class Grille
   def initialize(difficulte,taille)
     @difficulte = difficulte
     @taille = taille
-    @case =Matrix.zero(taille) ; 
+    @matrice = case[][]
   end
 
   attr_reader :difficulte, :taille
-
+  
+  def estCorrect?
+  	if estTerminer?
+  		if() #matrice est pareil avec matrice correct
+  			return true
+  		else
+  			return false
+  		end
+  	end
+  	return false
+  end
+  
+  def jouer(x,y,etat)
+  	if(etat.estBleu?)
+  		@matric[x,y] =0
+  	else(etat.estRouge?)
+  		
+  end
+  
+  def videCase(x,y)
+  
+  end
+  
+  def nbClicMin()
+  
+  end
+  
+  def matriceDepart()
+  	
+  end
+  
   def estTerminer?
-	@case.each do |e|
-		if(e == 0)	
-			return false
-		end 
-	end 
+	
 	return true
   end
 
   def to_s()
-	puts @case.each{|e| puts e}
+  	
   end
   
 end
