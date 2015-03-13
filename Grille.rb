@@ -17,13 +17,9 @@ Class Grille
   #** 'r' ou 'R' - case rouge
   #** 'b' ou 'B' - case bleu
   @matrice
-  #@matricePrecedent - matrice precedent
-  @matricePrecedent
+ 
   #matriceCorrect -matrice de reponse
   @matriceCorrect
-  
-  #nbClicMin - nombre cliqué minimum 
-  @@nbClicMin =0
   
   #*difficulte - difficulte du jeu
   #** 7 niveau de difficulte  [0-6]
@@ -34,13 +30,15 @@ Class Grille
   #*** 4*4 6*6 8*8 10*10
   @taille
   
+  #nbClicMin - nombre cliqué minimum 
+  @@nbClicMin =0
+  
   #Méthode
   
   #* Méthode demande le difficulte de grille et le taille d grille 
   def Grille.ceer(difficulte,taille)
       new(difficulte,taille)
       @matrice = new Case[][]
-      @matricePrecedent = new Case[][]
       @matriceCorrect = new Case[][]
   end
 
@@ -49,7 +47,6 @@ Class Grille
       @difficulte = difficulte
       @taille = taille
       @matrice = Case[taille][taille]
-      @matricePrecedent = Case[taille][taille]
       @matriceCorrect = Case[taille][taille]
   end
   
@@ -70,6 +67,7 @@ Class Grille
   
   #Méthode changer le état d'une case
   def jouer(x,y,piece)
+  	@matricePrecedent = @matrice
   	if(piece=='B' || piece == 'b')
   		@matric[x][y].setBleu()
   	elsif(piece=='R' || piece == 'r')
