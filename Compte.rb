@@ -21,6 +21,18 @@ class Compte
       @emailAdresse = emailAdresse
     end
     
+    def creerCompte()
+      #Creer une réperatoire de presonne
+      Dir.mkdir(@pseudo)
+      #Creer une file pour sauvagarder le mot de passe
+      filename = File.join(@pseudo,"cache")
+      cache = File.new(filename, "w")
+      cache.puts @motDepasse
+      #changer le droite de ce fille
+      file.chmod( 0755 )
+      cache.close
+    end
+    
     def verifierMotDePasse?(unMotDePasse)
         if(@motDePasse ==unMotDePasse)
           return true
@@ -33,4 +45,6 @@ class Compte
     end
     
     def login()
+        
+    end
 end
