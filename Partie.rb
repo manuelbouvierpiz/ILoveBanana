@@ -36,10 +36,12 @@ class Partie
 	end
 
 
+# Méthode retournant le score de la partie
 	def calculerScore()
 		return @grille.getClicMin * ( getDifficulte / ( @grille.getTemps * @grille.getClics * 5 ) ) * ( 1 / ( 1 + getnbAide) )
 	end
 
+# Méthode retournant la chaîne de caracère correspondant aux règles du jeu de takuzu
 	def obtenirRegles()
 		return "Règles\n
 		Il ne peut y avoir trois colonnes adjacentes de la même couleur.\n
@@ -47,27 +49,32 @@ class Partie
 		Il ne peut y avoir deux lignes ou deux colonnes identiques\n"
 	end
 
+# Méthode appelant la méthode de même nom dans grille afin d'obtenir une aide
 	def obtenirAide()
 		@grille.obtenirAide()
 	end
 
+# Méthode permettant de passer en mode hypothèse
 	def sauvegarder()
 		@hypothese = true
 		@listeSauvegardes[@sauvegarde.length] = @grille
 	end
 
+# Méthode permettant de revenir au plus ancien état ou il n'y avait aucune hypothèse
 	def chargerPreHypo(uneSauvegarde)
 		@grille = @listeSauvegardes[0]
 		@listeSauvegardes = Array.[]
 		@hypothese = false
 	end
 
+# Méthode permettant de charger l'état avant la dernière hypothèse faite
 	def chargerDerniereSauvegarde()
 		@grille = @listeSauvegardes[@listeSauvegardes.length -1]
 		@listeSauvegardes.pop()
 		if(listeSauvegardes.empty?)
 			@listeSauvegardes = Array.[]
 		end
+		@hypothese = false
 	end
 end
 	
