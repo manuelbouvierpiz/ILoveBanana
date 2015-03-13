@@ -23,7 +23,7 @@ class Compte
     
     def creerCompte()
       #Creer une réperatoire de presonne
-      Dir.mkdir(@pseudo)
+      Dir.mkdir("usr/"+@pseudo)
       #Creer une file pour sauvagarder le mot de passe
       filename = File.join(@pseudo,"cache")
       cache = File.new(filename, "w")
