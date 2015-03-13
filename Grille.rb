@@ -22,6 +22,7 @@ Class Grille
   @idGrille
   @matrice
   @matriceCorrect
+  @nbClicMin
   @difficulte
   @taille
   
@@ -32,14 +33,15 @@ Class Grille
   def initialize(difficulte,taille)
     @difficulte = difficulte
     @taille = taille
-    @matrice = case[][]
+    @matrice = new Case[][]
+    @matriceCorrect = new Case[][]
   end
 
   attr_reader :difficulte, :taille
   
   def estCorrect?
   	if estTerminer?
-  		if() #matrice est pareil avec matrice correct
+  		if(@matrice == @matriceCorrect) #matrice est pareil avec matrice correct
   			return true
   		else
   			return false
@@ -56,11 +58,11 @@ Class Grille
   end
   
   def videCase(x,y)
-  
+  	@matrice[x][y].setVide()
   end
   
   def nbClicMin()
-  
+  	
   end
   
   def matriceDepart()
@@ -68,7 +70,13 @@ Class Grille
   end
   
   def estTerminer?
-	
+  	0.upto(taille) do i
+  		0.upto(taille) do j
+  			if(@matrice[i][j].estVide()?)
+  				return false
+  			end
+  		end
+  	end
 	return true
   end
 
