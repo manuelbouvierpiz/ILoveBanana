@@ -25,7 +25,7 @@ class Monde
 		@etat = false
 	end
 
-	attr_reader :nom, :theme
+	attr_reader :nom
 
 	# Méthode d'instance qui permet de donner l'accès à un Monde
 	def debloquer()
