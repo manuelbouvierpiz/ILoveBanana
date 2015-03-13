@@ -94,8 +94,8 @@ class Grille
   
   #Méthode -rendre s'il y a pas case vide, le joue est terminé
   def estTerminer?
-  	0.upto(taille) do i
-  		0.upto(taille) do j
+  	0.upto(taille) do |i|
+  		0.upto(taille) do |j|
   			if(@matrice[i][j].estVide()?)
   				return false
   			end
