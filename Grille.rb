@@ -6,7 +6,7 @@
 #une grille pour le jeu
 
 load 'case.rb'
-Class Grille
+class Grille
   #variable
   
   #*idGrille - l'id du grille
