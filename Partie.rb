@@ -1,5 +1,5 @@
 # PARMENON Damien
-# Case.rb
+# Partie.rb
 # Implementation de la classe Partie
 
 # encoding: utf-8
@@ -7,20 +7,27 @@
 # La classe Partie est une méthode abstraite mère de PartieMonde et PartieLibre
 class Partie
 
-# On se servira dans cette classe du module baseDeDonnees
-	include baseDeDonnee
-
 # Grille sur laquelle le joueur va jouer
 	@grille
 # Tableau des sauvegardes/hypothèse que le joueur a fait
 	@listeSauvegardes
 # Booleen informant si nous sommes dans un mode "hypothèse"
 	@hypothese
+# Variable contenant notre base de données
+	@baseDeDonnees
+
+	private_class_method :new
+
+# Constucteur d'une partie 
+	def Partie.creer(uneBaseDeDonnees)
+			new(uneBaseDeDonnees)
+	end
 
 # Initialise les variables d'instances
-	def initialize
+	def initialize(uneBaseDeDonnees)
 		@listeSauvegardes = Array.[]
 		@hypothese = false
+		@baseDeDonnees = uneBaseDeDonnees
 	end
 
 # Méthode permettant de créer une grille
