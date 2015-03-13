@@ -19,9 +19,6 @@ class Compte
       @pseudo = pseudo
       @motDePasse = motDePasse
       @emailAdresse = emailAdresse
-    end
-    
-    def creerCompte()
       #Creer une réperatoire de presonne
       Dir.mkdir("usr/"+@pseudo)
       #Creer une file pour sauvagarder le mot de passe
@@ -31,6 +28,10 @@ class Compte
       #changer le droite de ce fille
       file.chmod( 0755 )
       cache.close
+    end
+    
+    def misEnJourCompte()
+
     end
     
     def verifierMotDePasse?(unMotDePasse)
