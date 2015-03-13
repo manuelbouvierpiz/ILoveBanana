@@ -106,8 +106,18 @@ Class Grille
 	return true
   end
 
+
   def to_s()
-  	
+  	 0.upto(@taille) do |i|
+  	 	o.upto(@taille) do |x|
+  	 		print "-"
+  	 	end
+  		0.upto(@taille) do |j|
+  			print @matrice[i][j]
+  			print "|"
+  		end
+  		puts " "
+  	end
   end
   
 end
