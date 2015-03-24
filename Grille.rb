@@ -85,7 +85,7 @@ class Grille
   
   #Méthode - calculer le nombre de clique minimum
   def nbClicMin()
-  	
+  
   end
   
   #Méthode - lire en base donnée et remplir dans le @matrice et @matriceCorrect pour le réponse
