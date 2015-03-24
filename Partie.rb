@@ -15,13 +15,13 @@ class Partie
 	@hypothese
 # Variable contenant notre base de données
 	@baseDeDonnees
-
+# Variable contenant le nombre de clic que l'utilisateur a fait pour terminer la grille, elle s'incrémente durant la partie.
 	@nbClics
-
+# Variable contenant le temps que l'utilsateur a mis pour terminer la grille
 	@temps
-
+# Variable contenant le nombre de fois que l'utilisateur a utiliser l'aide
 	@nbAides
-
+# Variable contenant le nombre d'hypothèse que l'utilisateur a fait pour terminer la grille
 	@nbHypotheses
 
 	private_class_method :new
