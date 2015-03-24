@@ -19,6 +19,10 @@ class Compte
       @pseudo = pseudo
       @motDePasse = motDePasse
       @emailAdresse = emailAdresse
+      misEnJourCompte()
+    end
+    
+    def misEnJourCompte()
       #Creer une réperatoire de presonne
       Dir.mkdir("usr/"+@pseudo)
       #Creer une file pour sauvagarder le mot de passe
@@ -30,12 +34,8 @@ class Compte
       cache.close
     end
     
-    def misEnJourCompte()
-
-    end
-    
     def verifierMotDePasse?(unMotDePasse)
-        if(@motDePasse ==unMotDePasse)
+        if(@motDePasse == unMotDePasse)
           return true
         else 
           return false
@@ -45,7 +45,7 @@ class Compte
         return @motDePasse == nil
     end
     
-    def login()
+    def login(String unPseudo,String unMOtDePass)
         
     end
 end
