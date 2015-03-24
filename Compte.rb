@@ -23,7 +23,7 @@ class Compte
     end
     
     def misEnJourCompte()
-      #Creer une réperatoire de presonne
+      #Creer une réperatoire presonnage
       Dir.mkdir("usr/"+@pseudo)
       #Creer une file pour sauvagarder le mot de passe
       filename = File.join(@pseudo,"cache")
