@@ -30,6 +30,7 @@ class Grille
   #*** 4*4 6*6 8*8 10*10
   @taille
   
+  
   #nbClicMin - nombre cliqué minimum 
   @@nbClicMin =0
   
