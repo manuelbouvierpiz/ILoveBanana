@@ -33,6 +33,8 @@ class Grille
   
   #nbClicMin - nombre cliqué minimum 
   @@nbClicMin =0
+
+  attr_reader :idGrille
   
   #Méthode
   

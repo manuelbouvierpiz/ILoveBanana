@@ -34,7 +34,7 @@ class Statistiques
 	end
 
 	def miseAJour(unePartie)
-		
+		setGrilleTerminee(@compte.pseudo, unePartie.temps, unePartie.nbClics, unePartie.grille.idGrille, unePartie.nbHypotheses, unePartie.nbAides, unePartie.calculerScore())
 	end
 		
 end

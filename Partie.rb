@@ -16,7 +16,18 @@ class Partie
 # Variable contenant notre base de données
 	@baseDeDonnees
 
+	@nbClics
+
+	@temps
+
+	@nbAides
+
+	@nbHypotheses
+
 	private_class_method :new
+
+	attr_reader :nbClics, :temps, :nbAides, :nbHypotheses, :grille
+
 
 # Constucteur d'une partie 
 	def Partie.creer(uneBaseDeDonnees)
@@ -31,12 +42,12 @@ class Partie
 	end
 
 # Méthode permettant de créer une grille
-	def initGrille()
+	def initGrille(unIdGrille)
 
 	end
 
 # A modifier
-	def joue()
+	def lancer()
 		while(!@grille.estTerminee?())
 
 		end
@@ -45,7 +56,7 @@ class Partie
 
 # Méthode retournant le score de la partie
 	def calculerScore()
-		return @grille.getClicMin * ( getDifficulte / ( @grille.getTemps * @grille.getClics * 5 ) ) * ( 1 / ( 1 + getnbAide) )
+		return @grille.getClicMin * ( getDifficulte / ( temps * nbClics * 5 ) ) * ( 1 / ( 1 + nbAides) )
 	end
 
 # Méthode retournant la chaîne de caracère correspondant aux règles du jeu de takuzu
