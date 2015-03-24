@@ -48,4 +48,17 @@ class Compte
     def login(String unPseudo,String unMOtDePass)
         
     end
+    
+    def recuperer(String unMail)
+        
+    end
+    
+    def changerMotDePasse(String unMotDePasse)
+        
+    end
+    
+    def attribuerMotDePasseAleatoire()
+    
+    end
+
 end
