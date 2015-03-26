@@ -1,4 +1,5 @@
 #Kuang Nanzhen
+# Modifications par Valentin CHAILLOU le 26/03/2015
 #Class Grille
 #Opération sur le grille
 
@@ -9,112 +10,117 @@ load 'case.rb'
 class Grille
   #variable
   
-  #*idGrille - l'id du grille
-  @idGrille
+  # * idGrille - l'id de la +Grille+
+  attr :idGrille, false
   
-  #*matrice - matrice de case
-  #** 'v' ou 'V' - rien dans le case
-  #** 'r' ou 'R' - case rouge
-  #** 'b' ou 'B' - case bleu
-  @matrice
+  # * matrice - matrice contenant les +Case+s de la +Grille+
+  attr :matrice, false
   
-  #matricePrecedent -matrice de precedent
-  @matricePrecedent
-  #matriceCorrect -matrice de reponse
-  @matriceCorrect
+  #nbClicMin - nombre minimum de clics
+  attr :nbClicMin, false
   
-  #*difficulte - difficulte du jeu
-  #** 7 niveau de difficulte  [0-6]
-  @difficulte
+  #Méthodes
   
-  #*taille - taille de matrice
-  #**4 taille de matrice
-  #*** 4*4 6*6 8*8 10*10
-  @taille
-  
-  
-  #nbClicMin - nombre cliqué minimum 
-  @@nbClicMin =0
-
-  attr_reader :idGrille
-  
-  #Méthode
-  
-  #* Méthode demande le difficulte de grille et le taille d grille 
-  def Grille.ceer(difficulte,taille)
-      new(difficulte,taille)
-      @matrice = new Case[][]
-      @matriceCorrect = new Case[][]
+  # * Méthode de classe qui demande l'id de la +Grille à créer+
+  def Grille.ceer(unIdGrille)
+      new(unIdGrille)
   end
 
-  #* Méthode qui initialise les variable
-  def initialize(difficulte,taille)
-      @difficulte = difficulte
-      @taille = taille
-      @matrice = Case[taille][taille]
-      @matriceCorrect = Case[taille][taille]
-      matriceDepart()
+  # * Méthode de classe qui demande l'id de la +Grille à créer+ et la matrice (dans le cas d'une sauvegarde)
+  def Grille.ceer(unIdGrille, uneMatrice)
+      new(unIdGrille, uneMatrice)
+  end
+  # * Méthode qui initialise les variables
+  def initialize(unIdGrille)
+      @idGrille = unIdGrille
+      @matrice = matriceDepart
+      @nbClicMin = 0
+      @matrice.each do |uneLigne|
+      	uneLigne.each do |uneCase|
+      		@nbClicsMin += 1 if uneCase.estVide?
+      	end
+      end
   end
   
-  attr_reader :difficulte, :taille
+  # * Méthode qui initialise les variables
+  def initialize(unIdGrille, uneMatrice)
+      @idGrille = unIdGrille
+      @matrice = uneMatrice
+      @nbClicMin = 0
+      matriceDepart.each do |uneLigne|
+      	uneLigne.each do |uneCase|
+      		@nbClicsMin += 1 if uneCase.estVide?
+      	end
+      end
+  end
   
-  #Méthod vérifier le matrice ( remplié par les joueur)  est correspondant à l matrice correct
-  def estCorrect?
-  	if estTerminer?
-  		#matrice est pareil avec matrice correct
-  		if(@matrice == @matriceCorrect)
-  			return true
-  		else
-  			return false
+  # * Méthode qui vérifie la matrice (remplie par le joueur) est correcte
+  def estCorrecte?
+  	uneMatriceCorrecte = BaseDeDonnes.getGrilleMatriceResolue(@idGrille)
+  	return matrice == uneMatriceCorrecte
+  end
+  
+  # * Méthode d'instance qui change l'état d'une +Case+
+  def jouer(unX, unY, rougeOuBleu, estHypothese)
+  	case rougeOuBleu.lowerCase
+  		when 'b', 'bleu', 0
+  			matrice[i][j].setBleu
+  		when 'r', 'rouge', 1
+  			matrice[i][j].setRouge
+  		when
+  	end
+  	matrice[i][j].setHypothese if estHypothese
+  end
+  
+  # * Méthode d'instance qui met toutes les <b>Case</b>s de la +Grille+ en état non hypothésé 
+  def setNonHypothese()
+  	matrice.each do |uneLigne|
+  		matrice.each do |uneCase|
+  			uneCase.setNonHypothese if uneCase.estHypothese?
   		end
   	end
-  	return false
-  end
-  
-  #Méthode changer le état d'une case
-  def jouer(x,y,piece)
-  	@matricePrecedent = @matrice
-  	if(piece=='B' || piece == 'b')
-  		@matric[x][y].setBleu()
-  		@@nbClicMin +=1
-  	elsif(piece=='R' || piece == 'r')
-  		@matrice[x][y].setRouge()
-  		@@nbClicMin +=1
-  	else
-  		@matrice[x][y].setVide()
-  		@@nbClicMin +=1
-  		
   end
   
   #Méthode -définir une case vide
-  def videCase(x,y)
+  def viderCase(x,y)
   	@matrice[x][y].setVide()
   end
   
-  #Méthode - calculer le nombre de clique minimum
-  def nbClicMin()
-  	return @@nbClicMin 
-  end
-  
   #Méthode - lire en base donnée et remplir dans le @matrice et @matriceCorrect pour le réponse
-  def matriceDepart()
-  	@matrice = BaseDeDonnees.getGrilleMatrice
-  	@matriceCorrect = BaseDeDonnees.getGrilleMatriceResolue
+  def matriceDepart
+  	@matrice = BaseDeDonnees.getGrilleMatrice(@idGrille)
   end
   
-  #Méthode -rendre s'il y a pas case vide, le joue est terminé
-  def estTerminer?
-  	0.upto(taille) do |i|
-  		0.upto(taille) do |j|
-  			if(@matrice[i][j].estVide()?)
+  # * Méthode d'instance qui retourne la diffculté de la +Grille+
+  def difficulte
+  	return BaseDeDonnees.getGrilleDiffculte(@idGrille)
+  end
+  
+  # * Méthode d'instance qui retourne la taille de la +Grille+
+  def taille
+  	return BaseDeDonnees.getGrilleTaille(@idGrille)
+  end
+  
+  #Méthode d'instance qui retourne +true+ si il n'y a plus de +Case+ vide, +false+ sinon
+  def estTermine?
+  	matrice.each do |uneLigne|
+  		ligne.each do |uneCase|
+  			if uneCase.estVide?
   				return false
   			end
   		end
   	end
-	return true
+  	
+  	return true
+  end
+  
+  # * Méthode d'instance qui retourne une chaine de caractères décrivant une aide possible
+  def obtenirAide
+  	# A compléter
+  	return "Au maximum deux cases consécutives peuvent avoir la même couleur"
   end
 
-
+  # * Méthode d'instance qui retourne une chaine de caractères décrivant la +Grille+
   def to_s()
   	 0.upto(@taille) do |i|
   	 	o.upto(@taille) do |x|
