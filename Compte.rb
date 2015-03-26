@@ -75,21 +75,24 @@ class Compte
     end
 
     #recuperer le compte avec l'email adresse
-    #!!! pas encore verifier !!!
-    def recuperer(String unMail)
+    #http://www.tutorialspoint.com/ruby/ruby_sending_email.htm
+    def recuperer(String unMail,opts={})
         if(@emailAdresse == unMail)
-            message = << MESSAGE_END
-            From: Private Person <me@fromdomain.com>
-            To: A Test User <@emailAdresse.com>
-            Subject: Pseudo et Mot de Passe
+            opts[:server]      ||= 'localhost'
+            opts[:from]        ||= 'email@example.com'
+            opts[:from_alias]  ||= 'Example Emailer'
+            opts[:subject]     ||= "Takuzu : pseudo et mot the passe"
+            opts[:body]        ||= "Compte :" + @pseudo + " \n Mot de passe : " + @motDePasse
+message = <<MESSAGE_END
+    From: #{opts[:from_alias]} <#{opts[:from]}>
+    To: <#{unMail}>
+    Subject: #{opts[:subject]}
 
-            "Compte:"@pseudo
-            "Mot de passe:"@motDePasse
-            MESSAGE_END
-
-            Net::SMTP.start('localhost') do |smtp|
-            smtp.send_message message, 'me@fromdomain.com',@emailAdresse
-          end
+     #{opts[:body]}
+MESSAGE_END
+             Net::SMTP.start(opts[:server]) do |smtp|
+                smtp.send_message msg, opts[:from], unMail
+            end
         end
     end
 
