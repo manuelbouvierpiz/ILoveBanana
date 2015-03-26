@@ -10,7 +10,7 @@ class Partie
 # Grille sur laquelle le joueur va jouer
 	@grille
 # Tableau des sauvegardes/hypothèse que le joueur a fait
-	@listeSauvegardes
+	@listeHypotheses
 # Booleen informant si nous sommes dans un mode "hypothèse"
 	@hypothese
 # Variable contenant le nombre de clic que l'utilisateur a fait pour terminer la grille, elle s'incrémente durant la partie.
@@ -23,6 +23,9 @@ class Partie
 	@nbHypotheses
 # Variable contenant le compte de l'utilisateur actuel
 	@compte
+# Variable contenant l'id de la grille
+	@idGrille
+
 
 	private_class_method :new
 
@@ -34,11 +37,29 @@ class Partie
 			new(unCompte, unId)
 	end
 
+# Constructeur permettant de charger une grille sauvegardée
+	def Partie.charger(unCompte)
+			new(unCompte)
+	end
+
 # Initialise les variables d'instances
 	def initialize(unCompte, unIdGrille)
-		@listeSauvegardes = Array.[]
+		@listeHypotheses = Array.[]
 		@hypothese = false
 		initGrille(unIdGrille)
+		@idGrille = idGrille
+	end
+
+# Méthode initialize du constructeur charger
+	def initialize(unCompte)
+		@compte = unCompte
+		@nbHypotheses = BaseDeDonnees.getSauvegardeNbHypotheses(@compte.pseudo)
+		@nbAides = BaseDeDonnees.getSauvegardeNbAides(@compte.pseudo)
+		@nbClics = BaseDeDonnees.getSauvegardeNbClics(@compte.pseudo)
+		@temps = BaseDeDonnees.getSauvegardeTemps(@compte.pseudo)
+		@idGrille = BaseDeDonnees.getSauvegardeIdGrille(@compte.pseudo)
+		matGrille = BaseDeDonnees.getSauvegardeGrilleSauvegardee(@compte.pseudo)
+		@grille = Grille.creer(unIdGrille, matGrille)
 	end
 
 # Méthode permettant de créer une grille
@@ -74,24 +95,19 @@ class Partie
 
 # Méthode permettant de passer en mode hypothèse
 	def sauvegarder()
+		BaseDeDonnees.setSauvegarde(@compte.pseudo(), @temps, @nbClics, @nbHypotheses, @nbAides, @idGrille, @listeHypotheses)
+	end
+
+# Méthode permettant d'entrer en mode hypothèse
+	def fairehypothese()
+		@listeHypotheses.push(@grille)
 		@hypothese = true
-		@listeSauvegardes[@sauvegarde.length] = @grille
 	end
 
 # Méthode permettant de revenir au plus ancien état ou il n'y avait aucune hypothèse
-	def chargerPreHypo(uneSauvegarde)
-		@grille = @listeSauvegardes[0]
-		@listeSauvegardes = Array.[]
-		@hypothese = false
-	end
-
-# Méthode permettant de charger l'état avant la dernière hypothèse faite
-	def chargerDerniereSauvegarde()
-		@grille = @listeSauvegardes[@listeSauvegardes.length -1]
-		@listeSauvegardes.pop()
-		if(listeSauvegardes.empty?)
-			@listeSauvegardes = Array.[]
-		end
+	def chargerPreHypo()
+		@grille = @listeHypotheses[@listeHypotheses.length -1]
+		@listeHypotheses.pop()
 		@hypothese = false
 	end
 end
