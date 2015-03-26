@@ -73,10 +73,13 @@ class Grille
   	@matricePrecedent = @matrice
   	if(piece=='B' || piece == 'b')
   		@matric[x][y].setBleu()
+  		@@nbClicMin +=1
   	elsif(piece=='R' || piece == 'r')
   		@matrice[x][y].setRouge()
+  		@@nbClicMin +=1
   	else
   		@matrice[x][y].setVide()
+  		@@nbClicMin +=1
   		
   end
   
@@ -87,7 +90,7 @@ class Grille
   
   #Méthode - calculer le nombre de clique minimum
   def nbClicMin()
-  
+  	return @@nbClicMin 
   end
   
   #Méthode - lire en base donnée et remplir dans le @matrice et @matriceCorrect pour le réponse
