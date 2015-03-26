@@ -17,7 +17,9 @@ class Grille
   #** 'r' ou 'R' - case rouge
   #** 'b' ou 'B' - case bleu
   @matrice
- 
+  
+  #matricePrecedent -matrice de precedent
+  @matricePrecedent
   #matriceCorrect -matrice de reponse
   @matriceCorrect
   
@@ -51,6 +53,7 @@ class Grille
       @taille = taille
       @matrice = Case[taille][taille]
       @matriceCorrect = Case[taille][taille]
+      matriceDepart()
   end
   
   attr_reader :difficulte, :taille
@@ -95,7 +98,8 @@ class Grille
   
   #Méthode - lire en base donnée et remplir dans le @matrice et @matriceCorrect pour le réponse
   def matriceDepart()
-  	
+  	@matrice = BaseDeDonnees.getGrilleMatrice
+  	@matriceCorrect = BaseDeDonnees.getGrilleMatriceResolue
   end
   
   #Méthode -rendre s'il y a pas case vide, le joue est terminé
