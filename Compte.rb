@@ -27,7 +27,7 @@ class Compte
     attr_reader :idPseudo , :pesudo , :motDePasse , :emailAdresse , :nom , :prenom
 
     #*Méthode demande le pseudo , le mot de passe et l'email adresse pour creer un compte 
-    def Grille.creer (pseudo,motDePasse,emailAdresse)
+    def Compte.creer (pseudo,motDePasse,emailAdresse)
       new(pseudo,motDePasse,emailAdresse)
     end
     
