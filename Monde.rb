@@ -13,6 +13,7 @@ class Monde
 	@nom
 	@etat
 	
+	attr_reader :idMonde ,:nom 
 	# Méthodes
 
 	def Monde.creer(nom)
@@ -36,11 +37,7 @@ class Monde
 
 	# Méthode d'instance qui permet de savoir si le Monde est accessible
 	def estDebloque?()
-		if(@etat)
-			return true
-		else 
-			return false
-		end
+		return @etat
 	end
 
 	# Méthode d'instance qui retourne le nom du monde
