@@ -24,10 +24,10 @@ class Compte
     @prenom
 
 
-    attr_reader: idPseudo
+    attr_reader :idPseudo , :pesudo , :motDePasse , :emailAdresse , :nom , :prenom
 
     #*Méthode demande le pseudo , le mot de passe et l'email adresse pour creer un compte 
-    def Grille.creer (pseudo,motDePasse,emailAdresse)
+    def Compte.creer (pseudo,motDePasse,emailAdresse)
       new(pseudo,motDePasse,emailAdresse)
     end
     
@@ -35,21 +35,24 @@ class Compte
       @pseudo = pseudo
       @motDePasse = motDePasse
       @emailAdresse = emailAdresse
+      @nom = nil
+      @prenom = nil
       misEnJourCompte()
     end
-
-    #*méthode qui creer un reperatoir local pour un compte 
+    
+    #*mettre le Compte dans le BDD
     def misEnJourCompte()
-      #Creer une réperatoire presonnage
-      Dir.mkdir("usr/"+@pseudo)
-      #Creer une file pour sauvagarder le mot de passe
-      filename = File.join(@pseudo,"cache")
-      cache = File.new(filename, "w")
-      cache.puts @motDepasse
-      cache.puts @emailAdresse
-      #changer le droite de ce fille
-      file.chmod( 0755 )
-      cache.close
+      BaseDeDonnees.setCompte(@pseudo,@motDePasse,@nom,@prenom,@emailAdresse)
+    end
+    
+    def nom(String nom)
+        @nom = nom
+        misEnJourCompte()
+    end
+    
+    def prenom(String prenom)  
+        @prenom = prenom
+        misEnJourCompte()
     end
 
     #verifier le mot de passe
@@ -61,12 +64,12 @@ class Compte
     end
 
     #est-ce que le mot de passe est vide
-    def motDePasseLibre?()
+    def Compte.motDePasseLibre?()
         return @motDePasse == nil
     end
 
     #login avec le pseudo et mot de passe
-    def login(String unPseudo,String unMotDePass)
+    def Compte.login(String unPseudo,String unMotDePass)
         if(@pseudo == unPseudo && @motDePasse ==unMotDePass)
             return true
         else
@@ -76,7 +79,7 @@ class Compte
 
     #recuperer le compte avec l'email adresse
     #http://www.tutorialspoint.com/ruby/ruby_sending_email.htm
-    def recuperer(String unMail,opts={})
+    def Compte.recuperer(String unMail,opts={})
         if(@emailAdresse == unMail)
             opts[:server]      ||= 'localhost'
             opts[:from]        ||= 'email@example.com'
@@ -99,6 +102,7 @@ MESSAGE_END
     #changer le mot de passe
     def changerMotDePasse(String unMotDePasse)
         @motDePasse = unMotDePasse
+        misEnJourCompte()
     end
 
     #attribuer un mot de passe aleatoire en 6 chiffre
@@ -106,6 +110,7 @@ MESSAGE_END
         prng = Random.new()
         #attribuer un mot de passe avec 6 chiffre aleatoire
         @motDePasse = prng.rand(100000..999999).to_s
+        misEnJourCompte()
     end
 
 end
