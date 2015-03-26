@@ -72,12 +72,12 @@ class Compte
     end
 
     #est-ce que le mot de passe est vide
-    def motDePasseLibre?()
+    def Compte.motDePasseLibre?()
         return @motDePasse == nil
     end
 
     #login avec le pseudo et mot de passe
-    def login(String unPseudo,String unMotDePass)
+    def Compte.login(String unPseudo,String unMotDePass)
         if(@pseudo == unPseudo && @motDePasse ==unMotDePass)
             return true
         else
@@ -87,7 +87,7 @@ class Compte
 
     #recuperer le compte avec l'email adresse
     #http://www.tutorialspoint.com/ruby/ruby_sending_email.htm
-    def recuperer(String unMail,opts={})
+    def Compte.recuperer(String unMail,opts={})
         if(@emailAdresse == unMail)
             opts[:server]      ||= 'localhost'
             opts[:from]        ||= 'email@example.com'
