@@ -30,9 +30,8 @@ class Defi
   # * crée une nouvelle +Partie+ dans le +Jeu+
   # * Retourne la +Partie+ en cours dans le +Jeu+
   def relever
-  	jeu.partie = PartieRapide.new()
-  	jeu.partie.initDefi(@grille)
-  	return jeu.partie
+  	Jeu.JEU.partie = PartieRapide.creer(@grille.idGrille)
+  	return Jeu.JEU.partie
   end
   
   # * Méthode d'instance qui supprime le défi courant
