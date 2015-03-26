@@ -13,7 +13,7 @@ class Monde
 	@nom
 	@etat
 	
-	attr_reader :idMonde ,:nom 
+	attr_reader :idMonde 
 	# Méthodes
 
 	def Monde.creer(nom)
