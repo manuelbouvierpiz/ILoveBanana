@@ -29,6 +29,7 @@ class Compte
       filename = File.join(@pseudo,"cache")
       cache = File.new(filename, "w")
       cache.puts @motDepasse
+      cache.puts @emailAdresse
       #changer le droite de ce fille
       file.chmod( 0755 )
       cache.close
@@ -45,20 +46,30 @@ class Compte
         return @motDePasse == nil
     end
     
-    def login(String unPseudo,String unMOtDePass)
-        
+    def login(String unPseudo,String unMotDePass)
+        if(@pseudo == unPseudo && @motDePasse ==unMotDePass)
+            return true
+        else
+            return false
+        end
     end
     
     def recuperer(String unMail)
-        
+        if(@emailAdresse == unMail)
+        {
+            puts "votre compte est " + @pseudo
+            puts "votre mot de passe est " + @motDePasse
+        }
     end
     
     def changerMotDePasse(String unMotDePasse)
-        
+        @motDePasse = unMotDePasse
     end
     
     def attribuerMotDePasseAleatoire()
-    
+        prng = Random.new()
+        #attribuer un mot de passe avec 6 chiffre aleatoire
+        @motDePasse = prng.rand(100000..999999)
     end
 
 end
