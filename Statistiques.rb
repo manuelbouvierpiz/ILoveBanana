@@ -37,7 +37,7 @@ class Statistiques
 
 # Méthode retournant le classement des joueurs en fonction du score total sur des grilles de taille et difficulté données
 	def classement(uneTaille, uneDifficulte)
-		return BaseDeDonnees.getClassement(@compte.pseudo, uneTaille, uneDifficulte)
+		return BaseDeDonnees.getClassement(uneTaille, uneDifficulte)
 	end
 
 # Méthode premettant de mettre à jour la base de données lorsqu'une partie est terminée

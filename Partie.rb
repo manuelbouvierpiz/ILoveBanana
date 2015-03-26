@@ -13,8 +13,6 @@ class Partie
 	@listeSauvegardes
 # Booleen informant si nous sommes dans un mode "hypothèse"
 	@hypothese
-# Variable contenant notre base de données
-	@baseDeDonnees
 # Variable contenant le nombre de clic que l'utilisateur a fait pour terminer la grille, elle s'incrémente durant la partie.
 	@nbClics
 # Variable contenant le temps que l'utilsateur a mis pour terminer la grille
@@ -23,6 +21,8 @@ class Partie
 	@nbAides
 # Variable contenant le nombre d'hypothèse que l'utilisateur a fait pour terminer la grille
 	@nbHypotheses
+# Variable contenant le compte de l'utilisateur actuel
+	@compte
 
 	private_class_method :new
 
@@ -30,20 +30,20 @@ class Partie
 
 
 # Constucteur d'une partie 
-	def Partie.creer(uneBaseDeDonnees)
-			new(uneBaseDeDonnees)
+	def Partie.creer(unCompte, unIdGrille)
+			new(unCompte, unId)
 	end
 
 # Initialise les variables d'instances
-	def initialize(uneBaseDeDonnees)
+	def initialize(unCompte, unIdGrille)
 		@listeSauvegardes = Array.[]
 		@hypothese = false
-		@baseDeDonnees = uneBaseDeDonnees
+		initGrille(unIdGrille)
 	end
 
 # Méthode permettant de créer une grille
 	def initGrille(unIdGrille)
-
+		@grille = Grille.creer(unIdGrille)
 	end
 
 # A modifier
