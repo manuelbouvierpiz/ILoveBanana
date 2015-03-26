@@ -24,7 +24,7 @@ class Compte
     @prenom
 
 
-    attr_reader: idPseudo , :pesudo , :motDePasse , :emailAdresse , :nom , :prenom
+    attr_reader :idPseudo , :pesudo , :motDePasse , :emailAdresse , :nom , :prenom
 
     #*Méthode demande le pseudo , le mot de passe et l'email adresse pour creer un compte 
     def Grille.creer (pseudo,motDePasse,emailAdresse)
@@ -35,16 +35,20 @@ class Compte
       @pseudo = pseudo
       @motDePasse = motDePasse
       @emailAdresse = emailAdresse
+      @nom = nil
+      @prenom = nil
       misEnJourCompte()
     end
     
-    def nom
-
+    
+    def nom(String nom)
+        @nom = nom
     end
     
-    def prenom  
-    
+    def prenom(String prenom)  
+        @prenom = prenom
     end
+    
     #*méthode qui creer un reperatoire local pour un compte et l'ajouter dans le base de donnee
     def misEnJourCompte()
       #Creer une réperatoire presonnage
