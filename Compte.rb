@@ -49,7 +49,7 @@ class Compte
         @prenom = prenom
     end
     
-    #*méthode qui creer un reperatoire local pour un compte et l'ajouter dans le base de donnee
+    #*méthode qui creer un reperatoire local pour un compte 
     def misEnJourCompte()
       #Creer une réperatoire presonnage
       Dir.mkdir("usr/"+@pseudo)
