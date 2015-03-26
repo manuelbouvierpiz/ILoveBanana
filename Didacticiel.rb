@@ -5,7 +5,7 @@ class Didactitiel
 
 =begin
 	
-Les valeur 5 et  6 sont temporaire et serve juste pour illustrer que l'id des grilles serat connue en avance
+Les valeurs 5 et  6 sont temporaires et servent juste pour illustrer que l'id des grilles sera connu en avance.
 	
 =end
 
