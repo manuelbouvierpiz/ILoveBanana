@@ -40,27 +40,19 @@ class Compte
       misEnJourCompte()
     end
     
+    #*mettre le Compte dans le BDD
+    def misEnJourCompte()
+      BaseDeDonnees.setCompte(@pseudo,@motDePasse,@nom,@prenom,@emailAdresse)
+    end
     
     def nom(String nom)
         @nom = nom
+        misEnJourCompte()
     end
     
     def prenom(String prenom)  
         @prenom = prenom
-    end
-    
-    #*méthode qui creer un reperatoire local pour un compte 
-    def misEnJourCompte()
-      #Creer une réperatoire presonnage
-      Dir.mkdir("usr/"+@pseudo)
-      #Creer une file pour sauvagarder le mot de passe
-      filename = File.join(@pseudo,"cache")
-      cache = File.new(filename, "w")
-      cache.puts @motDepasse
-      cache.puts @emailAdresse
-      #changer le droite de ce fille
-      file.chmod( 0755 )
-      cache.close
+        misEnJourCompte()
     end
 
     #verifier le mot de passe
@@ -110,6 +102,7 @@ MESSAGE_END
     #changer le mot de passe
     def changerMotDePasse(String unMotDePasse)
         @motDePasse = unMotDePasse
+        misEnJourCompte()
     end
 
     #attribuer un mot de passe aleatoire en 6 chiffre
@@ -117,6 +110,7 @@ MESSAGE_END
         prng = Random.new()
         #attribuer un mot de passe avec 6 chiffre aleatoire
         @motDePasse = prng.rand(100000..999999).to_s
+        misEnJourCompte()
     end
 
 end
