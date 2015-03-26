@@ -24,7 +24,7 @@ class Compte
     @prenom
 
 
-    attr_reader :idPseudo , :pesudo , :motDePasse , :emailAdresse , :nom , :prenom
+    attr_reader :idPseudo , :pseudo , :motDePasse , :emailAdresse , :nom , :prenom
 
     #*Méthode demande le pseudo , le mot de passe et l'email adresse pour creer un compte 
     def Compte.creer (pseudo,motDePasse,emailAdresse)
