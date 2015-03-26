@@ -38,7 +38,7 @@ class Compte
       misEnJourCompte()
     end
 
-    #*méthode qui creer un reperatoir local pour un compte 
+    #*méthode qui creer un reperatoire local pour un compte et l'ajouter dans le base de donnee
     def misEnJourCompte()
       #Creer une réperatoire presonnage
       Dir.mkdir("usr/"+@pseudo)
