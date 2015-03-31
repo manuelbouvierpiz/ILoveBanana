@@ -21,12 +21,12 @@ class Grille
   #Méthodes
   
   # * Méthode de classe qui demande l'id de la +Grille à créer+
-  def Grille.ceer(unIdGrille)
+  def Grille.creer(unIdGrille)
       new(unIdGrille)
   end
 
   # * Méthode de classe qui demande l'id de la +Grille à créer+ et la matrice (dans le cas d'une sauvegarde)
-  def Grille.ceer(unIdGrille, uneMatrice)
+  def Grille.creer(unIdGrille, uneMatrice)
       new(unIdGrille, uneMatrice)
   end
   # * Méthode qui initialise les variables
