@@ -1,8 +1,7 @@
+# encoding: UTF-8
 # PARMENON Damien
 # Partie.rb
 # Implementation de la classe Partie
-
-# encoding: utf-8
 
 # La classe Partie est une méthode abstraite mère de PartieMonde et PartieLibre
 class Partie
@@ -82,10 +81,11 @@ class Partie
 
 # Méthode retournant la chaîne de caracère correspondant aux règles du jeu de takuzu
 	def obtenirRegles()
-		return "Règles\n
-		Il ne peut y avoir trois colonnes adjacentes de la même couleur.\n
-		Les lignes et les colonnes sont constitués du même nombre de cellules rouges que de cellules bleues\n
-		Il ne peut y avoir deux lignes ou deux colonnes identiques\n"
+		return "probleme d'encoding avec les accents, modifications a faire dans Partie.obtenirRegle"
+		#return "Règles\n
+		#Il ne peut y avoir trois colonnes adjacentes de la même couleur.\n
+		#Les lignes et les colonnes sont constitués du même nombre de cellules rouges que de cellules bleues\n
+		#Il ne peut y avoir deux lignes ou deux colonnes identiques\n"
 	end
 
 # Méthode appelant la méthode de même nom dans grille afin d'obtenir une aide
