@@ -5,7 +5,7 @@
 #======Class Grille=====
 #une grille pour le jeu
 
-load 'case.rb'
+load 'Case.rb'
 class Grille
   #variable
   
@@ -115,12 +115,12 @@ class Grille
   # * Méthode d'instance qui retourne une chaine de caractères décrivant une aide possible
   def obtenirAide
   	# A compléter
-  	return "Au maximum deux cases consécutives peuvent avoir la même couleur"
+  	return "Au maximum deux cases consecutives peuvent avoir la meme couleur"
   end
 
   # * Méthode d'instance qui retourne une chaine de caractères décrivant la +Grille+
   def to_s()
-  	 0.upto(@taille) do |i|
+  	0.upto(@taille) do |i|
   	 	0.upto(@taille) do |x|
   	 		print "-"
   	 	end
