@@ -1,4 +1,8 @@
+require 'singleton'
+
 class Jeu
+include Singleton
+
 	@compte
 	@aventure
 	@didactitiel
@@ -16,7 +20,7 @@ class Jeu
 		@didactitiel = Didactitiel.creer
 		@partie = PartieLibre.creer
 	end
-
+	
 	
 
 end

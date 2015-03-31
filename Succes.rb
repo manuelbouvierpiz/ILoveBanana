@@ -1,26 +1,28 @@
+
+#class Succes 
+# -represente le liste de succes qui est definit en base de donneese
 class Succes
-
-    # Constructeur
-    def Succes.creer()
-        new()
-    end
-
+    @succes
+    
     # Initialiseur
     def initialize()
-        
+        @succes = BaseDeDonnees.getSucces();
     end
 
-    # Rend la méthode new en private
-    private_class_method :new
-
+    attr_reader :succes
     # Méthode pour obtenir le nombre de succes possible
     def nbSuccesTotal()
-        return getSucces().length
+        return @succes.length
     end
 
     # Méthode pour debloquer un succes
+    #  - Si le succes est dans le liste 
     def debloquer(unSucces)
-        unSucces.debloquer()
+        0.upto(@succes.length) do |i|
+            if(unSucces == @succes[i])
+                @succes[i].debloquer()
+            end
+        end
     end
     
 end
