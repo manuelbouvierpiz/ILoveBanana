@@ -35,11 +35,12 @@ class Defi
   end
   
   # * Méthode d'instance qui supprime le défi courant
-  # * Supprime le +Defi+ dans la BDD et l'objet
+  # * Supprime le +Defi+ dans la BDD
   # * Retourne nil
-  def supprimer!
+  def supprimer
   	BaseDeDonnees.supprimeDefi(@destinataire.pseudo, @envoyeur.pseudo, Grille.idGrille)
-  	self = nil
+  	# ACHTUNG ! L'instance n'est pas supprimée directement : NE PAS RELEVER UN DEFI SUPPRIME !!!
+  	# Par précaution il vaut mieux faire listeDefis[X] = listeDefis.supprimer! afin de supprimer l'instance
   	return nil
   end
   
