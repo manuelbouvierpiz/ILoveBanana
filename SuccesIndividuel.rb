@@ -1,3 +1,4 @@
+#class succesIndividuel
 class SuccesIndividuel 
 
     # Variables
