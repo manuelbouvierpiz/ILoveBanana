@@ -1,24 +1,24 @@
-# encoding: UTF-8
+
 # PARMENON Damien
 # Partie.rb
 # Implementation de la classe Partie
 
-# La classe Partie est une méthode abstraite mère de PartieMonde et PartieLibre
+# La classe Partie est une mÃ©thode abstraite mÃ¨re de PartieMonde et PartieLibre
 class Partie
 
 # Grille sur laquelle le joueur va jouer
 	@grille
-# Tableau des sauvegardes/hypothèse que le joueur a fait
+# Tableau des sauvegardes/hypothÃ¨se que le joueur a fait
 	@listeHypotheses
-# Booleen informant si nous sommes dans un mode "hypothèse"
+# Booleen informant si nous sommes dans un mode "hypothÃ¨se"
 	@hypothese
-# Variable contenant le nombre de clic que l'utilisateur a fait pour terminer la grille, elle s'incrémente durant la partie.
+# Variable contenant le nombre de clic que l'utilisateur a fait pour terminer la grille, elle s'incrÃ©mente durant la partie.
 	@nbClics
 # Variable contenant le temps que l'utilsateur a mis pour terminer la grille
 	@temps
 # Variable contenant le nombre de fois que l'utilisateur a utiliser l'aide
 	@nbAides
-# Variable contenant le nombre d'hypothèse que l'utilisateur a fait pour terminer la grille
+# Variable contenant le nombre d'hypothÃ¨se que l'utilisateur a fait pour terminer la grille
 	@nbHypotheses
 # Variable contenant le compte de l'utilisateur actuel
 	@compte
@@ -36,7 +36,7 @@ class Partie
 			new(unCompte, unId)
 	end
 
-# Constructeur permettant de charger une grille sauvegardée
+# Constructeur permettant de charger une grille sauvegardÃ©e
 	def Partie.charger(unCompte)
 			new(unCompte)
 	end
@@ -49,7 +49,7 @@ class Partie
 		@idGrille = idGrille
 	end
 
-# Méthode initialize du constructeur charger
+# MÃ©thode initialize du constructeur charger
 	def initialize(unCompte)
 		@compte = unCompte
 		@nbHypotheses = BaseDeDonnees.getSauvegardeNbHypotheses(@compte.pseudo)
@@ -61,7 +61,7 @@ class Partie
 		@grille = Grille.creer(unIdGrille, matGrille)
 	end
 
-# Méthode permettant de créer une grille
+# MÃ©thode permettant de crÃ©er une grille
 	def initGrille(unIdGrille)
 		@grille = Grille.creer(unIdGrille)
 	end
@@ -74,37 +74,36 @@ class Partie
 	end
 
 
-# Méthode retournant le score de la partie
+# MÃ©thode retournant le score de la partie
 	def calculerScore()
 		return @grille.getClicMin * ( getDifficulte / ( temps * nbClics * 5 ) ) * ( 1 / ( 1 + nbAides) )
 	end
 
-# Méthode retournant la chaîne de caracère correspondant aux règles du jeu de takuzu
+# MÃ©thode retournant la chaÃ®ne de caracÃ¨re correspondant aux rÃ¨gles du jeu de takuzu
 	def obtenirRegles()
-		return "probleme d'encoding avec les accents, modifications a faire dans Partie.obtenirRegle"
-		#return "Règles\n
-		#Il ne peut y avoir trois colonnes adjacentes de la même couleur.\n
-		#Les lignes et les colonnes sont constitués du même nombre de cellules rouges que de cellules bleues\n
-		#Il ne peut y avoir deux lignes ou deux colonnes identiques\n"
+		return "RÃ¨gles\n
+		Il ne peut y avoir trois colonnes adjacentes de la mÃªme couleur.\n
+		Les lignes et les colonnes sont constituÃ©s du mÃªme nombre de cellules rouges que de cellules bleues\n
+		Il ne peut y avoir deux lignes ou deux colonnes identiques\n"
 	end
 
-# Méthode appelant la méthode de même nom dans grille afin d'obtenir une aide
+# MÃ©thode appelant la mÃ©thode de mÃªme nom dans grille afin d'obtenir une aide
 	def obtenirAide()
 		@grille.obtenirAide()
 	end
 
-# Méthode permettant de passer en mode hypothèse
+# MÃ©thode permettant de passer en mode hypothÃ¨se
 	def sauvegarder()
 		BaseDeDonnees.setSauvegarde(@compte.pseudo(), @temps, @nbClics, @nbHypotheses, @nbAides, @idGrille, @listeHypotheses)
 	end
 
-# Méthode permettant d'entrer en mode hypothèse
+# MÃ©thode permettant d'entrer en mode hypothÃ¨se
 	def fairehypothese()
 		@listeHypotheses.push(@grille)
 		@hypothese = true
 	end
 
-# Méthode permettant de revenir au plus ancien état ou il n'y avait aucune hypothèse
+# MÃ©thode permettant de revenir au plus ancien Ã©tat ou il n'y avait aucune hypothÃ¨se
 	def chargerPreHypo()
 		@grille = @listeHypotheses[@listeHypotheses.length -1]
 		@listeHypotheses.pop()

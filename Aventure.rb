@@ -1,6 +1,6 @@
 class Aventure
-	@mondes
 
+	attr_reader :mondes
 
 	def Aventure.creer()
 		new()
