@@ -19,3 +19,4 @@ Les valeurs 5 et  6 sont temporaires et servent juste pour illustrer que l'id de
 	def estTermine?
 		return (@didactitielDeBase.estTermine && didactitielAvance.estTermine )
 	end
+end
