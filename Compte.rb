@@ -20,11 +20,16 @@ class Compte
 
     #*prenom - prenom de personne 
     @prenom
+    
+    # Variables de classe
+    
+    # * Variable de classe représentant le COMPTE selon le pattern singleton
+    @@COMPTE = Compte.new
 
 
     attr_reader :pseudo , :emailAdresse , :nom , :prenom
 
-    #*Méthode demande le pseudo , le mot de passe et l'email adresse pour creer un compte 
+    #*Méthode qui demande le pseudo , le mot de passe et l'email adresse pour creer un compte 
     def Compte.creer (pseudo,motDePasse,emailAdresse)
       new(pseudo,motDePasse,emailAdresse)
     end
@@ -37,6 +42,18 @@ class Compte
       new(unPseudo, unMotDePasse)
     end
     
+    private_class_method :new
+    
+    def initialize(pseudo,motDePasse,emailAdresse)
+      @pseudo = pseudo
+      @motDePasse = motDePasse
+      @emailAdresse = emailAdresse
+      @nom = nil
+      @prenom = nil
+      misEnJourCompte()
+    end
+    
+    # * Méthode d'instance qui intialise le +Compte+
     def initialize(pseudo,motDePasse,emailAdresse)
       @pseudo = pseudo
       @motDePasse = motDePasse
