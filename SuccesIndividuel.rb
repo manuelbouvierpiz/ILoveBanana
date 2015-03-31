@@ -21,7 +21,7 @@ class SuccesIndividuel
     
     # Méthode pour débloquer un succes
     def debloquer()
-            BaseDeDonnees.setSuccesDebloque(@idSucces, @compte.pseudo)
+        BaseDeDonnees.setSuccesDebloque(@idSucces, @compte.pseudo)
     end
 
     # Méthode pour savoir si un succes debloque
