@@ -4,6 +4,8 @@
 
 # encoding: utf-8
 
+load 'Partie.rb'
+
 class PartieLibre < Partie
 
 	def PartieLibre.creer(unCompte, uneTaille, uneDifficulte)
