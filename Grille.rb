@@ -27,6 +27,7 @@ class Grille
 
   # * Méthode de classe qui demande l'id de la +Grille à créer+ et la matrice (dans le cas d'une sauvegarde)
   def Grille.creer(unIdGrille, uneMatrice)
+  
       new(unIdGrille, uneMatrice)
   end
   # * Méthode qui initialise les variables
@@ -114,7 +115,53 @@ class Grille
   
   # * Méthode d'instance qui retourne une chaine de caractères décrivant une aide possible
   def obtenirAide
+  	
   	# A compléter
+  	
+    taille_max = @matrice.lenght
+
+    #Deplacement d'une colonne a l'autre( de gauche a droite).
+    for i in [0..taille_max]
+
+  	#Parcours de la colonne ( de haut en bas).
+  	 for j in [0..taille_max]
+       case_actuelle =@matrice[i][j]
+
+       
+       if case_actuelle.estVide?
+
+
+      #Test si il y a une case vide entre 2 case de la meme couleurs  (Peut etre utilisé )
+        if i>0 && i<taille_max
+          if @matrice[i][j-1].estBleu?&&@matrice[i][j+1].estBleu? || @matrice[i][j-1].estRouge?&&@matrice[i][j+1].estRouge? 
+            return "Il n'y a que une solution"
+          end
+        end
+
+      #Test si il deux case de la meme couleur d'affillé a coté d'une case vide
+        if i<taille_max-1
+          if @matrice[i][j+2].estBleu?&&@matrice[i][j+1].estBleu? || @matrice[i][j+2].estRouge?&&@matrice[i][j+1].estRouge? 
+            return "Il n'y a que une solution"
+          end
+        end
+
+
+        if i>1
+          if @matrice[i][j-2].estBleu?&&@matrice[i][j-1].estBleu? || @matrice[i][j-2].estRouge?&&@matrice[i][j-1].estRouge? 
+            return "Il n'y a que une solution"
+          end
+        end
+
+      #Test
+
+
+  	   end
+     
+
+     end
+  	
+    end
+
   	return "Au maximum deux cases consecutives peuvent avoir la meme couleur"
   end
 
