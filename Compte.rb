@@ -1,13 +1,12 @@
+#Kuang Nanzhem
+# Modifications apportées par Valentin CHAILLOU
 #Class Compte
 #Opération sur le compte presonnel
 #======Class Compte=====
 require 'net/smtp'
 class Compte
-    #variable
-    #* idPseudo - l'id du grille
-    @idPseudo
 
-    #*pseudo - pseudo de personne
+    #*pseudo - pseudo de la personne
     @pseudo
 
     #*motDePasse - mot de passe
@@ -23,11 +22,19 @@ class Compte
     @prenom
 
 
-    attr_reader :idPseudo , :pseudo , :motDePasse , :emailAdresse , :nom , :prenom
+    attr_reader :pseudo , :emailAdresse , :nom , :prenom
 
     #*Méthode demande le pseudo , le mot de passe et l'email adresse pour creer un compte 
     def Compte.creer (pseudo,motDePasse,emailAdresse)
       new(pseudo,motDePasse,emailAdresse)
+    end
+    
+    # * Méthode de classe qui permet de connecter l'utilisateur à la partie
+    # ===== Attributs :
+    #   - unPseudo : un +String+ représentant le pseudo du +Compte+
+    #   - unMotDePasse : un +String+ représentant le mot de passedu +Compte+
+    def Compte.login (unPseudo, unMotDePasse)
+      new(unPseudo, unMotDePasse)
     end
     
     def initialize(pseudo,motDePasse,emailAdresse)

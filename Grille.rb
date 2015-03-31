@@ -66,7 +66,6 @@ class Grille
   			matrice[i][j].setBleu
   		when 'r', 'rouge', 1
   			matrice[i][j].setRouge
-  		when
   	end
   	matrice[i][j].setHypothese if estHypothese
   end
@@ -122,7 +121,7 @@ class Grille
   # * Méthode d'instance qui retourne une chaine de caractères décrivant la +Grille+
   def to_s()
   	 0.upto(@taille) do |i|
-  	 	o.upto(@taille) do |x|
+  	 	0.upto(@taille) do |x|
   	 		print "-"
   	 	end
   		0.upto(@taille) do |j|
@@ -130,7 +129,7 @@ class Grille
   			print "|"
   		end
   		puts " "
-  	end
+    end
   end
   
 end

@@ -33,6 +33,7 @@ class Case
 			@etat = 'b'
 		else
 			@etat = 'B'
+		end
 		return self	# Pour éviter l'entorse à l'encapsulation
 	end
 	
