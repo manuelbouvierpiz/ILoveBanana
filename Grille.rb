@@ -1,4 +1,3 @@
-#Kuang Nanzhen
 # Modifications par Valentin CHAILLOU le 26/03/2015
 #Class Grille
 #Opération sur le grille
