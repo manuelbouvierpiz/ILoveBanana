@@ -18,7 +18,7 @@ class Succes
     # Méthode pour debloquer un succes
     #  - Si le succes est dans le liste 
     def debloquer(unSucces)
-        0.upto(@succes.length) do |i|
+        0.upto(@succes.length) do |i| # i pou index
             if(unSucces == @succes[i])
                 @succes[i].debloquer()
             end
