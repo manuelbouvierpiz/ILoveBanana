@@ -1,11 +1,10 @@
-#Kuang Nanzhen
 #Class Compte
 #Opération sur le compte presonnel
 #======Class Compte=====
 require 'net/smtp'
 class Compte
     #variable
-    #* diPseudo - l'id du grille
+    #* idPseudo - l'id du grille
     @idPseudo
 
     #*pseudo - pseudo de personne
