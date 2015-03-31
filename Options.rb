@@ -61,7 +61,7 @@ class Options
 
 # Méthode permettant de modifier les couleurs appliquées aux cases
 	def changerCouleur(unOuDeux, uneCouleur)
-		if(unOuDeux = 1)
+		if(unOuDeux == 1)
 			BaseDeDonnees.setCouleurUn(@joueur.pseudo, uneCouleur)
 		else
 			BaseDeDonnees.setCouleurDeux(@joueur.pseudo, uneCouleur)
@@ -70,7 +70,7 @@ class Options
 
 # Méthode retournant soit l'une soit l'autre des deux couleurs choisies par l'utilisateur
 	def couleur(unOuDeux)
-		if(unOuDeux = 1)
+		if(unOuDeux == 1)
 			return BaseDeDonnees.getCouleurUn(@joueur.pseudo)
 		else
 			return BaseDeDonnees.getCouleurDeux(@joueur.pseudo)
