@@ -17,22 +17,41 @@ class GrilleHardcore < Grille
   # * Est initialisée lors de la création de la +GrilleHardcore+
   attr :nbClicsMax, false
   
-  # Méthodes
+  # Méthodes d'instance
   
-  # * Méthode de classe qui crée une nouvelle +GrilleHardcore+
-  # * ===== Attributs :
-  # - unTempsMax : un flottant représentant le temps maximum de la résolution de la +GrilleHardcore+
-  # - unNbClicsMax : un entier représentant le nombre de clics maximum pour résoudre la +GrilleHardcore+
-  def GrilleHardcore.creer(uneDifficulte, uneTaille, unTempsMax, unNbClicsMax)
-    new(uneDifficulte, uneTaille, unTempsMax, unNbClicsMax)
+  # Méthode d'instance qui initialise le temps maximum et le nombre maximum de clics associés à la +GrilleHardcore+
+  def initialize(unIdGrille, unTempsMax, unNbClicsMax)  # :nodoc
+    super(unIdGrille)
+    tempsMax, nbClicsMax = unTempsMax, unNbClicsMax
   end
+  
+  # Méthode d'instance qui initialise le temps maximum et le nombre maximum de clics associés à la +GrilleHardcore+
+  def initialize(unIdGrille, uneMatrice, unTempsMax, unNbClicsMax)  # :nodoc
+    super(unIdGrille, uneMatrice)
+    tempsMax, nbClicsMax = unTempsMax, unNbClicsMax
+  end
+  
+  # Méthodes de classe
   
   private_class_method :new
   
-  # Méthode d'instance qui intialise le temps maximum et le nombre maximum de clics associés à la +GrilleHardcore+
-  def initialize(uneDifficulte, uneTaille, unTempsMax, unNbClicsMax)  # :nodoc
-    super(uneDifficulte, uneTaille)
-    tempsMax, nbClicsMax = unTempsMax, unNbClicsMax
+  # * Méthode de classe qui crée une nouvelle +GrilleHardcore+
+  # * ===== Attributs :
+  # - unIdGrille : un entier représentant l'id de la +Grille+
+  # - unTempsMax : un flottant représentant le temps maximum de la résolution de la +GrilleHardcore+
+  # - unNbClicsMax : un entier représentant le nombre de clics maximum pour résoudre la +GrilleHardcore+
+  def GrilleHardcore.creer(unIdGrille, unTempsMax, unNbClicsMax)
+    new(unIdGrille, unTempsMax, unNbClicsMax)
+  end
+  
+  # * Méthode de classe qui crée une nouvelle +GrilleHardcore+
+  # * ===== Attributs :
+  #	- unIdGrille : un entier représentant l'id de la +Grille+
+  # - uneMatrice : une matrice de la +Grille+ sauvegardée
+  # - unTempsMax : un flottant représentant le temps maximum de la résolution de la +GrilleHardcore+
+  # - unNbClicsMax : un entier représentant le nombre de clics maximum pour résoudre la +GrilleHardcore+
+  def GrilleHardcore.creer(unIdGrille, uneMatrice, unTempsMax, unNbClicsMax)
+    new(unIdGrille, uneMatrice, unTempsMax, unNbClicsMax)
   end
 
 end
