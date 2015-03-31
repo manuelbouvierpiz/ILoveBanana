@@ -1,8 +1,9 @@
-class RaccourciClavier {
+class RaccourciClavier
 	@id
 	@nom
 	@pseudo
-	attr_reader: @id , @nom
+
+	attr_reader :id , :nom
 
 =begin
 	La pause est associer a la  touche p et l'id 1.
@@ -11,30 +12,31 @@ class RaccourciClavier {
 	L'hypothese a la touche h et l'id 4.
 =end
 
-	def RaccourciClavier.creer(id,nom,pseudo){
+	def RaccourciClavier.creer(id,nom,pseudo)
 		initialize(id,nom,pseudo,baseDeDonnees)
-	}
-	def initialize(id,nom,pseudo){
+	end
+
+	def initialize(id,nom,pseudo)
 		@id,@nom,@pseudo = id,nom,pseudo
 		resetTouche()
-	}
+	end
 
 
-	def changerTouche(){
+	def changerTouche
 		a=gets
 		BaseDeDonnees.setTouche(@id,'a')
+	end
 
-	}
-	def resetTouche(){
+	def resetTouche()
 		case @id
-		when 1
-			BaseDeDonnees.setTouche(@id,'p')
-		when 2
-			BaseDeDonnees.setTouche(@id,'d')
-		when 3
-			BaseDeDonnees.setTouche(@id,'f')
-		when 4
-			BaseDeDonnees.setTouche(@id,'h')
-				
-	}
-}
+			when 1
+				BaseDeDonnees.setTouche(@id,'p')
+			when 2
+				BaseDeDonnees.setTouche(@id,'d')
+			when 3
+				BaseDeDonnees.setTouche(@id,'f')
+			when 4
+				BaseDeDonnees.setTouche(@id,'h')
+		end
+	end
+end
