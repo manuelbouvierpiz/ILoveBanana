@@ -10,13 +10,13 @@ class Options
 	@tabRaccourciClavier
 
 # Constucteur des options
-	def Options.creer(unCompte)
-		new(unCompte)
+	def Options.creer()
+		new()
 		
 	end
 
 # Initialise la variable avec notre base de données
-	def initialize(unCompte)
+	def initialize()
 		@tabRaccourciClavier = [RaccourciClavier.new(1,"Bleu",Compte.COMPTE.pseudo),
 								RaccourciClavier.new(2,"Rouge",Compte.COMPTE.pseudo),
 								RaccourciClavier.new(3,"Pause",Compte.COMPTE.pseudo),
