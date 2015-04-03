@@ -35,7 +35,13 @@ class Jeu
 	def initialize()
 		@aventure = Aventure.creer
 		@didacticiel = Didacticiel.creer
-		# @partie = PartieLibre.cree		# A débattre
+	end
+	
+	# * Méthode d'instance qui permet de créer une nouvelle partie libre
+	def lancerPartieLibre()
+		uneDifficulte = 7
+		uneTaille = 12
+		@partie = PartieLibre.creer(uneTaille, uneDiffculte)
 	end
 	
 end
