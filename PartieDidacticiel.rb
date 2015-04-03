@@ -2,7 +2,7 @@ load 'Partie.rb'
 
 class PartieDidactitiel < Partie 
 	
-	def PartieDidactitiel.creer(id)
+	def PartieDidacticiel.creer(id)
 		super(id)		
 	end
 	

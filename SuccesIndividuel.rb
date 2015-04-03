@@ -1,8 +1,7 @@
 #class succesIndividuel
 class SuccesIndividuel 
 
-    # Variables
-    @compte
+    # Variable
     @idSucces
 
     # Constructeur
@@ -12,7 +11,6 @@ class SuccesIndividuel
 
     # Initialiseur
     def initialize(unCompte, unIdSucces)
-        @compte = unCompte
         @idSucces = unIdSucces
     end
 
@@ -21,12 +19,12 @@ class SuccesIndividuel
     
     # Méthode pour débloquer un succes
     def debloquer()
-        BaseDeDonnees.setSuccesDebloque(@idSucces, @compte.pseudo)
+        BaseDeDonnees.setSuccesDebloque(@idSucces, Compte.COMPTE.pseudo)
     end
 
     # Méthode pour savoir si un succes debloque
     def estDebloque?()
-        return BaseDeDonnees.estSuccesDebloque?(@idSucces, @compte.pseudo)
+        return BaseDeDonnees.estSuccesDebloque?(@idSucces, Compte.COMPTE.pseudo)
     end
 
     # Méthode pour obtenir la description du succes

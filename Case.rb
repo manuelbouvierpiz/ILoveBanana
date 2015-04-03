@@ -110,4 +110,14 @@ class Case
 		end
 		return unResultat
 	end
+	
+	# Méthode de classe
+	
+	# * Méthode de classe qui crée une Case
+	# * Par défaut, une case fraichement initialisée est vide
+	def Case.creer()
+		new
+	end
+	
+	private_class_method :new
 end

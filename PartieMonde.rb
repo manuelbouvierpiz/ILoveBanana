@@ -36,12 +36,12 @@ class PartieMonde
 
 	# Méthode d'instance qui retourne un nombre d'étoile en fonction du score obtenu
 	def nbEtoile(score)
-
+		# A compléter
 	end
 
 	# Méthode d'instance qui retourne le score d'un joueur
-	def scoreDuJoueur(joueur)
-
+	def scoreDuJoueur()
+		# A compléter
 	end
 
 	# Méthode qui permet de réinitialiser la grille de la partie

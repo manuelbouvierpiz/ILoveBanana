@@ -20,8 +20,6 @@ class Partie
 	@nbAides
 # Variable contenant le nombre d'hypothèse que l'utilisateur a fait pour terminer la grille
 	@nbHypotheses
-# Variable contenant le compte de l'utilisateur actuel
-	@compte
 # Variable contenant l'id de la grille
 	@idGrille
 
@@ -32,17 +30,17 @@ class Partie
 
 
 # Constucteur d'une partie 
-	def Partie.creer(unCompte, unIdGrille)
-			new(unCompte, unId)
+	def Partie.creer(unIdGrille)
+			new(unId)
 	end
 
 # Constructeur permettant de charger une grille sauvegardée
-	def Partie.charger(unCompte)
-			new(unCompte)
+	def Partie.charger()
+			new()
 	end
 
 # Initialise les variables d'instances
-	def initialize(unCompte, unIdGrille)
+	def initialize(unIdGrille)
 		@listeHypotheses = Array.[]
 		@hypothese = false
 		initGrille(unIdGrille)
@@ -50,14 +48,14 @@ class Partie
 	end
 
 # Méthode initialize du constructeur charger
-	def initialize(unCompte)
+	def initialize()
 		@compte = unCompte
-		@nbHypotheses = BaseDeDonnees.getSauvegardeNbHypotheses(@compte.pseudo)
-		@nbAides = BaseDeDonnees.getSauvegardeNbAides(@compte.pseudo)
-		@nbClics = BaseDeDonnees.getSauvegardeNbClics(@compte.pseudo)
-		@temps = BaseDeDonnees.getSauvegardeTemps(@compte.pseudo)
-		@idGrille = BaseDeDonnees.getSauvegardeIdGrille(@compte.pseudo)
-		matGrille = BaseDeDonnees.getSauvegardeGrilleSauvegardee(@compte.pseudo)
+		@nbHypotheses = BaseDeDonnees.getSauvegardeNbHypotheses(Compte.COMPTE.pseudo)
+		@nbAides = BaseDeDonnees.getSauvegardeNbAides(Compte.COMPTE.pseudo)
+		@nbClics = BaseDeDonnees.getSauvegardeNbClics(Compte.COMPTE.pseudo)
+		@temps = BaseDeDonnees.getSauvegardeTemps(Compte.COMPTE.pseudo)
+		@idGrille = BaseDeDonnees.getSauvegardeIdGrille(Compte.COMPTE.pseudo)
+		matGrille = BaseDeDonnees.getSauvegardeGrilleSauvegardee(Compte.COMPTE.pseudo)
 		@grille = Grille.creer(unIdGrille, matGrille)
 	end
 
@@ -94,7 +92,7 @@ class Partie
 
 # Méthode permettant de passer en mode hypothèse
 	def sauvegarder()
-		BaseDeDonnees.setSauvegarde(@compte.pseudo(), @temps, @nbClics, @nbHypotheses, @nbAides, @idGrille, @listeHypotheses)
+		BaseDeDonnees.setSauvegarde(Compte.COMPTE.pseudo(), @temps, @nbClics, @nbHypotheses, @nbAides, @idGrille, @listeHypotheses)
 	end
 
 # Méthode permettant d'entrer en mode hypothèse
