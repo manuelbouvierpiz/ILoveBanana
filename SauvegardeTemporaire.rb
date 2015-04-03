@@ -6,21 +6,23 @@
 #	- connaît une Grille
 class SauvegardeTemporaire
 
-	# Variables
+	# Variable
 	
 	# * Variable d'instance qui représente la +Grille+ de la +SauvegardeTemporaire+
 	# * Accessible en lecture uniquement
 	# * Est initialisée lors de la sauvegardeTemporaire
 	attr :grille, false
 	
-	# Méthodes
+	# Méthode de classe
 	
 	# * Méthode de classe permettant la création d'une nouvelle +SauvegardeTemporaire+
-	def SauvegardeTemporaire.nouvelle(uneGrille)
+	def SauvegardeTemporaire.creer(uneGrille)
 		new(uneGrille)
 	end
 	
 	private_class_method :new
+	
+	# Méthode d'instance
 	
 	# * Méthode d'instance qui initialise la +SauvegardeTemporaire+
 	def initialize(uneGrille)	# :nodoc:
