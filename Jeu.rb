@@ -41,7 +41,7 @@ class Jeu
 	def lancerPartieLibre()
 		uneDifficulte = 7
 		uneTaille = 12
-		@partie = PartieLibre.creer(uneTaille, uneDiffculte)
+		@partie = PartieLibre.creer(uneTaille, uneDifficulte)
 	end
 	
 end
