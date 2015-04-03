@@ -1,6 +1,6 @@
 load 'Partie.rb'
 
-class PartieDidactitiel < Partie 
+class PartieDidacticiel < Partie 
 	
 	def PartieDidacticiel.creer(id)
 		super(id)		
