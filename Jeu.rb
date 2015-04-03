@@ -1,3 +1,7 @@
+load 'Aventure.rb'
+load 'Didacticiel.rb'
+
+
 class Jeu
 
 	@aventure
@@ -31,9 +35,7 @@ class Jeu
 	def initialize()
 		@aventure = Aventure.creer
 		@didacticiel = Didacticiel.creer
-		@partie = PartieLibre.creer
+		# @partie = PartieLibre.cree		# A débattre
 	end
 	
-	
-
 end
