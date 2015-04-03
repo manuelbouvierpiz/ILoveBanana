@@ -19,8 +19,7 @@ class Compte
     # ===== Attributs :
     #   - unPseudo : un +String+ représentant le pseudo du +Compte+
     #   - unMotDePasse : un +String+ représentant le mot de passedu +Compte+
-    # * +ATTENTION+ : Etant donné que le classe respecte le pattern singleton, la méthode de classe change automatiquement la variable de classe COMPTE et renvoie nil
-    # * <b>N'EST PAS UN CONSTRUCTEUR</b>
+    # * +ATTENTION+ : Etant donné que le classe respecte le pattern singleton, la méthode de classe change automaiquement la variable de classe COMPTE et renvoie nil
     def Compte.creer (unPseudo, munMotDePasse, unMail, nuPrenom, unNom)
       BaseDeDonnees.setCompte(unPseudo, unMotDePasse, unNom, unPrenom, unMail)
     end
@@ -76,7 +75,7 @@ class Compte
     def verifierMotDePasse?(unMotDePasse)
         return BaseDeDonnees.estBonsIdentifiants(@pseudo, unMotDePasse)
     end
-
+=begin
     #recuperer le compte avec l'email adresse - A terminer
     #http://www.tutorialspoint.com/ruby/ruby_sending_email.htm
     def Compte.recuperer(String unMail,opts={})
@@ -98,6 +97,7 @@ MESSAGE_END
             end
         end
     end
+=end
 
     # * Méthode d'instance qui change le mot de passe
     def changerMotDePasse(unMotDePasse)
