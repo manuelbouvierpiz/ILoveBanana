@@ -18,7 +18,7 @@ class Jeu
 	private_class_method :new, :creer
 	
 	# Création du JEU
-	@@JEU = Jeu.creer()
+	@@JEU = creer()
 	
 	# * Méthode de classe qui permet d'accéder au +JEU+ en lecture
 	# * Retourne la variable de classe JEU
