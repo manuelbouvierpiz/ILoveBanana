@@ -1,21 +1,31 @@
-require 'singleton'
-
 class Jeu
-include Singleton
 
 	@aventure
-	@didactitiel
+	@didacticiel
 	@partie
+	
+	# * Variable de classe qui représente l'unique +Jeu+ en cours
+	# * Accessible en lecture via la méthode Jeu.JEU
+	@@JEU = Jeu.creer()
 
-	private_class_method :new
+	# Méthodes de classe
+	private_class_method :new, :creer
 
 	def Jeu.creer()
 		new
 	end
+	
+	# * Méthode de classe qui permet d'accéder au +JEU+ en lecture
+	# * Retourne la variable de classe JEU
+	def Jeu.JEU
+		return @@JEU
+	end
+	
+	# Méthode d'instance
 
 	def initialize()
 		@aventure = Aventure.creer
-		@didactitiel = Didactitiel.creer
+		@didacticiel = Didacticiel.creer
 		@partie = PartieLibre.creer
 	end
 	
