@@ -9,17 +9,24 @@ class Compte
     # Variables de classe
     
     # * Variable de classe représentant le COMPTE selon le pattern singleton
-    # * Accessible en lecture via la méthode COMPTE
+    # * Accessible en lecture via la méthode de classe COMPTE
     @@COMPTE
     
 	# * Variable d'instance qui représente le pseudo du +Compte+
     attr_reader :pseudo
+    	
+    # * Méthode de classe qui permet d'accéder au COMPTE en lecture
+    # * Retourne le COMPTE (pattern singleton)
+    def Compte.COMPTE
+    	return @@COMPTE
+    end
 
     # * Méthode de classe qui demande le pseudo , le mot de passe et l'adresse email pour créer un +Compte+
     # ===== Attributs :
     #   - unPseudo : un +String+ représentant le pseudo du +Compte+
     #   - unMotDePasse : un +String+ représentant le mot de passedu +Compte+
     # * +ATTENTION+ : Etant donné que le classe respecte le pattern singleton, la méthode de classe change automaiquement la variable de classe COMPTE et renvoie nil
+    #  * <b>N'EST PAS UN CONSTRUCTEUR</b>
     def Compte.creer (unPseudo, munMotDePasse, unMail, nuPrenom, unNom)
       BaseDeDonnees.setCompte(unPseudo, unMotDePasse, unNom, unPrenom, unMail)
     end
@@ -53,7 +60,8 @@ class Compte
     def initialize(unPseudo, unMotDePasse)
       if BaseDeDonnees.estBonsIdentifiants?(unPseudo, unMotDePasse)
     	@pseudo = unPseudo
-      else
+      # Sinon erreur => Exception ?
+      end
     end
     
     # * Méthode d'instance qui retourne un String représentant le nom du +Compte+
