@@ -36,12 +36,12 @@ class ConnexionBuilder < Gtk::Builder
         #	Compte.login(unPseudo, unMotDePasse)
             # Ouvrir fenetre menu principal
         #else
-            @erreurLabel.set_text("Identifiants incorrects")
+            @label1.set_text("Identifiants incorrects")
         #end
     end
 
     def on_creationBouton_clicked
-		@erreurLabel.set_text("Identifiant déjà pris")
+		
     end
 
     Gtk.init

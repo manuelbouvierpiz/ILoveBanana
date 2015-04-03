@@ -84,7 +84,7 @@ class Compte
 
     # * Méthode d'instance qui vérifie le mot de passe
     def Compte.verifierMotDePasse?(unPseudo, unMotDePasse)
-        return BaseDeDonnees.estBonsIdentifiants?(unPseudo, unMotDePasse)
+        return BaseDeDonnees.estBonsIdentifiants(unPseudo, unMotDePasse)
     end
 =begin
     #recuperer le compte avec l'email adresse - A terminer

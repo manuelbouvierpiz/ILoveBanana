@@ -3,7 +3,7 @@
 # Version 0.1 : Date : Sat Mar 14 15:57:38 CET 2015
 #
 require "digest/md5"
-require "active_record"
+require "activerecord"
 
 load 'ClassesBdd.rb'
 
