@@ -9,12 +9,12 @@ class Defi
   
   # Variables d'instance
   
-  # * Variable d'instance qui représente l'envoyeur (+Compte+) du +Defi+
+  # * Variable d'instance (un <b>String</b>) qui représente le pseudo de l'envoyeur du +Defi+
   # * Est initialisée lors de la création de l'objet
   # * Accessible en lecture uniquement
   attr :envoyeur, false
   
-  # * Variable d'instance qui représente le destinataire (+Compte+) du +Defi+
+  # * Variable d'instance (un <b>String</b>) qui représente le pseudo du destinataire du +Defi+
   # * Est initialisée lors de la création de l'objet
   # * Accessible en lecture uniquement
   attr :destinataire, false
@@ -38,7 +38,7 @@ class Defi
   # * Supprime le +Defi+ dans la BDD
   # * Retourne nil
   def supprimer
-  	BaseDeDonnees.supprimeDefi(@destinataire.pseudo, @envoyeur.pseudo, Grille.idGrille)
+  	BaseDeDonnees.supprimeDefi(@destinataire, @envoyeur, Grille.idGrille)
   	# ACHTUNG ! L'instance n'est pas supprimée directement : NE PAS RELEVER UN DEFI SUPPRIME !!!
   	# Par précaution il vaut mieux faire listeDefis[X] = listeDefis.supprimer! afin de supprimer l'instance
   	return nil
@@ -48,7 +48,7 @@ class Defi
   # * Recherche le score de l'envoyeur dans la BDD
   # * Retourne un entier représentant le score de l'envoyeur
   def score
-  	return BaseDeDonnees.getDefiScore(envoyeur.pseudo, destinataire.pseudo, grille.idGrille)
+  	return BaseDeDonnees.getDefiScore(envoyeur, destinataire, grille.idGrille)
   end
   
   def initialize(unEnvoyeur, unDestinataire, uneGrille, unScore) # :nodoc:
@@ -65,7 +65,7 @@ class Defi
   #		- uneGrille : la Grille du Defi
   #		- unScore : un entier représentant le score réalisé par l'envoyeur
   def Defi.creer(unEnvoyeur, unDestinataire, uneGrille, unScore)
-  	new(unEnvoyeur, unDestiantaire, uneGrille, unScore)
+  	new(unEnvoyeur, unDestinataire, uneGrille, unScore)
   end
   
   private_class_method :new
