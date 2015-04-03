@@ -249,6 +249,29 @@ class Grille
 
   for x in [0..tailleMax]
   	for y in [0..tailleMax]
+
+=begin
+   
+   #Tentative d'aide quand 2 case sont vie et que le reste est identique a une ligne plein ou avec une seul case vide
+
+
+      nbVide=0
+
+      for z in [0..tailleMax]
+          colonneActuel=colonnes[x]
+         
+          
+         if caseActuelle[z].estVide?
+            nbVide+=1
+         end
+         if nbVide>2
+            z=tailleMax
+            y=tailleMax
+         end
+      end
+=end
+
+
   		if x != y
   			if colones[x]==colonnes[y]
   			return "Deux colonnes ne doivent pas etre identique."
