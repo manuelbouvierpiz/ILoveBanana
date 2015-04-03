@@ -115,7 +115,6 @@ class Grille
   
   # * Méthode d'instance qui retourne une chaine de caractères décrivant une aide possible
   def obtenirAide
-<<<<<<< HEAD
 	
 	# A compléter
 	 tailleMax = @matrice.lenght
@@ -184,60 +183,7 @@ class Grille
 	 end
 
   end
-=======
-  	
-  	# A compléter
-    tailleMax = @matrice.length
   
-    #Application des regles sur les colones
-
-    #Deplacement d'une colonne a l'autre(de gauche a droite).
-    for i in [0..tailleMax]
-        nbBleu=0
-        nbRouge=0
-  	
-        #Parcours de la colonne ( de haut en bas).
-  	    for j in [0..tailleMax]
-            caseActuelle =@matrice[i][j]
-      
-            if caseActuelle.estVide?
-                #Test si il y a une case vide entre 2 case de la meme couleurs  (Peut etre utilisé )
-                if j>0 && j<tailleMax
-                    if @matrice[i][j-1].estBleu?&&@matrice[i][j+1].estBleu? || @matrice[i][j-1].estRouge?&&@matrice[i][j+1].estRouge? 
-                        return "Il n'y a que une solution"
-                    end
-                end
-
-            #Test si il deux case de la meme couleur d'affillé a coté d'une case vide
-                if j<tailleMax-1
-                    if @matrice[i][j+2].estBleu?&&@matrice[i][j+1].estBleu? || @matrice[i][j+2].estRouge?&&@matrice[i][j+1].estRouge? 
-                        return "Il n'y a que une solution"
-                    end
-                end
-
-                if j>1
-                    if @matrice[i][j-2].estBleu?&&@matrice[i][j-1].estBleu? || @matrice[i][j-2].estRouge?&&@matrice[i][j-1].estRouge? 
-                        return "Il n'y a que une solution"
-                    end
-                end
-
-            #Test
-            end
-
-            if caseActuelle.estBleu?
-                nbBleu+=1
-            end
-            if caseActuelle.estRouge?
-                nbRouge+=1      
-            end
-        end
-    #Verifie qu'aucune des couleurs est en surnombre.
-        if nbRouge>tailleMax/2 || nbBleu>tailleMax/2
-            return "Il y a trop de case de la meme couleur"
-        end
-    end
-end
->>>>>>> 4fbdb9dd3111e89761f26864cdea6fc4efed7f62
 
 
 
@@ -303,6 +249,29 @@ end
 
   for x in [0..tailleMax]
   	for y in [0..tailleMax]
+
+=begin
+   
+   #Tentative d'aide quand 2 case sont vie et que le reste est identique a une ligne plein ou avec une seul case vide
+
+
+      nbVide=0
+
+      for z in [0..tailleMax]
+          colonneActuel=colonnes[x]
+         
+          
+         if caseActuelle[z].estVide?
+            nbVide+=1
+         end
+         if nbVide>2
+            z=tailleMax
+            y=tailleMax
+         end
+      end
+=end
+
+
   		if x != y
   			if colones[x]==colonnes[y]
   			return "Deux colonnes ne doivent pas etre identique."
@@ -315,9 +284,9 @@ end
   	end
   end
 
-
-
   
+
+
 
 
 
