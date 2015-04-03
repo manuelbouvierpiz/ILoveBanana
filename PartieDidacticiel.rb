@@ -1,14 +1,16 @@
 load 'Partie.rb'
 
-class PartieDidactitiel < Partie 
+class PartieDidacticiel < Partie 
 	
 	def PartieDidacticiel.creer(id)
-		super(id)		
+		new(id)		
 	end
 	
+	def initialize(id)
+		super(id)
+	end
 	
-	
-	def estTermine?()
-		@grille.estTermine?
+	def estTerminee?()
+		@grille.estTerminee?
 	end
 end

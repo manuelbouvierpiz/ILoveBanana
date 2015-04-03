@@ -1,4 +1,4 @@
-
+# encoding: UTF-8
 # PARMENON Damien
 # Partie.rb
 # Implementation de la classe Partie
@@ -63,14 +63,6 @@ class Partie
 	def initGrille(unIdGrille)
 		@grille = Grille.creer(unIdGrille)
 	end
-
-# A modifier
-	def lancer()
-		while(!@grille.estTerminee?())
-
-		end
-	end
-
 
 # Méthode retournant le score de la partie
 	def calculerScore()

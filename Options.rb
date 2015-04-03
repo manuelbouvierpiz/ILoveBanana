@@ -17,10 +17,10 @@ class Options
 
 # Initialise la variable avec notre base de données
 	def initialize()
-		@tabRaccourciClavier = [RaccourciClavier.new(1,"Bleu",Compte.COMPTE.pseudo),
-								RaccourciClavier.new(2,"Rouge",Compte.COMPTE.pseudo),
-								RaccourciClavier.new(3,"Pause",Compte.COMPTE.pseudo),
-								RaccourciClavier.new(4,"Hypothèse",Compte.COMPTE.pseudo)]
+		@tabRaccourciClavier = [RaccourciClavier.creer(1,"Bleu",Compte.COMPTE.pseudo),
+								RaccourciClavier.creer(2,"Rouge",Compte.COMPTE.pseudo),
+								RaccourciClavier.creer(3,"Pause",Compte.COMPTE.pseudo),
+								RaccourciClavier.creer(4,"Hypothèse",Compte.COMPTE.pseudo)]
 	end
 
 # Méthode permettant de modifier le volume des bruitages
