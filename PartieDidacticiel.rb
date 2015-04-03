@@ -6,7 +6,7 @@ class PartieDidacticiel < Partie
 		new(id)		
 	end
 	
-	def initialize
+	def initialize(id)
 		super(id)
 	end
 	
