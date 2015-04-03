@@ -10,7 +10,7 @@ class PartieDidacticiel < Partie
 		super(id)
 	end
 	
-	def estTermine?()
-		@grille.estTermine?
+	def estTerminee?()
+		@grille.estTerminee?
 	end
 end
