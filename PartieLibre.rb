@@ -8,29 +8,27 @@ load 'Partie.rb'
 
 class PartieLibre < Partie
 
-	def PartieLibre.creer(unCompte, uneTaille, uneDifficulte)
-		new(unCompte, uneTaille, uneDifficulte)
+	def PartieLibre.creer(uneTaille, uneDifficulte)
+		new(uneTaille, uneDifficulte)
 	end
 
-	def PartieLibre.creer(unCompte, unIdGrille)
-		new(unCompte, unIdGrille)
+	def PartieLibre.creer(unIdGrille)
+		new(unIdGrille)
 	end
 
-	def initialize(unCompte, uneTaille, uneDifficulte)
-		@compte = unCompte
+	def initialize(uneTaille, uneDifficulte)
 		initGrilleAlea(uneTaille, uneDifficulte)
 	end
 
-	def initialize(unCompte, unIdGrille)
-		@compte = unCompte
+	def initialize(unIdGrille)
 		initGrille(unIdGrille)
 	end
 
 	def initGrilleAlea(uneTaille, uneDifficulte)
-		@grille = Grille.new(uneTaille, uneDifficulte)
+		@grille = Grille.creer(uneTaille, uneDifficulte)
 	end
 
 	def listeDefis
-		return BaseDeDonnees.getDefis(@compte)
+		return BaseDeDonnees.getDefis(Compte.COMPTE.pseudo)
 	end
 end
