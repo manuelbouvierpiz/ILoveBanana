@@ -7,10 +7,10 @@ require "digest/md5"
 class BaseDeDonnees
 	ActiveRecord::Base.establish_connection(
 		:adapter => "mysql2",
-		:database => "6zp2nn69",
-		:username => "6zp2nn69",
-		:password => "BDDProjet2015",
-	    :host => "sql2.olympe.in"
+		:database => "takuzu_bdd",
+		:username => "root",
+		:password => "",
+	    :host => "localhost"
 	)
    
     private_class_method :new
