@@ -9,11 +9,13 @@ class Jeu
 	@@JEU
 
 	# Méthodes de classe
-	private_class_method :new, :creer
-
+	
+	# * Méthode de classe qui crée le jeu
 	def Jeu.creer()
 		new
 	end
+	
+	private_class_method :new, :creer
 	
 	# Création du JEU
 	@@JEU = Jeu.creer()
