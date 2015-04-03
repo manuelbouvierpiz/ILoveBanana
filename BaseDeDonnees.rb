@@ -189,6 +189,7 @@ class BaseDeDonnees
         newCompte.prenom = prenom
         newCompte.adresse_mail = mail
         newCompte.save
+		return self
     end
 
     def BaseDeDonnees.setRaccourci(pseudo, idRaccourci, touche)
