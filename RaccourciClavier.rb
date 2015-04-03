@@ -14,6 +14,8 @@ class RaccourciClavier
 	def RaccourciClavier.creer(id,nom)
 		new(id,nom)
 	end
+	
+	private_class_method :new
 
 	def initialize(id,nom)
 		@id,@nom = id,nom
