@@ -1,7 +1,6 @@
 class RaccourciClavier
 	@id
 	@nom
-	@pseudo
 
 	attr_reader :id , :nom
 
@@ -12,31 +11,31 @@ class RaccourciClavier
 	L'hypothese a la touche h et l'id 4.
 =end
 
-	def RaccourciClavier.creer(id,nom,pseudo)
-		initialize(id,nom,pseudo,baseDeDonnees)
+	def RaccourciClavier.creer(id,nom)
+		new(id,nom)
 	end
 
-	def initialize(id,nom,pseudo)
-		@id,@nom,@pseudo = id,nom,pseudo
+	def initialize(id,nom)
+		@id,@nom = id,nom
 		resetTouche()
 	end
 
 
 	def changerTouche
 		a=gets
-		BaseDeDonnees.setTouche(@id,'a')
+		BaseDeDonnees.setRaccourci(Compte.COMPTE.pseudo, @id,'a')
 	end
 
 	def resetTouche()
 		case @id
 			when 1
-				BaseDeDonnees.setTouche(@id,'p')
+				BaseDeDonnees.setRaccourci(Compte.COMPTE.pseudo, @id,'p')
 			when 2
-				BaseDeDonnees.setTouche(@id,'d')
+				BaseDeDonnees.setRaccourci(Compte.COMPTE.pseudo, @id,'d')
 			when 3
-				BaseDeDonnees.setTouche(@id,'f')
+				BaseDeDonnees.setRaccourci(Compte.COMPTE.pseudo, @id,'f')
 			when 4
-				BaseDeDonnees.setTouche(@id,'h')
+				BaseDeDonnees.setRaccourci(Compte.COMPTE.pseudo, @id,'h')
 		end
 	end
 end
