@@ -6,8 +6,8 @@
 require "active_record"
 load "BaseDeDonnee.rb"
 load "ClassesBdd.rb"
-load "SuccesIndividuel.rb"
-load "Case.rb"
+#load "SuccesIndividuel.rb"
+#load "Case.rb"
 
 
 # sudo apt-get install mysql-client libmysqlclient-dev 
