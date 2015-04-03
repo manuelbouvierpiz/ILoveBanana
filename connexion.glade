@@ -35,10 +35,12 @@
               <object class="GtkLabel" id="titreLabel">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="xalign">0.4699999988079071</property>
                 <property name="label" translatable="yes">Takuzu Avengers</property>
                 <property name="justify">fill</property>
                 <attributes>
                   <attribute name="underline" value="True"/>
+                  <attribute name="size" value="20000"/>
                 </attributes>
               </object>
               <packing>
@@ -110,7 +112,7 @@
                   <object class="GtkLabel" id="mdpLabel">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Mot de passe:</property>
+                    <property name="label" translatable="yes">Mots de passe:</property>
                   </object>
                   <packing>
                     <property name="expand">True</property>
