@@ -64,14 +64,6 @@ class Partie
 		@grille = Grille.creer(unIdGrille)
 	end
 
-# A modifier
-	def lancer()
-		while(!@grille.estTerminee?())
-
-		end
-	end
-
-
 # Méthode retournant le score de la partie
 	def calculerScore()
 		return @grille.getClicMin * ( getDifficulte / ( temps * nbClics * 5 ) ) * ( 1 / ( 1 + nbAides) )
