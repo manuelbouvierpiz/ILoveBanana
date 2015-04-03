@@ -1,22 +1,26 @@
-class Didactitiel 
+class Didacticiel 
 	@didactitielDeBase
 	@didactitielAvance
-
-
-=begin
 	
-Les valeurs 5 et  6 sont temporaires et servent juste pour illustrer que l'id des grilles sera connu en avance.
+	# Méthode de classe
+
+	# * Méthode de classe qui crée un nouveau didacticiel
+	def Didacticiel.creer
+		 new
+	end
 	
-=end
+	private_class_method :new
+	
+	# Méthodes d'instance
 
-
-	def Didactitiel
-		@didactitielDeBase,@didactitielAvance = PartieDidactitiel.creer(5) , PartieDidactitiel.creer(6) 
+	def initialize	# :nodoc:
+	
+		# Les valeurs 5 et  6 sont temporaires et servent juste pour illustrer que l'id des grilles sera connu en avance.
+	
+		@didactitielDeBase,@didactitielAvance = PartieDidactitiel.creer(5) , PartieDidactitiel.creer(6)
 	end
 
-
-
 	def estTermine?
-		return (@didactitielDeBase.estTermine && didactitielAvance.estTermine )
+		return (@didactitielDeBase.estTermine? && @didactitielAvance.estTermine?)
 	end
 end
