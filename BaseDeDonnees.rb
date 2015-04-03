@@ -13,7 +13,7 @@ class BaseDeDonnees
 		:database => "takuzu_bdd",
 		:username => "root",
 		:password => "",
-	    :host => "localhost"
+		:host => "localhost"
 	)
    
     private_class_method :new
