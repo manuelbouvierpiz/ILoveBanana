@@ -317,6 +317,10 @@ end
 
 
 
+  
+
+
+
 	return "Il n'y a pas de regles applicable"
   end
 
