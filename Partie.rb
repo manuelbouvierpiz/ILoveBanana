@@ -1,4 +1,4 @@
-
+# encoding: UTF-8
 # PARMENON Damien
 # Partie.rb
 # Implementation de la classe Partie
