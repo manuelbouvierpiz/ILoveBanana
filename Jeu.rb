@@ -3,7 +3,6 @@ require 'singleton'
 class Jeu
 include Singleton
 
-	@compte
 	@aventure
 	@didactitiel
 	@partie
@@ -15,7 +14,6 @@ include Singleton
 	end
 
 	def initialize()
-		@compte = Compte.creer
 		@aventure = Aventure.creer
 		@didactitiel = Didactitiel.creer
 		@partie = PartieLibre.creer
