@@ -126,44 +126,45 @@ class Grille
         nbBleu=0
         nbRouge=0
   	
-    #Parcours de la colonne ( de haut en bas).
-  	for j in [0..tailleMax]
-        caseActuelle =@matrice[i][j]
+        #Parcours de la colonne ( de haut en bas).
+  	    for j in [0..tailleMax]
+            caseActuelle =@matrice[i][j]
       
-        if caseActuelle.estVide?
-            #Test si il y a une case vide entre 2 case de la meme couleurs  (Peut etre utilisé )
-            if j>0 && j<tailleMax
-                if @matrice[i][j-1].estBleu?&&@matrice[i][j+1].estBleu? || @matrice[i][j-1].estRouge?&&@matrice[i][j+1].estRouge? 
-                    return "Il n'y a que une solution"
+            if caseActuelle.estVide?
+                #Test si il y a une case vide entre 2 case de la meme couleurs  (Peut etre utilisé )
+                if j>0 && j<tailleMax
+                    if @matrice[i][j-1].estBleu?&&@matrice[i][j+1].estBleu? || @matrice[i][j-1].estRouge?&&@matrice[i][j+1].estRouge? 
+                        return "Il n'y a que une solution"
+                    end
                 end
+
+            #Test si il deux case de la meme couleur d'affillé a coté d'une case vide
+                if j<tailleMax-1
+                    if @matrice[i][j+2].estBleu?&&@matrice[i][j+1].estBleu? || @matrice[i][j+2].estRouge?&&@matrice[i][j+1].estRouge? 
+                        return "Il n'y a que une solution"
+                    end
+                end
+
+                if j>1
+                    if @matrice[i][j-2].estBleu?&&@matrice[i][j-1].estBleu? || @matrice[i][j-2].estRouge?&&@matrice[i][j-1].estRouge? 
+                        return "Il n'y a que une solution"
+                    end
+                end
+
+            #Test
             end
 
-        #Test si il deux case de la meme couleur d'affillé a coté d'une case vide
-            if j<tailleMax-1
-                if @matrice[i][j+2].estBleu?&&@matrice[i][j+1].estBleu? || @matrice[i][j+2].estRouge?&&@matrice[i][j+1].estRouge? 
-                    return "Il n'y a que une solution"
-                end
+            if caseActuelle.estBleu?
+                nbBleu+=1
             end
-
-            if j>1
-                if @matrice[i][j-2].estBleu?&&@matrice[i][j-1].estBleu? || @matrice[i][j-2].estRouge?&&@matrice[i][j-1].estRouge? 
-                    return "Il n'y a que une solution"
-                end
+            if caseActuelle.estRouge?
+                nbRouge+=1      
             end
-
-        #Test
         end
-
-        if caseActuelle.estBleu?
-            nbBleu+=1
-        end
-        if caseActuelle.estRouge?
-            nbRouge+=1      
-        end
-    end
     #Verifie qu'aucune des couleurs est en surnombre.
-    if nbRouge>tailleMax/2 || nbBleu>tailleMax/2
-        return "Il y a trop de case de la meme couleur"
+        if nbRouge>tailleMax/2 || nbBleu>tailleMax/2
+            return "Il y a trop de case de la meme couleur"
+        end
     end
 end
 
