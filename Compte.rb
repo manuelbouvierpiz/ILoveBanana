@@ -82,6 +82,11 @@ class Compte
         return BaseDeDonnees.getPrenom(@pseudo)
     end
 
+	# * Méthode d'instance qui vérifie la disponibilité d'un identifiant
+    def Compte.verifierIdentifiant?(unPseudo)
+        return !BaseDeDonnees.getIdentifiants().include?(unPseudo)
+    end
+
     # * Méthode d'instance qui vérifie le mot de passe
     def Compte.verifierMotDePasse?(unPseudo, unMotDePasse)
         return BaseDeDonnees.estBonsIdentifiants?(unPseudo, unMotDePasse)
