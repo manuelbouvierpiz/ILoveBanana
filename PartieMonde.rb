@@ -6,7 +6,10 @@
 #	- connait son id de niveau
 #	- rendre la partie accessible (debloquer), savoir si elle est bloque (estDebloque?), connaitre le nombre d'étoile en fonction du score(nbEtoile), connaitre le score d'un joueur(scoreDuJoueur), réinitialiser la grille de la partie(initGrille)
 
-class PartieMonde
+
+load 'Partie.rb'
+
+class PartieMonde < Partie
 
 	#Variables
 	@idNiveau
