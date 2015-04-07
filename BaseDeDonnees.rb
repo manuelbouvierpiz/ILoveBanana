@@ -378,4 +378,12 @@ class BaseDeDonnees
 
         return self
     end
+    
+    def BaseDeDonnees.estIdentifiantDisponible?(pseudo)
+    	return !Comptes.exists?(:pseudo => pseudo)
+    end
+    
+    def BaseDeDonnees.estMailDisponible?(mail)
+    	return !Comptes.exists?(:mail => mail)
+    end
 end
