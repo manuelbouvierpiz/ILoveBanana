@@ -1,14 +1,14 @@
 # Alexandre MOUTEL
+# Modifications par Valentin CHAILLOU
 # PartieMonde.rb
 # Implementation de la classe PartieMonde
+
+load 'BaseDeDonnees.rb'
+load 'Partie.rb'
 
 # == Classe PartieMonde 
 #	- connait son id de niveau
 #	- rendre la partie accessible (debloquer), savoir si elle est bloque (estDebloque?), connaitre le nombre d'étoile en fonction du score(nbEtoile), connaitre le score d'un joueur(scoreDuJoueur), réinitialiser la grille de la partie(initGrille)
-
-
-load 'Partie.rb'
-
 class PartieMonde < Partie
 
 	#Variables
@@ -37,14 +37,26 @@ class PartieMonde < Partie
 		end
 	end
 
-	# Méthode d'instance qui retourne un nombre d'étoile en fonction du score obtenu
-	def nbEtoile(score)
-		# A compléter
+	# * Méthode d'instance qui retourne un nombre d'étoile en fonction du score obtenu
+	# ===== Attribut :
+	#	- unScore : un entier qui représente le score du joueur
+	def nbEtoile(unScore)
+		unResultat = 0
+		
+		if unScore > BaseDeDonnees.getGrilleEtoileTroisScore(@grille.idGrille)
+			unResultat = 3
+		elsif unScore > BaseDeDonnees.getGrilleEtoileDeuxScore(@grille.idGrille)
+			unResultat = 2
+		elsif unScore > BaseDeDonnees.getGrilleEtoileUnScore(@grille.idGrille)
+			unResultat = 1
+		end
+		
+		return unResultat
 	end
 
-	# Méthode d'instance qui retourne le score d'un joueur
+	#  * Méthode d'instance qui retourne le score d'un joueur sur ce niveau
 	def scoreDuJoueur()
-		# A compléter
+		return BaseDeDonnees.getScore(Compte.COMPTE.pseudo, @grille.idGrille)
 	end
 
 	# Méthode qui permet de réinitialiser la grille de la partie
