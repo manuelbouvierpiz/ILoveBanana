@@ -7,6 +7,8 @@
 load 'BaseDeDonnees.rb'
 
 require 'net/smtp'
+require 'mail'
+
 class Compte
     
     # Variables de classe
@@ -83,37 +85,42 @@ class Compte
     end
 
 	# * Méthode d'instance qui vérifie la disponibilité d'un identifiant
-    def Compte.verifierIdentifiant?(unPseudo)
-        return !BaseDeDonnees.getIdentifiants().include?(unPseudo)
+    def Compte.verifierIdentifiant?(unIdentifiant)
+        return BaseDeDonnees.estIdentifiantDisponible?(unIdentifiant)
+    end
+    
+    # * Méthode d'instance qui vérifie la disponibilité d'une adresse mail
+    def Compte.verifierMail?(unMail)
+        return BaseDeDonnees.estMailDisponible?(unMail)
     end
 
     # * Méthode d'instance qui vérifie le mot de passe
     def Compte.verifierMotDePasse?(unPseudo, unMotDePasse)
         return BaseDeDonnees.estBonsIdentifiants?(unPseudo, unMotDePasse)
     end
-=begin
-    #recuperer le compte avec l'email adresse - A terminer
-    #http://www.tutorialspoint.com/ruby/ruby_sending_email.htm
-    def Compte.recuperer(String unMail,opts={})
-        if(@emailAdresse == unMail)
-            opts[:server]      ||= 'localhost'
-            opts[:from]        ||= 'email@example.com'
-            opts[:from_alias]  ||= 'Example Emailer'
-            opts[:subject]     ||= "Takuzu : pseudo et mot de passe"
-            opts[:body]        ||= "Compte :" + @pseudo + " \n Mot de passe : " + @motDePasse
-message = <<MESSAGE_END
-    From: #{opts[:from_alias]} <#{opts[:from]}>
-    To: <#{unMail}>
-    Subject: #{opts[:subject]}
+    
+    #recuperer le compte avec l'adresse email
+    def Compte.recuperer(unMail)
+        
+        options = { :address              => "smtp.gmail.com",
+            :port                 => 587,
+            :domain               => 'gmail.com',
+            :user_name            => 'TakuzuAvengers',
+            :password             => 'bananekiwidu72',
+            :authentication       => 'plain',
+            :enable_starttls_auto => true  }
 
-     #{opts[:body]}
-MESSAGE_END
-             Net::SMTP.start(opts[:server]) do |smtp|
-                smtp.send_message msg, opts[:from], unMail
-            end
-        end
+		Mail.defaults do
+  			delivery_method :smtp, options
+		end
+		
+		Mail.deliver do
+			to unMail
+			from 'TakuzuAvengers@gmail.com'
+			subject 'Récupération de votre mot de passe TakuzuAvengers'
+			body "Bonjour,\nVotre mot de passe est " + attribuerMotDePasseAleatoire() + "\nCordialement,\n\nLe groupe 1"
+		end
     end
-=end
 
     # * Méthode d'instance qui change le mot de passe
     def changerMotDePasse(unMotDePasse)
@@ -122,7 +129,9 @@ MESSAGE_END
 
     # * Méthode d'instance qui attribue un mot de passe aléatoire de 6 chiffres
     def attribuerMotDePasseAleatoire()
-        changerMotDePasse(prng.rand(100000..999999).to_s)
+    	unMotDePasse = prng.rand(100000..999999).to_s
+        changerMotDePasse(unMotDePasse)
+        return unMotDePasse
     end
     
     # * Méthode d'instance qui retourne le score réalisé sur un niveau de l'aventure
