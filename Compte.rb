@@ -6,7 +6,6 @@
 
 load 'BaseDeDonnees.rb'
 
-require 'net/smtp'
 require 'mail'
 
 class Compte
