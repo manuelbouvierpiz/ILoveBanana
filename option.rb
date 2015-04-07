@@ -6,9 +6,9 @@
 #
 require 'gtk2'
 
-class Builder < Gtk::Builder
+class OptionBuilder < Gtk::Builder
 
-def initialize 
+	def initialize 
         super()
         self.add_from_file(__FILE__.sub(".rb",".glade"))
 
@@ -24,10 +24,12 @@ def initialize
 			puts handler
 			method(handler) 
 		}
+		
+		self['window1'].set_title("Hello Options")
 
-end
+	end
 
-    Gtk.init
-    builder = Builder.new()
-    Gtk.main
+    #Gtk.init
+    #builder = OptionBuilder.new()
+    #Gtk.main
 end

@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 #Kuang Nanzhem
 # Modifications apportées par Valentin CHAILLOU
 #Class Compte
