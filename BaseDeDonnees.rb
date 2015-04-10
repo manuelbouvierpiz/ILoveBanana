@@ -18,24 +18,6 @@ class BaseDeDonnees
    
     private_class_method :new
     	
-    	# Renvoie la difficulte d'une grille
-    	# - idGrille l'identifiant de la grille
-	def BaseDeDonnees.getDifficulte(idGrille)
-		return Grilles.select(:difficulte).find_by_id_grille(idGrille).difficulte
-	end
-	
-	# Renvoie le nombre de clics maximum d'une grille
-	# - idGrille l'identifiant de la grille
-	def BaseDeDonnees.getNbClicsMax(idGrille)
-		return Grilles.select(:nb_clic_max).find_by_id_grille(idGrille).nb_clic_max
-	end
-	
-	# Renvoie le temps maximum d'une grille
-	# - idGrille l'identifiant de la grille
-	def BaseDeDonnees.getTempsMax(idGrille)
-		return Grilles.select(:temps_max).find_by_id_grille(idGrille).temps_max
-	end
-	
 	# Renvoie le score d'un joueur sur une grille
 	# - pseudo le pseudo du joueur
 	# - idGrille l'identifiant de la grille
