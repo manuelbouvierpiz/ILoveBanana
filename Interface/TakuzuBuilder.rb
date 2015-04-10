@@ -2,7 +2,7 @@
 # Valentin CHAILLOU
 require 'gtk2'
 
-load 'Jeu.rb'
+load '../Jeu.rb'
 
 class TakuzuBuilder < Gtk::Builder
 	
