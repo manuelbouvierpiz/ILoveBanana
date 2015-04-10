@@ -1,6 +1,5 @@
 load 'Aventure.rb'
 load 'Didacticiel.rb'
-load 'Interface/ConnexionBuilder.rb'
 
 class Jeu
 
@@ -45,6 +44,3 @@ class Jeu
 	end
 	
 end
-
-# We are 'go' for launch !
-ConnectionBuilder.lancer
