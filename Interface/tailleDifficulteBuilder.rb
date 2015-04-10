@@ -6,7 +6,7 @@
 #
 require 'gtk2'
 
-class Builder < Gtk::Builder
+class tailleDifficulteBuilder < Gtk::Builder
 
 def initialize 
         super()
@@ -26,8 +26,4 @@ def initialize
 		}
 
 end
-
-    Gtk.init
-    builder = Builder.new()
-    Gtk.main
 end
