@@ -4,25 +4,56 @@
 #
 require 'gtk2'
 
-class ChoixMondeBuilder < Gtk::Builder
+
+class ChoixMondeBuilder < TakuzuBuilder
 
 	def initialize 
-        super()
-        self.add_from_file(__FILE__.sub(".rb",".glade"))
+        super(__FILE__,"Choix du Monde")
+	end
 
-        self['window1'].set_window_position Gtk::Window::POS_CENTER
-        self['window1'].signal_connect('destroy') { Gtk.main_quit }
-        self['window1'].show_all
-		# Creation d'une variable d'instance par composant glade
-		self.objects.each() { |p|
-     		instance_variable_set("@#{p.builder_name}".intern, self[p.builder_name])
-		}
-		
-		self.connect_signals{ |handler| 
-			puts handler
-			method(handler) 
-		}
+	def go2Village
+		monde=Jeu.JEU.Aventure.mondes[1]
+		ouvrirFenetre(ChoixGrilleBuilder.new(monde))
+	end
 
+	def go2Prairie
+		monde=Jeu.JEU.Aventure.mondes[2]
+		ouvrirFenetre(ChoixGrilleBuilder.new(monde))
+	end
+
+	def go2Foret
+		monde=Jeu.JEU.Aventure.mondes[3]
+		ouvrirFenetre(ChoixGrilleBuilder.new(monde))
+	end
+
+	def go2Mer
+		monde=Jeu.JEU.Aventure.mondes[4]
+		ouvrirFenetre(ChoixGrilleBuilder.new(monde))
+	end
+
+	def go2Dessert
+		monde=Jeu.JEU.Aventure.mondes[5]
+		ouvrirFenetre(ChoixGrilleBuilder.new(monde))
+	end
+
+	def go2Grotte
+		monde=Jeu.JEU.Aventure.mondes[6]
+		ouvrirFenetre(ChoixGrilleBuilder.new(monde))
+	end
+
+	def go2Volcan
+		monde=Jeu.JEU.Aventure.mondes[7]
+		ouvrirFenetre(ChoixGrilleBuilder.new(monde))
+	end
+
+	def go2Espace
+		monde=Jeu.JEU.Aventure.mondes[8]
+		ouvrirFenetre(ChoixGrilleBuilder.new(monde))
+	end
+
+	def go2ArcEnCiel
+		monde=Jeu.JEU.Aventure.mondes[8]
+		ouvrirFenetre(ChoixGrilleBuilder.new(monde))
 	end
 
 end

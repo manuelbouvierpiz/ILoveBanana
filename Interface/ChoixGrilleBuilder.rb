@@ -7,7 +7,7 @@
 #
 require 'gtk2'
 
-class ChoixGrilleBuilder < Gtk::Builder
+class ChoixGrilleBuilder < TakuzuBuilder
 
     #A bessoin de Monde.rb
     
@@ -16,51 +16,36 @@ class ChoixGrilleBuilder < Gtk::Builder
 
     # A mofidier pour avoir le monde (necesite de modifier aussi choix du monde)
     
-    def initialize 
-        super()
-        self.add_from_file(__FILE__.sub(".rb",".glade"))
-
-        self['window1'].set_window_position Gtk::Window::POS_CENTER
-        self['window1'].signal_connect('destroy') { Gtk.main_quit }
-        self['window1'].show_all
-       # Creation d'une variable d'instance par composant glade
-        self.objects.each() { |p|
-            instance_variable_set("@#{p.builder_name}".intern, self[p.builder_name])
-        }
-        
-        self.connect_signals{ |handler| 
-            puts handler
-            method(handler) 
-        }
-    #Met le nom du monde en fonction du monde prit en parametre
-   #    
-    #@NomMonde.set_text(@monde.nom)
+    def initialize(monde)
+      super()   
+      @monde=monde
+      @NomMonde.set_text(@monde.nom)
     end
 
     def on_niveauBouton_clicked w
-       i=w.label.to_i
-       #Recupere la taille de la grille pour ensuite lancer la bonne interface
-      # t=@monde.tableauParties[i].@grille.taille
+      i=w.label.to_i
+      #Recupere la taille de la grille pour ensuite lancer la bonne interface
+      t=@monde.tableauParties[i].@grille.taille
 
-       #
-       #A faire
-       #
-       #Passer sur la page de jeu avec la bonne taille
-       #
-       #
-       #
-       #
-       #
+      case t
+      when t=6
+        ouvriFenetre(Partie_6Builder.new)
+      when t=8
+        ouvriFenetre(Partie_8Builder.new)
+      when t=10
+        ouvriFenetre(Partie_10Builder.new)
+      when t=12
+        ouvriFenetre(Partie_12Builder.new)
+      end
     
     end
 
     def on_suivantBouton_clicked
-        #Passe a la fenetre ChoixGrille2.glade
-    
+      ouvriFenetre(ChoixGrilleSuiteBuilder.new(@monde))
     end
 
     def on_retourBouton_clicked
-        #Reviens au choix du monde
+      ouvriFenetrePrecedente()
     end
   
 end
