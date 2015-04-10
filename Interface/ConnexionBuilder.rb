@@ -6,14 +6,9 @@
 #
 require 'gtk2'
 
-#changer le path unshift pour chercher dans le répertoire père 
-$LOAD_PATH.unshift File.expand_path("../../", __FILE__)
 load 'Compte.rb'
-
-#changer le path unshift pour chercher dans le répertoire Interface 
-$LOAD_PATH.unshift File.expand_path("../../Interface", __FILE__)
-load 'TakuzuBuilder.rb'
-load 'OptionsBuilder.rb'
+load 'Interface/TakuzuBuilder.rb'
+load 'Interface/OptionsBuilder.rb'
 
 # == Classe +ConnexionBuilder+ :
 #	- sait connecter un utilisateur et créer un +Compte+
