@@ -4,9 +4,9 @@
 #
 require 'gtk2'
 
-class Builder < Gtk::Builder
+class ChoixMondeBuilder < Gtk::Builder
 
-def initialize 
+	def initialize 
         super()
         self.add_from_file(__FILE__.sub(".rb",".glade"))
 
@@ -23,9 +23,6 @@ def initialize
 			method(handler) 
 		}
 
-end
+	end
 
-    Gtk.init
-    builder = Builder.new()
-    Gtk.main
 end
