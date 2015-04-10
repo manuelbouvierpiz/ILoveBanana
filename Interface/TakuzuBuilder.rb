@@ -5,6 +5,7 @@ require 'gtk2'
 class TakuzuBuilder < Gtk::Builder
 	
 	def initialize
+		super()
 	
 		self.add_from_file(__FILE__.sub(".rb",".glade"))
 		self['window1'].set_window_position Gtk::Window::POS_CENTER
