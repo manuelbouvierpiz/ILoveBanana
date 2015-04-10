@@ -7,18 +7,13 @@
 require 'gtk2'
 
 #load 'Compte.rb'
-load 'TakuzuBuilder.rb'
-load 'OptionsBuilder.rb'
+load 'Interface/TakuzuBuilder.rb'
+load 'Interface/OptionsBuilder.rb'
 
 class ConnexionBuilder < TakuzuBuilder
 
     def initialize 
-        self.add_from_file(__FILE__.sub(".rb",".glade"))
-        
-		super()
-		
-		self['window1'].set_title("Hello Ruby")
-
+		super(__FILE__, "Connexion")
     end
 
     def on_connexionButton_clicked
