@@ -7,8 +7,8 @@
 require 'gtk2'
 
 #load 'Compte.rb'
-load 'TakuzuBuilder.rb'
-load 'OptionsBuilder.rb'
+load 'Interface/TakuzuBuilder.rb'
+load 'Interface/OptionsBuilder.rb'
 
 class ConnexionBuilder < TakuzuBuilder
 
