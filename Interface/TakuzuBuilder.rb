@@ -2,6 +2,8 @@
 # Valentin CHAILLOU
 require 'gtk2'
 
+load 'Jeu.rb'
+
 class TakuzuBuilder < Gtk::Builder
 	
 	def initialize(unNom, unNomDeFenetre)
