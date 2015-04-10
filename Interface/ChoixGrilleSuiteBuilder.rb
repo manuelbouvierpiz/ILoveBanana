@@ -36,11 +36,7 @@ class ChoixGrilleSuiteBuilder < TakuzuBuilder
     
     end
 
-    def on_suivantBouton_clicked
-      ouvriFenetre(ChoixGrilleSuiteBuilder.new(@monde))
-    end
-
-    def on_retourBouton_clicked
+    def on_precendentBouton_clicked
       ouvriFenetrePrecedente()
     end
   
