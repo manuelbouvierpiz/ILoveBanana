@@ -386,4 +386,16 @@ class BaseDeDonnees
     def BaseDeDonnees.estMailDisponible?(mail)
     	return !Comptes.exists?(:mail => mail)
     end
+    
+    def BaseDeDonnees.getGrilleEtoileUnScore(idGrille)
+    	return Grilles.select(:etoile_1).find_by_id_grille(idGrille).etoile_1
+    end
+    
+    def BaseDeDonnees.getGrilleEtoileDeuxScore(idGrille)
+    	return Grilles.select(:etoile_2).find_by_id_grille(idGrille).etoile_2
+    end
+    
+    def BaseDeDonnees.getGrilleEtoileTroisScore(idGrille)
+    	return Grilles.select(:etoile_3).find_by_id_grille(idGrille).etoile_3
+    end
 end
