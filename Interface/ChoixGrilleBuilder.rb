@@ -5,7 +5,7 @@
 #
 require 'gtk2'
 
-class Builder < Gtk::Builder
+class ChoixGrilleBuilder < Gtk::Builder
 
     #A bessoin de Monde.rb
     
@@ -60,9 +60,5 @@ class Builder < Gtk::Builder
     def on_retourBouton_clicked
         #Reviens au choix du monde
     end
-
-    Gtk.init
-    builder = Builder.new()
-    Gtk.main 
   
 end
