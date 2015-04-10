@@ -6,7 +6,7 @@
 #
 require 'gtk2'
 
-class OptionBuilder < Gtk::Builder
+class OptionsBuilder < Gtk::Builder
 
 	def initialize 
         super()
@@ -28,8 +28,4 @@ class OptionBuilder < Gtk::Builder
 		self['window1'].set_title("Hello Options")
 
 	end
-
-    #Gtk.init
-    #builder = OptionBuilder.new()
-    #Gtk.main
 end
