@@ -25,13 +25,13 @@ class ChoixGrilleSuiteBuilder < TakuzuBuilder
 
       case t
       when t=6
-        ouvriFenetre(Partie_6Builder.new)
+        ouvrirFenetre(Partie_6Builder.new)
       when t=8
-        ouvriFenetre(Partie_8Builder.new)
+        ouvrirFenetre(Partie_8Builder.new)
       when t=10
-        ouvriFenetre(Partie_10Builder.new)
+        ouvrirFenetre(Partie_10Builder.new)
       when t=12
-        ouvriFenetre(Partie_12Builder.new)
+        ouvrirFenetre(Partie_12Builder.new)
       end
     
     end
