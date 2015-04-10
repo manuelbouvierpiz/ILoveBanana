@@ -4,7 +4,8 @@ require 'gtk2'
 
 load 'Jeu.rb'
 
-# == Classe +TakuzuBuilder+
+# == Classe +TakuzuBuilder+ :
+#	- est considérée comme une classe abstraite
 #	- est la classe mère de toute fenêtre
 #	- connaît sa fenêtre précédente
 #	- sait ouvrir une nouvelle fenêtre et sa fenêtre précédente
