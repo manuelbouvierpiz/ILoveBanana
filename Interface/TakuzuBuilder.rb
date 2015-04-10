@@ -19,9 +19,6 @@ class TakuzuBuilder < Gtk::Builder
 	# * Sera utilisée lorsque la fenêtre sera ré-affichée (fenêtre précédente)
 	@nomDeFenetre
 	
-	# Etant donné que TakuzuBuilder est considéré comme une classe abstraite, il est interdit de l'instanciier
-	private_class_method :new
-	
 	# Méthodes d'instance
 	
 	def initialize(unNom, unNomDeFenetre) # :nodoc:
