@@ -8,7 +8,7 @@ require 'gtk2'
 
 #load 'Compte.rb'
 load 'TakuzuBuilder.rb'
-load 'option.rb'
+load 'OptionsBuilder.rb'
 
 class ConnexionBuilder < TakuzuBuilder
 
@@ -34,7 +34,7 @@ class ConnexionBuilder < TakuzuBuilder
 
     def on_creationBouton_clicked
 		@erreurLabel.set_text("Identifiant déjà pris")
-		ouvrirFenetre(OptionBuilder.new())
+		ouvrirFenetre(OptionsBuilder.new())
     end
 
     Gtk.init
