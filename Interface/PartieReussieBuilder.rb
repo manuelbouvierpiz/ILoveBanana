@@ -5,8 +5,7 @@
 # Version 0.1 : Date : Mon Jul 01 10:17:02 CEST 2013
 #
 require 'gtk2'
-load 'InterfaceMere.rb'
-load 'option.rb'
+load 'InterfaceMereBuilder.rb'
 
 class PartieReussieBuilder < InterfaceMereBuilder
 
@@ -26,15 +25,5 @@ def initialize
 			puts handler
 			method(handler) 
 		}
-end
-
-def PartieReussieBuilder.lanceToi
-Gtk.init
-builder = PartieReussieBuilder.new()
-Gtk.main
-end
-
-def on_button3_clicked
-    OptionsBuilder.lanceToi
 end
 end
