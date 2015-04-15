@@ -1,7 +1,6 @@
 load 'Aventure.rb'
 load 'Didacticiel.rb'
 
-
 class Jeu
 
 	@aventure
