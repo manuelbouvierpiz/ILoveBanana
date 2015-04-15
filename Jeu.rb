@@ -11,6 +11,8 @@ class Jeu
 	# * Accessible en lecture via la méthode Jeu.JEU
 	@@JEU
 
+	attr :partie, false
+
 	# Méthodes de classe
 	
 	# * Méthode de classe qui crée le jeu
