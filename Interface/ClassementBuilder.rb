@@ -34,6 +34,8 @@ class ClassementBuilder < TakuzuBuilder
     def on_button3_clicked
     	ouvrirFenetre(SuccesBuilder.new)
     end
+
+    
     Gtk.init
     ClassementBuilder.new
     Gtk.main
