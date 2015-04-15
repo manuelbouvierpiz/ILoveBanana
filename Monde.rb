@@ -3,6 +3,8 @@
 # Monde.rb
 # Implementation de la classe Monde
 
+load 'BaseDeDonnees.rb'
+
 # == Classe Monde 
 #	- connait son id, son nom, son état (bloqué/débloqué) et ses niveaux
 #	- rendre le monde accessible (debloquer), savoir si il est bloque (estDebloque?), connaitre son nom (nom), connaitre son theme(theme)
@@ -36,11 +38,17 @@ class Monde
 	end
 
 	# Méthode d'instance qui initialise le Monde
-	def initialize(unIdMonde, unNom, unTableauParties)
+	def initialize(unIdMonde, unNom)
 		@idMonde = unIdMonde
 		@nom = unNom
 		@etat = "bloqué"
-		@tableauParties = unTableauParties
+		
+		# Création du tableau de parties
+		@tableauParties = []
+		
+		0.upto(40) do |i|
+			@tableauParties += PartieMonde.creer(BaseDeDonnees.getMondeGrilleId(@idMonde, i))
+		end
 	end
 
 	attr_reader :nom
