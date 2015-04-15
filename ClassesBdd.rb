@@ -27,7 +27,7 @@ class Defis < ActiveRecord::Base
     self.table_name = :defi
 end
 
-class Monde < ActiveRecord::Base
+class Mondes < ActiveRecord::Base
     self.table_name = :monde
 end
 
