@@ -73,7 +73,7 @@ class Monde
 		
 		if !estDebloque?
 			unResultat += " (bloqué)"
-		else
+		end
 			
 		return unResultat
 	end
