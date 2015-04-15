@@ -6,11 +6,6 @@
 #
 require 'gtk2'
 
-
-#changer le path unshift pour chercher dans le répertoire Interface 
-$LOAD_PATH.unshift File.expand_path("../../Interface", __FILE__)
-load 'TakuzuBuilder.rb'
-
 class Partie_10Builder < TakuzuBuilder
     def initialize
         super(__FILE__, "Partie")

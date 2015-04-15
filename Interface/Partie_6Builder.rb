@@ -10,4 +10,7 @@ class Partie_6Builder < TakuzuBuilder
     def initialize
         super(__FILE__, "Partie")
     end
+    Gtk.init()
+    Partie6_Builder.new()
+    Gtk.main()
 end
