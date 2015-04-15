@@ -26,8 +26,4 @@ class StatistiquesBuilder < TakuzuBuilder
     def on_buttonSucces_clicked
     	ouvrirFenetre(SuccesBuilder.new)
     end
-
-    Gtk.init
-    StatistiquesBuilder.new
-    Gtk.main
 end
