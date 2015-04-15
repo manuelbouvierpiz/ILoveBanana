@@ -5,7 +5,6 @@
 # Version 0.1 : Date : Mon Jul 01 10:17:02 CEST 2013
 #
 require 'gtk2'
-load 'Interface/TakuzuBuilder.rb'
 
 class ClassementBuilder < TakuzuBuilder
 
@@ -61,9 +60,4 @@ class ClassementBuilder < TakuzuBuilder
     		# Remplissage a partir de la BDD des listes
     	end
     end
-
-    Gtk.init
-    ClassementBuilder.new
-    Gtk.main
-
 end

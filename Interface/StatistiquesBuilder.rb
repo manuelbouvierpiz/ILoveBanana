@@ -5,25 +5,29 @@
 # Version 0.1 : Date : Mon Jul 01 10:17:02 CEST 2013
 #
 require 'gtk2'
+load 'Interface/TakuzuBuilder.rb'
+load 'Interface/ClassementBuilder.rb'
+load 'Interface/SuccesBuilder.rb'
 
-class StatistiquesBuilder < Gtk::Builder
+class StatistiquesBuilder < TakuzuBuilder
 
-def initialize 
-        super()
-        self.add_from_file(__FILE__.sub(".rb",".glade"))
+	def initialize
+		super(__FILE__, "statistiques")
+		@labelTempsJeu.set_text("Temps passé en jeu :" + "")#fonction permettant d'obtenir ce temps
+		@labelPetitClic.set_text("Plus petit nombre de clics :" + "")#idem
+		@labelGrandClic.set_text("Plus grand nombre de clics :" + "")#idem
+		#Ajouter d'autres statistiques ici et dans le glade si besoin
+    end
 
-        self['window1'].set_window_position Gtk::Window::POS_CENTER
-        self['window1'].signal_connect('destroy') { Gtk.main_quit }
-        self['window1'].show_all
-		# Creation d'une variable d'instance par composant glade
-		self.objects.each() { |p|
-     		instance_variable_set("@#{p.builder_name}".intern, self[p.builder_name])
-		}
-		
-		self.connect_signals{ |handler| 
-			puts handler
-			method(handler) 
-		}
+    def on_buttonClassement_clicked
+    	ouvrirFenetre(ClassementBuilder.new)
+    end
 
-end
+    def on_buttonSucces_clicked
+    	ouvrirFenetre(SuccesBuilder.new)
+    end
+
+    Gtk.init
+    StatistiquesBuilder.new
+    Gtk.main
 end
