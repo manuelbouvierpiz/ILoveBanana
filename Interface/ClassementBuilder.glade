@@ -105,12 +105,13 @@
             <property name="border_width">20</property>
             <property name="spacing">100</property>
             <child>
-              <object class="GtkComboBox" id="combobox1">
+              <object class="GtkComboBox" id="boxNiveau">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="model">listeNiveaux</property>
                 <property name="has_entry">True</property>
                 <property name="entry_text_column">0</property>
+                <signal name="changed" handler="on_boxNiveau_changed" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -119,12 +120,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkComboBox" id="combobox2">
+              <object class="GtkComboBox" id="boxTaille">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="model">listeTaille</property>
                 <property name="has_entry">True</property>
                 <property name="entry_text_column">0</property>
+                <signal name="changed" handler="on_boxTaille_changed" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -140,9 +142,59 @@
           </packing>
         </child>
         <child>
+          <object class="GtkHBox" id="hbox5">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkLabel" id="labelRang">
+                <property name="can_focus">False</property>
+                <property name="yalign">0.50999999046325684</property>
+                <property name="xpad">6</property>
+                <property name="label" translatable="yes">Rang :</property>
+                <property name="ellipsize">middle</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="labelPseudo">
+                <property name="can_focus">False</property>
+                <property name="ypad">2</property>
+                <property name="label" translatable="yes">Pseudo :</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="labelScore">
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Score :</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
           <object class="GtkHBox" id="hbox4">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="homogeneous">True</property>
             <child>
               <object class="GtkTreeView" id="treeview1">
                 <property name="visible">True</property>
@@ -168,7 +220,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkTreeView" id="treeview4">
+              <object class="GtkTreeView" id="treeview3">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="model">listeScore</property>
@@ -183,7 +235,7 @@
           <packing>
             <property name="expand">True</property>
             <property name="fill">True</property>
-            <property name="position">2</property>
+            <property name="position">3</property>
           </packing>
         </child>
       </object>
