@@ -33,14 +33,14 @@ class Monde
 	# Méthodes d'instance
 	
 	# * Méthode d'instance qui crée un nouveau Monde
-	def Monde.creer(unIdMonde, unNom)
-		new(unIdMonde, unNom)
+	def Monde.creer(unIdMonde)
+		new(unIdMonde)
 	end
 
 	# Méthode d'instance qui initialise le Monde
-	def initialize(unIdMonde, unNom)
+	def initialize(unIdMonde)
 		@idMonde = unIdMonde
-		@nom = unNom
+		@nom = BaseDeDonnees.getMondeNom(@idMonde)
 		@etat = "bloqué"
 		
 		# Création du tableau de parties
