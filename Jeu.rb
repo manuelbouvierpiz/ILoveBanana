@@ -2,15 +2,13 @@ load 'Aventure.rb'
 load 'Didacticiel.rb'
 
 class Jeu
-
-	@aventure
-	@didacticiel
-	@partie
 	
 	# * Variable de classe qui représente l'unique +Jeu+ en cours
 	# * Accessible en lecture via la méthode Jeu.JEU
 	@@JEU
 
+	attr :partie, false
+	attr :didacticiel, false
 	attr :partie, false
 
 	# Méthodes de classe
