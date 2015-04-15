@@ -99,6 +99,33 @@ class Partie
 		@listeHypotheses.pop()
 		@hypothese = false
 	end
+	
+	def lanceToi()
+		@debutChronometre = Time.now
+        	@tourne = true	
+	end
+	
+	def arret()
+        	@finChronometre = Time.now - @debutChronometre
+        	@tourne = false
+        	@fini = true
+        	return @finChronometre.to_i
+    	end
+
+    	def mettreEnPause()
+        	@pause = Time.now
+        	@tourne = false
+    	end
+
+    	def reprise()
+        	@debutChronometre += Time.now - @pause
+        	@tourne = true
+    	end
+
+    	def getTempsChronometre()
+        	tempsActuel = Time.now - @debutChronometre
+        	return tempsActuel.to_i
+    	end
 end
 	
 
