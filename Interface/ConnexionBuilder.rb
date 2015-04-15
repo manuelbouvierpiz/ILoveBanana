@@ -8,7 +8,7 @@ require 'gtk2'
 
 load 'Compte.rb'
 load 'Interface/TakuzuBuilder.rb'
-load 'Interface/OptionsBuilder.rb'
+load 'Interface/MenuPrincipalBuilder.rb'
 
 # == Classe +ConnexionBuilder+ :
 #	- sait connecter un utilisateur et créer un +Compte+
@@ -23,7 +23,7 @@ class ConnexionBuilder < TakuzuBuilder
     def on_connexionButton_clicked
 		if Compte.verifierMotDePasse?(@loginEntry, @mdpEntry)
         	Compte.login(@loginEntry, @mdpEntry)
-            ouvrirFenetre(MenuPrincipal.new())
+            ouvrirFenetre(MenuPrincipalBuilder.new())
         else
             @erreurLabel.set_text("Identifiants incorrects")
         end
@@ -35,7 +35,7 @@ class ConnexionBuilder < TakuzuBuilder
 		#if Compte.verifierIdentifiant?(@loginEntry)
         #	Compte.creer(@loginEntry, @mdpEntry, "takuzuavengers@gmail.com")	# Mail à changer
         #	Compte.login(@loginEntry, @mdpEntry)
-        	ouvrirFenetre(MenuPrincipal.new())
+        	ouvrirFenetre(MenuPrincipalBuilder.new())
         #else
         #	@erreurLabel.set_text("Identifiants incorrects")
         #end
