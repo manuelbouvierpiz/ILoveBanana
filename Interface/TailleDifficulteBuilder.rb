@@ -1,29 +1,100 @@
 # encoding: UTF-8
 
 ##
-# Auteur Alexandre Moutel
+# Auteur Alexandre Moutel, Damien Parmenon (Code Ruby)
 # Version 0.1 : Date : Mon Jul 01 10:17:02 CEST 2013
 #
 require 'gtk2'
+load 'Interface/TakuzuBuilder.rb'
 
-class tailleDifficulteBuilder < Gtk::Builder
+class TailleDifficulteBuilder < TakuzuBuilder
+	@tailleChoisie
+# Variable contenant un Adjustment permettant le fonctionnement du curseur difficulte
+	@adjDifficulte
 
-def initialize 
-        super()
-        self.add_from_file(__FILE__.sub(".rb",".glade"))
+	def initialize 
+        super(__FILE__, "Choix de la taille et difficulté")
+        @adjDifficulte = Gtk::Adjustment.new(1, 1, 7, 1, 1, 0)
+        @hscaleDifficulte.adjustment = @adjDifficulte
+	end
 
-        self['window1'].set_window_position Gtk::Window::POS_CENTER
-        self['window1'].signal_connect('destroy') { Gtk.main_quit }
-        self['window1'].show_all
-		# Creation d'une variable d'instance par composant glade
-		self.objects.each() { |p|
-     		instance_variable_set("@#{p.builder_name}".intern, self[p.builder_name])
-		}
-		
-		self.connect_signals{ |handler| 
-			puts handler
-			method(handler) 
-		}
+# Les quatre fonctions suivantes permettent 
+# d'activer un et un seul ToggleButton
+	def on_buttonSix_toggled
+		if(@tailleChoisie != nil)
+			case @tailleChoisie
+				when 8
+					@buttonHuit.set_active(false)
+				when 10
+					@buttonDix.set_active(false)
+				when 12
+					@buttonDouze.set_active(false)
+			end
+		end		
+		@tailleChoisie = 6
+	end
 
-end
+	def on_buttonHuit_toggled
+		if(@tailleChoisie != nil)
+			case @tailleChoisie
+				when 6
+					@buttonSix.set_active(false)
+				when 10
+					@buttonDix.set_active(false)
+				when 12
+					@buttonDouze.set_active(false)
+			end
+		end
+		@tailleChoisie = 8
+	end
+
+	def on_buttonDix_toggled
+		if(@tailleChoisie != nil)
+			case @tailleChoisie
+				when 6
+					@buttonSix.set_active(false)
+				when 8
+					@buttonHuit.set_active(false)
+				when 12
+					@buttonDouze.set_active(false)
+			end
+		end
+		@tailleChoisie = 10
+	end
+
+	def on_buttonDouze_toggled
+		if(@tailleChoisie != nil)
+			case @tailleChoisie
+				when 6
+					@buttonSix.set_active(false)
+				when 8
+					@buttonHuit.set_active(false)
+				when 10
+					@buttonDix.set_active(false)
+			end
+		end
+		@tailleChoisie = 12
+	end
+
+	def on_buttonPrecedent_clicked
+		ouvrirFenetre(MenuPrincipalBuilder.new)
+	end
+
+# PAS TERMINE, eventuel parametre a fournir dans les new (@difficulteChoisie)
+# que l'on obtient avec @adjDifficulte.value
+	def on_buttonSuivant_clicked
+		case @tailleChoisie
+			when 6
+				ouvrirFenetre(Partie_6Builder.new)
+			when 8
+				ouvrirFenetre(Partie_8Builder.new)
+			when 10
+				ouvrirFenetre(Partie_10Builder.new)
+			when 12
+				ouvrirFenetre(Partie_12Builder.new)
+		end
+	end
+	Gtk.init
+	TailleDifficulteBuilder.new()
+	Gtk.main
 end
