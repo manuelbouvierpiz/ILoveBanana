@@ -11,14 +11,20 @@ class ClassementBuilder < TakuzuBuilder
 
 	def initialize
 		super(__FILE__, "Classement")
-		0.upto(7) { |n|
-			@combobox1.set_entry("#{n}")
-		}
+		
+		tabNiveau = [1, 2, 3, 4, 5, 6, 7]
+		tabNiveau.each_with_index do |e|
+  			iter = @listeNiveaux.append
+  			iter[0] = e
+		end
+		@combobox1.model=@listeNiveaux
 
-		@combobox2.append_text("6")
-		@combobox2.append_text("8")
-		@combobox2.append_text("10")
-		@combobox2.append_text("12")
+		tabTaille = [6, 8, 10, 12]
+		tabTaille.each_with_index do |e|
+  			iter = @listeTaille.append
+  			iter[0] = e
+		end
+		@combobox2.model=@listeTaille
     end
 
     def on_button2_clicked
