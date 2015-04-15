@@ -22,7 +22,7 @@ class ChoixGrilleBuilder < TakuzuBuilder
     # A mofidier pour avoir le monde (necesite de modifier aussi choix du monde)
     
     def initialize(monde)
-      super()   
+      super(__FILE__,"Choix de la grille")   
       @monde=monde
       @NomMonde.set_text(@monde.nom)
     end
