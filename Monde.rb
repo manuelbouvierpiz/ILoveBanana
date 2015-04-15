@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 # Alexandre MOUTEL
 # Modifications par Valentin CHAILLOU
 # Monde.rb
