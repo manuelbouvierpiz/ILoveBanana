@@ -1,7 +1,11 @@
+# encoding: UTF-8
+
 # Alexandre MOUTEL
 # Modifications par Valentin CHAILLOU
 # Monde.rb
 # Implementation de la classe Monde
+
+load 'BaseDeDonnees.rb'
 
 # == Classe Monde 
 #	- connait son id, son nom, son état (bloqué/débloqué) et ses niveaux
@@ -31,16 +35,22 @@ class Monde
 	# Méthodes d'instance
 	
 	# * Méthode d'instance qui crée un nouveau Monde
-	def Monde.creer(unIdMonde, unNom)
-		new(unIdMonde, unNom)
+	def Monde.creer(unIdMonde)
+		new(unIdMonde)
 	end
 
 	# Méthode d'instance qui initialise le Monde
-	def initialize(unIdMonde, unNom, unTableauParties)
+	def initialize(unIdMonde)
 		@idMonde = unIdMonde
-		@nom = unNom
+		@nom = BaseDeDonnees.getMondeNom(@idMonde)
 		@etat = "bloqué"
-		@tableauParties = unTableauParties
+		
+		# Création du tableau de parties
+		@tableauParties = []
+		
+		0.upto(40) do |i|
+			@tableauParties += PartieMonde.creer(BaseDeDonnees.getMondeGrilleId(@idMonde, i))
+		end
 	end
 
 	attr_reader :nom
@@ -63,7 +73,7 @@ class Monde
 		
 		if !estDebloque?
 			unResultat += " (bloqué)"
-		else
+		end
 			
 		return unResultat
 	end
