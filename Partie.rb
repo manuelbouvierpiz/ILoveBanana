@@ -22,6 +22,16 @@ class Partie
 	@nbHypotheses
 # Variable contenant l'id de la grille
 	@idGrille
+# Variable contenant l'heure de début du lancement du chronometre
+	@debutChronometre
+# Variable contenant la différence entre l'heure actuelle et le début du chronomètre
+    	@finChronometre
+# Variable contenant l'heure de début de la pause
+    	@pause
+# Variable indiquant si le chronomètre est actif ou non
+    	@tourne
+# Variable indiquant si le chronomètre est fini 
+    	@fini
 
 
 	private_class_method :new
@@ -45,6 +55,8 @@ class Partie
 		@hypothese = false
 		initGrille(unIdGrille)
 		@idGrille = idGrille
+		@tourne = false
+        	@fini = false
 	end
 
 # Méthode initialize du constructeur charger
@@ -99,32 +111,53 @@ class Partie
 		@listeHypotheses.pop()
 		@hypothese = false
 	end
-	
+
+# Méthode permettant de lancer le chronomètre	
 	def lanceToi()
 		@debutChronometre = Time.now
         	@tourne = true	
 	end
 	
-	def arret()
+# Méthode permettant de stopper commplètement le chronomètre
+	def arretChronometre()
         	@finChronometre = Time.now - @debutChronometre
         	@tourne = false
         	@fini = true
-        	return @finChronometre.to_i
     	end
 
-    	def mettreEnPause()
+# Méthode permettant de mettre en pause le chronomètre
+    	def mettreEnPauseChronometre()
         	@pause = Time.now
         	@tourne = false
     	end
 
-    	def reprise()
+# Méthode permettant la reprise du chronomètre après une pause
+    	def repriseChronometre()
         	@debutChronometre += Time.now - @pause
         	@tourne = true
     	end
 
-    	def getTempsChronometre()
-        	tempsActuel = Time.now - @debutChronometre
+# Méthode permettant de renvoyer le temps actuel de la partie en seconde
+    	def getTemps()
+    		if(@tourne)
+        		tempsActuel = Time.now - @debutChronometre
+        		return tempsActuel.to_i
+        	end
+        	
+        	if(@fini)
+			return @finChronometre.to_i
+        	end
+        	
+        	tempsActuel = @pause - @debutChronometre
         	return tempsActuel.to_i
+    	end
+
+# Méthode permettant de renvoyer le temps actuel de la partie en chaine de caractère pour l'affichage    	
+    	def getTempsString()
+    		unTemps = self.getTemps
+    		minute = sprintf("%02i", (unTemps % 3600) / 60)
+        	seconde = sprintf("%02i", unTemps % 60)
+        	return "#{minute}:#{seconde}"
     	end
 end
 	
