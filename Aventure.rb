@@ -1,3 +1,8 @@
+# Wilfried JOUSSE
+# Modifications apportées par Valentin CHAILLOU
+
+load 'Monde.rb'
+
 class Aventure
 
 	attr_reader :mondes
@@ -7,7 +12,7 @@ class Aventure
 	end
 
 	def initialize()
-		@mondes =[Monde.creer(1, "Village"),Monde.creer(2, "Prairie"),Monde.creer(3, "Foret"),Monde.creer(4, "Mer"),Monde.creer(5, "Desert"),Monde.creer(6, "Grotte"),Monde.creer(7, "Volcan"),Monde.creer(8, "Espace"),Monde.creer(9, "Arc-en-Ciel")]
+		@mondes =[Monde.creer(1),Monde.creer(2),Monde.creer(3),Monde.creer(4),Monde.creer(5),Monde.creer(6),Monde.creer(7),Monde.creer(8)]
 	end
 
 end
