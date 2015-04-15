@@ -10,17 +10,17 @@ class PartieReussieBuilder < TakuzuBuilder
 
 	def initialize
         super(__FILE__, "Partie Réussie")
-       	score = 102#jeu.JEU.partie.calculerScore
+       	score = Jeu.JEU.partie.calculerScore
       	@score.set_text("Score :" + score.to_s)
-        @temps.set_text("Temps :" + 20.to_s)#Jeu.JEU.partie.getTemps())
-        if(score > 100)#BaseDeDonnees.getGrilleEtoileTroisScore(jeu.JEU.partie.grille.idGrille))
-        	@nbEtoiles = Gtk::Image.new("Images/TroisEtoile.png")
-        elsif(score > BaseDeDonnees.getGrilleEtoileDeuxScore(jeu.JEU.partie.grille.idGrille))
-        	@nbEtoiles = Gtk::Image.new("Images/DeuxEtoile.png")
-        elsif(score > BaseDeDonnees.getGrilleEtoileUnScore(jeu.JEU.partie.grille.idGrille))
-        	@nbEtoiles = Gtk::Image.new("Images/UneEtoile.png")
+        @temps.set_text("Temps :" + Jeu.JEU.partie.getTempsString)
+        if(score > BaseDeDonnees.getGrilleEtoileTroisScore(Jeu.JEU.partie.grille.idGrille))
+        	@nbEtoiles.file="Images/TroisEtoile.png"
+        elsif(score > BaseDeDonnees.getGrilleEtoileDeuxScore(Jeu.JEU.partie.grille.idGrille))
+        	@nbEtoiles.file="Images/DeuxEtoile.png"
+        elsif(score > BaseDeDonnees.getGrilleEtoileUnScore(Jeu.JEU.partie.grille.idGrille))
+        	@nbEtoiles.file="Images/UneEtoile.png"
         else
-        	@nbEtoiles = Gtk::Image.new("Images/ZeroEtoile.png")
+        	@nbEtoiles.file="Images/ZeroEtoile.png"
         end    
 	end
 
