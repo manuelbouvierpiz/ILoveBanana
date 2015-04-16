@@ -6,7 +6,7 @@
 #
 require 'gtk2'
 
-class Partie_12Builder < TakuzuBuilder
+class Partie12Builder < TakuzuBuilder
     def initialize
         super(__FILE__, "Partie")
     end

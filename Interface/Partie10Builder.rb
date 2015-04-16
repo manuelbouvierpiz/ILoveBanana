@@ -8,7 +8,7 @@ require 'gtk2'
 
 load 'Interface/TakuzuBuilder.rb'
 
-class Partie_10Builder < TakuzuBuilder
+class Partie10Builder < TakuzuBuilder
     def initialize
         super(__FILE__, "Partie")
 
@@ -19,6 +19,6 @@ class Partie_10Builder < TakuzuBuilder
     end
 
 	Gtk.init
-	Partie_10Builder.new
+	Partie10Builder.new
 	Gtk.main
 end

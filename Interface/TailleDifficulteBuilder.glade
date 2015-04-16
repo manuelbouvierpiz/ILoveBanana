@@ -76,11 +76,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkToggleButton" id="togglebutton1">
+              <object class="GtkToggleButton" id="buttonSix">
                 <property name="label" translatable="yes">6</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <signal name="toggled" handler="on_buttonSix_toggled" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -100,11 +102,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkToggleButton" id="togglebutton2">
+              <object class="GtkToggleButton" id="buttonHuit">
                 <property name="label" translatable="yes">8</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <signal name="toggled" handler="on_buttonHuit_toggled" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -124,11 +128,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkToggleButton" id="togglebutton3">
+              <object class="GtkToggleButton" id="buttonDix">
                 <property name="label" translatable="yes">10</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <signal name="toggled" handler="on_buttonDix_toggled" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -148,11 +154,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkToggleButton" id="togglebutton4">
+              <object class="GtkToggleButton" id="buttonDouze">
                 <property name="label" translatable="yes">12</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <signal name="toggled" handler="on_buttonDouze_toggled" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -243,10 +251,15 @@
               </packing>
             </child>
             <child>
-              <object class="GtkHScale" id="hscale1">
+              <object class="GtkHScale" id="hscaleDifficulte">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="upper_stepper_sensitivity">on</property>
+                <property name="restrict_to_fill_level">False</property>
+                <property name="fill_level">7</property>
                 <property name="round_digits">1</property>
+                <property name="digits">0</property>
+                <property name="value_pos">left</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -299,11 +312,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button5">
+              <object class="GtkButton" id="buttonPrecedent">
                 <property name="label" translatable="yes">Précédent</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <signal name="clicked" handler="on_buttonPrecedent_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -356,11 +371,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button6">
+              <object class="GtkButton" id="buttonSuivant">
                 <property name="label" translatable="yes">Suivant</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <signal name="clicked" handler="on_buttonSuivant_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>

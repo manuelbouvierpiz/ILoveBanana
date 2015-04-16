@@ -59,6 +59,7 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
+            <signal name="clicked" handler="on_validerButton_clicked" swapped="no"/>
           </object>
           <packing>
             <property name="x">210</property>
@@ -73,6 +74,7 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
+            <signal name="clicked" handler="on_annulerButton_clicked" swapped="no"/>
           </object>
           <packing>
             <property name="x">330</property>

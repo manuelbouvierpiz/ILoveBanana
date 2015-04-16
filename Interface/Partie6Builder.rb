@@ -6,11 +6,11 @@
 #
 require 'gtk2'
 
-class Partie_6Builder < TakuzuBuilder
+class Partie6Builder < TakuzuBuilder
     def initialize
         super(__FILE__, "Partie")
     end
     Gtk.init()
-    Partie6_Builder.new()
+    Partie6Builder.new()
     Gtk.main()
 end

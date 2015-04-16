@@ -1,29 +1,23 @@
 # encoding: UTF-8
 
 ##
-# Auteur Pierre Jacoboni
+# Auteur Alexandre Moutel, Damien Parmenon (Code Ruby)
 # Version 0.1 : Date : Mon Jul 01 10:17:02 CEST 2013
 #
 require 'gtk2'
 
-class SuccesBuilder < Gtk::Builder
+class SuccesBuilder < TakuzuBuilder
 
-def initialize 
-        super()
-        self.add_from_file(__FILE__.sub(".rb",".glade"))
+def initialize
+		super(__FILE__, "Succès")
+		#Affichage des succès ici
+    end
 
-        self['window1'].set_window_position Gtk::Window::POS_CENTER
-        self['window1'].signal_connect('destroy') { Gtk.main_quit }
-        self['window1'].show_all
-		# Creation d'une variable d'instance par composant glade
-		self.objects.each() { |p|
-     		instance_variable_set("@#{p.builder_name}".intern, self[p.builder_name])
-		}
-		
-		self.connect_signals{ |handler| 
-			puts handler
-			method(handler) 
-		}
+    def on_buttonClassement_clicked
+    	ouvrirFenetre(ClassementBuilder.new)
+    end
 
-end
+    def on_buttonStatistiques_clicked
+    	ouvrirFenetre(StatistiquesBuilder.new)
+    end
 end

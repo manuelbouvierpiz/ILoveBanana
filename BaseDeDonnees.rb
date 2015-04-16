@@ -545,4 +545,24 @@ class BaseDeDonnees
     def BaseDeDonnees.getGrilleEtoileTroisScore(idGrille)
     	return Grilles.select(:etoile_3).find_by_id_grille(idGrille).etoile_3
     end
+    
+    # Renvoie l'identifiant d'une grille par rapport à un monde et numèro de niveau
+    # - idMonde l'identifiant du monde
+    # - numNiveau le numéro du niveau
+    def BaseDeDonnees.getMondeGrilleId(idMonde, numNiveau)
+    	return Grilles.select(:id_grille).where(:id_monde => idMonde, :numero_niveau => numNiveau).id_grille	
+    end
+    
+    # Renvoie le nom d'un monde par rapport à son identifiant
+    # - idMonde l'identifiant du monde
+    def BaseDeDonnees.getMondeNom(idMonde)
+	return Mondes.select(:nom_monde).find_by_id_monde(idMonde).nom_monde   
+    end
+    
+    # Renvoie l'identifiant d'une grille de façon alétoire en fonction d'une taille et d'une difficulté
+    # - taille la taille de la grille
+    # - difficulte la difficulté de la grille
+    def BaseDeDonnees.getGrilleIdAleatoire(taille, difficulte)
+    	return Grilles.select(:id_grille).where(:taille => taille, :difficulte => difficulte).order("RAND()").first.id_grille
+    end
 end
