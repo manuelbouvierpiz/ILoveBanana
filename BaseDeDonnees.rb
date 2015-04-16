@@ -597,7 +597,7 @@ class BaseDeDonnees
     # Renvoie le nombre de grilles accompli en moins de 1 minute pour des grilles de taille 12
     # - pseudo le pseudo du joueur
     def BaseDeDonnees.getNbGrilleTailleDouzeMoinsSoixante(pseudo)
-    	return GrilleFinis.joins("JOIN grille ON grille.id_grille = grille_fini.id_grille").where(:pseudo => pseudo, :taille => 12, :temps < 60).count
+    	return GrilleFinis.joins("JOIN grille ON grille.id_grille = grille_fini.id_grille").where("pseudo = ? AND taille = ? AND temps < ?",pseudo, 12, 60).count
     end
     
     # Renvoie le nombre de défi gagné
