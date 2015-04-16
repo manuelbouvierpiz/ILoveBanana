@@ -572,14 +572,14 @@ class BaseDeDonnees
     # - pseudo le pseudo du joueur
     # - taille la taille de la grille
     def BaseDeDonnees.getNbGrilleTailleFini(pseudo, taille)
-    	return GrilleFinis.joins("JOIN grille ON grille.id_grille = grille_fini.id_grille").where(:pseudo => pseudo, :taille => taille).count	
+    	return GrilleFinis.joins("JOIN grille ON grille.id_grille = grille_fini.id_grille").where("pseudo = ? AND taille = ?", pseudo, taille).count	
     end
     
     # Renvoie le nombre de grilles accomplis sans aide en fonction d'une difficulte
     # - pseudo le pseudo du joueur
     # - difficulte la difficulte de la grille
     def BaseDeDonnees.getNbGrilleDifficulteSansAideFini(pseudo, difficulte)
-    	return GrilleFinis.joins("JOIN grille ON grille.id_grille = grille_fini.id_grille").where(:pseudo => pseudo, :difficulte => difficulte, :nb_aide => 0).count 
+    	return GrilleFinis.joins("JOIN grille ON grille.id_grille = grille_fini.id_grille").where("pseudo = ? AND difficulte = ? AND nb_aide = ?",pseudo, difficulte, 0).count 
     end
     
     # Renvoie un booleen indiquant l'accomplissement total d'un monde ou non
