@@ -559,7 +559,13 @@ class BaseDeDonnees
 	return Mondes.select(:nom_monde).find_by_id_monde(idMonde).nom_monde   
     end
     
+    # Renvoie l'identifiant d'une grille de façon alétoire en fonction d'une taille et d'une difficulté
+    # - taille la taille de la grille
+    # - difficulte la difficulté de la grille
     def BadeDeDonnees.getGrilleIdAleatoire(taille, difficulte)
-    	Grilles.
+    	nbMin = Grilles.select(:id_grille).where(:taille => taille, :difficulte => difficulte, :numero_niveau => nil, id_monde => nil).minimum(:id_grille).id_grille
+    	nbMax = Grilles.select(:id_grille).where(:taille => taille, :difficulte => difficulte, :numero_niveau => nil, id_monde => nil).maximum(:id_grille).id_grille
+    	idGrilleAleatoire = Random.rand(nbMin...nbMax)
+    	return idGrilleAleatoire
     end
 end
