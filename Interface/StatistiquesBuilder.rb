@@ -11,19 +11,56 @@ load 'Interface/SuccesBuilder.rb'
 
 class StatistiquesBuilder < TakuzuBuilder
 
+    @boolTaille
+
 	def initialize
-		super(__FILE__, "statistiques")
+		super(__FILE__, "Statistiques")
 		@labelTempsJeu.set_text("Temps passé en jeu :" + "")#fonction permettant d'obtenir ce temps
 		@labelPetitClic.set_text("Plus petit nombre de clics :" + "")#idem
 		@labelGrandClic.set_text("Plus grand nombre de clics :" + "")#idem
-		#Ajouter d'autres statistiques ici et dans le glade si besoin
+
+        tabNiveau = [1, 2, 3, 4, 5, 6, 7]
+        tabNiveau.each_with_index do |e|
+            iter = @listeNiveaux.append
+            iter[0] = e
+        end
+        @boxNiveau.model=@listeNiveaux
+
+        tabTaille = [6, 8, 10, 12]
+        tabTaille.each_with_index do |e|
+            iter = @listeTaille.append
+            iter[0] = e
+        end
+        @boxTaille.model=@listeTaille
+		
     end
 
     def on_buttonClassement_clicked
-    	ouvrirFenetreNonFermante(ClassementBuilder.new)
+    	ouvrirFenetre(ClassementBuilder.new)
     end
 
     def on_buttonSucces_clicked
     	ouvrirFenetre(SuccesBuilder.new)
     end
+
+    def on_buttonMenuPrincipal_clicked
+        ouvrirFenetre(MenuPrincipalBuilder.new)
+    end
+
+    def on_boxNiveau_changed
+        @boolNiveau = true
+        if(@boolTaille == true)
+            @labelResultat.set_text("#{100}")
+        end
+    end
+
+    def on_boxTaille_changed
+        @boolTaille = true
+        if(@boolNiveau == true)
+            @labelResultat.set_text("#{100}")
+        end
+    end
+    Gtk.init
+    StatistiquesBuilder.new()
+    Gtk.main
 end
