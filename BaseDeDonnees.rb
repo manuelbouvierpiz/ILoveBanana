@@ -101,7 +101,8 @@ class BaseDeDonnees
 	# - pseudo le pseudo du joueur
 	# - motDePasse le mot de passe du joueur
 	def BaseDeDonnees.estBonsIdentifiants?(pseudo, motDePasse)
-		return Comptes.exists?(:pseudo => pseudo, :mot_de_passe => motDePasse)
+		mdpCrypte = Digest::MD5.hexdigest(motDePasse)
+		return Comptes.exists?(:pseudo => pseudo, :mot_de_passe => mdpCrypte)
 	end
 	
 	# Modifie dans la base la couleur du clic gauche du joueur
@@ -130,7 +131,8 @@ class BaseDeDonnees
 	# - pseudo le pseudo du joueur
 	# - motDePasse le mot de passe souhaité
 	def BaseDeDonnees.setMotDePasse(pseudo, motDePasse)
-		Comptes.where(:pseudo => pseudo).update_all(mot_de_passe: motDePasse)
+		mdpCrypte = Digest::MD5.hexdigest(motDePasse)
+		Comptes.where(:pseudo => pseudo).update_all(mot_de_passe: mdpCrypte)
 		return self
 	end
 	
