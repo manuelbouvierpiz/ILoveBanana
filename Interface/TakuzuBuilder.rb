@@ -3,7 +3,7 @@
 
 require 'gtk2'
 
-#load 'Jeu.rb'
+load 'Jeu.rb'
 
 # == Classe +TakuzuBuilder+ :
 #	- est considérée comme une classe abstraite

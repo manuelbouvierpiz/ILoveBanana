@@ -9,7 +9,7 @@ require 'gtk2'
 
 load 'Interface/TakuzuBuilder.rb'
 
-# == Classe PartieBuilder :
+# == Classe +PartieBuilder+ :
 #	- est un TakuzuBuilder
 #	- est considérée comme une classe abstraite
 #	- connaît sa partie
@@ -19,6 +19,23 @@ class PartieBuilder < TakuzuBuilder
 
 	# * Variable d'instance non accessible qui représente la partie en cours
 	@partie
+
+	# Méthodes de classe
+
+	# * Méthode de classe qui permet de créer une +PartieBuilder+
+	# ===== Attributs :
+	#	- unMonde : un +Monde+ dans lequel se trouve la +Partie+
+	#	- unePartie : une +Partie+ à lancer 
+	def PartieBuilder.creer(unePartie, unMonde)
+		new(unePartie, unMonde)
+	end
+
+	# * Méthode de classe qui permet de créer une +PartieBuilder+
+	# ===== Attribut :
+	#	- unePartie : une +Partie+ à lancer
+	def PartieBuilder.creer(unePartie)
+		new(unePartie)
+	end
 
 	# Méthodes d'instance
 
@@ -40,21 +57,16 @@ class PartieBuilder < TakuzuBuilder
 		@partie.lanceToi
 	end
 
-	# Méthodes de classe
-
-	# * Méthode de classe qui permet de créer une +PartieBuilder+
-	# ===== Attributs :
-	#	- unMonde : un +Monde+ dans lequel se trouve la +Partie+
-	#	- unePartie : une +Partie+ à lancer 
-	def PartieBuilder.creer(unePartie, unMonde)
-		new(unePartie, unMonde)
-	end
-
-	# * Méthode de classe qui permet de créer une +PartieBuilder+
-	# ===== Attributs :
-	#	- unePartie : une +Partie+ à lancer
-	def PartieBuilder.creer(unePartie)
-		new(unePartie)
+	# * Méthode d'instance qui permet de modifier l'état d'une +Case+
+	# * Est automatiquement appelée par Gtk
+	def	on_bouton_clicked(unX, unY)
+		if @partie.grille.matrice[unX-1][unY-1].estVide? or @partie.grille.matrice[unX][unY].estBleu?
+			@partie.grille.matrice[unX-1][unY-1].setRouge
+			exec("@bouton_#{unX}_#{unY}.image.modify_fg(Gtk::STATE_NORMAL, Gdk::Color.new(\"#rrrrggggbbbb\"))")	# TODO => Rechercher la couleur dans les options
+		else # if @partie.grille.matrice[unX-1][unY-1].estRouge?
+			@partie.grille.matrice[unX-1][unY-1].setBleu
+			exec("@bouton_#{unX}_#{unY}.image.modify_fg(Gtk::STATE_NORMAL, Gdk::Color.new(\"#rrrrggggbbbb\"))")	# TODO => Rechercher la couleur dans les options
+		end
 	end
 
 	private_class_method :new
