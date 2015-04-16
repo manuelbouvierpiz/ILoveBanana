@@ -8,16 +8,31 @@ require 'gtk2'
 
 load 'Interface/TakuzuBuilder.rb'
 load 'Interface/TailleDifficulteBuilder.rb'
+load 'Defi.rb'
+load 'Compte.rb'
 
 class DefiBuilder < TakuzuBuilder
-    def initialize
+	
+	attr :grille , false
+	
+	attr :score , false
+	
+    def initialize(uneGrille,unScore)
         super(__FILE__, "Defi")
     end
     
     	def on_validerButton_clicked
-		#chercher le personne defi sur BDD ( labelPseudo )
-		#ouvrir le fenetre TailleDifficulteBuilder
-		ouvrirFenetre(TailleDifficulteBuilder.new)
+		Defi.creer(Compte.COMPTE.pseudo,labelPseudo,@grille,@score)
+		case @grille.taille
+			when 6
+				ouvrirFenetre(Partie6Builder.creer(PartieLibre.creer(6,@grille.difficulte)))
+			when 8
+				ouvrirFenetre(Partie8Builder.creer(PartieLibre.creer(8,@grille.difficulte)))
+			when 10
+				ouvrirFenetre(Partie10Builder.creer(PartieLibre.creer(10,@grille.difficulte)))
+			when 12
+				ouvrirFenetre(Partie12Builder.creer(PartieLibre.creer(12,@grille.difficulte)))
+		end
 	end
 	
 	#Methode de classe qui fermer le defi
@@ -28,9 +43,14 @@ class DefiBuilder < TakuzuBuilder
 	
 	#Méthode de classse
 	# * Méthode de classe qui lance l'interface graphique
-	def DefiBuilder.lancer
+	def DefiBuilder.lancer(uneGrille,unScore)
 		Gtk.init
-		DefiBuilder.new()
+		DefiBuilder.new(uneGrille,unScore)
 		Gtk.main
+    	end
+    	
+    	def DefiBuilder.creer(uneGrille,unScore)
+    		@grille = uneGrille
+    		@score = unSocre
     	end
 end

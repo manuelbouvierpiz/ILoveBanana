@@ -9,7 +9,7 @@ class Jeu
 
 	attr :partie, false
 	attr :didacticiel, false
-	attr :partie, false
+	attr :aventure, false
 
 	# Méthodes de classe
 	

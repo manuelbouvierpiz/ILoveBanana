@@ -27,14 +27,18 @@ class SuccesIndividuel
         return BaseDeDonnees.estSuccesDebloque?(@idSucces, Compte.COMPTE.pseudo)
     end
 
+    def nom()
+        return BaseDeDonnees.getNom(@idSucces)
+    end
+
     # Méthode pour obtenir la description du succes
     def description()
-        BaseDeDonnees.getSuccesDescription(@idSucces)
+        return BaseDeDonnees.getSuccesDescription(@idSucces)
     end
 
     # Méthode pour obtenir la condition du succes
     def condition()
-        BaseDeDonnees.getSuccesCondition(@idSucces)
+        return BaseDeDonnees.getSuccesCondition(@idSucces)
     end
     
 end
