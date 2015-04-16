@@ -16,7 +16,6 @@ class DefiBuilder < TakuzuBuilder
     
     	def on_validerButton_clicked
 		#chercher le personne defi sur BDD ( labelPseudo )
-		
 		#ouvrir le fenetre TailleDifficulteBuilder
 		ouvrirFenetre(TailleDifficulteBuilder.new)
 	end
