@@ -22,6 +22,10 @@ class Monde
 	# * Variable d'instance (un <b>String</b>) qui représente le nom du monde
 	# * Accessible en lecture uniquement
 	attr :nom, false
+
+	# * Variable d'instance (un <b>String</b>) qui représente le chemin d'accès à l'image du +Monde+
+	# * Accessible en lecture uniquement
+	attr :image, false
 	
 	# * Variable d'instance (un <b>String</b>) qui représente l'état du monde
 	# * Non accessible
@@ -35,13 +39,14 @@ class Monde
 	# Méthodes d'instance
 	
 	# * Méthode d'instance qui crée un nouveau Monde
-	def Monde.creer(unIdMonde)
-		new(unIdMonde)
+	def Monde.creer(unIdMonde, uneImage)
+		new(unIdMonde, uneImage)
 	end
 
 	# Méthode d'instance qui initialise le Monde
-	def initialize(unIdMonde)
+	def initialize(unIdMonde, uneImage)
 		@idMonde = unIdMonde
+		@image = uneImage
 		@nom = BaseDeDonnees.getMondeNom(@idMonde)
 		@etat = "bloqué"
 		
@@ -52,8 +57,6 @@ class Monde
 			@tableauParties += PartieMonde.creer(BaseDeDonnees.getMondeGrilleId(@idMonde, i))
 		end
 	end
-
-	attr_reader :nom
 
 	# Méthode d'instance qui permet de donner l'accès à un Monde
 	def debloquer()

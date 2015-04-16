@@ -12,7 +12,7 @@ class Aventure
 	end
 
 	def initialize()
-		@mondes =[Monde.creer(1),Monde.creer(2),Monde.creer(3),Monde.creer(4),Monde.creer(5),Monde.creer(6),Monde.creer(7),Monde.creer(8)]
+		@mondes =[Monde.creer(1, "Images/prairie.png"),Monde.creer(2, "Images/foret.png"),Monde.creer(3, "Images/mer.png"),Monde.creer(4, "Images/desert.png"),Monde.creer(5, "Images/grotte.png"),Monde.creer(6, "Images/volcan.png"),Monde.creer(7, "Images/espace.png"),Monde.creer(8, "Images/arc-en-ciel.png")]
 	end
 
 end
