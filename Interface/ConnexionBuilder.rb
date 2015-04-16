@@ -7,7 +7,7 @@
 require 'gtk2'
 
 #load 'Compte.rb'
-load 'Interface/TakuzuBuilder.rb'
+#load 'Interface/TakuzuBuilder.rb'
 load 'Interface/MenuPrincipalBuilder.rb'
 
 # == Classe +ConnexionBuilder+ :
@@ -21,7 +21,7 @@ class ConnexionBuilder < TakuzuBuilder
 	# * Méthode d'instance qui permet de connecter un utilisateur après avoir cliqué sur le bouton de connexion
 	# * Est automatiquement appelée par Gtk
     def on_connexionButton_clicked
-	#if Compte.verifierMotDePasse?(@loginEntry, @mdpEntry)
+		#if Compte.verifierMotDePasse?(@loginEntry, @mdpEntry)
         #	Compte.login(@loginEntry, @mdpEntry)
         	ouvrirFenetre(MenuPrincipalBuilder.new())
         #else
@@ -32,7 +32,7 @@ class ConnexionBuilder < TakuzuBuilder
 	# * Méthode d'instance qui permet de créer un compte après avoir cliqué sur le bouton de création d'un compte
 	# * Est automatiquement appelée par Gtk
     def on_creationBouton_clicked
-	#if Compte.verifierIdentifiant?(@loginEntry)
+		#if Compte.verifierIdentifiant?(@loginEntry)
         #	Compte.creer(@loginEntry, @mdpEntry, "takuzuavengers@gmail.com")	# Mail à changer
         #	Compte.login(@loginEntry, @mdpEntry)
         	ouvrirFenetre(MenuPrincipalBuilder.new())
