@@ -562,7 +562,7 @@ class BaseDeDonnees
     # Renvoie l'identifiant d'une grille de façon alétoire en fonction d'une taille et d'une difficulté
     # - taille la taille de la grille
     # - difficulte la difficulté de la grille
-    def BadeDeDonnees.getGrilleIdAleatoire(taille, difficulte)
+    def BaseDeDonnees.getGrilleIdAleatoire(taille, difficulte)
     	nbMin = Grilles.select(:id_grille).where(:taille => taille, :difficulte => difficulte, :numero_niveau => nil, id_monde => nil).minimum(:id_grille)
     	nbMax = Grilles.select(:id_grille).where(:taille => taille, :difficulte => difficulte, :numero_niveau => nil, id_monde => nil).maximum(:id_grille)
     	idGrilleAleatoire = Random.rand(nbMin...nbMax)
