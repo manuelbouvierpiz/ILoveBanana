@@ -16,7 +16,7 @@ class BaseDeDonnees
 		:host => "localhost"
 	)
    
-    private_class_method :new
+    	private_class_method :new
     	
 	# Renvoie le score d'un joueur sur une grille
 	# - pseudo le pseudo du joueur
