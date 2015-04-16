@@ -35,7 +35,7 @@ class ConnexionBuilder < TakuzuBuilder
 		#if Compte.verifierIdentifiant?(@loginEntry)
         #	Compte.creer(@loginEntry, @mdpEntry, "takuzuavengers@gmail.com")	# Mail à changer
         #	Compte.login(@loginEntry, @mdpEntry)
-        	ouvrirFenetre(MenuPrincipalBuilder.new())
+        	ouvrirFenetreNonFermante(MenuPrincipalBuilder.new())
         #else
         #	@erreurLabel.set_text("Identifiants incorrects")
         #end
