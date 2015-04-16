@@ -7,6 +7,9 @@
 #======Class Compte=====
 
 load 'BaseDeDonnees.rb'
+load 'Options.rb'
+load 'Succes.rb'
+load 'Statistiques.rb'
 
 require 'mail'
 
@@ -18,8 +21,17 @@ class Compte
     # * Accessible en lecture via la méthode de classe COMPTE
     @@COMPTE
     
-	# * Variable d'instance qui représente le pseudo du +Compte+
+	# * Variable d'instance accessible en lecture uniquement qui représente le pseudo du +Compte+
     attr_reader :pseudo
+    	
+    # * Variable d'instance accessible en lecture uniquement qui représente les +Statistiques+
+    attr :statistiques, false
+    
+    # * Variable d'instance accessible en lecture uniquement qui représente les +Options+
+    attr :options, false
+    
+    # * Variable d'instance accessible en lecture uniquement qui représente les +Succes+
+    attr :succes, false
     	
     # * Méthode de classe qui permet d'accéder au COMPTE en lecture
     # * Retourne le COMPTE (pattern singleton)
@@ -64,10 +76,13 @@ class Compte
     
     # * Méthode d'instance qui intialise le +Compte+
     def initialize(unPseudo, unMotDePasse)
-      if BaseDeDonnees.estBonsIdentifiants?(unPseudo, unMotDePasse)
-    	@pseudo = unPseudo
-      # Sinon erreur => Exception ?
-      end
+    	if BaseDeDonnees.estBonsIdentifiants?(unPseudo, unMotDePasse)
+    		@pseudo = unPseudo
+    	# Sinon erreur => Exception ?
+    	end
+    	@statistiques = Statistiques.new
+    	@options = Options.new
+    	@succes = Succes.new
     end
     
     # * Méthode d'instance qui retourne un String représentant le nom du +Compte+
