@@ -558,4 +558,8 @@ class BaseDeDonnees
     def BaseDeDonnees.getMondeNom(idMonde)
 	return Mondes.select(:nom_monde).find_by_id_monde(idMonde).nom_monde   
     end
+    
+    def BadeDeDonnees.getGrilleIdAleatoire(taille, difficulte)
+    	Grilles.
+    end
 end
