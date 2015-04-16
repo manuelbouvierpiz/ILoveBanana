@@ -17,7 +17,7 @@ class DefiBuilder < TakuzuBuilder
 	
 	attr :score , false
 	
-    def initialize
+    def initialize(uneGrille,unScore)
         super(__FILE__, "Defi")
     end
     
@@ -43,9 +43,9 @@ class DefiBuilder < TakuzuBuilder
 	
 	#Méthode de classse
 	# * Méthode de classe qui lance l'interface graphique
-	def DefiBuilder.lancer
+	def DefiBuilder.lancer(uneGrille,unScore)
 		Gtk.init
-		DefiBuilder.new()
+		DefiBuilder.new(uneGrille,unScore)
 		Gtk.main
     	end
     	
