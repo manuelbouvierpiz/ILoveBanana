@@ -13,16 +13,20 @@ class DefiBuilder < TakuzuBuilder
         super(__FILE__, "Defi")
     end
     
-    def on_validerButton_clicked
-		#chercher le personne defi ( labelPseudo )
+    	def on_validerButton_clicked
+		#chercher le personne defi sur BDD ( labelPseudo )
 		
-		#ouvrir le fenetre de defi
+		#ouvrir le fenetre de defi ( taille de 12/10/8/6 )
 	end
-
+	
+	#Methode de classe qui fermer le defi
 	def on_annulerButton_clicked
 		ouvrirFenetre(MenuPrincipalBuilder.new())
 	end
-
+	
+	
+	#Méthode de classse
+	# * Méthode de classe qui lance l'interface graphique
 	def DefiBuilder.lancer
 		Gtk.init
 		DefiBuilder.new()
