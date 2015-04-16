@@ -605,6 +605,6 @@ class BaseDeDonnees
     # Renvoie le nombre de défi gagné
     # - pseudo le pseudo du joueur
     def BaseDeDonnees.getNbDefiGagne(pseudo)
-    	return Defis.where(:vainqueur => pseudo).count
+    	return Defis.where(:pseudo_vainqueur => pseudo).count
     end
 end
