@@ -16,7 +16,7 @@ class BaseDeDonnees
 		:host => "localhost"
 	)
    
-    private_class_method :new
+    	private_class_method :new
     	
 	# Renvoie le score d'un joueur sur une grille
 	# - pseudo le pseudo du joueur
@@ -564,5 +564,45 @@ class BaseDeDonnees
     # - difficulte la difficulté de la grille
     def BaseDeDonnees.getGrilleIdAleatoire(taille, difficulte)
     	return Grilles.select(:id_grille).where(:taille => taille, :difficulte => difficulte).order("RAND()").first.id_grille
+    end
+    
+    # Renvoie le nombre de grilles accomplis en fonction d'une taille
+    # - pseudo le pseudo du joueur
+    # - taille la taille de la grille
+    def BaseDeDonnees.getNbGrilleTailleFini(pseudo, taille)
+    	return GrilleFinis.joins("JOIN grille ON grille.id_grille = grille_fini.id_grille").where(:pseudo => pseudo, :taille => taille).count	
+    end
+    
+    # Renvoie le nombre de grilles accomplis sans aide en fonction d'une difficulte
+    # - pseudo le pseudo du joueur
+    # - difficulte la difficulte de la grille
+    def BaseDeDonnees.getNbGrilleDifficulteSansAideFini(pseudo, difficulte)
+    	return GrilleFinis.joins("JOIN grille ON grille.id_grille = grille_fini.id_grille").where(:pseudo => pseudo, :difficulte => difficulte, :nb_aide => 0).count 
+    end
+    
+    # Renvoie un booleen indiquant l'accomplissement total d'un monde ou non
+    # - pseudo le pseudo du joueur
+    # - idMonde l'identifiant du monde
+    def BaseDeDonnees.estFiniMonde?(pseudo, idMonde)
+    	idGrille = Grilles.select(:id_monde).where(:pseudo => pseudo, :id_monde => idMonde).order(numero_niveau: :asc).last.id_grille
+    	return GrilleFinis.exists?(:pseudo => pseudo, :id_grille => idGrille)
+    end
+    
+    # Renvoie le nombre de grille accomplis
+    # - pseudo le pseudo du joueur
+    def BaseDeDonnees.getNbGrilleFini(pseudo)
+    	return GrilleFinis.where(:pseudo => pseudo).count
+    end
+    
+    # Renvoie le nombre de grilles accompli en moins de 1 minute pour des grilles de taille 12
+    # - pseudo le pseudo du joueur
+    def BaseDeDonnees.getNbGrilleTailleDouzeMoinsSoixante(pseudo)
+    	return GrilleFinis.joins("JOIN grille ON grille.id_grille = grille_fini.id_grille").where(:pseudo => pseudo, :taille => 12, :temps < 60).count
+    end
+    
+    # Renvoie le nombre de défi gagné
+    # - pseudo le pseudo du joueur
+    def BaseDeDonnees.getNbDefiGagne(pseudo)
+    	return Defis.where(:vainqueur => pseudo).count
     end
 end
