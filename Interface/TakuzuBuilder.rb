@@ -1,5 +1,6 @@
 # encoding: UTF-8
 # Valentin CHAILLOU
+
 require 'gtk2'
 
 #load 'Jeu.rb'
@@ -19,6 +20,10 @@ class TakuzuBuilder < Gtk::Builder
 	# * Variable d'instance non acessible qui représente le nom de la fenêtre
 	# * Sera utilisée lorsque la fenêtre sera ré-affichée (fenêtre précédente)
 	@nomDeFenetre
+
+	# * Variable d'instance (un entier) non accessible qui représente l'id du handler 'destroy'
+	# * Sera utilisée lors de la désactivation du handler
+	@handlerDestroy
 	
 	# Méthodes d'instance
 	
@@ -27,7 +32,7 @@ class TakuzuBuilder < Gtk::Builder
 	
 		self.add_from_file(unNom.sub(".rb",".glade"))
 		self['window1'].set_window_position Gtk::Window::POS_CENTER
-		self['window1'].signal_connect('destroy') { Gtk.main_quit }
+		@handlerDestroy = self['window1'].signal_connect('destroy') { Gtk.main_quit }
 		self['window1'].show_all
 		# Creation d'une variable d'instance par composant glade
 		self.objects.each() { |p|
@@ -60,7 +65,7 @@ class TakuzuBuilder < Gtk::Builder
 	#	- uneFenetre : une fenetre (telle que FenetreBuilder.new())
 	def ouvrirFenetre(uneFenetre)
 		ouvrirFenetreNonFermante(uneFenetre)
-		self['window1'].signal_connect('destroy') {}	# Le signal n'arrète pas Gtk
+		self['window1'].signal_handler_disconnect(@handlerDestroy)	# Le signal n'arrête pas Gtk
 		self['window1'].destroy
 	end
 
