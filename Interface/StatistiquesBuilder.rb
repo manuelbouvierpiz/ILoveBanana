@@ -20,7 +20,7 @@ class StatistiquesBuilder < TakuzuBuilder
     end
 
     def on_buttonClassement_clicked
-    	ouvrirFenetre(ClassementBuilder.new)
+    	ouvrirFenetreNonFermante(ClassementBuilder.new)
     end
 
     def on_buttonSucces_clicked

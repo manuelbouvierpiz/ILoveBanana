@@ -85,13 +85,13 @@ class TailleDifficulteBuilder < TakuzuBuilder
 	def on_buttonSuivant_clicked
 		case @tailleChoisie
 			when 6
-				ouvrirFenetre(Partie_6Builder.new)
+				ouvrirFenetre(Partie6Builder.creer(PartieLibre.creer(6,@adjDifficulte.value)))
 			when 8
-				ouvrirFenetre(Partie_8Builder.new)
+				ouvrirFenetre(Partie8Builder.creer(PartieLibre.creer(8,@adjDifficulte.value)))
 			when 10
-				ouvrirFenetre(Partie_10Builder.new)
+				ouvrirFenetre(Partie10Builder.creer(PartieLibre.creer(10,@adjDifficulte.value)))
 			when 12
-				ouvrirFenetre(Partie_12Builder.new)
+				ouvrirFenetre(Partie12Builder.creer(PartieLibre.creer(12,@adjDifficulte.value)))
 		end
 	end
 	Gtk.init
