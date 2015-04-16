@@ -7,6 +7,7 @@
 require 'gtk2'
 
 load 'Interface/TakuzuBuilder.rb'
+load 'Interface/TailleDifficulteBuilder.rb'
 
 class DefiBuilder < TakuzuBuilder
     def initialize
@@ -16,7 +17,8 @@ class DefiBuilder < TakuzuBuilder
     	def on_validerButton_clicked
 		#chercher le personne defi sur BDD ( labelPseudo )
 		
-		#ouvrir le fenetre de defi ( taille de 12/10/8/6 )
+		#ouvrir le fenetre TailleDifficulteBuilder
+		ouvrirFenetre(TailleDifficulteBuilder.new)
 	end
 	
 	#Methode de classe qui fermer le defi
