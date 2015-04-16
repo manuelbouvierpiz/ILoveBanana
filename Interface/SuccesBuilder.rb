@@ -8,9 +8,19 @@ require 'gtk2'
 
 class SuccesBuilder < TakuzuBuilder
 
-def initialize
+	def initialize
 		super(__FILE__, "Succès")
-		#Affichage des succès ici
+		lesSucces = Compte.COMPTE.succes.succes
+		lesSucces.each do |leSucces|
+			uneHbox = Gtk::HBox.new(true, nil)
+			uneHbox.add(Gtk::Label.new(leSucces.nom,false))
+			uneHbox.add(Gtk::Label.new(leSucces.description,false))
+			if(leSucces.estDebloque?)
+  				uneHbox.add(Gtk::Image.new("Images/SuccesReussi.png"))
+  			end
+			@vboxSucces.add(uneHbox)
+			@vboxSucces.show_all
+		end
     end
 
     def on_buttonClassement_clicked

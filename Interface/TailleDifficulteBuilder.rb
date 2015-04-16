@@ -80,19 +80,9 @@ class TailleDifficulteBuilder < TakuzuBuilder
 		ouvrirFenetre(MenuPrincipalBuilder.new)
 	end
 
-# PAS TERMINE, eventuel parametre a fournir dans les new (@difficulteChoisie)
-# que l'on obtient avec @adjDifficulte.value
+# Lance une nouvelle patie en fonction de la taille et difficulté choisie
 	def on_buttonSuivant_clicked
-		case @tailleChoisie
-			when 6
-				ouvrirFenetre(Partie6Builder.creer(PartieLibre.creer(6,@adjDifficulte.value)))
-			when 8
-				ouvrirFenetre(Partie8Builder.creer(PartieLibre.creer(8,@adjDifficulte.value)))
-			when 10
-				ouvrirFenetre(Partie10Builder.creer(PartieLibre.creer(10,@adjDifficulte.value)))
-			when 12
-				ouvrirFenetre(Partie12Builder.creer(PartieLibre.creer(12,@adjDifficulte.value)))
-		end
+		PartieBuilder.creer(PartieLibre.creer(@tailleChoisie,@adjDifficulte.value)))
 	end
 	Gtk.init
 	TailleDifficulteBuilder.new()
