@@ -63,7 +63,7 @@ class TakuzuBuilder < Gtk::Builder
 	# ===== Attributs :
 	#	- uneFenetre : une fenetre (telle que FenetreBuilder.new())
 	def ouvrirFenetre(uneFenetre)
-		#self['window1'].signal_connect('destroy') {}	# Le signal n'arrète pas Gtk
+		self['window1'].signal_connect('destroy') {}	# Le signal n'arrète pas Gtk
 		self['window1'].destroy
 		ouvrirFenetreNonFermante(uneFenetre)
 	end
