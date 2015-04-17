@@ -12,9 +12,9 @@ class StatistiquesBuilder < TakuzuBuilder
 
 	def initialize
 		super(__FILE__, "Statistiques")
-		@labelTempsJeu.set_text("Temps passé en jeu :" + "#{Compte.COMPTE.statistiques.tempsTotalJeu}")
-		@labelPetitClic.set_text("Plus petit nombre de clics :" + "#{Compte.COMPTE.statistiques.plusPetitNombreClic}")
-		@labelGrandClic.set_text("Plus grand nombre de clics :" + "#{Compte.COMPTE.statistiques.plusGrandNombreClic}")
+		@labelTempsJeu.set_text("Temps passé en jeu : " + "#{Compte.COMPTE.statistiques.tempsTotalJeu}")
+		@labelPetitClic.set_text("Plus petit nombre de clics : " + "#{Compte.COMPTE.statistiques.plusPetitNombreClic}")
+		@labelGrandClic.set_text("Plus grand nombre de clics : " + "#{Compte.COMPTE.statistiques.plusGrandNombreClic}")
 
         tabNiveau = [1, 2, 3, 4, 5, 6, 7]
         tabNiveau.each_with_index do |e|
@@ -46,16 +46,15 @@ class StatistiquesBuilder < TakuzuBuilder
 
     def on_boxNiveau_changed
         @boolNiveau = true
-        print @boxNiveau.active_text
         if(@boolTaille == true)
-            @labelResultat.set_text("#{Compte.COMPTE.scoreDifficulte(@boxTaille.active_text.to_i, @boxNiveau.active_text.to_i)}")
+            @labelResultat.set_text("#{Compte.COMPTE.statistiques.scoreDifficulte(@boxTaille.active_text.to_i, @boxNiveau.active_text.to_i)}")
         end
     end
 
     def on_boxTaille_changed
         @boolTaille = true
         if(@boolNiveau == true)
-            @labelResultat.set_text("#{Compte.COMPTE.scoreDifficulte(@boxTaille.active_text.to_i, @boxNiveau.active_text.to_i)}")
+            @labelResultat.set_text("#{Compte.COMPTE.statistiques.scoreDifficulte(@boxTaille.active_text.to_i, @boxNiveau.active_text.to_i)}")
         end
     end
 end

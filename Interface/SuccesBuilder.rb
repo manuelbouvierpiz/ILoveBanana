@@ -17,8 +17,11 @@ class SuccesBuilder < TakuzuBuilder
 			uneHbox.add(Gtk::Label.new(leSucces.description,false))
 			if(leSucces.estDebloque?)
   				uneHbox.add(Gtk::Image.new("Images/SuccesReussi.png"))
+            else
+                uneHbox.add(Gtk::Label.new("",false))
   			end
 			@vboxSucces.add(uneHbox)
+            @vboxSucces.add(Gtk::HSeparator.new)
 			@vboxSucces.show_all
 		end
     end

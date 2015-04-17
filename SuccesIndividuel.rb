@@ -28,7 +28,7 @@ class SuccesIndividuel
     end
 
     def nom()
-        return BaseDeDonnees.getNom(@idSucces)
+        return BaseDeDonnees.getNomSucces(@idSucces)
     end
 
     # Méthode pour obtenir la description du succes
