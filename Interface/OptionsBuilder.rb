@@ -15,6 +15,17 @@ class OptionsBuilder < TakuzuBuilder
 	
 	def initialize() 
 		super(__FILE__,"Options")
+		@adjBruitage =  Gtk::Adjustment.new(BaseDeDonnees.getVolumeBruitage(Compte.COMPTE.pseudo),0,100,1,1,0)
+		@hscaleBruitage.adjustment = @adjBruitage
+		@adjMusique =  Gtk::Adjustment.new(BaseDeDonnees.getVolumeMusique(Compte.COMPTE.pseudo),0,100,1,1,0)
+		@hscaleMusique.adjustment = @adjMusique
+		
+		@entry1 = BaseDeDonnees.getRaccourci(Compte.COMPTE.pseudo,1)
+		@entry2 = BaseDeDonnees.getRaccourci(Compte.COMPTE.pseudo,2)
+		@entry3 = BaseDeDonnees.getRaccourci(Compte.COMPTE.pseudo,3)
+
+		@colorbutton1.color = BaseDeDonnees.getCouleurUn(Compte.COMPTE.pseudo)
+		@colorbutton2.color = BaseDeDonnees.getCouleurDeux(Compte.COMPTE.pseudo)
 	end
 	
 	def on_buttonPrecedent_clicked	
@@ -32,23 +43,10 @@ class OptionsBuilder < TakuzuBuilder
 	end
 	
 	
-	def DefiBuilder.lancer()
+	#def DefiBuilder.lancer()
 		Gtk.init
 		OptionsBuilder.new()
 		Gtk.main
-    	end
+    	#end
 
-	def OptionsBuilder.ceer()
-		@adjBruitage =  Gtk::Adjustment.new(BaseDeDonnees.getVolumeBruitage(Compte.COMPTE.pseudo),0,100,1,1,0)
-		@hscaleBruitage.adjustment = @adjBruitage
-		@adjMusique =  Gtk::Adjustment.new(BaseDeDonnees.getVolumeMusique(Compte.COMPTE.pseudo),0,100,1,1,0)
-		@hscaleMusique.adjustment = @adjMusique
-		
-		@entry1 = BaseDeDonnees.getRaccourci(Compte.COMPTE.pseudo,1)
-		@entry2 = BaseDeDonnees.getRaccourci(Compte.COMPTE.pseudo,2)
-		@entry3 = BaseDeDonnees.getRaccourci(Compte.COMPTE.pseudo,3)
-
-		@colorbutton1.color = BaseDeDonnees.getCouleurUn(Compte.COMPTE.pseudo)
-		@colorbutton2.color = BaseDeDonnees.getCouleurDeux(Compte.COMPTE.pseudo)
-	end
 end
