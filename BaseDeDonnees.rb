@@ -10,10 +10,10 @@ load 'ClassesBdd.rb'
 class BaseDeDonnees
 	ActiveRecord::Base.establish_connection(
 		:adapter => "mysql2",
-		:database => "takuzu_bdd",
-		:username => "root",
-		:password => "",
-		:host => "localhost"
+		:database => "ronan",
+		:username => "ronan",
+		:password => "ronan",
+	    	:host => "vps120906.ovh.net"
 	)
    
     	private_class_method :new
