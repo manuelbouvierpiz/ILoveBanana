@@ -6,6 +6,7 @@
 # Implementation de la classe Monde
 
 load 'BaseDeDonnees.rb'
+load 'PartieMonde.rb'
 
 # == Classe Monde 
 #	- connait son id, son nom, son état (bloqué/débloqué) et ses niveaux
