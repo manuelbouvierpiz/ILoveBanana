@@ -81,7 +81,7 @@ class Compte
     	# Sinon erreur => Exception ?
     	end
     	@statistiques = Statistiques.new
-    	@options = Options.new
+    	@options = Options.creer(unPseudo)
     	@succes = Succes.new
     end
     

@@ -4,23 +4,24 @@
 # Options.rb
 # Implementation de la classe Options
 
+load 'RaccourciClavier.rb'
 class Options
 
 # Variable contenant le tableau des raccourcis clavier
 	@tabRaccourciClavier
 
 # Constucteur des options
-	def Options.creer()
-		new()
+	def Options.creer(unPseudo)
+		new(unPseudo)
 		
 	end
 
 # Initialise la variable avec notre base de données
-	def initialize()
-		@tabRaccourciClavier = [RaccourciClavier.creer(1,"Bleu",Compte.COMPTE.pseudo),
-								RaccourciClavier.creer(2,"Rouge",Compte.COMPTE.pseudo),
-								RaccourciClavier.creer(3,"Pause",Compte.COMPTE.pseudo),
-								RaccourciClavier.creer(4,"Hypothèse",Compte.COMPTE.pseudo)]
+	def initialize(unPseudo)
+		@tabRaccourciClavier = [RaccourciClavier.creer(1,"Bleu",unPseudo),
+								RaccourciClavier.creer(2,"Rouge",unPseudo),
+								RaccourciClavier.creer(3,"Pause",unPseudo),
+								RaccourciClavier.creer(4,"Hypothèse",unPseudo)]
 	end
 
 # Méthode permettant de modifier le volume des bruitages
