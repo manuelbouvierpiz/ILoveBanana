@@ -7,6 +7,7 @@ require 'gtk2'
 load 'Interface/TakuzuBuilder.rb'
 load 'Interface/MenuPrincipalBuilder.rb'
 load 'Options.rb'
+load 'Compte.rb'
 class OptionsBuilder < TakuzuBuilder
 	
 	attr :pseudo ,false
@@ -14,15 +15,14 @@ class OptionsBuilder < TakuzuBuilder
 	@adjBruitage
 	@adjMusique
 	
-	def initialize(pseudo) 
-
+	def initialize() 
 		super(__FILE__,"Options")
 	end
 	
 	def on_buttonPrecedent_clicked
 		
-		BaseDeDonnees.setVolumeBruitage(@pseudo,@adjBruitage.value)
-		BaseDeDonnees.setVolumeMusique(@pseudo,@adjMusique.value)
+		BaseDeDonnees.setVolumeBruitage(Compte.COMPTE.pseudo,@adjBruitage.value)
+		BaseDeDonnees.setVolumeMusique(Compte.COMPTE.pseudo,@adjMusique.value)
 		
 		BaseDeDonnees.setRaccourci(pseudo, 1, @entry1)
 		BaseDeDonnees.setRaccourci(pseudo, 2, @entry2)
@@ -35,25 +35,23 @@ class OptionsBuilder < TakuzuBuilder
 	end
 	
 	
-	def DefiBuilder.lancer(pseudo)
+	def DefiBuilder.lancer()
 		Gtk.init
-		OptionsBuilder.new(pseudo)
+		OptionsBuilder.new()
 		Gtk.main
     	end
 
-	def OptionsBuilder.ceer(pseudo)
-		@pseudo = pseudo 
-
-		@adjBruitage =  Gtk::Adjustment.new(BaseDeDonnees.getVolumeBruitage(pseudo),0,100,1,1,0)
+	def OptionsBuilder.ceer()
+		@adjBruitage =  Gtk::Adjustment.new(BaseDeDonnees.getVolumeBruitage(Compte.COMPTE.pseudo),0,100,1,1,0)
 		@hscaleBruitage.adjustment = @adjBruitage
-		@adjMusique =  Gtk::Adjustment.new(BaseDeDonnees.getVolumeMusique(pseudo),0,100,1,1,0)
+		@adjMusique =  Gtk::Adjustment.new(BaseDeDonnees.getVolumeMusique(Compte.COMPTE.pseudo),0,100,1,1,0)
 		@hscaleMusique.adjustment = @adjMusique
 		
-		@entry1 = BaseDeDonnees.getRaccourci(pseudo,1)
-		@entry2 = BaseDeDonnees.getRaccourci(pseudo,2)
-		@entry3 = BaseDeDonnees.getRaccourci(pseudo,3)
+		@entry1 = BaseDeDonnees.getRaccourci(Compte.COMPTE.pseudo,1)
+		@entry2 = BaseDeDonnees.getRaccourci(Compte.COMPTE.pseudo,2)
+		@entry3 = BaseDeDonnees.getRaccourci(Compte.COMPTE.pseudo,3)
 
-		@colorbutton1.color = BaseDeDonnees.getCouleurUn(pseudo)
-		@colorbutton2.color = BaseDeDonnees.getCouleurDeux(pseudo)
+		@colorbutton1.color = BaseDeDonnees.getCouleurUn(Compte.COMPTE.pseudo)
+		@colorbutton2.color = BaseDeDonnees.getCouleurDeux(Compte.COMPTE.pseudo)
 	end
 end
