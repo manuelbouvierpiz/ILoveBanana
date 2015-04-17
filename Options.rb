@@ -1,8 +1,8 @@
+# encoding: utf-8
+
 # PARMENON Damien
 # Options.rb
 # Implementation de la classe Options
-
-# encoding: utf-8
 
 class Options
 
