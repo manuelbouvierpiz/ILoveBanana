@@ -11,3 +11,17 @@ Les réalisateurs de cette application sont :
       - Damien Parmenon
       - Nanzhen Kuang
       - Wilfried Jousse
+
+Pour installer l'application sous Fedora :
+
+      - Cliquer sur "Download ZIP" qui se trouve sur la page "https://github.com/manuelbouvierpiz/ILoveBanana" dans le menu droite.
+      - Dezipper le .zip.
+      - Aller avec le terminal dans le chemin du dossier dézipper.
+      - Taper "ruby TakuzuLaneur.rb".
+
+Si vous possédez pas Active Record, MySQL2 et Mail, vous pouvez les installer de cet façon :
+
+      - Aller dans un terminal.
+      - Taper "gem install activerecord".
+      - Taper "gem install mysql2".
+      - Taper "gem install mail".

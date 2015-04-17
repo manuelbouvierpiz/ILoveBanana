@@ -273,7 +273,7 @@ class BaseDeDonnees
         if(RaccourciComptes.exists?(:pseudo => pseudo, :id_raccourci => idRaccourci))
             RaccourciComptes.where(:pseudo => pseudo, :id_raccourci => idRaccourci).update_all(touche: touche)
         else
-            newRaccourci = RaccourciCompte.new
+            newRaccourci = RaccourciComptes.new
             newRaccourci.pseudo = pseudo
             newRaccourci.id_raccourci = idRaccourci
             newRaccourci.touche = touche
