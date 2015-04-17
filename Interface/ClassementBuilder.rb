@@ -47,7 +47,17 @@ class ClassementBuilder < TakuzuBuilder
     		@labelRang.set_visible(true)
     		@labelPseudo.set_visible(true)
     		@labelScore.set_visible(true)
-    		# Remplissage a partir de la BDD des listes
+    		leClassement = Compte.COMPTE.statistiques.Classement
+            @vboxClassement.add(Gtk::HSeparator.new)
+            leClassement.each do |uneLigne|
+                uneHbox = Gtk::HBox.new(true, nil)
+                uneHbox.add(Gtk::Label.new(uneLigne[0],false))
+                uneHbox.add(Gtk::Label.new(uneLigne[1],false))
+                uneHbox.add(Gtk::Label.new(uneLigne[2],false))
+                @vboxClassement.add(uneHbox)
+                @vboxClassement.add(Gtk::HSeparator.new)
+            end
+            @vboxClassement.show_all
     	end
     end
 
@@ -57,7 +67,21 @@ class ClassementBuilder < TakuzuBuilder
     		@labelRang.set_visible(true)
     		@labelPseudo.set_visible(true)
     		@labelScore.set_visible(true)
-    		# Remplissage a partir de la BDD des listes
+    		leClassement = Compte.COMPTE.statistiques.classement(@boxTaille.active_text.to_i, @boxNiveau.active_text.to_i)
+            @vboxClassement.add(Gtk::HSeparator.new)
+            leClassement.each do |uneLigne|
+                uneHbox = Gtk::HBox.new(true, nil)
+                uneHbox.add(Gtk::Label.new(uneLigne[0],false))
+                uneHbox.add(Gtk::Label.new(uneLigne[1],false))
+                uneHbox.add(Gtk::Label.new(uneLigne[2],false))
+                @vboxClassement.add(uneHbox)
+                @vboxClassement.add(Gtk::HSeparator.new)
+            end
+            @vboxClassement.show_all
     	end
+    end
+
+    def on_buttonMenuPrincipal_clicked
+        ouvrirFenetre(MenuPrincipalBuilder.new)
     end
 end

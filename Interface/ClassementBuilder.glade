@@ -55,6 +55,7 @@
                 <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
                 <property name="border_width">15</property>
+                <property name="use_action_appearance">False</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -69,6 +70,7 @@
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="border_width">20</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_button2_clicked" swapped="no"/>
               </object>
               <packing>
@@ -84,6 +86,7 @@
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="border_width">20</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_button3_clicked" swapped="no"/>
               </object>
               <packing>
@@ -192,27 +195,62 @@
           </packing>
         </child>
         <child>
-          <object class="GtkHBox" id="hbox4">
+          <object class="GtkVBox" id="vboxClassement">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="homogeneous">True</property>
             <child>
-              <object class="GtkTreeView" id="treeview1">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="model">listeRang</property>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">0</property>
-              </packing>
+              <placeholder/>
             </child>
             <child>
-              <object class="GtkTreeView" id="treeview2">
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHBox" id="hbox3">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <object class="GtkButton" id="buttonMenuPrincipal">
+                <property name="label" translatable="yes">Retour</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="model">listePseudo</property>
+                <property name="receives_default">True</property>
+                <property name="border_width">20</property>
+                <property name="use_action_appearance">False</property>
+                <signal name="clicked" handler="on_buttonMenuPrincipal_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -221,22 +259,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkTreeView" id="treeview3">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="model">listeScore</property>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">2</property>
-              </packing>
+              <placeholder/>
             </child>
           </object>
           <packing>
             <property name="expand">True</property>
             <property name="fill">True</property>
-            <property name="position">3</property>
+            <property name="position">4</property>
           </packing>
         </child>
       </object>
