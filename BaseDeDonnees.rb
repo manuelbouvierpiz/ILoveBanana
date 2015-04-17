@@ -607,4 +607,10 @@ class BaseDeDonnees
     def BaseDeDonnees.getNbDefiGagne(pseudo)
     	return Defis.where(:pseudo_vainqueur => pseudo).count
     end
+    
+    # Renvoie le nom d'un succès à partir de son identifiant
+    # - idSucces l'identifiant du succès
+    def BaseDeDonnees.getNomSucces(idSucces)
+    	return Succes.select(:nom).find_by_id_succes(idSucces).nom 
+    end
 end
