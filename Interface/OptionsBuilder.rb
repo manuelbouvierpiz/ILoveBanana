@@ -24,12 +24,12 @@ class OptionsBuilder < TakuzuBuilder
 		BaseDeDonnees.setVolumeBruitage(Compte.COMPTE.pseudo,@adjBruitage.value)
 		BaseDeDonnees.setVolumeMusique(Compte.COMPTE.pseudo,@adjMusique.value)
 		
-		BaseDeDonnees.setRaccourci(pseudo, 1, @entry1)
-		BaseDeDonnees.setRaccourci(pseudo, 2, @entry2)
-		BaseDeDonnees.setRaccourci(pseudo, 3, @entry3)
+		BaseDeDonnees.setRaccourci(Compte.COMPTE.pseudo, 1, @entry1)
+		BaseDeDonnees.setRaccourci(Compte.COMPTE.pseudo, 2, @entry2)
+		BaseDeDonnees.setRaccourci(Compte.COMPTE.pseudo, 3, @entry3)
 
-		BaseDeDonnees.setCouleurUn(pseudo,@colorbutton1.color)
-		BaseDeDonnees.setCouleurDeux(pseudo,@colorbutton2.color)
+		BaseDeDonnees.setCouleurUn(Compte.COMPTE.pseudo,@colorbutton1.color)
+		BaseDeDonnees.setCouleurDeux(Compte.COMPTE.pseudo,@colorbutton2.color)
 
 		ouvrirFenetre(MenuPrincipalBuilder.new)
 	end
