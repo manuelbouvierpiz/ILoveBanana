@@ -43,8 +43,8 @@ class Options
 	def Options.premiereInitialisationOptions(unPseudo)
 		BaseDeDonnees.setVolumeBruitage(unPseudo, 50)
 		BaseDeDonnees.setVolumeMusique(unPseudo, 50)
-		#BaseDeDonnees.setCouleurUn(unPseudo, "#FF0000")
-		#BaseDeDonnees.setCouleurUn(unPseudo, "#FF0000")
+		BaseDeDonnees.setCouleurUn(unPseudo, "#FFFF00000000")
+		BaseDeDonnees.setCouleurDeux(unPseudo, "#00000000FFFF")
 		RaccourciClavier.premiereInitialisationRaccourci(unPseudo)
 	end
 # Méthode permettant de réinitialiser intégralement les données du profil

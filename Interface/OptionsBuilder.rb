@@ -27,8 +27,8 @@ class OptionsBuilder < TakuzuBuilder
 
 		stringColor1 = Compte.COMPTE.options.couleur(1)
 		stringColor2 = Compte.COMPTE.options.couleur(2)
-		#@colorbutton1.color = Gdk::Color.new(stringColor1[1..4].to_i(16), stringColor1[5..8].to_i(16), stringColor1[9..12].to_i(16))
-		#@colorbutton2.color = Gdk::Color.new(stringColor2[1..4].to_i(16), stringColor2[5..8].to_i(16), stringColor2[9..12].to_i(16))
+		@colorbutton1.color = Gdk::Color.new(stringColor1[1..4].to_i(16), stringColor1[5..8].to_i(16), stringColor1[9..12].to_i(16))
+		@colorbutton2.color = Gdk::Color.new(stringColor2[1..4].to_i(16), stringColor2[5..8].to_i(16), stringColor2[9..12].to_i(16))
 	end
 	
 	def on_buttonPrecedent_clicked	
@@ -46,7 +46,7 @@ class OptionsBuilder < TakuzuBuilder
 
 		Compte.COMPTE.options.changerCouleur(1,@colorbutton1.color.to_s)
 		Compte.COMPTE.options.changerCouleur(2,@colorbutton2.color.to_s)
-
+		print @colorbutton2.color
 		ouvrirFenetre(MenuPrincipalBuilder.new)
 	end
 end
