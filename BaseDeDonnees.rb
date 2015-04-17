@@ -621,12 +621,12 @@ class BaseDeDonnees
     # Renvoie le plus petit nombre de clic effectué toute grille confondu
     # - pseudo le pseudo du joueur
     def BaseDeDonnees.getPlusPetitNombreClic(pseudo)
-    	return GrilleFinis.select(:nb_clic).find_by_pseudo(pseudo).minimum(:nb_clic)
+    	return GrilleFinis.select(:nb_clic).where(pseudo: pseudo).minimum(:nb_clic)
     end
     
     # Renvoie le plus grand nombre de clic effectué toute grille confondu
     # - pseudo le pseudo du joueur
     def BaseDeDonnees.getPlusGrandNombreClic(pseudo)
-    	return GrilleFinis.select(:nb_clic).find_by_pseudo(pseudo).maximum(:nb_clic)
+    	return GrilleFinis.select(:nb_clic).where(pseudo: pseudo).maximum(:nb_clic)
     end
 end
