@@ -29,13 +29,7 @@ class ConnexionBuilder < TakuzuBuilder
 	# * Méthode d'instance qui permet de créer un compte après avoir cliqué sur le bouton de création d'un compte
 	# * Est automatiquement appelée par Gtk
     def on_creationBouton_clicked
-		if Compte.verifierIdentifiant?(@loginEntry)
-        	Compte.creer(@loginEntry.text, @mdpEntry.text, "takuzuavengers@gmail.com")	# Mail à changer
-        	Compte.login(@loginEntry.text, @mdpEntry.text)
-        	ouvrirFenetre(MenuPrincipalBuilder.new())
-        else
-        	@erreurLabel.set_text("Identifiants incorrects")
-        end
+		ouvrirFenetre(InscriptionBuilder.new)
     end
 
 	# Méthode de classe

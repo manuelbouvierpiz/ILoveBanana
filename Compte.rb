@@ -40,7 +40,7 @@ class Compte
     #   - unMotDePasse : un +String+ représentant le mot de passedu +Compte+
     # * +ATTENTION+ : Etant donné que le classe respecte le pattern singleton, la méthode de classe change automaiquement la variable de classe COMPTE et renvoie nil
     #  * <b>N'EST PAS UN CONSTRUCTEUR</b>
-    def Compte.creer (unPseudo, munMotDePasse, unMail, nuPrenom, unNom)
+    def Compte.creer (unPseudo, unMotDePasse, unMail, unPrenom, unNom)
       BaseDeDonnees.setCompte(unPseudo, unMotDePasse, unNom, unPrenom, unMail)
     end
     

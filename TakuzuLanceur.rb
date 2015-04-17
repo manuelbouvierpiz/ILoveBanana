@@ -35,6 +35,6 @@ load 'Interface/PartieReussieBuilder.rb'
 load 'Interface/StatistiquesBuilder.rb'
 load 'Interface/SuccesBuilder.rb'
 load 'Interface/TailleDifficulteBuilder.rb'
-
+load 'Interface/InscriptionBuilder.rb'
 # We are 'go' for launch !
 ConnexionBuilder.lancer
