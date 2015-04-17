@@ -9,7 +9,7 @@ require 'gtk2'
 
 class ChoixGrilleBuilder < TakuzuBuilder
 
-    #A bessoin de Monde.rb
+    #A besoin de Monde.rb
     
     @monde #Monde actuel
 
@@ -37,15 +37,14 @@ class ChoixGrilleBuilder < TakuzuBuilder
       when t=12
         ouvrirFenetre(Partie_12Builder.new)
       end
-    
     end
 
     def on_suivantBouton_clicked
-      ouvriFenetre(ChoixGrilleSuiteBuilder.new(@monde))
+      ouvrirFenetre(ChoixGrilleSuiteBuilder.new(@monde))
     end
 
     def on_retourBouton_clicked
-      ouvriFenetrePrecedente()
+      ouvrirFenetre(MenuPrincipalBuilder.new)
     end
   
 end
