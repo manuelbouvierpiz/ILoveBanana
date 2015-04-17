@@ -613,4 +613,10 @@ class BaseDeDonnees
     def BaseDeDonnees.getNomSucces(idSucces)
     	return Succes.select(:nom).find_by_id_succes(idSucces).nom 
     end
+    
+    # Renvoie la somme des étoiles obtenus
+    # - pseudo le pseudo du joueur
+    def BaseDeDonnees.getTotalNbEtoile(pseudo)
+    	GrilleFinis.select(:nb_etoile).find_by_pseudo(pseudo).sum(:nb_etoile)	
+    end
 end
