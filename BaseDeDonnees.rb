@@ -552,7 +552,7 @@ class BaseDeDonnees
     # - idMonde l'identifiant du monde
     # - numNiveau le numéro du niveau
     def BaseDeDonnees.getMondeGrilleId(idMonde, numNiveau)
-    	return Grilles.select(:id_grille).where(:id_monde => idMonde, :numero_niveau => numNiveau).id_grille	
+    	Grilles.select(:id_grille).where(:id_monde => idMonde, :numero_niveau => numNiveau).first.id_grille	
     end
     
     # Renvoie le nom d'un monde par rapport à son identifiant
