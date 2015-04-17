@@ -9,18 +9,15 @@ load 'Interface/MenuPrincipalBuilder.rb'
 load 'Options.rb'
 load 'Compte.rb'
 class OptionsBuilder < TakuzuBuilder
-	
-	attr :pseudo ,false
 
-	@adjBruitage
-	@adjMusique
+	attr :adjBruitage, false
+	attr :adjMusique, false
 	
 	def initialize() 
 		super(__FILE__,"Options")
 	end
 	
-	def on_buttonPrecedent_clicked
-		
+	def on_buttonPrecedent_clicked	
 		BaseDeDonnees.setVolumeBruitage(Compte.COMPTE.pseudo,@adjBruitage.value)
 		BaseDeDonnees.setVolumeMusique(Compte.COMPTE.pseudo,@adjMusique.value)
 		

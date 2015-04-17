@@ -19,9 +19,11 @@ Pour installer l'application sous Fedora :
       - Aller avec le terminal dans le chemin du dossier dézipper.
       - Taper "ruby TakuzuLaneur.rb".
 
-Si vous possédez pas Active Record, MySQL2 et Mail, vous pouvez les installer de cet façon :
+Si vous possédez pas Ruby, GTK2, Active Record, MySQL2 ou Mail, vous pouvez les installer de cet façon :
 
       - Aller dans un terminal.
+      - Taper "gem install ruby".
+      - Taper "gem install gtk2-devel".
       - Taper "gem install activerecord".
       - Taper "gem install mysql2".
       - Taper "gem install mail".
