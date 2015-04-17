@@ -451,7 +451,7 @@ class BaseDeDonnees
         0.upto(Math.sqrt(longGrille) - 1) do |i|
             matriceGrille[i] = []
             0.upto(Math.sqrt(longGrille) - 1) do
-                caseGrille = Case.new
+                caseGrille = Case.creer
                 if(grille[j] == '0')
                     caseGrille.setBleu
                 else
@@ -618,5 +618,11 @@ class BaseDeDonnees
     # - pseudo le pseudo du joueur
     def BaseDeDonnees.getTotalNbEtoile(pseudo)
     	GrilleFinis.select(:nb_etoile).find_by_pseudo(pseudo).sum(:nb_etoile)	
+    end
+    
+    # Renvoie le plus petit de clic effectué tout grille confondu
+    # - pseudo le pseudo du joueur
+    def BaseDeDonnees.getPlusPetitNombreClic(pseudo)
+    	return GrilleFinis.select(:nb_clic).find_by_pseudo(pseudo).minimum(:nb_clic)
     end
 end
