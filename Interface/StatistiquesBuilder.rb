@@ -15,9 +15,9 @@ class StatistiquesBuilder < TakuzuBuilder
 
 	def initialize
 		super(__FILE__, "Statistiques")
-		@labelTempsJeu.set_text("Temps passé en jeu :" + "#{Compte.COMPTE.tempsTotalJeu()}")
-		@labelPetitClic.set_text("Plus petit nombre de clics :" + "#{Compte.COMPTE.plusPetitNombreClic()}")
-		@labelGrandClic.set_text("Plus grand nombre de clics :" + "#{Compte.COMPTE.plusGrandNombreClic()}")
+		@labelTempsJeu.set_text("Temps passé en jeu :" + "#{Compte.COMPTE.tempsTotalJeu}")
+		@labelPetitClic.set_text("Plus petit nombre de clics :" + "#{Compte.COMPTE.plusPetitNombreClic}")
+		@labelGrandClic.set_text("Plus grand nombre de clics :" + "#{Compte.COMPTE.plusGrandNombreClic}")
 
         tabNiveau = [1, 2, 3, 4, 5, 6, 7]
         tabNiveau.each_with_index do |e|

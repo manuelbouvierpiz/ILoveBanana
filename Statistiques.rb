@@ -27,6 +27,14 @@ class Statistiques
 		return BaseDeDonnees.getScoreDifficulte(Compte.COMPTE.pseudo, uneTaille, uneDifficulte)
 	end
 
+	def plusPetitNombreClic()
+		return BaseDeDonnees.getPlusPetitNombreClic(Compte.COMPTE.pseudo)
+	end
+
+	def plusGrandNombreClic()
+		return BaseDeDonnees.getPlusGrandNombreClic(Compte.COMPTE.pseudo)
+	end
+	
 # Méthode retournant le classement des joueurs en fonction du score total sur des grilles de taille et difficulté données
 	def classement(uneTaille, uneDifficulte)
 		return BaseDeDonnees.getClassement(uneTaille, uneDifficulte)

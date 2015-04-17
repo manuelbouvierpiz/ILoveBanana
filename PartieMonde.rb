@@ -17,8 +17,12 @@ class PartieMonde < Partie
 
 	#Méthodes
 
-	def initialize()
+	def PartieMonde.creer(unIdGrille)
+		new(unIdGrille)
+	end
 
+	def initialize(unIdGrille)
+		super(unIdGrille)
 	end
 
 	# Méthode d'instance qui permet de donner l'accès à une partie dans un monde
@@ -60,8 +64,8 @@ class PartieMonde < Partie
 	end
 
 	# Méthode qui permet de réinitialiser la grille de la partie
-	def initGrille()
-
+	def initGrille(unIdGrille)
+		super(unIdGrille)
 	end
 
 end

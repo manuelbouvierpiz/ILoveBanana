@@ -3,6 +3,8 @@
 # Partie.rb
 # Implementation de la classe Partie
 
+load 'Grille.rb'
+
 # La classe Partie est une méthode abstraite mère de PartieMonde et PartieLibre
 class Partie
 
@@ -41,22 +43,12 @@ class Partie
 
 # Constucteur d'une partie 
 	def Partie.creer(unIdGrille)
-			new(unId)
+			new(unIdGrille)
 	end
 
 # Constructeur permettant de charger une grille sauvegardée
 	def Partie.charger()
 			new()
-	end
-
-# Initialise les variables d'instances
-	def initialize(unIdGrille)
-		@listeHypotheses = Array.[]
-		@hypothese = false
-		initGrille(unIdGrille)
-		@idGrille = idGrille
-		@tourne = false
-        	@fini = false
 	end
 
 # Méthode initialize du constructeur charger
@@ -69,6 +61,16 @@ class Partie
 		@idGrille = BaseDeDonnees.getSauvegardeIdGrille(Compte.COMPTE.pseudo)
 		matGrille = BaseDeDonnees.getSauvegardeGrilleSauvegardee(Compte.COMPTE.pseudo)
 		@grille = Grille.creer(unIdGrille, matGrille)
+	end
+
+# Initialise les variables d'instances
+	def initialize(unIdGrille)
+		@listeHypotheses = Array.[]
+		@hypothese = false
+		initGrille(unIdGrille)
+		@idGrille = idGrille
+		@tourne = false
+        	@fini = false
 	end
 
 # Méthode permettant de créer une grille
