@@ -68,7 +68,7 @@ class Partie
 		@listeHypotheses = Array.[]
 		@hypothese = false
 		initGrille(unIdGrille)
-		@idGrille = idGrille
+		@idGrille = unIdGrille
 		@tourne = false
         	@fini = false
 	end

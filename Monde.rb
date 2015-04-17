@@ -53,9 +53,14 @@ class Monde
 		
 		# Création du tableau de parties
 		@tableauParties = []
-		
-		1.upto(40) do |i|
-			@tableauParties += PartieMonde.creer(BaseDeDonnees.getMondeGrilleId(@idMonde, i))
+		if(@idMonde != 8)
+			1.upto(40) do |i|
+				@tableauParties.push(PartieMonde.creer(BaseDeDonnees.getMondeGrilleId(@idMonde, i)))
+			end
+		else
+			1.upto(20) do |i|
+				@tableauParties.push(PartieMonde.creer(BaseDeDonnees.getMondeGrilleId(@idMonde, i)))
+			end
 		end
 	end
 

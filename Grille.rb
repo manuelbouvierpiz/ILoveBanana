@@ -19,29 +19,17 @@ class Grille
   attr :nbClicMin, false
   
   #Méthodes
-  
+
+  # * Méthode de classe qui demande l'id de la +Grille à créer+ et la matrice (dans le cas d'une sauvegarde)
+  def Grille.creer(unIdGrille, uneMatrice)
+		new(unIdGrille, uneMatrice)
+  end
+
   # * Méthode de classe qui demande l'id de la +Grille à créer+
   def Grille.creer(unIdGrille)
 		new(unIdGrille)
   end
 
-  # * Méthode de classe qui demande l'id de la +Grille à créer+ et la matrice (dans le cas d'une sauvegarde)
-  def Grille.creer(unIdGrille, uneMatrice)
-  
-		new(unIdGrille, uneMatrice)
-  end
-  # * Méthode qui initialise les variables
-  def initialize(unIdGrille)
-		@idGrille = unIdGrille
-		@matrice = matriceDepart
-		@nbClicMin = 0
-		@matrice.each do |uneLigne|
-			uneLigne.each do |uneCase|
-				@nbClicsMin += 1 if uneCase.estVide?
-			end
-		end
-  end
-  
   # * Méthode qui initialise les variables
   def initialize(unIdGrille, uneMatrice)
 		@idGrille = unIdGrille
@@ -50,6 +38,18 @@ class Grille
 		matriceDepart.each do |uneLigne|
 			uneLigne.each do |uneCase|
 				@nbClicsMin += 1 if uneCase.estVide?
+			end
+		end
+  end
+
+  # * Méthode qui initialise les variables
+  def initialize(unIdGrille)
+		@idGrille = unIdGrille
+		@matrice = matriceDepart
+		@nbClicMin = 0
+		@matrice.each do |uneLigne|
+			uneLigne.each do |uneCase|
+				@nbClicMin += 1 if uneCase.estVide?
 			end
 		end
   end

@@ -1,6 +1,10 @@
+# encoding: UTF-8
+
+load 'PartieDidacticiel.rb'
+
 class Didacticiel 
-	@didactitielDeBase
-	@didactitielAvance
+	@didacticielDeBase
+	@didacticielAvance
 	
 	# Méthode de classe
 
@@ -17,10 +21,10 @@ class Didacticiel
 	
 		# Les valeurs 5 et  6 sont temporaires et servent juste pour illustrer que l'id des grilles sera connu en avance.
 	
-		@didactitielDeBase,@didactitielAvance = PartieDidactitiel.creer(5) , PartieDidactitiel.creer(6)
+		@didacticielDeBase,@didacticielAvance = PartieDidacticiel.creer(5) , PartieDidacticiel.creer(6)
 	end
 
 	def estTermine?
-		return (@didactitielDeBase.estTermine? && @didactitielAvance.estTermine?)
+		return (@didacticielDeBase.estTermine? && @didacticielAvance.estTermine?)
 	end
 end
