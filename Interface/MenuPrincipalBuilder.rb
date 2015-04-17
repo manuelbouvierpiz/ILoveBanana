@@ -6,6 +6,12 @@
 #
 require 'gtk2'
 load 'Interface/TakuzuBuilder.rb'
+load 'Interface/AProposBuilder.rb'
+load 'Interface/StatistiquesBuilder.rb'
+load 'Interface/PartieBuilder.rb'
+load 'Interface/TailleDifficulteBuilder.rb'
+load 'Interface/ChoixMondeBuilder.rb'
+load 'Interface/OptionsBuilder.rb'
 
 class MenuPrincipalBuilder < TakuzuBuilder
 
@@ -22,7 +28,7 @@ class MenuPrincipalBuilder < TakuzuBuilder
 	end
 	
 	def on_didacticielButton_clicked
-		ouvrirFenetre(Partie_6Builder.new())#idGrilleDidacticiel en paramètre
+		ouvrirFenetre(PartieBuilder.new())
 	end
 	
 	def on_optionButton_clicked

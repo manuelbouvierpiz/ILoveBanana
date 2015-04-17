@@ -6,7 +6,7 @@
 #
 require 'gtk2'
 
-class APropos < TakuzuBuilder
+class AProposBuilder < TakuzuBuilder
     def initialize
         super(__FILE__, "A Propos")
     end

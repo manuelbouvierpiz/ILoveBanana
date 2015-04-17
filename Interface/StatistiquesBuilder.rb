@@ -61,7 +61,4 @@ class StatistiquesBuilder < TakuzuBuilder
             @labelResultat.set_text("#{Compte.COMPTE.scoreDifficulte(@boxTaille.active_text.to_i, @boxNiveau.active_text.to_i)}")
         end
     end
-    Gtk.init
-    StatistiquesBuilder.new()
-    Gtk.main
 end
