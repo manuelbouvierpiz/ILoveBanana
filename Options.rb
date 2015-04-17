@@ -12,14 +12,13 @@ class Options
 # Constucteur des options
 	def Options.creer(unPseudo)
 		new(unPseudo)
-		
-	end
+	end 
 
 # Initialise la variable avec notre base de données
 	def initialize(unPseudo)
-		@tabRaccourciClavier = [RaccourciClavier.creer(1,"Bleu",unPseudo),
-								RaccourciClavier.creer(2,"Rouge",unPseudo),
-								RaccourciClavier.creer(3,"Pause",unPseudo),
+		@tabRaccourciClavier = [RaccourciClavier.creer(1,"Pause",unPseudo),
+								RaccourciClavier.creer(2,"ClicDroit",unPseudo),
+								RaccourciClavier.creer(3,"ClicGauche",unPseudo),
 								RaccourciClavier.creer(4,"Hypothèse",unPseudo)]
 	end
 
@@ -28,11 +27,26 @@ class Options
 		BaseDeDonnees.setVolumeBruitage(Compte.COMPTE.pseudo, unVolume)
 	end
 
-# Méthode permettant de modifier le volume de la musique
-	def modifierVolumeMusique(unVolume)
-		BaseDeDonnees.setVolumeBruitage(Compte.COMPTE.pseudo, unVolume)
+	def getVolumeBruitage
+		return BaseDeDonnees.getVolumeBruitage(Compte.COMPTE.pseudo)
 	end
 
+# Méthode permettant de modifier le volume de la musique
+	def modifierVolumeMusique(unVolume)
+		BaseDeDonnees.setVolumeMusique(Compte.COMPTE.pseudo, unVolume)
+	end
+
+	def getVolumeMusique
+		return BaseDeDonnees.getVolumeMusique(Compte.COMPTE.pseudo)
+	end
+
+	def Options.premiereInitialisationOptions(unPseudo)
+		BaseDeDonnees.setVolumeBruitage(unPseudo, 50)
+		BaseDeDonnees.setVolumeMusique(unPseudo, 50)
+		#BaseDeDonnees.setCouleurUn(unPseudo, "#FF0000")
+		#BaseDeDonnees.setCouleurUn(unPseudo, "#FF0000")
+		RaccourciClavier.premiereInitialisationRaccourci(unPseudo)
+	end
 # Méthode permettant de réinitialiser intégralement les données du profil
 	def resetProfil()
 		BaseDeDonnees.ViderReussir(Compte.COMPTE.pseudo)
@@ -40,12 +54,16 @@ class Options
 	end
 
 # Méthode permettant de modifier un raccourci clavier
-	def changerRaccourci(unId)
-		@tabRaccourciClavier.each do |touche|
-			if(@tabRaccourciClavier[i].id == unId)
-				@tabRaccourciClavier[i].changerTouche(unId)
-			end
-		end
+	def changerRaccourci(unId, unRaccourci)
+		@tabRaccourciClavier[unId-1].changerTouche(unRaccourci)
+	end
+
+	def getRaccourci(unId)
+		return BaseDeDonnees.getRaccourci(Compte.COMPTE.pseudo, unId)
+	end
+
+	def resetOptions
+		Options.premiereInitialisationOptions(Compte.COMPTE.pseudo)
 	end
 
 # Méthode permettant de réinitialiser tout les raccourcis clavier

@@ -1,8 +1,6 @@
 class RaccourciClavier
-	@id
-	@nom
-
-	attr_reader :id , :nom
+	
+	attr_reader :id , :nom, :caractere
 
 =begin
 	La pause est associer a la  touche p et l'id 1.
@@ -19,13 +17,12 @@ class RaccourciClavier
 
 	def initialize(id,nom,unPseudo)
 		@id,@nom = id,nom
-		resetTouche(unPseudo)
+		@caractere =BaseDeDonnees.getRaccourci(unPseudo, @id)
 	end
 
 
-	def changerTouche
-		a=gets
-		BaseDeDonnees.setRaccourci(Compte.COMPTE.pseudo, @id,'a')
+	def changerTouche(unRaccourci)
+		BaseDeDonnees.setRaccourci(Compte.COMPTE.pseudo, @id, unRaccourci)
 	end
 
 	def resetTouche(unPseudo)
@@ -39,5 +36,12 @@ class RaccourciClavier
 			when 4
 				BaseDeDonnees.setRaccourci(unPseudo, @id,'h')
 		end
+	end
+
+	def RaccourciClavier.premiereInitialisationRaccourci(unPseudo)
+		BaseDeDonnees.setRaccourci(unPseudo, 1,'p')
+		BaseDeDonnees.setRaccourci(unPseudo, 2,'d')
+		BaseDeDonnees.setRaccourci(unPseudo, 3,'f')
+		BaseDeDonnees.setRaccourci(unPseudo, 4,'h')
 	end
 end

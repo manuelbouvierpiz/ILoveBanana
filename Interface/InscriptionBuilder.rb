@@ -24,6 +24,7 @@ class InscriptionBuilder < TakuzuBuilder
         		@labelReussite.set_text("L'incription est bien prise en compte\nVous pouvez vous logguer !")
         		@buttonValider.set_visible(false)
         		@buttonRetour.label = "Se logguer"
+                Options.premiereInitialisationOptions(@entryPseudo.text)
        		else
         		@labelReussite.set_text("Le pseudo est déjà pris.")
         	end
