@@ -22,8 +22,8 @@ class ConnexionBuilder < TakuzuBuilder
 	# * Méthode d'instance qui permet de connecter un utilisateur après avoir cliqué sur le bouton de connexion
 	# * Est automatiquement appelée par Gtk
     def on_connexionButton_clicked
-		if Compte.verifierMotDePasse?(@loginEntry, @mdpEntry)
-        	Compte.login(@loginEntry, @mdpEntry)
+		if Compte.verifierMotDePasse?(@loginEntry.text, @mdpEntry.text)
+        	Compte.login(@loginEntry.text, @mdpEntry.text)
         	ouvrirFenetre(MenuPrincipalBuilder.new())
         else
             @erreurLabel.set_text("Identifiants incorrects")
@@ -34,8 +34,8 @@ class ConnexionBuilder < TakuzuBuilder
 	# * Est automatiquement appelée par Gtk
     def on_creationBouton_clicked
 		if Compte.verifierIdentifiant?(@loginEntry)
-        	Compte.creer(@loginEntry, @mdpEntry, "takuzuavengers@gmail.com")	# Mail à changer
-        	Compte.login(@loginEntry, @mdpEntry)
+        	Compte.creer(@loginEntry.text, @mdpEntry.text, "takuzuavengers@gmail.com")	# Mail à changer
+        	Compte.login(@loginEntry.text, @mdpEntry.text)
         	ouvrirFenetre(MenuPrincipalBuilder.new())
         else
         	@erreurLabel.set_text("Identifiants incorrects")

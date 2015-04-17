@@ -56,7 +56,7 @@ class Compte
     # * +ATTENTION+ : Etant donné que le classe respecte le pattern singleton, la méthode de classe change automaiquement la variable de classe COMPTE et la renvoie
     # * Ne pas oublier qu'un login peut échouer. Dans ce cas, le pseudo est égal à nil
     def Compte.login (unPseudo, unMotDePasse)
-      @@COMPTE = Compte.loginPrive(unPseudo, unMotDePasse)
+      @@COMPTE = loginPrive(unPseudo, unMotDePasse)
       return @@COMPTE
     end
     
