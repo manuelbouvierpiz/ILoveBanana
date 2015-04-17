@@ -4,7 +4,6 @@
 # Options.rb
 # Implementation de la classe Options
 
-load 'RaccourciClavier.rb'
 class Options
 
 # Variable contenant le tableau des raccourcis clavier

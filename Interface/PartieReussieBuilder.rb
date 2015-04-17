@@ -4,7 +4,6 @@
 # Auteur Parmenon Damien
 #
 require 'gtk2'
-load 'Interface/TakuzuBuilder.rb'
 
 class PartieReussieBuilder < TakuzuBuilder
 
@@ -35,8 +34,4 @@ class PartieReussieBuilder < TakuzuBuilder
 	def on_button3_clicked
 		ouvrirFenetre(MenuPrincipalBuilder.new)
 	end
-
-    Gtk.init
-    PartieReussieBuilder.new
-    Gtk.main
 end

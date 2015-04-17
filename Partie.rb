@@ -3,7 +3,6 @@
 # Partie.rb
 # Implementation de la classe Partie
 
-load 'Grille.rb'
 
 # La classe Partie est une méthode abstraite mère de PartieMonde et PartieLibre
 class Partie

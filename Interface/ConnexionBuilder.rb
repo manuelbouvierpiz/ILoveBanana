@@ -7,10 +7,6 @@
 
 require 'gtk2'
 
-load 'Compte.rb'
-load 'Interface/TakuzuBuilder.rb'
-load 'Interface/MenuPrincipalBuilder.rb'
-
 # == Classe +ConnexionBuilder+ :
 #	- sait connecter un utilisateur et créer un +Compte+
 class ConnexionBuilder < TakuzuBuilder

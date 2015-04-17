@@ -2,7 +2,6 @@
 # GrilleHardcore.rb
 # 27/02/2015
 
-load 'Grille.rb'
 class GrilleHardcore < Grille
 
   # Variables

@@ -5,7 +5,6 @@
 # Version 0.1 : Date : Mon Jul 01 10:17:02 CEST 2013
 #
 require 'gtk2'
-load 'Interface/TakuzuBuilder.rb'
 
 class TailleDifficulteBuilder < TakuzuBuilder
 	@tailleChoisie
@@ -82,9 +81,6 @@ class TailleDifficulteBuilder < TakuzuBuilder
 
 # Lance une nouvelle patie en fonction de la taille et difficulté choisie
 	def on_buttonSuivant_clicked
-		PartieBuilder.creer(PartieLibre.creer(@tailleChoisie,@adjDifficulte.value)))
+		PartieBuilder.creer(PartieLibre.creer(@tailleChoisie,@adjDifficulte.value))
 	end
-	Gtk.init
-	TailleDifficulteBuilder.new()
-	Gtk.main
 end

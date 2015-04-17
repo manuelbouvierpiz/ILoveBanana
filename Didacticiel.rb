@@ -1,7 +1,5 @@
 # encoding: UTF-8
 
-load 'PartieDidacticiel.rb'
-
 class Didacticiel 
 	@didacticielDeBase
 	@didacticielAvance

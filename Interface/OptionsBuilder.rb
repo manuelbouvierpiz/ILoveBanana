@@ -4,10 +4,6 @@
 # Version 0.2 : Date : Mon Jul 01 10:17:02 CEST 2013
 #
 require 'gtk2'
-load 'Interface/TakuzuBuilder.rb'
-load 'Interface/MenuPrincipalBuilder.rb'
-load 'Options.rb'
-load 'Compte.rb'
 class OptionsBuilder < TakuzuBuilder
 
 	attr :adjBruitage, false
@@ -43,10 +39,10 @@ class OptionsBuilder < TakuzuBuilder
 	end
 	
 	
-	#def DefiBuilder.lancer()
+	def DefiBuilder.lancer()
 		Gtk.init
 		OptionsBuilder.new()
 		Gtk.main
-    	#end
+   	end
 
 end

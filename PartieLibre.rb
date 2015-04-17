@@ -4,7 +4,6 @@
 
 # encoding: utf-8
 
-load 'Partie.rb'
 
 class PartieLibre < Partie
 

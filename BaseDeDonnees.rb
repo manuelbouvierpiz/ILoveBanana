@@ -5,8 +5,6 @@
 require "digest/md5"
 require "active_record"
 
-load 'ClassesBdd.rb'
-
 class BaseDeDonnees
 	ActiveRecord::Base.establish_connection(
 		:adapter => "mysql2",

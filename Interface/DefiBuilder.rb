@@ -6,11 +6,6 @@
 #
 require 'gtk2'
 
-load 'Interface/TakuzuBuilder.rb'
-load 'Interface/TailleDifficulteBuilder.rb'
-load 'Defi.rb'
-load 'Compte.rb'
-
 class DefiBuilder < TakuzuBuilder
 	
 	attr :grille , false

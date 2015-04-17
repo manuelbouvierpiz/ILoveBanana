@@ -1,7 +1,6 @@
 # Wilfried JOUSSE
 # Modifications apportées par Valentin CHAILLOU
 
-load 'Monde.rb'
 
 class Aventure
 

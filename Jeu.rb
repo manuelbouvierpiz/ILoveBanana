@@ -1,6 +1,3 @@
-load 'Aventure.rb'
-load 'Didacticiel.rb'
-
 class Jeu
 	
 	# * Variable de classe qui représente l'unique +Jeu+ en cours

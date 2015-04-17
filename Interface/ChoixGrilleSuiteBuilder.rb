@@ -7,10 +7,6 @@
 #
 require 'gtk2'
 
-#changer le path unshift pour chercher dans le répertoire père
-$LOAD_PATH.unshift File.expand_path("../../Interface", __FILE__)
-load 'TakuzuBuilder.rb'
-
 class ChoixGrilleSuiteBuilder < TakuzuBuilder
 
     #A bessoin de Monde.rb
@@ -25,7 +21,7 @@ class ChoixGrilleSuiteBuilder < TakuzuBuilder
  def on_niveauBouton_clicked w
       i=w.label.to_i
       #Recupere la taille de la grille pour ensuite lancer la bonne interface
-      t=@monde.tableauParties[i].@grille.taille
+      t=@monde.tableauParties[i].grille.taille
 
       case t
       when t=6

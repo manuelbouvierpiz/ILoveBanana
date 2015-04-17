@@ -5,7 +5,6 @@
 #======Class Grille=====
 #une grille pour le jeu
 
-load 'Case.rb'
 class Grille
   #variable
   

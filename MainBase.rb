@@ -4,8 +4,6 @@
 #
 #require "rubygems"
 require "active_record"
-load "BaseDeDonnee.rb"
-load "ClassesBdd.rb"
 #load "SuccesIndividuel.rb"
 #load "Case.rb"
 

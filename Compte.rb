@@ -6,11 +6,6 @@
 #Opération sur le compte presonnel
 #======Class Compte=====
 
-load 'BaseDeDonnees.rb'
-load 'Options.rb'
-load 'Succes.rb'
-load 'Statistiques.rb'
-
 require 'mail'
 
 class Compte

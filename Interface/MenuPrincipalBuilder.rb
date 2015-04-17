@@ -5,13 +5,6 @@
 # Version 0.1 : Date : Mon Jul 01 10:17:02 CEST 2013
 #
 require 'gtk2'
-load 'Interface/TakuzuBuilder.rb'
-load 'Interface/AProposBuilder.rb'
-load 'Interface/StatistiquesBuilder.rb'
-load 'Interface/PartieBuilder.rb'
-load 'Interface/TailleDifficulteBuilder.rb'
-load 'Interface/ChoixMondeBuilder.rb'
-load 'Interface/OptionsBuilder.rb'
 
 class MenuPrincipalBuilder < TakuzuBuilder
 

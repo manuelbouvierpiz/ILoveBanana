@@ -7,8 +7,6 @@
 
 require 'gtk2'
 
-load 'Interface/TakuzuBuilder.rb'
-
 # == Classe +PartieBuilder+ :
 #	- est un TakuzuBuilder
 #	- est considérée comme une classe abstraite

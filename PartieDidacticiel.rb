@@ -1,4 +1,4 @@
-load 'Partie.rb'
+
 
 class PartieDidacticiel < Partie 
 	
