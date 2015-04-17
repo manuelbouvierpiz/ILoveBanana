@@ -625,4 +625,8 @@ class BaseDeDonnees
     def BaseDeDonnees.getPlusPetitNombreClic(pseudo)
     	return GrilleFinis.select(:nb_clic).find_by_pseudo(pseudo).minimum(:nb_clic)
     end
+    
+    def BaseDeDonnees.getPlusGrandNombreClic(pseudo)
+    	return GrilleFinis.select(:nb_clic).find_by_pseudo(pseudo).maximum(:nb_clic)
+    end
 end
