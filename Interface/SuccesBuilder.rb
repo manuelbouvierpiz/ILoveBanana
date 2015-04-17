@@ -30,4 +30,8 @@ class SuccesBuilder < TakuzuBuilder
     def on_buttonStatistiques_clicked
     	ouvrirFenetre(StatistiquesBuilder.new)
     end
+
+    def on_buttonMenuPrincipal_clicked
+        ouvrirFenetre(MenuPrincipalBuilder.new)
+    end
 end
