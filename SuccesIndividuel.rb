@@ -5,12 +5,12 @@ class SuccesIndividuel
     @idSucces
 
     # Constructeur
-    def SuccesIndividuel.creer(unCompte, unIdSucces)
-        new(unCompte, unIdSucces)
+    def SuccesIndividuel.creer(unIdSucces)
+        new(unIdSucces)
     end
 
     # Initialiseur
-    def initialize(unCompte, unIdSucces)
+    def initialize(unIdSucces)
         @idSucces = unIdSucces
     end
 

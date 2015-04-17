@@ -1,4 +1,6 @@
+# encoding: UTF-8
 
+load 'SuccesIndividuel.rb'
 #class Succes 
 # -represente le liste de succes qui est definit en base de donneese
 class Succes
