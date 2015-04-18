@@ -47,7 +47,8 @@ class ClassementBuilder < TakuzuBuilder
     		@labelRang.set_visible(true)
     		@labelPseudo.set_visible(true)
     		@labelScore.set_visible(true)
-    		leClassement = Compte.COMPTE.statistiques.Classement
+    		#leClassement = Compte.COMPTE.statistiques.Classement
+    		leClassement = Compte.COMPTE.statistiques.classement(@boxTaille.active_text.to_i, @boxNiveau.active_text.to_i)
             @vboxClassement.add(Gtk::HSeparator.new)
             leClassement.each do |uneLigne|
                 uneHbox = Gtk::HBox.new(true, nil)
