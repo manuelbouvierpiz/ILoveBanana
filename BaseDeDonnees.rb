@@ -615,7 +615,10 @@ class BaseDeDonnees
     # Renvoie la somme des étoiles obtenus
     # - pseudo le pseudo du joueur
     def BaseDeDonnees.getTotalNbEtoile(pseudo)
-    	GrilleFinis.select(:nb_etoile).find_by_pseudo(pseudo).sum(:nb_etoile)	
+    	if(GrilleFinis.exists?(:pseudo => pseudo))
+    		return GrilleFinis.select(:nb_etoile).find_by_pseudo(pseudo).sum(:nb_etoile)
+    	end
+    	return 0
     end
     
     # Renvoie le plus petit nombre de clic effectué toute grille confondu
