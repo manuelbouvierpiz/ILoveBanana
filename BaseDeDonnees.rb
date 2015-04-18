@@ -584,7 +584,7 @@ class BaseDeDonnees
     # - pseudo le pseudo du joueur
     # - idMonde l'identifiant du monde
     def BaseDeDonnees.estFiniMonde?(pseudo, idMonde)
-    	idGrille = Grilles.select(:id_monde).where(:pseudo => pseudo, :id_monde => idMonde).order(numero_niveau: :asc).last.id_grille
+    	idGrille = Grilles.select(:id_grille).where(:id_monde => idMonde).order(numero_niveau: :asc).last.id_grille
     	return GrilleFinis.exists?(:pseudo => pseudo, :id_grille => idGrille)
     end
     
