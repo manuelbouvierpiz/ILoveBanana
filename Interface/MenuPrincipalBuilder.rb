@@ -29,6 +29,7 @@ class MenuPrincipalBuilder < TakuzuBuilder
 	end
 	
 	def on_statistiquesButton_clicked
+		Compte.COMPTE.succes.verifierTousLesSucces()
 		ouvrirFenetre(StatistiquesBuilder.new)
 	end
 	
