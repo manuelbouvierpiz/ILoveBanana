@@ -563,7 +563,7 @@ class BaseDeDonnees
     # - taille la taille de la grille
     # - difficulte la difficulté de la grille
     def BaseDeDonnees.getGrilleIdAleatoire(taille, difficulte)
-    	return Grilles.select(:id_grille).where(:taille => taille, :difficulte => difficulte).order("RAND()").first.id_grille
+    	return Grilles.select(:id_grille).where(:taille => taille, :difficulte => difficulte, :numero_niveau => nil, :id_monde => nil).order("RAND()").first.id_grille
     end
     
     # Renvoie le nombre de grilles accomplis en fonction d'une taille
