@@ -10,7 +10,7 @@ class SuccesBuilder < TakuzuBuilder
 
 	def initialize
 		super(__FILE__, "Succès")
-		Compte.COMPTE.succes.verifierTousLesSucces()
+		#Compte.COMPTE.succes.verifierTousLesSucces()
 		lesSucces = Compte.COMPTE.succes.succes
 		lesSucces.each do |leSucces|
 			uneHbox = Gtk::HBox.new(true, nil)
