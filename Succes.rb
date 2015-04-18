@@ -37,7 +37,9 @@ class Succes
     end
     
     def verifierUnSucces(unSucces)
-        return eval(unSucces.condition())
+        res = false
+        eval(unSucces.condition())
+        return res
     end
     
     def verifierTousLesSucces()
