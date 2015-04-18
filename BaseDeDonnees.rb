@@ -616,7 +616,7 @@ class BaseDeDonnees
     # - pseudo le pseudo du joueur
     def BaseDeDonnees.getTotalNbEtoile(pseudo)
     	if(GrilleFinis.exists?(:pseudo => pseudo))
-    		return GrilleFinis.select(:nb_etoile).find_by_pseudo(pseudo).sum(:nb_etoile)
+    		return GrilleFinis.select(:nb_etoile).where(pseudo: pseudo).sum(:nb_etoile)
     	end
     	return 0
     end
