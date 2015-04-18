@@ -36,4 +36,17 @@ class Succes
         end
     end
     
+    def verifierUnSucces(unSucces)
+        return eval(unSucces.condition())
+    end
+    
+    def verifierTousLesSucces()
+        @succes.each do |unSucces|
+            if(!unSucces.estDebloque?)
+                if(self.verifierUnSucces(unSucces))
+                    self.debloquer(unSucces)
+                end
+            end
+        end
+    end
 end
