@@ -71,9 +71,9 @@ class ClassementBuilder < TakuzuBuilder
             @vboxClassement.add(Gtk::HSeparator.new)
             leClassement.each do |uneLigne|
                 uneHbox = Gtk::HBox.new(true, nil)
-                uneHbox.add(Gtk::Label.new(uneLigne[0],false))
+                uneHbox.add(Gtk::Label.new(uneLigne[0].to_s,false))
                 uneHbox.add(Gtk::Label.new(uneLigne[1],false))
-                uneHbox.add(Gtk::Label.new(uneLigne[2],false))
+                uneHbox.add(Gtk::Label.new(uneLigne[2].to_s,false))
                 @vboxClassement.add(uneHbox)
                 @vboxClassement.add(Gtk::HSeparator.new)
             end
