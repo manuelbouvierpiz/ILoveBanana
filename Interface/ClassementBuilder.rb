@@ -42,6 +42,9 @@ class ClassementBuilder < TakuzuBuilder
     end
 
     def on_boxNiveau_changed
+        @vboxClassement.each do |child|
+            @vboxClassement.remove(child)
+        end
     	@boolNiveau = true
     	if(@boolTaille == true)
     		@labelRang.set_visible(true)
@@ -62,6 +65,9 @@ class ClassementBuilder < TakuzuBuilder
     end
 
     def on_boxTaille_changed
+        @vboxClassement.each do |child|
+            @vboxClassement.remove(child)
+        end
     	@boolTaille = true
     	if(@boolNiveau == true)
     		@labelRang.set_visible(true)
