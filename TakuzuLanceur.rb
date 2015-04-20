@@ -4,7 +4,7 @@
 
 ### Test des gems ###
 
-desGems = [["gtk2", "gtk2"], ["mail", "mail"], ["active_record", "activerecord"], ["mysql2", "mysql2"]]
+desGems = [['gtk2', 'gtk2'], ['mail', 'mail'], ['active_record', 'activerecord'], ['mysql2', 'mysql2']]
 
 desGems.each do |unDoublon|
 	begin
@@ -18,44 +18,57 @@ end
 
 ### Chargement des classes ###
 
-load 'Case.rb'
-load 'Grille.rb'
-load 'GrilleHardcore.rb'
-load 'Partie.rb'
-load 'PartieLibre.rb'
-load 'PartieDidacticiel.rb'
-load 'PartieMonde.rb'
-load 'Monde.rb'
-load 'Aventure.rb'
-load 'BaseDeDonnees.rb'
-load 'ClassesBdd.rb'
-load 'Compte.rb'
-load 'Defi.rb'
-load 'Didacticiel.rb'
-load 'Options.rb'
-load 'RaccourciClavier.rb'
-load 'SauvegardeTemporaire.rb'
-load 'Statistiques.rb'
-load 'Succes.rb'
-load 'SuccesIndividuel.rb'
-load 'Jeu.rb'
-load 'Interface/TakuzuBuilder.rb'
-load 'Interface/AProposBuilder.rb'
-load 'Interface/ChoixGrilleBuilder.rb'
-load 'Interface/ChoixGrilleSuiteBuilder.rb'
-load 'Interface/ChoixMondeBuilder.rb'
-load 'Interface/ClassementBuilder.rb'
-load 'Interface/ConnexionBuilder.rb'
-load 'Interface/DefiBuilder.rb'
-load 'Interface/ListeDefiBuilder.rb'
-load 'Interface/MenuPrincipalBuilder.rb'
-load 'Interface/OptionsBuilder.rb'
-load 'Interface/PartieBuilder.rb'
-load 'Interface/PartieReussieBuilder.rb'
-load 'Interface/StatistiquesBuilder.rb'
-load 'Interface/SuccesBuilder.rb'
-load 'Interface/TailleDifficulteBuilder.rb'
-load 'Interface/InscriptionBuilder.rb'
+desClasses = [
+	'Case.rb',
+	'Grille.rb',
+	'GrilleHardcore.rb',
+	'Partie.rb',
+	'PartieLibre.rb',
+	'PartieDidacticiel.rb',
+	'PartieMonde.rb',
+	'Monde.rb',
+	'Aventure.rb',
+	'BaseDeDonnees.rb',
+	'ClassesBdd.rb',
+	'Compte.rb',
+	'Defi.rb',
+	'Didacticiel.rb',
+	'Options.rb',
+	'RaccourciClavier.rb',
+	'SauvegardeTemporaire.rb',
+	'Statistiques.rb',
+	'Succes.rb',
+	'SuccesIndividuel.rb',
+	'Jeu.rb',
+	'Interface/TakuzuBuilder.rb',
+	'Interface/AProposBuilder.rb',
+	'Interface/ChoixGrilleBuilder.rb',
+	'Interface/ChoixGrilleSuiteBuilder.rb',
+	'Interface/ChoixMondeBuilder.rb',
+	'Interface/ClassementBuilder.rb',
+	'Interface/ConnexionBuilder.rb',
+	'Interface/DefiBuilder.rb',
+	'Interface/ListeDefiBuilder.rb',
+	'Interface/MenuPrincipalBuilder.rb',
+	'Interface/OptionsBuilder.rb',
+	'Interface/PartieBuilder.rb',
+	'Interface/PartieReussieBuilder.rb',
+	'Interface/StatistiquesBuilder.rb',
+	'Interface/SuccesBuilder.rb',
+	'Interface/TailleDifficulteBuilder.rb',
+	'Interface/InscriptionBuilder.rb',
+]
+
+print("Chargement")
+desClasses.each do |uneClasse|
+	begin
+		load uneClasse
+		print(".")
+	rescue LoadError
+		print("\n")
+	end
+end
+print(" Terminé !")
 
 ### Lancement de TakuzuAvengers ###
 
