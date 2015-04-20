@@ -33,6 +33,6 @@ class Jeu
 	end
 	
 	# Création du JEU
-	@@Jeu = new
+	@@JEU = new
 	
 end
