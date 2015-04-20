@@ -28,7 +28,7 @@ class TakuzuBuilder < Gtk::Builder
 	def initialize(unNom, unNomDeFenetre) # :nodoc:
 		super()
 	
-		self.add_from_file(unNom.sub(".rb","") + ".glade")
+		self.add_from_file(unNom.sub(".rb",".glade"))
 		self['window1'].set_window_position Gtk::Window::POS_CENTER
 		@handlerDestroy = self['window1'].signal_connect('destroy') { Gtk.main_quit }
 		self['window1'].show_all
