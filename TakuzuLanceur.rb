@@ -61,14 +61,10 @@ desClasses = [
 
 print("Chargement")
 desClasses.each do |uneClasse|
-	begin
-		load uneClasse
-		print(".")
-	rescue LoadError
-		print("\n")
-	end
+	load uneClasse
+	print(".")
 end
-print(" Terminé !")
+print(" Terminé !\n")
 
 ### Lancement de TakuzuAvengers ###
 
