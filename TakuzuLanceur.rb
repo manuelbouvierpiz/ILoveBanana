@@ -2,6 +2,27 @@
 
 # Valentin CHAILLOU et Damien PARMENON
 
+### Test des gems ###
+
+desGems = [["gtk2", "gtk2"], ["mail", "mail"], ["active_record", "activerecord"], ["mysql2", "mysql2"]]
+
+desGems.each do |unDoublon|
+	begin
+		require unDoublon[0]
+	rescue LoadError
+		begin
+			print("Installation de la gem " + unDoublon[1] + "...\n")
+			system("gem install " + unDoublon[1])
+			require unDoublon[0]
+		rescue LoadError
+			print("La gem " + unDoublon[1] + " est manquante. Veuillez l'installer manuellement\n")
+			exit
+		end
+	end
+end
+
+### Chargement des classes ###
+
 load 'Aventure.rb'
 load 'BaseDeDonnees.rb'
 load 'Case.rb'
@@ -41,28 +62,7 @@ load 'Interface/SuccesBuilder.rb'
 load 'Interface/TailleDifficulteBuilder.rb'
 load 'Interface/InscriptionBuilder.rb'
 
-### Test des gems ###
-
-desGems = [['mail', 'mail'], ['active_record', 'activerecord'], ['mysql2', 'mysql2']]
-
-begin
-	require 'gtk2'
-rescue
-	puts("GTK2 n'est pas installé sur votre système")
-end
-
-desGems.each do |unDoublon|
-	begin
-		require unDoublon[0]
-	rescue
-		begin
-			system("gem install " + unDoublon[1])
-			require unDoublon[0]
-		rescue
-			print("La gem " + unDoublon[1] + "est manquante. Veuillez l'installer manuellement")
-		end
-	end
-end
+### Lancement de TakuzuAvengers ###
 
 # We are 'go' for launch !
 ConnexionBuilder.lancer
