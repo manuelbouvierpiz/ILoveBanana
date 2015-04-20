@@ -32,13 +32,14 @@ class Grille
   # * Méthode qui initialise les variables
   def initialize(unIdGrille, uneMatrice=nil) # :nodoc:
   		@idGrille = unIdGrille
+		uneMatriceDepart = matriceDepart
 		if uneMatrice == nil
-			@matrice = matriceDepart
+			@matrice = uneMatriceDepart
 		else
 			@matrice = uneMatrice
 		end
 		@nbClicMin = 0
-		@matrice.each do |uneLigne|
+		uneMatriceDepart.each do |uneLigne|
 			uneLigne.each do |uneCase|
 				@nbClicMin += 1 if uneCase.estVide?
 			end
