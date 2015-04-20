@@ -1,9 +1,15 @@
 # encoding: UTF-8
+# Yseux Ronan, Parmenon Damien
 
-#class Succes 
-# -represente le liste de succes qui est definit en base de donneese
+# == Classe Succes : 
+#   - connaît tout les SuccesIndividuel existant
+#   - permet la vérification et le déblocage des succès
 class Succes
     
+    # Variables
+    
+    # * Variable d'instance qui contient tout les +SuccesIndividuel+
+    # * Accessible en lecture uniquement
     attr_reader :succes
     
     # Méthode de classe
@@ -15,18 +21,17 @@ class Succes
     
     # Méthodes d'instance
     
-    # Initialiseur
+    # * Initialise la classe +Succes+ avec tout les +SuccesIndividuel+ contenus dans la base de données
     def initialize()
         @succes = BaseDeDonnees.getSucces();
     end
     
-    # Méthode pour obtenir le nombre de succes possible
+    # * Méthode pour obtenir le nombre de succes existant
     def nbSuccesTotal()
         return @succes.length
     end
 
-    # Méthode pour debloquer un succes
-    #  - Si le succes est dans le liste 
+    # Méthode pour debloquer un succes en faisant appel à la fonction de même nom de la classe +SuccesIndividuel+
     def debloquer(unSucces)
         0.upto(@succes.length) do |i| # i pour index
             if(unSucces == @succes[i])
@@ -35,6 +40,7 @@ class Succes
         end
     end
     
+    # Méthode vérifiant pour chaque +SuccesIndividuel+ s'il est apte a être débloquer et le débloque si oui
     def verifierTousLesSucces()
         @succes.each do |unSucces|
             if(!unSucces.estDebloque?)
