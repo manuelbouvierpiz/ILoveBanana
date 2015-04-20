@@ -12,13 +12,6 @@ class Succes
     # * Accessible en lecture uniquement
     attr_reader :succes
     
-    # Méthode de classe
-    
-    # * Méthode de classe qui permet de créer un nouvel objet Succes
-    def Succes.creer
-        new
-    end
-    
     # Méthodes d'instance
     
     # * Initialise la classe +Succes+ avec tout les +SuccesIndividuel+ contenus dans la base de données

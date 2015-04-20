@@ -14,14 +14,6 @@ class PartieMonde < Partie
 
 	#Méthodes
 
-	def PartieMonde.creer(unIdGrille)
-		new(unIdGrille)
-	end
-
-	def initialize(unIdGrille)
-		super(unIdGrille)
-	end
-
 	# Méthode d'instance qui permet de donner l'accès à une partie dans un monde
 	def debloquer()	
 		if(@etat == false)
@@ -58,11 +50,6 @@ class PartieMonde < Partie
 	#  * Méthode d'instance qui retourne le score d'un joueur sur ce niveau
 	def scoreDuJoueur()
 		return BaseDeDonnees.getScore(Compte.COMPTE.pseudo, @grille.idGrille)
-	end
-
-	# Méthode qui permet de réinitialiser la grille de la partie
-	def initGrille(unIdGrille)
-		super(unIdGrille)
 	end
 
 end

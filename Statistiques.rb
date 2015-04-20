@@ -7,11 +7,6 @@
 # La classe Statistiques permet d'obtenir toute les statistiques dans la base de données
 class Statistiques
 
-# Constructeur de la classe Statistique, elle est amené à être instanciée une seule fois
-	def Statistiques.creer()
-		new()
-	end
-
 # Méthode retournant le score total du joueur selon une taille
 	def score(uneTaille)
 		return BaseDeDonnees.getScoreTotal(Compte.COMPTE.pseudo, uneTaille)
