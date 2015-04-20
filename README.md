@@ -12,18 +12,18 @@ Les réalisateurs de cette application sont :
       - Nanzhen Kuang
       - Wilfried Jousse
 
-Pour installer l'application sous Fedora :
+Pour installer et lancer l'application :
 
       - Cliquer sur "Download ZIP" qui se trouve sur la page "https://github.com/manuelbouvierpiz/ILoveBanana" dans le menu de droite.
       - Dézipper le .zip.
-      - Aller avec le terminal dans le chemin du dossier dézippé.
-      - Taper "ruby TakuzuLanceur.rb".
+      - Ouvrer un terminal dans le répertoire du dossier dézippé.
+      - Taper "ruby TakuzuLanceur.rb". Le lanceur doit automatiquement installer les gems manquantes
 
-Si vous ne possédez pas Ruby, GTK2, Active Record, MySQL2 ou Mail, vous pouvez les installer de cette façon :
+Si vous ne possédez pas Ruby (version 1.9 ou 2.X), vous pouvez l'installer de cette façon :
 
-      - Aller dans un terminal.
-      - Taper "gem install ruby".
-      - Taper "gem install gtk2-devel".
-      - Taper "gem install activerecord".
-      - Taper "gem install mysql2".
-      - Taper "gem install mail".
+      - Sous windows, vous pouvez le récupérer à cette adresse : http://rubyinstaller.org/ (NOTE : Sous Windows, il est préférable d'utiliser Ruby 2.X afin d'éviter d'éventuelles incompatibilités avec certaines gems)
+      - Sous Mac OS X, vous pouvez utiliser Homebrew (http://brew.sh/index_fr.html) et saisir "brew install ruby"
+      - Sous Linux, vous pouvez l'installer via votre gestionnaire de paquet :
+            - Sous Ubuntu/Debian : apt-get install ruby
+            - Sous OpenSUSE : zypper in ruby (NOTE : sous OpenSUSE Tumbleweed, vous pouvez avoir des incompatibilités avec certaines gems)
+            - Sous Fedora : yum install ruby
