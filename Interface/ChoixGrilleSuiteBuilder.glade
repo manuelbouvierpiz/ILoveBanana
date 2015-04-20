@@ -4,6 +4,8 @@
   <!-- interface-naming-policy project-wide -->
   <object class="GtkWindow" id="window1">
     <property name="can_focus">False</property>
+    <property name="default_width">800</property>
+    <property name="default_height">700</property>
     <child>
       <object class="GtkFixed" id="fixed1">
         <property name="visible">True</property>
@@ -22,6 +24,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
             </child>
@@ -31,6 +34,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
@@ -44,6 +48,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
@@ -57,6 +62,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
@@ -70,6 +76,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
@@ -83,6 +90,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
@@ -96,6 +104,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
@@ -111,6 +120,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
@@ -126,6 +136,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
@@ -141,6 +152,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
@@ -156,6 +168,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
@@ -169,6 +182,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
@@ -182,6 +196,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
@@ -197,6 +212,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
@@ -212,6 +228,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
@@ -227,6 +244,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
@@ -242,6 +260,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
@@ -257,6 +276,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
@@ -272,6 +292,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
@@ -287,6 +308,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
@@ -310,6 +332,7 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
+            <property name="use_action_appearance">False</property>
             <signal name="clicked" handler="on_precedentBouton_clicked" swapped="no"/>
           </object>
           <packing>
@@ -331,7 +354,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkLabel" id="label2">
+          <object class="GtkLabel" id="nomMonde">
             <property name="width_request">546</property>
             <property name="height_request">97</property>
             <property name="visible">True</property>
@@ -344,6 +367,23 @@
           <packing>
             <property name="x">136</property>
             <property name="y">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="retourBouton">
+            <property name="label" translatable="yes">Retour au 
+choix
+du monde</property>
+            <property name="width_request">100</property>
+            <property name="height_request">80</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="use_action_appearance">False</property>
+          </object>
+          <packing>
+            <property name="x">55</property>
+            <property name="y">568</property>
           </packing>
         </child>
       </object>

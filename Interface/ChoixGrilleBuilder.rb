@@ -2,9 +2,6 @@
 
 # encoding: UTF-8
 
- 
-# Version 0.1 : Date : Mon Jul 01 10:17:02 CEST 2013
-#
 require 'gtk2'
 
 class ChoixGrilleBuilder < TakuzuBuilder
@@ -18,7 +15,7 @@ class ChoixGrilleBuilder < TakuzuBuilder
     def initialize(unMonde)
       super(__FILE__,"Choix de la grille")   
       @monde = unMonde
-      @NomMonde.set_text(@monde.nom)
+      @nomMonde.set_text(@monde.nom)
     end
 
     def on_niveauBouton_clicked unLabel
@@ -32,7 +29,7 @@ class ChoixGrilleBuilder < TakuzuBuilder
     end
 
     def on_retourBouton_clicked
-      ouvrirFenetre(MenuPrincipalBuilder.new)
+      ouvrirFenetre(ChoixMondeBuilder.new)
     end
   
 end

@@ -15,6 +15,7 @@
           <object class="GtkHBox" id="hbox1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="homogeneous">True</property>
             <child>
               <object class="GtkLayout" id="layout15">
                 <property name="visible">True</property>
@@ -27,28 +28,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button2">
-                <property name="label" translatable="yes">V
-I
-L
-L
-A
-G
-E</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="use_action_appearance">False</property>
-                <signal name="clicked" handler="go2Village" swapped="no"/>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="button3">
+              <object class="GtkButton" id="buttonPrairie">
                 <property name="label" translatable="yes">P
 R
 A
@@ -65,11 +45,11 @@ E</property>
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">True</property>
-                <property name="position">2</property>
+                <property name="position">1</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button4">
+              <object class="GtkButton" id="buttonForet">
                 <property name="label" translatable="yes">F
 O
 R
@@ -84,11 +64,11 @@ T</property>
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">True</property>
-                <property name="position">3</property>
+                <property name="position">2</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button5">
+              <object class="GtkButton" id="buttonMer">
                 <property name="label" translatable="yes">M
 E
 R</property>
@@ -101,11 +81,11 @@ R</property>
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">True</property>
-                <property name="position">4</property>
+                <property name="position">3</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button6">
+              <object class="GtkButton" id="buttonDesert">
                 <property name="label" translatable="yes">D
 E
 S
@@ -121,11 +101,11 @@ T</property>
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">True</property>
-                <property name="position">5</property>
+                <property name="position">4</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button7">
+              <object class="GtkButton" id="buttonGrotte">
                 <property name="label" translatable="yes">G
 R
 O
@@ -141,11 +121,11 @@ E</property>
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">True</property>
-                <property name="position">6</property>
+                <property name="position">5</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button8">
+              <object class="GtkButton" id="buttonVolcan">
                 <property name="label" translatable="yes">V
 O
 L
@@ -161,11 +141,11 @@ N</property>
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">True</property>
-                <property name="position">7</property>
+                <property name="position">6</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button9">
+              <object class="GtkButton" id="buttonEspace">
                 <property name="label" translatable="yes">E
 S
 P
@@ -181,11 +161,11 @@ E</property>
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">True</property>
-                <property name="position">8</property>
+                <property name="position">7</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button10">
+              <object class="GtkButton" id="buttonArcEnCiel">
                 <property name="label" translatable="yes">A
 R
 C
@@ -206,7 +186,7 @@ L</property>
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">True</property>
-                <property name="position">9</property>
+                <property name="position">8</property>
               </packing>
             </child>
             <child>
@@ -217,7 +197,7 @@ L</property>
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">True</property>
-                <property name="position">10</property>
+                <property name="position">9</property>
               </packing>
             </child>
           </object>
