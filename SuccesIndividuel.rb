@@ -41,4 +41,9 @@ class SuccesIndividuel
         return BaseDeDonnees.getSuccesCondition(@idSucces)
     end
     
+    def verifierUnSucces()
+        res = false
+        eval(self.condition())
+        return res
+    end
 end
