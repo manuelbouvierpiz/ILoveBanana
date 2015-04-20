@@ -10,14 +10,9 @@ desGems.each do |unDoublon|
 	begin
 		require unDoublon[0]
 	rescue LoadError
-		begin
-			print("Installation de la gem " + unDoublon[1] + "...\n")
-			system("gem install " + unDoublon[1])
-			require unDoublon[0]
-		rescue LoadError
-			print("La gem " + unDoublon[1] + " est manquante. Veuillez l'installer manuellement\n")
-			exit
-		end
+		print("Installation de la gem " + unDoublon[1] + "...\n")
+		system("gem install " + unDoublon[1])
+		exec("ruby", "TakuzuLanceur.rb")	# On redémarre ruby pour qu'il prenne en compte les changements concernant les gems
 	end
 end
 
