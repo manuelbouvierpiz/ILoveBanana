@@ -18,38 +18,27 @@ class PartieBuilder < TakuzuBuilder
 	# * Variable d'instance non accessible qui représente la partie en cours
 	@partie
 
-	# Méthodes de classe
-
-	# * Méthode de classe qui permet de créer une +PartieBuilder+
-	# ===== Attributs :
-	#	- unMonde : un +Monde+ dans lequel se trouve la +Partie+
-	#	- unePartie : une +Partie+ à lancer 
-	def PartieBuilder.creer(unePartie, unMonde)
-		new(unePartie, unMonde)
-	end
+	# Méthode de classe
 
 	# * Méthode de classe qui permet de créer une +PartieBuilder+
 	# ===== Attribut :
 	#	- unePartie : une +Partie+ à lancer
-	def PartieBuilder.creer(unePartie)
-		new(unePartie)
+	# ===== Attributs :
+	#	- unMonde : un +Monde+ dans lequel se trouve la +Partie+
+	#	- unePartie : une +Partie+ à lancer 
+	def PartieBuilder.creer(unePartie, unMonde=nil)
+		new(unePartie, unMonde)
 	end
 
 	# Méthodes d'instance
 
-	# Méthode d'instance qui initialise la partie en appliquant une image de fond
-    def initialize(unePartie, unMonde)	# :nodoc:
-        super("Partie#{unePartie.grille.taille}Builder", "Partie")
-
-		@image1.set_file(unMonde.image)
-
-		@partie = unePartie
-		@partie.lanceToi
-    end
-
-	# Méthode d'instance qui initialise la partie sans appliquer d'image de fond
-	def initialize(unePartie)			# :nodoc:
-		super("Partie#{unePartie.grille.taille}Builder", "Partie")
+	# Méthode d'instance qui initialise la partie
+	def initialize(unePartie, unMonde)			# :nodoc:
+		super("Interface/Partie#{unePartie.grille.taille}Builder.rb", "Partie")
+		
+		if unMonde != nil
+			@image1.set_file(unMonde.image)
+		end
 
 		@partie = unePartie
 		@partie.lanceToi
