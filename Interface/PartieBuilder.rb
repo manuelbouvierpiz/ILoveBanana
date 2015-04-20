@@ -42,6 +42,11 @@ class PartieBuilder < TakuzuBuilder
 
 		@partie = unePartie
 		@partie.lanceToi
+		Thread.new{
+				while !@partie.estTermine? do
+					@temps.set_text("Temps :\n" + @partie.getTempsString)
+				end
+			}
 	end
 
 	# * Méthode d'instance qui permet de modifier l'état d'une +Case+

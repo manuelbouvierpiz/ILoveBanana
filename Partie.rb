@@ -26,13 +26,13 @@ class Partie
 # Variable contenant l'heure de début du lancement du chronometre
 	@debutChronometre
 # Variable contenant la différence entre l'heure actuelle et le début du chronomètre
-    	@finChronometre
+	@finChronometre
 # Variable contenant l'heure de début de la pause
-    	@pause
+	@pause
 # Variable indiquant si le chronomètre est actif ou non
-    	@tourne
+	@tourne
 # Variable indiquant si le chronomètre est fini 
-    	@fini
+	@fini
 
 
 	private_class_method :new
@@ -66,18 +66,13 @@ class Partie
 			@nbClics = 0
 			@temps = 0
 			@idGrille = unIdGrille
-			initGrille(unIdGrille)
+			@grille = Grille.creer(unIdGrille)
 			@tourne = false
 		end
 		
 		@fini = false
 		@listeHypotheses = Array.[]
 		@hypothese = false
-	end
-
-# Méthode permettant de créer une grille
-	def initGrille(unIdGrille)
-		@grille = Grille.creer(unIdGrille)
 	end
 
 # Méthode retournant le score de la partie
@@ -124,45 +119,51 @@ class Partie
 	
 # Méthode permettant de stopper commplètement le chronomètre
 	def arretChronometre()
-        	@finChronometre = Time.now - @debutChronometre
-        	@tourne = false
-        	@fini = true
-    	end
+		@finChronometre = Time.now - @debutChronometre
+		@tourne = false
+		@fini = true
+	end
 
 # Méthode permettant de mettre en pause le chronomètre
-    	def mettreEnPauseChronometre()
-        	@pause = Time.now
-        	@tourne = false
-    	end
+	def mettreEnPauseChronometre()
+		@pause = Time.now
+		@tourne = false
+	end
 
 # Méthode permettant la reprise du chronomètre après une pause
-    	def repriseChronometre()
-        	@debutChronometre += Time.now - @pause
-        	@tourne = true
-    	end
+	def repriseChronometre()
+		@debutChronometre += Time.now - @pause
+		@tourne = true
+	end
 
 # Méthode permettant de renvoyer le temps actuel de la partie en seconde
-    	def getTemps()
-    		if(@tourne)
-        		tempsActuel = Time.now - @debutChronometre
-        		return tempsActuel.to_i
-        	end
+	def getTemps()
+		if(@tourne)
+			tempsActuel = Time.now - @debutChronometre
+			return tempsActuel.to_i
+		end
         	
-        	if(@fini)
+		if(@fini)
 			return @finChronometre.to_i
-        	end
+		end
         	
-        	tempsActuel = @pause - @debutChronometre
-        	return tempsActuel.to_i
-    	end
+		tempsActuel = @pause - @debutChronometre
+		return tempsActuel.to_i
+	end
 
 # Méthode permettant de renvoyer le temps actuel de la partie en chaine de caractère pour l'affichage    	
-    	def getTempsString()
-    		unTemps = self.getTemps
-    		minute = sprintf("%02i", (unTemps % 3600) / 60)
-        	seconde = sprintf("%02i", unTemps % 60)
-        	return "#{minute}:#{seconde}"
-    	end
+	def getTempsString()
+		unTemps = self.getTemps
+		minute = sprintf("%02i", (unTemps % 3600) / 60)
+		seconde = sprintf("%02i", unTemps % 60)
+		return "#{minute}:#{seconde}"
+	end
+		
+	# * Méthode d'instance qui permet de savoir si la +Partie+ est terminée
+	# * Retourne +true+ si la +Partie+ est terminée, +false+ sinon
+	def estTerminee?()
+		@grille.estTerminee?
+	end
 end
 	
 
