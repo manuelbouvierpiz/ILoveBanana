@@ -64,14 +64,14 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button2">
+              <object class="GtkButton" id="buttonStatistiques">
                 <property name="label" translatable="yes">Statistiques</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="border_width">20</property>
                 <property name="use_action_appearance">False</property>
-                <signal name="clicked" handler="on_button2_clicked" swapped="no"/>
+                <signal name="clicked" handler="on_buttonStatistiques_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -80,14 +80,14 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button3">
+              <object class="GtkButton" id="buttonSucces">
                 <property name="label" translatable="yes">Succès</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="border_width">20</property>
                 <property name="use_action_appearance">False</property>
-                <signal name="clicked" handler="on_button3_clicked" swapped="no"/>
+                <signal name="clicked" handler="on_buttonSucces_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>

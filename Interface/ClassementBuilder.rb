@@ -6,11 +6,25 @@
 #
 require 'gtk2'
 
+# == Classe ClassementBuilder : 
+#   - Permet l'affichage d'un classement en fonction d'une taille et d'une difficulté choisies par l'utilisateur
+#   - Permet également l'accès aux Statistiques et aux Succès ainsi que de retourner sur le Menu Principal
 class ClassementBuilder < TakuzuBuilder
 
+    # Variables
+    
+    # * Variable d'instance qui permet de savoir si la taille a déjà été choisie par l'utilisateur
+    # * Le classement ne s'affichera que si la taille et la difficulté ont été choisies
 	@boolNiveau
+
+    # * Variable d'instance qui permet de savoir si la difficulté a déjà été choisie par l'utilisateur
+    # * Le classement ne s'affichera que si la taille et la difficulté ont été choisies
 	@boolTaille
 
+    # Méthodes
+
+    # * Méthode d'instance qui initialise la fenêtre correspondante au +ClassementBuilder+
+    # * Initialise les ComboBox pour la taille et la difficulté avec leurs models respectifs
 	def initialize
 		super(__FILE__, "Classement")
 		
@@ -33,14 +47,18 @@ class ClassementBuilder < TakuzuBuilder
     	@labelScore.set_visible(false)
     end
 
-    def on_button2_clicked
+    # * Méthode d'instance qui ouvre la fenêtre Statistiques si l'utilisateur clique sur le bouton correspondant
+    def on_buttonStatistiques_clicked
     	ouvrirFenetre(StatistiquesBuilder.new)
     end
 
-    def on_button3_clicked
+    # * Méthode d'instance qui ouvre la fenêtre Succes si l'utilisateur clique sur le bouton correspondant
+    def on_buttonSucces_clicked
     	ouvrirFenetre(SuccesBuilder.new)
     end
 
+    # * Méthode d'instance qui met à la valeur true le booléen correspondant à la difficulté
+    # * Affiche le classement correspondant aux valeurs données par l'utilisateur si le booléen de la taille est à true aussi
     def on_boxNiveau_changed
         @vboxClassement.each do |child|
             @vboxClassement.remove(child)
@@ -64,6 +82,8 @@ class ClassementBuilder < TakuzuBuilder
     	end
     end
 
+    # * Méthode d'instance qui met à la valeur true le booléen correspondant à la taille
+    # * Affiche le classement correspondant aux valeurs données par l'utilisateur si le booléen de la difficulté est à true aussi
     def on_boxTaille_changed
         @vboxClassement.each do |child|
             @vboxClassement.remove(child)
@@ -87,6 +107,7 @@ class ClassementBuilder < TakuzuBuilder
     	end
     end
 
+    # * Méthode d'instance qui ouvre la fenêtre du menu principal si l'utilisateur clique sur le bouton correspondant
     def on_buttonMenuPrincipal_clicked
         ouvrirFenetre(MenuPrincipalBuilder.new)
     end
