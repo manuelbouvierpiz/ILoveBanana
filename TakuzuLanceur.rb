@@ -1,8 +1,10 @@
+# encoding: UTF-8
+
+# Valentin CHAILLOU et Damien PARMENON
+
 load 'Aventure.rb'
 load 'BaseDeDonnees.rb'
 load 'Case.rb'
-# Valentin CHAILLOU et Damien PARMENON
-
 load 'ClassesBdd.rb'
 load 'Compte.rb'
 load 'Defi.rb'
