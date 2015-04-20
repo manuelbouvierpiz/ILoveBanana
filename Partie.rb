@@ -57,7 +57,7 @@ class Partie
 
 # Initialise les variables d'instances
 	def initialize(unIdGrille=nil)
-		if uneGrille == nil		# Il faut charger la grille précédemment sauvegardée
+		if unIdGrille == nil		# Il faut charger la grille précédemment sauvegardée
 			@nbHypotheses = BaseDeDonnees.getSauvegardeNbHypotheses(Compte.COMPTE.pseudo)
 			@nbAides = BaseDeDonnees.getSauvegardeNbAides(Compte.COMPTE.pseudo)
 			@nbClics = BaseDeDonnees.getSauvegardeNbClics(Compte.COMPTE.pseudo)
