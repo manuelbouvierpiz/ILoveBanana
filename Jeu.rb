@@ -10,15 +10,7 @@ class Jeu
 
 	# Méthodes de classe
 	
-	# * Méthode de classe qui crée le jeu
-	def Jeu.creer()
-		new
-	end
-	
-	private_class_method :new, :creer
-	
-	# Création du JEU
-	@@JEU = creer()
+	private_class_method :new
 	
 	# * Méthode de classe qui permet d'accéder au +JEU+ en lecture
 	# * Retourne la variable de classe JEU
@@ -39,5 +31,8 @@ class Jeu
 		uneTaille = 12
 		@partie = PartieLibre.creer(uneTaille, uneDifficulte)
 	end
+	
+	# Création du JEU
+	@@Jeu = new
 	
 end
