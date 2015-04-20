@@ -10,17 +10,13 @@ class PartieLibre < Partie
 	def PartieLibre.creer(uneTaille, uneDifficulte)
 		new(uneTaille, uneDifficulte)
 	end
-
-	def PartieLibre.creer(unIdGrille)
-		new(unIdGrille)
-	end
-
-	def initialize(uneTaille, uneDifficulte)
-		initGrilleAlea(uneTaille, uneDifficulte)
-	end
-
-	def initialize(unIdGrille)
-		initGrille(unIdGrille)
+	
+	def initialize(unArgument, uneDifficulte=nil)
+		if uneDifficulte == nil		# unArgument = unIdGrille
+			super(unArgument)
+		else						# unArgument = uneTaille
+			initGrilleAlea(unArgument, uneDifficulte)
+		end
 	end
 
 	def initGrilleAlea(uneTaille, uneDifficulte)

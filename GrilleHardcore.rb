@@ -19,13 +19,7 @@ class GrilleHardcore < Grille
   # Méthodes d'instance
   
   # Méthode d'instance qui initialise le temps maximum et le nombre maximum de clics associés à la +GrilleHardcore+
-  def initialize(unIdGrille, unTempsMax, unNbClicsMax)  # :nodoc
-    super(unIdGrille)
-    tempsMax, nbClicsMax = unTempsMax, unNbClicsMax
-  end
-  
-  # Méthode d'instance qui initialise le temps maximum et le nombre maximum de clics associés à la +GrilleHardcore+
-  def initialize(unIdGrille, uneMatrice, unTempsMax, unNbClicsMax)  # :nodoc
+  def initialize(unIdGrille, unTempsMax, unNbClicsMax, uneMatrice)  # :nodoc
     super(unIdGrille, uneMatrice)
     tempsMax, nbClicsMax = unTempsMax, unNbClicsMax
   end
@@ -35,22 +29,18 @@ class GrilleHardcore < Grille
   private_class_method :new
   
   # * Méthode de classe qui crée une nouvelle +GrilleHardcore+
-  # * ===== Attributs :
+  # * <b>Attention à l'ordre de arguments</b>
+  # ===== Attributs :
   # - unIdGrille : un entier représentant l'id de la +Grille+
   # - unTempsMax : un flottant représentant le temps maximum de la résolution de la +GrilleHardcore+
   # - unNbClicsMax : un entier représentant le nombre de clics maximum pour résoudre la +GrilleHardcore+
-  def GrilleHardcore.creer(unIdGrille, unTempsMax, unNbClicsMax)
-    new(unIdGrille, unTempsMax, unNbClicsMax)
-  end
-  
-  # * Méthode de classe qui crée une nouvelle +GrilleHardcore+
-  # * ===== Attributs :
+  # ===== Attributs :
   #	- unIdGrille : un entier représentant l'id de la +Grille+
   # - uneMatrice : une matrice de la +Grille+ sauvegardée
   # - unTempsMax : un flottant représentant le temps maximum de la résolution de la +GrilleHardcore+
   # - unNbClicsMax : un entier représentant le nombre de clics maximum pour résoudre la +GrilleHardcore+
-  def GrilleHardcore.creer(unIdGrille, uneMatrice, unTempsMax, unNbClicsMax)
-    new(unIdGrille, uneMatrice, unTempsMax, unNbClicsMax)
+  def GrilleHardcore.creer(unIdGrille, unTempsMax, unNbClicsMax, uneMatrice=nil)
+    new(unIdGrille, unTempsMax, unNbClicsMax, uneMatrice)
   end
 
 end

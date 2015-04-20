@@ -449,7 +449,7 @@ class BaseDeDonnees
         0.upto(Math.sqrt(longGrille) - 1) do |i|
             matriceGrille[i] = []
             0.upto(Math.sqrt(longGrille) - 1) do
-                caseGrille = Case.creer
+                caseGrille = Case.new
                 if(grille[j] == '0')
                     caseGrille.setBleu
                 else

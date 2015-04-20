@@ -19,32 +19,24 @@ class Grille
   
   #Méthodes
 
-  # * Méthode de classe qui demande l'id de la +Grille à créer+ et la matrice (dans le cas d'une sauvegarde)
-  def Grille.creer(unIdGrille, uneMatrice)
+  # * Méthode de classe crée une nouvelle +Grille+
+  # ===== Attributs :
+  #		- unIdGrille : un entier représentant l'ID de la Grille
+  # ===== Attributs :
+  #		- unIdGrille : un entier représentant l'ID de la Grille
+  #		- uneMatrice : un tableau de Cases à deux dimensions
+  def Grille.creer(unIdGrille, uneMatrice=nil)
 		new(unIdGrille, uneMatrice)
   end
 
-  # * Méthode de classe qui demande l'id de la +Grille à créer+
-  def Grille.creer(unIdGrille)
-		new(unIdGrille)
-  end
-
   # * Méthode qui initialise les variables
-  def initialize(unIdGrille, uneMatrice)
-		@idGrille = unIdGrille
-		@matrice = uneMatrice
-		@nbClicMin = 0
-		matriceDepart.each do |uneLigne|
-			uneLigne.each do |uneCase|
-				@nbClicsMin += 1 if uneCase.estVide?
-			end
+  def initialize(unIdGrille, uneMatrice=nil) # :nodoc:
+		if uneMatrice == nil
+			@matrice = matriceDepart
+		else
+			@matrice = uneMatrice
 		end
-  end
-
-  # * Méthode qui initialise les variables
-  def initialize(unIdGrille)
 		@idGrille = unIdGrille
-		@matrice = matriceDepart
 		@nbClicMin = 0
 		@matrice.each do |uneLigne|
 			uneLigne.each do |uneCase|

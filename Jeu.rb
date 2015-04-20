@@ -21,8 +21,8 @@ class Jeu
 	# Méthode d'instance
 
 	def initialize()
-		@aventure = Aventure.creer
-		@didacticiel = Didacticiel.creer
+		@aventure = Aventure.new
+		@didacticiel = Didacticiel.new
 	end
 	
 	# * Méthode d'instance qui permet de créer une nouvelle partie libre

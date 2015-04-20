@@ -2,13 +2,7 @@
 
 class PartieDidacticiel < Partie 
 	
-	def PartieDidacticiel.creer(id)
-		new(id)		
-	end
-	
-	def initialize(id)
-		super(id)
-	end
+	private_class_method :charger
 	
 	def estTerminee?()
 		@grille.estTerminee?

@@ -1,17 +1,8 @@
 # encoding: UTF-8
 
 class Didacticiel 
-	@didacticielDeBase
-	@didacticielAvance
-	
-	# Méthode de classe
-
-	# * Méthode de classe qui crée un nouveau didacticiel
-	def Didacticiel.creer
-		 new
-	end
-	
-	private_class_method :new
+	attr :didacticielDeBase, false
+	attr :didacticielAvance, false
 	
 	# Méthodes d'instance
 

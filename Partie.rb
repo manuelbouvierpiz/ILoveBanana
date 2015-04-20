@@ -52,24 +52,32 @@ class Partie
 
 # Méthode initialize du constructeur charger
 	def initialize()
-		@compte = unCompte
-		@nbHypotheses = BaseDeDonnees.getSauvegardeNbHypotheses(Compte.COMPTE.pseudo)
-		@nbAides = BaseDeDonnees.getSauvegardeNbAides(Compte.COMPTE.pseudo)
-		@nbClics = BaseDeDonnees.getSauvegardeNbClics(Compte.COMPTE.pseudo)
-		@temps = BaseDeDonnees.getSauvegardeTemps(Compte.COMPTE.pseudo)
-		@idGrille = BaseDeDonnees.getSauvegardeIdGrille(Compte.COMPTE.pseudo)
-		matGrille = BaseDeDonnees.getSauvegardeGrilleSauvegardee(Compte.COMPTE.pseudo)
-		@grille = Grille.creer(unIdGrille, matGrille)
+		
 	end
 
 # Initialise les variables d'instances
-	def initialize(unIdGrille)
+	def initialize(unIdGrille=nil)
+		if uneGrille == nil		# Il faut charger la grille précédemment sauvegardée
+			@nbHypotheses = BaseDeDonnees.getSauvegardeNbHypotheses(Compte.COMPTE.pseudo)
+			@nbAides = BaseDeDonnees.getSauvegardeNbAides(Compte.COMPTE.pseudo)
+			@nbClics = BaseDeDonnees.getSauvegardeNbClics(Compte.COMPTE.pseudo)
+			@temps = BaseDeDonnees.getSauvegardeTemps(Compte.COMPTE.pseudo)
+			@idGrille = BaseDeDonnees.getSauvegardeIdGrille(Compte.COMPTE.pseudo)
+			@grille = Grille.creer(unIdGrille, BaseDeDonnees.getSauvegardeGrilleSauvegardee(Compte.COMPTE.pseudo))
+			@tourne = false
+		else					# Il faut créer une nouvelle grille
+			@nbHypotheses = 0
+			@nbAides = 0
+			@nbClics = 0
+			@temps = 0
+			@idGrille = unIdGrille
+			initGrille(unIdGrille)
+			@tourne = false
+		end
+		
+		@fini = false
 		@listeHypotheses = Array.[]
 		@hypothese = false
-		initGrille(unIdGrille)
-		@idGrille = unIdGrille
-		@tourne = false
-        	@fini = false
 	end
 
 # Méthode permettant de créer une grille
