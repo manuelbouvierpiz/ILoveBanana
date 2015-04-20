@@ -16,7 +16,7 @@ Pour installer l'application sous Fedora :
 
       - Cliquer sur "Download ZIP" qui se trouve sur la page "https://github.com/manuelbouvierpiz/ILoveBanana" dans le menu de droite.
       - Dézipper le .zip.
-      - Aller avec le terminal dans le chemin du dossier dézipper.
+      - Aller avec le terminal dans le chemin du dossier dézippé.
       - Taper "ruby TakuzuLanceur.rb".
 
 Si vous ne possédez pas Ruby, GTK2, Active Record, MySQL2 ou Mail, vous pouvez les installer de cette façon :
