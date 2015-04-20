@@ -1,6 +1,6 @@
 # Takuzu Avengers
 
-L'application "Takuzu Avengers" fut réaliser dans le cadre du projet du semestre 6 de la Licence 3ème année SPI Informatique de l'Université du Maine.
+L'application "Takuzu Avengers" fut réalisée dans le cadre du projet du semestre 6 de la Licence 3ème année SPI Informatique de l'Université du Maine.
 
 Les réalisateurs de cette application sont :
 
@@ -14,12 +14,12 @@ Les réalisateurs de cette application sont :
 
 Pour installer l'application sous Fedora :
 
-      - Cliquer sur "Download ZIP" qui se trouve sur la page "https://github.com/manuelbouvierpiz/ILoveBanana" dans le menu droite.
-      - Dezipper le .zip.
+      - Cliquer sur "Download ZIP" qui se trouve sur la page "https://github.com/manuelbouvierpiz/ILoveBanana" dans le menu de droite.
+      - Dézipper le .zip.
       - Aller avec le terminal dans le chemin du dossier dézipper.
-      - Taper "ruby TakuzuLaneur.rb".
+      - Taper "ruby TakuzuLanceur.rb".
 
-Si vous possédez pas Ruby, GTK2, Active Record, MySQL2 ou Mail, vous pouvez les installer de cet façon :
+Si vous ne possédez pas Ruby, GTK2, Active Record, MySQL2 ou Mail, vous pouvez les installer de cette façon :
 
       - Aller dans un terminal.
       - Taper "gem install ruby".
