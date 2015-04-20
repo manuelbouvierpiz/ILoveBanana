@@ -10,6 +10,8 @@ require 'gtk2'
 #   - Permet à l'utilisateur de pouvoir naviguer dans l'application en permettant l'accés aux différentes fonctionnalités de celle-ci
 class MenuPrincipalBuilder < TakuzuBuilder
 
+	# Méthodes
+
 	# * Méthode d'instance qui initialise la fenêtre correspondante au +MenuPrincipalBuilder+
 	def initialize 
         super(__FILE__, "Menu Principal")

@@ -4,12 +4,33 @@
 # Auteur Kuang Nanzhem, Modification Parmenon Damien
 # Version 0.2 : Date : Mon Jul 01 10:17:02 CEST 2013
 #
+
 require 'gtk2'
+
+# == Classe OptionsBuilder : 
+#   - Permet à l'utilisateur de pouvoir choisir des options qui modifieront certaines fonctionnalités du jeu
+#   - les options modifiables sont le volume de la musique et du bruitage, certains raccourcis clavier et les couleurs des cases
+#   - L'utilisateur doit changer les options qu'il souhaite dans les emplacements dédiés puis cliquer sur le bouton Valider pour les enregistrer
 class OptionsBuilder < TakuzuBuilder
 
+	# Variables
+	
+	# * Variable d'instance qui représente les valeurs possible du curseur correspondant au volume du bruitage
+	# * Cette variable est initialisée dans la fonction initialize et a des valeurs possible comprise entre 1 et 100
+	# * Accessible en lecture uniquement
+	# * L'obtention de la valeur choisie par l'utilisateur se fait grâce à la méthode adjBruitage.value
 	attr :adjBruitage, false
+
+	# * Variable d'instance qui représente les valeurs possible du curseur correspondant au volume de la musique
+	# * Cette variable est initialisée dans la fonction initialize et a des valeurs possible comprise entre 1 et 100
+	# * Accessible en lecture uniquement
+	# * L'obtention de la valeur choisie par l'utilisateur se fait grâce à la méthode adjMusique.value
 	attr :adjMusique, false
 	
+	# Méthodes
+
+	# * Méthode d'instance qui initialise la fenêtre correspondante au +MenuPrincipalBuilder+
+	# * Cette méthode va chercher dans la base de données les options actuelles du joueur qu'il pourra modifier ensuite
 	def initialize() 
 		super(__FILE__,"Options")
 		@adjBruitage =  Gtk::Adjustment.new(1,1,100,1,1,0)
@@ -31,10 +52,14 @@ class OptionsBuilder < TakuzuBuilder
 		@colorbutton2.color = Gdk::Color.new(stringColor2[1..4].to_i(16), stringColor2[5..8].to_i(16), stringColor2[9..12].to_i(16))
 	end
 	
+	# * Méthode d'instance qui ouvre la fenêtre du menu principal si l'utilisateur clique sur le bouton correspondant
 	def on_buttonPrecedent_clicked	
 		ouvrirFenetre(MenuPrincipalBuilder.new)
 	end
 
+	# * Méthode d'instance qui permet de valider les changements effectués par l'utilisateur
+	# * Les changements sont directement enregistrés dans la base de données
+	# * Ouvre après l'enregistrement la fenêtre correspondant au menu principal
 	def on_buttonValider_clicked
 		Compte.COMPTE.options.modifierVolumeBruitage(@adjBruitage.value)
 		Compte.COMPTE.options.modifierVolumeMusique(@adjMusique.value)
