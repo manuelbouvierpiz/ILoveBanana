@@ -50,11 +50,6 @@ class Partie
 			new()
 	end
 
-# Méthode initialize du constructeur charger
-	def initialize()
-		
-	end
-
 # Initialise les variables d'instances
 	def initialize(unIdGrille=nil)
 		if unIdGrille == nil		# Il faut charger la grille précédemment sauvegardée
