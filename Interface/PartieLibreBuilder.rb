@@ -27,7 +27,6 @@ class PartieLibreBuilder < PartieBuilder
 	def	on_bouton_clicked(unX, unY)
 		super(unX, unY)
 		if Jeu.JEU.partie.grille.estCorrecte?
-			print("La grille est correcte\n")
 			Jeu.JEU.partie.arretChronometre()
 			ouvrirFenetre(PartieLibreReussieBuilder.new)
 		end
