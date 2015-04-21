@@ -39,12 +39,12 @@ class PartieBuilder < TakuzuBuilder
 		if unMonde == nil
 			@image1.set_file("Images/rien.png")
 			@meilleurScore.set_text("")
+			@meilleurScore.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse("white"))
+			@nbClics.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse("white"))
+			@labelHypothese.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse("white"))
+			@temps.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse("white"))
 		else
 			@image1.set_file(unMonde.image)
-			@meilleurScore.modify_fg(Gtk::STATE_NORMAL, Gdk::Color.parse("white"))
-			@nbClics.modify_fg(Gtk::STATE_NORMAL, Gdk::Color.parse("white"))
-			@labelHypothese.modify_fg(Gtk::STATE_NORMAL, Gdk::Color.parse("white"))
-			@temps.modify_fg(Gtk::STATE_NORMAL, Gdk::Color.parse("white"))
 		end
 
 		@partie = unePartie

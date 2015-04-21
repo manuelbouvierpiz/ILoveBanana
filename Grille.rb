@@ -14,6 +14,12 @@ class Grille
   # * matrice - matrice contenant les +Case+s de la +Grille+
   attr :matrice, false
   
+  # * matriceDepart - matrice contenant les +Case+s de la +Grille+ au début d'une partie
+  attr :matriceDepart, false
+  
+  # * matriceCorrecte - matrice contenant les +Case+s de la +Grille+ terminée
+  @matriceCorrecte
+  
   #nbClicMin - nombre minimum de clics
   attr :nbClicMin, false
   
@@ -32,14 +38,15 @@ class Grille
   # * Méthode qui initialise les variables
   def initialize(unIdGrille, uneMatrice=nil) # :nodoc:
   		@idGrille = unIdGrille
-		uneMatriceDepart = matriceDepart
+		@matriceDepart = getMatriceDepart
+		@matriceCorrecte = BaseDeDonnes.getGrilleMatriceResolue(@idGrille)
 		if uneMatrice == nil
-			@matrice = uneMatriceDepart
+			@matrice = @matriceDepart
 		else
 			@matrice = uneMatrice
 		end
 		@nbClicMin = 0
-		uneMatriceDepart.each do |uneLigne|
+		@matriceDepart.each do |uneLigne|
 			uneLigne.each do |uneCase|
 				@nbClicMin += 1 if uneCase.estVide?
 			end
@@ -48,8 +55,7 @@ class Grille
   
   # * Méthode qui vérifie la matrice (remplie par le joueur) est correcte
   def estCorrecte?
-	uneMatriceCorrecte = BaseDeDonnes.getGrilleMatriceResolue(@idGrille)
-	return matrice == uneMatriceCorrecte
+	return @matrice == @matriceCorrecte
   end
   
   # * Méthode d'instance qui change l'état d'une +Case+
@@ -83,8 +89,8 @@ class Grille
   end
   
   #Méthode - lire en base donnée et remplir dans le @matrice et @matriceCorrect pour le réponse
-  def matriceDepart
-	@matrice = BaseDeDonnees.getGrilleMatrice(@idGrille)
+  def getMatriceDepart
+	BaseDeDonnees.getGrilleMatrice(@idGrille)
   end
   
   # * Méthode d'instance qui retourne la diffculté de la +Grille+
