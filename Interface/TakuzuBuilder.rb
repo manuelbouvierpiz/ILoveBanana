@@ -1,7 +1,6 @@
 # encoding: UTF-8
 # Valentin CHAILLOU
 
-require 'gtk2'
 
 # == Classe +TakuzuBuilder+ :
 #	- est considérée comme une classe abstraite
