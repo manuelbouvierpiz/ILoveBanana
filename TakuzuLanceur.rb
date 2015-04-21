@@ -67,12 +67,15 @@ desClasses = [
 	'Interface/ReglesBuilder.rb'
 ]
 
-print("Chargement")
+load 'Interface/ChargementBuilder.rb'
+Gtk.init
+laFenetre = ChargementWindow.new
+Gtk.main
 desClasses.each do |uneClasse|
+	laFenetre.afficheClasse(uneClasse)
 	load uneClasse
-	print(".")
 end
-print(" Terminé !\n")
+Gtk.main_quit
 
 ### Lancement de TakuzuAvengers ###
 
