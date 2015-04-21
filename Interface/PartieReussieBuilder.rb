@@ -3,7 +3,6 @@
 ##
 # Auteur Parmenon Damien
 #
-require 'gtk2'
 
 class PartieReussieBuilder < TakuzuBuilder
 
