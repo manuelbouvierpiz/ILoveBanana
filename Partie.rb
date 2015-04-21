@@ -76,7 +76,7 @@ class Partie
 
 # Méthode retournant le score de la partie
 	def calculerScore()
-		return @grille.getClicMin * ( getDifficulte / ( temps * nbClics * 5 ) ) * ( 1 / ( 1 + nbAides) )
+		return @grille.nbClicMin * ( getDifficulte / ( temps * nbClics * 5 ) ) * ( 1 / ( 1 + nbAides) )
 	end
 
 # Méthode retournant la chaîne de caracère correspondant aux règles du jeu de takuzu
