@@ -101,6 +101,7 @@ class PartieBuilder < TakuzuBuilder
 	
 	def on_menu_clicked()
 		Jeu.JEU.partie.arreteToi
+		Jeu.JEU.partie = nil
 		ouvrirFenetre(MenuPrincipalBuilder.new)
 	end
 	
