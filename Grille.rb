@@ -53,14 +53,19 @@ class Grille
   end
   
   # * Méthode d'instance qui change l'état d'une +Case+
+  # ===== Attributs :
+  #		- unX : un entier représentant l'abscisse de la Case
+  #		- unY : un entier représentant l'ordonnée de la Case
+  #		- rougeOuBleu : un String parmi ceux-ci : "r", "b", "rouge", "bleu" (insensible à la casse)
+  #		- estHypothese : un booléen indiquant si c'est une hypothèse
   def jouer(unX, unY, rougeOuBleu, estHypothese)
-	case rougeOuBleu.lowerCase
-		when 'b', 'bleu', 0
-			matrice[i][j].setBleu
-		when 'r', 'rouge', 1
-			matrice[i][j].setRouge
+	case rougeOuBleu.downcase
+		when 'b', 'bleu'
+			matrice[unX][unY].setBleu
+		when 'r', 'rouge'
+			matrice[unX][unY].setRouge
 	end
-	matrice[i][j].setHypothese if estHypothese
+	matrice[unX][unY].setHypothese if estHypothese
   end
   
   # * Méthode d'instance qui met toutes les <b>Case</b>s de la +Grille+ en état non hypothésé 

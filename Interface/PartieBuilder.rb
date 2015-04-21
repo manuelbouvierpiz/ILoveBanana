@@ -54,26 +54,55 @@ class PartieBuilder < TakuzuBuilder
 		
 		0.upto(unePartie.grille.taille - 1) do |unX|
 			0.upto(unePartie.grille.taille - 1) do |unY|
-				puts("@bouton_#{unX+1}_#{unY+1}.signal_connect(\"clicked\") { on_bouton_clicked(#{unX}, #{unY})}")
 				eval("@bouton_#{unX+1}_#{unY+1}.signal_connect(\"clicked\") { on_bouton_clicked(#{unX}, #{unY})}")
+				
+				if @partie.grille.matrice[unX][unY].estVide?
+					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"grey\"))")
+				elsif @partie.grille.matrice[unX][unY].estRouge?
+					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(1)))")
+				else #if @partie.grille.matrice[unX][unY].estBleu?
+					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))")
+				end
 			end
 		end
+		
+		# Trop lent
+		#actualiserGrille()
 		
 	end
 
 	# * Méthode d'instance qui permet de modifier l'état d'une +Case+
 	# * Est automatiquement appelée par Gtk
 	def	on_bouton_clicked(unX, unY)
-		if @partie.grille.matrice[unX][unY].estVide? or @partie.grille.matrice[unX][unY].estBleu?
-			@partie.grille.matrice[unX][unY].setRouge
-			eval("@bouton_#{unX+1}_#{unY+1}.modify_fg(Gtk::STATE_ACTIVE, Gdk::Color.parse(Compte.COMPTE.options.couleur(1)))")	# TODO => Rechercher la couleur dans les options
-		else # if @partie.grille.matrice[unX-1][unY-1].estRouge?
-			@partie.grille.matrice[unX][unY].setBleu
-			eval("@bouton_#{unX+1}_#{unY+1}.modify_fg(Gtk::STATE_ACTIVE, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))")	# TODO => Rechercher la couleur dans les options
+		@nbClics.set_text("Clics :\n" + @partie.jouer(unX, unY).to_s)
+		
+		# Trop lent
+		#actualiserGrille()
+		
+		if @partie.grille.matrice[unX][unY].estVide?
+			eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"grey\"))")
+		elsif @partie.grille.matrice[unX][unY].estRouge?
+			eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(1)))")
+		else #if @partie.grille.matrice[unX][unY].estBleu?
+			eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))")
 		end
 	end
 	
+	# * Méthode d'instance qui permet de rafraichir l'affichage de la +Grille+
+	# * Ne doit être appelée que lors d'un chargement de sauvegarde temporaire
+	def actualiserGrille()
+		0.upto(@partie.grille.taille - 1) do |unX|
+			0.upto(@partie.grille.taille - 1) do |unY|
+				if @partie.grille.matrice[unX][unY].estVide?
+					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"grey\"))")
+				elsif @partie.grille.matrice[unX][unY].estRouge?
+					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(1)))")
+				else #if @partie.grille.matrice[unX][unY].estBleu?
+					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))")
+				end
+			end
+		end
+	end
 	
-
 	private_class_method :new
 end

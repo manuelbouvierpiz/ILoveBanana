@@ -12,11 +12,13 @@ class PartieLibre < Partie
 	end
 	
 	def initialize(unArgument, uneDifficulte=nil)
+		unIdGrille = -1
 		if uneDifficulte == nil		# unArgument = unIdGrille
-			super(unArgument)
+			unIdGrille = unArgument
 		else						# unArgument = uneTaille
-			@grille = Grille.creer(BaseDeDonnees.getGrilleIdAleatoire(unArgument, uneDifficulte))
+			unIdGrille = BaseDeDonnees.getGrilleIdAleatoire(unArgument, uneDifficulte)
 		end
+		super(unIdGrille)
 	end
 
 	def listeDefis

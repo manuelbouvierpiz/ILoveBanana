@@ -4,7 +4,6 @@ class Jeu
 	# * Accessible en lecture via la méthode Jeu.JEU
 	@@JEU
 
-	attr :partie, false
 	attr :didacticiel, false
 	attr :aventure, false
 

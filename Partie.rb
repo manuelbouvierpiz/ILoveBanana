@@ -59,7 +59,6 @@ class Partie
 			@temps = BaseDeDonnees.getSauvegardeTemps(Compte.COMPTE.pseudo)
 			@idGrille = BaseDeDonnees.getSauvegardeIdGrille(Compte.COMPTE.pseudo)
 			@grille = Grille.creer(unIdGrille, BaseDeDonnees.getSauvegardeGrilleSauvegardee(Compte.COMPTE.pseudo))
-			@tourne = false
 		else					# Il faut créer une nouvelle grille
 			@nbHypotheses = 0
 			@nbAides = 0
@@ -67,12 +66,12 @@ class Partie
 			@temps = 0
 			@idGrille = unIdGrille
 			@grille = Grille.creer(unIdGrille)
-			@tourne = false
 		end
 		
 		@fini = false
 		@listeHypotheses = Array.[]
 		@hypothese = false
+		@tourne = false
 	end
 
 # Méthode retournant le score de la partie
@@ -163,6 +162,20 @@ class Partie
 	# * Retourne +true+ si la +Partie+ est terminée, +false+ sinon
 	def estTerminee?()
 		@grille.estTerminee?
+	end
+	
+	# * Méthode d'instance qui permet de jouer usr la +Grille+
+	# ===== Attributs :
+	#		- unX : un entier représentant l'abscisse de la Case
+	#		- unY : un entier représentant l'ordonnée de la Case
+	# * Retourne le nombre de clics
+	def jouer(unX, unY)
+		if @grille.matrice[unX][unY].estVide? or @grille.matrice[unX][unY].estBleu?
+			@grille.jouer(unX, unY, "rouge", @hypothese)
+		else
+			@grille.jouer(unX, unY, "bleu", @hypothese)
+		end
+		@nbClics += 1
 	end
 end
 	

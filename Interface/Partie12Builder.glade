@@ -5,6 +5,7 @@
   <object class="GtkWindow" id="window1">
     <property name="width_request">1100</property>
     <property name="height_request">780</property>
+    <property name="resizable">False</property>
     <child>
       <object class="GtkFixed" id="panel">
         <property name="visible">True</property>
@@ -26,14 +27,14 @@
             <child>
               <object class="GtkButton" id="bouton_1_1">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
             </child>
             <child>
               <object class="GtkButton" id="bouton_1_2">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -44,7 +45,7 @@
             <child>
               <object class="GtkButton" id="bouton_1_3">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -55,7 +56,7 @@
             <child>
               <object class="GtkButton" id="bouton_1_4">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -66,7 +67,7 @@
             <child>
               <object class="GtkButton" id="bouton_1_5">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -77,7 +78,7 @@
             <child>
               <object class="GtkButton" id="bouton_1_6">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -88,7 +89,7 @@
             <child>
               <object class="GtkButton" id="bouton_2_1">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -99,7 +100,7 @@
             <child>
               <object class="GtkButton" id="bouton_2_2">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -112,7 +113,7 @@
             <child>
               <object class="GtkButton" id="bouton_2_3">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -125,7 +126,7 @@
             <child>
               <object class="GtkButton" id="bouton_2_4">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -138,7 +139,7 @@
             <child>
               <object class="GtkButton" id="bouton_2_5">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -151,7 +152,7 @@
             <child>
               <object class="GtkButton" id="bouton_2_6">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -164,7 +165,7 @@
             <child>
               <object class="GtkButton" id="bouton_3_1">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -175,7 +176,7 @@
             <child>
               <object class="GtkButton" id="bouton_3_2">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -188,7 +189,7 @@
             <child>
               <object class="GtkButton" id="bouton_3_3">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -201,7 +202,7 @@
             <child>
               <object class="GtkButton" id="bouton_3_4">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -214,7 +215,7 @@
             <child>
               <object class="GtkButton" id="bouton_3_5">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -227,7 +228,7 @@
             <child>
               <object class="GtkButton" id="bouton_3_6">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -240,7 +241,7 @@
             <child>
               <object class="GtkButton" id="bouton_4_1">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -251,7 +252,7 @@
             <child>
               <object class="GtkButton" id="bouton_4_2">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -264,7 +265,7 @@
             <child>
               <object class="GtkButton" id="bouton_4_3">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -277,7 +278,7 @@
             <child>
               <object class="GtkButton" id="bouton_4_4">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -290,7 +291,7 @@
             <child>
               <object class="GtkButton" id="bouton_4_5">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -303,7 +304,7 @@
             <child>
               <object class="GtkButton" id="bouton_4_6">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -316,7 +317,7 @@
             <child>
               <object class="GtkButton" id="bouton_5_1">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -327,7 +328,7 @@
             <child>
               <object class="GtkButton" id="bouton_5_2">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -340,7 +341,7 @@
             <child>
               <object class="GtkButton" id="bouton_5_3">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -353,7 +354,7 @@
             <child>
               <object class="GtkButton" id="bouton_5_4">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -366,7 +367,7 @@
             <child>
               <object class="GtkButton" id="bouton_5_5">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -379,7 +380,7 @@
             <child>
               <object class="GtkButton" id="bouton_5_6">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -392,7 +393,7 @@
             <child>
               <object class="GtkButton" id="bouton_6_1">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -403,7 +404,7 @@
             <child>
               <object class="GtkButton" id="bouton_6_2">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -416,7 +417,7 @@
             <child>
               <object class="GtkButton" id="bouton_6_3">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -429,7 +430,7 @@
             <child>
               <object class="GtkButton" id="bouton_6_4">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -442,7 +443,7 @@
             <child>
               <object class="GtkButton" id="bouton_6_5">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -455,7 +456,7 @@
             <child>
               <object class="GtkButton" id="bouton_6_6">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -468,7 +469,7 @@
             <child>
               <object class="GtkButton" id="bouton_1_7">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
                 <property name="xalign">0.55000001192092896</property>
               </object>
@@ -480,7 +481,7 @@
             <child>
               <object class="GtkButton" id="bouton_1_8">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -491,7 +492,7 @@
             <child>
               <object class="GtkButton" id="bouton_2_7">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -504,7 +505,7 @@
             <child>
               <object class="GtkButton" id="bouton_2_8">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -517,7 +518,7 @@
             <child>
               <object class="GtkButton" id="bouton_3_7">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -530,7 +531,7 @@
             <child>
               <object class="GtkButton" id="bouton_3_8">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -543,7 +544,7 @@
             <child>
               <object class="GtkButton" id="bouton_4_7">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -556,7 +557,7 @@
             <child>
               <object class="GtkButton" id="bouton_4_8">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -569,7 +570,7 @@
             <child>
               <object class="GtkButton" id="bouton_5_7">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -582,7 +583,7 @@
             <child>
               <object class="GtkButton" id="bouton_5_8">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -595,7 +596,7 @@
             <child>
               <object class="GtkButton" id="bouton_6_7">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -608,7 +609,7 @@
             <child>
               <object class="GtkButton" id="bouton_6_8">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -621,7 +622,7 @@
             <child>
               <object class="GtkButton" id="bouton_7_1">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -632,7 +633,7 @@
             <child>
               <object class="GtkButton" id="bouton_7_2">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -645,7 +646,7 @@
             <child>
               <object class="GtkButton" id="bouton_7_3">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -658,7 +659,7 @@
             <child>
               <object class="GtkButton" id="bouton_7_4">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -671,7 +672,7 @@
             <child>
               <object class="GtkButton" id="bouton_7_5">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -684,7 +685,7 @@
             <child>
               <object class="GtkButton" id="bouton_7_6">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -697,7 +698,7 @@
             <child>
               <object class="GtkButton" id="bouton_7_7">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -710,7 +711,7 @@
             <child>
               <object class="GtkButton" id="bouton_7_8">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -723,7 +724,7 @@
             <child>
               <object class="GtkButton" id="bouton_8_1">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -734,7 +735,7 @@
             <child>
               <object class="GtkButton" id="bouton_8_2">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -747,7 +748,7 @@
             <child>
               <object class="GtkButton" id="bouton_8_3">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -760,7 +761,7 @@
             <child>
               <object class="GtkButton" id="bouton_8_4">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -773,7 +774,7 @@
             <child>
               <object class="GtkButton" id="bouton_8_5">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -786,7 +787,7 @@
             <child>
               <object class="GtkButton" id="bouton_8_6">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -799,7 +800,7 @@
             <child>
               <object class="GtkButton" id="bouton_8_7">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -812,7 +813,7 @@
             <child>
               <object class="GtkButton" id="bouton_8_8">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -825,7 +826,7 @@
             <child>
               <object class="GtkButton" id="bouton_1_9">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -836,7 +837,7 @@
             <child>
               <object class="GtkButton" id="bouton_1_10">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -847,7 +848,7 @@
             <child>
               <object class="GtkButton" id="bouton_2_9">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -860,7 +861,7 @@
             <child>
               <object class="GtkButton" id="bouton_2_10">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -873,7 +874,7 @@
             <child>
               <object class="GtkButton" id="bouton_3_9">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -886,7 +887,7 @@
             <child>
               <object class="GtkButton" id="bouton_3_10">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -899,7 +900,7 @@
             <child>
               <object class="GtkButton" id="bouton_4_9">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -912,7 +913,7 @@
             <child>
               <object class="GtkButton" id="bouton_4_10">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -925,7 +926,7 @@
             <child>
               <object class="GtkButton" id="bouton_5_9">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -938,7 +939,7 @@
             <child>
               <object class="GtkButton" id="bouton_5_10">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -951,7 +952,7 @@
             <child>
               <object class="GtkButton" id="bouton_6_9">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -964,7 +965,7 @@
             <child>
               <object class="GtkButton" id="bouton_6_10">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -977,7 +978,7 @@
             <child>
               <object class="GtkButton" id="bouton_7_9">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -990,7 +991,7 @@
             <child>
               <object class="GtkButton" id="bouton_7_10">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1003,7 +1004,7 @@
             <child>
               <object class="GtkButton" id="bouton_8_9">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1016,7 +1017,7 @@
             <child>
               <object class="GtkButton" id="bouton_8_10">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1029,7 +1030,7 @@
             <child>
               <object class="GtkButton" id="bouton_9_1">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1040,7 +1041,7 @@
             <child>
               <object class="GtkButton" id="bouton_9_2">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1053,7 +1054,7 @@
             <child>
               <object class="GtkButton" id="bouton_9_3">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1066,7 +1067,7 @@
             <child>
               <object class="GtkButton" id="bouton_9_4">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1079,7 +1080,7 @@
             <child>
               <object class="GtkButton" id="bouton_9_5">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1092,7 +1093,7 @@
             <child>
               <object class="GtkButton" id="bouton_9_6">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1105,7 +1106,7 @@
             <child>
               <object class="GtkButton" id="bouton_9_7">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1118,7 +1119,7 @@
             <child>
               <object class="GtkButton" id="bouton_9_8">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1131,7 +1132,7 @@
             <child>
               <object class="GtkButton" id="bouton_9_9">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1144,7 +1145,7 @@
             <child>
               <object class="GtkButton" id="bouton_9_10">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1157,7 +1158,7 @@
             <child>
               <object class="GtkButton" id="bouton_10_1">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1168,7 +1169,7 @@
             <child>
               <object class="GtkButton" id="bouton_10_2">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1181,7 +1182,7 @@
             <child>
               <object class="GtkButton" id="bouton_10_3">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1194,7 +1195,7 @@
             <child>
               <object class="GtkButton" id="bouton_10_4">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1207,7 +1208,7 @@
             <child>
               <object class="GtkButton" id="bouton_10_5">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1220,7 +1221,7 @@
             <child>
               <object class="GtkButton" id="bouton_10_6">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1233,7 +1234,7 @@
             <child>
               <object class="GtkButton" id="bouton_10_7">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1246,7 +1247,7 @@
             <child>
               <object class="GtkButton" id="bouton_10_8">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1259,7 +1260,7 @@
             <child>
               <object class="GtkButton" id="bouton_10_9">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1272,7 +1273,7 @@
             <child>
               <object class="GtkButton" id="bouton_10_10">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1285,7 +1286,7 @@
             <child>
               <object class="GtkButton" id="bouton_1_11">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1296,7 +1297,7 @@
             <child>
               <object class="GtkButton" id="bouton_1_12">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1307,7 +1308,7 @@
             <child>
               <object class="GtkButton" id="bouton_2_11">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1320,7 +1321,7 @@
             <child>
               <object class="GtkButton" id="bouton_2_12">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1333,7 +1334,7 @@
             <child>
               <object class="GtkButton" id="bouton_3_11">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1346,7 +1347,7 @@
             <child>
               <object class="GtkButton" id="bouton_3_12">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1359,7 +1360,7 @@
             <child>
               <object class="GtkButton" id="bouton_4_11">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1372,7 +1373,7 @@
             <child>
               <object class="GtkButton" id="bouton_4_12">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1385,7 +1386,7 @@
             <child>
               <object class="GtkButton" id="bouton_5_11">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1398,7 +1399,7 @@
             <child>
               <object class="GtkButton" id="bouton_5_12">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1411,7 +1412,7 @@
             <child>
               <object class="GtkButton" id="bouton_6_11">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1424,7 +1425,7 @@
             <child>
               <object class="GtkButton" id="bouton_6_12">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1437,7 +1438,7 @@
             <child>
               <object class="GtkButton" id="bouton_7_11">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1450,7 +1451,7 @@
             <child>
               <object class="GtkButton" id="bouton_7_12">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1463,7 +1464,7 @@
             <child>
               <object class="GtkButton" id="bouton_8_11">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1476,7 +1477,7 @@
             <child>
               <object class="GtkButton" id="bouton_8_12">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1489,7 +1490,7 @@
             <child>
               <object class="GtkButton" id="bouton_9_11">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1502,7 +1503,7 @@
             <child>
               <object class="GtkButton" id="bouton_9_12">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1515,7 +1516,7 @@
             <child>
               <object class="GtkButton" id="bouton_10_11">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1528,7 +1529,7 @@
             <child>
               <object class="GtkButton" id="bouton_10_12">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1541,7 +1542,7 @@
             <child>
               <object class="GtkButton" id="bouton_11_1">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1552,7 +1553,7 @@
             <child>
               <object class="GtkButton" id="bouton_11_2">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1565,7 +1566,7 @@
             <child>
               <object class="GtkButton" id="bouton_11_3">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1578,7 +1579,7 @@
             <child>
               <object class="GtkButton" id="bouton_11_4">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1591,7 +1592,7 @@
             <child>
               <object class="GtkButton" id="bouton_11_5">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1604,7 +1605,7 @@
             <child>
               <object class="GtkButton" id="bouton_11_6">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1617,7 +1618,7 @@
             <child>
               <object class="GtkButton" id="bouton_11_7">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1630,7 +1631,7 @@
             <child>
               <object class="GtkButton" id="bouton_11_8">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1643,7 +1644,7 @@
             <child>
               <object class="GtkButton" id="bouton_11_9">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1656,7 +1657,7 @@
             <child>
               <object class="GtkButton" id="bouton_11_10">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1669,7 +1670,7 @@
             <child>
               <object class="GtkButton" id="bouton_11_11">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1682,7 +1683,7 @@
             <child>
               <object class="GtkButton" id="bouton_11_12">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1695,7 +1696,7 @@
             <child>
               <object class="GtkButton" id="bouton_12_1">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1706,7 +1707,7 @@
             <child>
               <object class="GtkButton" id="bouton_12_2">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1719,7 +1720,7 @@
             <child>
               <object class="GtkButton" id="bouton_12_3">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1732,7 +1733,7 @@
             <child>
               <object class="GtkButton" id="bouton_12_4">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1745,7 +1746,7 @@
             <child>
               <object class="GtkButton" id="bouton_12_5">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1758,7 +1759,7 @@
             <child>
               <object class="GtkButton" id="bouton_12_6">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1771,7 +1772,7 @@
             <child>
               <object class="GtkButton" id="bouton_12_7">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1784,7 +1785,7 @@
             <child>
               <object class="GtkButton" id="bouton_12_8">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1797,7 +1798,7 @@
             <child>
               <object class="GtkButton" id="bouton_12_9">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1810,7 +1811,7 @@
             <child>
               <object class="GtkButton" id="bouton_12_10">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1823,7 +1824,7 @@
             <child>
               <object class="GtkButton" id="bouton_12_11">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1836,7 +1837,7 @@
             <child>
               <object class="GtkButton" id="bouton_12_12">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1858,7 +1859,7 @@
             <property name="width_request">100</property>
             <property name="height_request">50</property>
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
+            <property name="can_focus">False</property>
             <property name="receives_default">True</property>
           </object>
           <packing>
@@ -1872,7 +1873,7 @@
             <property name="width_request">100</property>
             <property name="height_request">50</property>
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
+            <property name="can_focus">False</property>
             <property name="receives_default">True</property>
           </object>
           <packing>
@@ -1886,7 +1887,7 @@
             <property name="width_request">100</property>
             <property name="height_request">50</property>
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
+            <property name="can_focus">False</property>
             <property name="receives_default">True</property>
           </object>
           <packing>
@@ -1900,7 +1901,7 @@
             <property name="width_request">100</property>
             <property name="height_request">50</property>
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
+            <property name="can_focus">False</property>
             <property name="receives_default">True</property>
           </object>
           <packing>
@@ -1914,7 +1915,7 @@
             <property name="width_request">100</property>
             <property name="height_request">50</property>
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
+            <property name="can_focus">False</property>
             <property name="receives_default">True</property>
           </object>
           <packing>
@@ -1943,14 +1944,14 @@
             <child>
               <object class="GtkButton" id="hypothese_1">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
             </child>
             <child>
               <object class="GtkButton" id="hypothese_2">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1961,7 +1962,7 @@
             <child>
               <object class="GtkButton" id="hypothese_3">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1972,7 +1973,7 @@
             <child>
               <object class="GtkButton" id="hypothese_4">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1983,7 +1984,7 @@
             <child>
               <object class="GtkButton" id="hypothese_5">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
               </object>
               <packing>
@@ -1998,11 +1999,11 @@
           </packing>
         </child>
         <child>
-          <object class="GtkLabel" id="score">
+          <object class="GtkLabel" id="nbClics">
             <property name="width_request">100</property>
             <property name="height_request">80</property>
             <property name="visible">True</property>
-            <property name="label" translatable="yes">Score :
+            <property name="label" translatable="yes">Clics :
 0</property>
           </object>
           <packing>
