@@ -170,11 +170,13 @@ class Partie
 	#		- unY : un entier représentant l'ordonnée de la Case
 	# * Retourne le nombre de clics
 	def jouer(unX, unY)
-		if @grille.matriceDepart[unX][unY].estVide?
-			if @grille.matrice[unX][unY].estVide? or @grille.matrice[unX][unY].estBleu?
+		if !@grille.matriceDepart[unX][unY].estVide?
+			if @grille.matrice[unX][unY].estVide?
 				@grille.jouer(unX, unY, "rouge", @hypothese)
-			else
+			elsif @grille.matrice[unX][unY].estRouge?
 				@grille.jouer(unX, unY, "bleu", @hypothese)
+			else #elsif @grille.matrice[unX][unY].estBleu?
+				@grille.jouer(unX, unY, "vide", @hypothese)
 			end
 			@nbClics += 1
 		end

@@ -64,7 +64,7 @@ class PartieBuilder < TakuzuBuilder
 					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"grey\"))")
 				elsif @partie.grille.matrice[unX][unY].estRouge?
 					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(1)))")
-				else #if @partie.grille.matrice[unX][unY].estBleu?
+				else #elsif @partie.grille.matrice[unX][unY].estBleu?
 					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))")
 				end
 			end
@@ -82,16 +82,17 @@ class PartieBuilder < TakuzuBuilder
 		
 		# Trop lent
 		#actualiserGrille()
-		
+=begin	
 		if @partie.grille.matrice[unX][unY].estVide?
 			eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"grey\"))")
 		elsif @partie.grille.matrice[unX][unY].estRouge?
 			eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(1)))")
-		else #if @partie.grille.matrice[unX][unY].estBleu?
+		else #elsif @partie.grille.matrice[unX][unY].estBleu?
 			eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))")
 		end
+=end
 	end
-	
+=begin
 	# * Méthode d'instance qui permet de rafraichir l'affichage de la +Grille+
 	# * Ne doit être appelée que lors d'un chargement de sauvegarde temporaire
 	def actualiserGrille()
@@ -101,12 +102,13 @@ class PartieBuilder < TakuzuBuilder
 					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"grey\"))")
 				elsif @partie.grille.matrice[unX][unY].estRouge?
 					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(1)))")
-				else #if @partie.grille.matrice[unX][unY].estBleu?
+				else #elsif @partie.grille.matrice[unX][unY].estBleu?
 					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))")
 				end
 			end
 		end
 	end
+=end
 	
 	private_class_method :new
 end

@@ -38,12 +38,12 @@ class Grille
   # * Méthode qui initialise les variables
   def initialize(unIdGrille, uneMatrice=nil) # :nodoc:
   		@idGrille = unIdGrille
-		@matriceDepart = getMatriceDepart
 		@matriceCorrecte = BaseDeDonnees.getGrilleMatriceResolue(@idGrille)
+		@matriceDepart = getMatriceDepart
 		if uneMatrice == nil
-			@matrice = @matriceDepart.clone()
+			@matrice = getMatriceDepart
 		else
-			@matrice = uneMatrice.clone()
+			@matrice = uneMatrice
 		end
 		@nbClicMin = 0
 		@matriceDepart.each do |uneLigne|
@@ -62,7 +62,7 @@ class Grille
   # ===== Attributs :
   #		- unX : un entier représentant l'abscisse de la Case
   #		- unY : un entier représentant l'ordonnée de la Case
-  #		- rougeOuBleu : un String parmi ceux-ci : "r", "b", "rouge", "bleu" (insensible à la casse)
+  #		- rougeOuBleu : un String parmi ceux-ci : "r", "b", "rouge", "bleu", "v", "vide" (insensible à la casse)
   #		- estHypothese : un booléen indiquant si c'est une hypothèse
   def jouer(unX, unY, rougeOuBleu, estHypothese)
 	case rougeOuBleu.downcase
@@ -70,6 +70,8 @@ class Grille
 			@matrice[unX][unY].setBleu
 		when 'r', 'rouge'
 			@matrice[unX][unY].setRouge
+		when 'v', 'vide'
+			@matrice[unX][unY].setVide
 	end
 	@matrice[unX][unY].setHypothese if estHypothese
   end
@@ -83,14 +85,9 @@ class Grille
 	end
   end
   
-  #Méthode -définir une case vide
-  def viderCase(x,y)
-	@matrice[x][y].setVide()
-  end
-  
   #Méthode - lire en base donnée et remplir dans le @matrice et @matriceCorrect pour le réponse
   def getMatriceDepart
-	BaseDeDonnees.getGrilleMatrice(@idGrille)
+	return BaseDeDonnees.getGrilleMatrice(@idGrille)
   end
   
   # * Méthode d'instance qui retourne la diffculté de la +Grille+
