@@ -15,6 +15,19 @@ class TailleDifficulteBuilder < TakuzuBuilder
         super(__FILE__, "Choix de la taille et difficulté")
         @adjDifficulte = Gtk::Adjustment.new(1, 1, 7, 1, 1, 0)
         @hscaleDifficulte.adjustment = @adjDifficulte
+        @adjDifficulte.signal_connect('value-changed'){
+        	@labelTaille.show
+        	if(@adjDifficulte.value == 4 || @adjDifficulte.value == 7)
+        		@buttonSix.set_active(false)
+        		@buttonSix.hide
+        		@buttonHuit.show
+        		@buttonDix.show
+        		@buttonDouze.show
+        	else
+        		@hboxTaille.show_all
+        	end
+        }
+        @labelCorrect.hide
 	end
 
 # Les quatre fonctions suivantes permettent 
@@ -81,6 +94,10 @@ class TailleDifficulteBuilder < TakuzuBuilder
 
 # Lance une nouvelle patie en fonction de la taille et difficulté choisie
 	def on_buttonSuivant_clicked
-		ouvrirFenetre(PartieBuilder.creer(PartieLibre.creer(@tailleChoisie,@adjDifficulte.value)))
+		if(@tailleChoisie != nil)
+			ouvrirFenetre(PartieBuilder.creer(PartieLibre.creer(@tailleChoisie,@adjDifficulte.value)))
+	 	else
+			@labelCorrect.show
+		end
 	end
 end
