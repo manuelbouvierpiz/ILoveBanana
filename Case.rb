@@ -111,4 +111,9 @@ class Case
 		return unResultat
 	end
 	
+	# * Méthode d'instance qui permet de comparer deux <b>Case</b>s
+	def ==(uneCase)
+		@etat == uneCase.etat
+	end
+	
 end
