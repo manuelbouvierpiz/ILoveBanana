@@ -39,11 +39,11 @@ class Grille
   def initialize(unIdGrille, uneMatrice=nil) # :nodoc:
   		@idGrille = unIdGrille
 		@matriceDepart = getMatriceDepart
-		@matriceCorrecte = BaseDeDonnes.getGrilleMatriceResolue(@idGrille)
+		@matriceCorrecte = BaseDeDonnees.getGrilleMatriceResolue(@idGrille)
 		if uneMatrice == nil
-			@matrice = @matriceDepart
+			@matrice = @matriceDepart.clone()
 		else
-			@matrice = uneMatrice
+			@matrice = uneMatrice.clone()
 		end
 		@nbClicMin = 0
 		@matriceDepart.each do |uneLigne|
@@ -67,17 +67,17 @@ class Grille
   def jouer(unX, unY, rougeOuBleu, estHypothese)
 	case rougeOuBleu.downcase
 		when 'b', 'bleu'
-			matrice[unX][unY].setBleu
+			@matrice[unX][unY].setBleu
 		when 'r', 'rouge'
-			matrice[unX][unY].setRouge
+			@matrice[unX][unY].setRouge
 	end
-	matrice[unX][unY].setHypothese if estHypothese
+	@matrice[unX][unY].setHypothese if estHypothese
   end
   
   # * Méthode d'instance qui met toutes les <b>Case</b>s de la +Grille+ en état non hypothésé 
   def setNonHypothese()
-	matrice.each do |uneLigne|
-		matrice.each do |uneCase|
+	@matrice.each do |uneLigne|
+		@matrice.each do |uneCase|
 			uneCase.setNonHypothese if uneCase.estHypothese?
 		end
 	end
