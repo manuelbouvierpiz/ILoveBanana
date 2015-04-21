@@ -20,7 +20,10 @@ class BaseDeDonnees
 	# - pseudo le pseudo du joueur
 	# - idGrille l'identifiant de la grille
 	def BaseDeDonnees.getScore(pseudo, idGrille)
-		return GrilleFinis.select(:score).find_by(pseudo: pseudo, id_grille: idGrille).score
+		if(BaseDeDonnees.estGrilleResolue?(pseudo, idGrille))
+			return GrilleFinis.select(:score).find_by(pseudo: pseudo, id_grille: idGrille).score
+		end
+		return -1
 	end
 	
 	# Renvoie le temps d'un joueur sur une grille
