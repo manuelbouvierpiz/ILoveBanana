@@ -4,7 +4,6 @@
 # Auteur Alexandre Moutel, Damien Parmenon (Code Ruby)
 # Version 0.1 : Date : Mon Jul 01 10:17:02 CEST 2013
 #
-require 'gtk2'
 
 # == Classe StatistiquesBuilder : 
 #   - Permet à l'utilisateur de d'avoir accès aux statistiques le concernant tel que le temps de jeu et ses différents score
