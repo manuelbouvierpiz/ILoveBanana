@@ -50,8 +50,10 @@ class Grille
 		j = 0
 		@matriceDepart.each do |uneLigne|
 			uneLigne.each do |uneCase|
-				@nbClicMin += 1 if uneCase.estVide?
-				@nbClicMin += 1 if @matriceCorrecte[i][j].estBleu?()
+				if(uneCase.estVide?)
+					@nbClicMin += 1 
+					@nbClicMin += 1 if @matriceCorrecte[i][j].estBleu?()
+				end
 				j += 1
 			end
 			i += 1
