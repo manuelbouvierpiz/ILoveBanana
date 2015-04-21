@@ -1,4 +1,4 @@
-require 'gtk2'
+
 
 class InterfaceMereBuilder < Gtk::Builder
 	@@fenetreActuelle = nil
