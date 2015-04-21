@@ -5,7 +5,6 @@
 # Version 0.1 : Date : Fri Apr 03 17:52:21 CEST 2015
 #
 
-require 'gtk2'
 
 class InscriptionBuilder < TakuzuBuilder
 
