@@ -7,7 +7,14 @@ class PartieDidacticiel < Partie
 	# * Méthode d'instance qui arrête la +PartieDidacticiel+
 	def arreteToi
 		super()
-		pauseChronometre
+		mettreEnPauseChronometre()
+	end
+	
+	# * Méthode d'instance qui retourne le nombre d'étoiles gagné lors de la +Partie+
+	# * Retourne 0 par défaut
+	def nbEtoile()
+		super()
+		unResultat = -1
 	end
 	
 end

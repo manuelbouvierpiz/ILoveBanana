@@ -15,12 +15,6 @@ class PartieBuilder < TakuzuBuilder
 
 	# Variable d'instance
 
-	# * Variable d'instance non accessible qui représente la partie en cours
-	@partie
-	
-	# * Variable d'instance représentant la liste des hypothèses
-	@hypotheses
-
 	# Méthode de classe
 
 	# * Méthode de classe qui permet de créer une +PartieBuilder+
@@ -39,41 +33,46 @@ class PartieBuilder < TakuzuBuilder
 	def initialize(unePartie, unMonde)			# :nodoc:
 		super("Interface/Partie#{unePartie.grille.taille}Builder.glade", "Partie")
 		
+		Jeu.JEU.partie = unePartie
+		
 		if unMonde == nil
 			@image1.set_file("Images/rien.png")
 			@meilleurScore.set_text("")
 		else
 			@image1.set_file(unMonde.image)
-			unScore = Compte.COMPTE.scorePourLeNiveau(unePartie)
+			unScore = Compte.COMPTE.scorePourLeNiveau(Jeu.JEU.partie)
 			if unScore > -1
 				@meilleurScore.set_text("Meilleur score :\n" + unScore.to_s)
 			else
 				@meilleurScore.set_text("Meilleur score :\nAucun")
 			end
 		end
-
-		@partie = unePartie
-		@partie.lanceToi
+		
+		Jeu.JEU.partie.lanceToi
 		
 		# Mise à jour du temps toutes les secondes
 		GLib::Timeout.add(1000) do
-			@temps.set_text("Temps :\n" + @partie.getTempsString)
-			if !@partie.verifierTempsMax?
-				@partie.arretChronometre
-				ouvrirFenetre(PartieEchecBuilder.new)
+			begin
+				@temps.set_text("Temps :\n" + Jeu.JEU.partie.getTempsString)
+				if !Jeu.JEU.partie.verifierTempsMax?
+					Jeu.JEU.partie.arretChronometre
+					ouvrirFenetre(PartieEchecBuilder.new)
+				end
+				true
+			rescue
+				false
 			end
-			true
 		end
 		
 		0.upto(unePartie.grille.taille - 1) do |unX|
 			0.upto(unePartie.grille.taille - 1) do |unY|
 				eval("@bouton_#{unX+1}_#{unY+1}.signal_connect(\"clicked\") { on_bouton_clicked(#{unX}, #{unY})}")
 				
-				if @partie.grille.matrice[unX][unY].estVide?
+				if Jeu.JEU.partie.grille.matrice[unX][unY].estVide?
 					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"grey\"))")
-				elsif @partie.grille.matrice[unX][unY].estRouge?
+				elsif Jeu.JEU.partie.grille.matrice[unX][unY].estRouge?
 					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(1)))")
-				else #elsif @partie.grille.matrice[unX][unY].estBleu?
+				else #elsif Jeu.JEU.partie.grille.matrice[unX][unY].estBleu?
 					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))")
 				end
 			end
@@ -87,29 +86,29 @@ class PartieBuilder < TakuzuBuilder
 	# * Méthode d'instance qui permet de modifier l'état d'une +Case+
 	# * Est automatiquement appelée par Gtk
 	def	on_bouton_clicked(unX, unY)
-		if @partie.grille.difficulte < 8
-			@nbClics.set_text("Clics :\n" + @partie.jouer(unX, unY).to_s)
+		if Jeu.JEU.partie.grille.difficulte < 8
+			@nbClics.set_text("Clics :\n" + Jeu.JEU.partie.jouer(unX, unY).to_s)
 		else
-			@nbClics.set_text("Clics :\n" + @partie.jouer(unX, unY).to_s + "/" + @partie.grille.nbClicsMax)
+			@nbClics.set_text("Clics :\n" + Jeu.JEU.partie.jouer(unX, unY).to_s + "/" + Jeu.JEU.partie.grille.nbClicsMax)
 		end
 		# Trop lent
 		#actualiserGrille()
 
-		if @partie.grille.matrice[unX][unY].estVide?
+		if Jeu.JEU.partie.grille.matrice[unX][unY].estVide?
 			eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"grey\"))")
-		elsif @partie.grille.matrice[unX][unY].estRouge?
+		elsif Jeu.JEU.partie.grille.matrice[unX][unY].estRouge?
 			eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(1)))")
-		else #elsif @partie.grille.matrice[unX][unY].estBleu?
+		else #elsif Jeu.JEU.partie.grille.matrice[unX][unY].estBleu?
 			eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))")
 		end
 		
-		if @partie.grille.estCorrecte?
-			@partie.arretChronometre()
+		if Jeu.JEU.partie.grille.estCorrecte?
+			Jeu.JEU.partie.arretChronometre()
 			ouvrirFenetre(PartieReussieBuilder.new)
 		end
 		
-		if !@partie.verifierNbClicsMax?
-			@partie.arretChronometre()
+		if !Jeu.JEU.partie.verifierNbClicsMax?
+			Jeu.JEU.partie.arretChronometre()
 			ouvrirFenetre(PartieEchecBuilder.new)
 		end
 	end
@@ -117,13 +116,13 @@ class PartieBuilder < TakuzuBuilder
 	# * Méthode d'instance qui permet de rafraichir l'affichage de la +Grille+
 	# * Ne doit être appelée que lors d'un chargement de sauvegarde temporaire
 	def actualiserGrille()
-		0.upto(@partie.grille.taille - 1) do |unX|
-			0.upto(@partie.grille.taille - 1) do |unY|
-				if @partie.grille.matrice[unX][unY].estVide?
+		0.upto(Jeu.JEU.partie.grille.taille - 1) do |unX|
+			0.upto(Jeu.JEU.partie.grille.taille - 1) do |unY|
+				if Jeu.JEU.partie.grille.matrice[unX][unY].estVide?
 					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"grey\"))")
-				elsif @partie.grille.matrice[unX][unY].estRouge?
+				elsif Jeu.JEU.partie.grille.matrice[unX][unY].estRouge?
 					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(1)))")
-				else #elsif @partie.grille.matrice[unX][unY].estBleu?
+				else #elsif Jeu.JEU.partie.grille.matrice[unX][unY].estBleu?
 					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))")
 				end
 			end
@@ -131,7 +130,7 @@ class PartieBuilder < TakuzuBuilder
 	end
 	
 	def on_menu_clicked()
-		@partie.arreteToi
+		Jeu.JEU.partie.arreteToi
 		ouvrirFenetre(MenuPrincipalBuilder.new)
 	end
 	

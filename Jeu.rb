@@ -6,6 +6,7 @@ class Jeu
 
 	attr :didacticiel, false
 	attr :aventure, false
+	attr :partie, true
 
 	# Méthodes de classe
 	

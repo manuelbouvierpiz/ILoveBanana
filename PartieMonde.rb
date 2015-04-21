@@ -21,7 +21,7 @@ class PartieMonde < Partie
 		end
 	end
 
-	# Méthode d'instance qui permet de savoir si la Partie est accessible
+	# Méthode d'instance qui permet de savoir si la +Partie+ est accessible
 	def estDebloque?()
 		if(@etat)
 			return true
@@ -30,11 +30,10 @@ class PartieMonde < Partie
 		end
 	end
 
-	# * Méthode d'instance qui retourne un nombre d'étoile en fonction du score obtenu
-	# ===== Attribut :
-	#	- unScore : un entier qui représente le score du joueur
-	def nbEtoile(unScore)
-		unResultat = 0
+	# * Méthode d'instance qui retourne un nombre d'étoiles gagnées lors de la +PartieMonde+
+	def nbEtoile()
+		super()
+		unScore = calculerScore
 		
 		if unScore > BaseDeDonnees.getGrilleEtoileTroisScore(@grille.idGrille)
 			unResultat = 3
@@ -55,7 +54,7 @@ class PartieMonde < Partie
 	# * Méthode d'instance qui arrête la +PartieDidacticiel+
 	def arreteToi
 		super()
-		pauseChronometre()
+		mettreEnPauseChronometre()
 	end
 
 end

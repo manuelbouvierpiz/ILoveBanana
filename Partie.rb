@@ -112,8 +112,12 @@ class Partie
 
 # Méthode permettant de lancer le chronomètre	
 	def lanceToi()
-		@debutChronometre = Time.now
-        	@tourne = true	
+		if @debutChronometre == nil
+			@debutChronometre = Time.now
+			@tourne = true	
+		else
+			repriseChronometre
+		end
 	end
 	
 	# * Méthode d'instance qui arrête la +Partie+
@@ -213,6 +217,19 @@ class Partie
 			unResultat = false
 		end
 		return unResultat
+	end
+	
+	# * Méthode d'instance qui "termine" la +Partie+
+	# * Retourne +self+
+	def gagner
+		BaseDeDonnees.setGrilleTerminee(Compte.COMPTE.pseudo, getTemps, @nbClics, @grille.idGrille, @nbHypotheses, @nbAides, calculerScore())
+		return self
+	end
+	
+	# * Méthode d'instance qui retourne le nombre d'étoiles gagné lors de la +Partie+
+	# * Retourne 0 par défaut
+	def nbEtoile()
+		unResultat = 0
 	end
 end
 	
