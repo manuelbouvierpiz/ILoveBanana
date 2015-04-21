@@ -46,16 +46,30 @@ class Grille
 			@matrice = uneMatrice
 		end
 		@nbClicMin = 0
+		i = 0
+		j = 0
 		@matriceDepart.each do |uneLigne|
 			uneLigne.each do |uneCase|
-				@nbClicMin += 1 if uneCase.estVide?
+				if(uneCase.estVide?)
+					@nbClicMin += 1 
+					@nbClicMin += 1 if @matriceCorrecte[i][j].estBleu?()
+				end
+				j += 1
 			end
+			i += 1
+			j = 0
 		end
   end
   
   # * Méthode qui vérifie la matrice (remplie par le joueur) est correcte
   def estCorrecte?
-	return @matrice == @matriceCorrecte
+	0.upto(taille - 1) do |unX|
+		0.upto(taille - 1) do |unY|
+			return false if @matrice[unX][unY].etat != @matriceCorrecte[unX][unY].etat
+		end
+	end
+	
+	return true
   end
   
   # * Méthode d'instance qui change l'état d'une +Case+
