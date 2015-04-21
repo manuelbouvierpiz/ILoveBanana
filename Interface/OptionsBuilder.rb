@@ -5,8 +5,6 @@
 # Version 0.2 : Date : Mon Jul 01 10:17:02 CEST 2013
 #
 
-require 'gtk2'
-
 # == Classe OptionsBuilder : 
 #   - Permet à l'utilisateur de pouvoir choisir des options qui modifieront certaines fonctionnalités du jeu
 #   - les options modifiables sont le volume de la musique et du bruitage, certains raccourcis clavier et les couleurs des cases
