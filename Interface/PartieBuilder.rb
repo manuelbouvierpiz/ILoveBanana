@@ -17,6 +17,9 @@ class PartieBuilder < TakuzuBuilder
 
 	# * Variable d'instance non accessible qui représente la partie en cours
 	@partie
+	
+	# * Variable d'instance représentant la liste des hypothèses
+	@hypotheses
 
 	# Méthode de classe
 
@@ -39,7 +42,6 @@ class PartieBuilder < TakuzuBuilder
 		if unMonde == nil
 			@image1.set_file("Images/rien.png")
 			@meilleurScore.set_text("")
-			self['window1'].signal_connect('destroy'){@partie.arretChronometre}			# Si ce n'est pas une partie d'un monde, on arrête tout car elle ne sera plus accessible
 		else
 			@image1.set_file(unMonde.image)
 			unScore = Compte.COMPTE.scorePourLeNiveau(unePartie)
@@ -48,7 +50,6 @@ class PartieBuilder < TakuzuBuilder
 			else
 				@meilleurScore.set_text("Meilleur score :\nAucun")
 			end
-			self['window1'].signal_connect('destroy'){@partie.pauseChronometre}			# Si c'est une partie d'un monde, on le met en pause car elle sera toujours accessible
 		end
 
 		@partie = unePartie
@@ -130,6 +131,7 @@ class PartieBuilder < TakuzuBuilder
 	end
 	
 	def on_menu_clicked()
+		@partie.arreteToi
 		ouvrirFenetre(MenuPrincipalBuilder.new)
 	end
 	

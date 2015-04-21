@@ -24,4 +24,10 @@ class PartieLibre < Partie
 	def listeDefis
 		return BaseDeDonnees.getDefis(Compte.COMPTE.pseudo)
 	end
+	
+	# * Méthode d'instance qui arrête la +PartieDidacticiel+
+	def arreteToi
+		super()
+		arretChronometre()
+	end
 end

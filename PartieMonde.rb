@@ -51,5 +51,11 @@ class PartieMonde < Partie
 	def scoreDuJoueur()
 		return BaseDeDonnees.getScore(Compte.COMPTE.pseudo, @grille.idGrille)
 	end
+	
+	# * Méthode d'instance qui arrête la +PartieDidacticiel+
+	def arreteToi
+		super()
+		pauseChronometre()
+	end
 
 end

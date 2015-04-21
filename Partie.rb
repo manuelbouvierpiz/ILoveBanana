@@ -116,6 +116,11 @@ class Partie
         	@tourne = true	
 	end
 	
+	# * Méthode d'instance qui arrête la +Partie+
+	def arreteToi
+		# Le comportement varie en fonction du type de la partie
+	end
+	
 # Méthode permettant de stopper commplètement le chronomètre
 	def arretChronometre()
 		@finChronometre = Time.now - @debutChronometre
