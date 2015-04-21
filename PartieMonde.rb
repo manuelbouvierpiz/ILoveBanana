@@ -55,7 +55,7 @@ class PartieMonde < Partie
 	# * Méthode d'instance qui arrête la +PartieDidacticiel+
 	def arreteToi
 		super()
-		pauseChronometre()
+		mettreEnpauseChronometre()
 	end
 
 end
