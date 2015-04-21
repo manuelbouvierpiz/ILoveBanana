@@ -16,6 +16,10 @@ class ChoixGrilleBuilder < TakuzuBuilder
       super(__FILE__,"Choix de la grille")   
       @monde = unMonde
       @nomMonde.set_text(@monde.nom)
+      if(@monde.idMonde == 8)
+        @button21.set_visible(false)
+        @label1.set_text("Page 1/1")
+      end
     end
 
     def on_niveauBouton_clicked unLabel
