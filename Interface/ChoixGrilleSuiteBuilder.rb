@@ -21,7 +21,7 @@ class ChoixGrilleSuiteBuilder < TakuzuBuilder
   def on_niveauBouton_clicked unLabel
     i=unLabel.label.to_i - 1
     laPartie = @monde.tableauParties[i]
-    ouvrirFenetre(PartieBuilder.creer(laPartie, @monde))
+    ouvrirFenetre(PartieMondeBuilder.creer(laPartie, @monde))
   end
 
   def on_precedentBouton_clicked

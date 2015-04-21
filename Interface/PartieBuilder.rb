@@ -8,45 +8,26 @@
 require 'gtk2'
 
 # == Classe +PartieBuilder+ :
-#	- est un TakuzuBuilder
+#	- est un +TakuzuBuilder+
 #	- est considérée comme une classe abstraite
-#	- connaît sa partie
 class PartieBuilder < TakuzuBuilder
-
-	# Variable d'instance
 
 	# Méthode de classe
 
 	# * Méthode de classe qui permet de créer une +PartieBuilder+
 	# ===== Attribut :
 	#	- unePartie : une +Partie+ à lancer
-	# ===== Attributs :
-	#	- unMonde : un +Monde+ dans lequel se trouve la +Partie+
-	#	- unePartie : une +Partie+ à lancer 
-	def PartieBuilder.creer(unePartie, unMonde=nil)
-		new(unePartie, unMonde)
+	def PartieBuilder.creer(unePartie)
+		new(unePartie)
 	end
 
 	# Méthodes d'instance
 
 	# Méthode d'instance qui initialise la partie
-	def initialize(unePartie, unMonde)			# :nodoc:
+	def initialize(unePartie)			# :nodoc:
 		super("Interface/Partie#{unePartie.grille.taille}Builder.glade", "Partie")
 		
 		Jeu.JEU.partie = unePartie
-		
-		if unMonde == nil
-			@image1.set_file("Images/rien.png")
-			@meilleurScore.set_text("")
-		else
-			@image1.set_file(unMonde.image)
-			unScore = Compte.COMPTE.scorePourLeNiveau(Jeu.JEU.partie)
-			if unScore > -1
-				@meilleurScore.set_text("Meilleur score :\n" + unScore.to_s)
-			else
-				@meilleurScore.set_text("Meilleur score :\nAucun")
-			end
-		end
 		
 		Jeu.JEU.partie.lanceToi
 		
@@ -64,6 +45,7 @@ class PartieBuilder < TakuzuBuilder
 			end
 		end
 		
+		# Parcours initial de la grille pour connecter les signaux et afficher leur couleur initiale
 		0.upto(unePartie.grille.taille - 1) do |unX|
 			0.upto(unePartie.grille.taille - 1) do |unY|
 				eval("@bouton_#{unX+1}_#{unY+1}.signal_connect(\"clicked\") { on_bouton_clicked(#{unX}, #{unY})}")
@@ -100,16 +82,6 @@ class PartieBuilder < TakuzuBuilder
 			eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(1)))")
 		else #elsif Jeu.JEU.partie.grille.matrice[unX][unY].estBleu?
 			eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))")
-		end
-		
-		if Jeu.JEU.partie.grille.estCorrecte?
-			Jeu.JEU.partie.arretChronometre()
-			ouvrirFenetre(PartieReussieBuilder.new)
-		end
-		
-		if !Jeu.JEU.partie.verifierNbClicsMax?
-			Jeu.JEU.partie.arretChronometre()
-			ouvrirFenetre(PartieEchecBuilder.new)
 		end
 	end
 

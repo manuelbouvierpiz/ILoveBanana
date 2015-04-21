@@ -95,7 +95,7 @@ class TailleDifficulteBuilder < TakuzuBuilder
 # Lance une nouvelle patie en fonction de la taille et difficulté choisie
 	def on_buttonSuivant_clicked
 		if(@tailleChoisie != nil)
-			ouvrirFenetre(PartieBuilder.creer(PartieLibre.creer(@tailleChoisie,@adjDifficulte.value)))
+			ouvrirFenetre(PartieLibreBuilder.creer(PartieLibre.creer(@tailleChoisie,@adjDifficulte.value)))
 	 	else
 			@labelCorrect.show
 		end
