@@ -25,13 +25,6 @@ class Jeu
 		@didacticiel = Didacticiel.new
 	end
 	
-	# * Méthode d'instance qui permet de créer une nouvelle partie libre
-	def lancerPartieLibre()
-		uneDifficulte = 7
-		uneTaille = 12
-		@partie = PartieLibre.creer(uneTaille, uneDifficulte)
-	end
-	
 	# Création du JEU
 	@@JEU = new
 	

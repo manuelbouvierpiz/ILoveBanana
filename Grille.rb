@@ -55,18 +55,13 @@ class Grille
   
   # * Méthode qui vérifie la matrice (remplie par le joueur) est correcte
   def estCorrecte?
-  unResultat = true
-  
 	0.upto(taille - 1) do |unX|
 		0.upto(taille - 1) do |unY|
-			if @matrice[unX][unY] != @matrice[unX][unY]
-				unResultat = false
-				break
-			end
+			return false if @matrice[unX][unY] != @matriceCorrecte[unX][unY]
 		end
 	end
 	
-	return unResultat
+	return true
   end
   
   # * Méthode d'instance qui change l'état d'une +Case+
