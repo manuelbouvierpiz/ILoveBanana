@@ -27,8 +27,6 @@ class PartieBuilder < TakuzuBuilder
 		
 		Jeu.JEU.partie = unePartie
 		
-		Jeu.JEU.partie.lanceToi
-		
 		# Mise à jour du temps toutes les secondes
 		GLib::Timeout.add(1000) do
 			begin
@@ -57,6 +55,8 @@ class PartieBuilder < TakuzuBuilder
 				end
 			end
 		end
+		
+		Jeu.JEU.partie.lanceToi
 		
 		# Trop lent
 		#actualiserGrille()
