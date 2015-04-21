@@ -15,12 +15,8 @@ class PartieLibre < Partie
 		if uneDifficulte == nil		# unArgument = unIdGrille
 			super(unArgument)
 		else						# unArgument = uneTaille
-			initGrilleAlea(unArgument, uneDifficulte)
+			@grille = Grille.creer(BaseDeDonnees.getGrilleIdAleatoire(unArgument, uneDifficulte))
 		end
-	end
-
-	def initGrilleAlea(uneTaille, uneDifficulte)
-		@grille = Grille.creer(uneTaille, uneDifficulte)
 	end
 
 	def listeDefis

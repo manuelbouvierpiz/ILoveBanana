@@ -34,32 +34,46 @@ class PartieBuilder < TakuzuBuilder
 
 	# Méthode d'instance qui initialise la partie
 	def initialize(unePartie, unMonde)			# :nodoc:
-		super("Interface/Partie#{unePartie.grille.taille}Builder.rb", "Partie")
+		super("Interface/Partie#{unePartie.grille.taille}Builder.glade", "Partie")
 		
-		if unMonde != nil
+		if unMonde == nil
+			@image1.set_file("Images/rien.png")
+			@meilleurScore.set_text("")
+		else
 			@image1.set_file(unMonde.image)
 		end
 
 		@partie = unePartie
 		@partie.lanceToi
-		Thread.new{
-				while !@partie.estTermine? do
-					@temps.set_text("Temps :\n" + @partie.getTempsString)
-				end
-			}
+		
+		# Mise à jour du temps toutes les secondes
+		GLib::Timeout.add(1000) do
+			@temps.set_text("Temps :\n" + @partie.getTempsString)
+			true
+		end
+		
+		0.upto(unePartie.grille.taille - 1) do |unX|
+			0.upto(unePartie.grille.taille - 1) do |unY|
+				puts("@bouton_#{unX+1}_#{unY+1}.signal_connect(\"clicked\") { on_bouton_clicked(#{unX}, #{unY})}")
+				eval("@bouton_#{unX+1}_#{unY+1}.signal_connect(\"clicked\") { on_bouton_clicked(#{unX}, #{unY})}")
+			end
+		end
+		
 	end
 
 	# * Méthode d'instance qui permet de modifier l'état d'une +Case+
 	# * Est automatiquement appelée par Gtk
 	def	on_bouton_clicked(unX, unY)
-		if @partie.grille.matrice[unX-1][unY-1].estVide? or @partie.grille.matrice[unX][unY].estBleu?
-			@partie.grille.matrice[unX-1][unY-1].setRouge
-			exec("@bouton_#{unX}_#{unY}.image.modify_fg(Gtk::STATE_NORMAL, Gdk::Color.new(\"#rrrrggggbbbb\"))")	# TODO => Rechercher la couleur dans les options
+		if @partie.grille.matrice[unX][unY].estVide? or @partie.grille.matrice[unX][unY].estBleu?
+			@partie.grille.matrice[unX][unY].setRouge
+			eval("@bouton_#{unX+1}_#{unY+1}.modify_fg(Gtk::STATE_ACTIVE, Gdk::Color.parse(Compte.COMPTE.options.couleur(1)))")	# TODO => Rechercher la couleur dans les options
 		else # if @partie.grille.matrice[unX-1][unY-1].estRouge?
-			@partie.grille.matrice[unX-1][unY-1].setBleu
-			exec("@bouton_#{unX}_#{unY}.image.modify_fg(Gtk::STATE_NORMAL, Gdk::Color.new(\"#rrrrggggbbbb\"))")	# TODO => Rechercher la couleur dans les options
+			@partie.grille.matrice[unX][unY].setBleu
+			eval("@bouton_#{unX+1}_#{unY+1}.modify_fg(Gtk::STATE_ACTIVE, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))")	# TODO => Rechercher la couleur dans les options
 		end
 	end
+	
+	
 
 	private_class_method :new
 end

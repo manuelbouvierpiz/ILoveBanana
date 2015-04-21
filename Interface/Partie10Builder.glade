@@ -1,22 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <interface>
   <requires lib="gtk+" version="2.24"/>
   <!-- interface-naming-policy project-wide -->
   <object class="GtkWindow" id="window1">
     <property name="width_request">1100</property>
     <property name="height_request">780</property>
-    <property name="can_focus">False</property>
     <property name="resizable">False</property>
     <child>
       <object class="GtkFixed" id="panel">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
         <child>
           <object class="GtkImage" id="image1">
             <property name="width_request">1100</property>
             <property name="height_request">780</property>
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
             <property name="stock">gtk-missing-image</property>
           </object>
         </child>
@@ -25,7 +22,6 @@
             <property name="width_request">600</property>
             <property name="height_request">600</property>
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
             <property name="n_rows">10</property>
             <property name="n_columns">10</property>
             <child>
@@ -1295,7 +1291,7 @@
         </child>
         <child>
           <object class="GtkButton" id="hypothese">
-            <property name="label" translatable="yes">Hypothèse</property>
+            <property name="label" translatable="yes">Hypoth&#xE8;se</property>
             <property name="width_request">100</property>
             <property name="height_request">50</property>
             <property name="visible">True</property>
@@ -1323,7 +1319,7 @@
         </child>
         <child>
           <object class="GtkButton" id="regle">
-            <property name="label" translatable="yes">Règle</property>
+            <property name="label" translatable="yes">R&#xE8;gle</property>
             <property name="width_request">100</property>
             <property name="height_request">50</property>
             <property name="visible">True</property>
@@ -1368,7 +1364,6 @@
             <property name="width_request">150</property>
             <property name="height_request">400</property>
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
             <property name="n_rows">5</property>
             <child>
               <object class="GtkButton" id="hypothese_1">
@@ -1432,8 +1427,8 @@
             <property name="width_request">100</property>
             <property name="height_request">80</property>
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Score : </property>
+            <property name="label" translatable="yes">Score :
+0</property>
           </object>
           <packing>
             <property name="x">880</property>
@@ -1445,8 +1440,8 @@
             <property name="width_request">100</property>
             <property name="height_request">80</property>
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Meilleur score : </property>
+            <property name="label" translatable="yes">Meilleur score :
+0</property>
           </object>
           <packing>
             <property name="x">880</property>
@@ -1458,8 +1453,7 @@
             <property name="width_request">100</property>
             <property name="height_request">50</property>
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Hypothèses :</property>
+            <property name="label" translatable="yes">Hypoth&#xE8;ses :</property>
           </object>
           <packing>
             <property name="x">75</property>
@@ -1471,8 +1465,8 @@
             <property name="width_request">100</property>
             <property name="height_request">80</property>
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Temps : </property>
+            <property name="label" translatable="yes">Temps :
+00:00</property>
           </object>
           <packing>
             <property name="x">880</property>
