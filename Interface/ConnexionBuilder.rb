@@ -5,7 +5,6 @@
 # Version 0.1 : Date : Fri Apr 03 13:54:21 CEST 2015
 #
 
-require 'gtk2'
 
 # == Classe +ConnexionBuilder+ :
 #	- sait connecter un utilisateur et créer un +Compte+
