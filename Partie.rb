@@ -15,8 +15,6 @@ class Partie
 	@hypothese
 # Variable contenant le nombre de clic que l'utilisateur a fait pour terminer la grille, elle s'incrémente durant la partie.
 	@nbClics
-# Variable contenant le temps que l'utilsateur a mis pour terminer la grille
-	@temps
 # Variable contenant le nombre de fois que l'utilisateur a utiliser l'aide
 	@nbAides
 # Variable contenant le nombre d'hypothèse que l'utilisateur a fait pour terminer la grille
@@ -37,7 +35,7 @@ class Partie
 
 	private_class_method :new
 
-	attr_reader :nbClics, :temps, :nbAides, :nbHypotheses, :grille
+	attr_reader :nbClics, :nbAides, :nbHypotheses, :grille
 
 
 # Constucteur d'une partie 
@@ -56,14 +54,12 @@ class Partie
 			@nbHypotheses = BaseDeDonnees.getSauvegardeNbHypotheses(Compte.COMPTE.pseudo)
 			@nbAides = BaseDeDonnees.getSauvegardeNbAides(Compte.COMPTE.pseudo)
 			@nbClics = BaseDeDonnees.getSauvegardeNbClics(Compte.COMPTE.pseudo)
-			@temps = BaseDeDonnees.getSauvegardeTemps(Compte.COMPTE.pseudo)
 			@idGrille = BaseDeDonnees.getSauvegardeIdGrille(Compte.COMPTE.pseudo)
 			@grille = Grille.creer(unIdGrille, BaseDeDonnees.getSauvegardeGrilleSauvegardee(Compte.COMPTE.pseudo))
 		else					# Il faut créer une nouvelle grille
 			@nbHypotheses = 0
 			@nbAides = 0
 			@nbClics = 0
-			@temps = 0
 			@idGrille = unIdGrille
 			@grille = Grille.creer(unIdGrille)
 		end
@@ -76,7 +72,7 @@ class Partie
 
 # Méthode retournant le score de la partie
 	def calculerScore()
-		return @grille.nbClicMin * ( getDifficulte / ( temps * nbClics * 5 ) ) * ( 1 / ( 1 + nbAides) )
+		return @grille.nbClicMin * ( @grille.difficulte / ( getTemps * nbClics * 5 ) ) * ( 1 / ( 1 + nbAides) )
 	end
 
 # Méthode retournant la chaîne de caracère correspondant aux règles du jeu de takuzu
@@ -94,7 +90,7 @@ class Partie
 
 # Méthode permettant de passer en mode hypothèse
 	def sauvegarder()
-		BaseDeDonnees.setSauvegarde(Compte.COMPTE.pseudo(), @temps, @nbClics, @nbHypotheses, @nbAides, @idGrille, @listeHypotheses)
+		BaseDeDonnees.setSauvegarde(Compte.COMPTE.pseudo(), getTemps, @nbClics, @nbHypotheses, @nbAides, @idGrille, @listeHypotheses)
 	end
 
 # Méthode permettant d'entrer en mode hypothèse
