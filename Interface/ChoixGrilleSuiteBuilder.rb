@@ -2,7 +2,6 @@
 
 # encoding: UTF-8
 
-require 'gtk2'
 
 class ChoixGrilleSuiteBuilder < TakuzuBuilder
     

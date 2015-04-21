@@ -4,7 +4,6 @@
 # Auteur Alexandre Moutel, Parmenon Damien (Code Ruby)
 # Version 0.1 : Date : Mon Jul 01 10:17:02 CEST 2013
 #
-require 'gtk2'
 
 # == Classe ClassementBuilder : 
 #   - Permet l'affichage d'un classement en fonction d'une taille et d'une difficulté choisies par l'utilisateur

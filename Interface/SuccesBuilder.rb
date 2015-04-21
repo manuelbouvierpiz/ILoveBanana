@@ -3,7 +3,6 @@
 ##
 # Auteur Alexandre Moutel, Damien Parmenon (Code Ruby)
 
-require 'gtk2'
 
 # == Classe SuccesBuilder : 
 #   - Permet l'affichage des succès ainsi que s'ils ont été débloqués ou non par le joueur

@@ -1,4 +1,4 @@
-require 'gtk2'
+
 
 class ChoixMondeBuilder < TakuzuBuilder
 

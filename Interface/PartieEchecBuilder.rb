@@ -3,7 +3,6 @@
 ##
 # Damien Parmenon
 #
-require 'gtk2'
 
 class PartieEchecBuilder < TakuzuBuilder
 
