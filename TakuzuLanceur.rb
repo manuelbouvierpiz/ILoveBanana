@@ -53,10 +53,12 @@ desClasses = [
 	'Interface/OptionsBuilder.rb',
 	'Interface/PartieBuilder.rb',
 	'Interface/PartieReussieBuilder.rb',
+	'Interface/PartieEchecBuilder.rb',
 	'Interface/StatistiquesBuilder.rb',
 	'Interface/SuccesBuilder.rb',
 	'Interface/TailleDifficulteBuilder.rb',
 	'Interface/InscriptionBuilder.rb',
+	'Interface/ReglesBuilder.rb'
 ]
 
 print("Chargement")

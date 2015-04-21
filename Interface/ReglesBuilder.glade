@@ -13,17 +13,14 @@
             <property name="visible">True</property>
             <property name="xalign">0.46000000834465027</property>
             <property name="yalign">0.46000000834465027</property>
-            <property name="label" translatable="yes">L'application "Takuzu Avengers" fut r&#xE9;alis&#xE9;e dans le cadre du
-projet du semestre 6 de la Licence 3&#xE8;me ann&#xE9;e SPI
-Informatique de l'Universit&#xE9; du Maine.
-Les r&#xE9;alisateurs de cette application sont :
-      - Bouvier Manuel
-      - Alexandre Moutel
-      - Valentin Chaillou
-      - Ronan Yzeux
-      - Damien Parmenon
-      - Nanzhen Kuang
-      - Wilfried Jousse</property>
+            <property name="label" translatable="yes">Il ne peut pas y avoir plus de deux cases align&#xE9;es ayant la m&#xEA;me couleur.
+
+Chaque ligne doit &#xEA;tre diff&#xE9;rente des autres lignes.
+
+Chaque colonne doit &#xEA;tre diff&#xE9;rente des autres colonnes.
+
+Il doit y avoir autant de points de chaque couleur dans chaque ligne et
+chaque colonne</property>
           </object>
           <packing>
             <property name="x">10</property>

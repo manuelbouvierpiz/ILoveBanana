@@ -39,9 +39,16 @@ class PartieBuilder < TakuzuBuilder
 		if unMonde == nil
 			@image1.set_file("Images/rien.png")
 			@meilleurScore.set_text("")
+			self['window1'].signal_connect('destroy'){@partie.arretChronometre}			# Si ce n'est pas une partie d'un monde, on arrête tout car elle ne sera plus accessible
 		else
 			@image1.set_file(unMonde.image)
-			@meilleur.set_text("Meilleur score :\n" + Compte.COMPTE.scorePourLeNiveau(unePartie).to_s)
+			unScore = Compte.COMPTE.scorePourLeNiveau(unePartie)
+			if unScore > -1
+				@meilleurScore.set_text("Meilleur score :\n" + unScore.to_s)
+			else
+				@meilleurScore.set_text("Meilleur score :\nAucun")
+			end
+			self['window1'].signal_connect('destroy'){@partie.pauseChronometre}			# Si c'est une partie d'un monde, on le met en pause car elle sera toujours accessible
 		end
 
 		@partie = unePartie
@@ -100,7 +107,7 @@ class PartieBuilder < TakuzuBuilder
 			ouvrirFenetre(PartieReussieBuilder.new)
 		end
 		
-		if !@partie.verifierNbClics?
+		if !@partie.verifierNbClicsMax?
 			@partie.arretChronometre()
 			ouvrirFenetre(PartieEchecBuilder.new)
 		end
@@ -120,6 +127,14 @@ class PartieBuilder < TakuzuBuilder
 				end
 			end
 		end
+	end
+	
+	def on_menu_clicked()
+		ouvrirFenetre(MenuPrincipalBuilder.new)
+	end
+	
+	def on_regle_clicked()
+		ouvrirFenetreNonFermante(ReglesBuilder.new)
 	end
 	
 	private_class_method :new

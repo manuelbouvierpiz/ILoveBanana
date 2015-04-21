@@ -92,7 +92,7 @@ class Grille
   
   # * Méthode d'instance qui retourne la diffculté de la +Grille+
   def difficulte
-	return BaseDeDonnees.getGrilleDiffculte(@idGrille)
+	return BaseDeDonnees.getGrilleDifficulte(@idGrille)
   end
   
   # * Méthode d'instance qui retourne la taille de la +Grille+

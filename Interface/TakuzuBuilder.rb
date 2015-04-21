@@ -13,7 +13,7 @@ class TakuzuBuilder < Gtk::Builder
 	# Variables d'instance
 	
 	# * Variable d'instance non accessible qui représente la fenêtre précédente de cette fenêtre
-	@fenetrePrecedente
+	attr :fenetrePrecedente, true
 	
 	# * Variable d'instance non acessible qui représente le nom de la fenêtre
 	# * Sera utilisée lorsque la fenêtre sera ré-affichée (fenêtre précédente)
@@ -55,7 +55,7 @@ class TakuzuBuilder < Gtk::Builder
 	# ===== Attributs :
 	#	- uneFenetre : une fenetre (telle que FenetreBuilder.new())
 	def ouvrirFenetreNonFermante(uneFenetre)
-		@fenetrePrecedente = self
+		uneFenetre.fenetrePrecedente = self
 	end
 	
 	# * Méthode d'instance qui ouvre une nouvelle fenêtre et ferme la précédente
@@ -71,9 +71,8 @@ class TakuzuBuilder < Gtk::Builder
 	# * <b>ACHTUNG</b> : la fenêtre précédente est la fenêtre précédemment ouverte
 	def ouvrirFenetrePrecedente()
 		@fenetrePrecedente['window1'].set_window_position Gtk::Window::POS_CENTER
-		@fenetrePrecedente['window1'].signal_connect('destroy') { Gtk.main_quit }
 		@fenetrePrecedente['window1'].show_all
 		@fenetrePrecedente.setNomDeFenetre
-		ouvrirFenetre(uneFenetre)
+		ouvrirFenetre(@fenetrePrecedente)
 	end
 end
