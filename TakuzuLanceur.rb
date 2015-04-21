@@ -67,7 +67,7 @@ desClasses = [
 	'Interface/ReglesBuilder.rb'
 ]
 
-load 'Interface/ChargementBuilder.rb'
+load 'Interface/ChargementWindow.rb'
 Gtk.init
 laFenetre = ChargementWindow.new
 Gtk.main
