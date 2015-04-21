@@ -1,6 +1,5 @@
 # encoding: UTF-8
 
-require 'gtk2'
 
 class ListeDefiBuilder < TakuzuBuilder
     def initialize
