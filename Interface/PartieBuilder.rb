@@ -39,12 +39,9 @@ class PartieBuilder < TakuzuBuilder
 		if unMonde == nil
 			@image1.set_file("Images/rien.png")
 			@meilleurScore.set_text("")
-			@meilleurScore.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse("white"))
-			@nbClics.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse("white"))
-			@labelHypothese.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse("white"))
-			@temps.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse("white"))
 		else
 			@image1.set_file(unMonde.image)
+			@meilleur.set_text("Meilleur score :\n" + Compte.COMPTE.scorePourLeNiveau(unePartie).to_s)
 		end
 
 		@partie = unePartie
@@ -53,6 +50,10 @@ class PartieBuilder < TakuzuBuilder
 		# Mise à jour du temps toutes les secondes
 		GLib::Timeout.add(1000) do
 			@temps.set_text("Temps :\n" + @partie.getTempsString)
+			if !@partie.verifierTempsMax?
+				@partie.arretChronometre
+				ouvrirFenetre(PartieEchecBuilder.new)
+			end
 			true
 		end
 		
@@ -78,8 +79,11 @@ class PartieBuilder < TakuzuBuilder
 	# * Méthode d'instance qui permet de modifier l'état d'une +Case+
 	# * Est automatiquement appelée par Gtk
 	def	on_bouton_clicked(unX, unY)
-		@nbClics.set_text("Clics :\n" + @partie.jouer(unX, unY).to_s)
-		
+		if @partie.grille.difficulte < 8
+			@nbClics.set_text("Clics :\n" + @partie.jouer(unX, unY).to_s)
+		else
+			@nbClics.set_text("Clics :\n" + @partie.jouer(unX, unY).to_s + "/" + @partie.grille.nbClicsMax)
+		end
 		# Trop lent
 		#actualiserGrille()
 
@@ -89,6 +93,16 @@ class PartieBuilder < TakuzuBuilder
 			eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(1)))")
 		else #elsif @partie.grille.matrice[unX][unY].estBleu?
 			eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))")
+		end
+		
+		if @partie.grille.estCorrecte?
+			@partie.arretChronometre()
+			ouvrirFenetre(PartieReussieBuilder.new)
+		end
+		
+		if !@partie.verifierNbClics?
+			@partie.arretChronometre()
+			ouvrirFenetre(PartieEchecBuilder.new)
 		end
 	end
 

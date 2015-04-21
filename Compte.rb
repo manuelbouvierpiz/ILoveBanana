@@ -148,7 +148,7 @@ class Compte
     # * Méthode d'instance qui retourne le score réalisé sur un niveau de l'aventure
     # * Marche théoriquement sur tous les types de partie mais non testé
     def scorePourLeNiveau(unePartieMonde)
-    	BaseDeDonnes.getScore(@pseudo, unePartieMonde.grille.idGrille)
+    	BaseDeDonnees.getScore(@pseudo, unePartieMonde.grille.idGrille)
     end
 
 end

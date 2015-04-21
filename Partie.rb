@@ -155,7 +155,14 @@ class Partie
 		unTemps = self.getTemps
 		minute = sprintf("%02i", (unTemps % 3600) / 60)
 		seconde = sprintf("%02i", unTemps % 60)
-		return "#{minute}:#{seconde}"
+		if @grille.difficulte < 8	# Grille non-hardcore
+			return "#{minute}:#{seconde}"
+		else
+			unTempsMax = @grille.tempsMax
+			minuteMax = sprintf("%02i", (unTempsMax % 3600) / 60)
+			secondeMax = sprintf("%02i", unTempsMax % 60)
+			return "#{minute}:#{seconde}/#{minuteMax}:#{secondeMax}"
+		end
 	end
 		
 	# * Méthode d'instance qui permet de savoir si la +Partie+ est terminée
@@ -181,6 +188,26 @@ class Partie
 			@nbClics += 1
 		end
 		return @nbClics
+	end
+	
+	# * Méthode d'instance qui permet de savoir si la +Partie+ peut continuer en fonction de son temps
+	# * Retourne +true+ si elle peut continuer, +false+ sinon
+	def verifierTempsMax?
+		unResultat = true
+		if @grille.difficulte >= 8 && getTemps > @grille.tempsMax
+			unResultat = false
+		end
+		return unResultat
+	end
+	
+	# * Méthode d'instance qui permet de savoir si la +Partie+ peut continuer en fonction de son nombre de clics
+	# * Retourne +true+ si elle peut continuer, +false+ sinon
+	def verifierNbClicsMax?
+		unResultat = true
+		if @grille.difficulte >= 8 && @nbClics > @grille.nbClicsMax
+			unResultat = false
+		end
+		return unResultat
 	end
 end
 	
