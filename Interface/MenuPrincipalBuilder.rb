@@ -4,7 +4,6 @@
 # Auteur Alexandre Moutel (glade), Parmenon Damien (code ruby)
 # Version 0.1 : Date : Mon Jul 01 10:17:02 CEST 2013
 #
-require 'gtk2'
 
 # == Classe MenuPrincipalBuilder : 
 #   - Permet à l'utilisateur de pouvoir naviguer dans l'application en permettant l'accés aux différentes fonctionnalités de celle-ci
