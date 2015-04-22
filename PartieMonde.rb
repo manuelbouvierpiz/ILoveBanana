@@ -62,16 +62,20 @@ class PartieMonde < Partie
 			@etat = true
 		else
 			dernierMondeNiveau = BaseDeDonnees.dernierNiveauFini(Compte.COMPTE.pseudo)
-			if(dernierMondeNiveau[0] == 40)
-				dernierNiveauAccesible = 1
-				dernierMondeAccessible = res[0] + 1
-			else
-				dernierNiveauAccessible = res[1] + 1
-				dernierMondeAccessible = res[0]
-			end
+			if(dernierMondeNiveau != -1)
+				if(dernierMondeNiveau[0] == 40)
+					dernierNiveauAccesible = 1
+					dernierMondeAccessible = res[0] + 1
+				else
+					dernierNiveauAccessible = res[1] + 1
+					dernierMondeAccessible = res[0]
+				end
 			
-			if((@grille.difficulte <= dernierMondeAccessible) && (@idNiveau <= dernierNiveauAccessible))
-				@etat = true
+				if((@grille.difficulte <= dernierMondeAccessible) && (@idNiveau <= dernierNiveauAccessible))
+					@etat = true
+				else
+					@etat = false
+				end
 			else
 				@etat = false
 			end
