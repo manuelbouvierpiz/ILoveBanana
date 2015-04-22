@@ -103,11 +103,6 @@ class Partie
 		@grille.obtenirAide()
 	end
 
-# Méthode permettant de sauvegarder la Partie dans la base de données
-	def sauvegarder()
-		BaseDeDonnees.setSauvegarde(Compte.COMPTE.pseudo(), getTemps, @nbClics, @nbHypotheses, @nbAides, @idGrille, @listeHypotheses)
-	end
-
 # Méthode permettant d'entrer en mode hypothèse
 	def faireHypothese()
 		if @grille.difficulte < 8
@@ -263,7 +258,7 @@ class Partie
 		return !@mouvementsArriere.empty?
 	end
 	
-	def sauvegarderPartieEnCours
+	def sauvegarder
 		self.mettreEnPauseChronometre
 		BaseDeDonnees.setSauvegarde(Compte.COMPTE.pseudo, self.getTemps, @nbClics, @nbHypotheses, @nbAides, @grille.idGrille, @grille.matrice)
 		return self
