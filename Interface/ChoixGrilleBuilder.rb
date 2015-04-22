@@ -19,6 +19,29 @@ class ChoixGrilleBuilder < TakuzuBuilder
         @button21.set_visible(false)
         @label1.set_text("Page 1/1")
       end
+      0.upto(19) do |i|
+        @monde.tableauParties[i].initialiseEtat
+      end
+      @button1.set_sensitive(false) if(!@monde.tableauParties[0].estDebloque?)
+      @button2.set_sensitive(false) if(!@monde.tableauParties[1].estDebloque?)
+      @button3.set_sensitive(false) if(!@monde.tableauParties[2].estDebloque?)
+      @button4.set_sensitive(false) if(!@monde.tableauParties[3].estDebloque?)
+      @button5.set_sensitive(false) if(!@monde.tableauParties[4].estDebloque?)
+      @button6.set_sensitive(false) if(!@monde.tableauParties[5].estDebloque?)
+      @button7.set_sensitive(false) if(!@monde.tableauParties[6].estDebloque?)
+      @button8.set_sensitive(false) if(!@monde.tableauParties[7].estDebloque?)
+      @button9.set_sensitive(false) if(!@monde.tableauParties[8].estDebloque?)
+      @button10.set_sensitive(false) if(!@monde.tableauParties[9].estDebloque?)
+      @button11.set_sensitive(false) if(!@monde.tableauParties[10].estDebloque?)
+      @button12.set_sensitive(false) if(!@monde.tableauParties[11].estDebloque?)
+      @button13.set_sensitive(false) if(!@monde.tableauParties[12].estDebloque?)
+      @button14.set_sensitive(false) if(!@monde.tableauParties[13].estDebloque?)
+      @button15.set_sensitive(false) if(!@monde.tableauParties[14].estDebloque?)
+      @button16.set_sensitive(false) if(!@monde.tableauParties[15].estDebloque?)
+      @button17.set_sensitive(false) if(!@monde.tableauParties[16].estDebloque?)
+      @button18.set_sensitive(false) if(!@monde.tableauParties[17].estDebloque?)
+      @button19.set_sensitive(false) if(!@monde.tableauParties[18].estDebloque?)
+      @button20.set_sensitive(false) if(!@monde.tableauParties[19].estDebloque?)
     end
 
     def on_niveauBouton_clicked unLabel
