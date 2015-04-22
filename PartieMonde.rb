@@ -77,11 +77,14 @@ class PartieMonde < Partie
 					dernierNiveauAccessible = dernierMondeNiveau[1] + 1
 					dernierMondeAccessible = dernierMondeNiveau[0]
 				end
-				puts @idNiveau, " hello"
-				if((@grille.difficulte <= dernierMondeAccessible) && (@idNiveau <= dernierNiveauAccessible))
+				if((@grille.difficulte < dernierMondeAccessible))
 					@etat = true
 				else
-					@etat = false
+					if((@grille.difficulte == dernierMondeAccessible) && (@idNiveau <= dernierNiveauAccessible))
+						@etat = true
+					else
+						@etat = false	
+					end
 				end
 			else
 				@etat = false
