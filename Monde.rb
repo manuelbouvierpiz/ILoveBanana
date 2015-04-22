@@ -30,9 +30,9 @@ class Monde
 	@etat
 	
 	# * Variable d'instance qui représente un tableau de niveaux
-	# * Accessible en lecture uniquement
-	# * Le tableau de <b>PartieMonde</b>s doit être créé pour initialiser le monde
-	attr :tableauParties, false
+	# * Non accessible
+	# * Le tableau de parties est rempli dynamiquement par la méthode +partie+
+	@tableauParties
 
 	# Méthodes d'instance
 	
@@ -49,7 +49,12 @@ class Monde
 		@etat = false
 		
 		# Création du tableau de parties
-		@tableauParties = []
+		if(@idMonde != 8)
+			@tableauParties = Array.new(40)
+		else
+			@tableauParties = Array.new(20)
+		end
+=begin
 		if(@idMonde != 8)
 			1.upto(40) do |i|
 				@tableauParties.push(PartieMonde.creer(BaseDeDonnees.getMondeGrilleId(@idMonde, i)))
@@ -59,6 +64,18 @@ class Monde
 				@tableauParties.push(PartieMonde.creer(BaseDeDonnees.getMondeGrilleId(@idMonde, i), true))		# C'est une GrilleHardcore
 			end
 		end
+=end
+	end
+	
+	def partie(unNumero)
+		if @tableauParties[unNumero] == nil
+			if @idMonde != 8
+				@tableauParties[unNumero] = PartieMonde.creer(BaseDeDonnees.getMondeGrilleId(@idMonde, unNumero))
+			else
+				@tableauParties[unNumero] = PartieMonde.creer(BaseDeDonnees.getMondeGrilleId(@idMonde, unNumero), true)		# C'est une GrilleHardcore
+			end
+		end
+		return @tableauParties[unNumero]
 	end
 
 	# Méthode d'instance qui permet de donner l'accès à un Monde
