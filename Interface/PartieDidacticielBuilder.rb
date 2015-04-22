@@ -1,7 +1,7 @@
 # encoding: UTF-8
 
 ##
-# Auteur : Valentin CHAILLOU, Damien PARMENON
+# Auteur : Valentin CHAILLOU, Damien PARMENON (Code Ruby)
 # Version 0.1 : Date : Mon Jul 01 10:17:02 CEST 2013
 #
 
