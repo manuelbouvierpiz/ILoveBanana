@@ -130,7 +130,9 @@ class PartieDidacticielBuilder < PartieBuilder
 					fenetreInfo = Gtk::MessageDialog.new(self['window1'], Gtk::Dialog::DESTROY_WITH_PARENT,
                               Gtk::MessageDialog::INFO,
                               Gtk::MessageDialog::BUTTONS_CLOSE,
-                              "Et voilà, vous avez connaissance des trois règles, il ne vous reste plus qu'à terminer la grille.")
+                              "Et voilà, les trois règles n'ont plus aucun secret pour vous, il reste toutefois un dernier point à éclaircir, vous serez parfois amené à utiliser les hypothèses si aucune règle n'est applicable.\n
+                              L'hypothèse est le bouton éponyme en dessous de la grille, il effectue une sauvegarde que vous pourrez récuperer si votre grille s'avère mauvaise en fin de compte, il suffit de cliquer sur l'hypothèse en question à gauche de la grille.\n
+                              il ne vous reste plus qu'à terminer la grille en sachant qu'une hypothèse sera indispensable, courage.")
   					fenetreInfo.run
   					fenetreInfo.destroy
   					@etape = 5
@@ -139,12 +141,13 @@ class PartieDidacticielBuilder < PartieBuilder
   				super(unX, unY)
   				if Jeu.JEU.partie.grille.estCorrecte?
 					Jeu.JEU.partie.arretChronometre()
-					ouvrirFenetre(PartieLibreReussieBuilder.new)
-				end
-		
-				if !Jeu.JEU.partie.verifierNbClicsMax?
-					Jeu.JEU.partie.arretChronometre()
-					ouvrirFenetre(PartieEchecBuilder.new)
+					fenetreInfo = Gtk::MessageDialog.new(self['window1'], Gtk::Dialog::DESTROY_WITH_PARENT,
+                              Gtk::MessageDialog::INFO,
+                              Gtk::MessageDialog::BUTTONS_CLOSE,
+                              "Félicitations, la grille est terminée, vous avez connaissance de toutes les règles et technique dont vous aurez besoin. Bonne chance !")
+  					fenetreInfo.run
+  					fenetreInfo.destroy
+					ouvrirFenetre(PartieDidacticielReussieBuilder.new)
 				end
 		end
 	end	
