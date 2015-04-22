@@ -65,7 +65,8 @@ class PartieMonde < Partie
 	end
 
 	def initialiseEtat
-		if(@grille.difficulte == 1 && @idNiveau == 1)
+		numNiveau = BaseDeDonnees.getNumeroNiveau(@idGrille)
+		if(@grille.difficulte == 1 && numNiveau == 1)
 			@etat = true
 		else
 			dernierMondeNiveau = BaseDeDonnees.dernierNiveauFini(Compte.COMPTE.pseudo)
@@ -80,7 +81,6 @@ class PartieMonde < Partie
 				if((@grille.difficulte < dernierMondeAccessible))
 					@etat = true
 				else
-					numNiveau = BaseDeDonnees.getNumeroNiveau(@idGrille)
 					if((@grille.difficulte == dernierMondeAccessible) && (numNiveau <= dernierNiveauAccessible))
 						@etat = true
 					else
