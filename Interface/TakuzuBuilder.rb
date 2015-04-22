@@ -66,12 +66,9 @@ class TakuzuBuilder < Gtk::Builder
 		self['window1'].destroy
 	end
 
-	# * Méthode d'instance qui ouvre la fenêtre précédente
+	# * Méthode d'instance qui ouvre la fenêtre précédente (à n'utiliser qu'avec des fenêtres non fermantes)
 	# * <b>ACHTUNG</b> : la fenêtre précédente est la fenêtre précédemment ouverte
 	def ouvrirFenetrePrecedente()
-		@fenetrePrecedente['window1'].set_window_position Gtk::Window::POS_CENTER
-		@fenetrePrecedente['window1'].show_all
-		@fenetrePrecedente.setNomDeFenetre
 		ouvrirFenetre(@fenetrePrecedente)
 	end
 end
