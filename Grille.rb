@@ -43,11 +43,12 @@ class Grille
 		if uneMatrice == nil
 			@matrice = getMatriceDepart
 		else
-			# Copie de la matrice
-			@matrice = uneMatrice.clone
+			# Copie de la matrice => NE SURTOUT PAS UTILISER clone (pas de copie en profondeur)
+			@matrice = []
 			0.upto(taille - 1) do |unX|
+				@matrice[unX] = []
 				0.upto(taille - 1) do |unY|
-					@matrice[unX][unY] = uneMatrice[unX][unY].clone
+					@matrice[unX][unY] = uneMatrice[unX][unY].copie
 				end
 			end
 		end
@@ -101,7 +102,7 @@ class Grille
   # * Méthode d'instance qui retourne la taille de la +Grille+
   def taille
 	#return BaseDeDonnees.getGrilleTaille(@idGrille) # => Trop lent
-	return @matrice.size
+	return @matriceDepart.size
   end
   
   #Méthode d'instance qui retourne +true+ si il n'y a plus de +Case+ vide, +false+ sinon
@@ -299,15 +300,11 @@ class Grille
 
   # * Méthode d'instance qui retourne une chaine de caractères décrivant la +Grille+
   def to_s()
-	0.upto(@taille) do |i|
-		0.upto(@taille) do |x|
-			print "-"
+	0.upto(taille-1) do |i|
+		0.upto(taille-1) do |x|
+			print "|" + @matrice[i][x].to_s + "|"
 		end
-		0.upto(@taille) do |j|
-			print @matrice[i][j]
-			print "|"
-		end
-		puts " "
+		print "\n"
 	 end
   end
   

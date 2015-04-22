@@ -37,6 +37,8 @@ class PartieMondeReussieBuilder < PartieReussieBuilder
 			when 3
 				@nbEtoiles.file="Images/TroisEtoile.png"
 		end
+		
+		@partie.remiseAZero
 	end
 	
 	def on_button1_clicked

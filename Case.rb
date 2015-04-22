@@ -69,7 +69,7 @@ class Case
 	end
 	
 	# * Méthode d'instance qui retourne une copie de soi-même
-	def clone
+	def copie
 		unClone = Case.new
 		if @etat == 'V'
 			return unClone
