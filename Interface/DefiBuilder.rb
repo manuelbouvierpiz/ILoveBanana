@@ -11,11 +11,11 @@ class DefiBuilder < TakuzuBuilder
 	
 	attr :score , false
 	
-    def initialize(uneGrille,unScore)
+    def initialize(uneGrille, unScore)
         super(__FILE__, "Defi")
     end
     
-    	def on_validerButton_clicked
+    def on_validerButton_clicked
 		Defi.creer(Compte.COMPTE.pseudo,labelPseudo,@grille,@score)
 		case @grille.taille
 			when 6

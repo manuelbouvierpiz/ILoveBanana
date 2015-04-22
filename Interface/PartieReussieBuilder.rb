@@ -12,18 +12,20 @@ class PartieReussieBuilder < TakuzuBuilder
 		Jeu.JEU.partie.gagner
       	@score.set_text("Score :" + score.to_s)
         @temps.set_text("Temps :" + Jeu.JEU.partie.getTempsString)
-		Jeu.JEU.partie = nil
+		
 	end
 
 	def on_button1_clicked
 		ouvrirFenetre(TailleDifficulteBuilder.new)
+		Jeu.JEU.partie = nil
 	end
 
 	def on_button2_clicked
-		ouvrirFenetre(DefiBuilder.new)
+		ouvrirFenetre(DefiBuilder.new(Jeu.JEU.partie.calculerScore, Jeu.JEU.partie.calculerScore))
 	end
 
 	def on_button3_clicked
 		ouvrirFenetre(MenuPrincipalBuilder.new)
+		Jeu.JEU.partie = nil
 	end
 end

@@ -227,7 +227,7 @@ class BaseDeDonnees
     # score le score effectué par le joueur qui envoit le défi
     def BaseDeDonnees.setDefi(pseudoDest, pseudoEnv, idGrille, score)
         newDefis = Defis.new
-        newdefis.pseudo = pseudoEnv
+        newDefis.pseudo = pseudoEnv
         newDefis.pseudo_defier = pseudoDest
         newDefis.id_grille = idGrille
         newDefis.score = score

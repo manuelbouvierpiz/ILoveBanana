@@ -14,6 +14,7 @@ class PartieDidacticielReussieBuilder < TakuzuBuilder
       	@score.set_text("Score :" + score.to_s)
         @temps.set_text("Temps :" + Jeu.JEU.partie.getTempsString)
 		Jeu.JEU.partie = nil
+		@button2.hide
 	end
 
 	def on_button1_clicked

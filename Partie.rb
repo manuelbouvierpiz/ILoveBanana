@@ -101,7 +101,6 @@ class Partie
 # Méthode appelant la méthode de même nom dans grille afin d'obtenir une aide
 	def obtenirAide()
 		@grille.obtenirAide()
-		@nbAides += 1
 	end
 
 # Méthode permettant de sauvegarder la Partie dans la base de données
@@ -262,6 +261,12 @@ class Partie
 	# * Retourne +true+ si on peut jouer en arrière, +false+ sinon
 	def peutRetourArriere?
 		return !@mouvementsArriere.empty?
+	end
+	
+	def sauvegarderPartieEnCours
+		self.mettreEnPauseChronometre
+		BaseDeDonnees.setSauvegarde(Compte.COMPTE.pseudo, self.getTemps, @nbClics, @nbHypotheses, @nbAides, @grille.idGrille, @grille.matrice)
+		return self
 	end
 end
 	
