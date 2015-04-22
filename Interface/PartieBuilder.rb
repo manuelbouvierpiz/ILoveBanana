@@ -125,6 +125,9 @@ class PartieBuilder < TakuzuBuilder
 		ouvrirFenetreNonFermante(ReglesBuilder.new)
 	end
 	
+	def on_aide_clicked()
+		@aideLabel.set_text(Jeu.JEU.partie.obtenirAide)
+	end
 	
 	def on_back_clicked()
 		Jeu.JEU.partie.retourArriere

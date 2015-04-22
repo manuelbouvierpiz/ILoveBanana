@@ -826,7 +826,7 @@
           </object>
           <packing>
             <property name="x">250</property>
-            <property name="y">50</property>
+            <property name="y">30</property>
           </packing>
         </child>
         <child>
@@ -841,7 +841,7 @@
           </object>
           <packing>
             <property name="x">310</property>
-            <property name="y">670</property>
+            <property name="y">690</property>
           </packing>
         </child>
         <child>
@@ -856,7 +856,7 @@
           </object>
           <packing>
             <property name="x">440</property>
-            <property name="y">670</property>
+            <property name="y">690</property>
           </packing>
         </child>
         <child>
@@ -871,7 +871,7 @@
           </object>
           <packing>
             <property name="x">570</property>
-            <property name="y">670</property>
+            <property name="y">690</property>
           </packing>
         </child>
         <child>
@@ -882,10 +882,11 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="receives_default">True</property>
+            <signal name="clicked" handler="on_aide_clicked"/>
           </object>
           <packing>
             <property name="x">700</property>
-            <property name="y">670</property>
+            <property name="y">690</property>
           </packing>
         </child>
         <child>
@@ -900,7 +901,7 @@
           </object>
           <packing>
             <property name="x">920</property>
-            <property name="y">670</property>
+            <property name="y">690</property>
           </packing>
         </child>
         <child>
@@ -1015,6 +1016,17 @@
           <packing>
             <property name="x">880</property>
             <property name="y">300</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="aideLabel">
+            <property name="width_request">100</property>
+            <property name="height_request">80</property>
+            <property name="visible">True</property>
+          </object>
+          <packing>
+            <property name="x">500</property>
+            <property name="y">620</property>
           </packing>
         </child>
       </object>
