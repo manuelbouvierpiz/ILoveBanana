@@ -29,9 +29,7 @@ class PartieLibreBuilder < PartieBuilder
 		if Jeu.JEU.partie.grille.estCorrecte?
 			Jeu.JEU.partie.arretChronometre()
 			ouvrirFenetre(PartieLibreReussieBuilder.new)
-		end
-		
-		if !Jeu.JEU.partie.verifierNbClicsMax?
+		elsif !Jeu.JEU.partie.verifierNbClicsMax?
 			Jeu.JEU.partie.arretChronometre()
 			ouvrirFenetre(PartieEchecBuilder.new)
 		end

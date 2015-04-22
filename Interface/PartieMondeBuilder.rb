@@ -11,6 +11,11 @@ require 'gtk2'
 #	- est un +PartieBuilder+
 class PartieMondeBuilder < PartieBuilder
 
+	# Variable d'instance
+	
+	# * Variable d'instance qui représente le +Monde+ la +PartieMonde+
+	@monde
+
 	# Méthode de classe
 
 	# * Méthode de classe qui permet de créer une +PartieBuilder+
@@ -27,6 +32,8 @@ class PartieMondeBuilder < PartieBuilder
 	def initialize(unePartie, unMonde)			# :nodoc:
 		super(unePartie)
 		
+		@monde = unMonde
+		
 		@image1.set_file(unMonde.image)
 		unScore = Compte.COMPTE.scorePourLeNiveau(Jeu.JEU.partie)
 		if unScore > -1
@@ -42,7 +49,7 @@ class PartieMondeBuilder < PartieBuilder
 		super(unX, unY)
 		if Jeu.JEU.partie.grille.estCorrecte?
 			Jeu.JEU.partie.arretChronometre()
-			ouvrirFenetre(PartieLibreReussieBuilder.new)
+			ouvrirFenetre(PartieLibreReussieBuilder.creer(@monde))
 		end
 		
 		if !Jeu.JEU.partie.verifierNbClicsMax?
