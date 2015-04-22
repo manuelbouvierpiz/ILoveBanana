@@ -72,9 +72,9 @@ class PartieMonde < Partie
 			if(dernierMondeNiveau != -1)
 				if(dernierMondeNiveau[1] == 40)
 					dernierNiveauAccesible = 1
-					dernierMondeAccessible = res[0] + 1
+					dernierMondeAccessible = dernierMondeNiveau[0] + 1
 				else
-					dernierNiveauAccessible = res[1] + 1
+					dernierNiveauAccessible = dernierMondeNiveau[1] + 1
 					dernierMondeAccessible = res[0]
 				end
 			
