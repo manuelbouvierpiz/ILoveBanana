@@ -86,11 +86,11 @@ class PartieBuilder < TakuzuBuilder
 		#actualiserGrille()
 
 		if Jeu.JEU.partie.grille.matrice[unX][unY].estVide?
-			eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"grey\"))")
+			eval("[Gtk::STATE_NORMAL, Gtk::STATE_ACTIVE, Gtk::STATE_PRELIGHT].each do |unEtatGtk|\n@bouton_#{unX+1}_#{unY+1}.modify_bg(unEtatGtk, Gdk::Color.parse(\"grey\"))\nend")
 		elsif Jeu.JEU.partie.grille.matrice[unX][unY].estRouge?
-			eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(1)))")
+			eval("[Gtk::STATE_NORMAL, Gtk::STATE_ACTIVE, Gtk::STATE_PRELIGHT].each do |unEtatGtk|\n@bouton_#{unX+1}_#{unY+1}.modify_bg(unEtatGtk, Gdk::Color.parse(Compte.COMPTE.options.couleur(1)))\nend")
 		else #elsif Jeu.JEU.partie.grille.matrice[unX][unY].estBleu?
-			eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))")
+			eval("[Gtk::STATE_NORMAL, Gtk::STATE_ACTIVE, Gtk::STATE_PRELIGHT].each do |unEtatGtk|\n@bouton_#{unX+1}_#{unY+1}.modify_bg(unEtatGtk, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))\nend")
 		end
 		
 		# Ré-affichage du retour arrière
