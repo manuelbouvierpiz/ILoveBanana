@@ -7,18 +7,18 @@
 
 class PartieLibre < Partie
 
-	def PartieLibre.creer(uneTaille, uneDifficulte, estHardcore=false)
-		new(uneTaille, uneDifficulte, estHardcore)
+	def PartieLibre.creer(uneTaille, uneDifficulte)
+		new(uneTaille, uneDifficulte)
 	end
 	
-	def initialize(unArgument, uneDifficulte=nil, estHardcore)
+	def initialize(unArgument, uneDifficulte=nil)
 		unIdGrille = -1
 		if uneDifficulte == nil		# unArgument = unIdGrille
 			unIdGrille = unArgument
 		else						# unArgument = uneTaille
 			unIdGrille = BaseDeDonnees.getGrilleIdAleatoire(unArgument, uneDifficulte)
 		end
-		super(unIdGrille, estHardcore)
+		super(unIdGrille, uneDifficulte >= 8)
 	end
 
 	def listeDefis

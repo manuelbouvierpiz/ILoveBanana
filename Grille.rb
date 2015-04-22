@@ -39,9 +39,9 @@ class Grille
   def initialize(unIdGrille, uneMatrice=nil) # :nodoc:
   		@idGrille = unIdGrille
 		@matriceCorrecte = BaseDeDonnees.getGrilleMatriceResolue(@idGrille)
-		@matriceDepart = getMatriceDepart
+		@matriceDepart = BaseDeDonnees.getGrilleMatrice(@idGrille)
 		if uneMatrice == nil
-			@matrice = getMatriceDepart
+			@matrice = BaseDeDonnees.getGrilleMatrice(@idGrille)
 		else
 			# Copie de la matrice => NE SURTOUT PAS UTILISER clone (pas de copie en profondeur)
 			@matrice = []
@@ -87,11 +87,6 @@ class Grille
 		when 'v', 'vide'
 			@matrice[unX][unY].setVide
 	end
-  end
-  
-  #Méthode - lire en base donnée et remplir dans le @matrice et @matriceCorrect pour le réponse
-  def getMatriceDepart
-	return BaseDeDonnees.getGrilleMatrice(@idGrille)
   end
   
   # * Méthode d'instance qui retourne la diffculté de la +Grille+

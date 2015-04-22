@@ -24,8 +24,8 @@ class GrilleHardcore < Grille
   # Méthode d'instance qui initialise le temps maximum et le nombre maximum de clics associés à la +GrilleHardcore+
   def initialize(unIdGrille, uneMatrice)  # :nodoc
     super(unIdGrille, uneMatrice)
-    tempsMax = BaseDeDonnees.getGrilleTempsMax(@idGrille)
-	nbClicsMax = BaseDeDonnees.getGrilleNbClicsMax(@idGrille)
+    @tempsMax = BaseDeDonnees.getGrilleTempsMax(@idGrille)
+	@nbClicsMax = BaseDeDonnees.getGrilleNbClicsMax(@idGrille)
   end
   
   # * Méthode d'instance qui renvoie la difficulté de la +GrilleHardcore+
