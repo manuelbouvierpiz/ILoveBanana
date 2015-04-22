@@ -125,7 +125,7 @@ class Grille
   #Application des regles sur les colones
 
   #Deplacement d'une colonne a l'autre( de gauche a droite).
-  for i in [0..tailleMax]
+  for i in 0..tailleMax
 	 
 	 nbBleu=0
 	 nbRouge=0
@@ -134,30 +134,30 @@ class Grille
 
 
 	 #Parcours de la colonne ( de haut en bas).
-	for j in [0..tailleMax]
+	for j in 0..tailleMax
 		caseActuelle = @matrice[i][j]
 		
 		 
 		if @matrice[i][j].estVide?
-		colonne[j]="V"
+			colonne[j]="V"
 
 		#Test si il y a une case vide entre 2 case de la meme couleurs  (Peut etre utilisé )
 		 if j>0 && j<tailleMax
 			if @matrice[i][j-1].estBleu?&&@matrice[i][j+1].estBleu? || @matrice[i][j-1].estRouge?&&@matrice[i][j+1].estRouge? 
-			  return "Il n'y a que une solution en "+i+" "+j
+			  return "Il n'y a que une solution en "+i.to_s+" "+j.to_s
 			end
 		 end
 
 	  #Test si il deux cases de la meme couleur d'affillé a coté d'une case vide
 		 if j<tailleMax-1
 			if @matrice[i][j+2].estBleu?&&@matrice[i][j+1].estBleu? || @matrice[i][j+2].estRouge?&&@matrice[i][j+1].estRouge? 
-			  return "Il n'y a que une solution en "+i+" "+j
+			  return "Il n'y a que une solution en "+i.to_s+" "+j.to_s
 			end
 		 end
 
 		 if j>1
 			if @matrice[i][j-2].estBleu?&&@matrice[i][j-1].estBleu? || @matrice[i][j-2].estRouge?&&@matrice[i][j-1].estRouge? 
-			  return "Il n'y a que une solution en "+i+" "+j
+			  return "Il n'y a que une solution en "+i.to_s+" "+j.to_s
 			end
 		 end
 
@@ -190,7 +190,7 @@ class Grille
 #Application des regles sur les colonnes
 
 #Deplacement d'une ligne a l'autre( de haut en bas).
-  for j in [0..tailleMax]
+  for j in 0..tailleMax
 	 
 	 nbBleu=0
 	 nbRouge=0
@@ -199,7 +199,7 @@ class Grille
 
 
 	 #Parcours de la ligne ( de gauche a droite).
-	 for i in [0..tailleMax]
+	 for i in 0..tailleMax
 		caseActuelle =@matrice[i][j]
 		
 		 
@@ -209,20 +209,20 @@ class Grille
 		#Test si il y a une case vide entre 2 case de la meme couleurs  (Peut etre utilisé )
 		 if i>0 && i<tailleMax
 			if @matrice[i-1][j].estBleu?&&@matrice[i+1][j].estBleu? || @matrice[i-1][j].estRouge?&&@matrice[i+1][j].estRouge? 
-			  return "Il n'y a que une solution en "+i+" "+j
+			  return "Il n'y a que une solution en "+i.to_s+" "+j.to_s
 			end
 		 end
 
 	  #Test si il deux cases de la meme couleur d'affillé a coté d'une case vide
 		 if i<tailleMax-1
 			if @matrice[i+2][j].estBleu?&&@matrice[i+1][j].estBleu? || @matrice[i+2][j].estRouge?&&@matrice[i+1][j].estRouge? 
-			  return "Il n'y a que une solution en "+i+" "+j
+			  return "Il n'y a que une solution en "+i.to_s+" "+j.to_s
 			end
 		 end
 
 		 if i>1
 			if @matrice[i-2][j].estBleu?&&@matrice[i-1][j].estBleu? || @matrice[i-2][j].estRouge?&&@matrice[i-1][j].estRouge? 
-			  return "Il n'y a que une solution en "+i+" "+j
+			  return "Il n'y a que une solution en "+i.to_s+" "+j.to_s
 			end
 		 end
 
@@ -247,8 +247,8 @@ class Grille
 
   end
 
-  for x in [0..tailleMax]
-  	for y in [0..tailleMax]
+  for x in 0..tailleMax
+  	for y in 0..tailleMax
 
 =begin
    
@@ -257,7 +257,7 @@ class Grille
 
       nbVide=0
 
-      for z in [0..tailleMax]
+      for z in 0..tailleMax
           colonneActuel=colonnes[x]
          
           
