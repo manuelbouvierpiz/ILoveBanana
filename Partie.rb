@@ -218,14 +218,14 @@ class Partie
 	# * Méthode d'instance qui "termine" la +Partie+
 	# * Retourne +self+
 	def gagner
-		BaseDeDonnees.setGrilleTermine(Compte.COMPTE.pseudo, @grille.idGrille, getTemps, @nbClics, @nbHypotheses, @nbAides, calculerScore())
+		BaseDeDonnees.setGrilleTermine(Compte.COMPTE.pseudo, @grille.idGrille, getTemps, @nbClics, nbEtoile, @nbHypotheses, @nbAides, calculerScore())
 		return self
 	end
 	
 	# * Méthode d'instance qui retourne le nombre d'étoiles gagné lors de la +Partie+
 	# * Retourne 0 par défaut
 	def nbEtoile()
-		unResultat = 0
+		return unResultat = 0
 	end
 end
 	
