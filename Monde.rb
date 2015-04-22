@@ -84,7 +84,7 @@ class Monde
 		return unResultat
 	end
 	
-	def intialiseEtat
+	def initialiseEtat
 		if(@idMonde == 1)
 			@etat = true
 		else
