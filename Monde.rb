@@ -91,7 +91,7 @@ class Monde
 			dernierMondeNiveau = BaseDeDonnees.dernierNiveauFini(Compte.COMPTE.pseudo)
 			if(dernierMondeNiveau != -1)
 				if(dernierMondeNiveau[1] == 40)
-					dernierMondeAccessible = dernierMondeNiveau + 1
+					dernierMondeAccessible = dernierMondeNiveau[0] + 1
 				else
 					dernierMondeAccessible = dernierMondeNiveau[0]
 				end
