@@ -50,7 +50,7 @@ class BaseDeDonnees
 	# - nbAides le nombre d'aides demandé par le joueur
 	# - score le score du joueur sur la grille
 	def BaseDeDonnees.setGrilleTermine(pseudo, idGrille, temps, nbClics, nbEtoiles, nbHypotheses, nbAides, score)
-		if(BaseDeDonnee.estGrilleResolue?(pseudo, idGrille))
+		if(BaseDeDonnees.estGrilleResolue?(pseudo, idGrille))
 			GrilleFinis.where(:pseudo => pseudo, :id_grille => idGrille).update_all(nb_clic: nbClics, nb_etoile: nbEtoiles, nb_hypothese: nb_hypotheses, nb_aide: nbAides, score: score)
 		else
 			grilleFini = GrilleFinis.new
