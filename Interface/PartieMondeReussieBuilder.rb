@@ -7,10 +7,27 @@ require 'gtk2'
 
 class PartieMondeReussieBuilder < PartieReussieBuilder
 
-	def initialize()
+	# Variable d'instance
+	
+	# * variable d'instance qui représente le +Monde+ de la +PartieMonde+
+	@monde
+	
+	# * Variable d'instance qui représente la +PartieMonde+ qui vient d'être terminée
+	@partie
+
+	# * Méthode de classe qui crée un nouveau +PartieMondeReussieBuilder+
+	def PartieMondeReussieBuilder.creer(unMonde)
+		new(unMonde)
+	end
+
+	def initialize(unMonde) # :nodoc:
+	
+		@partie = Jeu.JEU.partie
+		@monde = unMonde
+		
         super()
 		
-		case Jeu.JEU.partie.nbEtoile
+		case @partie.nbEtoile
 			when 0
 				@nbEtoiles.file="Images/ZeroEtoile.png"
 			when 1
@@ -21,4 +38,9 @@ class PartieMondeReussieBuilder < PartieReussieBuilder
 				@nbEtoiles.file="Images/TroisEtoile.png"
 		end
 	end
+	
+	def on_button1_clicked
+		ouvrirFenetre(PartieMondeBuilder.new(@partie, @monde))
+	end
+	
 end
