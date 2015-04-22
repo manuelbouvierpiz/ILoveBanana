@@ -218,7 +218,7 @@ class Partie
 	# * Méthode d'instance qui "termine" la +Partie+
 	# * Retourne +self+
 	def gagner
-		BaseDeDonnees.setGrilleTerminee(Compte.COMPTE.pseudo, getTemps, @nbClics, @grille.idGrille, @nbHypotheses, @nbAides, calculerScore())
+		BaseDeDonnees.setGrilleTermine(Compte.COMPTE.pseudo, @grille.idGrille, getTemps, @nbClics, @nbHypotheses, @nbAides, calculerScore())
 		return self
 	end
 	
