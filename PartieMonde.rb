@@ -75,7 +75,7 @@ class PartieMonde < Partie
 					dernierMondeAccessible = dernierMondeNiveau[0] + 1
 				else
 					dernierNiveauAccessible = dernierMondeNiveau[1] + 1
-					dernierMondeAccessible = res[0]
+					dernierMondeAccessible = dernierMondeNiveau[0]
 				end
 			
 				if((@grille.difficulte <= dernierMondeAccessible) && (@idNiveau <= dernierNiveauAccessible))
