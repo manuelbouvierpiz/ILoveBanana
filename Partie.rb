@@ -265,7 +265,7 @@ class Partie
 	
 	def sauvegarderPartieEnCours
 		self.mettreEnPauseChronometre
-		BaseDeDonnees.setSauvegarde(Compte.COMPTE.pseudo, self.getTemps, @nbClics, @nbHypotheses, @nbAides, @grille.idGrille, @grille.matrice)
+		BaseDeDonnees.setSauvegarde(Compte.COMPTE.pseudo, self.getTemps, @nbClics, @nbHypotheses, @nbAides, @idGrille, @grille.matrice)
 		return self
 	end
 end
