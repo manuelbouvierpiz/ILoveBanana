@@ -7,29 +7,41 @@
 # La classe Partie est une méthode abstraite mère de PartieMonde et PartieLibre
 class Partie
 
-# Grille sur laquelle le joueur va jouer
+	# * Grille sur laquelle le joueur va jouer
 	@grille
-# Tableau des sauvegardes/hypothèse que le joueur a fait
+	
+	# * Pile des sauvegardes temporaires (ou hypothèses) que le joueur a fait
 	@listeHypotheses
-# Variable contenant le nombre de clic que l'utilisateur a fait pour terminer la grille, elle s'incrémente durant la partie.
+	
+	# * Variable contenant le nombre de clic que l'utilisateur a fait pour terminer la grille, elle s'incrémente durant la partie.
 	@nbClics
-# Variable contenant le nombre de fois que l'utilisateur a utiliser l'aide
+	
+	# * Variable contenant le nombre de fois que l'utilisateur a utiliser l'aide
 	@nbAides
-# Variable contenant le nombre d'hypothèse que l'utilisateur a fait pour terminer la grille
+	
+	# * Variable contenant le nombre d'hypothèse que l'utilisateur a fait pour terminer la grille
 	@nbHypotheses
-# Variable contenant l'id de la grille
+	
+	# * Variable contenant l'id de la grille
 	@idGrille
-# Variable contenant l'heure de début du lancement du chronometre
+	
+	# * Variable contenant l'heure de début du lancement du chronometre
 	@debutChronometre
-# Variable contenant la différence entre l'heure actuelle et le début du chronomètre
+	
+	# * Variable contenant la différence entre l'heure actuelle et le début du chronomètre
 	@finChronometre
-# Variable contenant l'heure de début de la pause
+	
+	# * Variable contenant l'heure de début de la pause
 	@pause
-# Variable indiquant si le chronomètre est actif ou non
+	
+	# * Variable indiquant si le chronomètre est actif ou non
 	@tourne
-# Variable indiquant si le chronomètre est fini 
+	
+	# * Variable indiquant si le chronomètre est fini 
 	@fini
 
+	# * Variable d'instance non accessible représentant la pile de mouvements pour le retour arrière
+	@mouvementsArriere
 
 	private_class_method :new
 
@@ -70,6 +82,7 @@ class Partie
 		@listeHypotheses = Array.[]
 		@tourne = false
 		@debutChronometre = nil
+		@mouvementsArriere = []
 	end
 
 # Méthode retournant le score de la partie
@@ -187,10 +200,13 @@ class Partie
 	def jouer(unX, unY)
 		if @grille.matriceDepart[unX][unY].estVide?
 			if @grille.matrice[unX][unY].estVide?
+				@mouvementsArriere.push("@grille.jouer(#{unX},#{unY}, \"v\")")
 				@grille.jouer(unX, unY, "r")
 			elsif @grille.matrice[unX][unY].estRouge?
+				@mouvementsArriere.push("@grille.jouer(#{unX},#{unY}, \"r\")")
 				@grille.jouer(unX, unY, "b")
 			else #elsif @grille.matrice[unX][unY].estBleu?
+				@mouvementsArriere.push("@grille.jouer(#{unX},#{unY}, \"b\")")
 				@grille.jouer(unX, unY, "v")
 			end
 			@nbClics += 1
@@ -232,6 +248,19 @@ class Partie
 		else
 			return @nbClics.to_s + "/" + @grille.nbClicsMax.to_s
 		end
+	end
+	
+	# * Méthode d'instance qui joue un coup en arrière
+	def	retourArriere
+		if peutRetourArriere?
+			eval(@mouvementsArriere.pop)
+		end
+	end
+	
+	# * Méthode d'instance qui indique si on puet jouer en arrière
+	# * Retourne +true+ si on peut jouer en arrière, +false+ sinon
+	def peutRetourArriere?
+		return !@mouvementsArriere.empty?
 	end
 end
 	

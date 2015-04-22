@@ -106,6 +106,7 @@ class PartieMonde < Partie
 		@listeHypotheses = Array.[]
 		@tourne = false
 		@debutChronometre = nil
+		@mouvementsArriere = []
 		return self
 	end
 	

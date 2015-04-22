@@ -56,18 +56,15 @@ class PartieBuilder < TakuzuBuilder
 			end
 		end
 		
-		# Eviter les eval quand c'est possible => Trop lent
+		# Connexion des signaux pour les hypothèses
 		1.upto(5) do |unNumero|
 			eval("@hypothese_#{unNumero}.signal_connect(\"clicked\") { on_hypothese_X_clicked(#{unNumero}) }\n@hypothese_#{unNumero}.hide")
-		end
+		end		
 		
-		# Connexion des signaux pour les hypothèses
-		#unCompteur = 1
-		#[@hypothese_1, @hypothese_2, @hypothese_3, @hypothese_4, @hypothese_5].each do |unBouton|
-		#	unBouton.hide
-		#	unBouton.signal_connect("clicked") { on_hypothese_X_clicked(unCompteur) }
-		#	unCompteur +=1
-		#end
+		# Initialisation du bouton "back" (non disponible si c'eset le tout début d'une partie)
+		if !Jeu.JEU.partie.peutRetourArriere?
+			@back.hide
+		end
 		
 		Jeu.JEU.partie.lanceToi
 		
@@ -95,6 +92,11 @@ class PartieBuilder < TakuzuBuilder
 		else #elsif Jeu.JEU.partie.grille.matrice[unX][unY].estBleu?
 			eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))")
 		end
+		
+		# Ré-affichage du retour arrière
+		if Jeu.JEU.partie.peutRetourArriere?
+			@back.show
+		end
 	end
 
 	# * Méthode d'instance qui permet de rafraichir l'affichage de la +Grille+
@@ -121,6 +123,15 @@ class PartieBuilder < TakuzuBuilder
 	
 	def on_regle_clicked()
 		ouvrirFenetreNonFermante(ReglesBuilder.new)
+	end
+	
+	
+	def on_back_clicked()
+		Jeu.JEU.partie.retourArriere
+		if !Jeu.JEU.partie.peutRetourArriere?
+			@back.hide
+		end
+		actualiserGrille()
 	end
 	
 	def on_hypothese_clicked()
