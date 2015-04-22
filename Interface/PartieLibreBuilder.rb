@@ -5,8 +5,6 @@
 # Version 0.1 : Date : Mon Jul 01 10:17:02 CEST 2013
 #
 
-require 'gtk2'
-
 # == Classe +PartieLibreBuilder+ :
 #	- est un +PartieBuilder+
 class PartieLibreBuilder < PartieBuilder

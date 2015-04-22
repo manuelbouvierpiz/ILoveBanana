@@ -3,7 +3,6 @@
 ##
 # Auteur Parmenon Damien et Valentin CHAILLOU
 #
-require 'gtk2'
 
 class PartieMondeReussieBuilder < PartieReussieBuilder
 

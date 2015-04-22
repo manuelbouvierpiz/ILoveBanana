@@ -42,6 +42,9 @@ class Partie
 
 	# * Variable d'instance non accessible représentant la pile de mouvements pour le retour arrière
 	@mouvementsArriere
+	
+	# * Variable d'instance qui représente le temps de la sauvegarde dans le cas d'un chargement de partie
+	@tempsSauvegarde
 
 	private_class_method :new
 
@@ -66,6 +69,7 @@ class Partie
 			@nbClics = BaseDeDonnees.getSauvegardeNbClics(Compte.COMPTE.pseudo)
 			@idGrille = BaseDeDonnees.getSauvegardeIdGrille(Compte.COMPTE.pseudo)
 			@grille = Grille.creer(unIdGrille, BaseDeDonnees.getSauvegardeGrilleSauvegardee(Compte.COMPTE.pseudo))
+			@tempsSauvegarde = BaseDeDonnees.getSauvegardeTemps(Compte.COMPTE.pseudo)
 		else					# Il faut créer une nouvelle grille
 			@nbHypotheses = 0
 			@nbAides = 0
@@ -76,6 +80,7 @@ class Partie
 			else
 				@grille = Grille.creer(unIdGrille)
 			end
+			@tempsSauvegarde = 0
 		end
 		
 		@fini = false
@@ -121,7 +126,7 @@ class Partie
 # Méthode permettant de lancer le chronomètre	
 	def lanceToi()
 		if @debutChronometre == nil
-			@debutChronometre = Time.now
+			@debutChronometre = Time.now + @tempsSauvegarde
 			@tourne = true	
 		else
 			repriseChronometre
@@ -261,6 +266,27 @@ class Partie
 	def sauvegarder
 		self.mettreEnPauseChronometre
 		BaseDeDonnees.setSauvegarde(Compte.COMPTE.pseudo, self.getTemps, @nbClics, @nbHypotheses, @nbAides, @idGrille, @grille.matrice)
+		return self
+	end
+	
+	# * Méthode d'instance qui remet à zéro la +PartieMonde+
+	# * Retourne +self+
+	def remiseAZero
+		@nbHypotheses = 0
+		@nbAides = 0
+		@nbClics = 0
+		@idGrille = unIdGrille
+		if @grille.difficulte >= 8
+			@grille = GrilleHardcore.creer(unIdGrille)
+		else
+			@grille = Grille.creer(unIdGrille)
+		end
+		@tempsSauvegarde = 0
+		@fini = false
+		@listeHypotheses = Array.[]
+		@tourne = false
+		@debutChronometre = nil
+		@mouvementsArriere = []
 		return self
 	end
 end
