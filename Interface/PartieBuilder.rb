@@ -56,7 +56,23 @@ class PartieBuilder < TakuzuBuilder
 			end
 		end
 		
+		# Eviter les eval quand c'est possible => Trop lent
+		1.upto(5) do |unNumero|
+			eval("@hypothese_#{unNumero}.signal_connect(\"clicked\") { on_hypothese_X_clicked(#{unNumero}) }\n@hypothese_#{unNumero}.hide")
+		end
+		
+		# Connexion des signaux pour les hypothèses
+		#unCompteur = 1
+		#[@hypothese_1, @hypothese_2, @hypothese_3, @hypothese_4, @hypothese_5].each do |unBouton|
+		#	unBouton.hide
+		#	unBouton.signal_connect("clicked") { on_hypothese_X_clicked(unCompteur) }
+		#	unCompteur +=1
+		#end
+		
 		Jeu.JEU.partie.lanceToi
+		
+		@temps.set_text("Temps :\n" + Jeu.JEU.partie.getTempsString)
+		@nbClics.set_text("Clic(s) :\n" + Jeu.JEU.partie.nbClicsString)
 		
 		# Trop lent
 		#actualiserGrille()
@@ -66,11 +82,9 @@ class PartieBuilder < TakuzuBuilder
 	# * Méthode d'instance qui permet de modifier l'état d'une +Case+
 	# * Est automatiquement appelée par Gtk
 	def	on_bouton_clicked(unX, unY)
-		if Jeu.JEU.partie.grille.difficulte < 8
-			@nbClics.set_text("Clics :\n" + Jeu.JEU.partie.jouer(unX, unY).to_s)
-		else
-			@nbClics.set_text("Clics :\n" + Jeu.JEU.partie.jouer(unX, unY).to_s + "/" + Jeu.JEU.partie.grille.nbClicsMax)
-		end
+		Jeu.JEU.partie.jouer(unX, unY)
+		@nbClics.set_text("Clics :\n" + Jeu.JEU.partie.nbClicsString)
+		
 		# Trop lent
 		#actualiserGrille()
 
@@ -107,6 +121,28 @@ class PartieBuilder < TakuzuBuilder
 	
 	def on_regle_clicked()
 		ouvrirFenetreNonFermante(ReglesBuilder.new)
+	end
+	
+	def on_hypothese_clicked()
+		[@hypothese_1, @hypothese_2, @hypothese_3, @hypothese_4, @hypothese_5].each do |unBouton|
+			if unBouton.label == nil
+				Jeu.JEU.partie.faireHypothese
+				unBouton.set_label("Temps : " + Jeu.JEU.partie.getTempsString + "\nClic(s) : " + Jeu.JEU.partie.nbClicsString)
+				unBouton.show
+				@hypothese.hide if unBouton.equal?(@hypothese_5)
+				break
+			end
+		end
+	end
+	
+	def on_hypothese_X_clicked(unNumero)
+		if unNumero > 5 # On a enlevé toutes les hypothèses antérieures
+			actualiserGrille
+			@hypothese.show
+		else			# On enlève les hypothèses antérieures
+			eval("if @hypothese_#{unNumero}.label != nil\n@hypothese_#{unNumero}.hide\nJeu.JEU.partie.chargerPreHypo\n@hypothese_#{unNumero}.set_label(nil)\nend")
+			on_hypothese_X_clicked(unNumero + 1)
+		end
 	end
 	
 	private_class_method :new

@@ -11,8 +11,6 @@ class Partie
 	@grille
 # Tableau des sauvegardes/hypothèse que le joueur a fait
 	@listeHypotheses
-# Booleen informant si nous sommes dans un mode "hypothèse"
-	@hypothese
 # Variable contenant le nombre de clic que l'utilisateur a fait pour terminer la grille, elle s'incrémente durant la partie.
 	@nbClics
 # Variable contenant le nombre de fois que l'utilisateur a utiliser l'aide
@@ -35,7 +33,7 @@ class Partie
 
 	private_class_method :new
 
-	attr_reader :nbClics, :nbAides, :nbHypotheses, :grille
+	attr_reader :nbClics, :nbAides, :grille
 
 
 # Constucteur d'une partie 
@@ -70,7 +68,6 @@ class Partie
 		
 		@fini = false
 		@listeHypotheses = Array.[]
-		@hypothese = false
 		@tourne = false
 	end
 
@@ -92,22 +89,24 @@ class Partie
 		@grille.obtenirAide()
 	end
 
-# Méthode permettant de passer en mode hypothèse
+# Méthode permettant de sauvegarder la Partie dans la base de données
 	def sauvegarder()
 		BaseDeDonnees.setSauvegarde(Compte.COMPTE.pseudo(), getTemps, @nbClics, @nbHypotheses, @nbAides, @idGrille, @listeHypotheses)
 	end
 
 # Méthode permettant d'entrer en mode hypothèse
-	def fairehypothese()
-		@listeHypotheses.push(@grille)
-		@hypothese = true
+	def faireHypothese()
+		if @grille.difficulte < 8
+			@listeHypotheses.push(Grille.creer(grille.idGrille, grille.matrice))	# on crée une copie de la Grille (un Clone ne copie pas les attributs en profondeur)
+		else
+			@listeHypotheses.push(GrilleHardcore.creer(grille.idGrille, grille.matrice))	# on crée une copie de la Grille (un Clone ne copie pas les attributs en profondeur)
+		end
+		@nbHypotheses += 1
 	end
 
 # Méthode permettant de revenir au plus ancien état ou il n'y avait aucune hypothèse
 	def chargerPreHypo()
-		@grille = @listeHypotheses[@listeHypotheses.length -1]
-		@listeHypotheses.pop()
-		@hypothese = false
+		@grille = @listeHypotheses.pop()
 	end
 
 # Méthode permettant de lancer le chronomètre	
@@ -184,19 +183,17 @@ class Partie
 	# ===== Attributs :
 	#		- unX : un entier représentant l'abscisse de la Case
 	#		- unY : un entier représentant l'ordonnée de la Case
-	# * Retourne le nombre de clics
 	def jouer(unX, unY)
 		if @grille.matriceDepart[unX][unY].estVide?
 			if @grille.matrice[unX][unY].estVide?
-				@grille.jouer(unX, unY, "rouge", @hypothese)
+				@grille.jouer(unX, unY, "r")
 			elsif @grille.matrice[unX][unY].estRouge?
-				@grille.jouer(unX, unY, "bleu", @hypothese)
+				@grille.jouer(unX, unY, "b")
 			else #elsif @grille.matrice[unX][unY].estBleu?
-				@grille.jouer(unX, unY, "vide", @hypothese)
+				@grille.jouer(unX, unY, "v")
 			end
 			@nbClics += 1
 		end
-		return @nbClics
 	end
 	
 	# * Méthode d'instance qui permet de savoir si la +Partie+ peut continuer en fonction de son temps
@@ -222,8 +219,18 @@ class Partie
 	# * Méthode d'instance qui "termine" la +Partie+
 	# * Retourne +self+
 	def gagner
-		BaseDeDonnees.setGrilleTermine(Compte.COMPTE.pseudo, @grille.idGrille, getTemps, @nbClics, nbEtoile, @nbHypotheses, @nbAides, calculerScore())
+		BaseDeDonnees.setGrilleTermine(Compte.COMPTE.pseudo, @grille.idGrille, getTemps, @nbClics, 0, @nbHypotheses, @nbAides, calculerScore())
 		return self
+	end
+	
+	# * Méthode d'instance qui renvoie un String contenant le nombre de clics de la +Partie+
+	# * Retourne un String décrivant le nombre de clics
+	def nbClicsString
+		if @grille.difficulte < 8	# Grille non-hardcore
+			return @nbClics.to_s
+		else
+			return @nbClics.to_s + "/" + @grille.nbClicsMax.to_s
+		end
 	end
 end
 	

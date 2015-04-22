@@ -56,5 +56,12 @@ class PartieMonde < Partie
 		super()
 		mettreEnPauseChronometre()
 	end
+	
+	# * Méthode d'instance qui "termine" la +Partie+
+	# * Retourne +self+
+	def gagner
+		BaseDeDonnees.setGrilleTermine(Compte.COMPTE.pseudo, @grille.idGrille, getTemps, @nbClics, nbEtoile, @nbHypotheses, @nbAides, calculerScore())
+		return self
+	end
 
 end

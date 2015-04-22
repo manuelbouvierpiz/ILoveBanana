@@ -43,7 +43,13 @@ class Grille
 		if uneMatrice == nil
 			@matrice = getMatriceDepart
 		else
-			@matrice = uneMatrice
+			# Copie de la matrice
+			@matrice = uneMatrice.clone
+			0.upto(taille - 1) do |unX|
+				0.upto(taille - 1) do |unY|
+					@matrice[unX][unY] = uneMatrice[unX][unY].clone
+				end
+			end
 		end
 		@nbClicMin = 0
 		i = 0
@@ -63,39 +69,22 @@ class Grille
   
   # * Méthode qui vérifie la matrice (remplie par le joueur) est correcte
   def estCorrecte?
-	0.upto(taille - 1) do |unX|
-		0.upto(taille - 1) do |unY|
-			return false if @matrice[unX][unY].etat != @matriceCorrecte[unX][unY].etat
-		end
-	end
-	
-	return true
+	return @matrice == @matriceCorrecte
   end
   
   # * Méthode d'instance qui change l'état d'une +Case+
   # ===== Attributs :
   #		- unX : un entier représentant l'abscisse de la Case
   #		- unY : un entier représentant l'ordonnée de la Case
-  #		- rougeOuBleu : un String parmi ceux-ci : "r", "b", "rouge", "bleu", "v", "vide" (insensible à la casse)
-  #		- estHypothese : un booléen indiquant si c'est une hypothèse
-  def jouer(unX, unY, rougeOuBleu, estHypothese)
-	case rougeOuBleu.downcase
+  #		- rougeOuBleu : un String parmi ceux-ci : "r", "b", "rouge", "bleu", "v", "vide" (sensible à la casse)
+  def jouer(unX, unY, rougeOuBleu)
+	case rougeOuBleu
 		when 'b', 'bleu'
 			@matrice[unX][unY].setBleu
 		when 'r', 'rouge'
 			@matrice[unX][unY].setRouge
 		when 'v', 'vide'
 			@matrice[unX][unY].setVide
-	end
-	@matrice[unX][unY].setHypothese if estHypothese
-  end
-  
-  # * Méthode d'instance qui met toutes les <b>Case</b>s de la +Grille+ en état non hypothésé 
-  def setNonHypothese()
-	@matrice.each do |uneLigne|
-		@matrice.each do |uneCase|
-			uneCase.setNonHypothese if uneCase.estHypothese?
-		end
 	end
   end
   
@@ -111,7 +100,8 @@ class Grille
   
   # * Méthode d'instance qui retourne la taille de la +Grille+
   def taille
-	return BaseDeDonnees.getGrilleTaille(@idGrille)
+	#return BaseDeDonnees.getGrilleTaille(@idGrille) # => Trop lent
+	return @matrice.size
   end
   
   #Méthode d'instance qui retourne +true+ si il n'y a plus de +Case+ vide, +false+ sinon
