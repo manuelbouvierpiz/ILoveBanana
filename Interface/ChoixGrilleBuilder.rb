@@ -53,7 +53,7 @@ class ChoixGrilleBuilder < TakuzuBuilder
    end
 
     def on_suivantBouton_clicked
-      ouvrirFenetre(ChoixGrilleSuiteBuilder.new(@monde))
+      ouvrirFenetre(ChoixGrilleSuiteBuilder.creer(@monde))
     end
 
     def on_retourBouton_clicked

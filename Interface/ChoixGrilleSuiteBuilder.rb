@@ -7,7 +7,7 @@ class ChoixGrilleSuiteBuilder < TakuzuBuilder
     
   @monde
 
-  def ChoixGrilleBuilder.creer(unMonde)
+  def ChoixGrilleSuiteBuilder.creer(unMonde)
     new(unMonde)
   end
   

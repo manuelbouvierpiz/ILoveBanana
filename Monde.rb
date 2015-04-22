@@ -54,25 +54,17 @@ class Monde
 		else
 			@tableauParties = Array.new(20)
 		end
-=begin
-		if(@idMonde != 8)
-			1.upto(40) do |i|
-				@tableauParties.push(PartieMonde.creer(BaseDeDonnees.getMondeGrilleId(@idMonde, i)))
-			end
-		else
-			1.upto(20) do |i|
-				@tableauParties.push(PartieMonde.creer(BaseDeDonnees.getMondeGrilleId(@idMonde, i), true))		# C'est une GrilleHardcore
-			end
-		end
-=end
 	end
 	
+	# * Méthode d'instance qui renvoie la +PartieMonde+ associée au numéro
+	# * Crée dynamiquement la +PartieMonde+ si besoin
+	# * Retourne une +PartieMonde+
 	def partie(unNumero)
 		if @tableauParties[unNumero] == nil
 			if @idMonde != 8
-				@tableauParties[unNumero] = PartieMonde.creer(BaseDeDonnees.getMondeGrilleId(@idMonde, unNumero))
+				@tableauParties[unNumero] = PartieMonde.creer(BaseDeDonnees.getMondeGrilleId(@idMonde, unNumero + 1))
 			else
-				@tableauParties[unNumero] = PartieMonde.creer(BaseDeDonnees.getMondeGrilleId(@idMonde, unNumero), true)		# C'est une GrilleHardcore
+				@tableauParties[unNumero] = PartieMonde.creer(BaseDeDonnees.getMondeGrilleId(@idMonde, unNumero + 1), true)		# C'est une GrilleHardcore
 			end
 		end
 		return @tableauParties[unNumero]
