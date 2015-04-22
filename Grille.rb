@@ -135,7 +135,7 @@ class Grille
 
 	 #Parcours de la colonne ( de haut en bas).
 	for j in [0..tailleMax]
-		caseActuelle =@matrice[i][j]
+		caseActuelle = @matrice[i][j]
 		
 		 
 		if caseActuelle.estVide?
@@ -252,7 +252,7 @@ class Grille
 
 =begin
    
-   #Tentative d'aide quand 2 case sont vie et que le reste est identique a une ligne plein ou avec une seul case vide
+   #Tentative d'aide quand 2 case sont vide et que le reste est identique ou avec une seul case vide
 
 
       nbVide=0
@@ -272,8 +272,10 @@ class Grille
 =end
 
 
+	#Aide si 2 colonnes ou lignes sont identiques
+
   		if x != y
-  			if colones[x]==colonnes[y]
+  			if colonnes[x]==colonnes[y]
   			return "Deux colonnes ne doivent pas etre identique."
   			end
   			if lignes[x]==lignes[y]

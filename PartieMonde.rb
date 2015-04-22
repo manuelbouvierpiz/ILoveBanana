@@ -91,7 +91,7 @@ class PartieMonde < Partie
 				@etat = false
 			end
 		end
-		return @etat
+		return self
 	end
 	
 	# * Méthode d'instance qui remet à zéro la +PartieMonde+
