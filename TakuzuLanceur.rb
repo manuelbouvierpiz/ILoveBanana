@@ -125,7 +125,7 @@ class Chargement
 		end
 		
 	end
-
+	
 end
 
 ### Lancement de TakuzuAvengers ###
