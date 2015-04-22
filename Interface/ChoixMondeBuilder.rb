@@ -3,7 +3,17 @@
 class ChoixMondeBuilder < TakuzuBuilder
 
 	def initialize 
-        super(__FILE__,"Choix du Monde")
+        	super(__FILE__,"Choix du Monde")
+        	0.upto(7) do |i|
+			Jeu.JEU.aventure.mondes[i].initialiseEtat
+		end
+		@buttonForet.set_sensitive(false) if(!Jeu.JEU.aventure.mondes[1].estDebloque?)
+        	@buttonMer.set_sensitive(false) if(!Jeu.JEU.aventure.mondes[2].estDebloque?)
+        	@buttonDesert.set_sensitive(false) if(!Jeu.JEU.aventure.mondes[3].estDebloque?)
+        	@buttonGrotte.set_sensitive(false) if(!Jeu.JEU.aventure.mondes[4].estDebloque?)
+        	@buttonVolcan.set_sensitive(false) if(!Jeu.JEU.aventure.mondes[5].estDebloque?)
+        	@buttonEspace.set_sensitive(false) if(!Jeu.JEU.aventure.mondes[6].estDebloque?)
+        	@buttonArcEnCiel.set_sensitive(false) if(!Jeu.JEU.aventure.mondes[7].estDebloque?)
 	end
 
 	def go2Prairie
