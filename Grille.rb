@@ -138,7 +138,7 @@ class Grille
 		caseActuelle = @matrice[i][j]
 		
 		 
-		if caseActuelle.estVide?
+		if @matrice[i][j].estVide?
 		colonne[j]="V"
 
 		#Test si il y a une case vide entre 2 case de la meme couleurs  (Peut etre utilisé )
