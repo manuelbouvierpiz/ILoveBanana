@@ -64,24 +64,27 @@ class PartieMonde < Partie
 		return self
 	end
 
-	def intiliseEtat
+	def initialiseEtat
 		if(@grille.difficulte == 1 && @idNiveau == 1)
 			@etat = true
 		else
 			dernierMondeNiveau = BaseDeDonnees.dernierNiveauFini(Compte.COMPTE.pseudo)
 			if(dernierMondeNiveau != -1)
 				if(dernierMondeNiveau[1] == 40)
-					dernierNiveauAccesible = 1
-					dernierMondeAccessible = res[0] + 1
+					dernierNiveauAccessible = 1
+					dernierMondeAccessible = dernierMondeNiveau[0] + 1
 				else
-					dernierNiveauAccessible = res[1] + 1
-					dernierMondeAccessible = res[0]
+					dernierNiveauAccessible = dernierMondeNiveau[1] + 1
+					dernierMondeAccessible = dernierMondeNiveau[0]
 				end
-			
-				if((@grille.difficulte <= dernierMondeAccessible) && (@idNiveau <= dernierNiveauAccessible))
+				if((@grille.difficulte < dernierMondeAccessible))
 					@etat = true
 				else
-					@etat = false
+					if((@grille.difficulte == dernierMondeAccessible) && (@idNiveau <= dernierNiveauAccessible))
+						@etat = true
+					else
+						@etat = false	
+					end
 				end
 			else
 				@etat = false

@@ -149,7 +149,7 @@ class Grille
 		#Test si il y a une case vide entre 2 case de la meme couleurs  (Peut etre utilisé )
 		 if j>0 && j<tailleMax
 			if @matrice[i][j-1].estBleu?&&@matrice[i][j+1].estBleu? || @matrice[i][j-1].estRouge?&&@matrice[i][j+1].estRouge? 
-			  return "Il n'y a que une solution"
+			  return "Il n'y a que une solution en "+i+" "+j
 			end
 		 end
 

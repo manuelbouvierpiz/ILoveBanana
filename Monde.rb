@@ -84,16 +84,16 @@ class Monde
 		return unResultat
 	end
 	
-	def intiliseEtat
+	def initialiseEtat
 		if(@idMonde == 1)
 			@etat = true
 		else
 			dernierMondeNiveau = BaseDeDonnees.dernierNiveauFini(Compte.COMPTE.pseudo)
 			if(dernierMondeNiveau != -1)
 				if(dernierMondeNiveau[1] == 40)
-					dernierMondeAccessible = res[0] + 1
+					dernierMondeAccessible = dernierMondeNiveau[0] + 1
 				else
-					dernierMondeAccessible = res[0]
+					dernierMondeAccessible = dernierMondeNiveau[0]
 				end
 			
 				if(@idMonde <= dernierMondeAccessible)
