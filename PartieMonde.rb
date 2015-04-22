@@ -80,7 +80,8 @@ class PartieMonde < Partie
 				if((@grille.difficulte < dernierMondeAccessible))
 					@etat = true
 				else
-					if((@grille.difficulte == dernierMondeAccessible) && (@idNiveau <= dernierNiveauAccessible))
+					numNiveau = BaseDeDonnees.getNumeroNiveau(@idGrille)
+					if((@grille.difficulte == dernierMondeAccessible) && (numNiveau <= dernierNiveauAccessible))
 						@etat = true
 					else
 						@etat = false	
