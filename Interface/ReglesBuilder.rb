@@ -7,7 +7,7 @@
 class ReglesBuilder < TakuzuBuilder
 
     def initialize	# :nodoc:
-		super(__FILE__, "Connexion")
+		super(__FILE__, "Règles")
     end
 
 	# Méthode d'instance
