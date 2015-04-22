@@ -648,4 +648,10 @@ class BaseDeDonnees
         end
         return -1
     end
+    
+    # Renvoie le numero de niveau d'une grille appartenant à un monde
+    # - idGrille l'identifiant de la grille
+    def BaseDeDonnees.getNumeroNiveau(idGrille)
+    	return Grilles.select(:numero_niveau).find_by_id_grille(idGrille).numero_niveau
+    end
 end
