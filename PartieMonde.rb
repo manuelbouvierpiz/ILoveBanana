@@ -64,7 +64,7 @@ class PartieMonde < Partie
 		return self
 	end
 
-	def intialiseEtat
+	def initialiseEtat
 		if(@grille.difficulte == 1 && @idNiveau == 1)
 			@etat = true
 		else
