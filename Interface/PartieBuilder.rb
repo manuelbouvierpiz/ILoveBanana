@@ -47,14 +47,17 @@ class PartieBuilder < TakuzuBuilder
 				eval("@bouton_#{unX+1}_#{unY+1}.signal_connect(\"clicked\") { on_bouton_clicked(#{unX}, #{unY})}")
 				
 				if Jeu.JEU.partie.grille.matrice[unX][unY].estVide?
-					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"grey\"))")
+					eval("[Gtk::STATE_NORMAL, Gtk::STATE_ACTIVE, Gtk::STATE_PRELIGHT].each do |unEtatGtk|\n@bouton_#{unX+1}_#{unY+1}.modify_bg(unEtatGtk, Gdk::Color.parse(\"grey\"))\nend")
 				elsif Jeu.JEU.partie.grille.matrice[unX][unY].estRouge?
-					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(1)))")
+					eval("[Gtk::STATE_NORMAL, Gtk::STATE_ACTIVE, Gtk::STATE_PRELIGHT].each do |unEtatGtk|\n@bouton_#{unX+1}_#{unY+1}.modify_bg(unEtatGtk, Gdk::Color.parse(Compte.COMPTE.options.couleur(1)))\nend")
 				else #elsif Jeu.JEU.partie.grille.matrice[unX][unY].estBleu?
-					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))")
+					eval("[Gtk::STATE_NORMAL, Gtk::STATE_ACTIVE, Gtk::STATE_PRELIGHT].each do |unEtatGtk|\n@bouton_#{unX+1}_#{unY+1}.modify_bg(unEtatGtk, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))\nend")
 				end
 			end
 		end
+		
+		# Trop lent
+		#actualiserGrille()
 		
 		# Connexion des signaux pour les hypothèses
 		1.upto(5) do |unNumero|
@@ -70,9 +73,6 @@ class PartieBuilder < TakuzuBuilder
 		
 		@temps.set_text("Temps :\n" + Jeu.JEU.partie.getTempsString)
 		@nbClics.set_text("Clic(s) :\n" + Jeu.JEU.partie.nbClicsString)
-		
-		# Trop lent
-		#actualiserGrille()
 		
 	end
 
@@ -105,11 +105,11 @@ class PartieBuilder < TakuzuBuilder
 		0.upto(Jeu.JEU.partie.grille.taille - 1) do |unX|
 			0.upto(Jeu.JEU.partie.grille.taille - 1) do |unY|
 				if Jeu.JEU.partie.grille.matrice[unX][unY].estVide?
-					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"grey\"))")
+					eval("[Gtk::STATE_NORMAL, Gtk::STATE_ACTIVE, Gtk::STATE_PRELIGHT].each do |unEtatGtk|\n@bouton_#{unX+1}_#{unY+1}.modify_bg(unEtatGtk, Gdk::Color.parse(\"grey\"))\nend")
 				elsif Jeu.JEU.partie.grille.matrice[unX][unY].estRouge?
-					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(1)))")
+					eval("[Gtk::STATE_NORMAL, Gtk::STATE_ACTIVE, Gtk::STATE_PRELIGHT].each do |unEtatGtk|\n@bouton_#{unX+1}_#{unY+1}.modify_bg(unEtatGtk, Gdk::Color.parse(Compte.COMPTE.options.couleur(1)))\nend")
 				else #elsif Jeu.JEU.partie.grille.matrice[unX][unY].estBleu?
-					eval("@bouton_#{unX+1}_#{unY+1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))")
+					eval("[Gtk::STATE_NORMAL, Gtk::STATE_ACTIVE, Gtk::STATE_PRELIGHT].each do |unEtatGtk|\n@bouton_#{unX+1}_#{unY+1}.modify_bg(unEtatGtk, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))\nend")
 				end
 			end
 		end
