@@ -71,7 +71,7 @@ class PartieMonde < Partie
 			dernierMondeNiveau = BaseDeDonnees.dernierNiveauFini(Compte.COMPTE.pseudo)
 			if(dernierMondeNiveau != -1)
 				if(dernierMondeNiveau[1] == 40)
-					dernierNiveauAccesible = 1
+					dernierNiveauAccessible = 1
 					dernierMondeAccessible = dernierMondeNiveau[0] + 1
 				else
 					dernierNiveauAccessible = dernierMondeNiveau[1] + 1
