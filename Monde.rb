@@ -25,7 +25,7 @@ class Monde
 	# * Accessible en lecture uniquement
 	attr :image, false
 	
-	# * Variable d'instance (un <b>String</b>) qui représente l'état du monde
+	# * Variable d'instance (un <b>Boolean</b>) qui représente l'état du monde
 	# * Non accessible
 	@etat
 	
@@ -46,7 +46,7 @@ class Monde
 		@idMonde = unIdMonde
 		@image = uneImage
 		@nom = BaseDeDonnees.getMondeNom(@idMonde)
-		@etat = "bloqué"
+		@etat = false
 		
 		# Création du tableau de parties
 		@tableauParties = []
@@ -63,14 +63,14 @@ class Monde
 
 	# Méthode d'instance qui permet de donner l'accès à un Monde
 	def debloquer()
-		if @etat == "bloqué"
-			@etat = "débloqué"
+		if @etat == false
+			@etat = true
 		end
 	end
 
 	# Méthode d'instance qui permet de savoir si le Monde est accessible
 	def estDebloque?()
-		return @etat == "débloqué"
+		return @etat == true
 	end
 
 	# * Méthode d'instance qui retourne une chaine de caractères décrivant le +Monde+

@@ -56,7 +56,7 @@ class PartieMonde < Partie
 		super()
 		mettreEnPauseChronometre()
 	end
-	
+
 	# * Méthode d'instance qui "termine" la +Partie+
 	# * Retourne +self+
 	def gagner
@@ -64,4 +64,30 @@ class PartieMonde < Partie
 		return self
 	end
 
+	def intiliseEtat
+		if(@grille.difficulte == 1 && @idNiveau == 1)
+			@etat = true
+		else
+			dernierMondeNiveau = BaseDeDonnees.dernierNiveauFini(Compte.COMPTE.pseudo)
+			if(dernierMondeNiveau != -1)
+				if(dernierMondeNiveau[0] == 40)
+					dernierNiveauAccesible = 1
+					dernierMondeAccessible = res[0] + 1
+				else
+					dernierNiveauAccessible = res[1] + 1
+					dernierMondeAccessible = res[0]
+				end
+			
+				if((@grille.difficulte <= dernierMondeAccessible) && (@idNiveau <= dernierNiveauAccessible))
+					@etat = true
+				else
+					@etat = false
+				end
+			else
+				@etat = false
+			end
+		end
+		return self
+	end
+	
 end

@@ -28,7 +28,7 @@ class MenuPrincipalBuilder < TakuzuBuilder
 	
 	# * Méthode d'instance qui ouvre la fenêtre correspondant à une partie permettant d'apprendre à jouer
 	def on_didacticielButton_clicked
-		ouvrirFenetre(PartieBuilder.new())
+		ouvrirFenetre(PartieDidacticielBuilder.creer(Jeu.JEU.didacticiel.didacticielDeBase))
 	end
 	
 	# * Méthode d'instance qui ouvre la fenêtre Options si l'utilisateur clique sur le bouton correspondant
