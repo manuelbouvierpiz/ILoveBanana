@@ -97,6 +97,8 @@ class PartieBuilder < TakuzuBuilder
 		if Jeu.JEU.partie.peutRetourArriere?
 			@back.show
 		end
+		
+		Jeu.JEU.partie.calculerScore
 	end
 
 	# * Méthode d'instance qui permet de rafraichir l'affichage de la +Grille+
