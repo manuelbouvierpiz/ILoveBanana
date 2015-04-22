@@ -1,5 +1,5 @@
 # Alexandre MOUTEL
-# Modifications par Valentin CHAILLOU
+# Modifications par Valentin CHAILLOU et Ronan YZEUX
 # PartieMonde.rb
 # Implementation de la classe PartieMonde
 
@@ -87,6 +87,25 @@ class PartieMonde < Partie
 				@etat = false
 			end
 		end
+		return self
+	end
+	
+	# * Méthode d'instance qui remet à zéro la +PartieMonde+
+	# * Retourne +self+
+	def remiseAZero
+		@nbHypotheses = 0
+		@nbAides = 0
+		@nbClics = 0
+		@idGrille = unIdGrille
+		if @grille.difficulte >= 8
+			@grille = GrilleHardcore.creer(unIdGrille)
+		else
+			@grille = Grille.creer(unIdGrille)
+		end
+		@fini = false
+		@listeHypotheses = Array.[]
+		@tourne = false
+		@debutChronometre = nil
 		return self
 	end
 	

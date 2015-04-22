@@ -10,6 +10,7 @@ class PartieDidacticielReussieBuilder < PartieReussieBuilder
 	def initialize()
         super()
 		@nbEtoiles.file="Images/rien.png"
+		@bouton1.hide
 	end
 
 end

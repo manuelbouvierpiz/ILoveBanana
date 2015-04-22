@@ -69,6 +69,7 @@ class Partie
 		@fini = false
 		@listeHypotheses = Array.[]
 		@tourne = false
+		@debutChronometre = nil
 	end
 
 # Méthode retournant le score de la partie
