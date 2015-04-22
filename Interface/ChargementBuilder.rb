@@ -2,9 +2,15 @@
 
 # Damien PARMENon et Valentin CHAILLOU
 
-#
+# == Classe +ChargementBuilder+ :
+#		- est un +TakuzuBuilder+
+#		- affiche l'élément et le pourcentage du +Chargement+
 class ChargementBuilder < TakuzuBuilder
-    def initialize
+
+	# Méthode d'instance
+
+	# Méthode d'instance qui initialise la fenêtre de chargement
+    def initialize		# :nodoc:
         super(__FILE__, "Takuzu Avengers")
 		
 		# Mise à jour de la classe chargée 10 fois par seconde

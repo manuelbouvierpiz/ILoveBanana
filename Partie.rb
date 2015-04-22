@@ -39,8 +39,8 @@ class Partie
 
 
 # Constucteur d'une partie 
-	def Partie.creer(unIdGrille)
-			new(unIdGrille)
+	def Partie.creer(unIdGrille, estHardcore=false)
+			new(unIdGrille, estHardcore)
 	end
 
 # Constructeur permettant de charger une grille sauvegardée
@@ -49,7 +49,7 @@ class Partie
 	end
 
 # Initialise les variables d'instances
-	def initialize(unIdGrille=nil)
+	def initialize(unIdGrille=nil, estHardcore=nil)
 		if unIdGrille == nil		# Il faut charger la grille précédemment sauvegardée
 			@nbHypotheses = BaseDeDonnees.getSauvegardeNbHypotheses(Compte.COMPTE.pseudo)
 			@nbAides = BaseDeDonnees.getSauvegardeNbAides(Compte.COMPTE.pseudo)
@@ -61,7 +61,11 @@ class Partie
 			@nbAides = 0
 			@nbClics = 0
 			@idGrille = unIdGrille
-			@grille = Grille.creer(unIdGrille)
+			if estHardcore
+				@grille = GrilleHardcore.creer(unIdGrille)
+			else
+				@grille = Grille.creer(unIdGrille)
+			end
 		end
 		
 		@fini = false
@@ -220,12 +224,6 @@ class Partie
 	def gagner
 		BaseDeDonnees.setGrilleTermine(Compte.COMPTE.pseudo, @grille.idGrille, getTemps, @nbClics, nbEtoile, @nbHypotheses, @nbAides, calculerScore())
 		return self
-	end
-	
-	# * Méthode d'instance qui retourne le nombre d'étoiles gagné lors de la +Partie+
-	# * Retourne 0 par défaut
-	def nbEtoile()
-		return unResultat = 0
 	end
 end
 	

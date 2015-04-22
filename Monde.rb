@@ -56,7 +56,7 @@ class Monde
 			end
 		else
 			1.upto(20) do |i|
-				@tableauParties.push(PartieMonde.creer(BaseDeDonnees.getMondeGrilleId(@idMonde, i)))
+				@tableauParties.push(PartieMonde.creer(BaseDeDonnees.getMondeGrilleId(@idMonde, i), true))		# C'est une GrilleHardcore
 			end
 		end
 	end

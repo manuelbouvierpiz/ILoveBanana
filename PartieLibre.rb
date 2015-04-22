@@ -7,18 +7,18 @@
 
 class PartieLibre < Partie
 
-	def PartieLibre.creer(uneTaille, uneDifficulte)
-		new(uneTaille, uneDifficulte)
+	def PartieLibre.creer(uneTaille, uneDifficulte, estHardcore=false)
+		new(uneTaille, uneDifficulte, estHardcore)
 	end
 	
-	def initialize(unArgument, uneDifficulte=nil)
+	def initialize(unArgument, uneDifficulte=nil, estHardcore)
 		unIdGrille = -1
 		if uneDifficulte == nil		# unArgument = unIdGrille
 			unIdGrille = unArgument
 		else						# unArgument = uneTaille
 			unIdGrille = BaseDeDonnees.getGrilleIdAleatoire(unArgument, uneDifficulte)
 		end
-		super(unIdGrille)
+		super(unIdGrille, estHardcore)
 	end
 
 	def listeDefis
@@ -29,12 +29,5 @@ class PartieLibre < Partie
 	def arreteToi
 		super()
 		arretChronometre()
-	end
-	
-	# * Méthode d'instance qui retourne le nombre d'étoiles gagné lors de la +Partie+
-	# * Retourne 0 par défaut
-	def nbEtoile()
-		super()
-		unResultat = -1
 	end
 end

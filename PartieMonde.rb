@@ -11,8 +11,8 @@ class PartieMonde < Partie
 	#Variables
 	@idNiveau
 	@etat
-
-	#Méthodes
+	
+	#Méthodes d'instance
 
 	# Méthode d'instance qui permet de donner l'accès à une partie dans un monde
 	def debloquer()	

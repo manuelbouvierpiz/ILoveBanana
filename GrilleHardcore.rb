@@ -2,6 +2,9 @@
 # GrilleHardcore.rb
 # 27/02/2015
 
+# == Classe +GrilleHardcore+ :
+#		- est une +Grille+
+#		- connaît son temps max et son nombrede clics max
 class GrilleHardcore < Grille
 
   # Variables
@@ -23,6 +26,12 @@ class GrilleHardcore < Grille
     super(unIdGrille, uneMatrice)
     tempsMax = BaseDeDonnees.getGrilleTempsMax(@idGrille)
 	nbClicsMax = BaseDeDonnees.getGrilleNbClicsMax(@idGrille)
+  end
+  
+  # * Méthode d'instance qui renvoie la difficulté de la +GrilleHardcore+
+  # * Retourne 8
+  def difficulte
+	return 8
   end
 
 end
