@@ -117,7 +117,7 @@ class Grille
   def obtenirAide
 	
 	# A compléter
-	 tailleMax = @matrice.lenght
+	 tailleMax = @matrice.length
   
 	 colonnes = Array.new(tailleMax)  #Tableau contenant les colonnes
 	 lignes = Array.new(tailleMax)    #Tableau contenant les lignes
