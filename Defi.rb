@@ -30,7 +30,7 @@ class Defi
   # * crée une nouvelle +Partie+ dans le +Jeu+
   # * Retourne la +Partie+ en cours dans le +Jeu+
   def relever
-  	Jeu.JEU.partie = PartieRapide.creer(@idGrille)
+  	Jeu.JEU.partie = PartieDefi.creer(@idGrille, @envoyeur, score)
   	return Jeu.JEU.partie
   end
   

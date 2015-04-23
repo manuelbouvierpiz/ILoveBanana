@@ -654,4 +654,8 @@ class BaseDeDonnees
     def BaseDeDonnees.getNumeroNiveau(idGrille)
     	return Grilles.select(:numero_niveau).find_by_id_grille(idGrille).numero_niveau
     end
+
+    def BaseDeDonnees.setVainqueurDefi(joueurDefie, joueurDefiant, unIdGrille, pseudoVainqueur, unScore)
+        Defis.where(:pseudo => joueurDefiant, :pseudo_defier => joueurDefie, :id_grille => unIdGrille).update_all(score: unScore, pseudo_vainqueur: pseudoVainqueur)
+    end
 end
