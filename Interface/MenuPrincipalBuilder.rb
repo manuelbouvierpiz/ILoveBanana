@@ -23,17 +23,17 @@ class MenuPrincipalBuilder < TakuzuBuilder
 			ouvrirFenetre(TailleDifficulteBuilder.new)
 		else
 			lesDefis.each do |unDefi|
-				defiClasse = Defi.creer(unDefi[2], unDefi[1], unDefi[3], unDefi[4])
 				fenetreInfo = Gtk::MessageDialog.new(self['window1'], Gtk::Dialog::DESTROY_WITH_PARENT,
                           	  Gtk::MessageDialog::INFO,
                           	  Gtk::MessageDialog::BUTTONS_YES_NO,
-                          	  "Vous avez un défi en attente de #{defiClasse.envoyeur}, souhaitez vous le relever ?")
-  				fenetreInfo.run
-  				fenetreInfo.destroy
-  				if(fenetreInfo.get_response == Gtk::Dialog::RESPONSE_YES)
-  					PartieDefiBuilder.new(defiClasse.relever)
-  				else
-  					defiClasse.supprimer
+                          	  "Vous avez un défi en attente de #{unDefi.envoyeur}, souhaitez vous le relever ?")
+  				fenetreInfo.run do |reponse|
+  					case reponse
+  						when Gtk::Dialog::RESPONSE_YES
+  							PartieDefiBuilder.new(unDefi.relever)
+  						when Gtk::Dialog::RESPONSE_NO
+  						unDefi.supprimer
+  					end
   				end
   			end
   		end

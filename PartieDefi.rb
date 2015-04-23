@@ -5,9 +5,9 @@
 
 class PartieDefi < Partie
 
-	attr_reader :unIdGrille, false
-	attr_reader :unJoueur, false
-	attr_reader :unScore, false
+	attr :unIdGrille, false
+	attr :unJoueur, false
+	attr :unScore, false
 
 	def PartieLibre.creer(unIdGrille, unJoueur, unScore)
 		new(unIdGrille, unJoueur, unScore)

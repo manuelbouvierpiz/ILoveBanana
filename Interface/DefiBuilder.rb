@@ -22,7 +22,8 @@ class DefiBuilder < TakuzuBuilder
     end
     
     def on_validerButton_clicked
-		Defi.creer(@pseudo.text, Compte.COMPTE.pseudo, @IdGrille, @score)
+		leDefi = Defi.creer(@pseudo.text, Compte.COMPTE.pseudo, @IdGrille, @score)
+    leDefi.envoyerDefi
 		fenetreInfo = Gtk::MessageDialog.new(self['window1'], Gtk::Dialog::DESTROY_WITH_PARENT,
                               Gtk::MessageDialog::INFO,
                               Gtk::MessageDialog::BUTTONS_CLOSE,
