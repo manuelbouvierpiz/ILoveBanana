@@ -27,6 +27,8 @@ class PartieBuilder < TakuzuBuilder
 		
 		Jeu.JEU.partie = unePartie
 		
+		self['window1'].signal_connect("destroy") { Jeu.JEU.partie.arreteToi }
+		
 		# Mise à jour du temps toutes les secondes
 		GLib::Timeout.add(1000) do
 			begin
