@@ -114,6 +114,6 @@ class Monde
 				@etat = false
 			end
 		end
-		return self
+		return @etat
 	end
 end
