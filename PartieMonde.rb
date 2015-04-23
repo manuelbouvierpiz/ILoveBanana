@@ -4,12 +4,11 @@
 # Implementation de la classe PartieMonde
 
 # == Classe PartieMonde 
-#	- connait son id de niveau
-#	- rendre la partie accessible (debloquer), savoir si elle est bloque (estDebloque?), connaitre le nombre d'étoile en fonction du score(nbEtoile), connaitre le score d'un joueur(scoreDuJoueur), réinitialiser la grille de la partie(initGrille)
+#	- connait son état
+#	- sait rendre la partie accessible (debloquer), si elle est bloque (estDebloque?), donner le nombre d'étoile(s) en fonction du score(nbEtoile), connaitre le score d'un joueur(scoreDuJoueur), réinitialiser la grille de la partie(initGrille)
 class PartieMonde < Partie
 
 	#Variables
-	@idNiveau
 	@etat
 	
 	#Méthodes d'instance
@@ -32,19 +31,7 @@ class PartieMonde < Partie
 
 	# * Méthode d'instance qui retourne un nombre d'étoiles gagnées lors de la +PartieMonde+
 	def nbEtoile()
-		#unScore = calculerScore
-		unScore = Compte.COMPTE.scorePourLeNiveau(self)
-		unResultat = 0
-		
-		if unScore > BaseDeDonnees.getGrilleEtoileTroisScore(@grille.idGrille)
-			unResultat = 3
-		elsif unScore > BaseDeDonnees.getGrilleEtoileDeuxScore(@grille.idGrille)
-			unResultat = 2
-		elsif unScore > BaseDeDonnees.getGrilleEtoileUnScore(@grille.idGrille)
-			unResultat = 1
-		end
-		
-		return unResultat
+		return BaseDeDonnees.getNbEtoileObtenu(Compte.COMPTE.pseudo, @grille.idGrille)
 	end
 
 	#  * Méthode d'instance qui retourne le score d'un joueur sur ce niveau
@@ -61,7 +48,22 @@ class PartieMonde < Partie
 	# * Méthode d'instance qui "termine" la +Partie+
 	# * Retourne +self+
 	def gagner
-		BaseDeDonnees.setGrilleTermine(Compte.COMPTE.pseudo, @grille.idGrille, getTemps, @nbClics, nbEtoile, @nbHypotheses, @nbAides, calculerScore())
+		
+		# On ne met à jour la BDD que si le score est meilleur
+		unScore = calculerScore()
+		if unScore > scoreDuJoueur()
+			unNbEtoile = 0
+		
+			if unScore > BaseDeDonnees.getGrilleEtoileTroisScore(@grille.idGrille)
+				unNbEtoile = 3
+			elsif unScore > BaseDeDonnees.getGrilleEtoileDeuxScore(@grille.idGrille)
+				unNbEtoile = 2
+			elsif unScore > BaseDeDonnees.getGrilleEtoileUnScore(@grille.idGrille)
+				unNbEtoile = 1
+			end
+	
+			BaseDeDonnees.setGrilleTermine(Compte.COMPTE.pseudo, @grille.idGrille, getTemps, @nbClics, unNbEtoile, @nbHypotheses, @nbAides, unScore)
+		end
 		return self
 	end
 

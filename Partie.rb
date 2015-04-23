@@ -21,10 +21,10 @@ class Partie
 	# * Elle s'incrémente durant la partie
 	attr :nbClics, false
 	
-	# * Variable contenant le nombre de fois que l'utilisateur a utiliser l'aide
-	attr :nbAides, false
+	# * Variable d'instance non accessible contenant le nombre de fois que l'utilisateur a utiliser l'aide
+	@nbAides
 	
-	# * Variable contenant le nombre d'hypothèse que l'utilisateur a fait pour terminer la grille
+	# * Variable d'instance accessible en lecture contenant le nombre d'hypothèse que l'utilisateur a fait pour terminer la grille
 	@nbHypotheses
 	
 	# * Variable contenant l'heure de début du lancement du chronometre
@@ -72,7 +72,7 @@ class Partie
 
 # Méthode retournant le score de la partie
 	def calculerScore()
-		return ((@grille.taille ** 5) * @grille.nbClicMin * ( 1.0 * @grille.difficulte / ( 1.0 * getTemps * @nbClics * 5 ) ) * ( 1 / ( 1 + @nbAides) ) * ( 1 / ( 1 + @nbHypotheses) ) ).to_i
+		return ((@grille.taille ** 5) * @grille.nbClicMin * ( 1.0 * @grille.difficulte / ( 1.0 * getTemps * @nbClics * 5 ) ) * ( 1.0 / ( 1 + @nbAides) ) * ( 1.0 / ( 1 + @nbHypotheses) ) ).to_i
 	end
 
 # Méthode retournant la chaîne de caracère correspondant aux règles du jeu de takuzu
@@ -86,6 +86,7 @@ class Partie
 # Méthode appelant la méthode de même nom dans grille afin d'obtenir une aide
 	def obtenirAide()
 		@grille.obtenirAide()
+		@nbAides += 1
 	end
 
 # Méthode permettant d'entrer en mode hypothèse
