@@ -12,8 +12,6 @@ class PartieMonde < Partie
 	@idNiveau
 	@etat
 	
-	attr_writer :etat
-	
 	#Méthodes d'instance
 
 	# Méthode d'instance qui permet de donner l'accès à une partie dans un monde
