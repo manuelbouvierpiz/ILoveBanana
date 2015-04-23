@@ -32,7 +32,23 @@ class PartieBuilder < TakuzuBuilder
 		
 		Jeu.JEU.partie = unePartie
 		
+		# Pour que la partie soit sauvegardée même quand on ferme la fenêtre
+		# Le handler sera déconnecté si il échoue (en mode hardcore) ou si il gagne la partie
 		@handlerArret = self['window1'].signal_connect("destroy") { Jeu.JEU.partie.arreteToi }
+		
+		# Raccourcis clavier !
+		self['window1'].signal_connect("key-press-event") do |wdt, key|
+		
+=begin
+			if key.keyval == Gdk::Keyval::GDK_p						# Pause
+				on_regle_clicked if @regle.get_property(\"visible\")
+			elsif key.keyval == Gdk::Keyval::GDK_h					# Hypothèse
+				on_hypothese_clicked if @hypothese.get_property(\"visible\")
+			end
+=end
+
+			eval("if key.keyval == Gdk::Keyval::GDK_#{Compte.COMPTE.options.getRaccourci(1)}\non_regle_clicked if @regle.get_property(\"visible\")\nelsif key.keyval == Gdk::Keyval::GDK_#{Compte.COMPTE.options.getRaccourci(4)}\non_hypothese_clicked if @hypothese.get_property(\"visible\")\nend")
+		end
 		
 		# Mise à jour du temps toutes les secondes
 		GLib::Timeout.add(1000) do

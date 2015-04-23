@@ -48,6 +48,12 @@ class OptionsBuilder < TakuzuBuilder
 		stringColor2 = Compte.COMPTE.options.couleur(2)
 		@colorbutton1.color = Gdk::Color.new(stringColor1[1..4].to_i(16), stringColor1[5..8].to_i(16), stringColor1[9..12].to_i(16))
 		@colorbutton2.color = Gdk::Color.new(stringColor2[1..4].to_i(16), stringColor2[5..8].to_i(16), stringColor2[9..12].to_i(16))
+		
+		# Certains éléments sont non implémentés
+		@hbox1.hide
+		@hbox2.hide
+		@hbox4.hide
+		@hbox5.hide
 	end
 	
 	# * Méthode d'instance qui ouvre la fenêtre du menu principal si l'utilisateur clique sur le bouton correspondant

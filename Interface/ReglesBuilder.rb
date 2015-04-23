@@ -10,6 +10,10 @@ class ReglesBuilder < TakuzuBuilder
 
     def initialize	# :nodoc:
 		super(__FILE__, "Règles")
+		
+		self['window1'].signal_connect("key-press-event") do |wdt, key|
+			eval("if key.keyval == Gdk::Keyval::GDK_#{Compte.COMPTE.options.getRaccourci(1)}\non_boutonRetour_clicked\nend")
+		end
     end
 
 	# * Méthode d'instance qui effectue le traitement du bouton retour

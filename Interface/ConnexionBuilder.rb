@@ -13,6 +13,10 @@ class ConnexionBuilder < TakuzuBuilder
     def initialize	# :nodoc:
 		super(__FILE__, "Connexion")
 		@oubliMotDePasse.hide
+		
+		self['window1'].signal_connect("key-press-event") do |wdt, key|
+			on_connexionButton_clicked if key.keyval == Gdk::Keyval::GDK_Return
+		end
     end
 
 	# * Méthode d'instance qui permet de connecter un utilisateur après avoir cliqué sur le bouton de connexion
