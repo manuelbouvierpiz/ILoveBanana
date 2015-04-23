@@ -664,4 +664,11 @@ class BaseDeDonnees
         Defis.where(:pseudo => joueurDefiant, :pseudo_defier => joueurDefie, :id_grille => unIdGrille).update_all(score: unScore, pseudo_vainqueur: pseudoVainqueur)
         return self
     end
+    
+    def BaseDeDonnees.getNbEtoileObtenu(pseudo, idGrille)
+    	if(GrilleFinis.exists?(:pseudo => pseudo, :id_grille => idGrille))
+    		return GrilleFinis.select(:nb_etoile).where(pseudo: pseudo, id_grille: idGrille).nb_etoile	
+    	end
+    	return -1
+    end
 end
