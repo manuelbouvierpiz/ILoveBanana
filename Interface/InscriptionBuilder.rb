@@ -17,8 +17,8 @@ class InscriptionBuilder < TakuzuBuilder
     end
 
     def on_buttonValider_clicked
-    	if @entryNom.text != "" && @entryPrenom.text != "" && @entryMail.text != "" && @entryPseudo.text != "" && @entryPassword.text != ""
-    		if Compte.verifierIdentifiant?(@entryPseudo.text) 
+    	if @entryNom.text != "" && @entryPrenom.text != "" && @entryMail.text != "" && @entryPseudo.text != "" && @entryPassword.text != "" && @entryPassword.text == @entryConfirmation.text
+    		if Compte.verifierIdentifiant?(@entryPseudo.text) && Compte.verifierMail?(@entryMail.text)
         		Compte.creer(@entryPseudo.text, @entryPassword.text, @entryMail.text, @entryPrenom.text, @entryNom.text)
         		@labelReussite.set_text("L'incription est bien prise en compte\nVous pouvez vous logguer !")
         		@buttonValider.set_visible(false)
