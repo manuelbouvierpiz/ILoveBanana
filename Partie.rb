@@ -112,9 +112,7 @@ class Partie
 	
 	# * Méthode d'instance qui arrête la +Partie+
 	def arreteToi
-		if !@grille.estCorrecte? && verifierTempsMax? && verifierNbClicsMax?
-			sauvegarder
-		end
+		sauvegarder
 	end
 	
 # Méthode permettant de stopper commplètement le chronomètre

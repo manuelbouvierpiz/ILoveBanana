@@ -10,6 +10,11 @@
 #	- est considérée comme une classe abstraite
 class PartieBuilder < TakuzuBuilder
 
+	# Variable d'instance
+	
+	# * Variable d'instance qui représente l'ID du handler de l'arrêt du jeu
+	@handlerArret
+
 	# Méthode de classe
 
 	# * Méthode de classe qui permet de créer une +PartieBuilder+
@@ -27,7 +32,7 @@ class PartieBuilder < TakuzuBuilder
 		
 		Jeu.JEU.partie = unePartie
 		
-		self['window1'].signal_connect("destroy") { Jeu.JEU.partie.arreteToi }
+		@handlerArret = self['window1'].signal_connect("destroy") { Jeu.JEU.partie.arreteToi }
 		
 		# Mise à jour du temps toutes les secondes
 		GLib::Timeout.add(1000) do

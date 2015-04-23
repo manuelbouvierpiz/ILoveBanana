@@ -138,6 +138,7 @@ class PartieDidacticielBuilder < PartieBuilder
   			when 5
   				super(unX, unY)
   				if Jeu.JEU.partie.grille.estCorrecte?
+					self['window1'].signal_handler_disconnect(@handlerArret)
 					Jeu.JEU.partie.arretChronometre()
 					fenetreInfo = Gtk::MessageDialog.new(self['window1'], Gtk::Dialog::DESTROY_WITH_PARENT,
                               Gtk::MessageDialog::INFO,

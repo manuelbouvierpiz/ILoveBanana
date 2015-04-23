@@ -25,6 +25,7 @@ class PartieSauvegardeBuilder < PartieBuilder
 	def	on_bouton_clicked(unX, unY)
 		super(unX, unY)
 		if Jeu.JEU.partie.grille.estCorrecte?
+			self['window1'].signal_handler_disconnect(@handlerArret)
 			Jeu.JEU.partie.arretChronometre()
 			ouvrirFenetre(PartieSauvegardeReussieBuilder.new)
 		elsif !Jeu.JEU.partie.verifierNbClicsMax?

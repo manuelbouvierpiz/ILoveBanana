@@ -26,6 +26,7 @@ class PartieLibreBuilder < PartieBuilder
 		super(unX, unY)
 		if Jeu.JEU.partie.grille.estCorrecte?
 			Jeu.JEU.partie.arretChronometre()
+			self['window1'].signal_handler_disconnect(@handlerArret)
 			ouvrirFenetre(PartieLibreReussieBuilder.new)
 		elsif !Jeu.JEU.partie.verifierNbClicsMax?
 			Jeu.JEU.partie.arretChronometre()

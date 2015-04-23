@@ -22,6 +22,7 @@ class PartieDefiBuilder < PartieBuilder
 	def	on_bouton_clicked(unX, unY)
 		super(unX, unY)
 		if Jeu.JEU.partie.grille.estCorrecte?
+			self['window1'].signal_handler_disconnect(@handlerArret)
 			Jeu.JEU.partie.arretChronometre()
 			if(Jeu.JEU.partie.calculerScore > Jeu.JEU.partie.unScore)
 				Jeu.JEU.partie.setVainqueur(Compte.COMPTE.pseudo, Jeu.JEU.partie.calculerScore)
