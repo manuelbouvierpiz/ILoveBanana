@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Case - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>Case.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-i-3D-3D">#==</a>
+    
+    <li ><a href="#method-i-copie">#copie</a>
+    
+    <li ><a href="#method-i-estBleu-3F">#estBleu?</a>
+    
+    <li ><a href="#method-i-estRouge-3F">#estRouge?</a>
+    
+    <li ><a href="#method-i-estVide-3F">#estVide?</a>
+    
+    <li ><a href="#method-i-setBleu">#setBleu</a>
+    
+    <li ><a href="#method-i-setRouge">#setRouge</a>
+    
+    <li ><a href="#method-i-setVide">#setVide</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Case.html">Case</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Case</h1>
+
+  <div id="description" class="description">
+    
+<h2 id="label-Classe+Case+%3A+">Classe <a href="Case.html">Case</a> : <span><a href="#label-Classe+Case+%3A+">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<pre>- connaît son état
+- sait se décrire (to_s), changer son état (setBleu, setRouge, setVide), donner son état (estBleu?, estRouge?, estVide?)</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-etat" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">etat</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <ul><li>
+<p>Variable d&#39;instance qui représente l&#39;état de la
+<strong>Case</strong></p>
+</li><li>
+<p>Peut être &#39;V&#39; (vide), &#39;B&#39;, (bleu) ou &#39;R&#39; (rouge)</p>
+</li><li>
+<p>Accessible en lecture (nécessaire pour la comparaison)</p>
+</li></ul>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-3D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">==</span><span
+            class="method-args">(uneCase)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui permet de comparer deux <strong>Case</strong>s</p>
+</li><li>
+<h3 id="method-i-3D-3D-label-Attribut+%3A">Attribut :<span><a href="#method-i-3D-3D-label-Attribut+%3A">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<pre>- uneCase : une Case à comparer</pre>
+</li><li>
+<p>Retourne <strong>true</strong> si les deux <strong>Case</strong>s sont
+identiques, <strong>false</strong> sinon</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="3D-3D-source">
+            <pre><span class="ruby-comment"># File Case.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">uneCase</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@etat</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">uneCase</span>.<span class="ruby-identifier">etat</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 3D-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 3D-3D-method -->
+
+    
+      <div id="method-i-copie" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">copie</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui crée une copie de la <strong>Case</strong></p>
+</li><li>
+<p>Retourne une copie de la <strong>Case</strong></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="copie-source">
+            <pre><span class="ruby-comment"># File Case.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">copie</span>
+        <span class="ruby-identifier">unClone</span> = <span class="ruby-constant">Case</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@etat</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;V&#39;</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">unClone</span>
+        <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@etat</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;R&#39;</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">unClone</span>.<span class="ruby-identifier">setRouge</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">unClone</span>.<span class="ruby-identifier">setBleu</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- copie-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- copie-method -->
+
+    
+      <div id="method-i-estBleu-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">estBleu?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui permet de savoir si la <strong>Case</strong> est
+bleue</p>
+</li><li>
+<p>Retourne <strong>true</strong> si la <strong>Case</strong> est bleue,
+<strong>false</strong> sinon</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="estBleu-3F-source">
+            <pre><span class="ruby-comment"># File Case.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">estBleu?</span>()
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@etat</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;B&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- estBleu-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- estBleu-3F-method -->
+
+    
+      <div id="method-i-estRouge-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">estRouge?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui permet de savoir si la <strong>Case</strong> est
+rouge</p>
+</li><li>
+<p>Retourne <strong>true</strong> si la <strong>Case</strong> est rouge,
+<strong>false</strong> sinon</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="estRouge-3F-source">
+            <pre><span class="ruby-comment"># File Case.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">estRouge?</span>()
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@etat</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;R&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- estRouge-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- estRouge-3F-method -->
+
+    
+      <div id="method-i-estVide-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">estVide?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui permet de savoir si la <strong>Case</strong> est
+vide</p>
+</li><li>
+<p>Retourne <strong>true</strong> si la <strong>Case</strong> est vide,
+<strong>false</strong> sinon</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="estVide-3F-source">
+            <pre><span class="ruby-comment"># File Case.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">estVide?</span>()
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@etat</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;V&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- estVide-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- estVide-3F-method -->
+
+    
+      <div id="method-i-setBleu" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setBleu</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui met l&#39;état de la <strong>Case</strong> sur
+bleu</p>
+</li><li>
+<p>Retourne <strong>self</strong></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="setBleu-source">
+            <pre><span class="ruby-comment"># File Case.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setBleu</span>()
+        <span class="ruby-ivar">@etat</span> = <span class="ruby-string">&#39;B&#39;</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setBleu-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setBleu-method -->
+
+    
+      <div id="method-i-setRouge" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setRouge</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui met l&#39;état de la <strong>Case</strong> sur
+rouge</p>
+</li><li>
+<p>Retourne <strong>self</strong></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="setRouge-source">
+            <pre><span class="ruby-comment"># File Case.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setRouge</span>()
+        <span class="ruby-ivar">@etat</span> = <span class="ruby-string">&#39;R&#39;</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setRouge-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setRouge-method -->
+
+    
+      <div id="method-i-setVide" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setVide</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui met l&#39;état de la <strong>Case</strong> sur
+vide</p>
+</li><li>
+<p>Retourne <strong>self</strong></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="setVide-source">
+            <pre><span class="ruby-comment"># File Case.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setVide</span>()
+        <span class="ruby-ivar">@etat</span> = <span class="ruby-string">&#39;V&#39;</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setVide-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setVide-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

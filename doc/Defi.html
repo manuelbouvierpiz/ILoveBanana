@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Defi - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>Defi.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-c-creer">::creer</a>
+    
+    <li ><a href="#method-i-envoyerDefi">#envoyerDefi</a>
+    
+    <li ><a href="#method-i-relever">#relever</a>
+    
+    <li ><a href="#method-i-score">#score</a>
+    
+    <li ><a href="#method-i-supprimer">#supprimer</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./BDD/takuzu_bdd_sql.html">takuzu_bdd.sql</a>
+  
+    <li class="file"><a href="./Interface/AProposBuilder_glade.html">AProposBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChargementBuilder_glade.html">ChargementBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChargementSauvegardeBuilder_glade.html">ChargementSauvegardeBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChoixGrilleBuilder_glade.html">ChoixGrilleBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChoixGrilleSuiteBuilder_glade.html">ChoixGrilleSuiteBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChoixMondeBuilder_glade.html">ChoixMondeBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ClassementBuilder_glade.html">ClassementBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ConnexionBuilder_glade.html">ConnexionBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/DefiBuilder_glade.html">DefiBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/InscriptionBuilder_glade.html">InscriptionBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ListeDefiBuilder_glade.html">ListeDefiBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/MenuPrincipalBuilder_glade.html">MenuPrincipalBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/OptionsBuilder_glade.html">OptionsBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/OubliMotDePasseBuilder_glade.html">OubliMotDePasseBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/Partie10Builder_glade.html">Partie10Builder.glade</a>
+  
+    <li class="file"><a href="./Interface/Partie12Builder_glade.html">Partie12Builder.glade</a>
+  
+    <li class="file"><a href="./Interface/Partie6Builder_glade.html">Partie6Builder.glade</a>
+  
+    <li class="file"><a href="./Interface/Partie8Builder_glade.html">Partie8Builder.glade</a>
+  
+    <li class="file"><a href="./Interface/PartieEchecBuilder_glade.html">PartieEchecBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/PartieReussieBuilder_glade.html">PartieReussieBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ReglesBuilder_glade.html">ReglesBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/StatistiquesBuilder_glade.html">StatistiquesBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/SuccesBuilder_glade.html">SuccesBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/TailleDifficulteBuilder_glade.html">TailleDifficulteBuilder.glade</a>
+  
+    <li class="file"><a href="./README_md.html">README</a>
+  
+    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./AProposBuilder.html">AProposBuilder</a>
+  
+    <li><a href="./Aventure.html">Aventure</a>
+  
+    <li><a href="./BaseDeDonnees.html">BaseDeDonnees</a>
+  
+    <li><a href="./BaseDeDonnees/ActiveRecord.html">BaseDeDonnees::ActiveRecord</a>
+  
+    <li><a href="./Case.html">Case</a>
+  
+    <li><a href="./Chargement.html">Chargement</a>
+  
+    <li><a href="./ChargementBuilder.html">ChargementBuilder</a>
+  
+    <li><a href="./ChargementSauvegardeBuilder.html">ChargementSauvegardeBuilder</a>
+  
+    <li><a href="./ChoixGrilleBuilder.html">ChoixGrilleBuilder</a>
+  
+    <li><a href="./ChoixGrilleSuiteBuilder.html">ChoixGrilleSuiteBuilder</a>
+  
+    <li><a href="./ChoixMondeBuilder.html">ChoixMondeBuilder</a>
+  
+    <li><a href="./ClassementBuilder.html">ClassementBuilder</a>
+  
+    <li><a href="./Compte.html">Compte</a>
+  
+    <li><a href="./Comptes.html">Comptes</a>
+  
+    <li><a href="./ConnexionBuilder.html">ConnexionBuilder</a>
+  
+    <li><a href="./Defi.html">Defi</a>
+  
+    <li><a href="./DefiBuilder.html">DefiBuilder</a>
+  
+    <li><a href="./Defis.html">Defis</a>
+  
+    <li><a href="./Didacticiel.html">Didacticiel</a>
+  
+    <li><a href="./Grille.html">Grille</a>
+  
+    <li><a href="./GrilleFinis.html">GrilleFinis</a>
+  
+    <li><a href="./GrilleHardcore.html">GrilleHardcore</a>
+  
+    <li><a href="./Grilles.html">Grilles</a>
+  
+    <li><a href="./InscriptionBuilder.html">InscriptionBuilder</a>
+  
+    <li><a href="./InterfaceMereBuilder.html">InterfaceMereBuilder</a>
+  
+    <li><a href="./Jeu.html">Jeu</a>
+  
+    <li><a href="./ListeDefiBuilder.html">ListeDefiBuilder</a>
+  
+    <li><a href="./MenuPrincipalBuilder.html">MenuPrincipalBuilder</a>
+  
+    <li><a href="./Monde.html">Monde</a>
+  
+    <li><a href="./Mondes.html">Mondes</a>
+  
+    <li><a href="./Options.html">Options</a>
+  
+    <li><a href="./OptionsBuilder.html">OptionsBuilder</a>
+  
+    <li><a href="./OubliMotDePasseBuilder.html">OubliMotDePasseBuilder</a>
+  
+    <li><a href="./Partie.html">Partie</a>
+  
+    <li><a href="./PartieBuilder.html">PartieBuilder</a>
+  
+    <li><a href="./PartieDefi.html">PartieDefi</a>
+  
+    <li><a href="./PartieDefiBuilder.html">PartieDefiBuilder</a>
+  
+    <li><a href="./PartieDefiReussiBuilder.html">PartieDefiReussiBuilder</a>
+  
+    <li><a href="./PartieDefiReussieBuilder.html">PartieDefiReussieBuilder</a>
+  
+    <li><a href="./PartieDidacticiel.html">PartieDidacticiel</a>
+  
+    <li><a href="./PartieDidacticielBuilder.html">PartieDidacticielBuilder</a>
+  
+    <li><a href="./PartieDidacticielReussieBuilder.html">PartieDidacticielReussieBuilder</a>
+  
+    <li><a href="./PartieEchecBuilder.html">PartieEchecBuilder</a>
+  
+    <li><a href="./PartieLibre.html">PartieLibre</a>
+  
+    <li><a href="./PartieLibreBuilder.html">PartieLibreBuilder</a>
+  
+    <li><a href="./PartieLibreReussieBuilder.html">PartieLibreReussieBuilder</a>
+  
+    <li><a href="./PartieMonde.html">PartieMonde</a>
+  
+    <li><a href="./PartieMondeBuilder.html">PartieMondeBuilder</a>
+  
+    <li><a href="./PartieMondeReussieBuilder.html">PartieMondeReussieBuilder</a>
+  
+    <li><a href="./PartieReussieBuilder.html">PartieReussieBuilder</a>
+  
+    <li><a href="./PartieSauvegarde.html">PartieSauvegarde</a>
+  
+    <li><a href="./PartieSauvegardeBuilder.html">PartieSauvegardeBuilder</a>
+  
+    <li><a href="./PartieSauvegardeReussieBuilder.html">PartieSauvegardeReussieBuilder</a>
+  
+    <li><a href="./RaccourciClavier.html">RaccourciClavier</a>
+  
+    <li><a href="./RaccourciComptes.html">RaccourciComptes</a>
+  
+    <li><a href="./ReglesBuilder.html">ReglesBuilder</a>
+  
+    <li><a href="./Sauvegardes.html">Sauvegardes</a>
+  
+    <li><a href="./Statistiques.html">Statistiques</a>
+  
+    <li><a href="./StatistiquesBuilder.html">StatistiquesBuilder</a>
+  
+    <li><a href="./Succes.html">Succes</a>
+  
+    <li><a href="./SuccesAccomplis.html">SuccesAccomplis</a>
+  
+    <li><a href="./SuccesBuilder.html">SuccesBuilder</a>
+  
+    <li><a href="./SuccesIndividuel.html">SuccesIndividuel</a>
+  
+    <li><a href="./TailleDifficulteBuilder.html">TailleDifficulteBuilder</a>
+  
+    <li><a href="./TakuzuBuilder.html">TakuzuBuilder</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Defi</h1>
+
+  <div id="description" class="description">
+    
+<h2 id="label-Classe+Defi+%3A">Classe <a href="Defi.html">Defi</a> :<span><a href="#label-Classe+Defi+%3A">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<pre>- connaît son envoyeur, son destinataire, sa grille
+- sait relever un défi, supprimer un défi, donne le score de l&#39;envoyeur</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-destinataire" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">destinataire</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <ul><li>
+<p>Variable d&#39;instance (un <strong>String</strong>) qui représente le
+pseudo du destinataire du <code>Defi</code></p>
+</li><li>
+<p>Est initialisée lors de la création de l&#39;objet</p>
+</li><li>
+<p>Accessible en lecture uniquement</p>
+</li></ul>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-envoyeur" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">envoyeur</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <ul><li>
+<p>Variable d&#39;instance (un <strong>String</strong>) qui représente le
+pseudo de l&#39;envoyeur du <code>Defi</code></p>
+</li><li>
+<p>Est initialisée lors de la création de l&#39;objet</p>
+</li><li>
+<p>Accessible en lecture uniquement</p>
+</li></ul>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-idGrille" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">idGrille</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <ul><li>
+<p>Variable d&#39;instance qui représente la <code>Grille</code> du
+<code>Defi</code></p>
+</li><li>
+<p>Est intialisée lors de la création de l&#39;objet</p>
+</li><li>
+<p>Accessible en lecture uniquement</p>
+</li></ul>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-scoreEnvoi" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">scoreEnvoi</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-creer" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">creer</span><span
+            class="method-args">(unDestinataire, unEnvoyeur, unIdGrille, unScore)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode de classe permettant de créer un <code>Defi</code></p>
+</li></ul>
+
+<h5 id="method-c-creer-label-Attributs+%3A">Attributs :<span><a href="#method-c-creer-label-Attributs+%3A">&para;</a> <a href="#documentation">&uarr;</a></span></h5>
+
+<pre>- unEnvoyeur : le Compte de l&#39;envoyeur
+- unDestinataire : le Compte du destinataire
+- uneGrille : la Grille du Defi
+- unScore : un entier représentant le score réalisé par l&#39;envoyeur</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="creer-source">
+            <pre><span class="ruby-comment"># File Defi.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Defi</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-identifier">unDestinataire</span>, <span class="ruby-identifier">unEnvoyeur</span>, <span class="ruby-identifier">unIdGrille</span>, <span class="ruby-identifier">unScore</span>)
+      <span class="ruby-identifier">new</span>(<span class="ruby-identifier">unDestinataire</span>, <span class="ruby-identifier">unEnvoyeur</span>, <span class="ruby-identifier">unIdGrille</span>, <span class="ruby-identifier">unScore</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- creer-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- creer-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-envoyerDefi" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">envoyerDefi</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="envoyerDefi-source">
+            <pre><span class="ruby-comment"># File Defi.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">envoyerDefi</span>
+  <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">setDefi</span>(<span class="ruby-ivar">@destinataire</span>, <span class="ruby-ivar">@envoyeur</span>, <span class="ruby-ivar">@idGrille</span>, <span class="ruby-ivar">@scoreEnvoi</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- envoyerDefi-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- envoyerDefi-method -->
+
+    
+      <div id="method-i-relever" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">relever</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui relève un <code>Defi</code></p>
+</li><li>
+<p>crée une nouvelle <code>Partie</code> dans le <code>Jeu</code></p>
+</li><li>
+<p>Retourne la <code>Partie</code> en cours dans le <code>Jeu</code></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="relever-source">
+            <pre><span class="ruby-comment"># File Defi.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">relever</span>
+      <span class="ruby-constant">Jeu</span>.<span class="ruby-constant">JEU</span>.<span class="ruby-identifier">partie</span> = <span class="ruby-constant">PartieDefi</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-ivar">@idGrille</span>, <span class="ruby-ivar">@envoyeur</span>, <span class="ruby-identifier">score</span>)
+      <span class="ruby-keyword">return</span> <span class="ruby-constant">Jeu</span>.<span class="ruby-constant">JEU</span>.<span class="ruby-identifier">partie</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- relever-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- relever-method -->
+
+    
+      <div id="method-i-score" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">score</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui retourne le score réalisé par l&#39;envoyeur
+pour le <code>Defi</code></p>
+</li><li>
+<p>Recherche le score de l&#39;envoyeur dans la BDD</p>
+</li><li>
+<p>Retourne un entier représentant le score de l&#39;envoyeur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="score-source">
+            <pre><span class="ruby-comment"># File Defi.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">score</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getDefiScore</span>(<span class="ruby-ivar">@envoyeur</span>, <span class="ruby-ivar">@destinataire</span>, <span class="ruby-ivar">@idGrille</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- score-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- score-method -->
+
+    
+      <div id="method-i-supprimer" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">supprimer</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui supprime le défi courant</p>
+</li><li>
+<p>Supprime le <code>Defi</code> dans la BDD</p>
+</li><li>
+<p>Retourne nil</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="supprimer-source">
+            <pre><span class="ruby-comment"># File Defi.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">supprimer</span>
+      <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">supprimeDefi</span>(<span class="ruby-ivar">@destinataire</span>, <span class="ruby-ivar">@envoyeur</span>, <span class="ruby-ivar">@idGrille</span>)
+      <span class="ruby-comment"># ACHTUNG ! L&#39;instance n&#39;est pas supprimée directement : NE PAS RELEVER UN DEFI SUPPRIME !!!</span>
+      <span class="ruby-comment"># Par précaution il vaut mieux faire listeDefis[X] = listeDefis.supprimer! afin de supprimer l&#39;instance</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- supprimer-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- supprimer-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

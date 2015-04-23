@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class OptionsBuilder - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>Interface/OptionsBuilder.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="TakuzuBuilder.html">TakuzuBuilder</a>
+  
+</nav>
+
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-on_buttonPrecedent_clicked">#on_buttonPrecedent_clicked</a>
+    
+    <li ><a href="#method-i-on_buttonValider_clicked">#on_buttonValider_clicked</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./BDD/takuzu_bdd_sql.html">takuzu_bdd.sql</a>
+  
+    <li class="file"><a href="./Interface/AProposBuilder_glade.html">AProposBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChargementBuilder_glade.html">ChargementBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChargementSauvegardeBuilder_glade.html">ChargementSauvegardeBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChoixGrilleBuilder_glade.html">ChoixGrilleBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChoixGrilleSuiteBuilder_glade.html">ChoixGrilleSuiteBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChoixMondeBuilder_glade.html">ChoixMondeBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ClassementBuilder_glade.html">ClassementBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ConnexionBuilder_glade.html">ConnexionBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/DefiBuilder_glade.html">DefiBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/InscriptionBuilder_glade.html">InscriptionBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ListeDefiBuilder_glade.html">ListeDefiBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/MenuPrincipalBuilder_glade.html">MenuPrincipalBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/OptionsBuilder_glade.html">OptionsBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/OubliMotDePasseBuilder_glade.html">OubliMotDePasseBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/Partie10Builder_glade.html">Partie10Builder.glade</a>
+  
+    <li class="file"><a href="./Interface/Partie12Builder_glade.html">Partie12Builder.glade</a>
+  
+    <li class="file"><a href="./Interface/Partie6Builder_glade.html">Partie6Builder.glade</a>
+  
+    <li class="file"><a href="./Interface/Partie8Builder_glade.html">Partie8Builder.glade</a>
+  
+    <li class="file"><a href="./Interface/PartieEchecBuilder_glade.html">PartieEchecBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/PartieReussieBuilder_glade.html">PartieReussieBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ReglesBuilder_glade.html">ReglesBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/StatistiquesBuilder_glade.html">StatistiquesBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/SuccesBuilder_glade.html">SuccesBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/TailleDifficulteBuilder_glade.html">TailleDifficulteBuilder.glade</a>
+  
+    <li class="file"><a href="./README_md.html">README</a>
+  
+    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./AProposBuilder.html">AProposBuilder</a>
+  
+    <li><a href="./Aventure.html">Aventure</a>
+  
+    <li><a href="./BaseDeDonnees.html">BaseDeDonnees</a>
+  
+    <li><a href="./BaseDeDonnees/ActiveRecord.html">BaseDeDonnees::ActiveRecord</a>
+  
+    <li><a href="./Case.html">Case</a>
+  
+    <li><a href="./Chargement.html">Chargement</a>
+  
+    <li><a href="./ChargementBuilder.html">ChargementBuilder</a>
+  
+    <li><a href="./ChargementSauvegardeBuilder.html">ChargementSauvegardeBuilder</a>
+  
+    <li><a href="./ChoixGrilleBuilder.html">ChoixGrilleBuilder</a>
+  
+    <li><a href="./ChoixGrilleSuiteBuilder.html">ChoixGrilleSuiteBuilder</a>
+  
+    <li><a href="./ChoixMondeBuilder.html">ChoixMondeBuilder</a>
+  
+    <li><a href="./ClassementBuilder.html">ClassementBuilder</a>
+  
+    <li><a href="./Compte.html">Compte</a>
+  
+    <li><a href="./Comptes.html">Comptes</a>
+  
+    <li><a href="./ConnexionBuilder.html">ConnexionBuilder</a>
+  
+    <li><a href="./Defi.html">Defi</a>
+  
+    <li><a href="./DefiBuilder.html">DefiBuilder</a>
+  
+    <li><a href="./Defis.html">Defis</a>
+  
+    <li><a href="./Didacticiel.html">Didacticiel</a>
+  
+    <li><a href="./Grille.html">Grille</a>
+  
+    <li><a href="./GrilleFinis.html">GrilleFinis</a>
+  
+    <li><a href="./GrilleHardcore.html">GrilleHardcore</a>
+  
+    <li><a href="./Grilles.html">Grilles</a>
+  
+    <li><a href="./InscriptionBuilder.html">InscriptionBuilder</a>
+  
+    <li><a href="./InterfaceMereBuilder.html">InterfaceMereBuilder</a>
+  
+    <li><a href="./Jeu.html">Jeu</a>
+  
+    <li><a href="./ListeDefiBuilder.html">ListeDefiBuilder</a>
+  
+    <li><a href="./MenuPrincipalBuilder.html">MenuPrincipalBuilder</a>
+  
+    <li><a href="./Monde.html">Monde</a>
+  
+    <li><a href="./Mondes.html">Mondes</a>
+  
+    <li><a href="./Options.html">Options</a>
+  
+    <li><a href="./OptionsBuilder.html">OptionsBuilder</a>
+  
+    <li><a href="./OubliMotDePasseBuilder.html">OubliMotDePasseBuilder</a>
+  
+    <li><a href="./Partie.html">Partie</a>
+  
+    <li><a href="./PartieBuilder.html">PartieBuilder</a>
+  
+    <li><a href="./PartieDefi.html">PartieDefi</a>
+  
+    <li><a href="./PartieDefiBuilder.html">PartieDefiBuilder</a>
+  
+    <li><a href="./PartieDefiReussiBuilder.html">PartieDefiReussiBuilder</a>
+  
+    <li><a href="./PartieDefiReussieBuilder.html">PartieDefiReussieBuilder</a>
+  
+    <li><a href="./PartieDidacticiel.html">PartieDidacticiel</a>
+  
+    <li><a href="./PartieDidacticielBuilder.html">PartieDidacticielBuilder</a>
+  
+    <li><a href="./PartieDidacticielReussieBuilder.html">PartieDidacticielReussieBuilder</a>
+  
+    <li><a href="./PartieEchecBuilder.html">PartieEchecBuilder</a>
+  
+    <li><a href="./PartieLibre.html">PartieLibre</a>
+  
+    <li><a href="./PartieLibreBuilder.html">PartieLibreBuilder</a>
+  
+    <li><a href="./PartieLibreReussieBuilder.html">PartieLibreReussieBuilder</a>
+  
+    <li><a href="./PartieMonde.html">PartieMonde</a>
+  
+    <li><a href="./PartieMondeBuilder.html">PartieMondeBuilder</a>
+  
+    <li><a href="./PartieMondeReussieBuilder.html">PartieMondeReussieBuilder</a>
+  
+    <li><a href="./PartieReussieBuilder.html">PartieReussieBuilder</a>
+  
+    <li><a href="./PartieSauvegarde.html">PartieSauvegarde</a>
+  
+    <li><a href="./PartieSauvegardeBuilder.html">PartieSauvegardeBuilder</a>
+  
+    <li><a href="./PartieSauvegardeReussieBuilder.html">PartieSauvegardeReussieBuilder</a>
+  
+    <li><a href="./RaccourciClavier.html">RaccourciClavier</a>
+  
+    <li><a href="./RaccourciComptes.html">RaccourciComptes</a>
+  
+    <li><a href="./ReglesBuilder.html">ReglesBuilder</a>
+  
+    <li><a href="./Sauvegardes.html">Sauvegardes</a>
+  
+    <li><a href="./Statistiques.html">Statistiques</a>
+  
+    <li><a href="./StatistiquesBuilder.html">StatistiquesBuilder</a>
+  
+    <li><a href="./Succes.html">Succes</a>
+  
+    <li><a href="./SuccesAccomplis.html">SuccesAccomplis</a>
+  
+    <li><a href="./SuccesBuilder.html">SuccesBuilder</a>
+  
+    <li><a href="./SuccesIndividuel.html">SuccesIndividuel</a>
+  
+    <li><a href="./TailleDifficulteBuilder.html">TailleDifficulteBuilder</a>
+  
+    <li><a href="./TakuzuBuilder.html">TakuzuBuilder</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class OptionsBuilder</h1>
+
+  <div id="description" class="description">
+    
+<h2 id="label-Classe+OptionsBuilder+%3A+">Classe <a href="OptionsBuilder.html">OptionsBuilder</a> : <span><a href="#label-Classe+OptionsBuilder+%3A+">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<pre>- Permet à l&#39;utilisateur de pouvoir choisir des options qui modifieront certaines fonctionnalités du jeu
+- les options modifiables sont le volume de la musique et du bruitage, certains raccourcis clavier et les couleurs des cases
+- L&#39;utilisateur doit changer les options qu&#39;il souhaite dans les emplacements dédiés puis cliquer sur le bouton Valider pour les enregistrer</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-adjBruitage" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">adjBruitage</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <ul><li>
+<p>Variable d&#39;instance qui représente les valeurs possible du curseur
+correspondant au volume du bruitage</p>
+</li><li>
+<p>Cette variable est initialisée dans la fonction initialize et a des valeurs
+possible comprise entre 1 et 100</p>
+</li><li>
+<p>Accessible en lecture uniquement</p>
+</li><li>
+<p>L&#39;obtention de la valeur choisie par l&#39;utilisateur se fait grâce à
+la méthode adjBruitage.value</p>
+</li></ul>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-adjMusique" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">adjMusique</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <ul><li>
+<p>Variable d&#39;instance qui représente les valeurs possible du curseur
+correspondant au volume de la musique</p>
+</li><li>
+<p>Cette variable est initialisée dans la fonction initialize et a des valeurs
+possible comprise entre 1 et 100</p>
+</li><li>
+<p>Accessible en lecture uniquement</p>
+</li><li>
+<p>L&#39;obtention de la valeur choisie par l&#39;utilisateur se fait grâce à
+la méthode adjMusique.value</p>
+</li></ul>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui initialise la fenêtre correspondante au
+<code>MenuPrincipalBuilder</code></p>
+</li><li>
+<p>Cette méthode va chercher dans la base de données les options actuelles du
+joueur qu&#39;il pourra modifier ensuite</p>
+</li></ul>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File Interface/OptionsBuilder.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>() 
+        <span class="ruby-keyword">super</span>(<span class="ruby-keyword">__FILE__</span>,<span class="ruby-string">&quot;Options&quot;</span>)
+        <span class="ruby-ivar">@adjBruitage</span> =  <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">Adjustment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">100</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">0</span>)
+        <span class="ruby-ivar">@hscaleBruitage</span>.<span class="ruby-identifier">adjustment</span> = <span class="ruby-ivar">@adjBruitage</span>
+        <span class="ruby-ivar">@adjMusique</span> =  <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">Adjustment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">100</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-value">0</span>)
+        <span class="ruby-ivar">@hscaleMusique</span>.<span class="ruby-identifier">adjustment</span> = <span class="ruby-ivar">@adjMusique</span>
+        
+        <span class="ruby-ivar">@adjBruitage</span>.<span class="ruby-identifier">value</span> = <span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">getVolumeBruitage</span>
+        <span class="ruby-ivar">@adjMusique</span>.<span class="ruby-identifier">value</span> = <span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">getVolumeMusique</span>
+
+        <span class="ruby-ivar">@entry1</span>.<span class="ruby-identifier">set_text</span>(<span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">getRaccourci</span>(<span class="ruby-value">1</span>))
+        <span class="ruby-ivar">@entry2</span>.<span class="ruby-identifier">set_text</span>(<span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">getRaccourci</span>(<span class="ruby-value">2</span>))
+        <span class="ruby-ivar">@entry3</span>.<span class="ruby-identifier">set_text</span>(<span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">getRaccourci</span>(<span class="ruby-value">3</span>))
+        <span class="ruby-ivar">@entry4</span>.<span class="ruby-identifier">set_text</span>(<span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">getRaccourci</span>(<span class="ruby-value">4</span>))
+
+        <span class="ruby-identifier">stringColor1</span> = <span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">couleur</span>(<span class="ruby-value">1</span>)
+        <span class="ruby-identifier">stringColor2</span> = <span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">couleur</span>(<span class="ruby-value">2</span>)
+        <span class="ruby-ivar">@colorbutton1</span>.<span class="ruby-identifier">color</span> = <span class="ruby-constant">Gdk</span><span class="ruby-operator">::</span><span class="ruby-constant">Color</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">stringColor1</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">4</span>].<span class="ruby-identifier">to_i</span>(<span class="ruby-value">16</span>), <span class="ruby-identifier">stringColor1</span>[<span class="ruby-value">5</span><span class="ruby-operator">..</span><span class="ruby-value">8</span>].<span class="ruby-identifier">to_i</span>(<span class="ruby-value">16</span>), <span class="ruby-identifier">stringColor1</span>[<span class="ruby-value">9</span><span class="ruby-operator">..</span><span class="ruby-value">12</span>].<span class="ruby-identifier">to_i</span>(<span class="ruby-value">16</span>))
+        <span class="ruby-ivar">@colorbutton2</span>.<span class="ruby-identifier">color</span> = <span class="ruby-constant">Gdk</span><span class="ruby-operator">::</span><span class="ruby-constant">Color</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">stringColor2</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">4</span>].<span class="ruby-identifier">to_i</span>(<span class="ruby-value">16</span>), <span class="ruby-identifier">stringColor2</span>[<span class="ruby-value">5</span><span class="ruby-operator">..</span><span class="ruby-value">8</span>].<span class="ruby-identifier">to_i</span>(<span class="ruby-value">16</span>), <span class="ruby-identifier">stringColor2</span>[<span class="ruby-value">9</span><span class="ruby-operator">..</span><span class="ruby-value">12</span>].<span class="ruby-identifier">to_i</span>(<span class="ruby-value">16</span>))
+        
+        <span class="ruby-comment"># Certains éléments sont non implémentés</span>
+        <span class="ruby-ivar">@hbox1</span>.<span class="ruby-identifier">hide</span>
+        <span class="ruby-ivar">@hbox2</span>.<span class="ruby-identifier">hide</span>
+        <span class="ruby-ivar">@hbox4</span>.<span class="ruby-identifier">hide</span>
+        <span class="ruby-ivar">@hbox5</span>.<span class="ruby-identifier">hide</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-on_buttonPrecedent_clicked" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_buttonPrecedent_clicked</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui ouvre la fenêtre du menu principal si
+l&#39;utilisateur clique sur le bouton correspondant</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="on_buttonPrecedent_clicked-source">
+            <pre><span class="ruby-comment"># File Interface/OptionsBuilder.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_buttonPrecedent_clicked</span> 
+        <span class="ruby-identifier">ouvrirFenetre</span>(<span class="ruby-constant">MenuPrincipalBuilder</span>.<span class="ruby-identifier">new</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_buttonPrecedent_clicked-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_buttonPrecedent_clicked-method -->
+
+    
+      <div id="method-i-on_buttonValider_clicked" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_buttonValider_clicked</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui permet de valider les changements effectués par
+l&#39;utilisateur</p>
+</li><li>
+<p>Les changements sont directement enregistrés dans la base de données</p>
+</li><li>
+<p>Ouvre après l&#39;enregistrement la fenêtre correspondant au menu principal</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="on_buttonValider_clicked-source">
+            <pre><span class="ruby-comment"># File Interface/OptionsBuilder.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_buttonValider_clicked</span>
+
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@entryMotDePasse</span>.<span class="ruby-identifier">text</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@entryNouveauMotDePasse</span>.<span class="ruby-identifier">text</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@entryConfirmation</span>.<span class="ruby-identifier">text</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;&quot;</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@entryMotDePasse</span>.<span class="ruby-identifier">text</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@entryNouveauMotDePasse</span>.<span class="ruby-identifier">text</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@entryNouveauMotDePasse</span>.<span class="ruby-identifier">text</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@entryConfirmation</span>.<span class="ruby-identifier">text</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Compte</span>.<span class="ruby-identifier">verifierMotDePasse?</span>(<span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">pseudo</span>, <span class="ruby-ivar">@entryMotDePasse</span>.<span class="ruby-identifier">text</span>)
+                        <span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">changerMotDePasse</span>(<span class="ruby-ivar">@entryNouveauMotDePasse</span>.<span class="ruby-identifier">text</span>)
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-ivar">@labelErreur</span>.<span class="ruby-identifier">set_text</span>(<span class="ruby-string">&quot;Informations incorrectes&quot;</span>)
+                        <span class="ruby-keyword">return</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">modifierVolumeBruitage</span>(<span class="ruby-ivar">@adjBruitage</span>.<span class="ruby-identifier">value</span>)
+        <span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">modifierVolumeMusique</span>(<span class="ruby-ivar">@adjMusique</span>.<span class="ruby-identifier">value</span>)
+        
+        <span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">changerRaccourci</span>(<span class="ruby-value">1</span>, <span class="ruby-ivar">@entry1</span>.<span class="ruby-identifier">text</span>)
+        <span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">changerRaccourci</span>(<span class="ruby-value">2</span>, <span class="ruby-ivar">@entry2</span>.<span class="ruby-identifier">text</span>)
+        <span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">changerRaccourci</span>(<span class="ruby-value">3</span>, <span class="ruby-ivar">@entry3</span>.<span class="ruby-identifier">text</span>)
+        <span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">changerRaccourci</span>(<span class="ruby-value">4</span>, <span class="ruby-ivar">@entry4</span>.<span class="ruby-identifier">text</span>)
+
+        <span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">changerCouleur</span>(<span class="ruby-value">1</span>,<span class="ruby-ivar">@colorbutton1</span>.<span class="ruby-identifier">color</span>.<span class="ruby-identifier">to_s</span>)
+        <span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">changerCouleur</span>(<span class="ruby-value">2</span>,<span class="ruby-ivar">@colorbutton2</span>.<span class="ruby-identifier">color</span>.<span class="ruby-identifier">to_s</span>)
+        <span class="ruby-identifier">print</span> <span class="ruby-ivar">@colorbutton2</span>.<span class="ruby-identifier">color</span>
+        <span class="ruby-identifier">ouvrirFenetre</span>(<span class="ruby-constant">MenuPrincipalBuilder</span>.<span class="ruby-identifier">new</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_buttonValider_clicked-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_buttonValider_clicked-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

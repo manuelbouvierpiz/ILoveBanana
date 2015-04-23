@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Partie - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>Partie.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-c-creer">::creer</a>
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-arretChronometre">#arretChronometre</a>
+    
+    <li ><a href="#method-i-arreteToi">#arreteToi</a>
+    
+    <li ><a href="#method-i-calculerScore">#calculerScore</a>
+    
+    <li ><a href="#method-i-chargerPreHypo">#chargerPreHypo</a>
+    
+    <li ><a href="#method-i-estTerminee-3F">#estTerminee?</a>
+    
+    <li ><a href="#method-i-faireHypothese">#faireHypothese</a>
+    
+    <li ><a href="#method-i-gagner">#gagner</a>
+    
+    <li ><a href="#method-i-getTemps">#getTemps</a>
+    
+    <li ><a href="#method-i-getTempsString">#getTempsString</a>
+    
+    <li ><a href="#method-i-jouer">#jouer</a>
+    
+    <li ><a href="#method-i-lanceToi">#lanceToi</a>
+    
+    <li ><a href="#method-i-mettreEnPauseChronometre">#mettreEnPauseChronometre</a>
+    
+    <li ><a href="#method-i-nbClicsString">#nbClicsString</a>
+    
+    <li ><a href="#method-i-obtenirAide">#obtenirAide</a>
+    
+    <li ><a href="#method-i-obtenirRegles">#obtenirRegles</a>
+    
+    <li ><a href="#method-i-peutRetourArriere-3F">#peutRetourArriere?</a>
+    
+    <li ><a href="#method-i-remiseAZero">#remiseAZero</a>
+    
+    <li ><a href="#method-i-repriseChronometre">#repriseChronometre</a>
+    
+    <li ><a href="#method-i-retourArriere">#retourArriere</a>
+    
+    <li ><a href="#method-i-sauvegarder">#sauvegarder</a>
+    
+    <li ><a href="#method-i-verifierNbClicsMax-3F">#verifierNbClicsMax?</a>
+    
+    <li ><a href="#method-i-verifierTempsMax-3F">#verifierTempsMax?</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./BDD/takuzu_bdd_sql.html">takuzu_bdd.sql</a>
+  
+    <li class="file"><a href="./Interface/AProposBuilder_glade.html">AProposBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChargementBuilder_glade.html">ChargementBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChargementSauvegardeBuilder_glade.html">ChargementSauvegardeBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChoixGrilleBuilder_glade.html">ChoixGrilleBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChoixGrilleSuiteBuilder_glade.html">ChoixGrilleSuiteBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChoixMondeBuilder_glade.html">ChoixMondeBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ClassementBuilder_glade.html">ClassementBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ConnexionBuilder_glade.html">ConnexionBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/DefiBuilder_glade.html">DefiBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/InscriptionBuilder_glade.html">InscriptionBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ListeDefiBuilder_glade.html">ListeDefiBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/MenuPrincipalBuilder_glade.html">MenuPrincipalBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/OptionsBuilder_glade.html">OptionsBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/OubliMotDePasseBuilder_glade.html">OubliMotDePasseBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/Partie10Builder_glade.html">Partie10Builder.glade</a>
+  
+    <li class="file"><a href="./Interface/Partie12Builder_glade.html">Partie12Builder.glade</a>
+  
+    <li class="file"><a href="./Interface/Partie6Builder_glade.html">Partie6Builder.glade</a>
+  
+    <li class="file"><a href="./Interface/Partie8Builder_glade.html">Partie8Builder.glade</a>
+  
+    <li class="file"><a href="./Interface/PartieEchecBuilder_glade.html">PartieEchecBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/PartieReussieBuilder_glade.html">PartieReussieBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ReglesBuilder_glade.html">ReglesBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/StatistiquesBuilder_glade.html">StatistiquesBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/SuccesBuilder_glade.html">SuccesBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/TailleDifficulteBuilder_glade.html">TailleDifficulteBuilder.glade</a>
+  
+    <li class="file"><a href="./README_md.html">README</a>
+  
+    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./AProposBuilder.html">AProposBuilder</a>
+  
+    <li><a href="./Aventure.html">Aventure</a>
+  
+    <li><a href="./BaseDeDonnees.html">BaseDeDonnees</a>
+  
+    <li><a href="./BaseDeDonnees/ActiveRecord.html">BaseDeDonnees::ActiveRecord</a>
+  
+    <li><a href="./Case.html">Case</a>
+  
+    <li><a href="./Chargement.html">Chargement</a>
+  
+    <li><a href="./ChargementBuilder.html">ChargementBuilder</a>
+  
+    <li><a href="./ChargementSauvegardeBuilder.html">ChargementSauvegardeBuilder</a>
+  
+    <li><a href="./ChoixGrilleBuilder.html">ChoixGrilleBuilder</a>
+  
+    <li><a href="./ChoixGrilleSuiteBuilder.html">ChoixGrilleSuiteBuilder</a>
+  
+    <li><a href="./ChoixMondeBuilder.html">ChoixMondeBuilder</a>
+  
+    <li><a href="./ClassementBuilder.html">ClassementBuilder</a>
+  
+    <li><a href="./Compte.html">Compte</a>
+  
+    <li><a href="./Comptes.html">Comptes</a>
+  
+    <li><a href="./ConnexionBuilder.html">ConnexionBuilder</a>
+  
+    <li><a href="./Defi.html">Defi</a>
+  
+    <li><a href="./DefiBuilder.html">DefiBuilder</a>
+  
+    <li><a href="./Defis.html">Defis</a>
+  
+    <li><a href="./Didacticiel.html">Didacticiel</a>
+  
+    <li><a href="./Grille.html">Grille</a>
+  
+    <li><a href="./GrilleFinis.html">GrilleFinis</a>
+  
+    <li><a href="./GrilleHardcore.html">GrilleHardcore</a>
+  
+    <li><a href="./Grilles.html">Grilles</a>
+  
+    <li><a href="./InscriptionBuilder.html">InscriptionBuilder</a>
+  
+    <li><a href="./InterfaceMereBuilder.html">InterfaceMereBuilder</a>
+  
+    <li><a href="./Jeu.html">Jeu</a>
+  
+    <li><a href="./ListeDefiBuilder.html">ListeDefiBuilder</a>
+  
+    <li><a href="./MenuPrincipalBuilder.html">MenuPrincipalBuilder</a>
+  
+    <li><a href="./Monde.html">Monde</a>
+  
+    <li><a href="./Mondes.html">Mondes</a>
+  
+    <li><a href="./Options.html">Options</a>
+  
+    <li><a href="./OptionsBuilder.html">OptionsBuilder</a>
+  
+    <li><a href="./OubliMotDePasseBuilder.html">OubliMotDePasseBuilder</a>
+  
+    <li><a href="./Partie.html">Partie</a>
+  
+    <li><a href="./PartieBuilder.html">PartieBuilder</a>
+  
+    <li><a href="./PartieDefi.html">PartieDefi</a>
+  
+    <li><a href="./PartieDefiBuilder.html">PartieDefiBuilder</a>
+  
+    <li><a href="./PartieDefiReussiBuilder.html">PartieDefiReussiBuilder</a>
+  
+    <li><a href="./PartieDefiReussieBuilder.html">PartieDefiReussieBuilder</a>
+  
+    <li><a href="./PartieDidacticiel.html">PartieDidacticiel</a>
+  
+    <li><a href="./PartieDidacticielBuilder.html">PartieDidacticielBuilder</a>
+  
+    <li><a href="./PartieDidacticielReussieBuilder.html">PartieDidacticielReussieBuilder</a>
+  
+    <li><a href="./PartieEchecBuilder.html">PartieEchecBuilder</a>
+  
+    <li><a href="./PartieLibre.html">PartieLibre</a>
+  
+    <li><a href="./PartieLibreBuilder.html">PartieLibreBuilder</a>
+  
+    <li><a href="./PartieLibreReussieBuilder.html">PartieLibreReussieBuilder</a>
+  
+    <li><a href="./PartieMonde.html">PartieMonde</a>
+  
+    <li><a href="./PartieMondeBuilder.html">PartieMondeBuilder</a>
+  
+    <li><a href="./PartieMondeReussieBuilder.html">PartieMondeReussieBuilder</a>
+  
+    <li><a href="./PartieReussieBuilder.html">PartieReussieBuilder</a>
+  
+    <li><a href="./PartieSauvegarde.html">PartieSauvegarde</a>
+  
+    <li><a href="./PartieSauvegardeBuilder.html">PartieSauvegardeBuilder</a>
+  
+    <li><a href="./PartieSauvegardeReussieBuilder.html">PartieSauvegardeReussieBuilder</a>
+  
+    <li><a href="./RaccourciClavier.html">RaccourciClavier</a>
+  
+    <li><a href="./RaccourciComptes.html">RaccourciComptes</a>
+  
+    <li><a href="./ReglesBuilder.html">ReglesBuilder</a>
+  
+    <li><a href="./Sauvegardes.html">Sauvegardes</a>
+  
+    <li><a href="./Statistiques.html">Statistiques</a>
+  
+    <li><a href="./StatistiquesBuilder.html">StatistiquesBuilder</a>
+  
+    <li><a href="./Succes.html">Succes</a>
+  
+    <li><a href="./SuccesAccomplis.html">SuccesAccomplis</a>
+  
+    <li><a href="./SuccesBuilder.html">SuccesBuilder</a>
+  
+    <li><a href="./SuccesIndividuel.html">SuccesIndividuel</a>
+  
+    <li><a href="./TailleDifficulteBuilder.html">TailleDifficulteBuilder</a>
+  
+    <li><a href="./TakuzuBuilder.html">TakuzuBuilder</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Partie</h1>
+
+  <div id="description" class="description">
+    
+<p>La classe <a href="Partie.html">Partie</a> est une méthode abstraite mère
+de <a href="PartieMonde.html">PartieMonde</a> et <a
+href="PartieLibre.html">PartieLibre</a></p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-grille" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">grille</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-nbAides" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">nbAides</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-nbClics" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">nbClics</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-creer" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">creer</span><span
+            class="method-args">(unIdGrille, estHardcore=false)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Constucteur d&#39;une partie</p>
+          
+          
+
+          
+          <div class="method-source-code" id="creer-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Partie</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-identifier">unIdGrille</span>, <span class="ruby-identifier">estHardcore</span>=<span class="ruby-keyword">false</span>)
+                <span class="ruby-identifier">new</span>(<span class="ruby-identifier">unIdGrille</span>, <span class="ruby-identifier">estHardcore</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- creer-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- creer-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(unIdGrille, estHardcore=false)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initialise les variables d&#39;instances</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">unIdGrille</span>, <span class="ruby-identifier">estHardcore</span>=<span class="ruby-keyword">false</span>)
+        <span class="ruby-ivar">@nbHypotheses</span> = <span class="ruby-value">0</span>
+        <span class="ruby-ivar">@nbAides</span> = <span class="ruby-value">0</span>
+        <span class="ruby-ivar">@nbClics</span> = <span class="ruby-value">0</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">estHardcore</span>
+                <span class="ruby-ivar">@grille</span> = <span class="ruby-constant">GrilleHardcore</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-identifier">unIdGrille</span>)
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-ivar">@grille</span> = <span class="ruby-constant">Grille</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-identifier">unIdGrille</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-ivar">@fini</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-ivar">@listeHypotheses</span> = <span class="ruby-constant">Array</span>.[]
+        <span class="ruby-ivar">@tourne</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-ivar">@debutChronometre</span> = <span class="ruby-keyword">nil</span>
+        <span class="ruby-ivar">@mouvementsArriere</span> = []
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-arretChronometre" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">arretChronometre</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode permettant de stopper commplètement le chronomètre</p>
+          
+          
+
+          
+          <div class="method-source-code" id="arretChronometre-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">arretChronometre</span>()
+        <span class="ruby-ivar">@finChronometre</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@debutChronometre</span>
+        <span class="ruby-ivar">@tourne</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-ivar">@fini</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- arretChronometre-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- arretChronometre-method -->
+
+    
+      <div id="method-i-arreteToi" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">arreteToi</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui arrête la <code>Partie</code></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="arreteToi-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">arreteToi</span>
+        <span class="ruby-identifier">sauvegarder</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- arreteToi-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- arreteToi-method -->
+
+    
+      <div id="method-i-calculerScore" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">calculerScore</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode retournant le score de la partie</p>
+          
+          
+
+          
+          <div class="method-source-code" id="calculerScore-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">calculerScore</span>()
+        <span class="ruby-keyword">return</span> ((<span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">taille</span> <span class="ruby-operator">**</span> <span class="ruby-value">5</span>) <span class="ruby-operator">*</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">nbClicMin</span> <span class="ruby-operator">*</span> ( <span class="ruby-value">1.0</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">difficulte</span> <span class="ruby-operator">/</span> ( <span class="ruby-value">1.0</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">getTemps</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@nbClics</span> <span class="ruby-operator">*</span> <span class="ruby-value">5</span> ) ) <span class="ruby-operator">*</span> ( <span class="ruby-value">1</span> <span class="ruby-operator">/</span> ( <span class="ruby-value">1</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@nbAides</span>) ) <span class="ruby-operator">*</span> ( <span class="ruby-value">1</span> <span class="ruby-operator">/</span> ( <span class="ruby-value">1</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@nbHypotheses</span>) ) ).<span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- calculerScore-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- calculerScore-method -->
+
+    
+      <div id="method-i-chargerPreHypo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">chargerPreHypo</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode permettant de revenir au plus ancien état ou il n&#39;y avait
+aucune hypothèse</p>
+          
+          
+
+          
+          <div class="method-source-code" id="chargerPreHypo-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">chargerPreHypo</span>()
+        <span class="ruby-ivar">@grille</span> = <span class="ruby-ivar">@listeHypotheses</span>.<span class="ruby-identifier">pop</span>()
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- chargerPreHypo-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- chargerPreHypo-method -->
+
+    
+      <div id="method-i-estTerminee-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">estTerminee?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui permet de savoir si la <code>Partie</code> est
+terminée</p>
+</li><li>
+<p>Retourne <code>true</code> si la <code>Partie</code> est terminée,
+<code>false</code> sinon</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="estTerminee-3F-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">estTerminee?</span>()
+        <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">estTerminee?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- estTerminee-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- estTerminee-3F-method -->
+
+    
+      <div id="method-i-faireHypothese" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">faireHypothese</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode permettant d&#39;entrer en mode hypothèse</p>
+          
+          
+
+          
+          <div class="method-source-code" id="faireHypothese-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">faireHypothese</span>()
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">difficulte</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">8</span>
+                <span class="ruby-ivar">@listeHypotheses</span>.<span class="ruby-identifier">push</span>(<span class="ruby-constant">Grille</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-identifier">grille</span>.<span class="ruby-identifier">idGrille</span>, <span class="ruby-identifier">grille</span>.<span class="ruby-identifier">matrice</span>)) <span class="ruby-comment"># on crée une copie de la Grille (un Clone ne copie pas les attributs en profondeur)</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-ivar">@listeHypotheses</span>.<span class="ruby-identifier">push</span>(<span class="ruby-constant">GrilleHardcore</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-identifier">grille</span>.<span class="ruby-identifier">idGrille</span>, <span class="ruby-identifier">grille</span>.<span class="ruby-identifier">matrice</span>)) <span class="ruby-comment"># on crée une copie de la Grille (un Clone ne copie pas les attributs en profondeur)</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-ivar">@nbHypotheses</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- faireHypothese-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- faireHypothese-method -->
+
+    
+      <div id="method-i-gagner" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gagner</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui “termine” la <code>Partie</code></p>
+</li><li>
+<p>Retourne <code>self</code></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="gagner-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 214</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gagner</span>
+        <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">setGrilleTermine</span>(<span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">pseudo</span>, <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">idGrille</span>, <span class="ruby-identifier">getTemps</span>, <span class="ruby-ivar">@nbClics</span>, <span class="ruby-value">0</span>, <span class="ruby-ivar">@nbHypotheses</span>, <span class="ruby-ivar">@nbAides</span>, <span class="ruby-identifier">calculerScore</span>())
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- gagner-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- gagner-method -->
+
+    
+      <div id="method-i-getTemps" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getTemps</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode permettant de renvoyer le temps actuel de la partie en seconde</p>
+          
+          
+
+          
+          <div class="method-source-code" id="getTemps-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getTemps</span>()
+        <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@tourne</span>)
+                <span class="ruby-identifier">tempsActuel</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@debutChronometre</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">tempsActuel</span>.<span class="ruby-identifier">to_i</span>
+        <span class="ruby-keyword">end</span>
+        
+        <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@fini</span>)
+                <span class="ruby-keyword">return</span> <span class="ruby-ivar">@finChronometre</span>.<span class="ruby-identifier">to_i</span>
+        <span class="ruby-keyword">end</span>
+        
+        <span class="ruby-identifier">tempsActuel</span> = <span class="ruby-ivar">@pause</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@debutChronometre</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">tempsActuel</span>.<span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getTemps-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getTemps-method -->
+
+    
+      <div id="method-i-getTempsString" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getTempsString</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode permettant de renvoyer le temps actuel de la partie en chaine de
+caractère pour l&#39;affichage</p>
+          
+          
+
+          
+          <div class="method-source-code" id="getTempsString-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getTempsString</span>()
+        <span class="ruby-identifier">unTemps</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">getTemps</span>
+        <span class="ruby-identifier">minute</span> = <span class="ruby-identifier">sprintf</span>(<span class="ruby-string">&quot;%02i&quot;</span>, (<span class="ruby-identifier">unTemps</span> <span class="ruby-operator">%</span> <span class="ruby-value">3600</span>) <span class="ruby-operator">/</span> <span class="ruby-value">60</span>)
+        <span class="ruby-identifier">seconde</span> = <span class="ruby-identifier">sprintf</span>(<span class="ruby-string">&quot;%02i&quot;</span>, <span class="ruby-identifier">unTemps</span> <span class="ruby-operator">%</span> <span class="ruby-value">60</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">difficulte</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">8</span>     <span class="ruby-comment"># Grille non-hardcore</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;#{minute}:#{seconde}&quot;</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">unTempsMax</span> = <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">tempsMax</span>
+                <span class="ruby-identifier">minuteMax</span> = <span class="ruby-identifier">sprintf</span>(<span class="ruby-string">&quot;%02i&quot;</span>, (<span class="ruby-identifier">unTempsMax</span> <span class="ruby-operator">%</span> <span class="ruby-value">3600</span>) <span class="ruby-operator">/</span> <span class="ruby-value">60</span>)
+                <span class="ruby-identifier">secondeMax</span> = <span class="ruby-identifier">sprintf</span>(<span class="ruby-string">&quot;%02i&quot;</span>, <span class="ruby-identifier">unTempsMax</span> <span class="ruby-operator">%</span> <span class="ruby-value">60</span>)
+                <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;#{minute}:#{seconde}/#{minuteMax}:#{secondeMax}&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getTempsString-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getTempsString-method -->
+
+    
+      <div id="method-i-jouer" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">jouer</span><span
+            class="method-args">(unX, unY)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui permet de jouer usr la <code>Grille</code></p>
+</li></ul>
+
+<h5 id="method-i-jouer-label-Attributs+%3A">Attributs :<span><a href="#method-i-jouer-label-Attributs+%3A">&para;</a> <a href="#documentation">&uarr;</a></span></h5>
+
+<pre>- unX : un entier représentant l&#39;abscisse de la Case
+- unY : un entier représentant l&#39;ordonnée de la Case</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="jouer-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">jouer</span>(<span class="ruby-identifier">unX</span>, <span class="ruby-identifier">unY</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">matriceDepart</span>[<span class="ruby-identifier">unX</span>][<span class="ruby-identifier">unY</span>].<span class="ruby-identifier">estVide?</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">matrice</span>[<span class="ruby-identifier">unX</span>][<span class="ruby-identifier">unY</span>].<span class="ruby-identifier">estVide?</span>
+                        <span class="ruby-ivar">@mouvementsArriere</span>.<span class="ruby-identifier">push</span>(<span class="ruby-node">&quot;@grille.jouer(#{unX},#{unY}, \&quot;v\&quot;)&quot;</span>)
+                        <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">jouer</span>(<span class="ruby-identifier">unX</span>, <span class="ruby-identifier">unY</span>, <span class="ruby-string">&quot;r&quot;</span>)
+                <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">matrice</span>[<span class="ruby-identifier">unX</span>][<span class="ruby-identifier">unY</span>].<span class="ruby-identifier">estRouge?</span>
+                        <span class="ruby-ivar">@mouvementsArriere</span>.<span class="ruby-identifier">push</span>(<span class="ruby-node">&quot;@grille.jouer(#{unX},#{unY}, \&quot;r\&quot;)&quot;</span>)
+                        <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">jouer</span>(<span class="ruby-identifier">unX</span>, <span class="ruby-identifier">unY</span>, <span class="ruby-string">&quot;b&quot;</span>)
+                <span class="ruby-keyword">else</span> <span class="ruby-comment">#elsif @grille.matrice[unX][unY].estBleu?</span>
+                        <span class="ruby-ivar">@mouvementsArriere</span>.<span class="ruby-identifier">push</span>(<span class="ruby-node">&quot;@grille.jouer(#{unX},#{unY}, \&quot;b\&quot;)&quot;</span>)
+                        <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">jouer</span>(<span class="ruby-identifier">unX</span>, <span class="ruby-identifier">unY</span>, <span class="ruby-string">&quot;v&quot;</span>)
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-ivar">@nbClics</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- jouer-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- jouer-method -->
+
+    
+      <div id="method-i-lanceToi" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lanceToi</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode permettant de lancer le chronomètre</p>
+          
+          
+
+          
+          <div class="method-source-code" id="lanceToi-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">lanceToi</span>()
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@debutChronometre</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+                <span class="ruby-ivar">@debutChronometre</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+                <span class="ruby-ivar">@tourne</span> = <span class="ruby-keyword">true</span>       
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">repriseChronometre</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- lanceToi-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- lanceToi-method -->
+
+    
+      <div id="method-i-mettreEnPauseChronometre" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mettreEnPauseChronometre</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode permettant de mettre en pause le chronomètre</p>
+          
+          
+
+          
+          <div class="method-source-code" id="mettreEnPauseChronometre-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mettreEnPauseChronometre</span>()
+        <span class="ruby-ivar">@pause</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+        <span class="ruby-ivar">@tourne</span> = <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mettreEnPauseChronometre-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mettreEnPauseChronometre-method -->
+
+    
+      <div id="method-i-nbClicsString" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">nbClicsString</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui renvoie un String contenant le nombre de clics
+de la <code>Partie</code></p>
+</li><li>
+<p>Retourne un String décrivant le nombre de clics</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="nbClicsString-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 221</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">nbClicsString</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">difficulte</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">8</span>     <span class="ruby-comment"># Grille non-hardcore</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-ivar">@nbClics</span>.<span class="ruby-identifier">to_s</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-ivar">@nbClics</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;/&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">nbClicsMax</span>.<span class="ruby-identifier">to_s</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- nbClicsString-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- nbClicsString-method -->
+
+    
+      <div id="method-i-obtenirAide" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">obtenirAide</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode appelant la méthode de même nom dans grille afin d&#39;obtenir une
+aide</p>
+          
+          
+
+          
+          <div class="method-source-code" id="obtenirAide-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">obtenirAide</span>()
+        <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">obtenirAide</span>()
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- obtenirAide-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- obtenirAide-method -->
+
+    
+      <div id="method-i-obtenirRegles" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">obtenirRegles</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode retournant la chaîne de caracère correspondant aux règles du jeu de
+takuzu</p>
+          
+          
+
+          
+          <div class="method-source-code" id="obtenirRegles-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">obtenirRegles</span>()
+        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;Règles\n
+        Il ne peut y avoir trois colonnes adjacentes de la même couleur.\n
+        Les lignes et les colonnes sont constitués du même nombre de cellules rouges que de cellules bleues\n
+        Il ne peut y avoir deux lignes ou deux colonnes identiques\n&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- obtenirRegles-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- obtenirRegles-method -->
+
+    
+      <div id="method-i-peutRetourArriere-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">peutRetourArriere?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui indique si on puet jouer en arrière</p>
+</li><li>
+<p>Retourne <code>true</code> si on peut jouer en arrière, <code>false</code>
+sinon</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="peutRetourArriere-3F-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 238</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">peutRetourArriere?</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@mouvementsArriere</span>.<span class="ruby-identifier">empty?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- peutRetourArriere-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- peutRetourArriere-3F-method -->
+
+    
+      <div id="method-i-remiseAZero" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remiseAZero</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui remet à zéro la <code>PartieMonde</code></p>
+</li><li>
+<p>Retourne <code>self</code></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="remiseAZero-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 253</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remiseAZero</span>
+        <span class="ruby-ivar">@nbHypotheses</span> = <span class="ruby-value">0</span>
+        <span class="ruby-ivar">@nbAides</span> = <span class="ruby-value">0</span>
+        <span class="ruby-ivar">@nbClics</span> = <span class="ruby-value">0</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">difficulte</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">8</span>
+                <span class="ruby-ivar">@grille</span> = <span class="ruby-constant">GrilleHardcore</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">idGrille</span>)
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-ivar">@grille</span> = <span class="ruby-constant">Grille</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">idGrille</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-ivar">@tempsSauvegarde</span> = <span class="ruby-value">0</span>
+        <span class="ruby-ivar">@fini</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-ivar">@listeHypotheses</span> = <span class="ruby-constant">Array</span>.[]
+        <span class="ruby-ivar">@tourne</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-ivar">@debutChronometre</span> = <span class="ruby-keyword">nil</span>
+        <span class="ruby-ivar">@mouvementsArriere</span> = []
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- remiseAZero-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- remiseAZero-method -->
+
+    
+      <div id="method-i-repriseChronometre" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">repriseChronometre</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Méthode permettant la reprise du chronomètre après une pause</p>
+          
+          
+
+          
+          <div class="method-source-code" id="repriseChronometre-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">repriseChronometre</span>()
+        <span class="ruby-ivar">@debutChronometre</span> <span class="ruby-operator">+=</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@pause</span>
+        <span class="ruby-ivar">@tourne</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- repriseChronometre-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- repriseChronometre-method -->
+
+    
+      <div id="method-i-retourArriere" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">retourArriere</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui joue un coup en arrière</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="retourArriere-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 230</span>
+<span class="ruby-keyword">def</span>    <span class="ruby-identifier">retourArriere</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">peutRetourArriere?</span>
+                <span class="ruby-identifier">eval</span>(<span class="ruby-ivar">@mouvementsArriere</span>.<span class="ruby-identifier">pop</span>)
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- retourArriere-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- retourArriere-method -->
+
+    
+      <div id="method-i-sauvegarder" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sauvegarder</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="sauvegarder-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 242</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sauvegarder</span>
+        <span class="ruby-comment">#self.mettreEnPauseChronometre                # Normalement, le chrono doit déjà être en pause quand cette méthode est appelée</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">aUneSauvegarde?</span>
+                <span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">supprimeSauvegarde</span>()   <span class="ruby-comment"># Une seule sauvegarde dans la BDD</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">setSauvegarde</span>(<span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">pseudo</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">getTemps</span>, <span class="ruby-ivar">@nbClics</span>, <span class="ruby-ivar">@nbHypotheses</span>, <span class="ruby-ivar">@nbAides</span>, <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">idGrille</span>, <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">matrice</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- sauvegarder-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- sauvegarder-method -->
+
+    
+      <div id="method-i-verifierNbClicsMax-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">verifierNbClicsMax?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui permet de savoir si la <code>Partie</code> peut
+continuer en fonction de son nombre de clics</p>
+</li><li>
+<p>Retourne <code>true</code> si elle peut continuer, <code>false</code> sinon</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="verifierNbClicsMax-3F-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 204</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">verifierNbClicsMax?</span>
+        <span class="ruby-identifier">unResultat</span> = <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">difficulte</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">8</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@nbClics</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">nbClicsMax</span>
+                <span class="ruby-identifier">unResultat</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">unResultat</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- verifierNbClicsMax-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- verifierNbClicsMax-3F-method -->
+
+    
+      <div id="method-i-verifierTempsMax-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">verifierTempsMax?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui permet de savoir si la <code>Partie</code> peut
+continuer en fonction de son temps</p>
+</li><li>
+<p>Retourne <code>true</code> si elle peut continuer, <code>false</code> sinon</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="verifierTempsMax-3F-source">
+            <pre><span class="ruby-comment"># File Partie.rb, line 194</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">verifierTempsMax?</span>
+        <span class="ruby-identifier">unResultat</span> = <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">difficulte</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">8</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">getTemps</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">tempsMax</span>
+                <span class="ruby-identifier">unResultat</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">unResultat</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- verifierTempsMax-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- verifierTempsMax-3F-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

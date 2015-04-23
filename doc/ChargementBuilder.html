@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class ChargementBuilder - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>Interface/ChargementBuilder.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="TakuzuBuilder.html">TakuzuBuilder</a>
+  
+</nav>
+
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-c-lancer">::lancer</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./BDD/takuzu_bdd_sql.html">takuzu_bdd.sql</a>
+  
+    <li class="file"><a href="./Interface/AProposBuilder_glade.html">AProposBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChargementBuilder_glade.html">ChargementBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChargementSauvegardeBuilder_glade.html">ChargementSauvegardeBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChoixGrilleBuilder_glade.html">ChoixGrilleBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChoixGrilleSuiteBuilder_glade.html">ChoixGrilleSuiteBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChoixMondeBuilder_glade.html">ChoixMondeBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ClassementBuilder_glade.html">ClassementBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ConnexionBuilder_glade.html">ConnexionBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/DefiBuilder_glade.html">DefiBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/InscriptionBuilder_glade.html">InscriptionBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ListeDefiBuilder_glade.html">ListeDefiBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/MenuPrincipalBuilder_glade.html">MenuPrincipalBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/OptionsBuilder_glade.html">OptionsBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/OubliMotDePasseBuilder_glade.html">OubliMotDePasseBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/Partie10Builder_glade.html">Partie10Builder.glade</a>
+  
+    <li class="file"><a href="./Interface/Partie12Builder_glade.html">Partie12Builder.glade</a>
+  
+    <li class="file"><a href="./Interface/Partie6Builder_glade.html">Partie6Builder.glade</a>
+  
+    <li class="file"><a href="./Interface/Partie8Builder_glade.html">Partie8Builder.glade</a>
+  
+    <li class="file"><a href="./Interface/PartieEchecBuilder_glade.html">PartieEchecBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/PartieReussieBuilder_glade.html">PartieReussieBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ReglesBuilder_glade.html">ReglesBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/StatistiquesBuilder_glade.html">StatistiquesBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/SuccesBuilder_glade.html">SuccesBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/TailleDifficulteBuilder_glade.html">TailleDifficulteBuilder.glade</a>
+  
+    <li class="file"><a href="./README_md.html">README</a>
+  
+    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./AProposBuilder.html">AProposBuilder</a>
+  
+    <li><a href="./Aventure.html">Aventure</a>
+  
+    <li><a href="./BaseDeDonnees.html">BaseDeDonnees</a>
+  
+    <li><a href="./BaseDeDonnees/ActiveRecord.html">BaseDeDonnees::ActiveRecord</a>
+  
+    <li><a href="./Case.html">Case</a>
+  
+    <li><a href="./Chargement.html">Chargement</a>
+  
+    <li><a href="./ChargementBuilder.html">ChargementBuilder</a>
+  
+    <li><a href="./ChargementSauvegardeBuilder.html">ChargementSauvegardeBuilder</a>
+  
+    <li><a href="./ChoixGrilleBuilder.html">ChoixGrilleBuilder</a>
+  
+    <li><a href="./ChoixGrilleSuiteBuilder.html">ChoixGrilleSuiteBuilder</a>
+  
+    <li><a href="./ChoixMondeBuilder.html">ChoixMondeBuilder</a>
+  
+    <li><a href="./ClassementBuilder.html">ClassementBuilder</a>
+  
+    <li><a href="./Compte.html">Compte</a>
+  
+    <li><a href="./Comptes.html">Comptes</a>
+  
+    <li><a href="./ConnexionBuilder.html">ConnexionBuilder</a>
+  
+    <li><a href="./Defi.html">Defi</a>
+  
+    <li><a href="./DefiBuilder.html">DefiBuilder</a>
+  
+    <li><a href="./Defis.html">Defis</a>
+  
+    <li><a href="./Didacticiel.html">Didacticiel</a>
+  
+    <li><a href="./Grille.html">Grille</a>
+  
+    <li><a href="./GrilleFinis.html">GrilleFinis</a>
+  
+    <li><a href="./GrilleHardcore.html">GrilleHardcore</a>
+  
+    <li><a href="./Grilles.html">Grilles</a>
+  
+    <li><a href="./InscriptionBuilder.html">InscriptionBuilder</a>
+  
+    <li><a href="./InterfaceMereBuilder.html">InterfaceMereBuilder</a>
+  
+    <li><a href="./Jeu.html">Jeu</a>
+  
+    <li><a href="./ListeDefiBuilder.html">ListeDefiBuilder</a>
+  
+    <li><a href="./MenuPrincipalBuilder.html">MenuPrincipalBuilder</a>
+  
+    <li><a href="./Monde.html">Monde</a>
+  
+    <li><a href="./Mondes.html">Mondes</a>
+  
+    <li><a href="./Options.html">Options</a>
+  
+    <li><a href="./OptionsBuilder.html">OptionsBuilder</a>
+  
+    <li><a href="./OubliMotDePasseBuilder.html">OubliMotDePasseBuilder</a>
+  
+    <li><a href="./Partie.html">Partie</a>
+  
+    <li><a href="./PartieBuilder.html">PartieBuilder</a>
+  
+    <li><a href="./PartieDefi.html">PartieDefi</a>
+  
+    <li><a href="./PartieDefiBuilder.html">PartieDefiBuilder</a>
+  
+    <li><a href="./PartieDefiReussiBuilder.html">PartieDefiReussiBuilder</a>
+  
+    <li><a href="./PartieDefiReussieBuilder.html">PartieDefiReussieBuilder</a>
+  
+    <li><a href="./PartieDidacticiel.html">PartieDidacticiel</a>
+  
+    <li><a href="./PartieDidacticielBuilder.html">PartieDidacticielBuilder</a>
+  
+    <li><a href="./PartieDidacticielReussieBuilder.html">PartieDidacticielReussieBuilder</a>
+  
+    <li><a href="./PartieEchecBuilder.html">PartieEchecBuilder</a>
+  
+    <li><a href="./PartieLibre.html">PartieLibre</a>
+  
+    <li><a href="./PartieLibreBuilder.html">PartieLibreBuilder</a>
+  
+    <li><a href="./PartieLibreReussieBuilder.html">PartieLibreReussieBuilder</a>
+  
+    <li><a href="./PartieMonde.html">PartieMonde</a>
+  
+    <li><a href="./PartieMondeBuilder.html">PartieMondeBuilder</a>
+  
+    <li><a href="./PartieMondeReussieBuilder.html">PartieMondeReussieBuilder</a>
+  
+    <li><a href="./PartieReussieBuilder.html">PartieReussieBuilder</a>
+  
+    <li><a href="./PartieSauvegarde.html">PartieSauvegarde</a>
+  
+    <li><a href="./PartieSauvegardeBuilder.html">PartieSauvegardeBuilder</a>
+  
+    <li><a href="./PartieSauvegardeReussieBuilder.html">PartieSauvegardeReussieBuilder</a>
+  
+    <li><a href="./RaccourciClavier.html">RaccourciClavier</a>
+  
+    <li><a href="./RaccourciComptes.html">RaccourciComptes</a>
+  
+    <li><a href="./ReglesBuilder.html">ReglesBuilder</a>
+  
+    <li><a href="./Sauvegardes.html">Sauvegardes</a>
+  
+    <li><a href="./Statistiques.html">Statistiques</a>
+  
+    <li><a href="./StatistiquesBuilder.html">StatistiquesBuilder</a>
+  
+    <li><a href="./Succes.html">Succes</a>
+  
+    <li><a href="./SuccesAccomplis.html">SuccesAccomplis</a>
+  
+    <li><a href="./SuccesBuilder.html">SuccesBuilder</a>
+  
+    <li><a href="./SuccesIndividuel.html">SuccesIndividuel</a>
+  
+    <li><a href="./TailleDifficulteBuilder.html">TailleDifficulteBuilder</a>
+  
+    <li><a href="./TakuzuBuilder.html">TakuzuBuilder</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class ChargementBuilder</h1>
+
+  <div id="description" class="description">
+    
+<h2 id="label-Classe+ChargementBuilder+%3A">Classe <code>ChargementBuilder</code> :<span><a href="#label-Classe+ChargementBuilder+%3A">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<pre>- est un +TakuzuBuilder+
+- affiche l&#39;élément et le pourcentage du +Chargement+</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-lancer" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lancer</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode de classe qui lance l&#39;interface graphique</p>
+</li><li>
+<p>Est appelée depuis <code>TakuzuLanceur.rb</code></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="lancer-source">
+            <pre><span class="ruby-comment"># File Interface/ChargementBuilder.rb, line 35</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-constant">ChargementBuilder</span>.<span class="ruby-identifier">lancer</span>
+            <span class="ruby-constant">Gtk</span>.<span class="ruby-identifier">init</span>
+            <span class="ruby-constant">ChargementBuilder</span>.<span class="ruby-identifier">new</span>()
+            <span class="ruby-constant">Gtk</span>.<span class="ruby-identifier">main</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- lancer-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- lancer-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

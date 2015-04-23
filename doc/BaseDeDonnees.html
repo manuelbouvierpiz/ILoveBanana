@@ -1,0 +1,3385 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class BaseDeDonnees - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>BaseDeDonnees.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-c-addGrille">::addGrille</a>
+    
+    <li ><a href="#method-c-dernierNiveauFini">::dernierNiveauFini</a>
+    
+    <li ><a href="#method-c-estBonsIdentifiants-3F">::estBonsIdentifiants?</a>
+    
+    <li ><a href="#method-c-estFiniMonde-3F">::estFiniMonde?</a>
+    
+    <li ><a href="#method-c-estGrilleResolue-3F">::estGrilleResolue?</a>
+    
+    <li ><a href="#method-c-estIdentifiantDisponible-3F">::estIdentifiantDisponible?</a>
+    
+    <li ><a href="#method-c-estMailDisponible-3F">::estMailDisponible?</a>
+    
+    <li ><a href="#method-c-estSauvegarde-3F">::estSauvegarde?</a>
+    
+    <li ><a href="#method-c-estSuccesDebloque-3F">::estSuccesDebloque?</a>
+    
+    <li ><a href="#method-c-getClassement">::getClassement</a>
+    
+    <li ><a href="#method-c-getCouleurDeux">::getCouleurDeux</a>
+    
+    <li ><a href="#method-c-getCouleurUn">::getCouleurUn</a>
+    
+    <li ><a href="#method-c-getDefiScore">::getDefiScore</a>
+    
+    <li ><a href="#method-c-getDefis">::getDefis</a>
+    
+    <li ><a href="#method-c-getGrilleDifficulte">::getGrilleDifficulte</a>
+    
+    <li ><a href="#method-c-getGrilleEtoileDeuxScore">::getGrilleEtoileDeuxScore</a>
+    
+    <li ><a href="#method-c-getGrilleEtoileTroisScore">::getGrilleEtoileTroisScore</a>
+    
+    <li ><a href="#method-c-getGrilleEtoileUnScore">::getGrilleEtoileUnScore</a>
+    
+    <li ><a href="#method-c-getGrilleIdAleatoire">::getGrilleIdAleatoire</a>
+    
+    <li ><a href="#method-c-getGrilleMatrice">::getGrilleMatrice</a>
+    
+    <li ><a href="#method-c-getGrilleMatriceResolue">::getGrilleMatriceResolue</a>
+    
+    <li ><a href="#method-c-getGrilleNbClicsMax">::getGrilleNbClicsMax</a>
+    
+    <li ><a href="#method-c-getGrilleTaille">::getGrilleTaille</a>
+    
+    <li ><a href="#method-c-getGrilleTempsMax">::getGrilleTempsMax</a>
+    
+    <li ><a href="#method-c-getMail">::getMail</a>
+    
+    <li ><a href="#method-c-getMondeGrilleId">::getMondeGrilleId</a>
+    
+    <li ><a href="#method-c-getMondeNom">::getMondeNom</a>
+    
+    <li ><a href="#method-c-getNbClics">::getNbClics</a>
+    
+    <li ><a href="#method-c-getNbDefiGagne">::getNbDefiGagne</a>
+    
+    <li ><a href="#method-c-getNbGrilleDifficulteSansAideFini">::getNbGrilleDifficulteSansAideFini</a>
+    
+    <li ><a href="#method-c-getNbGrilleFini">::getNbGrilleFini</a>
+    
+    <li ><a href="#method-c-getNbGrilleTailleDouzeMoinsSoixante">::getNbGrilleTailleDouzeMoinsSoixante</a>
+    
+    <li ><a href="#method-c-getNbGrilleTailleFini">::getNbGrilleTailleFini</a>
+    
+    <li ><a href="#method-c-getNom">::getNom</a>
+    
+    <li ><a href="#method-c-getNomSucces">::getNomSucces</a>
+    
+    <li ><a href="#method-c-getNumeroNiveau">::getNumeroNiveau</a>
+    
+    <li ><a href="#method-c-getPlusGrandNombreClic">::getPlusGrandNombreClic</a>
+    
+    <li ><a href="#method-c-getPlusPetitNombreClic">::getPlusPetitNombreClic</a>
+    
+    <li ><a href="#method-c-getPrenom">::getPrenom</a>
+    
+    <li ><a href="#method-c-getRaccourci">::getRaccourci</a>
+    
+    <li ><a href="#method-c-getSauvegardeGrilleSauvegardee">::getSauvegardeGrilleSauvegardee</a>
+    
+    <li ><a href="#method-c-getSauvegardeIdGrille">::getSauvegardeIdGrille</a>
+    
+    <li ><a href="#method-c-getSauvegardeNbAides">::getSauvegardeNbAides</a>
+    
+    <li ><a href="#method-c-getSauvegardeNbClics">::getSauvegardeNbClics</a>
+    
+    <li ><a href="#method-c-getSauvegardeNbHypotheses">::getSauvegardeNbHypotheses</a>
+    
+    <li ><a href="#method-c-getSauvegardeTemps">::getSauvegardeTemps</a>
+    
+    <li ><a href="#method-c-getScore">::getScore</a>
+    
+    <li ><a href="#method-c-getScoreDifficulte">::getScoreDifficulte</a>
+    
+    <li ><a href="#method-c-getScoreTotal">::getScoreTotal</a>
+    
+    <li ><a href="#method-c-getSucces">::getSucces</a>
+    
+    <li ><a href="#method-c-getSuccesCondition">::getSuccesCondition</a>
+    
+    <li ><a href="#method-c-getSuccesDescription">::getSuccesDescription</a>
+    
+    <li ><a href="#method-c-getTemps">::getTemps</a>
+    
+    <li ><a href="#method-c-getTempsTotal">::getTempsTotal</a>
+    
+    <li ><a href="#method-c-getTotalNbEtoile">::getTotalNbEtoile</a>
+    
+    <li ><a href="#method-c-getVolumeBruitage">::getVolumeBruitage</a>
+    
+    <li ><a href="#method-c-getVolumeMusique">::getVolumeMusique</a>
+    
+    <li ><a href="#method-c-setCompte">::setCompte</a>
+    
+    <li ><a href="#method-c-setCouleurDeux">::setCouleurDeux</a>
+    
+    <li ><a href="#method-c-setCouleurUn">::setCouleurUn</a>
+    
+    <li ><a href="#method-c-setDefi">::setDefi</a>
+    
+    <li ><a href="#method-c-setGrilleTermine">::setGrilleTermine</a>
+    
+    <li ><a href="#method-c-setMotDePasse">::setMotDePasse</a>
+    
+    <li ><a href="#method-c-setRaccourci">::setRaccourci</a>
+    
+    <li ><a href="#method-c-setSauvegarde">::setSauvegarde</a>
+    
+    <li ><a href="#method-c-setSuccesDebloque">::setSuccesDebloque</a>
+    
+    <li ><a href="#method-c-setVainqueurDefi">::setVainqueurDefi</a>
+    
+    <li ><a href="#method-c-setVolumeBruitage">::setVolumeBruitage</a>
+    
+    <li ><a href="#method-c-setVolumeMusique">::setVolumeMusique</a>
+    
+    <li ><a href="#method-c-stringToGrille">::stringToGrille</a>
+    
+    <li ><a href="#method-c-supprimeDefi">::supprimeDefi</a>
+    
+    <li ><a href="#method-c-supprimeSauvegarde">::supprimeSauvegarde</a>
+    
+    <li ><a href="#method-c-viderFinir">::viderFinir</a>
+    
+    <li ><a href="#method-c-viderReussir">::viderReussir</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./BDD/takuzu_bdd_sql.html">takuzu_bdd.sql</a>
+  
+    <li class="file"><a href="./Interface/AProposBuilder_glade.html">AProposBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChargementBuilder_glade.html">ChargementBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChargementSauvegardeBuilder_glade.html">ChargementSauvegardeBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChoixGrilleBuilder_glade.html">ChoixGrilleBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChoixGrilleSuiteBuilder_glade.html">ChoixGrilleSuiteBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ChoixMondeBuilder_glade.html">ChoixMondeBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ClassementBuilder_glade.html">ClassementBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ConnexionBuilder_glade.html">ConnexionBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/DefiBuilder_glade.html">DefiBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/InscriptionBuilder_glade.html">InscriptionBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ListeDefiBuilder_glade.html">ListeDefiBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/MenuPrincipalBuilder_glade.html">MenuPrincipalBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/OptionsBuilder_glade.html">OptionsBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/OubliMotDePasseBuilder_glade.html">OubliMotDePasseBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/Partie10Builder_glade.html">Partie10Builder.glade</a>
+  
+    <li class="file"><a href="./Interface/Partie12Builder_glade.html">Partie12Builder.glade</a>
+  
+    <li class="file"><a href="./Interface/Partie6Builder_glade.html">Partie6Builder.glade</a>
+  
+    <li class="file"><a href="./Interface/Partie8Builder_glade.html">Partie8Builder.glade</a>
+  
+    <li class="file"><a href="./Interface/PartieEchecBuilder_glade.html">PartieEchecBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/PartieReussieBuilder_glade.html">PartieReussieBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/ReglesBuilder_glade.html">ReglesBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/StatistiquesBuilder_glade.html">StatistiquesBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/SuccesBuilder_glade.html">SuccesBuilder.glade</a>
+  
+    <li class="file"><a href="./Interface/TailleDifficulteBuilder_glade.html">TailleDifficulteBuilder.glade</a>
+  
+    <li class="file"><a href="./README_md.html">README</a>
+  
+    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./AProposBuilder.html">AProposBuilder</a>
+  
+    <li><a href="./Aventure.html">Aventure</a>
+  
+    <li><a href="./BaseDeDonnees.html">BaseDeDonnees</a>
+  
+    <li><a href="./BaseDeDonnees/ActiveRecord.html">BaseDeDonnees::ActiveRecord</a>
+  
+    <li><a href="./Case.html">Case</a>
+  
+    <li><a href="./Chargement.html">Chargement</a>
+  
+    <li><a href="./ChargementBuilder.html">ChargementBuilder</a>
+  
+    <li><a href="./ChargementSauvegardeBuilder.html">ChargementSauvegardeBuilder</a>
+  
+    <li><a href="./ChoixGrilleBuilder.html">ChoixGrilleBuilder</a>
+  
+    <li><a href="./ChoixGrilleSuiteBuilder.html">ChoixGrilleSuiteBuilder</a>
+  
+    <li><a href="./ChoixMondeBuilder.html">ChoixMondeBuilder</a>
+  
+    <li><a href="./ClassementBuilder.html">ClassementBuilder</a>
+  
+    <li><a href="./Compte.html">Compte</a>
+  
+    <li><a href="./Comptes.html">Comptes</a>
+  
+    <li><a href="./ConnexionBuilder.html">ConnexionBuilder</a>
+  
+    <li><a href="./Defi.html">Defi</a>
+  
+    <li><a href="./DefiBuilder.html">DefiBuilder</a>
+  
+    <li><a href="./Defis.html">Defis</a>
+  
+    <li><a href="./Didacticiel.html">Didacticiel</a>
+  
+    <li><a href="./Grille.html">Grille</a>
+  
+    <li><a href="./GrilleFinis.html">GrilleFinis</a>
+  
+    <li><a href="./GrilleHardcore.html">GrilleHardcore</a>
+  
+    <li><a href="./Grilles.html">Grilles</a>
+  
+    <li><a href="./InscriptionBuilder.html">InscriptionBuilder</a>
+  
+    <li><a href="./InterfaceMereBuilder.html">InterfaceMereBuilder</a>
+  
+    <li><a href="./Jeu.html">Jeu</a>
+  
+    <li><a href="./ListeDefiBuilder.html">ListeDefiBuilder</a>
+  
+    <li><a href="./MenuPrincipalBuilder.html">MenuPrincipalBuilder</a>
+  
+    <li><a href="./Monde.html">Monde</a>
+  
+    <li><a href="./Mondes.html">Mondes</a>
+  
+    <li><a href="./Options.html">Options</a>
+  
+    <li><a href="./OptionsBuilder.html">OptionsBuilder</a>
+  
+    <li><a href="./OubliMotDePasseBuilder.html">OubliMotDePasseBuilder</a>
+  
+    <li><a href="./Partie.html">Partie</a>
+  
+    <li><a href="./PartieBuilder.html">PartieBuilder</a>
+  
+    <li><a href="./PartieDefi.html">PartieDefi</a>
+  
+    <li><a href="./PartieDefiBuilder.html">PartieDefiBuilder</a>
+  
+    <li><a href="./PartieDefiReussiBuilder.html">PartieDefiReussiBuilder</a>
+  
+    <li><a href="./PartieDefiReussieBuilder.html">PartieDefiReussieBuilder</a>
+  
+    <li><a href="./PartieDidacticiel.html">PartieDidacticiel</a>
+  
+    <li><a href="./PartieDidacticielBuilder.html">PartieDidacticielBuilder</a>
+  
+    <li><a href="./PartieDidacticielReussieBuilder.html">PartieDidacticielReussieBuilder</a>
+  
+    <li><a href="./PartieEchecBuilder.html">PartieEchecBuilder</a>
+  
+    <li><a href="./PartieLibre.html">PartieLibre</a>
+  
+    <li><a href="./PartieLibreBuilder.html">PartieLibreBuilder</a>
+  
+    <li><a href="./PartieLibreReussieBuilder.html">PartieLibreReussieBuilder</a>
+  
+    <li><a href="./PartieMonde.html">PartieMonde</a>
+  
+    <li><a href="./PartieMondeBuilder.html">PartieMondeBuilder</a>
+  
+    <li><a href="./PartieMondeReussieBuilder.html">PartieMondeReussieBuilder</a>
+  
+    <li><a href="./PartieReussieBuilder.html">PartieReussieBuilder</a>
+  
+    <li><a href="./PartieSauvegarde.html">PartieSauvegarde</a>
+  
+    <li><a href="./PartieSauvegardeBuilder.html">PartieSauvegardeBuilder</a>
+  
+    <li><a href="./PartieSauvegardeReussieBuilder.html">PartieSauvegardeReussieBuilder</a>
+  
+    <li><a href="./RaccourciClavier.html">RaccourciClavier</a>
+  
+    <li><a href="./RaccourciComptes.html">RaccourciComptes</a>
+  
+    <li><a href="./ReglesBuilder.html">ReglesBuilder</a>
+  
+    <li><a href="./Sauvegardes.html">Sauvegardes</a>
+  
+    <li><a href="./Statistiques.html">Statistiques</a>
+  
+    <li><a href="./StatistiquesBuilder.html">StatistiquesBuilder</a>
+  
+    <li><a href="./Succes.html">Succes</a>
+  
+    <li><a href="./SuccesAccomplis.html">SuccesAccomplis</a>
+  
+    <li><a href="./SuccesBuilder.html">SuccesBuilder</a>
+  
+    <li><a href="./SuccesIndividuel.html">SuccesIndividuel</a>
+  
+    <li><a href="./TailleDifficulteBuilder.html">TailleDifficulteBuilder</a>
+  
+    <li><a href="./TakuzuBuilder.html">TakuzuBuilder</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class BaseDeDonnees</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-addGrille" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">addGrille</span><span
+            class="method-args">(cheminFic)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Insertion de grilles dans la base de données</p>
+<ul><li>
+<p>cheminFic le chemin du fichier contenant les grilles</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="addGrille-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 329</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">addGrille</span>(<span class="ruby-identifier">cheminFic</span>)
+    <span class="ruby-identifier">fichier</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">cheminFic</span>, <span class="ruby-string">&quot;r&quot;</span>)
+    <span class="ruby-identifier">tabLigne</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+
+    <span class="ruby-identifier">fichier</span>.<span class="ruby-identifier">each_line</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ligne</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">tabLigne</span> = <span class="ruby-identifier">ligne</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;;&quot;</span>)
+        <span class="ruby-identifier">difficulte</span> = <span class="ruby-identifier">tabLigne</span>[<span class="ruby-value">0</span>]
+        <span class="ruby-identifier">taille</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">tabLigne</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">length</span>)
+        <span class="ruby-identifier">grilleDepart</span> = <span class="ruby-identifier">tabLigne</span>[<span class="ruby-value">1</span>]
+        <span class="ruby-identifier">grilleSolution</span> = <span class="ruby-identifier">tabLigne</span>[<span class="ruby-value">2</span>]
+
+        <span class="ruby-identifier">newGrille</span> = <span class="ruby-constant">Grilles</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">newGrille</span>.<span class="ruby-identifier">difficulte</span> = <span class="ruby-identifier">difficulte</span>
+        <span class="ruby-identifier">newGrille</span>.<span class="ruby-identifier">taille</span> = <span class="ruby-identifier">taille</span>
+        <span class="ruby-identifier">newGrille</span>.<span class="ruby-identifier">grille_depart</span> = <span class="ruby-identifier">grilleDepart</span>
+        <span class="ruby-identifier">newGrille</span>.<span class="ruby-identifier">grille_solution</span> = <span class="ruby-identifier">grilleSolution</span>
+        <span class="ruby-identifier">newGrille</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- addGrille-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- addGrille-method -->
+
+    
+      <div id="method-c-dernierNiveauFini" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dernierNiveauFini</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie un tableau contenant l&#39;identifiant du monde et le numero_niveau
+les plus avancés</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="dernierNiveauFini-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 640</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">dernierNiveauFini</span>(<span class="ruby-identifier">pseudo</span>)
+    <span class="ruby-identifier">tabDernierNiveau</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-keyword">if</span>(<span class="ruby-constant">GrilleFinis</span>.<span class="ruby-identifier">joins</span>(<span class="ruby-string">&quot;JOIN grille ON grille.id_grille = grille_fini.id_grille&quot;</span>).<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;numero_niveau &gt; ? AND id_monde &gt; ?&quot;</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>).<span class="ruby-identifier">exists?</span>(<span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudo</span>))
+          <span class="ruby-identifier">res</span> = <span class="ruby-constant">Grilles</span>.<span class="ruby-identifier">joins</span>(<span class="ruby-string">&quot;JOIN grille_fini ON grille.id_grille = grille_fini.id_grille&quot;</span>).<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;numero_niveau &gt; ? AND id_monde &gt; ?&quot;</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>).<span class="ruby-identifier">order</span>(<span class="ruby-identifier">id_monde</span><span class="ruby-operator">:</span> <span class="ruby-value">:desc</span>, <span class="ruby-identifier">numero_niveau</span><span class="ruby-operator">:</span> <span class="ruby-value">:desc</span>).<span class="ruby-identifier">first</span>
+          <span class="ruby-identifier">tabDernierNiveau</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">res</span>.<span class="ruby-identifier">id_monde</span>)
+          <span class="ruby-identifier">tabDernierNiveau</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">res</span>.<span class="ruby-identifier">numero_niveau</span>)
+          <span class="ruby-keyword">return</span> <span class="ruby-identifier">tabDernierNiveau</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-value">-1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dernierNiveauFini-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dernierNiveauFini-method -->
+
+    
+      <div id="method-c-estBonsIdentifiants-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">estBonsIdentifiants?</span><span
+            class="method-args">(pseudo, motDePasse)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Indique si un compte existe ou pas (vrai ou faux)</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li><li>
+<p>motDePasse le mot de passe du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="estBonsIdentifiants-3F-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">estBonsIdentifiants?</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">motDePasse</span>)
+        <span class="ruby-identifier">mdpCrypte</span> = <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">MD5</span>.<span class="ruby-identifier">hexdigest</span>(<span class="ruby-identifier">motDePasse</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-constant">Comptes</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudo</span>, <span class="ruby-value">:mot_de_passe</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">mdpCrypte</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- estBonsIdentifiants-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- estBonsIdentifiants-3F-method -->
+
+    
+      <div id="method-c-estFiniMonde-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">estFiniMonde?</span><span
+            class="method-args">(pseudo, idMonde)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie un booleen indiquant l&#39;accomplissement total d&#39;un monde ou
+non</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li><li>
+<p>idMonde l&#39;identifiant du monde</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="estFiniMonde-3F-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 588</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">estFiniMonde?</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">idMonde</span>)
+    <span class="ruby-identifier">idGrille</span> = <span class="ruby-constant">Grilles</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:id_grille</span>).<span class="ruby-identifier">where</span>(<span class="ruby-value">:id_monde</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">idMonde</span>).<span class="ruby-identifier">order</span>(<span class="ruby-identifier">numero_niveau</span><span class="ruby-operator">:</span> <span class="ruby-value">:asc</span>).<span class="ruby-identifier">last</span>.<span class="ruby-identifier">id_grille</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">GrilleFinis</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudo</span>, <span class="ruby-value">:id_grille</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">idGrille</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- estFiniMonde-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- estFiniMonde-3F-method -->
+
+    
+      <div id="method-c-estGrilleResolue-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">estGrilleResolue?</span><span
+            class="method-args">(pseudo, idGrille)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Indique si le joueur a fini une grille (vrai ou faux)</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li><li>
+<p>idGrille l&#39;identifiant de la grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="estGrilleResolue-3F-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">estGrilleResolue?</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">idGrille</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-constant">GrilleFinis</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudo</span>, <span class="ruby-value">:id_grille</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">idGrille</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- estGrilleResolue-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- estGrilleResolue-3F-method -->
+
+    
+      <div id="method-c-estIdentifiantDisponible-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">estIdentifiantDisponible?</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Indique si un pseudo est disponible (vrai ou faux)</p>
+<ul><li>
+<p>pseudo le pseudo à tester</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="estIdentifiantDisponible-3F-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 523</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">estIdentifiantDisponible?</span>(<span class="ruby-identifier">pseudo</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-operator">!</span><span class="ruby-constant">Comptes</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudo</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- estIdentifiantDisponible-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- estIdentifiantDisponible-3F-method -->
+
+    
+      <div id="method-c-estMailDisponible-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">estMailDisponible?</span><span
+            class="method-args">(mail)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Indique si une adresse mail est disponible (vrai ou faux)</p>
+<ul><li>
+<p>mail l&#39;adresse mail à tester</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="estMailDisponible-3F-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 529</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">estMailDisponible?</span>(<span class="ruby-identifier">mail</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-operator">!</span><span class="ruby-constant">Comptes</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-value">:adresse_mail</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">mail</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- estMailDisponible-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- estMailDisponible-3F-method -->
+
+    
+      <div id="method-c-estSauvegarde-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">estSauvegarde?</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Indique si une sauvegarde existe pour un joueur (vrai ou faux)</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="estSauvegarde-3F-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 382</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">estSauvegarde?</span>(<span class="ruby-identifier">pseudo</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Sauvegardes</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudo</span>)            
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- estSauvegarde-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- estSauvegarde-3F-method -->
+
+    
+      <div id="method-c-estSuccesDebloque-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">estSuccesDebloque?</span><span
+            class="method-args">(idSucces, pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Indique si le joueur a débloqué un succès précis (vrai ou faux)</p>
+<ul><li>
+<p>idSucces l&#39;identifiant du succès</p>
+</li><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="estSuccesDebloque-3F-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 181</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">estSuccesDebloque?</span>(<span class="ruby-identifier">idSucces</span>, <span class="ruby-identifier">pseudo</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">SuccesAccomplis</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-value">:id_succes</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">idSucces</span>, <span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudo</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- estSuccesDebloque-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- estSuccesDebloque-3F-method -->
+
+    
+      <div id="method-c-getClassement" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getClassement</span><span
+            class="method-args">(taille, difficulte)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le classement des meilleurs score en fonction d&#39;une taille de
+grille et de la difficulté</p>
+<ul><li>
+<p>taille la taille d&#39;une grille</p>
+</li><li>
+<p>difficulte la difficulté d&#39;une grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getClassement-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 316</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getClassement</span>(<span class="ruby-identifier">taille</span>, <span class="ruby-identifier">difficulte</span>)
+    <span class="ruby-identifier">i</span> = <span class="ruby-value">1</span>
+    <span class="ruby-identifier">classement</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">res</span> = <span class="ruby-constant">GrilleFinis</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:pseudo</span>, <span class="ruby-value">:score</span>).<span class="ruby-identifier">joins</span>(<span class="ruby-string">&quot;JOIN grille ON grille.id_grille = grille_fini.id_grille&quot;</span>).<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;taille = ? AND difficulte = ?&quot;</span>,<span class="ruby-identifier">taille</span>, <span class="ruby-identifier">difficulte</span>).<span class="ruby-identifier">order</span>(<span class="ruby-identifier">score</span><span class="ruby-operator">:</span> <span class="ruby-value">:desc</span>).<span class="ruby-identifier">first</span>(<span class="ruby-value">10</span>)
+    <span class="ruby-identifier">res</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elem</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">classement</span>.<span class="ruby-identifier">push</span>([<span class="ruby-identifier">i</span>, <span class="ruby-identifier">elem</span>.<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">elem</span>.<span class="ruby-identifier">score</span>])
+        <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">classement</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getClassement-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getClassement-method -->
+
+    
+      <div id="method-c-getCouleurDeux" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getCouleurDeux</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie la couleur du clic droit</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getCouleurDeux-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getCouleurDeux</span>(<span class="ruby-identifier">pseudo</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-constant">Comptes</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:couleur_2</span>).<span class="ruby-identifier">find_by_pseudo</span>(<span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">couleur_2</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getCouleurDeux-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getCouleurDeux-method -->
+
+    
+      <div id="method-c-getCouleurUn" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getCouleurUn</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie la couleur du clic gauche</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getCouleurUn-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getCouleurUn</span>(<span class="ruby-identifier">pseudo</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-constant">Comptes</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:couleur_1</span>).<span class="ruby-identifier">find_by_pseudo</span>(<span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">couleur_1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getCouleurUn-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getCouleurUn-method -->
+
+    
+      <div id="method-c-getDefiScore" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getDefiScore</span><span
+            class="method-args">(pseudoEnv, pseudoDest, idGrille)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le score d&#39;un défi</p>
+<ul><li>
+<p>pseudoEnv le pseudo du joueur qui a envoyé le défi</p>
+</li><li>
+<p>pseudoDest le pseudo du joueur qui a reçu le défi</p>
+</li><li>
+<p>idGrille l&#39;identifiant de la grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getDefiScore-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 247</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getDefiScore</span>(<span class="ruby-identifier">pseudoEnv</span>, <span class="ruby-identifier">pseudoDest</span>, <span class="ruby-identifier">idGrille</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Defis</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:score</span>).<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">pseudo</span><span class="ruby-operator">:</span> <span class="ruby-identifier">pseudoEnv</span>, <span class="ruby-identifier">pseudo_defier</span><span class="ruby-operator">:</span> <span class="ruby-identifier">pseudoDest</span>, <span class="ruby-identifier">id_grille</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idGrille</span>).<span class="ruby-identifier">score</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getDefiScore-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getDefiScore-method -->
+
+    
+      <div id="method-c-getDefis" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getDefis</span><span
+            class="method-args">(pseudoDest)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie les défis sous forme de liste que doit effectuer le joueur</p>
+<ul><li>
+<p>pseudoDest le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getDefis-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 210</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getDefis</span>(<span class="ruby-identifier">pseudoDest</span>)     
+    <span class="ruby-identifier">res</span> = <span class="ruby-constant">Defis</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">pseudo_defier</span><span class="ruby-operator">:</span> <span class="ruby-identifier">pseudoDest</span>, <span class="ruby-identifier">pseudo_vainqueur</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>).<span class="ruby-identifier">all</span>
+    <span class="ruby-identifier">defis</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>  
+    <span class="ruby-identifier">res</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elem</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">defis</span>.<span class="ruby-identifier">push</span>(<span class="ruby-constant">Defi</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-identifier">elem</span>.<span class="ruby-identifier">pseudo_defier</span>, <span class="ruby-identifier">elem</span>.<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">elem</span>.<span class="ruby-identifier">id_grille</span>, <span class="ruby-identifier">elem</span>.<span class="ruby-identifier">score</span>))
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">defis</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getDefis-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getDefis-method -->
+
+    
+      <div id="method-c-getGrilleDifficulte" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getGrilleDifficulte</span><span
+            class="method-args">(idGrille)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie la difficulté d&#39;une grille</p>
+<ul><li>
+<p>idGrille l&#39;identifiant de la grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getGrilleDifficulte-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 430</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getGrilleDifficulte</span>(<span class="ruby-identifier">idGrille</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Grilles</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:difficulte</span>).<span class="ruby-identifier">find_by_id_grille</span>(<span class="ruby-identifier">idGrille</span>).<span class="ruby-identifier">difficulte</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getGrilleDifficulte-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getGrilleDifficulte-method -->
+
+    
+      <div id="method-c-getGrilleEtoileDeuxScore" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getGrilleEtoileDeuxScore</span><span
+            class="method-args">(idGrille)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le seuil pour obtenir la deuxième étoile</p>
+<ul><li>
+<p>idGrille l&#39;identifiant de la grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getGrilleEtoileDeuxScore-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 541</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getGrilleEtoileDeuxScore</span>(<span class="ruby-identifier">idGrille</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Grilles</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:etoile_2</span>).<span class="ruby-identifier">find_by_id_grille</span>(<span class="ruby-identifier">idGrille</span>).<span class="ruby-identifier">etoile_2</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getGrilleEtoileDeuxScore-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getGrilleEtoileDeuxScore-method -->
+
+    
+      <div id="method-c-getGrilleEtoileTroisScore" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getGrilleEtoileTroisScore</span><span
+            class="method-args">(idGrille)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le seuil pour obtenir la troisième étoile</p>
+<ul><li>
+<p>idGrille l&#39;identifiant de la grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getGrilleEtoileTroisScore-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 547</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getGrilleEtoileTroisScore</span>(<span class="ruby-identifier">idGrille</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Grilles</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:etoile_3</span>).<span class="ruby-identifier">find_by_id_grille</span>(<span class="ruby-identifier">idGrille</span>).<span class="ruby-identifier">etoile_3</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getGrilleEtoileTroisScore-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getGrilleEtoileTroisScore-method -->
+
+    
+      <div id="method-c-getGrilleEtoileUnScore" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getGrilleEtoileUnScore</span><span
+            class="method-args">(idGrille)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le seuil pour obtenir la première étoile</p>
+<ul><li>
+<p>idGrille l&#39;identifiant de la grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getGrilleEtoileUnScore-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 535</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getGrilleEtoileUnScore</span>(<span class="ruby-identifier">idGrille</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Grilles</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:etoile_1</span>).<span class="ruby-identifier">find_by_id_grille</span>(<span class="ruby-identifier">idGrille</span>).<span class="ruby-identifier">etoile_1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getGrilleEtoileUnScore-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getGrilleEtoileUnScore-method -->
+
+    
+      <div id="method-c-getGrilleIdAleatoire" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getGrilleIdAleatoire</span><span
+            class="method-args">(taille, difficulte)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie l&#39;identifiant d&#39;une grille de façon alétoire en fonction
+d&#39;une taille et d&#39;une difficulté</p>
+<ul><li>
+<p>taille la taille de la grille</p>
+</li><li>
+<p>difficulte la difficulté de la grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getGrilleIdAleatoire-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 567</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getGrilleIdAleatoire</span>(<span class="ruby-identifier">taille</span>, <span class="ruby-identifier">difficulte</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Grilles</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:id_grille</span>).<span class="ruby-identifier">where</span>(<span class="ruby-value">:taille</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">taille</span>, <span class="ruby-value">:difficulte</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">difficulte</span>, <span class="ruby-value">:numero_niveau</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">:id_monde</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&quot;RAND()&quot;</span>).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">id_grille</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getGrilleIdAleatoire-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getGrilleIdAleatoire-method -->
+
+    
+      <div id="method-c-getGrilleMatrice" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getGrilleMatrice</span><span
+            class="method-args">(idGrille)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie la matrice de départ d&#39;une grille</p>
+<ul><li>
+<p>idGrille l&#39;identifiant de la grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getGrilleMatrice-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 471</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getGrilleMatrice</span>(<span class="ruby-identifier">idGrille</span>)
+    <span class="ruby-identifier">grilleDepart</span> = <span class="ruby-constant">Grilles</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:grille_depart</span>).<span class="ruby-identifier">find_by_id_grille</span>(<span class="ruby-identifier">idGrille</span>).<span class="ruby-identifier">grille_depart</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">stringToGrille</span>(<span class="ruby-identifier">grilleDepart</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getGrilleMatrice-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getGrilleMatrice-method -->
+
+    
+      <div id="method-c-getGrilleMatriceResolue" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getGrilleMatriceResolue</span><span
+            class="method-args">(idGrille)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie la matrice solution d&#39;une grille</p>
+<ul><li>
+<p>idGrille l&#39;identifiant de la grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getGrilleMatriceResolue-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 478</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getGrilleMatriceResolue</span>(<span class="ruby-identifier">idGrille</span>)
+    <span class="ruby-identifier">grilleSolution</span> = <span class="ruby-constant">Grilles</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:grille_solution</span>).<span class="ruby-identifier">find_by_id_grille</span>(<span class="ruby-identifier">idGrille</span>).<span class="ruby-identifier">grille_solution</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">stringToGrille</span>(<span class="ruby-identifier">grilleSolution</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getGrilleMatriceResolue-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getGrilleMatriceResolue-method -->
+
+    
+      <div id="method-c-getGrilleNbClicsMax" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getGrilleNbClicsMax</span><span
+            class="method-args">(idGrille)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le nombre de clics maximum d&#39;une grille</p>
+<ul><li>
+<p>idGrille l&#39;identifiant de la grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getGrilleNbClicsMax-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 436</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getGrilleNbClicsMax</span>(<span class="ruby-identifier">idGrille</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Grilles</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:nb_clic_max</span>).<span class="ruby-identifier">find_by_id_grille</span>(<span class="ruby-identifier">idGrille</span>).<span class="ruby-identifier">nb_clic_max</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getGrilleNbClicsMax-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getGrilleNbClicsMax-method -->
+
+    
+      <div id="method-c-getGrilleTaille" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getGrilleTaille</span><span
+            class="method-args">(idGrille)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie la taille d&#39;une grille</p>
+<ul><li>
+<p>idGrille l&#39;identifiant de la grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getGrilleTaille-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 424</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getGrilleTaille</span>(<span class="ruby-identifier">idGrille</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Grilles</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:taille</span>).<span class="ruby-identifier">find_by_id_grille</span>(<span class="ruby-identifier">idGrille</span>).<span class="ruby-identifier">taille</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getGrilleTaille-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getGrilleTaille-method -->
+
+    
+      <div id="method-c-getGrilleTempsMax" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getGrilleTempsMax</span><span
+            class="method-args">(idGrille)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le temps maximum d&#39;une grille</p>
+<ul><li>
+<p>idGrille l&#39;identifiant de la grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getGrilleTempsMax-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 442</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getGrilleTempsMax</span>(<span class="ruby-identifier">idGrille</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Grilles</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:temps_max</span>).<span class="ruby-identifier">find_by_id_grille</span>(<span class="ruby-identifier">idGrille</span>).<span class="ruby-identifier">temps_max</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getGrilleTempsMax-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getGrilleTempsMax-method -->
+
+    
+      <div id="method-c-getMail" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getMail</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie l&#39;adresse mail possesseur du compte</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getMail-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getMail</span>(<span class="ruby-identifier">pseudo</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-constant">Comptes</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:adresse_mail</span>).<span class="ruby-identifier">find_by_pseudo</span>(<span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">adresse_mail</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getMail-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getMail-method -->
+
+    
+      <div id="method-c-getMondeGrilleId" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getMondeGrilleId</span><span
+            class="method-args">(idMonde, numNiveau)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie l&#39;identifiant d&#39;une grille par rapport à un monde et numèro
+de niveau</p>
+<ul><li>
+<p>idMonde l&#39;identifiant du monde</p>
+</li><li>
+<p>numNiveau le numéro du niveau</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getMondeGrilleId-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 554</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getMondeGrilleId</span>(<span class="ruby-identifier">idMonde</span>, <span class="ruby-identifier">numNiveau</span>)
+    <span class="ruby-constant">Grilles</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:id_grille</span>).<span class="ruby-identifier">where</span>(<span class="ruby-value">:id_monde</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">idMonde</span>, <span class="ruby-value">:numero_niveau</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">numNiveau</span>).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">id_grille</span>        
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getMondeGrilleId-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getMondeGrilleId-method -->
+
+    
+      <div id="method-c-getMondeNom" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getMondeNom</span><span
+            class="method-args">(idMonde)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le nom d&#39;un monde</p>
+<ul><li>
+<p>idMonde l&#39;identifiant du monde</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getMondeNom-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 239</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getMondeNom</span>(<span class="ruby-identifier">idMonde</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Mondes</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:nom_monde</span>).<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">id_monde</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idMonde</span>).<span class="ruby-identifier">nom_monde</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getMondeNom-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getMondeNom-method -->
+
+    
+      <div id="method-c-getNbClics" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getNbClics</span><span
+            class="method-args">(pseudo, idGrille)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le nombre de clic effectué par le joueur sur une grille</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li><li>
+<p>idGrille l&#39;identifiant de la grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getNbClics-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getNbClics</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">idGrille</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-constant">GrilleFinis</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:nb_clic</span>).<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">pseudo</span><span class="ruby-operator">:</span> <span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">id_grille</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idGrille</span>).<span class="ruby-identifier">nb_clic</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getNbClics-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getNbClics-method -->
+
+    
+      <div id="method-c-getNbDefiGagne" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getNbDefiGagne</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le nombre de défi gagné</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getNbDefiGagne-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 607</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getNbDefiGagne</span>(<span class="ruby-identifier">pseudo</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Defis</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:pseudo_vainqueur</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">count</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getNbDefiGagne-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getNbDefiGagne-method -->
+
+    
+      <div id="method-c-getNbGrilleDifficulteSansAideFini" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getNbGrilleDifficulteSansAideFini</span><span
+            class="method-args">(pseudo, difficulte)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le nombre de grilles accomplis sans aide en fonction d&#39;une
+difficulte</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li><li>
+<p>difficulte la difficulte de la grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getNbGrilleDifficulteSansAideFini-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 581</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getNbGrilleDifficulteSansAideFini</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">difficulte</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">GrilleFinis</span>.<span class="ruby-identifier">joins</span>(<span class="ruby-string">&quot;JOIN grille ON grille.id_grille = grille_fini.id_grille&quot;</span>).<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;pseudo = ? AND difficulte = ? AND nb_aide = ?&quot;</span>,<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">difficulte</span>, <span class="ruby-value">0</span>).<span class="ruby-identifier">count</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getNbGrilleDifficulteSansAideFini-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getNbGrilleDifficulteSansAideFini-method -->
+
+    
+      <div id="method-c-getNbGrilleFini" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getNbGrilleFini</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le nombre de grille accomplis</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getNbGrilleFini-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 595</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getNbGrilleFini</span>(<span class="ruby-identifier">pseudo</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">GrilleFinis</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">count</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getNbGrilleFini-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getNbGrilleFini-method -->
+
+    
+      <div id="method-c-getNbGrilleTailleDouzeMoinsSoixante" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getNbGrilleTailleDouzeMoinsSoixante</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le nombre de grilles accompli en moins de 1 minute pour des grilles
+de taille 12</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getNbGrilleTailleDouzeMoinsSoixante-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 601</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getNbGrilleTailleDouzeMoinsSoixante</span>(<span class="ruby-identifier">pseudo</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">GrilleFinis</span>.<span class="ruby-identifier">joins</span>(<span class="ruby-string">&quot;JOIN grille ON grille.id_grille = grille_fini.id_grille&quot;</span>).<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;pseudo = ? AND taille = ? AND temps &lt; ?&quot;</span>,<span class="ruby-identifier">pseudo</span>, <span class="ruby-value">12</span>, <span class="ruby-value">60</span>).<span class="ruby-identifier">count</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getNbGrilleTailleDouzeMoinsSoixante-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getNbGrilleTailleDouzeMoinsSoixante-method -->
+
+    
+      <div id="method-c-getNbGrilleTailleFini" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getNbGrilleTailleFini</span><span
+            class="method-args">(pseudo, taille)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le nombre de grilles accomplis en fonction d&#39;une taille</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li><li>
+<p>taille la taille de la grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getNbGrilleTailleFini-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 574</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getNbGrilleTailleFini</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">taille</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">GrilleFinis</span>.<span class="ruby-identifier">joins</span>(<span class="ruby-string">&quot;JOIN grille ON grille.id_grille = grille_fini.id_grille&quot;</span>).<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;pseudo = ? AND taille = ?&quot;</span>, <span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">taille</span>).<span class="ruby-identifier">count</span>       
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getNbGrilleTailleFini-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getNbGrilleTailleFini-method -->
+
+    
+      <div id="method-c-getNom" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getNom</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le nom du possesseur du compte</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getNom-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getNom</span>(<span class="ruby-identifier">pseudo</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-constant">Comptes</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:nom</span>).<span class="ruby-identifier">find_by_pseudo</span>(<span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">nom</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getNom-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getNom-method -->
+
+    
+      <div id="method-c-getNomSucces" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getNomSucces</span><span
+            class="method-args">(idSucces)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le nom d&#39;un succès à partir de son identifiant</p>
+<ul><li>
+<p>idSucces l&#39;identifiant du succès</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getNomSucces-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 613</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getNomSucces</span>(<span class="ruby-identifier">idSucces</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Succes</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:nom</span>).<span class="ruby-identifier">find_by_id_succes</span>(<span class="ruby-identifier">idSucces</span>).<span class="ruby-identifier">nom</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getNomSucces-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getNomSucces-method -->
+
+    
+      <div id="method-c-getNumeroNiveau" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getNumeroNiveau</span><span
+            class="method-args">(idGrille)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le numero de niveau d&#39;une grille appartenant à un monde</p>
+<ul><li>
+<p>idGrille l&#39;identifiant de la grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getNumeroNiveau-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 653</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getNumeroNiveau</span>(<span class="ruby-identifier">idGrille</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Grilles</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:numero_niveau</span>).<span class="ruby-identifier">find_by_id_grille</span>(<span class="ruby-identifier">idGrille</span>).<span class="ruby-identifier">numero_niveau</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getNumeroNiveau-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getNumeroNiveau-method -->
+
+    
+      <div id="method-c-getPlusGrandNombreClic" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getPlusGrandNombreClic</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le plus grand nombre de clic effectué toute grille confondu</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getPlusGrandNombreClic-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 634</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getPlusGrandNombreClic</span>(<span class="ruby-identifier">pseudo</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">GrilleFinis</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:nb_clic</span>).<span class="ruby-identifier">where</span>(<span class="ruby-identifier">pseudo</span><span class="ruby-operator">:</span> <span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">maximum</span>(<span class="ruby-value">:nb_clic</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getPlusGrandNombreClic-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getPlusGrandNombreClic-method -->
+
+    
+      <div id="method-c-getPlusPetitNombreClic" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getPlusPetitNombreClic</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le plus petit nombre de clic effectué toute grille confondu</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getPlusPetitNombreClic-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 628</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getPlusPetitNombreClic</span>(<span class="ruby-identifier">pseudo</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">GrilleFinis</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:nb_clic</span>).<span class="ruby-identifier">where</span>(<span class="ruby-identifier">pseudo</span><span class="ruby-operator">:</span> <span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">minimum</span>(<span class="ruby-value">:nb_clic</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getPlusPetitNombreClic-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getPlusPetitNombreClic-method -->
+
+    
+      <div id="method-c-getPrenom" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getPrenom</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le prenom du possesseur du compte</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getPrenom-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getPrenom</span>(<span class="ruby-identifier">pseudo</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-constant">Comptes</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:prenom</span>).<span class="ruby-identifier">find_by_pseudo</span>(<span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">prenom</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getPrenom-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getPrenom-method -->
+
+    
+      <div id="method-c-getRaccourci" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getRaccourci</span><span
+            class="method-args">(pseudo, idRaccourci)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie la touche attribué à un raccourci</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li><li>
+<p>idRaccourci l&#39;identifiant du raccourci</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getRaccourci-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 288</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getRaccourci</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">idRaccourci</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">RaccourciComptes</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:touche</span>).<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">pseudo</span><span class="ruby-operator">:</span> <span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">id_raccourci</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idRaccourci</span>).<span class="ruby-identifier">touche</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getRaccourci-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getRaccourci-method -->
+
+    
+      <div id="method-c-getSauvegardeGrilleSauvegardee" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getSauvegardeGrilleSauvegardee</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie la grille d&#39;une sauvegarde d&#39;un joueur</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getSauvegardeGrilleSauvegardee-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 375</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getSauvegardeGrilleSauvegardee</span>(<span class="ruby-identifier">pseudo</span>)
+    <span class="ruby-identifier">grilleSauvegarde</span> = <span class="ruby-constant">Sauvegardes</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:grille_sauvegarde</span>).<span class="ruby-identifier">find_by_pseudo</span>(<span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">grille_sauvegarde</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">stringToGrille</span>(<span class="ruby-identifier">grilleSauvegarde</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getSauvegardeGrilleSauvegardee-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getSauvegardeGrilleSauvegardee-method -->
+
+    
+      <div id="method-c-getSauvegardeIdGrille" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getSauvegardeIdGrille</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie l&#39;identifiant de la grille de la sauvegarde du joueur</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getSauvegardeIdGrille-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 388</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getSauvegardeIdGrille</span>(<span class="ruby-identifier">pseudo</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Sauvegardes</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:id_grille</span>).<span class="ruby-identifier">find_by_pseudo</span>(<span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">id_grille</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getSauvegardeIdGrille-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getSauvegardeIdGrille-method -->
+
+    
+      <div id="method-c-getSauvegardeNbAides" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getSauvegardeNbAides</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le nombre d&#39;aides d&#39;une sauvegarde d&#39;un joueur</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getSauvegardeNbAides-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 357</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getSauvegardeNbAides</span>(<span class="ruby-identifier">pseudo</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Sauvegardes</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:nb_aide</span>).<span class="ruby-identifier">find_by_pseudo</span>(<span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">nb_aide</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getSauvegardeNbAides-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getSauvegardeNbAides-method -->
+
+    
+      <div id="method-c-getSauvegardeNbClics" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getSauvegardeNbClics</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le nombre de clic d&#39;une sauvegarde d&#39;un joueur</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getSauvegardeNbClics-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 363</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getSauvegardeNbClics</span>(<span class="ruby-identifier">pseudo</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Sauvegardes</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:nb_clic</span>).<span class="ruby-identifier">find_by_pseudo</span>(<span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">nb_clic</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getSauvegardeNbClics-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getSauvegardeNbClics-method -->
+
+    
+      <div id="method-c-getSauvegardeNbHypotheses" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getSauvegardeNbHypotheses</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le nombre d&#39;hypothèse d&#39;une sauvegarde d&#39;un joueur</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getSauvegardeNbHypotheses-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 351</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getSauvegardeNbHypotheses</span>(<span class="ruby-identifier">pseudo</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Sauvegardes</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:nb_hypothese</span>).<span class="ruby-identifier">find_by_pseudo</span>(<span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">nb_hypothese</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getSauvegardeNbHypotheses-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getSauvegardeNbHypotheses-method -->
+
+    
+      <div id="method-c-getSauvegardeTemps" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getSauvegardeTemps</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le temps d&#39;une sauvegarde d&#39;un joueur</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getSauvegardeTemps-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 369</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getSauvegardeTemps</span>(<span class="ruby-identifier">pseudo</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Sauvegardes</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:temps</span>).<span class="ruby-identifier">find_by_pseudo</span>(<span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">temps</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getSauvegardeTemps-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getSauvegardeTemps-method -->
+
+    
+      <div id="method-c-getScore" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getScore</span><span
+            class="method-args">(pseudo, idGrille)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le score d&#39;un joueur sur une grille</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li><li>
+<p>idGrille l&#39;identifiant de la grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getScore-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getScore</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">idGrille</span>)
+        <span class="ruby-keyword">if</span>(<span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">estGrilleResolue?</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">idGrille</span>))
+                <span class="ruby-keyword">return</span> <span class="ruby-constant">GrilleFinis</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:score</span>).<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">pseudo</span><span class="ruby-operator">:</span> <span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">id_grille</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idGrille</span>).<span class="ruby-identifier">score</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-value">-1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getScore-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getScore-method -->
+
+    
+      <div id="method-c-getScoreDifficulte" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getScoreDifficulte</span><span
+            class="method-args">(pseudo, taille, difficulte)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le score total d&#39;un joueur en fonction d&#39;une difficulté et
+d&#39;une taille</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li><li>
+<p>taille la taille de la grille</p>
+</li><li>
+<p>difficulte la difficulté de la grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getScoreDifficulte-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 309</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getScoreDifficulte</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">taille</span>, <span class="ruby-identifier">difficulte</span>)
+    <span class="ruby-constant">GrilleFinis</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:score</span>).<span class="ruby-identifier">joins</span>(<span class="ruby-string">&quot;JOIN grille ON grille.id_grille = grille_fini.id_grille&quot;</span>).<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;pseudo = ? AND taille = ? AND difficulte = ?&quot;</span>, <span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">taille</span>, <span class="ruby-identifier">difficulte</span>).<span class="ruby-identifier">sum</span>(<span class="ruby-value">:score</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getScoreDifficulte-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getScoreDifficulte-method -->
+
+    
+      <div id="method-c-getScoreTotal" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getScoreTotal</span><span
+            class="method-args">(pseudo, taille)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le score total d&#39;un joueur en fonction d&#39;une taille de
+grille</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li><li>
+<p>taille la taille de la grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getScoreTotal-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 295</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getScoreTotal</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">taille</span>)
+    <span class="ruby-constant">GrilleFinis</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:score</span>).<span class="ruby-identifier">joins</span>(<span class="ruby-string">&quot;JOIN grille ON grille.id_grille = grille_fini.id_grille&quot;</span>).<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;pseudo = ? AND taille = ?&quot;</span>, <span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">taille</span>).<span class="ruby-identifier">sum</span>(<span class="ruby-value">:score</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getScoreTotal-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getScoreTotal-method -->
+
+    
+      <div id="method-c-getSucces" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getSucces</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Rencoie la liste des succès</p>
+          
+          
+
+          
+          <div class="method-source-code" id="getSucces-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 169</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getSucces</span>()
+    <span class="ruby-identifier">res</span> = <span class="ruby-constant">Succes</span>.<span class="ruby-identifier">all</span>
+    <span class="ruby-identifier">succes</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">res</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elem</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">succes</span>.<span class="ruby-identifier">push</span>(<span class="ruby-constant">SuccesIndividuel</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-identifier">elem</span>.<span class="ruby-identifier">id_succes</span>))
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">succes</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getSucces-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getSucces-method -->
+
+    
+      <div id="method-c-getSuccesCondition" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getSuccesCondition</span><span
+            class="method-args">(idSucces)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie la condition du succès</p>
+<ul><li>
+<p>idSucces l&#39;identifiant du succès</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getSuccesCondition-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 204</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getSuccesCondition</span>(<span class="ruby-identifier">idSucces</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Succes</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:condition</span>).<span class="ruby-identifier">find_by_id_succes</span>(<span class="ruby-identifier">idSucces</span>).<span class="ruby-identifier">condition</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getSuccesCondition-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getSuccesCondition-method -->
+
+    
+      <div id="method-c-getSuccesDescription" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getSuccesDescription</span><span
+            class="method-args">(idSucces)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie la description du succès</p>
+<ul><li>
+<p>idSucces l&#39;identifiant du succès</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getSuccesDescription-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 198</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getSuccesDescription</span>(<span class="ruby-identifier">idSucces</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Succes</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:description</span>).<span class="ruby-identifier">find_by_id_succes</span>(<span class="ruby-identifier">idSucces</span>).<span class="ruby-identifier">description</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getSuccesDescription-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getSuccesDescription-method -->
+
+    
+      <div id="method-c-getTemps" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getTemps</span><span
+            class="method-args">(pseudo, idGrille)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le temps d&#39;un joueur sur une grille</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li><li>
+<p>idGrille l&#39;identifiant de la grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getTemps-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getTemps</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">idGrille</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-constant">GrilleFinis</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:temps</span>).<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">pseudo</span><span class="ruby-operator">:</span> <span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">id_grille</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idGrille</span>).<span class="ruby-identifier">temps</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getTemps-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getTemps-method -->
+
+    
+      <div id="method-c-getTempsTotal" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getTempsTotal</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le temps total passé en jeu par un joueur</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getTempsTotal-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 301</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getTempsTotal</span>(<span class="ruby-identifier">pseudo</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">GrilleFinis</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">pseudo</span><span class="ruby-operator">:</span> <span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">sum</span>(<span class="ruby-value">:temps</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getTempsTotal-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getTempsTotal-method -->
+
+    
+      <div id="method-c-getTotalNbEtoile" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getTotalNbEtoile</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie la somme des étoiles obtenus</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getTotalNbEtoile-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 619</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getTotalNbEtoile</span>(<span class="ruby-identifier">pseudo</span>)
+    <span class="ruby-keyword">if</span>(<span class="ruby-constant">GrilleFinis</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudo</span>))
+            <span class="ruby-keyword">return</span> <span class="ruby-constant">GrilleFinis</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:nb_etoile</span>).<span class="ruby-identifier">where</span>(<span class="ruby-identifier">pseudo</span><span class="ruby-operator">:</span> <span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">sum</span>(<span class="ruby-value">:nb_etoile</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getTotalNbEtoile-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getTotalNbEtoile-method -->
+
+    
+      <div id="method-c-getVolumeBruitage" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getVolumeBruitage</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le volume des bruitages</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getVolumeBruitage-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getVolumeBruitage</span>(<span class="ruby-identifier">pseudo</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-constant">Comptes</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:volume_bruitage</span>).<span class="ruby-identifier">find_by_pseudo</span>(<span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">volume_bruitage</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getVolumeBruitage-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getVolumeBruitage-method -->
+
+    
+      <div id="method-c-getVolumeMusique" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getVolumeMusique</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Renvoie le volume de la musique du compte</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getVolumeMusique-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getVolumeMusique</span>(<span class="ruby-identifier">pseudo</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-constant">Comptes</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:volume_musique</span>).<span class="ruby-identifier">find_by_pseudo</span>(<span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">volume_musique</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getVolumeMusique-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getVolumeMusique-method -->
+
+    
+      <div id="method-c-setCompte" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setCompte</span><span
+            class="method-args">(pseudo, mdp, nom, prenom, mail)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Insertion d&#39;un nouveau compte</p>
+<ul><li>
+<p>pseudo le pseudo du nouveau joueur</p>
+</li><li>
+<p>mdp le mot de passe du nouveau joueur</p>
+</li><li>
+<p>nom le nom du nouveau joueur</p>
+</li><li>
+<p>prenom le prénom du nouveau joueur</p>
+</li><li>
+<p>mail l&#39;adresse mail du nouveau joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="setCompte-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 257</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">setCompte</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">mdp</span>, <span class="ruby-identifier">nom</span>, <span class="ruby-identifier">prenom</span>, <span class="ruby-identifier">mail</span>)
+    <span class="ruby-identifier">newCompte</span> = <span class="ruby-constant">Comptes</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">newCompte</span>.<span class="ruby-identifier">pseudo</span> = <span class="ruby-identifier">pseudo</span>
+    <span class="ruby-identifier">newCompte</span>.<span class="ruby-identifier">mot_de_passe</span> = <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">MD5</span>.<span class="ruby-identifier">hexdigest</span>(<span class="ruby-identifier">mdp</span>)
+    <span class="ruby-identifier">newCompte</span>.<span class="ruby-identifier">nom</span> = <span class="ruby-identifier">nom</span>
+    <span class="ruby-identifier">newCompte</span>.<span class="ruby-identifier">prenom</span> = <span class="ruby-identifier">prenom</span>
+    <span class="ruby-identifier">newCompte</span>.<span class="ruby-identifier">adresse_mail</span> = <span class="ruby-identifier">mail</span>
+    <span class="ruby-identifier">newCompte</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setCompte-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setCompte-method -->
+
+    
+      <div id="method-c-setCouleurDeux" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setCouleurDeux</span><span
+            class="method-args">(pseudo, couleur)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Modifie dans la base la couleur du clic droit du joueur</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li><li>
+<p>couleur la couleur souhaité</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="setCouleurDeux-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">setCouleurDeux</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">couleur</span>)
+        <span class="ruby-constant">Comptes</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">update_all</span>(<span class="ruby-identifier">couleur_2</span><span class="ruby-operator">:</span> <span class="ruby-identifier">couleur</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setCouleurDeux-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setCouleurDeux-method -->
+
+    
+      <div id="method-c-setCouleurUn" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setCouleurUn</span><span
+            class="method-args">(pseudo, couleur)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Modifie dans la base la couleur du clic gauche du joueur</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li><li>
+<p>couleur la couleur souhaité</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="setCouleurUn-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">setCouleurUn</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">couleur</span>)
+        <span class="ruby-constant">Comptes</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">update_all</span>(<span class="ruby-identifier">couleur_1</span><span class="ruby-operator">:</span> <span class="ruby-identifier">couleur</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setCouleurUn-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setCouleurUn-method -->
+
+    
+      <div id="method-c-setDefi" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setDefi</span><span
+            class="method-args">(pseudoDest, pseudoEnv, idGrille, score)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Insertion d&#39;un nouveau défi pseudoDest le pseudo du joueur qui reçoit
+le défi pseudoEnv le pseudo du joueur qui envoit le défi idGrille
+l&#39;identifiant de la grille score le score effectué par le joueur qui
+envoit le défi</p>
+          
+          
+
+          
+          <div class="method-source-code" id="setDefi-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 224</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">setDefi</span>(<span class="ruby-identifier">pseudoDest</span>, <span class="ruby-identifier">pseudoEnv</span>, <span class="ruby-identifier">idGrille</span>, <span class="ruby-identifier">score</span>)
+    <span class="ruby-keyword">if</span>(<span class="ruby-constant">Comptes</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudoDest</span>))
+            <span class="ruby-identifier">newDefis</span> = <span class="ruby-constant">Defis</span>.<span class="ruby-identifier">new</span>
+            <span class="ruby-identifier">newDefis</span>.<span class="ruby-identifier">pseudo</span> = <span class="ruby-identifier">pseudoEnv</span>
+            <span class="ruby-identifier">newDefis</span>.<span class="ruby-identifier">pseudo_defier</span> = <span class="ruby-identifier">pseudoDest</span>
+            <span class="ruby-identifier">newDefis</span>.<span class="ruby-identifier">id_grille</span> = <span class="ruby-identifier">idGrille</span>
+            <span class="ruby-identifier">newDefis</span>.<span class="ruby-identifier">score</span> = <span class="ruby-identifier">score</span>
+            <span class="ruby-identifier">newDefis</span>.<span class="ruby-identifier">save</span>
+            <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-value">-1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setDefi-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setDefi-method -->
+
+    
+      <div id="method-c-setGrilleTermine" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setGrilleTermine</span><span
+            class="method-args">(pseudo, idGrille, temps, nbClics, nbEtoiles, nbHypotheses, nbAides, score)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Insertion du résultat d&#39;un joueur sur une grille ou mise à jour si déjà
+fait au moins une fois</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li><li>
+<p>idGrille l&#39;identifiant de la grille</p>
+</li><li>
+<p>temps le temps qu&#39;à mis le joueur pour effectuer la grille</p>
+</li><li>
+<p>nbClics le nombre de clics qu&#39;à fait le joueur</p>
+</li><li>
+<p>nbEtoiles le nombre d&#39;étoiles obtenu par le joueur</p>
+</li><li>
+<p>nbHypotheses le nombre d&#39;hypothèses effectué par le joueur</p>
+</li><li>
+<p>nbAides le nombre d&#39;aides demandé par le joueur</p>
+</li><li>
+<p>score le score du joueur sur la grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="setGrilleTermine-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">setGrilleTermine</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">idGrille</span>, <span class="ruby-identifier">temps</span>, <span class="ruby-identifier">nbClics</span>, <span class="ruby-identifier">nbEtoiles</span>, <span class="ruby-identifier">nbHypotheses</span>, <span class="ruby-identifier">nbAides</span>, <span class="ruby-identifier">score</span>)
+        <span class="ruby-keyword">if</span>(<span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">estGrilleResolue?</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">idGrille</span>))
+                <span class="ruby-constant">GrilleFinis</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudo</span>, <span class="ruby-value">:id_grille</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">idGrille</span>).<span class="ruby-identifier">update_all</span>(<span class="ruby-identifier">nb_clic</span><span class="ruby-operator">:</span> <span class="ruby-identifier">nbClics</span>, <span class="ruby-identifier">nb_etoile</span><span class="ruby-operator">:</span> <span class="ruby-identifier">nbEtoiles</span>, <span class="ruby-identifier">nb_hypothese</span><span class="ruby-operator">:</span> <span class="ruby-identifier">nb_hypotheses</span>, <span class="ruby-identifier">nb_aide</span><span class="ruby-operator">:</span> <span class="ruby-identifier">nbAides</span>, <span class="ruby-identifier">score</span><span class="ruby-operator">:</span> <span class="ruby-identifier">score</span>)
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">grilleFini</span> = <span class="ruby-constant">GrilleFinis</span>.<span class="ruby-identifier">new</span>
+                <span class="ruby-identifier">grilleFini</span>.<span class="ruby-identifier">pseudo</span> = <span class="ruby-identifier">pseudo</span>
+                <span class="ruby-identifier">grilleFini</span>.<span class="ruby-identifier">id_grille</span> = <span class="ruby-identifier">idGrille</span>
+                <span class="ruby-identifier">grilleFini</span>.<span class="ruby-identifier">temps</span> = <span class="ruby-identifier">temps</span>
+                <span class="ruby-identifier">grilleFini</span>.<span class="ruby-identifier">nb_clic</span> = <span class="ruby-identifier">nbClics</span>
+                <span class="ruby-identifier">grilleFini</span>.<span class="ruby-identifier">nb_etoile</span> = <span class="ruby-identifier">nbEtoiles</span>
+                <span class="ruby-identifier">grilleFini</span>.<span class="ruby-identifier">nb_hypothese</span> = <span class="ruby-identifier">nbHypotheses</span>
+                <span class="ruby-identifier">grilleFini</span>.<span class="ruby-identifier">nb_aide</span> = <span class="ruby-identifier">nbAides</span>
+                <span class="ruby-identifier">grilleFini</span>.<span class="ruby-identifier">score</span> = <span class="ruby-identifier">score</span>
+                <span class="ruby-identifier">grilleFini</span>.<span class="ruby-identifier">save</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setGrilleTermine-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setGrilleTermine-method -->
+
+    
+      <div id="method-c-setMotDePasse" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setMotDePasse</span><span
+            class="method-args">(pseudo, motDePasse)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Modifier le mot de passe du joueur</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li><li>
+<p>motDePasse le mot de passe souhaité</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="setMotDePasse-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">setMotDePasse</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">motDePasse</span>)
+        <span class="ruby-identifier">mdpCrypte</span> = <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">MD5</span>.<span class="ruby-identifier">hexdigest</span>(<span class="ruby-identifier">motDePasse</span>)
+        <span class="ruby-constant">Comptes</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">update_all</span>(<span class="ruby-identifier">mot_de_passe</span><span class="ruby-operator">:</span> <span class="ruby-identifier">mdpCrypte</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setMotDePasse-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setMotDePasse-method -->
+
+    
+      <div id="method-c-setRaccourci" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setRaccourci</span><span
+            class="method-args">(pseudo, idRaccourci, touche)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Insertion d&#39;un nouveau raccourci ou mise à jour s&#39;il existe déjà</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li><li>
+<p>idRaccourci l&#39;identifiant du raccourci</p>
+</li><li>
+<p>touche la touche attribué pour le raccourci</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="setRaccourci-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 272</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">setRaccourci</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">idRaccourci</span>, <span class="ruby-identifier">touche</span>)
+    <span class="ruby-keyword">if</span>(<span class="ruby-constant">RaccourciComptes</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudo</span>, <span class="ruby-value">:id_raccourci</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">idRaccourci</span>))
+        <span class="ruby-constant">RaccourciComptes</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudo</span>, <span class="ruby-value">:id_raccourci</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">idRaccourci</span>).<span class="ruby-identifier">update_all</span>(<span class="ruby-identifier">touche</span><span class="ruby-operator">:</span> <span class="ruby-identifier">touche</span>)
+    <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">newRaccourci</span> = <span class="ruby-constant">RaccourciComptes</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">newRaccourci</span>.<span class="ruby-identifier">pseudo</span> = <span class="ruby-identifier">pseudo</span>
+        <span class="ruby-identifier">newRaccourci</span>.<span class="ruby-identifier">id_raccourci</span> = <span class="ruby-identifier">idRaccourci</span>
+        <span class="ruby-identifier">newRaccourci</span>.<span class="ruby-identifier">touche</span> = <span class="ruby-identifier">touche</span>
+        <span class="ruby-identifier">newRaccourci</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setRaccourci-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setRaccourci-method -->
+
+    
+      <div id="method-c-setSauvegarde" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setSauvegarde</span><span
+            class="method-args">(pseudo, temps, nbClics, nbHypotheses, nbAides, idGrille, grilleSauvegarde)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Insertion d&#39;une sauvegarde</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li><li>
+<p>temps le temps effectué par le joueur sur la grille</p>
+</li><li>
+<p>nbClics le nombre de clics effectué par le joueur</p>
+</li><li>
+<p>nbHypotheses le nombre d&#39;hypothèses effectué par le joueur</p>
+</li><li>
+<p>nbAides le nombre d&#39;aides demandé par le joueur</p>
+</li><li>
+<p>idGrille l&#39;identifiant de la grille</p>
+</li><li>
+<p>grilleSauvegarde la sauvegarde la grille sous forme de chaine de caractères</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="setSauvegarde-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 491</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">setSauvegarde</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">temps</span>, <span class="ruby-identifier">nbClics</span>, <span class="ruby-identifier">nbHypotheses</span>, <span class="ruby-identifier">nbAides</span>, <span class="ruby-identifier">idGrille</span>, <span class="ruby-identifier">grilleSauvegarde</span>)
+    <span class="ruby-identifier">tabGrilleSauvegarde</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+
+    <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">grilleSauvegarde</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+        <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">grilleSauvegarde</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">grilleSauvegarde</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estBleu?</span>())
+                <span class="ruby-identifier">tabGrilleSauvegarde</span>.<span class="ruby-identifier">push</span>(<span class="ruby-string">&#39;0&#39;</span>)
+            <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">if</span>(<span class="ruby-identifier">grilleSauvegarde</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estRouge?</span>())
+                    <span class="ruby-identifier">tabGrilleSauvegarde</span>.<span class="ruby-identifier">push</span>(<span class="ruby-string">&#39;1&#39;</span>)
+                <span class="ruby-keyword">else</span>
+                    <span class="ruby-identifier">tabGrilleSauvegarde</span>.<span class="ruby-identifier">push</span>(<span class="ruby-string">&#39;_&#39;</span>)    
+                <span class="ruby-keyword">end</span>
+            <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">newSauvegarde</span> = <span class="ruby-constant">Sauvegardes</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">newSauvegarde</span>.<span class="ruby-identifier">pseudo</span> = <span class="ruby-identifier">pseudo</span>
+    <span class="ruby-identifier">newSauvegarde</span>.<span class="ruby-identifier">temps</span> = <span class="ruby-identifier">temps</span>
+    <span class="ruby-identifier">newSauvegarde</span>.<span class="ruby-identifier">nb_clic</span> = <span class="ruby-identifier">nbClics</span>
+    <span class="ruby-identifier">newSauvegarde</span>.<span class="ruby-identifier">nb_hypothese</span> = <span class="ruby-identifier">nbHypotheses</span>
+    <span class="ruby-identifier">newSauvegarde</span>.<span class="ruby-identifier">nb_aide</span> = <span class="ruby-identifier">nbAides</span>
+    <span class="ruby-identifier">newSauvegarde</span>.<span class="ruby-identifier">id_grille</span> = <span class="ruby-identifier">idGrille</span>
+    <span class="ruby-identifier">newSauvegarde</span>.<span class="ruby-identifier">grille_sauvegarde</span> = <span class="ruby-identifier">tabGrilleSauvegarde</span>.<span class="ruby-identifier">join</span>
+    <span class="ruby-identifier">newSauvegarde</span>.<span class="ruby-identifier">save</span>
+
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setSauvegarde-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setSauvegarde-method -->
+
+    
+      <div id="method-c-setSuccesDebloque" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setSuccesDebloque</span><span
+            class="method-args">(idSucces, pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Insertion dans la base le fait que le joueur a débloqué un succès</p>
+<ul><li>
+<p>idSucces l&#39;identifiant du succès débloqué</p>
+</li><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="setSuccesDebloque-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 188</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">setSuccesDebloque</span>(<span class="ruby-identifier">idSucces</span>, <span class="ruby-identifier">pseudo</span>)
+    <span class="ruby-identifier">newSucces</span> = <span class="ruby-constant">SuccesAccomplis</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">newSucces</span>.<span class="ruby-identifier">pseudo</span> = <span class="ruby-identifier">pseudo</span>
+    <span class="ruby-identifier">newSucces</span>.<span class="ruby-identifier">id_succes</span> = <span class="ruby-identifier">idSucces</span>
+    <span class="ruby-identifier">newSucces</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setSuccesDebloque-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setSuccesDebloque-method -->
+
+    
+      <div id="method-c-setVainqueurDefi" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setVainqueurDefi</span><span
+            class="method-args">(joueurDefie, joueurDefiant, unIdGrille, pseudoVainqueur, unScore)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Attribue un vainqueur à un défi</p>
+<ul><li>
+<p>joueurDefie le joueur qui a été défié</p>
+</li><li>
+<p>joueurDefiant le joueur qui a défié</p>
+</li><li>
+<p>unIdGrille l&#39;identifiant de la grille</p>
+</li><li>
+<p>pseudoVainqueur le pseudo du vainqueur du défi</p>
+</li><li>
+<p>unScore le score du vainqueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="setVainqueurDefi-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 663</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">setVainqueurDefi</span>(<span class="ruby-identifier">joueurDefie</span>, <span class="ruby-identifier">joueurDefiant</span>, <span class="ruby-identifier">unIdGrille</span>, <span class="ruby-identifier">pseudoVainqueur</span>, <span class="ruby-identifier">unScore</span>)
+    <span class="ruby-constant">Defis</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">joueurDefiant</span>, <span class="ruby-value">:pseudo_defier</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">joueurDefie</span>, <span class="ruby-value">:id_grille</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">unIdGrille</span>).<span class="ruby-identifier">update_all</span>(<span class="ruby-identifier">score</span><span class="ruby-operator">:</span> <span class="ruby-identifier">unScore</span>, <span class="ruby-identifier">pseudo_vainqueur</span><span class="ruby-operator">:</span> <span class="ruby-identifier">pseudoVainqueur</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setVainqueurDefi-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setVainqueurDefi-method -->
+
+    
+      <div id="method-c-setVolumeBruitage" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setVolumeBruitage</span><span
+            class="method-args">(pseudo, volume)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Modifie le volume des bruitages du compte</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li><li>
+<p>volume le volume des bruitages souhaité</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="setVolumeBruitage-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">setVolumeBruitage</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">volume</span>)
+        <span class="ruby-constant">Comptes</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">update_all</span>(<span class="ruby-identifier">volume_bruitage</span><span class="ruby-operator">:</span> <span class="ruby-identifier">volume</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setVolumeBruitage-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setVolumeBruitage-method -->
+
+    
+      <div id="method-c-setVolumeMusique" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setVolumeMusique</span><span
+            class="method-args">(pseudo, volume)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Modifie le volume de la musique du compte</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li><li>
+<p>volume le volume de la musique souhaité</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="setVolumeMusique-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">setVolumeMusique</span>(<span class="ruby-identifier">pseudo</span>, <span class="ruby-identifier">volume</span>)
+        <span class="ruby-constant">Comptes</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">update_all</span>(<span class="ruby-identifier">volume_musique</span><span class="ruby-operator">:</span> <span class="ruby-identifier">volume</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setVolumeMusique-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setVolumeMusique-method -->
+
+    
+      <div id="method-c-stringToGrille" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">stringToGrille</span><span
+            class="method-args">(grille)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Transforme un chaine de cractère en grille de cases</p>
+          
+          
+
+          
+          <div class="method-source-code" id="stringToGrille-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 447</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">stringToGrille</span>(<span class="ruby-identifier">grille</span>)
+    <span class="ruby-identifier">matriceGrille</span> = []
+    <span class="ruby-identifier">j</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">longGrille</span> = <span class="ruby-identifier">grille</span>.<span class="ruby-identifier">length</span>
+    <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">longGrille</span>) <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">matriceGrille</span>[<span class="ruby-identifier">i</span>] = []
+        <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">longGrille</span>) <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span>
+            <span class="ruby-identifier">caseGrille</span> = <span class="ruby-constant">Case</span>.<span class="ruby-identifier">new</span>
+            <span class="ruby-keyword">if</span>(<span class="ruby-identifier">grille</span>[<span class="ruby-identifier">j</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;0&#39;</span>)
+                <span class="ruby-identifier">caseGrille</span>.<span class="ruby-identifier">setBleu</span>
+            <span class="ruby-keyword">else</span>
+                 <span class="ruby-keyword">if</span>(<span class="ruby-identifier">grille</span>[<span class="ruby-identifier">j</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;1&#39;</span>)
+                    <span class="ruby-identifier">caseGrille</span>.<span class="ruby-identifier">setRouge</span>
+                 <span class="ruby-keyword">end</span>
+            <span class="ruby-keyword">end</span>
+            <span class="ruby-identifier">j</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+            <span class="ruby-identifier">matriceGrille</span>[<span class="ruby-identifier">i</span>] <span class="ruby-operator">+=</span> [<span class="ruby-identifier">caseGrille</span>]
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">matriceGrille</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- stringToGrille-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- stringToGrille-method -->
+
+    
+      <div id="method-c-supprimeDefi" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">supprimeDefi</span><span
+            class="method-args">(pseudoEnv, pseudoDest, idGrille)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Supprime un défi</p>
+<ul><li>
+<p>pseudoEnv le pseudo du joueur qui a envoyé le défi</p>
+</li><li>
+<p>pseudoDest le pseudo du joueur qui a reçu le défi</p>
+</li><li>
+<p>idGrille l&#39;identifiant de la grille</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="supprimeDefi-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 403</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">supprimeDefi</span>(<span class="ruby-identifier">pseudoEnv</span>, <span class="ruby-identifier">pseudoDest</span>, <span class="ruby-identifier">idGrille</span>)
+    <span class="ruby-constant">Defis</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudoEnv</span>, <span class="ruby-value">:pseudo_defier</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudoDest</span>, <span class="ruby-value">:id_grille</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">idGrille</span>).<span class="ruby-identifier">destroy_all</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- supprimeDefi-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- supprimeDefi-method -->
+
+    
+      <div id="method-c-supprimeSauvegarde" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">supprimeSauvegarde</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Supprime la sauvegarde du joueur</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="supprimeSauvegarde-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 394</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">supprimeSauvegarde</span>(<span class="ruby-identifier">pseudo</span>)
+    <span class="ruby-constant">Sauvegardes</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">destroy_all</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- supprimeSauvegarde-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- supprimeSauvegarde-method -->
+
+    
+      <div id="method-c-viderFinir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">viderFinir</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Supprime tous les résultats des grilles du joueur</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="viderFinir-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 417</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">viderFinir</span>(<span class="ruby-identifier">pseudo</span>)
+    <span class="ruby-constant">GrilleFinis</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">destroy_all</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- viderFinir-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- viderFinir-method -->
+
+    
+      <div id="method-c-viderReussir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">viderReussir</span><span
+            class="method-args">(pseudo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Supprime tous les succès qu&#39;à accompli le joueur</p>
+<ul><li>
+<p>pseudo le pseudo du joueur</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="viderReussir-source">
+            <pre><span class="ruby-comment"># File BaseDeDonnees.rb, line 410</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">viderReussir</span>(<span class="ruby-identifier">pseudo</span>)
+    <span class="ruby-constant">SuccesAccomplis</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:pseudo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pseudo</span>).<span class="ruby-identifier">destroy_all</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- viderReussir-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- viderReussir-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
