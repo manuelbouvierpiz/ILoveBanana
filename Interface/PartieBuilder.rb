@@ -128,6 +128,9 @@ class PartieBuilder < TakuzuBuilder
 	# * Méthode d'instance qui permet d'ouvrir une fenêtre indiquant les règles
 	# * Est automatiquement appelée par Gtk
 	def on_regle_clicked()
+		Jeu.JEU.partie.mettreEnPauseChronometre()
+		@grille.hide
+		@regle.hide
 		ouvrirFenetreNonFermante(ReglesBuilder.new)
 	end
 	
