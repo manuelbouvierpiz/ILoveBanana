@@ -112,7 +112,11 @@ class Partie
 	
 	# * Méthode d'instance qui arrête la +Partie+
 	def arreteToi
-		sauvegarder
+		if @grille.estCorrecte?
+			gagner
+		else
+			sauvegarder
+		end
 	end
 	
 # Méthode permettant de stopper commplètement le chronomètre
