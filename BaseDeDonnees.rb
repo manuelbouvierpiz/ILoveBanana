@@ -212,9 +212,9 @@ class BaseDeDonnees
         defis = Array.new  
         res.each do |elem|
             if(BaseDeDonnees.getGrilleDifficulte(elem.id_grille) < 8)
-                defis.push(Defi.new(elem.pseudo, elem.pseudo_defier, Grille.new(elem.id_grille), elem.score))
+                defis.push(Defi.creer(elem.pseudo_defier, elem.pseudo, Grille.creer(elem.id_grille), elem.score))
             else
-                 defis.push(Defi.new(elem.pseudo, elem.pseudo_defier, GrilleHardcore.new(elem.id_grille), elem.score))
+                defis.push(Defi.creer(elem.pseudo_defier, elem.pseudo, GrilleHardcore.creer(elem.id_grille), elem.score))
             end
         end
         return defis
