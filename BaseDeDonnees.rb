@@ -528,7 +528,7 @@ class BaseDeDonnees
     # Indique si une adresse mail est disponible (vrai ou faux)
     # - mail l'adresse mail à tester
     def BaseDeDonnees.estMailDisponible?(mail)
-    	return !Comptes.exists?(:mail => mail)
+    	return !Comptes.exists?(:adresse_mail => mail)
     end
     
     # Renvoie le seuil pour obtenir la première étoile
