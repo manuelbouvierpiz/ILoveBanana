@@ -316,7 +316,7 @@ class BaseDeDonnees
     def BaseDeDonnees.getClassement(taille, difficulte)
         i = 1
         classement = Array.new
-        res = GrilleFinis.select(:pseudo, :score).joins("JOIN grille ON grille.id_grille = grille_fini.id_grille").where("taille = ? AND difficulte = ?",taille, difficulte).order(score: :desc).all
+        res = GrilleFinis.select(:pseudo, :score).joins("JOIN grille ON grille.id_grille = grille_fini.id_grille").where("taille = ? AND difficulte = ?",taille, difficulte).order(score: :desc).first(10)
         res.each do |elem|
             classement.push([i, elem.pseudo, elem.score])
             i += 1
