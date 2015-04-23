@@ -10,6 +10,7 @@ class PartieEchecBuilder < TakuzuBuilder
         super(__FILE__, "Echec de la partie")
         if(Jeu.JEU.partie.isDefi?)
         	labelEchec.text = "Vous avez perdu le défi."
+        end
 		Jeu.JEU.partie.remiseAZero
 		Jeu.JEU.partie = nil
     end
