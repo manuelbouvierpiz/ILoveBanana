@@ -15,7 +15,7 @@ class PartieSauvegardeReussieBuilder < PartieReussieBuilder
 	def initialize()
         super()
 		@nbEtoiles.file="Images/rien.png"
-		@bouton2.hide
+		@button2.hide
 	end
 
 end
