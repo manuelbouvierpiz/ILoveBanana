@@ -24,7 +24,7 @@ class Defi
   # * Accessible en lecture uniquement
   attr :idGrille, false
 
-  attr :score, false
+  attr :scoreEnvoi, false
   
   # Méthodes d'instance
   
@@ -32,7 +32,7 @@ class Defi
   # * crée une nouvelle +Partie+ dans le +Jeu+
   # * Retourne la +Partie+ en cours dans le +Jeu+
   def relever
-  	Jeu.JEU.partie = PartieDefi.creer(@idGrille, @envoyeur, @score)
+  	Jeu.JEU.partie = PartieDefi.creer(@idGrille, @envoyeur, score)
   	return Jeu.JEU.partie
   end
   
@@ -50,15 +50,15 @@ class Defi
   # * Recherche le score de l'envoyeur dans la BDD
   # * Retourne un entier représentant le score de l'envoyeur
   def score
-  	return BaseDeDonnees.getDefiScore(envoyeur, destinataire, @idGrille)
+  	return BaseDeDonnees.getDefiScore(@envoyeur, @destinataire, @idGrille)
   end
   
   def initialize(unDestinataire, unEnvoyeur, unIdGrille, unScore) # :nodoc:
-  	@envoyeur, @destinataire, @idGrille = unEnvoyeur, unDestinataire, unIdGrille
+  	@envoyeur, @destinataire, @idGrille, @scoreEnvoi = unEnvoyeur, unDestinataire, unIdGrille, unScore
   end
   
   def envoyerDefi
-    BaseDeDonnees.setDefi(@destinataire, @envoyeur, @idGrille, @unScore)
+    BaseDeDonnees.setDefi(@destinataire, @envoyeur, @idGrille, @scoreEnvoi)
   end
   # Méthode de classe
   

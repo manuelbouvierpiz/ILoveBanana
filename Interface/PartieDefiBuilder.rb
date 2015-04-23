@@ -8,11 +8,14 @@
 class PartieDefiBuilder < PartieBuilder
 
 	# Méthodes d'instance
+	@isDefi?
 
+	attr :isDefi?, false
+	
 	# Méthode d'instance qui initialise la partie
 	def initialize(unePartie)			# :nodoc:
 		super(unePartie)
-		
+		@isDefi? = true
 		@image1.set_file("Images/rien.png")
 		@meilleurScore.set_text("")
 	end
