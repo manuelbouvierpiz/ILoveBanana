@@ -29,6 +29,7 @@ class PartieLibreBuilder < PartieBuilder
 			self['window1'].signal_handler_disconnect(@handlerArret)
 			ouvrirFenetre(PartieLibreReussieBuilder.new)
 		elsif !Jeu.JEU.partie.verifierNbClicsMax?
+			self['window1'].signal_handler_disconnect(@handlerArret)
 			Jeu.JEU.partie.arretChronometre()
 			ouvrirFenetre(PartieEchecBuilder.new)
 		end

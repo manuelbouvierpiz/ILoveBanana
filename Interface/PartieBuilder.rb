@@ -39,6 +39,7 @@ class PartieBuilder < TakuzuBuilder
 			begin
 				@temps.set_text("Temps :\n" + Jeu.JEU.partie.getTempsString)
 				if !Jeu.JEU.partie.verifierTempsMax?
+					self['window1'].signal_handler_disconnect(@handlerArret)
 					Jeu.JEU.partie.arretChronometre
 					ouvrirFenetre(PartieEchecBuilder.new)
 				end
