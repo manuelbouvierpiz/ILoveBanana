@@ -131,19 +131,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="retourLoginButton">
-                    <property name="label">&lt;</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="relief">half</property>
-                    <property name="xalign">0.34000000357627869</property>
-                    <property name="yalign">0.50999999046325684</property>
-                    <signal name="clicked" handler="on_retourButton_clicked"/>
-                  </object>
-                  <packing>
-                    <property name="position">1</property>
-                  </packing>
+                  <placeholder/>
                 </child>
                 <child>
                   <object class="GtkLayout" id="layout12">
@@ -325,6 +313,28 @@
               </packing>
             </child>
             <child>
+              <object class="GtkButton" id="retourLoginButton">
+                <property name="label">D&#xE9;connexion</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="on_retourButton_clicked"/>
+              </object>
+              <packing>
+                <property name="position">13</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLayout" id="layout27">
+                <property name="visible">True</property>
+                <property name="width">240</property>
+                <property name="height">40</property>
+              </object>
+              <packing>
+                <property name="position">14</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkButton" id="quitterButton">
                 <property name="label" translatable="yes">Quitter</property>
                 <property name="visible">True</property>
@@ -333,7 +343,7 @@
                 <signal name="clicked" handler="on_quitterButton_clicked"/>
               </object>
               <packing>
-                <property name="position">13</property>
+                <property name="position">15</property>
               </packing>
             </child>
             <child>
@@ -343,7 +353,7 @@
                 <property name="height">40</property>
               </object>
               <packing>
-                <property name="position">14</property>
+                <property name="position">16</property>
               </packing>
             </child>
           </object>

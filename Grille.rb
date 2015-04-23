@@ -61,7 +61,7 @@ class Grille
 		# Comptage du nombre de clics minimum
 		@nbClicMin = 0
 		0.upto(taille-1) do |i|
-			0.upto(taille-1 do |j|
+			0.upto(taille-1) do |j|
 				if @matriceDepart[i][j].estVide?
 					if @matriceCorrecte[i][j].estBleu?
 						@nbClicMin += 2
