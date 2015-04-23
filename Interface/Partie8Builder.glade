@@ -1027,12 +1027,12 @@
         </child>
         <child>
           <object class="GtkLabel" id="aideLabel">
-            <property name="width_request">100</property>
+            <property name="width_request">800</property>
             <property name="height_request">80</property>
             <property name="visible">True</property>
           </object>
           <packing>
-            <property name="x">500</property>
+            <property name="x">150</property>
             <property name="y">620</property>
           </packing>
         </child>
