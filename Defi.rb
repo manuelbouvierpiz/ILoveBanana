@@ -22,7 +22,7 @@ class Defi
   # * Variable d'instance qui représente la +Grille+ du +Defi+
   # * Est intialisée lors de la création de l'objet
   # * Accessible en lecture uniquement
-  attr :grille, false
+  attr :idGrille, false
   
   # Méthodes d'instance
   
@@ -30,7 +30,7 @@ class Defi
   # * crée une nouvelle +Partie+ dans le +Jeu+
   # * Retourne la +Partie+ en cours dans le +Jeu+
   def relever
-  	Jeu.JEU.partie = PartieRapide.creer(@grille.idGrille)
+  	Jeu.JEU.partie = PartieRapide.creer(@idGrille)
   	return Jeu.JEU.partie
   end
   
@@ -38,7 +38,7 @@ class Defi
   # * Supprime le +Defi+ dans la BDD
   # * Retourne nil
   def supprimer
-  	BaseDeDonnees.supprimeDefi(@destinataire, @envoyeur, Grille.idGrille)
+  	BaseDeDonnees.supprimeDefi(@destinataire, @envoyeur, @idGrille)
   	# ACHTUNG ! L'instance n'est pas supprimée directement : NE PAS RELEVER UN DEFI SUPPRIME !!!
   	# Par précaution il vaut mieux faire listeDefis[X] = listeDefis.supprimer! afin de supprimer l'instance
   	return nil
@@ -48,12 +48,12 @@ class Defi
   # * Recherche le score de l'envoyeur dans la BDD
   # * Retourne un entier représentant le score de l'envoyeur
   def score
-  	return BaseDeDonnees.getDefiScore(envoyeur, destinataire, grille.idGrille)
+  	return BaseDeDonnees.getDefiScore(envoyeur, destinataire, @idGrille)
   end
   
-  def initialize(unEnvoyeur, unDestinataire, uneGrille, unScore) # :nodoc:
-  	@envoyeur, @destinataire, @grille = unEnvoyeur, unDestinataire, uneGrille
-  	BaseDeDonnees.setDefi(@envoyeur, @destinataire, @grille, unScore)
+  def initialize(unDestinataire, unEnvoyeur, unIdGrille, unScore) # :nodoc:
+  	@envoyeur, @destinataire, @idGrille = unEnvoyeur, unDestinataire, unIdGrille
+  	BaseDeDonnees.setDefi(@destinataire, @envoyeur, @idGrille, unScore)
   end
   
   # Méthode de classe
@@ -64,8 +64,8 @@ class Defi
   #		- unDestinataire : le Compte du destinataire
   #		- uneGrille : la Grille du Defi
   #		- unScore : un entier représentant le score réalisé par l'envoyeur
-  def Defi.creer(unEnvoyeur, unDestinataire, uneGrille, unScore)
-  	new(unEnvoyeur, unDestinataire, uneGrille, unScore)
+  def Defi.creer(unDestinataire, unEnvoyeur, unIdGrille, unScore)
+  	new(unDestinataire, unEnvoyeur, unIdGrille, unScore)
   end
   
   private_class_method :new

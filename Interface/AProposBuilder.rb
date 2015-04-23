@@ -1,5 +1,6 @@
 # encoding: UTF-8
 
+# Manuel Bouvier
 
 class AProposBuilder < TakuzuBuilder
     def initialize

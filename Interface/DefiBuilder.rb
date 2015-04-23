@@ -1,50 +1,40 @@
 # encoding: UTF-8
 
 ##
-# Auteur : Group 1
+# Auteur : Kuang Nanzhem, Parmenon Damien
 # Version 0.1 : Date : Mon Jul 01 10:17:02 CEST 2013
 #
 
 class DefiBuilder < TakuzuBuilder
 	
-	attr :grille , false
+	attr :IdGrille , false
 	
 	attr :score , false
 	
-    def initialize(uneGrille, unScore)
+    def DefiBuilder.creer(unIdGrille,unScore)
+    	new(unIdGrille,unScore)
+    end
+
+    def initialize(unIdGrille, unScore)
         super(__FILE__, "Defi")
+        @IdGrille = unIdGrille
+    	@score = unScore
     end
     
     def on_validerButton_clicked
-		Defi.creer(Compte.COMPTE.pseudo,labelPseudo,@grille,@score)
-		case @grille.taille
-			when 6
-				ouvrirFenetre(Partie6Builder.creer(PartieLibre.creer(6,@grille.difficulte)))
-			when 8
-				ouvrirFenetre(Partie8Builder.creer(PartieLibre.creer(8,@grille.difficulte)))
-			when 10
-				ouvrirFenetre(Partie10Builder.creer(PartieLibre.creer(10,@grille.difficulte)))
-			when 12
-				ouvrirFenetre(Partie12Builder.creer(PartieLibre.creer(12,@grille.difficulte)))
-		end
+		Defi.creer(@pseudo.text, Compte.COMPTE.pseudo, @IdGrille, @score)
+		fenetreInfo = Gtk::MessageDialog.new(self['window1'], Gtk::Dialog::DESTROY_WITH_PARENT,
+                              Gtk::MessageDialog::INFO,
+                              Gtk::MessageDialog::BUTTONS_CLOSE,
+                              "Le défi a bien été envoyé, vous allez être redirigé vers le menu principal.")
+  		fenetreInfo.run
+  		fenetreInfo.destroy
+  		ouvrirFenetre(MenuPrincipalBuilder.new())
 	end
 	
 	#Methode de classe qui fermer le defi
 	def on_annulerButton_clicked
 		ouvrirFenetre(MenuPrincipalBuilder.new())
 	end
-	
-	
-	#Méthode de classse
-	# * Méthode de classe qui lance l'interface graphique
-	def DefiBuilder.lancer(uneGrille,unScore)
-		Gtk.init
-		DefiBuilder.new(uneGrille,unScore)
-		Gtk.main
-    	end
-    	
-    	def DefiBuilder.creer(uneGrille,unScore)
-    		@grille = uneGrille
-    		@score = unSocre
-    	end
+
 end

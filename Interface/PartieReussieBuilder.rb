@@ -6,11 +6,15 @@
 
 class PartieReussieBuilder < TakuzuBuilder
 
+	@idGrille
+	@leScore
+
 	def initialize()
         super(__FILE__, "Partie Réussie")
-       	score = Jeu.JEU.partie.calculerScore
+       	@leScore = Jeu.JEU.partie.calculerScore
+       	@idGrille = Jeu.JEU.partie.grille.idGrille
 		Jeu.JEU.partie.gagner
-      	@score.set_text("Score :" + score.to_s)
+      	@score.set_text("Score :" + @leScore.to_s)
         @temps.set_text("Temps :" + Jeu.JEU.partie.getTempsString)
 		Jeu.JEU.partie.remiseAZero
 	end
@@ -21,7 +25,7 @@ class PartieReussieBuilder < TakuzuBuilder
 	end
 
 	def on_button2_clicked
-		ouvrirFenetre(DefiBuilder.new(Jeu.JEU.partie.calculerScore, Jeu.JEU.partie.calculerScore))
+		ouvrirFenetre(DefiBuilder.creer(@idGrille, @leScore))
 		Jeu.JEU.partie = nil
 	end
 
