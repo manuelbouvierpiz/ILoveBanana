@@ -222,13 +222,16 @@ class BaseDeDonnees
     # idGrille l'identifiant de la grille
     # score le score effectué par le joueur qui envoit le défi
     def BaseDeDonnees.setDefi(pseudoDest, pseudoEnv, idGrille, score)
-        newDefis = Defis.new
-        newDefis.pseudo = pseudoEnv
-        newDefis.pseudo_defier = pseudoDest
-        newDefis.id_grille = idGrille
-        newDefis.score = score
-        newDefis.save
-        return self
+    	if(Comptes.exists?(:pseudo => pseudoDest))
+        	newDefis = Defis.new
+        	newDefis.pseudo = pseudoEnv
+        	newDefis.pseudo_defier = pseudoDest
+        	newDefis.id_grille = idGrille
+        	newDefis.score = score
+        	newDefis.save
+        	return self
+        end
+        return -1
     end
     
     # Renvoie le nom d'un monde
