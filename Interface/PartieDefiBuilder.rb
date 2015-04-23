@@ -7,15 +7,13 @@
 #	- est un +PartieBuilder+
 class PartieDefiBuilder < PartieBuilder
 
+	attr :isDefi, false
 	# Méthodes d'instance
-	@isDefi?
-
-	attr :isDefi?, false
 	
 	# Méthode d'instance qui initialise la partie
 	def initialize(unePartie)			# :nodoc:
 		super(unePartie)
-		@isDefi? = true
+		@isDefi = true
 		@image1.set_file("Images/rien.png")
 		@meilleurScore.set_text("")
 	end
@@ -29,7 +27,7 @@ class PartieDefiBuilder < PartieBuilder
 			Jeu.JEU.partie.arretChronometre()
 			if(Jeu.JEU.partie.calculerScore > Jeu.JEU.partie.unScore)
 				Jeu.JEU.partie.setVainqueur(Compte.COMPTE.pseudo, Jeu.JEU.partie.calculerScore)
-				ouvrirFenetre(PartieDefiReussieBuilder.new)
+				ouvrirFenetre(PartieDefiReussiBuilder.new)
 			else
 				Jeu.JEU.partie.setVainqueur(Jeu.JEU.partie.unJoueur, Jeu.JEU.partie.unScore)
 				ouvrirFenetre(PartieEchecBuilder.new)
