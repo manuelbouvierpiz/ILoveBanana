@@ -665,10 +665,13 @@ class BaseDeDonnees
         return self
     end
     
+    # Renvoie le nombre d'étoiles obtenus sur une grille
+    # - pseudo le pseudo du joueur
+    # - idGrille l'identifiant de la grille
     def BaseDeDonnees.getNbEtoileObtenu(pseudo, idGrille)
     	if(GrilleFinis.exists?(:pseudo => pseudo, :id_grille => idGrille))
     		return GrilleFinis.select(:nb_etoile).where(pseudo: pseudo, id_grille: idGrille).nb_etoile	
     	end
-    	return -1
+    	return 0
     end
 end
