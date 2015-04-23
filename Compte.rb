@@ -135,6 +135,7 @@ class Compte
 
     # * Méthode d'instance qui attribue un mot de passe aléatoire de 6 chiffres
     def Compte.attribuerMotDePasseAleatoire(unPseudo)
+		prng = Random.new(Time.now.to_i)
     	unMotDePasse = prng.rand(100000..999999).to_s
         BaseDeDonnees.setMotDePasse(unPseudo, unMotDePasse)
         return unMotDePasse

@@ -59,6 +59,15 @@ class OptionsBuilder < TakuzuBuilder
 	# * Les changements sont directement enregistrés dans la base de données
 	# * Ouvre après l'enregistrement la fenêtre correspondant au menu principal
 	def on_buttonValider_clicked
+	
+		if @entryMotDePasse.text != "" || @entryNouveauMotDePasse.text != "" || @entryConfirmation.text != ""
+			if @entryMotDePasse.text != "" && @entryNouveauMotDePasse.text != "" && @entryNouveauMotDePasse.text == @entryConfirmation.text && Compte.verifierMotDePasse?(Compte.COMPTE.pseudo, @entryMotDePasse.text)
+				Compte.COMPTE.changerMotDePasse(@entryNouveauMotDePasse.text)
+			else
+				@labelErreur.set_text("Informations incorrectes")
+				return
+			end
+		end
 		Compte.COMPTE.options.modifierVolumeBruitage(@adjBruitage.value)
 		Compte.COMPTE.options.modifierVolumeMusique(@adjMusique.value)
 		

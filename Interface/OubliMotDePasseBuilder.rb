@@ -19,7 +19,7 @@ class OubliMotDePasseBuilder < TakuzuBuilder
     def on_buttonValider_clicked
     	if @entryMail.text != "" && @entryPseudo.text != ""
     		if Compte.verifierAdressePseudo?(@entryPseudo.text, @entryMail.text)
-				Compte.recupererMotDePasse(@entryMail.text, @entryPseudo.text)
+				Compte.recuperer(@entryMail.text, @entryPseudo.text)
         		@labelReussite.set_text("Un mail a été envoyé à " + @entryMail.text)
         		@buttonValider.set_visible(false)
        		else

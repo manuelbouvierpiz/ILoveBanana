@@ -730,12 +730,36 @@
           <object class="GtkHBox" id="hbox9">
             <property name="visible">True</property>
             <child>
+              <object class="GtkLayout" id="layout62">
+                <property name="visible">True</property>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLayout" id="layout63">
+                <property name="visible">True</property>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkLabel" id="labelChangementMDP">
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">Changement de mot de passe</property>
               </object>
               <packing>
-                <property name="position">0</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLayout" id="layout64">
+                <property name="visible">True</property>
+              </object>
+              <packing>
+                <property name="position">3</property>
               </packing>
             </child>
             <child>
@@ -765,7 +789,7 @@
                 <child>
                   <object class="GtkLabel" id="labelNouveauMotDePasse">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">label</property>
+                    <property name="label" translatable="yes">Nouveau mot de passe</property>
                   </object>
                   <packing>
                     <property name="position">2</property>
@@ -783,14 +807,58 @@
                     <property name="position">3</property>
                   </packing>
                 </child>
+                <child>
+                  <object class="GtkLabel" id="labelConfirmation">
+                    <property name="visible">True</property>
+                    <property name="label" translatable="yes">Confirmation</property>
+                  </object>
+                  <packing>
+                    <property name="position">4</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="entryConfirmation">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="visibility">False</property>
+                    <property name="invisible_char">&#x25CF;</property>
+                  </object>
+                  <packing>
+                    <property name="position">5</property>
+                  </packing>
+                </child>
               </object>
               <packing>
-                <property name="position">1</property>
+                <property name="position">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLayout" id="layout65">
+                <property name="visible">True</property>
+              </object>
+              <packing>
+                <property name="position">5</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLayout" id="layout66">
+                <property name="visible">True</property>
+              </object>
+              <packing>
+                <property name="position">6</property>
               </packing>
             </child>
           </object>
           <packing>
             <property name="position">18</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="labelErreur">
+            <property name="visible">True</property>
+          </object>
+          <packing>
+            <property name="position">19</property>
           </packing>
         </child>
         <child>
@@ -894,7 +962,7 @@
             </child>
           </object>
           <packing>
-            <property name="position">19</property>
+            <property name="position">20</property>
           </packing>
         </child>
       </object>
