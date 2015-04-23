@@ -65,7 +65,7 @@ class PartieMonde < Partie
 	end
 
 	def initialiseEtat
-		numNiveau = BaseDeDonnees.getNumeroNiveau(@idGrille)
+		numNiveau = BaseDeDonnees.getNumeroNiveau(@grille.idGrille)
 		if(@grille.difficulte == 1 && numNiveau == 1)
 			@etat = true
 		else
