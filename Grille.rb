@@ -124,7 +124,7 @@ class Grille
 		#Application des regles sur les colones
 
 		#Deplacement d'une colonne a l'autre( de gauche a droite).
-		for i in 0..tailleMax
+		for i in 0..tailleMax-1
 	 
 			nbBleu=0
 			nbRouge=0
@@ -133,7 +133,7 @@ class Grille
 
 
 			#Parcours de la colonne ( de haut en bas).
-			for j in 0..tailleMax
+			for j in 0..tailleMax-1
 				caseActuelle = @matrice[i][j]
 		
 		 

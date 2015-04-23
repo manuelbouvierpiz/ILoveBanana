@@ -32,8 +32,9 @@ class PartieMonde < Partie
 
 	# * Méthode d'instance qui retourne un nombre d'étoiles gagnées lors de la +PartieMonde+
 	def nbEtoile()
-		super()
-		unScore = calculerScore
+		#unScore = calculerScore
+		unScore = Compte.COMPTE.scorePourLeNiveau(self)
+		unResultat = 0
 		
 		if unScore > BaseDeDonnees.getGrilleEtoileTroisScore(@grille.idGrille)
 			unResultat = 3

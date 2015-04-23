@@ -5,7 +5,8 @@
 
 
 # La classe Partie est une méthode abstraite mère de PartieMonde et PartieLibre
-# == Classe Partie
+# == Classe Partie :
+#		- est considérée comme une classe abstraite
 class Partie
 
 	# * Grille sur laquelle le joueur va jouer
