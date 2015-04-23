@@ -7,19 +7,22 @@
 # La classe Partie est une méthode abstraite mère de PartieMonde et PartieLibre
 # == Classe Partie :
 #		- est considérée comme une classe abstraite
+#		- connaît sa grille, sa liste d'hypothèses, son nombre de clics courant, son nombre d'aides, son nombre total d'hypothèses, le début du chronomètre, la fin du chronomètre, 
 class Partie
 
-	# * Grille sur laquelle le joueur va jouer
-	@grille
+	# * Variable d'instance accessible en lecture qui représente la *Grille* sur laquelle le joueur va jouer
+	# * La grille va être modifiée au fur et à mesure de la +Partie+
+	attr :grille, false
 	
-	# * Pile des sauvegardes temporaires (ou hypothèses) que le joueur a fait
+	# * Variable d'instance non accessible représentant la pile des sauvegardes temporaires (ou hypothèses) que le joueur a fait durant la +Partie+
 	@listeHypotheses
 	
-	# * Variable contenant le nombre de clic que l'utilisateur a fait pour terminer la grille, elle s'incrémente durant la partie.
-	@nbClics
+	# * Variable d'instance accessible en lecture représentant le nombre de clic que l'utilisateur a fait
+	# * Elle s'incrémente durant la partie
+	attr :nbClics, false
 	
 	# * Variable contenant le nombre de fois que l'utilisateur a utiliser l'aide
-	@nbAides
+	attr :nbAides, false
 	
 	# * Variable contenant le nombre d'hypothèse que l'utilisateur a fait pour terminer la grille
 	@nbHypotheses
@@ -42,15 +45,13 @@ class Partie
 	# * Variable d'instance non accessible représentant la pile de mouvements pour le retour arrière
 	@mouvementsArriere
 
-	private_class_method :new
-
-	attr_reader :nbClics, :nbAides, :grille
-
 
 # Constucteur d'une partie 
 	def Partie.creer(unIdGrille, estHardcore=false)
 			new(unIdGrille, estHardcore)
 	end
+	
+	private_class_method :new
 
 # Initialise les variables d'instances
 	def initialize(unIdGrille, estHardcore=false)
@@ -164,12 +165,6 @@ class Partie
 			secondeMax = sprintf("%02i", unTempsMax % 60)
 			return "#{minute}:#{seconde}/#{minuteMax}:#{secondeMax}"
 		end
-	end
-		
-	# * Méthode d'instance qui permet de savoir si la +Partie+ est terminée
-	# * Retourne +true+ si la +Partie+ est terminée, +false+ sinon
-	def estTerminee?()
-		@grille.estTerminee?
 	end
 	
 	# * Méthode d'instance qui permet de jouer usr la +Grille+
