@@ -401,7 +401,7 @@ class BaseDeDonnees
     # - pseudoDest le pseudo du joueur qui a reçu le défi
     # - idGrille l'identifiant de la grille
     def BaseDeDonnees.supprimeDefi(pseudoEnv, pseudoDest, idGrille)
-        Defis.where(pseudo: pseudoEnv, pseudo_defier: pseudoDest, id_grille: idGrille).destroy_all
+        Defis.delete_all(["pseudo = ? AND pseudo_defier = ? AND id_grille = ?", pseudoEnv, pseudoDest, idGrille])
         return self
     end
     
