@@ -670,7 +670,7 @@ class BaseDeDonnees
     # - idGrille l'identifiant de la grille
     def BaseDeDonnees.getNbEtoileObtenu(pseudo, idGrille)
     	if(GrilleFinis.exists?(:pseudo => pseudo, :id_grille => idGrille))
-    		return GrilleFinis.select(:nb_etoile).where(pseudo: pseudo, id_grille: idGrille).nb_etoile	
+    		return GrilleFinis.select(:nb_etoile).find_by(pseudo: pseudo, id_grille: idGrille).nb_etoile	
     	end
     	return 0
     end
