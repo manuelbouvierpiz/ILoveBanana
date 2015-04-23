@@ -21,6 +21,7 @@ class Chargement
 		'PartieLibre.rb',
 		'PartieDidacticiel.rb',
 		'PartieMonde.rb',
+		'PartieSauvegarde.rb',
 		'Monde.rb',
 		'Aventure.rb',
 		'BaseDeDonnees.rb',
@@ -49,16 +50,20 @@ class Chargement
 		'Interface/PartieLibreBuilder.rb',
 		'Interface/PartieMondeBuilder.rb',
 		'Interface/PartieDidacticielBuilder.rb',
+		'Interface/PartieSauvegardeBuilder.rb',
 		'Interface/PartieReussieBuilder.rb',
 		'Interface/PartieLibreReussieBuilder.rb',
 		'Interface/PartieMondeReussieBuilder.rb',
 		'Interface/PartieDidacticielReussieBuilder.rb',
+		'Interface/PartieSauvegardeReussieBuilder.rb',
 		'Interface/PartieEchecBuilder.rb',
 		'Interface/StatistiquesBuilder.rb',
 		'Interface/SuccesBuilder.rb',
 		'Interface/TailleDifficulteBuilder.rb',
 		'Interface/InscriptionBuilder.rb',
-		'Interface/ReglesBuilder.rb'
+		'Interface/ReglesBuilder.rb',
+		'Interface/OubliMotDePasseBuilder.rb',
+		'Interface/ChargementSauvegardeBuilder.rb'
 	]
 	
 	# * Variable de classe accessible en lecture représentant la classe en train d'être chargée

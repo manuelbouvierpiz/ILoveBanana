@@ -80,7 +80,7 @@ class PartieBuilder < TakuzuBuilder
 	# * Est automatiquement appelée par Gtk
 	def	on_bouton_clicked(unX, unY)
 		Jeu.JEU.partie.jouer(unX, unY)
-		@nbClics.set_text("Clics :\n" + Jeu.JEU.partie.nbClicsString)
+		@nbClics.set_text("Clic(s) :\n" + Jeu.JEU.partie.nbClicsString)
 		
 		# Trop lent
 		#actualiserGrille()
@@ -115,20 +115,28 @@ class PartieBuilder < TakuzuBuilder
 		end
 	end
 	
+	# * Méthode d'instance qui permet d'arrêter la +Partie+ et de retourner au menu principal
+	# * Est automatiquement appelée par Gtk
 	def on_menu_clicked()
 		Jeu.JEU.partie.arreteToi
 		Jeu.JEU.partie = nil
 		ouvrirFenetre(MenuPrincipalBuilder.new)
 	end
 	
+	# * Méthode d'instance qui permet d'ouvrir une fenêtre indiquant les règles
+	# * Est automatiquement appelée par Gtk
 	def on_regle_clicked()
 		ouvrirFenetreNonFermante(ReglesBuilder.new)
 	end
 	
+	# * Méthode d'instance qui permet d'afficher une aide
+	# * Est automatiquement appelée par Gtk
 	def on_aide_clicked()
 		@aideLabel.set_text(Jeu.JEU.partie.obtenirAide)
 	end
 	
+	# * Méthode d'instance qui permet de jouer un coup en arrière
+	# * Est automatiquement appelée par Gtk
 	def on_back_clicked()
 		Jeu.JEU.partie.retourArriere
 		if !Jeu.JEU.partie.peutRetourArriere?
@@ -137,6 +145,8 @@ class PartieBuilder < TakuzuBuilder
 		actualiserGrille()
 	end
 	
+	# * Méthode d'instance qui permet de poser une sauvegarde temporaire pour une hypothèse
+	# * Est automatiquement appelée par Gtk
 	def on_hypothese_clicked()
 		[@hypothese_1, @hypothese_2, @hypothese_3, @hypothese_4, @hypothese_5].each do |unBouton|
 			if unBouton.label == nil
@@ -149,6 +159,8 @@ class PartieBuilder < TakuzuBuilder
 		end
 	end
 	
+	# * Méthode d'instance qui permet de revenir à un état sauvegardé/pré-hypothésé
+	# * Est automatiquement appelée par Gtk
 	def on_hypothese_X_clicked(unNumero)
 		if unNumero > 5 # On a enlevé toutes les hypothèses antérieures
 			actualiserGrille

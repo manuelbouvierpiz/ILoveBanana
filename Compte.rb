@@ -111,7 +111,7 @@ class Compte
     end
     
     #recuperer le compte avec l'adresse email
-    def Compte.recuperer(unMail)
+    def Compte.recuperer(unMail, unPseudo)
         
         options = { :address              => "smtp.gmail.com",
             :port                 => 587,
@@ -129,20 +129,28 @@ class Compte
 			to unMail
 			from 'TakuzuAvengers@gmail.com'
 			subject 'Récupération de votre mot de passe TakuzuAvengers'
-			body "Bonjour,\nVotre mot de passe est " + attribuerMotDePasseAleatoire() + "\nCordialement,\n\nLe groupe 1"
+			body "Bonjour,\nVotre mot de passe est " + Compte.attribuerMotDePasseAleatoire(unPseudo) + "\nCordialement,\n\nLe groupe 1"
 		end
     end
+
+    # * Méthode d'instance qui attribue un mot de passe aléatoire de 6 chiffres
+    def Compte.attribuerMotDePasseAleatoire(unPseudo)
+    	unMotDePasse = prng.rand(100000..999999).to_s
+        BaseDeDonnees.setMotDePasse(unPseudo, unMotDePasse)
+        return unMotDePasse
+    end
+	
+	# * Méthode de classe qui permet de vérifier 
+	def Compte.verifierAdressePseudo?(unPseudo, unMail)
+		if Compte.verifierMail?(unMail) || Compte.verifierIdentifiant?(unPseudo)
+			return false
+		end
+		return unMail == BaseDeDonnees.getMail(unPseudo)
+	end
 
     # * Méthode d'instance qui change le mot de passe
     def changerMotDePasse(unMotDePasse)
         BaseDeDonnees.setMotDePasse(@pseudo, unMotDePasse)
-    end
-
-    # * Méthode d'instance qui attribue un mot de passe aléatoire de 6 chiffres
-    def attribuerMotDePasseAleatoire()
-    	unMotDePasse = prng.rand(100000..999999).to_s
-        changerMotDePasse(unMotDePasse)
-        return unMotDePasse
     end
     
     # * Méthode d'instance qui retourne le score réalisé sur un niveau de l'aventure
@@ -150,5 +158,18 @@ class Compte
     def scorePourLeNiveau(unePartieMonde)
     	BaseDeDonnees.getScore(@pseudo, unePartieMonde.grille.idGrille)
     end
-
+	
+	# * Méthode d'instance qui permet de savoir si l'utilisateur avait une partie en cours
+	# * Retourne +true+ si il a une partie sauvegardée, +false+ sinon
+	def aUneSauvegarde?()
+		return BaseDeDonnees.estSauvegarde?(@pseudo)
+	end
+	
+	# * Méthode d'instance qui permet de supprimer la sauvegarde du joueur
+	# * Retourne +self+
+	def supprimeSauvegarde()
+		BaseDeDonnees.supprimeSauvegarde(@pseudo)
+		return self
+	end
+	
 end

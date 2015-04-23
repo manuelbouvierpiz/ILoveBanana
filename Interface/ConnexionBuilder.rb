@@ -12,6 +12,7 @@ class ConnexionBuilder < TakuzuBuilder
 
     def initialize	# :nodoc:
 		super(__FILE__, "Connexion")
+		@oubliMotDePasse.hide
     end
 
 	# * Méthode d'instance qui permet de connecter un utilisateur après avoir cliqué sur le bouton de connexion
@@ -19,9 +20,14 @@ class ConnexionBuilder < TakuzuBuilder
     def on_connexionButton_clicked
 		if Compte.verifierMotDePasse?(@loginEntry.text, @mdpEntry.text)
         	Compte.login(@loginEntry.text, @mdpEntry.text)
-        	ouvrirFenetre(MenuPrincipalBuilder.new())
+			if Compte.COMPTE.aUneSauvegarde?
+				ouvrirFenetre(ChargementSauvegardeBuilder.new())
+			else
+				ouvrirFenetre(MenuPrincipalBuilder.new())
+			end
         else
             @erreurLabel.set_text("Identifiants incorrects")
+			@oubliMotDePasse.show
         end
     end
 
@@ -40,5 +46,10 @@ class ConnexionBuilder < TakuzuBuilder
 		ConnexionBuilder.new()
 		Gtk.main
     end
+	
+	# * Méthode d'instance qui ouvre la fenêtre du mot de passe oublié
+	def on_oubliMotDePasse_clicked
+		ouvrirFenetre(OubliMotDePasseBuilder.new)
+	end
     
 end

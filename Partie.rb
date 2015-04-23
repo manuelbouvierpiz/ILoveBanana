@@ -22,9 +22,6 @@ class Partie
 	# * Variable contenant le nombre d'hypothèse que l'utilisateur a fait pour terminer la grille
 	@nbHypotheses
 	
-	# * Variable contenant l'id de la grille
-	@idGrille
-	
 	# * Variable contenant l'heure de début du lancement du chronometre
 	@debutChronometre
 	
@@ -42,9 +39,6 @@ class Partie
 
 	# * Variable d'instance non accessible représentant la pile de mouvements pour le retour arrière
 	@mouvementsArriere
-	
-	# * Variable d'instance qui représente le temps de la sauvegarde dans le cas d'un chargement de partie
-	@tempsSauvegarde
 
 	private_class_method :new
 
@@ -56,33 +50,16 @@ class Partie
 			new(unIdGrille, estHardcore)
 	end
 
-# Constructeur permettant de charger une grille sauvegardée
-	def Partie.charger()
-			new()
-	end
-
 # Initialise les variables d'instances
-	def initialize(unIdGrille=nil, estHardcore=nil)
-		if unIdGrille == nil		# Il faut charger la grille précédemment sauvegardée
-			@nbHypotheses = BaseDeDonnees.getSauvegardeNbHypotheses(Compte.COMPTE.pseudo)
-			@nbAides = BaseDeDonnees.getSauvegardeNbAides(Compte.COMPTE.pseudo)
-			@nbClics = BaseDeDonnees.getSauvegardeNbClics(Compte.COMPTE.pseudo)
-			@idGrille = BaseDeDonnees.getSauvegardeIdGrille(Compte.COMPTE.pseudo)
-			@grille = Grille.creer(unIdGrille, BaseDeDonnees.getSauvegardeGrilleSauvegardee(Compte.COMPTE.pseudo))
-			@tempsSauvegarde = BaseDeDonnees.getSauvegardeTemps(Compte.COMPTE.pseudo)
-		else					# Il faut créer une nouvelle grille
-			@nbHypotheses = 0
-			@nbAides = 0
-			@nbClics = 0
-			@idGrille = unIdGrille
-			if estHardcore
-				@grille = GrilleHardcore.creer(unIdGrille)
-			else
-				@grille = Grille.creer(unIdGrille)
-			end
-			@tempsSauvegarde = 0
+	def initialize(unIdGrille, estHardcore=false)
+		@nbHypotheses = 0
+		@nbAides = 0
+		@nbClics = 0
+		if estHardcore
+			@grille = GrilleHardcore.creer(unIdGrille)
+		else
+			@grille = Grille.creer(unIdGrille)
 		end
-		
 		@fini = false
 		@listeHypotheses = Array.[]
 		@tourne = false
@@ -126,7 +103,7 @@ class Partie
 # Méthode permettant de lancer le chronomètre	
 	def lanceToi()
 		if @debutChronometre == nil
-			@debutChronometre = Time.now + @tempsSauvegarde
+			@debutChronometre = Time.now
 			@tourne = true	
 		else
 			repriseChronometre
@@ -135,7 +112,7 @@ class Partie
 	
 	# * Méthode d'instance qui arrête la +Partie+
 	def arreteToi
-		# Le comportement varie en fonction du type de la partie
+		sauvegarder
 	end
 	
 # Méthode permettant de stopper commplètement le chronomètre
@@ -264,8 +241,8 @@ class Partie
 	end
 	
 	def sauvegarder
-		self.mettreEnPauseChronometre
-		BaseDeDonnees.setSauvegarde(Compte.COMPTE.pseudo, self.getTemps, @nbClics, @nbHypotheses, @nbAides, @idGrille, @grille.matrice)
+		#self.mettreEnPauseChronometre		# Normalement, le chrono doit déjà être en pause quand cette méthode est appelée
+		BaseDeDonnees.setSauvegarde(Compte.COMPTE.pseudo, self.getTemps, @nbClics, @nbHypotheses, @nbAides, @grille.idGrille, @grille.matrice)
 		return self
 	end
 	
@@ -275,7 +252,6 @@ class Partie
 		@nbHypotheses = 0
 		@nbAides = 0
 		@nbClics = 0
-		@idGrille = unIdGrille
 		if @grille.difficulte >= 8
 			@grille = GrilleHardcore.creer(unIdGrille)
 		else
