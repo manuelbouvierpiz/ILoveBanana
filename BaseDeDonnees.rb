@@ -401,7 +401,7 @@ class BaseDeDonnees
     # - pseudoDest le pseudo du joueur qui a reçu le défi
     # - idGrille l'identifiant de la grille
     def BaseDeDonnees.supprimeDefi(pseudoEnv, pseudoDest, idGrille)
-        Defis.where(:pseudo => pseudo, :pseudo_defier => pseudoDest, :id_grille => idGrille).destroy_all
+        Defis.where(:pseudo => pseudoEnv, :pseudo_defier => pseudoDest, :id_grille => idGrille).destroy_all
         return self
     end
     
