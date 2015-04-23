@@ -253,9 +253,9 @@ class Partie
 		@nbAides = 0
 		@nbClics = 0
 		if @grille.difficulte >= 8
-			@grille = GrilleHardcore.creer(unIdGrille)
+			@grille = GrilleHardcore.creer(@grille.idGrille)
 		else
-			@grille = Grille.creer(unIdGrille)
+			@grille = Grille.creer(@grille.idGrille)
 		end
 		@tempsSauvegarde = 0
 		@fini = false
