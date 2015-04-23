@@ -23,6 +23,8 @@ class Defi
   # * Est intialisée lors de la création de l'objet
   # * Accessible en lecture uniquement
   attr :idGrille, false
+
+  attr :score, false
   
   # Méthodes d'instance
   
@@ -53,9 +55,11 @@ class Defi
   
   def initialize(unDestinataire, unEnvoyeur, unIdGrille, unScore) # :nodoc:
   	@envoyeur, @destinataire, @idGrille = unEnvoyeur, unDestinataire, unIdGrille
-  	BaseDeDonnees.setDefi(@destinataire, @envoyeur, @idGrille, unScore)
   end
   
+  def envoyerDefi
+    BaseDeDonnees.setDefi(@destinataire, @envoyeur, @idGrille, @unScore)
+  end
   # Méthode de classe
   
   # * Méthode de classe permettant de créer un +Defi+
