@@ -31,7 +31,6 @@ class Chargement
 		'Didacticiel.rb',
 		'Options.rb',
 		'RaccourciClavier.rb',
-		'SauvegardeTemporaire.rb',
 		'Statistiques.rb',
 		'Succes.rb',
 		'SuccesIndividuel.rb',
