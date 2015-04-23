@@ -8,7 +8,10 @@
 class PartieDefiBuilder < PartieBuilder
 
 	# Méthodes d'instance
+	@isDefi? = yes
 
+	attr :isDefi?, false
+	
 	# Méthode d'instance qui initialise la partie
 	def initialize(unePartie)			# :nodoc:
 		super(unePartie)
