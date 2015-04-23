@@ -18,7 +18,25 @@ class MenuPrincipalBuilder < TakuzuBuilder
 
 	# * Méthode d'instance qui ouvre la fenêtre TailleDifficulte si l'utilisateur clique sur le bouton correspondant afin de lancer une partie rapide
 	def on_partieRapideButton_clicked
-		ouvrirFenetre(TailleDifficulteBuilder.new)
+		lesDefis = BaseDeDonnees.getDefis(Compte.COMPTE.pseudo)
+		if(lesDefis.empty?)
+			ouvrirFenetre(TailleDifficulteBuilder.new)
+		else
+			lesDefis.each do |unDefi|
+				defiClasse = Defi.creer(unDefi[2], unDefi[1], unDefi[3], unDefi[4])
+				fenetreInfo = Gtk::MessageDialog.new(self['window1'], Gtk::Dialog::DESTROY_WITH_PARENT,
+                          	  Gtk::MessageDialog::INFO,
+                          	  Gtk::MessageDialog::BUTTONS_YES_NO,
+                          	  "Vous avez un défi en attente de #{defiClasse.envoyeur}, souhaitez vous le relever ?")
+  				fenetreInfo.run
+  				fenetreInfo.destroy
+  				if(fenetreInfo.get_response == Gtk::Dialog::RESPONSE_YES)
+  					PartieDefiBuilder.new(defiClasse.relever)
+  				else
+  					defiClasse.supprimer
+  				end
+  			end
+  		end
 	end
 
 	# * Méthode d'instance qui ouvre la fenêtre Aventure si l'utilisateur clique sur le bouton correspondant
