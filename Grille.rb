@@ -124,7 +124,7 @@ class Grille
 		#Application des regles sur les colones
 
 		#Deplacement d'une colonne a l'autre( de gauche a droite).
-		for i in 0..tailleMax
+		for i in 0..tailleMax-1
 	 
 			nbBleu=0
 			nbRouge=0
@@ -133,11 +133,11 @@ class Grille
 
 
 			#Parcours de la colonne ( de haut en bas).
-			for j in 0..tailleMax
+			for j in 0..tailleMax-1
 				caseActuelle = @matrice[i][j]
 		
 		 
-				if @matrice[i][j].estVide?
+				if caseActuelle.estVide?
 					colonne[j]="V"
 
 					#Test si il y a une case vide entre 2 case de la meme couleurs	(Peut etre utilisé )
@@ -189,7 +189,7 @@ class Grille
 		#Application des regles sur les colonnes
 
 		#Deplacement d'une ligne a l'autre( de haut en bas).
-		for j in 0..tailleMax
+		for j in 0..tailleMax-1
 	 
 			nbBleu=0
 			nbRouge=0
@@ -198,7 +198,7 @@ class Grille
 
 
 			#Parcours de la ligne ( de gauche a droite).
-			for i in 0..tailleMax
+			for i in 0..tailleMax-1
 				caseActuelle =@matrice[i][j]
 		
 		 
@@ -246,17 +246,17 @@ class Grille
 
 		end
 
-		for x in 0..tailleMax
-			for y in 0..tailleMax
+		for x in 0..tailleMax-1
+			for y in 0..tailleMax-1
 
 =begin
 	 
-	 #Tentative d'aide quand 2 case sont vide et que le reste est identique ou avec une seul case vide
+	 #Tentative d'aide quand 2 cases sont vide et que le reste est identique ou avec une seul case vide
 
 
 				nbVide=0
 
-				for z in 0..tailleMax
+				for z in 0..tailleMax-1
 					colonneActuel=colonnes[x]
 				 
 					
