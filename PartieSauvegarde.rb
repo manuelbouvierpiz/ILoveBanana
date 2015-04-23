@@ -26,8 +26,6 @@ class PartieSauvegarde < Partie
 			@grille = GrilleHardcore.creer(unIdGrille, BaseDeDonnees.getSauvegardeGrilleSauvegardee(Compte.COMPTE.pseudo))
 		end
 		@tempsSauvegarde = BaseDeDonnees.getSauvegardeTemps(Compte.COMPTE.pseudo)
-		
-		Compte.COMPTE.supprimeSauvegarde()	# Maintenant qu'elle est chargée, on peut libérer la place
 	end
 
 	def lanceToi

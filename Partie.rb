@@ -242,6 +242,9 @@ class Partie
 	
 	def sauvegarder
 		#self.mettreEnPauseChronometre		# Normalement, le chrono doit déjà être en pause quand cette méthode est appelée
+		if Compte.COMPTE.aUneSauvegarde?
+			Compte.COMPTE.supprimeSauvegarde()	# Une seule sauvegarde dans la BDD
+		end
 		BaseDeDonnees.setSauvegarde(Compte.COMPTE.pseudo, self.getTemps, @nbClics, @nbHypotheses, @nbAides, @grille.idGrille, @grille.matrice)
 		return self
 	end
