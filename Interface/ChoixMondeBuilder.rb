@@ -4,8 +4,13 @@ class ChoixMondeBuilder < TakuzuBuilder
 
 	def initialize 
         	super(__FILE__,"Choix du Monde")
+        	res = true
         	0.upto(7) do |i|
-			Jeu.JEU.aventure.mondes[i].initialiseEtat
+			if(!Jeu.JEU.aventure.mondes[i].estDebloque?())
+				if(res == true)
+        				res = Jeu.JEU.aventure.mondes[i].initialiseEtat
+				end
+			end
 		end
 		@buttonForet.set_sensitive(false) if(!Jeu.JEU.aventure.mondes[1].estDebloque?)
         	@buttonMer.set_sensitive(false) if(!Jeu.JEU.aventure.mondes[2].estDebloque?)
