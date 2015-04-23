@@ -654,7 +654,13 @@ class BaseDeDonnees
     def BaseDeDonnees.getNumeroNiveau(idGrille)
     	return Grilles.select(:numero_niveau).find_by_id_grille(idGrille).numero_niveau
     end
-
+    
+    # Attribue un vainqueur à un défi
+    # - joueurDefie le joueur qui a été défié
+    # - joueurDefiant le joueur qui a défié
+    # - unIdGrille l'identifiant de la grille
+    # - pseudoVainqueur le pseudo du vainqueur du défi
+    # - unScore le score du vainqueur
     def BaseDeDonnees.setVainqueurDefi(joueurDefie, joueurDefiant, unIdGrille, pseudoVainqueur, unScore)
         Defis.where(:pseudo => joueurDefiant, :pseudo_defier => joueurDefie, :id_grille => unIdGrille).update_all(score: unScore, pseudo_vainqueur: pseudoVainqueur)
     end
