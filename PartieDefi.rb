@@ -9,7 +9,7 @@ class PartieDefi < Partie
 	attr :unJoueur, false
 	attr :unScore, false
 
-	def PartieLibre.creer(unIdGrille, unJoueur, unScore)
+	def PartieDefi.creer(unIdGrille, unJoueur, unScore)
 		new(unIdGrille, unJoueur, unScore)
 	end
 	
@@ -17,7 +17,7 @@ class PartieDefi < Partie
 		@unIdGrille = unIdGrille
 		@unJoueur = unJoueur
 		@unScore = unScore
-		if(BaseDeDonnees.getGrilleDifficulte >= 8)
+		if(BaseDeDonnees.getGrilleDifficulte(unIdGrille) >= 8)
 			super(unIdGrille, true)
 		else
 			super(unIdGrille)

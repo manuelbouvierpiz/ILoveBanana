@@ -30,7 +30,7 @@ class MenuPrincipalBuilder < TakuzuBuilder
   				fenetreInfo.run do |reponse|
   					case reponse
   						when Gtk::Dialog::RESPONSE_YES
-  							PartieDefiBuilder.new(unDefi.relever)
+  							PartieDefiBuilder.creer(unDefi.relever)
   						when Gtk::Dialog::RESPONSE_NO
   						unDefi.supprimer
   					end

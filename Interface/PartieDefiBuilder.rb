@@ -24,15 +24,15 @@ class PartieDefiBuilder < PartieBuilder
 		if Jeu.JEU.partie.grille.estCorrecte?
 			Jeu.JEU.partie.arretChronometre()
 			if(Jeu.JEU.partie.calculerScore > Jeu.JEU.partie.unScore)
-				Jeu.Jeu.partie.setVainqueur(Compte.COMPTE.pseudo, Jeu.JEU.partie.calculerScore)
+				Jeu.JEU.partie.setVainqueur(Compte.COMPTE.pseudo, Jeu.JEU.partie.calculerScore)
 				ouvrirFenetre(PartieDefiReussieBuilder.new)
 			else
-				Jeu.Jeu.partie.setVainqueur(Jeu.JEU.partie.unJoueur, Jeu.JEU.partie.unScore)
+				Jeu.JEU.partie.setVainqueur(Jeu.JEU.partie.unJoueur, Jeu.JEU.partie.unScore)
 				ouvrirFenetre(PartieEchecBuilder.new)
 			end
 		elsif !Jeu.JEU.partie.verifierNbClicsMax?
 			Jeu.JEU.partie.arretChronometre()
-			Jeu.Jeu.partie.setVainqueur(Jeu.JEU.partie.unJoueur, Jeu.JEU.partie.unScore)
+			Jeu.JEU.partie.setVainqueur(Jeu.JEU.partie.unJoueur, Jeu.JEU.partie.unScore)
 			ouvrirFenetre(PartieEchecBuilder.new)
 		end
 	end
