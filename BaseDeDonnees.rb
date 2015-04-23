@@ -663,5 +663,6 @@ class BaseDeDonnees
     # - unScore le score du vainqueur
     def BaseDeDonnees.setVainqueurDefi(joueurDefie, joueurDefiant, unIdGrille, pseudoVainqueur, unScore)
         Defis.where(:pseudo => joueurDefiant, :pseudo_defier => joueurDefie, :id_grille => unIdGrille).update_all(score: unScore, pseudo_vainqueur: pseudoVainqueur)
+        return self
     end
 end
