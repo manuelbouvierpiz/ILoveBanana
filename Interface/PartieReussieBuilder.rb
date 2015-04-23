@@ -13,6 +13,7 @@ class PartieReussieBuilder < TakuzuBuilder
         super(__FILE__, "Partie Réussie")
        	@leScore = Jeu.JEU.partie.calculerScore
        	@idGrille = Jeu.JEU.partie.grille.idGrille
+		Jeu.JEU.partie.gagner
       	@score.set_text("Score :" + @leScore.to_s)
         @temps.set_text("Temps :" + Jeu.JEU.partie.getTempsString)
 		Jeu.JEU.partie.remiseAZero

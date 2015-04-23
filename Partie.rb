@@ -112,9 +112,7 @@ class Partie
 	
 	# * Méthode d'instance qui arrête la +Partie+
 	def arreteToi
-		if @grille.estCorrecte?
-			gagner
-		else
+		if !@grille.estCorrecte? && verifierTempsMax? && verifierNbClicsMax?
 			sauvegarder
 		end
 	end
