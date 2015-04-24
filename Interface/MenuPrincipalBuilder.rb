@@ -13,7 +13,7 @@ class MenuPrincipalBuilder < TakuzuBuilder
 
 	# * Méthode d'instance qui initialise la fenêtre correspondante au +MenuPrincipalBuilder+
 	def initialize 
-        super(__FILE__, "Menu Principal")
+        super(__FILE__)
 	end
 
 	# * Méthode d'instance qui ouvre la fenêtre TailleDifficulte si l'utilisateur clique sur le bouton correspondant afin de lancer une partie rapide
@@ -60,7 +60,7 @@ class MenuPrincipalBuilder < TakuzuBuilder
 	
 	# * Méthode d'instance qui ouvre la fenêtre d'à propos si l'utilisateur clique sur le bouton correspondant
 	def on_aProposButton_clicked
-		ouvrirFenetre(AProposBuilder.new)
+		ouvrirFenetreNonFermante(AProposBuilder.new)
 	end
 	
 	# * Méthode d'instance qui ouvre la fenêtre de Connexion si l'utilisateur clique sur le bouton correspondant

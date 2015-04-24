@@ -10,7 +10,7 @@ class PartieReussieBuilder < TakuzuBuilder
 	@leScore
 
 	def initialize()
-        super(__FILE__, "Partie Réussie")
+        super(__FILE__)
        	@leScore = Jeu.JEU.partie.calculerScore
        	@idGrille = Jeu.JEU.partie.grille.idGrille
 		Jeu.JEU.partie.gagner

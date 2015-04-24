@@ -3,7 +3,7 @@
 class ChoixMondeBuilder < TakuzuBuilder
 
 	def initialize 
-        	super(__FILE__,"Choix du Monde")
+        	super(__FILE__)
         	res = true
         	0.upto(7) do |i|
 			if(!Jeu.JEU.aventure.mondes[i].estDebloque?())

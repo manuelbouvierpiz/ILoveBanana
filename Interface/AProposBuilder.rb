@@ -8,6 +8,6 @@ class AProposBuilder < TakuzuBuilder
     end
 
     def on_boutonRetour_clicked
-    	ouvrirFenetre(MenuPrincipalBuilder.new)
+    	ouvrirFenetrePrecedente()
     end
 end

@@ -28,7 +28,7 @@ class PartieBuilder < TakuzuBuilder
 
 	# Méthode d'instance qui initialise la partie
 	def initialize(unePartie)			# :nodoc:
-		super("Interface/Partie#{unePartie.grille.taille}Builder.glade", "Partie")
+		super("Interface/Partie#{unePartie.grille.taille}Builder.glade")
 		
 		Jeu.JEU.partie = unePartie
 		

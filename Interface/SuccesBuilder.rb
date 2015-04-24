@@ -12,7 +12,7 @@ class SuccesBuilder < TakuzuBuilder
     # * Méthode d'instance qui initialise la fenêtre correspondante au +SuccesBuilder+
     # * Va chercher les succés dans la base de données et vérifie s'ils ont été réussis, affiche une image dans le cas où ils le sont
 	def initialize
-		super(__FILE__, "Succès")
+		super(__FILE__)
 		lesSucces = Compte.COMPTE.succes.succes
 		lesSucces.each do |leSucces|
 			uneHbox = Gtk::HBox.new(true, nil)

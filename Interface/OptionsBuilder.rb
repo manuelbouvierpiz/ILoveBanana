@@ -30,7 +30,7 @@ class OptionsBuilder < TakuzuBuilder
 	# * Méthode d'instance qui initialise la fenêtre correspondante au +MenuPrincipalBuilder+
 	# * Cette méthode va chercher dans la base de données les options actuelles du joueur qu'il pourra modifier ensuite
 	def initialize() 
-		super(__FILE__,"Options")
+		super(__FILE__)
 		@adjBruitage =  Gtk::Adjustment.new(1,1,100,1,1,0)
 		@hscaleBruitage.adjustment = @adjBruitage
 		@adjMusique =  Gtk::Adjustment.new(1,1,100,1,1,0)
