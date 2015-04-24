@@ -33,11 +33,6 @@ class PartieMonde < Partie
 	def nbEtoile()
 		return BaseDeDonnees.getNbEtoileObtenu(Compte.COMPTE.pseudo, @grille.idGrille)
 	end
-
-	#  * Méthode d'instance qui retourne le score d'un joueur sur ce niveau
-	def scoreDuJoueur()
-		return BaseDeDonnees.getScore(Compte.COMPTE.pseudo, @grille.idGrille)
-	end
 	
 	# * Méthode d'instance qui arrête la +PartieDidacticiel+
 	def arreteToi
@@ -51,7 +46,7 @@ class PartieMonde < Partie
 		
 		# On ne met à jour la BDD que si le score est meilleur
 		unScore = calculerScore()
-		if unScore > scoreDuJoueur()
+		if unScore > Compte.COMPTE.scorePourLaGrille(@grille)
 			unNbEtoile = 0
 		
 			if unScore > BaseDeDonnees.getGrilleEtoileTroisScore(@grille.idGrille)

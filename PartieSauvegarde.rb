@@ -1,11 +1,11 @@
-# PARMENON Damien
-# Options.rb
-# Implementation de la classe Options
-
 # encoding: utf-8
 
-# == Classe +PartieSauvegarde+ :
-#		- est une +Partie+
+# Valentin CHAILLOU
+# PartieSauvegarde.rb
+# Implementation de la classe Options
+
+# == Classe *PartieSauvegarde* :
+#		- est une *Partie*
 #		- sait se charger
 class PartieSauvegarde < Partie
 
@@ -26,6 +26,28 @@ class PartieSauvegarde < Partie
 			@grille = GrilleHardcore.creer(unIdGrille, BaseDeDonnees.getSauvegardeGrilleSauvegardee(Compte.COMPTE.pseudo))
 		end
 		@tempsSauvegarde = BaseDeDonnees.getSauvegardeTemps(Compte.COMPTE.pseudo)
+	end
+	
+	# * Méthode d'instance qui "termine" la +Partie+
+	# * Retourne +self+
+	def gagner
+		
+		# On ne met à jour la BDD que si le score est meilleur
+		unScore = calculerScore()
+		if unScore > Compte.COMPTE.scorePourLaGrille(@grille)
+			unNbEtoile = 0
+		
+			if unScore > BaseDeDonnees.getGrilleEtoileTroisScore(@grille.idGrille)
+				unNbEtoile = 3
+			elsif unScore > BaseDeDonnees.getGrilleEtoileDeuxScore(@grille.idGrille)
+				unNbEtoile = 2
+			elsif unScore > BaseDeDonnees.getGrilleEtoileUnScore(@grille.idGrille)
+				unNbEtoile = 1
+			end
+	
+			BaseDeDonnees.setGrilleTermine(Compte.COMPTE.pseudo, @grille.idGrille, getTemps, @nbClics, unNbEtoile, @nbHypotheses, @nbAides, unScore)
+		end
+		return self
 	end
 
 	def lanceToi

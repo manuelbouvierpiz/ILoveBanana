@@ -154,10 +154,9 @@ class Compte
         BaseDeDonnees.setMotDePasse(@pseudo, unMotDePasse)
     end
     
-    # * Méthode d'instance qui retourne le score réalisé sur un niveau de l'aventure
-    # * Marche théoriquement sur tous les types de partie mais non testé
-    def scorePourLeNiveau(unePartie)
-    	BaseDeDonnees.getScore(@pseudo, unePartie.grille.idGrille)
+    # * Méthode d'instance qui retourne le score réalisé sur une *Grille*
+    def scorePourLaGrille(uneGrille)
+    	BaseDeDonnees.getScore(@pseudo, uneGrille.idGrille)
     end
 	
 	# * Méthode d'instance qui permet de savoir si l'utilisateur avait une partie en cours

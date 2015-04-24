@@ -33,7 +33,7 @@ class PartieMondeBuilder < PartieBuilder
 		@monde = unMonde
 		
 		@image1.set_file(unMonde.image)
-		unScore = Compte.COMPTE.scorePourLeNiveau(Jeu.JEU.partie)
+		unScore = Compte.COMPTE.scorePourLaGrille(Jeu.JEU.partie.grille)
 		if unScore > -1
 			@meilleurScore.set_text("Meilleur score :\n" + unScore.to_s)
 		else
