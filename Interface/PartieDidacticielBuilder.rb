@@ -9,6 +9,7 @@
 #	- est un +PartieBuilder+
 class PartieDidacticielBuilder < PartieBuilder
 
+	@styleBoutonBlanc
 	@etape
 	# Méthodes d'instance
 
@@ -19,6 +20,17 @@ class PartieDidacticielBuilder < PartieBuilder
 		@image1.set_file("Images/rien.png")
 		@meilleurScore.set_text("")
 		@etape = 0
+		
+		### Création du style de couleur blanche ###
+
+		uneCouleurBlanc = Gdk::Color.parse("white")
+
+		@styleBoutonBlanc = Gtk::Style.new
+
+		@styleBoutonBlanc.set_bg(Gtk::STATE_NORMAL, uneCouleurBlanc.red, uneCouleurBlanc.green, uneCouleurBlanc.blue)
+		@styleBoutonBlanc.set_bg(Gtk::STATE_ACTIVE, uneCouleurBlanc.red, uneCouleurBlanc.green, uneCouleurBlanc.blue)
+		@styleBoutonBlanc.set_bg(Gtk::STATE_PRELIGHT, uneCouleurBlanc.red, uneCouleurBlanc.green, uneCouleurBlanc.blue)
+		
 		on_bouton_clicked(0,0)
 	end
 	
@@ -34,8 +46,9 @@ class PartieDidacticielBuilder < PartieBuilder
   				fenetreInfo.run
   				fenetreInfo.destroy
 				@etape = 1
-				eval("@bouton_#{3}_#{1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"white\"))")
-				eval("@bouton_#{6}_#{1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"white\"))")
+					
+				@bouton_3_1.set_style(@styleBoutonBlanc)
+				@bouton_6_1.set_style(@styleBoutonBlanc)
 			when 1
 				if((unX == 2 && unY == 0) || (unX == 5 && unY == 0))
 					super(unX, unY)
@@ -47,12 +60,13 @@ class PartieDidacticielBuilder < PartieBuilder
   					fenetreInfo.run
   					fenetreInfo.destroy
 					@etape = 1
-					eval("@bouton_#{3}_#{1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"white\"))")
-					eval("@bouton_#{6}_#{1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"white\"))")
+					
+					@bouton_3_1.set_style(@styleBoutonBlanc)
+					@bouton_6_1.set_style(@styleBoutonBlanc)
 				end
 
 				if(Jeu.JEU.partie.grille.matrice[2][0].estRouge? && Jeu.JEU.partie.grille.matrice[5][0].estRouge?)
-					eval("@bouton_#{1}_#{1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"white\"))")
+					@bouton_1_1.set_style(@styleBoutonBlanc)
 					fenetreInfo = Gtk::MessageDialog.new(self['window1'], Gtk::Dialog::DESTROY_WITH_PARENT,
                               Gtk::MessageDialog::INFO,
                               Gtk::MessageDialog::BUTTONS_CLOSE,
@@ -65,7 +79,7 @@ class PartieDidacticielBuilder < PartieBuilder
   				if((unX == 0 && unY == 0))
 					super(unX, unY)
 				else
-					eval("@bouton_#{1}_#{1}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"white\"))")
+					@bouton_1_1.set_style(@styleBoutonBlanc)
 					fenetreInfo = Gtk::MessageDialog.new(self['window1'], Gtk::Dialog::DESTROY_WITH_PARENT,
                               Gtk::MessageDialog::INFO,
                               Gtk::MessageDialog::BUTTONS_CLOSE,
@@ -75,8 +89,8 @@ class PartieDidacticielBuilder < PartieBuilder
 				end
 
 				if(Jeu.JEU.partie.grille.matrice[0][0].estBleu?)
-					eval("@bouton_#{3}_#{6}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"white\"))")
-					eval("@bouton_#{6}_#{6}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"white\"))")
+					@bouton_3_6.set_style(@styleBoutonBlanc)
+					@bouton_6_6.set_style(@styleBoutonBlanc)
 					fenetreInfo = Gtk::MessageDialog.new(self['window1'], Gtk::Dialog::DESTROY_WITH_PARENT,
                               Gtk::MessageDialog::INFO,
                               Gtk::MessageDialog::BUTTONS_CLOSE,
@@ -89,8 +103,8 @@ class PartieDidacticielBuilder < PartieBuilder
   				if((unX == 2 && unY == 5) || (unX == 5 && unY == 5))
 					super(unX, unY)
 				else
-					eval("@bouton_#{3}_#{6}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"white\"))")
-					eval("@bouton_#{6}_#{6}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"white\"))")
+					@bouton_3_6.set_style(@styleBoutonBlanc)
+					@bouton_6_6.set_style(@styleBoutonBlanc)
 					fenetreInfo = Gtk::MessageDialog.new(self['window1'], Gtk::Dialog::DESTROY_WITH_PARENT,
                               Gtk::MessageDialog::INFO,
                               Gtk::MessageDialog::BUTTONS_CLOSE,
@@ -107,8 +121,8 @@ class PartieDidacticielBuilder < PartieBuilder
   					fenetreInfo.run
   					fenetreInfo.destroy
   					@etape = 4
-  					eval("@bouton_#{1}_#{6}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"white\"))")
-					eval("@bouton_#{2}_#{6}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"white\"))")
+					@bouton_1_6.set_style(@styleBoutonBlanc)
+					@bouton_2_6.set_style(@styleBoutonBlanc)
   				end
   			when 4
   				if((unX == 0 && unY == 5) || (unX == 1 && unY == 5))
@@ -120,8 +134,8 @@ class PartieDidacticielBuilder < PartieBuilder
                               "Remplissez les deux cases blanches à l'aide de la dernière règle : Il ne peut y avoir deux lignes ou deux colonnes identiques")
   					fenetreInfo.run
   					fenetreInfo.destroy
-  					eval("@bouton_#{1}_#{6}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"white\"))")
-					eval("@bouton_#{2}_#{6}.modify_bg(Gtk::STATE_NORMAL, Gdk::Color.parse(\"white\"))")
+					@bouton_1_6.set_style(@styleBoutonBlanc)
+					@bouton_2_6.set_style(@styleBoutonBlanc)
 				end
 
 				if(Jeu.JEU.partie.grille.matrice[0][5].estRouge? && Jeu.JEU.partie.grille.matrice[1][5].estBleu?)
