@@ -4,7 +4,7 @@
 
 # == Classe Grille :
 #		- connaît son id, sa matrice départ, sa matrice courante, sa matrice correcte et son nombre minimum de clics pour arriver à résolution
-#		- sait dire si elle correcte, jouer sur une <b>Case</b>, donner sa difficulté, donner sa taille, donner une aide
+#		- sait dire si elle correcte, jouer sur une Case, donner sa difficulté, donner sa taille, donner une aide
 class Grille
 
 	# Variables d'instance

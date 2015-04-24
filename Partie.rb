@@ -1,5 +1,5 @@
 # encoding: UTF-8
-# PARMENON Damien
+# PARMENON Damien, CHAILLOU Valentin, YZEUX Ronan
 # Partie.rb
 # Implementation de la classe Partie
 
@@ -8,6 +8,7 @@
 # == Classe Partie :
 #		- est considérée comme une classe abstraite
 #		- connaît sa grille, sa liste d'hypothèses, son nombre de clics courant, son nombre d'aides, son nombre total d'hypothèses, le début du chronomètre, la fin du chronomètre, l'heure de la pause, si le chrono est fini et sa liste de mouvements arrière
+#		- sait calculer son score, établir une hypothèse et revenir à son état précédent, gérer le temps, gagner, s'arrêter, jouer un coup et revenir en arrière
 class Partie
 
 	# * Variable d'instance accessible en lecture qui représente la *Grille* sur laquelle le joueur va jouer
