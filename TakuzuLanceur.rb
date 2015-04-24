@@ -30,8 +30,8 @@ class Chargement
 		'Compte.rb',
 		'Defi.rb',
 		'Didacticiel.rb',
+		'RaccourciClavier.rb'
 		'Options.rb',
-		'RaccourciClavier.rb',
 		'Statistiques.rb',
 		'Succes.rb',
 		'SuccesIndividuel.rb',

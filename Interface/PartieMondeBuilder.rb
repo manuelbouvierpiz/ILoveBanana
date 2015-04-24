@@ -48,7 +48,7 @@ class PartieMondeBuilder < PartieBuilder
 		if Jeu.JEU.partie.grille.estCorrecte?
 			Jeu.JEU.partie.arretChronometre()
 			self['window1'].signal_handler_disconnect(@handlerArret)
-			ouvrirFenetre(PartieLibreReussieBuilder.creer(@monde))
+			ouvrirFenetre(PartieMondeReussieBuilder.creer(@monde))
 		end
 		
 		if !Jeu.JEU.partie.verifierNbClicsMax?
