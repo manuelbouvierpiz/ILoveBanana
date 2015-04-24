@@ -275,10 +275,10 @@ class Grille
 
 				if x != y
 					if colonnes[x]==colonnes[y]
-						return "Deux colonnes ne doivent pas etre identique colonne "+(x+1).to_s"et colonne "+(y+1).to_s"."
+						return "Deux colonnes ne doivent pas etre identique colonne "+(x+1).to_s+"et colonne "+(y+1).to_s+"."
 					end
 					if lignes[x]==lignes[y]
-						return "Deux lignes ne doivent pas etre identique ligne "+(x+1).to_s"et ligne "+(y+1).to_s"."."
+						return "Deux lignes ne doivent pas etre identique ligne "+(x+1).to_s+"et ligne "+(y+1).to_s+"."."
 					end
 				end
 			
