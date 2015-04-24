@@ -12,8 +12,17 @@ class PartieBuilder < TakuzuBuilder
 
 	# Variable d'instance
 	
-	# * Variable d'instance qui représente l'ID du handler de l'arrêt du jeu
+	# * Variable d'instance non accessible qui représente l'ID du handler de l'arrêt du jeu
 	@handlerArret
+
+	# * Variable d'instance non accessible qui représente le style à appliquer aux <b>Case</b>s rouges
+	@styleBoutonRouge
+
+	# * Variable d'instance non accessible qui représente le style à appliquer aux <b>Case</b>s bleues
+	@styleBoutonBleu
+
+	# * Variable d'instance non accessible qui représente le style à appliquer aux <b>Case</b>s vides
+	@styleBoutonVide
 
 	# Méthode de classe
 
@@ -35,19 +44,23 @@ class PartieBuilder < TakuzuBuilder
 		# Pour que la partie soit sauvegardée même quand on ferme la fenêtre
 		# Le handler sera déconnecté si il échoue (en mode hardcore) ou si il gagne la partie
 		@handlerArret = self['window1'].signal_connect("destroy") { Jeu.JEU.partie.arreteToi }
+
+		uneKeyRegle = nil
+		uneKeyHypothese = nil
+
+		eval("uneKeyRegle = Gdk::Keyval::GDK_#{Compte.COMPTE.options.getRaccourci(1)}")
+		eval("uneKeyHypothese = Gdk::Keyval::GDK_#{Compte.COMPTE.options.getRaccourci(4)}")
 		
 		# Raccourcis clavier !
 		self['window1'].signal_connect("key-press-event") do |wdt, key|
-		
-=begin
-			if key.keyval == Gdk::Keyval::GDK_p						# Pause
-				on_regle_clicked if @regle.get_property(\"visible\")
-			elsif key.keyval == Gdk::Keyval::GDK_h					# Hypothèse
-				on_hypothese_clicked if @hypothese.get_property(\"visible\")
-			end
-=end
 
-			eval("if key.keyval == Gdk::Keyval::GDK_#{Compte.COMPTE.options.getRaccourci(1)}\non_regle_clicked if @regle.get_property(\"visible\")\nelsif key.keyval == Gdk::Keyval::GDK_#{Compte.COMPTE.options.getRaccourci(4)}\non_hypothese_clicked if @hypothese.get_property(\"visible\")\nend")
+
+			if key.keyval == uneKeyRegle						# Pause
+				on_regle_clicked if @regle.get_property("visible")
+			elsif key.keyval == uneKeyHypothese					# Hypothèse
+				on_hypothese_clicked if @hypothese.get_property("visible")
+			end
+		
 		end
 		
 		# Mise à jour du temps toutes les secondes
@@ -64,6 +77,28 @@ class PartieBuilder < TakuzuBuilder
 				false
 			end
 		end
+
+		### Création des styles pour les couleurs ###
+
+		uneCouleurRouge = Gdk::Color.parse(Compte.COMPTE.options.couleur(1))
+		uneCouleurBleu = Gdk::Color.parse(Compte.COMPTE.options.couleur(2))
+		uneCouleurVide = Gdk::Color.parse("grey")
+
+		@styleBoutonRouge = Gtk::Style.new
+		@styleBoutonBleu = Gtk::Style.new
+		@styleBoutonVide = Gtk::Style.new
+
+		@styleBoutonRouge.set_bg(Gtk::STATE_NORMAL, uneCouleurRouge.red, uneCouleurRouge.green, uneCouleurRouge.blue)
+		@styleBoutonBleu.set_bg(Gtk::STATE_NORMAL, uneCouleurBleu.red, uneCouleurBleu.green, uneCouleurBleu.blue)
+		@styleBoutonVide.set_bg(Gtk::STATE_NORMAL, uneCouleurVide.red, uneCouleurVide.green, uneCouleurVide.blue)
+
+		@styleBoutonRouge.set_bg(Gtk::STATE_ACTIVE, uneCouleurRouge.red, uneCouleurRouge.green, uneCouleurRouge.blue)
+		@styleBoutonBleu.set_bg(Gtk::STATE_ACTIVE, uneCouleurBleu.red, uneCouleurBleu.green, uneCouleurBleu.blue)
+		@styleBoutonVide.set_bg(Gtk::STATE_ACTIVE, uneCouleurVide.red, uneCouleurVide.green, uneCouleurVide.blue)
+
+		@styleBoutonRouge.set_bg(Gtk::STATE_PRELIGHT, uneCouleurRouge.red, uneCouleurRouge.green, uneCouleurRouge.blue)
+		@styleBoutonBleu.set_bg(Gtk::STATE_PRELIGHT, uneCouleurBleu.red, uneCouleurBleu.green, uneCouleurBleu.blue)
+		@styleBoutonVide.set_bg(Gtk::STATE_PRELIGHT, uneCouleurVide.red, uneCouleurVide.green, uneCouleurVide.blue)
 		
 		# Parcours initial de la grille pour connecter les signaux et afficher leur couleur initiale
 		0.upto(unePartie.grille.taille - 1) do |unX|
@@ -71,11 +106,11 @@ class PartieBuilder < TakuzuBuilder
 				eval("@bouton_#{unX+1}_#{unY+1}.signal_connect(\"clicked\") { on_bouton_clicked(#{unX}, #{unY})}")
 				
 				if Jeu.JEU.partie.grille.matrice[unX][unY].estVide?
-					eval("[Gtk::STATE_NORMAL, Gtk::STATE_ACTIVE, Gtk::STATE_PRELIGHT].each do |unEtatGtk|\n@bouton_#{unX+1}_#{unY+1}.modify_bg(unEtatGtk, Gdk::Color.parse(\"grey\"))\nend")
+					eval("@bouton_#{unX+1}_#{unY+1}.set_style(@styleBoutonVide)")
 				elsif Jeu.JEU.partie.grille.matrice[unX][unY].estRouge?
-					eval("[Gtk::STATE_NORMAL, Gtk::STATE_ACTIVE, Gtk::STATE_PRELIGHT].each do |unEtatGtk|\n@bouton_#{unX+1}_#{unY+1}.modify_bg(unEtatGtk, Gdk::Color.parse(Compte.COMPTE.options.couleur(1)))\nend")
+					eval("@bouton_#{unX+1}_#{unY+1}.set_style(@styleBoutonRouge)")
 				else #elsif Jeu.JEU.partie.grille.matrice[unX][unY].estBleu?
-					eval("[Gtk::STATE_NORMAL, Gtk::STATE_ACTIVE, Gtk::STATE_PRELIGHT].each do |unEtatGtk|\n@bouton_#{unX+1}_#{unY+1}.modify_bg(unEtatGtk, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))\nend")
+					eval("@bouton_#{unX+1}_#{unY+1}.set_style(@styleBoutonBleu)")
 				end
 			end
 		end
@@ -110,11 +145,11 @@ class PartieBuilder < TakuzuBuilder
 		#actualiserGrille()
 
 		if Jeu.JEU.partie.grille.matrice[unX][unY].estVide?
-			eval("[Gtk::STATE_NORMAL, Gtk::STATE_ACTIVE, Gtk::STATE_PRELIGHT].each do |unEtatGtk|\n@bouton_#{unX+1}_#{unY+1}.modify_bg(unEtatGtk, Gdk::Color.parse(\"grey\"))\nend")
+			eval("@bouton_#{unX+1}_#{unY+1}.set_style(@styleBoutonVide)")
 		elsif Jeu.JEU.partie.grille.matrice[unX][unY].estRouge?
-			eval("[Gtk::STATE_NORMAL, Gtk::STATE_ACTIVE, Gtk::STATE_PRELIGHT].each do |unEtatGtk|\n@bouton_#{unX+1}_#{unY+1}.modify_bg(unEtatGtk, Gdk::Color.parse(Compte.COMPTE.options.couleur(1)))\nend")
+			eval("@bouton_#{unX+1}_#{unY+1}.set_style(@styleBoutonRouge)")
 		else #elsif Jeu.JEU.partie.grille.matrice[unX][unY].estBleu?
-			eval("[Gtk::STATE_NORMAL, Gtk::STATE_ACTIVE, Gtk::STATE_PRELIGHT].each do |unEtatGtk|\n@bouton_#{unX+1}_#{unY+1}.modify_bg(unEtatGtk, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))\nend")
+			eval("@bouton_#{unX+1}_#{unY+1}.set_style(@styleBoutonBleu)")
 		end
 		
 		# Ré-affichage du retour arrière
@@ -129,11 +164,11 @@ class PartieBuilder < TakuzuBuilder
 		0.upto(Jeu.JEU.partie.grille.taille - 1) do |unX|
 			0.upto(Jeu.JEU.partie.grille.taille - 1) do |unY|
 				if Jeu.JEU.partie.grille.matrice[unX][unY].estVide?
-					eval("[Gtk::STATE_NORMAL, Gtk::STATE_ACTIVE, Gtk::STATE_PRELIGHT].each do |unEtatGtk|\n@bouton_#{unX+1}_#{unY+1}.modify_bg(unEtatGtk, Gdk::Color.parse(\"grey\"))\nend")
+					eval("@bouton_#{unX+1}_#{unY+1}.set_style(@styleBoutonVide)")
 				elsif Jeu.JEU.partie.grille.matrice[unX][unY].estRouge?
-					eval("[Gtk::STATE_NORMAL, Gtk::STATE_ACTIVE, Gtk::STATE_PRELIGHT].each do |unEtatGtk|\n@bouton_#{unX+1}_#{unY+1}.modify_bg(unEtatGtk, Gdk::Color.parse(Compte.COMPTE.options.couleur(1)))\nend")
+					eval("@bouton_#{unX+1}_#{unY+1}.set_style(@styleBoutonRouge)")
 				else #elsif Jeu.JEU.partie.grille.matrice[unX][unY].estBleu?
-					eval("[Gtk::STATE_NORMAL, Gtk::STATE_ACTIVE, Gtk::STATE_PRELIGHT].each do |unEtatGtk|\n@bouton_#{unX+1}_#{unY+1}.modify_bg(unEtatGtk, Gdk::Color.parse(Compte.COMPTE.options.couleur(2)))\nend")
+					eval("@bouton_#{unX+1}_#{unY+1}.set_style(@styleBoutonBleu)")
 				end
 			end
 		end
