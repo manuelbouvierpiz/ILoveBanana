@@ -121,9 +121,9 @@ class Grille
 		colonnes = Array.new(tailleMax)	#Tableau contenant les colonnes
 		lignes = Array.new(tailleMax)		#Tableau contenant les lignes
 
-		#Application des regles sur les colones
+		#Application des regles sur les lignes
 
-		#Deplacement d'une colonne a l'autre( de gauche a droite).
+		#Deplacement d'une ligne a l'autre( de haut en bas).
 		for i in 0..tailleMax-1
 	 
 			nbBleu=0
@@ -131,8 +131,25 @@ class Grille
 	
 			colonne =Array.new(tailleMax) #Colonne actuel contenant l'etat des cases (R ouge , B leu	, V ide)
 
+			for j in 0..tailleMax-1
+				caseActuelle = @matrice[i][j]
+				#Test la couleur de la case pour les compter.
+				if caseActuelle.estBleu?
+					colonne[j]="B"
+					nbBleu+=1
+				end
+				if caseActuelle.estRouge?
+					colonne[j]="R"
+					nbRouge+=1			
+				end
+			end
 
-			#Parcours de la colonne ( de haut en bas).
+			#Verifie qu'aucune des couleurs est en surnombre.
+			if nbRouge>tailleMax/2 || nbBleu>tailleMax/2
+				return "Il y a trop de case de la meme couleur dans la ligne"
+			end
+
+			#Parcours des  colonne ( de gauche a droite).
 			for j in 0..tailleMax-1
 				caseActuelle = @matrice[i][j]
 		
@@ -160,26 +177,16 @@ class Grille
 						end
 					end
 
-					#Test la couleur de la case pour les compter.
+					
 				end
 
-				if caseActuelle.estBleu?
-					colonne[j]="B"
-					nbBleu+=1
-				end
-				if caseActuelle.estRouge?
-					colonne[j]="R"
-					nbRouge+=1			
-				end
+				
 
 			end
 			colonnes[i]=colonne
 
 
-			#Verifie qu'aucune des couleurs est en surnombre.
-			if nbRouge>tailleMax/2 || nbBleu>tailleMax/2
-				return "Il y a trop de case de la meme couleur dans la ligne"
-			end
+			
 
 		end
 	
@@ -188,16 +195,31 @@ class Grille
 
 		#Application des regles sur les colonnes
 
-		#Deplacement d'une ligne a l'autre( de haut en bas).
+		#Deplacement d'une colonne a l'autre( de gauche a droite).
 		for j in 0..tailleMax-1
 	 
 			nbBleu=0
 			nbRouge=0
 		
 			ligne = Array.new(tailleMax)
+			for i in 0..tailleMax-1
+				caseActuelle =@matrice[i][j]
+
+				if caseActuelle.estBleu?
+					ligne[i]="B"
+					nbBleu+=1
+				end
+				if caseActuelle.estRouge?
+					ligne[i]="R"
+					nbRouge+=1			
+				end
+			end
+			if nbRouge>tailleMax/2 || nbBleu>tailleMax/2
+				return "Il y a trop de case de la meme couleur dans la colonne"
+			end
 
 
-			#Parcours de la ligne ( de gauche a droite).
+			#Parcours des  ligne ( de haut en bas).
 			for i in 0..tailleMax-1
 				caseActuelle =@matrice[i][j]
 		
@@ -238,10 +260,7 @@ class Grille
 				end
 
 			end
-			if nbRouge>tailleMax/2 || nbBleu>tailleMax/2
-				return "Il y a trop de case de la meme couleur dans la colonne"
-			end
-
+			
 			lignes[j]=ligne
 
 		end
