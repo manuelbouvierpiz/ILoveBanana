@@ -131,6 +131,7 @@ class Grille
 	
 			colonne =Array.new(tailleMax) #Colonne actuel contenant l'etat des cases (R ouge , B leu	, V ide)
 
+
 			for j in 0..tailleMax-1
 				caseActuelle = @matrice[i][j]
 				#Test la couleur de la case pour les compter.
@@ -143,6 +144,13 @@ class Grille
 					nbRouge+=1			
 				end
 			end
+
+
+			#Verifie si une couleur est complete
+			if nbRouge=tailleMax/2  || nbBleu=tailleMax/2
+				return ["Une couleur est complete dans la colonne #{i+1}", -1, -1]
+			end
+
 
 			#Verifie qu'aucune des couleurs est en surnombre.
 			if nbRouge>tailleMax/2 || nbBleu>tailleMax/2
@@ -202,9 +210,11 @@ class Grille
 			nbRouge=0
 		
 			ligne = Array.new(tailleMax)
+
+			
 			for i in 0..tailleMax-1
 				caseActuelle =@matrice[i][j]
-
+				#Test la couleur de la case pour les compter.
 				if caseActuelle.estBleu?
 					ligne[i]="B"
 					nbBleu+=1
@@ -214,6 +224,13 @@ class Grille
 					nbRouge+=1			
 				end
 			end
+
+			#Verifie si une couleur est complete
+			if nbRouge=tailleMax/2  || nbBleu=tailleMax/2
+				return ["Une couleur est complete dans la colonne #{i+1}", -1, -1]
+			end
+
+			#Verifie qu'aucune des couleurs est en surnombre.
 			if nbRouge>tailleMax/2 || nbBleu>tailleMax/2
 				return ["Il y a trop de case de la meme couleur dans la colonne #{i+1}", -1, -1]
 			end
@@ -249,17 +266,9 @@ class Grille
 
 					#Test
 				end
-
-				if caseActuelle.estBleu?
-					ligne[i]="B"
-					nbBleu+=1
-				end
-				if caseActuelle.estRouge?
-					ligne[i]="R"
-					nbRouge+=1			
-				end
-
 			end
+
+
 			
 			lignes[j]=ligne
 
