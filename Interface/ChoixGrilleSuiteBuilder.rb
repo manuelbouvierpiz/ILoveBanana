@@ -23,14 +23,13 @@ class ChoixGrilleSuiteBuilder < TakuzuBuilder
 			if unResultatIntermediaire
 				unResultatIntermediaire = @monde.partie(x).initialiseEtat
 			end
-=begin
-		if unResultatIntermediaire && @monde.partie(20).estDebloque?
-			@button1.set_tooltip_text("Etoile(s) : #{@monde.partie(20).nbEtoile}/3")
-		else
-			@button1.set_sensitive(false)
-		end
-=end
-			eval("if unResultatIntermediaire && @monde.partie(#{x}).estDebloque?\n@button#{x-19}.set_tooltip_text(\"Etoile(s) : #{unResultatIntermediaire ? @monde.partie(x).nbEtoile : 0}/3\")\nelse\n@button#{x-19}.set_sensitive(false)\nend")
+			
+			if unResultatIntermediaire && @monde.partie(x).estDebloque?
+				eval("@button#{x-19}.set_tooltip_text(\"Etoile(s) : #{@monde.partie(x).nbEtoile}/3\")")
+			else
+				eval("@button#{x-19}.set_sensitive(false)")
+			end
+			
 		end
 	end
 
