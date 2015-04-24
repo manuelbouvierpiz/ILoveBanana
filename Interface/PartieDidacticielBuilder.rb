@@ -144,7 +144,7 @@ class PartieDidacticielBuilder < PartieBuilder
                               Gtk::MessageDialog::BUTTONS_CLOSE,
                               "Et voilà, les trois règles n'ont plus aucun secret pour vous, il reste toutefois un dernier point à éclaircir, vous serez parfois amené à utiliser les hypothèses si aucune règle n'est applicable.\n
                               L'hypothèse est le bouton éponyme en dessous de la grille, il effectue une sauvegarde que vous pourrez récuperer si votre grille s'avère mauvaise en fin de compte, il suffit de cliquer sur l'hypothèse en question à gauche de la grille.\n
-                              il ne vous reste plus qu'à terminer la grille en sachant qu'une hypothèse sera indispensable, courage.")
+                              il ne vous reste plus qu'à terminer la grille en sachant que le temps et vos clics sont comptés et influenceront votre score final.")
   					fenetreInfo.run
   					fenetreInfo.destroy
   					@etape = 5

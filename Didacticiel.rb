@@ -11,8 +11,4 @@ class Didacticiel
 	
 		@didacticielDeBase= PartieDidacticiel.creer(1009)
 	end
-
-	def estTermine?
-		return (@didacticielDeBase.estTermine? && @didacticielAvance.estTermine?)
-	end
 end
