@@ -640,7 +640,7 @@ class BaseDeDonnees
     def BaseDeDonnees.dernierNiveauFini(pseudo)
         tabDernierNiveau = Array.new
         if(GrilleFinis.joins("JOIN grille ON grille.id_grille = grille_fini.id_grille").where("numero_niveau > ? AND id_monde > ?", 0, 0).exists?(:pseudo => pseudo))
-              res = Grilles.joins("JOIN grille_fini ON grille.id_grille = grille_fini.id_grille").where("numero_niveau > ? AND id_monde > ?", 0, 0).order(id_monde: :desc, numero_niveau: :desc).first
+              res = Grilles.joins("JOIN grille_fini ON grille.id_grille = grille_fini.id_grille").where("numero_niveau > ? AND id_monde > ? AND pseudo = ?", 0, 0, pseudo).order(id_monde: :desc, numero_niveau: :desc).first
               tabDernierNiveau.push(res.id_monde)
               tabDernierNiveau.push(res.numero_niveau)
               return tabDernierNiveau
