@@ -23,6 +23,9 @@ class PartieBuilder < TakuzuBuilder
 
 	# * Variable d'instance non accessible qui représente le style à appliquer aux <b>Case</b>s vides
 	@styleBoutonVide
+	
+	# * Variable d'instance non accessible qui représente le style à appliquer aux <b>Case</b>s signalées par l'aide
+	@styleBoutonAide
 
 	# Méthode de classe
 
@@ -83,22 +86,27 @@ class PartieBuilder < TakuzuBuilder
 		uneCouleurRouge = Gdk::Color.parse(Compte.COMPTE.options.couleur(1))
 		uneCouleurBleu = Gdk::Color.parse(Compte.COMPTE.options.couleur(2))
 		uneCouleurVide = Gdk::Color.parse("grey")
+		uneCouleurAide = Gdk::Color.parse("white")
 
 		@styleBoutonRouge = Gtk::Style.new
 		@styleBoutonBleu = Gtk::Style.new
 		@styleBoutonVide = Gtk::Style.new
+		@styleBoutonAide = Gtk::Style.new
 
 		@styleBoutonRouge.set_bg(Gtk::STATE_NORMAL, uneCouleurRouge.red, uneCouleurRouge.green, uneCouleurRouge.blue)
 		@styleBoutonBleu.set_bg(Gtk::STATE_NORMAL, uneCouleurBleu.red, uneCouleurBleu.green, uneCouleurBleu.blue)
 		@styleBoutonVide.set_bg(Gtk::STATE_NORMAL, uneCouleurVide.red, uneCouleurVide.green, uneCouleurVide.blue)
+		@styleBoutonAide.set_bg(Gtk::STATE_NORMAL, uneCouleurAide.red, uneCouleurAide.green, uneCouleurAide.blue)
 
 		@styleBoutonRouge.set_bg(Gtk::STATE_ACTIVE, uneCouleurRouge.red, uneCouleurRouge.green, uneCouleurRouge.blue)
 		@styleBoutonBleu.set_bg(Gtk::STATE_ACTIVE, uneCouleurBleu.red, uneCouleurBleu.green, uneCouleurBleu.blue)
 		@styleBoutonVide.set_bg(Gtk::STATE_ACTIVE, uneCouleurVide.red, uneCouleurVide.green, uneCouleurVide.blue)
+		@styleBoutonAide.set_bg(Gtk::STATE_ACTIVE, uneCouleurAide.red, uneCouleurAide.green, uneCouleurAide.blue)
 
 		@styleBoutonRouge.set_bg(Gtk::STATE_PRELIGHT, uneCouleurRouge.red, uneCouleurRouge.green, uneCouleurRouge.blue)
 		@styleBoutonBleu.set_bg(Gtk::STATE_PRELIGHT, uneCouleurBleu.red, uneCouleurBleu.green, uneCouleurBleu.blue)
 		@styleBoutonVide.set_bg(Gtk::STATE_PRELIGHT, uneCouleurVide.red, uneCouleurVide.green, uneCouleurVide.blue)
+		@styleBoutonAide.set_bg(Gtk::STATE_PRELIGHT, uneCouleurAide.red, uneCouleurAide.green, uneCouleurAide.blue)
 		
 		# Parcours initial de la grille pour connecter les signaux et afficher leur couleur initiale
 		0.upto(unePartie.grille.taille - 1) do |unX|
@@ -194,7 +202,19 @@ class PartieBuilder < TakuzuBuilder
 	# * Méthode d'instance qui permet d'afficher une aide
 	# * Est automatiquement appelée par Gtk
 	def on_aide_clicked()
-		@aideLabel.set_text(Jeu.JEU.partie.obtenirAide)
+		uneAide = Jeu.JEU.partie.obtenirAide
+		@aideLabel.set_text(uneAide[0])
+		if uneAide[1] > -1 && uneAide[2] > -1
+			eval("@bouton_#{uneAide[1]+1}_#{uneAide[2]+1}.set_style(@styleBoutonAide)")
+		end
+		
+		GLib::Timeout.add(5000) do
+			@aideLabel.set_text("")
+			if uneAide[1] > -1 && uneAide[2] > -1 && Jeu.JEU.partie.grille.matrice[uneAide[1]][uneAide[2]].estVide?
+				eval("@bouton_#{uneAide[1]+1}_#{uneAide[2]+1}.set_style(@styleBoutonVide)")
+			end
+			false
+		end
 	end
 	
 	# * Méthode d'instance qui permet de jouer un coup en arrière

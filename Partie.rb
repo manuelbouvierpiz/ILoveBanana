@@ -89,7 +89,7 @@ class Partie
 
 	# * Méthode d'instance qui donne une aide pour cette *Partie*
 	# * Appelle la méthode du même nom de sa *Grille*
-	# * Retourne un *String* représentant une aide
+	# * Retourne un tableau contant un *String* représentant l'aide et les coordonnées de la *Case* (ou de la colonne/ligne) [String, x, y]
 	def obtenirAide()
 		@nbAides += 1
 		@grille.obtenirAide()

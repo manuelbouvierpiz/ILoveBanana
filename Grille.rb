@@ -112,7 +112,7 @@ class Grille
 	end
 	
 	# * Méthode d'instance qui retourne une aide possible en fonction de la matrice de la *Grille*
-	# * Retourne un *String* représentant l'aide
+	# * Retourne un tableau contant un *String* représentant l'aide et les coordonnées de la *Case* (ou de la colonne/ligne) [String, x, y]
 	def obtenirAide
 	
 		# A compléter
@@ -146,7 +146,7 @@ class Grille
 
 			#Verifie qu'aucune des couleurs est en surnombre.
 			if nbRouge>tailleMax/2 || nbBleu>tailleMax/2
-				return "Il y a trop de case de la meme couleur dans la ligne"
+				return ["Il y a trop de case de la meme couleur dans la ligne #{j+1}", -1, -1]
 			end
 
 			#Parcours des  colonne ( de gauche a droite).
@@ -160,20 +160,20 @@ class Grille
 					#Test si il y a une case vide entre 2 case de la meme couleurs	(Peut etre utilisé )
 					if j>0 && j<tailleMax-1
 						if @matrice[i][j-1].estBleu?&&@matrice[i][j+1].estBleu? || @matrice[i][j-1].estRouge?&&@matrice[i][j+1].estRouge? 
-							return "Il n'y a que une solution en "+(i+1).to_s+" "+(j+1).to_s
+							return ["Il y a une solution dans cette case", i, j]
 						end
 					end
 
 					#Test si il deux cases de la meme couleur d'affillé a coté d'une case vide
 					if j<tailleMax-2
 						if @matrice[i][j+2].estBleu?&&@matrice[i][j+1].estBleu? || @matrice[i][j+2].estRouge?&&@matrice[i][j+1].estRouge? 
-							return "Il n'y a que une solution en "+(i+1).to_s+" "+(j+1).to_s
+							return ["Il y a une solution dans cette case", i, j]
 						end
 					end
 
 					if j>1
 						if @matrice[i][j-2].estBleu?&&@matrice[i][j-1].estBleu? || @matrice[i][j-2].estRouge?&&@matrice[i][j-1].estRouge? 
-							return "Il n'y a que une solution en "+(i+1).to_s+" "+(j+1).to_s
+							return ["Il y a une solution dans cette case", i, j]
 						end
 					end
 
@@ -215,7 +215,7 @@ class Grille
 				end
 			end
 			if nbRouge>tailleMax/2 || nbBleu>tailleMax/2
-				return "Il y a trop de case de la meme couleur dans la colonne"
+				return ["Il y a trop de case de la meme couleur dans la colonne #{i+1}", -1, -1]
 			end
 
 
@@ -230,20 +230,20 @@ class Grille
 					#Test si il y a une case vide entre 2 case de la meme couleurs	(Peut etre utilisé )
 					if i>0 && i<tailleMax-1
 						if @matrice[i-1][j].estBleu?&&@matrice[i+1][j].estBleu? || @matrice[i-1][j].estRouge?&&@matrice[i+1][j].estRouge? 
-							return "Il n'y a que une solution en "+(i+1).to_s+" "+(j+1).to_s
+							return ["Il y a une solution dans cette case", i, j]
 						end
 					end
 
 					#Test si il deux cases de la meme couleur d'affillé a coté d'une case vide
 					if i<tailleMax-2
 						if @matrice[i+2][j].estBleu?&&@matrice[i+1][j].estBleu? || @matrice[i+2][j].estRouge?&&@matrice[i+1][j].estRouge? 
-							return "Il n'y a que une solution en "+(i+1).to_s+" "+(j+1).to_ss
+							return ["Il y a une solution dans cette case", i, j]
 						end
 					end
 
 					if i>1
 						if @matrice[i-2][j].estBleu?&&@matrice[i-1][j].estBleu? || @matrice[i-2][j].estRouge?&&@matrice[i-1][j].estRouge? 
-							return "Il n'y a que une solution en "+(i+1).to_s+" "+(j+1).to_s
+							return ["Il y a une solution dans cette case", i, j]
 						end
 					end
 
@@ -294,10 +294,10 @@ class Grille
 
 				if x != y
 					if colonnes[x]==colonnes[y]
-						return "Deux colonnes ne doivent pas etre identique colonne "+(x+1).to_s+"et colonne "+(y+1).to_s+"."
+						return ["Deux colonnes ne doivent pas etre identique colonne "+(x+1).to_s+"et colonne "+(y+1).to_s+".", -1, -1]
 					end
 					if lignes[x]==lignes[y]
-						return "Deux lignes ne doivent pas etre identique ligne "+(x+1).to_s+"et ligne "+(y+1).to_s+"."
+						return ["Deux lignes ne doivent pas etre identique ligne "+(x+1).to_s+"et ligne "+(y+1).to_s+".", -1, -1]
 					end
 				end
 			
@@ -310,7 +310,7 @@ class Grille
 
 
 
-		return "Il n'y a pas de regles applicable"
+		return ["Peut-être qu'une hypothèse pourrait aider...", -1, -1]
 	end
 
 	# * Méthode d'instance qui retourne une chaine de caractères décrivant la matrice de la *Grille*
