@@ -44,6 +44,10 @@ class PartieBuilder < TakuzuBuilder
 		
 		Jeu.JEU.partie = unePartie
 		
+		if Compte.COMPTE.aUneSauvegarde?
+			Compte.COMPTE.supprimeSauvegarde
+		end
+		
 		# Pour que la partie soit sauvegardée même quand on ferme la fenêtre
 		# Le handler sera déconnecté si il échoue (en mode hardcore) ou si il gagne la partie
 		@handlerArret = self['window1'].signal_connect("destroy") { Jeu.JEU.partie.arreteToi }
