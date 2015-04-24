@@ -146,16 +146,11 @@ class Grille
 			end
 
 
-			#Verifie si une couleur est complete
-			if nbRouge=tailleMax/2  || nbBleu=tailleMax/2
-				return ["Une couleur est complete dans la colonne #{i+1}", -1, -1]
-			end
-
-
 			#Verifie qu'aucune des couleurs est en surnombre.
 			if nbRouge>tailleMax/2 || nbBleu>tailleMax/2
-				return ["Il y a trop de case de la meme couleur dans la ligne #{j+1}", -1, -1]
+				return ["Il y a trop de case de la meme couleur dans la ligne #{i+1}", -1, -1]
 			end
+
 
 			#Parcours des  colonne ( de gauche a droite).
 			for j in 0..tailleMax-1
@@ -191,6 +186,12 @@ class Grille
 				
 
 			end
+			
+			#Verifie si une couleur est complete
+			if (nbRouge==tailleMax/2  || nbBleu==tailleMax/2) && nbBleu !=nbRouge
+				return ["Une couleur est complete dans la ligne #{i+1}", -1, -1]
+			end
+
 			colonnes[i]=colonne
 
 
@@ -223,16 +224,17 @@ class Grille
 					ligne[i]="R"
 					nbRouge+=1			
 				end
+			
+
+
+
 			end
 
-			#Verifie si une couleur est complete
-			if nbRouge=tailleMax/2  || nbBleu=tailleMax/2
-				return ["Une couleur est complete dans la colonne #{i+1}", -1, -1]
-			end
+			
 
 			#Verifie qu'aucune des couleurs est en surnombre.
 			if nbRouge>tailleMax/2 || nbBleu>tailleMax/2
-				return ["Il y a trop de case de la meme couleur dans la colonne #{i+1}", -1, -1]
+				return ["Il y a trop de case de la meme couleur dans la colonne #{j+1}", -1, -1]
 			end
 
 
@@ -268,7 +270,10 @@ class Grille
 				end
 			end
 
-
+			#Verifie si une couleur est complete
+			if (nbRouge==tailleMax/2  || nbBleu==tailleMax/2) && nbBleu !=nbRouge
+				return ["Une couleur est complete dans la colonne #{j+1}", -1, -1]
+			end
 			
 			lignes[j]=ligne
 
