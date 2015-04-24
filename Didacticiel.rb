@@ -2,7 +2,6 @@
 
 class Didacticiel 
 	attr :didacticielDeBase, false
-	attr :didacticielAvance, false
 	
 	# Méthodes d'instance
 
@@ -10,7 +9,7 @@ class Didacticiel
 	
 		# Les valeurs 5 et  6 sont temporaires et servent juste pour illustrer que l'id des grilles sera connu en avance.
 	
-		@didacticielDeBase,@didacticielAvance = PartieDidacticiel.creer(5) , PartieDidacticiel.creer(6)
+		@didacticielDeBase= PartieDidacticiel.creer(1009)
 	end
 
 	def estTermine?
