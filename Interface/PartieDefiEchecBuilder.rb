@@ -8,6 +8,6 @@ class PartieDefiEchecBuilder < PartieEchecBuilder
 
 	def initialize
         super()
-        labelEchec.text = "Vous avez perdu le défi."
+        @labelEchec.text = "Vous avez perdu le défi."
     end
 end

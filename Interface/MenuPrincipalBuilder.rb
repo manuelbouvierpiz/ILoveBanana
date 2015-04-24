@@ -29,9 +29,10 @@ class MenuPrincipalBuilder < TakuzuBuilder
   			fenetreInfo.run do |reponse|
   				case reponse
   					when Gtk::Dialog::RESPONSE_YES
-  						ouvrirFenetre(PartieDefiBuilder.creer(lesDefis[1].relever))
+  						ouvrirFenetre(PartieDefiBuilder.creer(lesDefis[0].relever))
   					when Gtk::Dialog::RESPONSE_NO
-  						unDefi.supprimer
+  						lesDefis[0].supprimer
+  						fenetreInfo.destroy
   				end
   			end
   		end
