@@ -58,6 +58,7 @@ class Chargement
 		'Interface/PartieSauvegardeReussieBuilder.rb',
 		'Interface/PartieDefiReussiBuilder.rb',
 		'Interface/PartieEchecBuilder.rb',
+		'Interface/PartieDefiEchecBuilder.rb',
 		'Interface/StatistiquesBuilder.rb',
 		'Interface/SuccesBuilder.rb',
 		'Interface/TailleDifficulteBuilder.rb',

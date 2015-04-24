@@ -6,9 +6,6 @@
 # == Classe +PartieDefiBuilder+ :
 #	- est un +PartieBuilder+
 class PartieDefiBuilder < PartieBuilder
-
-	attr :isDefi, false
-	# Méthodes d'instance
 	
 	# Méthode d'instance qui initialise la partie
 	def initialize(unePartie)			# :nodoc:
@@ -30,13 +27,13 @@ class PartieDefiBuilder < PartieBuilder
 				ouvrirFenetre(PartieDefiReussiBuilder.new)
 			else
 				Jeu.JEU.partie.setVainqueur(Jeu.JEU.partie.unJoueur, Jeu.JEU.partie.unScore)
-				ouvrirFenetre(PartieEchecBuilder.new)
+				ouvrirFenetre(PartieDefiEchecBuilder.new)
 			end
 		elsif !Jeu.JEU.partie.verifierNbClicsMax?
 			self['window1'].signal_handler_disconnect(@handlerArret)
 			Jeu.JEU.partie.arretChronometre()
 			Jeu.JEU.partie.setVainqueur(Jeu.JEU.partie.unJoueur, Jeu.JEU.partie.unScore)
-			ouvrirFenetre(PartieEchecBuilder.new)
+			ouvrirFenetre(PartieDefiEchecBuilder.new)
 		end
 	end
 	
