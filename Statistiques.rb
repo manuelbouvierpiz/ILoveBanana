@@ -34,11 +34,5 @@ class Statistiques
 	def classement(uneTaille, uneDifficulte)
 		return BaseDeDonnees.getClassement(uneTaille, uneDifficulte)
 	end
-
-# Méthode premettant de mettre à jour la base de données lorsqu'une partie est terminée
-	def miseAJour(unePartie)
-		setGrilleTerminee(Compte.COMPTE.pseudo, unePartie.temps, unePartie.nbClics, unePartie.grille.idGrille, unePartie.nbHypotheses, unePartie.nbAides, unePartie.calculerScore())
-		return self
-	end
 		
 end

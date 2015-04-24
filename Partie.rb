@@ -14,7 +14,8 @@ class Partie
 	# * La grille va être modifiée au fur et à mesure de la *Partie*
 	attr :grille, false
 	
-	# * Variable d'instance non accessible (un <b>Array</b>) représentant la pile des <b>Grille</b>s sauvegardées pour les hypothèses que le joueur a fait durant la *Partie*
+	# * Variable d'instance non accessible (un <b>Array</b>) représentant une pile hétérogène utilisée pour les hypothèses de la *Partie*
+	# * Sont empilés dans ce sens : la *Grille*, le nombre de clics, et le temps courant
 	@listeHypotheses
 	
 	# * Variable d'instance accessible en lecture (un entier) représentant le nombre de clic que l'utilisateur a fait
@@ -98,16 +99,23 @@ class Partie
 	# * Retourne un entier représentant le nombre d'hypothèses effectués durant la *Partie*
 	def faireHypothese()
 		if @grille.difficulte < 8
-			@listeHypotheses.push(Grille.creer(grille.idGrille, grille.matrice))	# on crée une copie de la Grille (un Clone ne copie pas les attributs en profondeur)
+			@listeHypotheses.push(Grille.creer(grille.idGrille, grille.matrice))			# on crée une copie de la Grille (un clone ne copie pas les attributs en profondeur)
 		else
-			@listeHypotheses.push(GrilleHardcore.creer(grille.idGrille, grille.matrice))	# on crée une copie de la Grille (un Clone ne copie pas les attributs en profondeur)
+			@listeHypotheses.push(GrilleHardcore.creer(grille.idGrille, grille.matrice))	# on crée une copie de la Grille (un clone ne copie pas les attributs en profondeur)
 		end
+		
+		@listeHypotheses.push(@nbClics)
+		@listeHypotheses.push(getTemps)
+		
 		@nbHypotheses += 1
 	end
 
 	# * Méthode d'instance qui permet de charger la dernière *Grille* sauvegardée
 	# * Retourne *elf*
 	def chargerPreHypo()
+		# /!\ @listeHypotheses est une pile, il faut dépiler dans le sens inverse
+		@debutChronometre = Time.now - @listeHypotheses.pop()
+		@nbClics = @listeHypotheses.pop()
 		@grille = @listeHypotheses.pop()
 		return self
 	end

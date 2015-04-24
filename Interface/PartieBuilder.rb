@@ -225,6 +225,8 @@ class PartieBuilder < TakuzuBuilder
 	# * Est automatiquement appelée par Gtk
 	def on_hypothese_X_clicked(unNumero)
 		if unNumero > 5 # On a enlevé toutes les hypothèses antérieures
+			@temps.set_text("Temps :\n" + Jeu.JEU.partie.getTempsString)
+			@nbClics.set_text("Clic(s) :\n" + Jeu.JEU.partie.nbClicsString)
 			actualiserGrille
 			@hypothese.show
 		else			# On enlève les hypothèses antérieures
