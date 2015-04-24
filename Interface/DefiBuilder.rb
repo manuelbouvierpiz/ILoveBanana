@@ -22,16 +22,33 @@ class DefiBuilder < TakuzuBuilder
     end
     
     def on_validerButton_clicked
-		leDefi = Defi.creer(@pseudo.text, Compte.COMPTE.pseudo, @IdGrille, @score)
-    leDefi.envoyerDefi
-		fenetreInfo = Gtk::MessageDialog.new(self['window1'], Gtk::Dialog::DESTROY_WITH_PARENT,
-                              Gtk::MessageDialog::INFO,
-                              Gtk::MessageDialog::BUTTONS_CLOSE,
-                              "Le défi a bien été envoyé, vous allez être redirigé vers le menu principal.")
-  		fenetreInfo.run
-  		fenetreInfo.destroy
-  		ouvrirFenetre(MenuPrincipalBuilder.new())
-	end
+      if(@pseudo.text == Compte.COMPTE.pseudo)
+        fenetreInfo = Gtk::MessageDialog.new(self['window1'], Gtk::Dialog::DESTROY_WITH_PARENT,
+                      Gtk::MessageDialog::INFO,
+                      Gtk::MessageDialog::BUTTONS_CLOSE,
+                      "Pseudo incorrect.")
+        fenetreInfo.run
+        fenetreInfo.destroy
+      else  
+		    leDefi = Defi.creer(@pseudo.text, Compte.COMPTE.pseudo, @IdGrille, @score)
+        if(leDefi.envoyerDefi != -1)
+		      fenetreInfo = Gtk::MessageDialog.new(self['window1'], Gtk::Dialog::DESTROY_WITH_PARENT,
+                        Gtk::MessageDialog::INFO,
+                        Gtk::MessageDialog::BUTTONS_CLOSE,
+                        "Le défi a bien été envoyé, vous allez être redirigé vers le menu principal.")
+    		  fenetreInfo.run
+    		  fenetreInfo.destroy
+   		    ouvrirFenetre(MenuPrincipalBuilder.new())
+        else
+          fenetreInfo = Gtk::MessageDialog.new(self['window1'], Gtk::Dialog::DESTROY_WITH_PARENT,
+                        Gtk::MessageDialog::INFO,
+                        Gtk::MessageDialog::BUTTONS_CLOSE,
+                        "Pseudo incorrect.")
+          fenetreInfo.run
+          fenetreInfo.destroy
+        end
+      end
+	  end
 	
 	#Methode de classe qui fermer le defi
 	def on_annulerButton_clicked

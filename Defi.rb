@@ -40,7 +40,7 @@ class Defi
   # * Supprime le +Defi+ dans la BDD
   # * Retourne nil
   def supprimer
-  	BaseDeDonnees.supprimeDefi(@destinataire, @envoyeur, @idGrille)
+  	BaseDeDonnees.supprimeDefi(@envoyeur, @destinataire, @idGrille)
   	# ACHTUNG ! L'instance n'est pas supprimée directement : NE PAS RELEVER UN DEFI SUPPRIME !!!
   	# Par précaution il vaut mieux faire listeDefis[X] = listeDefis.supprimer! afin de supprimer l'instance
   	return nil
@@ -58,7 +58,7 @@ class Defi
   end
   
   def envoyerDefi
-    BaseDeDonnees.setDefi(@destinataire, @envoyeur, @idGrille, @scoreEnvoi)
+    return BaseDeDonnees.setDefi(@destinataire, @envoyeur, @idGrille, @scoreEnvoi)
   end
   # Méthode de classe
   
