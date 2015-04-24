@@ -30,7 +30,7 @@ class Chargement
 		'Compte.rb',
 		'Defi.rb',
 		'Didacticiel.rb',
-		'RaccourciClavier.rb'
+		'RaccourciClavier.rb',
 		'Options.rb',
 		'Statistiques.rb',
 		'Succes.rb',
@@ -59,6 +59,7 @@ class Chargement
 		'Interface/PartieSauvegardeReussieBuilder.rb',
 		'Interface/PartieDefiReussiBuilder.rb',
 		'Interface/PartieEchecBuilder.rb',
+		'Interface/PartieDefiEchecBuilder.rb',
 		'Interface/StatistiquesBuilder.rb',
 		'Interface/SuccesBuilder.rb',
 		'Interface/TailleDifficulteBuilder.rb',
