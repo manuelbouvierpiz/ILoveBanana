@@ -16,7 +16,7 @@ class DefiBuilder < TakuzuBuilder
     end
 
     def initialize(unIdGrille, unScore)
-        super(__FILE__, "Defi")
+        super(__FILE__)
         @IdGrille = unIdGrille
     	@score = unScore
     end

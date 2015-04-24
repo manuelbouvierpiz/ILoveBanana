@@ -25,7 +25,7 @@ class ClassementBuilder < TakuzuBuilder
     # * Méthode d'instance qui initialise la fenêtre correspondante au +ClassementBuilder+
     # * Initialise les ComboBox pour la taille et la difficulté avec leurs models respectifs
 	def initialize
-		super(__FILE__, "Classement")
+		super(__FILE__)
 		
 		tabNiveau = [1, 2, 3, 4, 5, 6, 7]
 		tabNiveau.each_with_index do |e|

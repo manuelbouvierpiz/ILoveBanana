@@ -11,7 +11,7 @@ class TailleDifficulteBuilder < TakuzuBuilder
 	@adjDifficulte
 
 	def initialize 
-        super(__FILE__, "Choix de la taille et difficulté")
+        super(__FILE__)
         @adjDifficulte = Gtk::Adjustment.new(1, 1, 8, 1, 1, 0)
         @hscaleDifficulte.adjustment = @adjDifficulte
         @adjDifficulte.signal_connect('value-changed'){

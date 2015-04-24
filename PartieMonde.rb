@@ -49,11 +49,11 @@ class PartieMonde < Partie
 		if unScore > Compte.COMPTE.scorePourLaGrille(@grille)
 			unNbEtoile = 0
 		
-			if unScore > BaseDeDonnees.getGrilleEtoileTroisScore(@grille.idGrille)
+			if unScore >= BaseDeDonnees.getGrilleEtoileTroisScore(@grille.idGrille)
 				unNbEtoile = 3
-			elsif unScore > BaseDeDonnees.getGrilleEtoileDeuxScore(@grille.idGrille)
+			elsif unScore >= BaseDeDonnees.getGrilleEtoileDeuxScore(@grille.idGrille)
 				unNbEtoile = 2
-			elsif unScore > BaseDeDonnees.getGrilleEtoileUnScore(@grille.idGrille)
+			elsif unScore >= BaseDeDonnees.getGrilleEtoileUnScore(@grille.idGrille)
 				unNbEtoile = 1
 			end
 	

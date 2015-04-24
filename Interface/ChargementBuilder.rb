@@ -11,7 +11,7 @@ class ChargementBuilder < TakuzuBuilder
 
 	# Méthode d'instance qui initialise la fenêtre de chargement
     def initialize		# :nodoc:
-        super(__FILE__, "Takuzu Avengers")
+        super(__FILE__)
 		
 		# Mise à jour de la classe chargée 10 fois par seconde
 		GLib::Timeout.add(100) do

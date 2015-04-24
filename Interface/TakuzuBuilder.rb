@@ -11,12 +11,8 @@ class TakuzuBuilder < Gtk::Builder
 	
 	# Variables d'instance
 	
-	# * Variable d'instance non accessible qui représente la fenêtre précédente de cette fenêtre
+	# * Variable d'instance accessible en lecture/écriture qui représente la fenêtre précédente de cette fenêtre
 	attr :fenetrePrecedente, true
-	
-	# * Variable d'instance non acessible qui représente le nom de la fenêtre
-	# * Sera utilisée lorsque la fenêtre sera ré-affichée (fenêtre précédente)
-	@nomDeFenetre
 
 	# * Variable d'instance (un entier) non accessible qui représente l'id du handler 'destroy'
 	# * Sera utilisée lors de la désactivation du handler
@@ -24,7 +20,7 @@ class TakuzuBuilder < Gtk::Builder
 	
 	# Méthodes d'instance
 	
-	def initialize(unNom, unNomDeFenetre) # :nodoc:
+	def initialize(unNom, unNomDeFenetre="Takuzu Avengers") # :nodoc:
 		super()
 	
 		self.add_from_file(unNom.sub(".rb",".glade"))
@@ -41,14 +37,8 @@ class TakuzuBuilder < Gtk::Builder
 			method(handler)
 		}
 		
-		@nomDeFenetre = unNomDeFenetre
-		setNomDeFenetre
+		self['window1'].set_title(unNomDeFenetre)
 		
-	end
-	
-	# * Méthode d'instance qui (re)met le nom de la fenêtre
-	def setNomDeFenetre
-		self['window1'].set_title(@nomDeFenetre)
 	end
 	
 	# * Méthode d'instance qui ouvre une nouvelle fenêtre et NE ferme PAS la précédente

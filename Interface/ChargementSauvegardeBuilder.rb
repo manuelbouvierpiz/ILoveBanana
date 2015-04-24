@@ -14,7 +14,7 @@ class ChargementSauvegardeBuilder < TakuzuBuilder
 
 	# Méthode d'instance qui initialise la fenêtre
     def initialize	# :nodoc:
-		super(__FILE__, "Takuzu Avengers")
+		super(__FILE__)
     end
 	
 	# * Méthode d'instance qui crée une fenêtre et charge la partie sauvegardée

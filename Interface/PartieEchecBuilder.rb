@@ -7,7 +7,7 @@
 class PartieEchecBuilder < TakuzuBuilder
 
 	def initialize
-        super(__FILE__, "Echec de la partie")
+        super(__FILE__)
 		Jeu.JEU.partie.remiseAZero
 		Jeu.JEU.partie = nil
     end

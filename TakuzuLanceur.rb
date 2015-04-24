@@ -43,7 +43,6 @@ class Chargement
 		'Interface/ClassementBuilder.rb',
 		'Interface/ConnexionBuilder.rb',
 		'Interface/DefiBuilder.rb',
-		'Interface/ListeDefiBuilder.rb',
 		'Interface/MenuPrincipalBuilder.rb',
 		'Interface/OptionsBuilder.rb',
 		'Interface/PartieBuilder.rb',

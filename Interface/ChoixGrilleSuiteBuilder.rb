@@ -14,7 +14,7 @@ class ChoixGrilleSuiteBuilder < TakuzuBuilder
 	private_class_method :new
 
 	def initialize(unMonde)
-		super(__FILE__,"Choix de la Grille")   
+		super(__FILE__)   
 		@monde=unMonde
 		@nomMonde.set_text(@monde.nom)
 
