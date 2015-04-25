@@ -213,11 +213,15 @@ class PartieBuilder < TakuzuBuilder
 		end
 		
 		GLib::Timeout.add(5000) do
-			@aideLabel.set_text("")
-			if uneAide[1] > -1 && uneAide[2] > -1 && Jeu.JEU.partie.grille.matrice[uneAide[1]][uneAide[2]].estVide?
-				eval("@bouton_#{uneAide[1]+1}_#{uneAide[2]+1}.set_style(@styleBoutonVide)")
+			begin
+				@aideLabel.set_text("")
+				if uneAide[1] > -1 && uneAide[2] > -1 && Jeu.JEU.partie.grille.matrice[uneAide[1]][uneAide[2]].estVide?
+					eval("@bouton_#{uneAide[1]+1}_#{uneAide[2]+1}.set_style(@styleBoutonVide)")
+				end
+				false
+			rescue
+				false
 			end
-			false
 		end
 	end
 	
