@@ -324,7 +324,7 @@ class Grille
 
 
 
-		return ["Peut-être qu'une hypothèse pourrait aider...", -1, -1]
+		return ["Peut-être qu une hypothèse pourrait aider...", -1, -1]
 	end
 
 	# * Méthode d'instance qui retourne une chaine de caractères décrivant la matrice de la *Grille*
