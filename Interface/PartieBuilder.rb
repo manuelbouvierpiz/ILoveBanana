@@ -189,38 +189,43 @@ class PartieBuilder < TakuzuBuilder
 	# * Méthode d'instance qui permet d'arrêter la +Partie+ et de retourner au menu principal
 	# * Est automatiquement appelée par Gtk
 	def on_menu_clicked()
-		# La partie s'arrête quand la fenêtre reçoit le signal destroy
-		ouvrirFenetre(MenuPrincipalBuilder.new)
-		Jeu.JEU.partie = nil
+		if Jeu.JEU.partie.tourne
+			# La partie s'arrête quand la fenêtre reçoit le signal destroy dans ouvrirFenetre
+			ouvrirFenetre(MenuPrincipalBuilder.new)
+			Jeu.JEU.partie = nil
+		end
 	end
 	
 	# * Méthode d'instance qui permet d'ouvrir une fenêtre indiquant les règles
 	# * Est automatiquement appelée par Gtk
 	def on_regle_clicked()
-		Jeu.JEU.partie.mettreEnPauseChronometre()
-		@grille.hide
-		@regle.hide
-		ouvrirFenetreNonFermante(ReglesBuilder.new)
+		if Jeu.JEU.partie.tourne
+			Jeu.JEU.partie.mettreEnPauseChronometre()
+			@grille.hide
+			ouvrirFenetreNonFermante(ReglesBuilder.new)
+		end
 	end
 	
 	# * Méthode d'instance qui permet d'afficher une aide
 	# * Est automatiquement appelée par Gtk
 	def on_aide_clicked()
-		uneAide = Jeu.JEU.partie.obtenirAide
-		@aideLabel.set_text(uneAide[0])
-		if uneAide[1] > -1 && uneAide[2] > -1
-			eval("@bouton_#{uneAide[1]+1}_#{uneAide[2]+1}.set_style(@styleBoutonAide)")
-		end
+		if Jeu.JEU.partie.tourne
+			uneAide = Jeu.JEU.partie.obtenirAide
+			@aideLabel.set_text(uneAide[0])
+			if uneAide[1] > -1 && uneAide[2] > -1
+				eval("@bouton_#{uneAide[1]+1}_#{uneAide[2]+1}.set_style(@styleBoutonAide)")
+			end
 		
-		GLib::Timeout.add(5000) do
-			begin
-				@aideLabel.set_text("")
-				if uneAide[1] > -1 && uneAide[2] > -1 && Jeu.JEU.partie.grille.matrice[uneAide[1]][uneAide[2]].estVide?
-					eval("@bouton_#{uneAide[1]+1}_#{uneAide[2]+1}.set_style(@styleBoutonVide)")
+			GLib::Timeout.add(5000) do
+				begin
+					@aideLabel.set_text("")
+					if uneAide[1] > -1 && uneAide[2] > -1 && Jeu.JEU.partie.grille.matrice[uneAide[1]][uneAide[2]].estVide?
+						eval("@bouton_#{uneAide[1]+1}_#{uneAide[2]+1}.set_style(@styleBoutonVide)")
+					end
+					false
+				rescue
+					false
 				end
-				false
-			rescue
-				false
 			end
 		end
 	end
@@ -228,23 +233,27 @@ class PartieBuilder < TakuzuBuilder
 	# * Méthode d'instance qui permet de jouer un coup en arrière
 	# * Est automatiquement appelée par Gtk
 	def on_back_clicked()
-		Jeu.JEU.partie.retourArriere
-		if !Jeu.JEU.partie.peutRetourArriere?
-			@back.hide
+		if Jeu.JEU.partie.tourne
+			Jeu.JEU.partie.retourArriere
+			if !Jeu.JEU.partie.peutRetourArriere?
+				@back.hide
+			end
+			actualiserGrille()
 		end
-		actualiserGrille()
 	end
 	
 	# * Méthode d'instance qui permet de poser une sauvegarde temporaire pour une hypothèse
 	# * Est automatiquement appelée par Gtk
 	def on_hypothese_clicked()
-		[@hypothese_1, @hypothese_2, @hypothese_3, @hypothese_4, @hypothese_5].each do |unBouton|
-			if unBouton.label == nil
-				Jeu.JEU.partie.faireHypothese
-				unBouton.set_label("Temps : " + Jeu.JEU.partie.getTempsString + "\nClic(s) : " + Jeu.JEU.partie.nbClicsString)
-				unBouton.show
-				@hypothese.hide if unBouton.equal?(@hypothese_5)
-				break
+		if Jeu.JEU.partie.tourne
+			[@hypothese_1, @hypothese_2, @hypothese_3, @hypothese_4, @hypothese_5].each do |unBouton|
+				if unBouton.label == nil
+					Jeu.JEU.partie.faireHypothese
+					unBouton.set_label("Temps : " + Jeu.JEU.partie.getTempsString + "\nClic(s) : " + Jeu.JEU.partie.nbClicsString)
+					unBouton.show
+					@hypothese.hide if unBouton.equal?(@hypothese_5)
+					break
+				end
 			end
 		end
 	end
@@ -252,14 +261,21 @@ class PartieBuilder < TakuzuBuilder
 	# * Méthode d'instance qui permet de revenir à un état sauvegardé/pré-hypothésé
 	# * Est automatiquement appelée par Gtk
 	def on_hypothese_X_clicked(unNumero)
-		if unNumero > 5 # On a enlevé toutes les hypothèses antérieures
-			@temps.set_text("Temps :\n" + Jeu.JEU.partie.getTempsString)
-			@nbClics.set_text("Clic(s) :\n" + Jeu.JEU.partie.nbClicsString)
-			actualiserGrille
-			@hypothese.show
-		else			# On enlève les hypothèses antérieures
-			eval("if @hypothese_#{unNumero}.label != nil\n@hypothese_#{unNumero}.hide\nJeu.JEU.partie.chargerPreHypo\n@hypothese_#{unNumero}.set_label(nil)\nend")
-			on_hypothese_X_clicked(unNumero + 1)
+		if Jeu.JEU.partie.tourne
+			if unNumero > 5 # On a enlevé toutes les hypothèses antérieures
+				@temps.set_text("Temps :\n" + Jeu.JEU.partie.getTempsString)
+				@nbClics.set_text("Clic(s) :\n" + Jeu.JEU.partie.nbClicsString)
+				actualiserGrille
+				@hypothese.show
+				if Jeu.JEU.partie.peutRetourArriere?
+					@back.show
+				else
+					@back.hide
+				end
+			else			# On enlève les hypothèses antérieures
+				eval("if @hypothese_#{unNumero}.label != nil\n@hypothese_#{unNumero}.hide\nJeu.JEU.partie.chargerPreHypo\n@hypothese_#{unNumero}.set_label(nil)\nend")
+				on_hypothese_X_clicked(unNumero + 1)
+			end
 		end
 	end
 	

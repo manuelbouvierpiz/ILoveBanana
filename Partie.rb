@@ -38,10 +38,10 @@ class Partie
 	# * Variable d'instance non accessible (<b>Time</b>) contenant l'heure de début de la pause de la *Partie*
 	@pause
 	
-	# * Variable d'instance indiquant si le chronomètre de la *Partie* est actif ou non
-	@tourne
+	# * Variable d'instance accessible en lecture indiquant si le chronomètre de la *Partie* est actif ou non
+	attr :tourne, false
 	
-	# * Variable indiquant si le chronomètre de la *Partie* est fini ou non
+	# * Variable non accessible indiquant si le chronomètre de la *Partie* est fini ou non
 	@fini
 
 	# * Variable d'instance non accessible (un <b>Array</b>) représentant la pile de mouvements pour les retours arrière
@@ -96,7 +96,7 @@ class Partie
 	end
 
 	# * Méthode d'instance qui pose une hypothèse
-	# * Crée une copie de la *Grille* et l'insère dans sa pile
+	# * Crée une copie de la *Grille* et l'insère dans sa pile, ainsi que le nombre de clics, le temps et la liste de mouvements arrière
 	# * Retourne un entier représentant le nombre d'hypothèses effectués durant la *Partie*
 	def faireHypothese()
 		if @grille.difficulte < 8
@@ -107,6 +107,7 @@ class Partie
 		
 		@listeHypotheses.push(@nbClics)
 		@listeHypotheses.push(getTemps)
+		@listeHypotheses.push(@mouvementsArriere.clone)
 		
 		@nbHypotheses += 1
 	end
@@ -115,6 +116,7 @@ class Partie
 	# * Retourne *elf*
 	def chargerPreHypo()
 		# /!\ @listeHypotheses est une pile, il faut dépiler dans le sens inverse
+		@mouvementsArriere = @listeHypotheses.pop()
 		@debutChronometre = Time.now - @listeHypotheses.pop()
 		@nbClics = @listeHypotheses.pop()
 		@grille = @listeHypotheses.pop()
