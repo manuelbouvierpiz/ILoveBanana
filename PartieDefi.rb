@@ -27,4 +27,12 @@ class PartieDefi < Partie
 	def setVainqueur(unPseudo, unScore)
 		BaseDeDonnees.setVainqueurDefi(Compte.COMPTE.pseudo, @unJoueur, @unIdGrille, unPseudo, unScore)
 	end
+	
+	# * Méthode d'instance qui "termine" la *PartieDefi*
+	# * Retourne *self*
+	def gagner
+	
+		# On ne met pas à jour la BDD pour les défis (sinon, ça pourrait débloquer des niveaux du monde qui ne devraient pas être accessibles)
+		return self
+	end
 end
