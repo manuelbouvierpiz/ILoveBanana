@@ -226,12 +226,12 @@ class Grille
 					ligne[i]="R"
 					nbRouge+=1			
 				end
-			
 
-
-
+				if caseActuelle.estVide?
+					ligne[i]="V"
+				end
 			end
-
+			lignes[j]=ligne
 			
 
 			#Verifie qu'aucune des couleurs est en surnombre.
@@ -277,10 +277,16 @@ class Grille
 				return ["Une couleur est complete dans la colonne #{j+1}", -1, -1]
 			end
 			
-			lignes[j]=ligne
+			
 
 		end
 
+
+
+
+
+
+#Pour etre utile devrati etre fait avant les autre test mais lors des autres test j'initialise les colonnes et lignes utilisé ici donc faudrait changer la strucutre de l'aide
 		for x in 0..tailleMax-1
 			for y in 0..tailleMax-1
 
@@ -306,7 +312,7 @@ class Grille
 =end
 
 
-	#Aide si 2 colonnes ou lignes sont identiques
+				#Aide si 2 colonnes ou lignes sont identiques
 
 				if x != y
 					if colonnes[x]==colonnes[y]
