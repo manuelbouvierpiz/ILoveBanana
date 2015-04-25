@@ -35,6 +35,7 @@
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="border_width">20</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_buttonClassement_clicked" swapped="no"/>
               </object>
               <packing>
@@ -51,6 +52,7 @@
                 <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
                 <property name="border_width">15</property>
+                <property name="use_action_appearance">False</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -65,6 +67,7 @@
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="border_width">20</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_buttonSucces_clicked" swapped="no"/>
               </object>
               <packing>
@@ -117,6 +120,30 @@
           </packing>
         </child>
         <child>
+          <object class="GtkLabel" id="labelDefiGagne">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Nombre de défi gagné :</property>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">4</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="labelScoreConfondu">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Score total toutes Tailles/Difficultés :</property>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">5</property>
+          </packing>
+        </child>
+        <child>
           <object class="GtkHSeparator" id="hseparator1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
@@ -125,7 +152,7 @@
             <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="padding">10</property>
-            <property name="position">4</property>
+            <property name="position">6</property>
           </packing>
         </child>
         <child>
@@ -173,7 +200,7 @@
           <packing>
             <property name="expand">True</property>
             <property name="fill">True</property>
-            <property name="position">5</property>
+            <property name="position">7</property>
           </packing>
         </child>
         <child>
@@ -185,7 +212,6 @@
               <object class="GtkComboBox" id="boxNiveau">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="model"/>
                 <property name="has_entry">True</property>
                 <property name="entry_text_column">0</property>
                 <signal name="changed" handler="on_boxNiveau_changed" swapped="no"/>
@@ -200,7 +226,6 @@
               <object class="GtkComboBox" id="boxTaille">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="model"/>
                 <property name="has_entry">True</property>
                 <property name="entry_text_column">0</property>
                 <signal name="changed" handler="on_boxTaille_changed" swapped="no"/>
@@ -226,7 +251,7 @@
           <packing>
             <property name="expand">True</property>
             <property name="fill">True</property>
-            <property name="position">6</property>
+            <property name="position">8</property>
           </packing>
         </child>
         <child>
@@ -243,6 +268,7 @@
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="border_width">20</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="on_buttonMenuPrincipal_clicked" swapped="no"/>
               </object>
               <packing>
@@ -258,7 +284,7 @@
           <packing>
             <property name="expand">True</property>
             <property name="fill">True</property>
-            <property name="position">7</property>
+            <property name="position">9</property>
           </packing>
         </child>
       </object>

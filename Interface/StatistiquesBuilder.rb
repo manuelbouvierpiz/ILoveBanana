@@ -28,7 +28,8 @@ class StatistiquesBuilder < TakuzuBuilder
 		@labelTempsJeu.set_text("Temps passé en jeu : " + "#{Compte.COMPTE.statistiques.tempsTotalJeu}")
 		@labelPetitClic.set_text("Plus petit nombre de clics : " + "#{Compte.COMPTE.statistiques.plusPetitNombreClic}")
 		@labelGrandClic.set_text("Plus grand nombre de clics : " + "#{Compte.COMPTE.statistiques.plusGrandNombreClic}")
-
+        @labelDefiGagne.set_text("Nombre de défi gagné : " + "#{Compte.COMPTE.statistiques.nbDefiGagne}")
+        @labelScoreConfondu.set_text("Score total toutes Tailles/Difficultés : " + "#{Compte.COMPTE.statistiques.scoreTotal}")
         tabNiveau = [1, 2, 3, 4, 5, 6, 7]
         tabNiveau.each_with_index do |e|
             iter = @listeNiveaux.append

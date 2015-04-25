@@ -34,5 +34,16 @@ class Statistiques
 	def classement(uneTaille, uneDifficulte)
 		return BaseDeDonnees.getClassement(uneTaille, uneDifficulte)
 	end
-		
+
+	def nbDefiGagne
+		return BaseDeDonnees.getNbDefiGagne(Compte.COMPTE.pseudo)
+	end
+	
+	def scoreTaille(uneTaille)
+		return BaseDeDonnees.getScoreTotal(Compte.COMPTE.pseudo, uneTaille)
+	end
+
+	def scoreTotal
+		return scoreTaille(6) + scoreTaille(8) + scoreTaille(10) + scoreTaille(12)
+	end
 end
