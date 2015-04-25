@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 # Nanzhen Kuang
 # Modifications par Valentin CHAILLOU le 26/03/2015
 # Classe Grille
