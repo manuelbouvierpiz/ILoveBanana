@@ -41,7 +41,7 @@ class PartieMondeReussieBuilder < PartieReussieBuilder
 	end
 	
 	def on_button1_clicked
-		ouvrirFenetre(PartieMondeBuilder.new(@partie, @monde))
+		ouvrirFenetre(PartieMondeBuilder.creer(@partie, @monde))
 	end
 	
 end
