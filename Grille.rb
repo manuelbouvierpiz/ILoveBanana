@@ -113,6 +113,30 @@ class Grille
 		return @matriceDepart.size
 	end
 	
+	# * Méthode d'instance qui retourne une chaine de caractères représentant le temps max de la *Grille*
+	# * Retourne un *String* vide
+	def getTempsMaxString
+		return ""
+	end
+	
+	# * Méthode d'instance qui retourne une chaine de caractères représentant le nombre max de clics de la *Grille*
+	# * Retourne un *String* vide
+	def nbClicsMaxString
+		return ""
+	end
+	
+	# * Méthode d'instance qui permet de vérifier que le nombre de clics max de la *Grille* n'est pas atteint
+	# * Retourne *true*
+	def verifierNbClicsMax?(unNbClics)
+		return true		# Pas de limite pour les grilles normales
+	end
+	
+	# * Méthode d'instance qui permet de vérifier que le temps max de la *Grille* n'est pas atteint
+	# * Retourne *true*
+	def verifierTempsMax?(unTemps)
+		return true		# Pas de limite pour les grilles normales
+	end
+	
 	# * Méthode d'instance qui retourne une aide possible en fonction de la matrice de la *Grille*
 	# * Retourne un tableau contant un *String* représentant l'aide et les coordonnées de la *Case* (ou de la colonne/ligne) [String, x, y]
 	def obtenirAide

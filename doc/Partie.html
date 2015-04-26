@@ -127,6 +127,10 @@
 
   <ul class="link-list">
   
+    <li><a href="./Grille.html">Grille</a>
+  
+    <li><a href="./GrilleHardcore.html">GrilleHardcore</a>
+  
     <li><a href="./Partie.html">Partie</a>
   
   </ul>
@@ -185,19 +189,17 @@ de PartieMonde et PartieLibre</p>
         </div>
       </div>
       
-      <div id="attribute-i-nbClics" class="method-detail">
+      <div id="attribute-i-tourne" class="method-detail">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">nbClics</span><span
+          <span class="method-name">tourne</span><span
             class="attribute-access-type">[R]</span>
         </div>
 
         <div class="method-description">
         
         <ul><li>
-<p>Variable d&#39;instance accessible en lecture (un entier) représentant le
-nombre de clic que l&#39;utilisateur a fait</p>
-</li><li>
-<p>Elle s&#39;incrémente durant la partie</p>
+<p>Variable d&#39;instance accessible en lecture indiquant si le chronomètre
+de la <strong>Partie</strong> est actif ou non</p>
 </li></ul>
         
         </div>
@@ -286,7 +288,7 @@ chronomètre</p>
 
           
           <div class="method-source-code" id="arretChronometre-source">
-            <pre><span class="ruby-comment"># File Partie.rb, line 145</span>
+            <pre><span class="ruby-comment"># File Partie.rb, line 152</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">arretChronometre</span>()
         <span class="ruby-ivar">@finChronometre</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@debutChronometre</span>
         <span class="ruby-ivar">@tourne</span> = <span class="ruby-keyword">false</span>
@@ -328,7 +330,7 @@ chronomètre</p>
 
           
           <div class="method-source-code" id="arreteToi-source">
-            <pre><span class="ruby-comment"># File Partie.rb, line 138</span>
+            <pre><span class="ruby-comment"># File Partie.rb, line 145</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">arreteToi</span>
         <span class="ruby-identifier">sauvegarder</span>
         <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
@@ -404,9 +406,10 @@ chronomètre</p>
 
           
           <div class="method-source-code" id="chargerPreHypo-source">
-            <pre><span class="ruby-comment"># File Partie.rb, line 115</span>
+            <pre><span class="ruby-comment"># File Partie.rb, line 116</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">chargerPreHypo</span>()
         <span class="ruby-comment"># /!\ @listeHypotheses est une pile, il faut dépiler dans le sens inverse</span>
+        <span class="ruby-ivar">@mouvementsArriere</span> = <span class="ruby-ivar">@listeHypotheses</span>.<span class="ruby-identifier">pop</span>()
         <span class="ruby-ivar">@debutChronometre</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@listeHypotheses</span>.<span class="ruby-identifier">pop</span>()
         <span class="ruby-ivar">@nbClics</span> = <span class="ruby-ivar">@listeHypotheses</span>.<span class="ruby-identifier">pop</span>()
         <span class="ruby-ivar">@grille</span> = <span class="ruby-ivar">@listeHypotheses</span>.<span class="ruby-identifier">pop</span>()
@@ -438,7 +441,8 @@ chronomètre</p>
           <ul><li>
 <p>Méthode d&#39;instance qui pose une hypothèse</p>
 </li><li>
-<p>Crée une copie de la <strong>Grille</strong> et l&#39;insère dans sa pile</p>
+<p>Crée une copie de la <strong>Grille</strong> et l&#39;insère dans sa pile,
+ainsi que le nombre de clics, le temps et la liste de mouvements arrière</p>
 </li><li>
 <p>Retourne un entier représentant le nombre d&#39;hypothèses effectués durant
 la <strong>Partie</strong></p>
@@ -458,6 +462,7 @@ la <strong>Partie</strong></p>
         
         <span class="ruby-ivar">@listeHypotheses</span>.<span class="ruby-identifier">push</span>(<span class="ruby-ivar">@nbClics</span>)
         <span class="ruby-ivar">@listeHypotheses</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">getTemps</span>)
+        <span class="ruby-ivar">@listeHypotheses</span>.<span class="ruby-identifier">push</span>(<span class="ruby-ivar">@mouvementsArriere</span>.<span class="ruby-identifier">clone</span>)
         
         <span class="ruby-ivar">@nbHypotheses</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
 <span class="ruby-keyword">end</span></pre>
@@ -494,14 +499,9 @@ la <strong>Partie</strong></p>
 
           
           <div class="method-source-code" id="gagner-source">
-            <pre><span class="ruby-comment"># File Partie.rb, line 245</span>
+            <pre><span class="ruby-comment"># File Partie.rb, line 237</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">gagner</span>
-
-        <span class="ruby-comment"># On ne met à jour la BDD que si le score est meilleur</span>
-        <span class="ruby-identifier">unScore</span> = <span class="ruby-identifier">calculerScore</span>()
-        <span class="ruby-keyword">if</span> <span class="ruby-identifier">unScore</span> <span class="ruby-operator">&gt;</span> <span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">scorePourLaGrille</span>(<span class="ruby-ivar">@grille</span>)
-                <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">setGrilleTermine</span>(<span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">pseudo</span>, <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">idGrille</span>, <span class="ruby-identifier">getTemps</span>, <span class="ruby-ivar">@nbClics</span>, <span class="ruby-value">0</span>, <span class="ruby-ivar">@nbHypotheses</span>, <span class="ruby-ivar">@nbAides</span>, <span class="ruby-identifier">unScore</span>)
-        <span class="ruby-keyword">end</span>
+        <span class="ruby-comment"># Dans les cas normaux, ne fait rien</span>
         <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- gagner-source -->
@@ -538,7 +538,7 @@ la <strong>Partie</strong></p>
 
           
           <div class="method-source-code" id="getTemps-source">
-            <pre><span class="ruby-comment"># File Partie.rb, line 169</span>
+            <pre><span class="ruby-comment"># File Partie.rb, line 176</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">getTemps</span>()
         <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@tourne</span>)
                 <span class="ruby-identifier">tempsActuel</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@debutChronometre</span>
@@ -594,19 +594,12 @@ une <strong>GrilleHardcore</strong>, l&#39;affichage est de la forme ##:##</p>
 
           
           <div class="method-source-code" id="getTempsString-source">
-            <pre><span class="ruby-comment"># File Partie.rb, line 187</span>
+            <pre><span class="ruby-comment"># File Partie.rb, line 194</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">getTempsString</span>()
         <span class="ruby-identifier">unTemps</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">getTemps</span>
         <span class="ruby-identifier">minute</span> = <span class="ruby-identifier">sprintf</span>(<span class="ruby-string">&quot;%02i&quot;</span>, (<span class="ruby-identifier">unTemps</span> <span class="ruby-operator">%</span> <span class="ruby-value">3600</span>) <span class="ruby-operator">/</span> <span class="ruby-value">60</span>)
         <span class="ruby-identifier">seconde</span> = <span class="ruby-identifier">sprintf</span>(<span class="ruby-string">&quot;%02i&quot;</span>, <span class="ruby-identifier">unTemps</span> <span class="ruby-operator">%</span> <span class="ruby-value">60</span>)
-        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">difficulte</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">8</span>     <span class="ruby-comment"># Grille non-hardcore</span>
-                <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;#{minute}:#{seconde}&quot;</span>
-        <span class="ruby-keyword">else</span>
-                <span class="ruby-identifier">unTempsMax</span> = <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">tempsMax</span>
-                <span class="ruby-identifier">minuteMax</span> = <span class="ruby-identifier">sprintf</span>(<span class="ruby-string">&quot;%02i&quot;</span>, (<span class="ruby-identifier">unTempsMax</span> <span class="ruby-operator">%</span> <span class="ruby-value">3600</span>) <span class="ruby-operator">/</span> <span class="ruby-value">60</span>)
-                <span class="ruby-identifier">secondeMax</span> = <span class="ruby-identifier">sprintf</span>(<span class="ruby-string">&quot;%02i&quot;</span>, <span class="ruby-identifier">unTempsMax</span> <span class="ruby-operator">%</span> <span class="ruby-value">60</span>)
-                <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;#{minute}:#{seconde}/#{minuteMax}:#{secondeMax}&quot;</span>
-        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;#{minute}:#{seconde}&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">getTempsMaxString</span>()
 <span class="ruby-keyword">end</span></pre>
           </div><!-- getTempsString-source -->
           
@@ -688,7 +681,8 @@ une <strong>GrilleHardcore</strong>, l&#39;affichage est de la forme ##:##</p>
         <div class="method-description">
           
           <ul><li>
-<p>Méthode d&#39;instance permettant de lancer le chronomètre</p>
+<p>Méthode d&#39;instance permettant de lancer le chronomètre et de supprimer
+la sauvegarde si il y en a une</p>
 </li><li>
 <p>Retourne <strong>self</strong></p>
 </li></ul>
@@ -697,7 +691,7 @@ une <strong>GrilleHardcore</strong>, l&#39;affichage est de la forme ##:##</p>
 
           
           <div class="method-source-code" id="lanceToi-source">
-            <pre><span class="ruby-comment"># File Partie.rb, line 125</span>
+            <pre><span class="ruby-comment"># File Partie.rb, line 127</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">lanceToi</span>()
         <span class="ruby-keyword">if</span> <span class="ruby-ivar">@debutChronometre</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
                 <span class="ruby-ivar">@debutChronometre</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
@@ -705,6 +699,11 @@ une <strong>GrilleHardcore</strong>, l&#39;affichage est de la forme ##:##</p>
         <span class="ruby-keyword">else</span>
                 <span class="ruby-identifier">repriseChronometre</span>
         <span class="ruby-keyword">end</span>
+        
+        <span class="ruby-keyword">if</span> <span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">aUneSauvegarde?</span>
+                <span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">supprimeSauvegarde</span>
+        <span class="ruby-keyword">end</span>
+        
         <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- lanceToi-source -->
@@ -740,7 +739,7 @@ une <strong>GrilleHardcore</strong>, l&#39;affichage est de la forme ##:##</p>
 
           
           <div class="method-source-code" id="mettreEnPauseChronometre-source">
-            <pre><span class="ruby-comment"># File Partie.rb, line 154</span>
+            <pre><span class="ruby-comment"># File Partie.rb, line 161</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">mettreEnPauseChronometre</span>()
         <span class="ruby-ivar">@pause</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
         <span class="ruby-ivar">@tourne</span> = <span class="ruby-keyword">false</span>
@@ -781,13 +780,9 @@ clics de la <strong>Partie</strong></p>
 
           
           <div class="method-source-code" id="nbClicsString-source">
-            <pre><span class="ruby-comment"># File Partie.rb, line 257</span>
+            <pre><span class="ruby-comment"># File Partie.rb, line 244</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">nbClicsString</span>
-        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">difficulte</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">8</span>     <span class="ruby-comment"># Grille non-hardcore</span>
-                <span class="ruby-keyword">return</span> <span class="ruby-ivar">@nbClics</span>.<span class="ruby-identifier">to_s</span>
-        <span class="ruby-keyword">else</span>
-                <span class="ruby-keyword">return</span> <span class="ruby-ivar">@nbClics</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;/&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">nbClicsMax</span>.<span class="ruby-identifier">to_s</span>
-        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@nbClics</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">nbClicsMaxString</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- nbClicsString-source -->
           
@@ -818,7 +813,9 @@ clics de la <strong>Partie</strong></p>
 </li><li>
 <p>Appelle la méthode du même nom de sa <strong>Grille</strong></p>
 </li><li>
-<p>Retourne un <strong>String</strong> représentant une aide</p>
+<p>Retourne un tableau contant un <strong>String</strong> représentant
+l&#39;aide et les coordonnées de la <strong>Case</strong> (ou de la
+colonne/ligne) [String, x, y]</p>
 </li></ul>
           
           
@@ -864,7 +861,7 @@ sinon</p>
 
           
           <div class="method-source-code" id="peutRetourArriere-3F-source">
-            <pre><span class="ruby-comment"># File Partie.rb, line 276</span>
+            <pre><span class="ruby-comment"># File Partie.rb, line 259</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">peutRetourArriere?</span>
         <span class="ruby-keyword">return</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@mouvementsArriere</span>.<span class="ruby-identifier">empty?</span>
 <span class="ruby-keyword">end</span></pre>
@@ -901,7 +898,7 @@ sinon</p>
 
           
           <div class="method-source-code" id="remiseAZero-source">
-            <pre><span class="ruby-comment"># File Partie.rb, line 293</span>
+            <pre><span class="ruby-comment"># File Partie.rb, line 276</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">remiseAZero</span>
         <span class="ruby-ivar">@nbHypotheses</span> = <span class="ruby-value">0</span>
         <span class="ruby-ivar">@nbAides</span> = <span class="ruby-value">0</span>
@@ -952,7 +949,7 @@ sinon</p>
 
           
           <div class="method-source-code" id="repriseChronometre-source">
-            <pre><span class="ruby-comment"># File Partie.rb, line 162</span>
+            <pre><span class="ruby-comment"># File Partie.rb, line 169</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">repriseChronometre</span>()
         <span class="ruby-ivar">@debutChronometre</span> <span class="ruby-operator">+=</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@pause</span>
         <span class="ruby-ivar">@tourne</span> = <span class="ruby-keyword">true</span>
@@ -990,7 +987,7 @@ sinon</p>
 
           
           <div class="method-source-code" id="retourArriere-source">
-            <pre><span class="ruby-comment"># File Partie.rb, line 267</span>
+            <pre><span class="ruby-comment"># File Partie.rb, line 250</span>
 <span class="ruby-keyword">def</span>    <span class="ruby-identifier">retourArriere</span>
         <span class="ruby-keyword">if</span> <span class="ruby-identifier">peutRetourArriere?</span>
                 <span class="ruby-identifier">eval</span>(<span class="ruby-ivar">@mouvementsArriere</span>.<span class="ruby-identifier">pop</span>)
@@ -1031,7 +1028,7 @@ BDD</p>
 
           
           <div class="method-source-code" id="sauvegarder-source">
-            <pre><span class="ruby-comment"># File Partie.rb, line 282</span>
+            <pre><span class="ruby-comment"># File Partie.rb, line 265</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">sauvegarder</span>
         <span class="ruby-comment">#self.mettreEnPauseChronometre                # Normalement, le chrono doit déjà être en pause quand cette méthode est appelée</span>
         <span class="ruby-keyword">if</span> <span class="ruby-constant">Compte</span>.<span class="ruby-constant">COMPTE</span>.<span class="ruby-identifier">aUneSauvegarde?</span>
@@ -1075,13 +1072,9 @@ peut continuer en fonction de son nombre de clics</p>
 
           
           <div class="method-source-code" id="verifierNbClicsMax-3F-source">
-            <pre><span class="ruby-comment"># File Partie.rb, line 235</span>
+            <pre><span class="ruby-comment"># File Partie.rb, line 231</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">verifierNbClicsMax?</span>
-        <span class="ruby-identifier">unResultat</span> = <span class="ruby-keyword">true</span>
-        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">difficulte</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">8</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@nbClics</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">nbClicsMax</span>
-                <span class="ruby-identifier">unResultat</span> = <span class="ruby-keyword">false</span>
-        <span class="ruby-keyword">end</span>
-        <span class="ruby-keyword">return</span> <span class="ruby-identifier">unResultat</span>
+        <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">verifierNbClicsMax?</span>(<span class="ruby-ivar">@nbClics</span>)
 <span class="ruby-keyword">end</span></pre>
           </div><!-- verifierNbClicsMax-3F-source -->
           
@@ -1120,11 +1113,7 @@ peut continuer en fonction de son temps</p>
           <div class="method-source-code" id="verifierTempsMax-3F-source">
             <pre><span class="ruby-comment"># File Partie.rb, line 225</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">verifierTempsMax?</span>
-        <span class="ruby-identifier">unResultat</span> = <span class="ruby-keyword">true</span>
-        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">difficulte</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">8</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">getTemps</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">tempsMax</span>
-                <span class="ruby-identifier">unResultat</span> = <span class="ruby-keyword">false</span>
-        <span class="ruby-keyword">end</span>
-        <span class="ruby-keyword">return</span> <span class="ruby-identifier">unResultat</span>
+        <span class="ruby-ivar">@grille</span>.<span class="ruby-identifier">verifierTempsMax?</span>(<span class="ruby-identifier">getTemps</span>())
 <span class="ruby-keyword">end</span></pre>
           </div><!-- verifierTempsMax-3F-source -->
           

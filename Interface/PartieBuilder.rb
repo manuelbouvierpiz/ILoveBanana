@@ -35,6 +35,8 @@ class PartieBuilder < TakuzuBuilder
 	def PartieBuilder.creer(unePartie)
 		new(unePartie)
 	end
+	
+	private_class_method :new
 
 	# Méthodes d'instance
 
@@ -43,10 +45,6 @@ class PartieBuilder < TakuzuBuilder
 		super("Interface/Partie#{unePartie.grille.taille}Builder.glade")
 		
 		Jeu.JEU.partie = unePartie
-		
-		if Compte.COMPTE.aUneSauvegarde?
-			Compte.COMPTE.supprimeSauvegarde
-		end
 		
 		# Pour que la partie soit sauvegardée même quand on ferme la fenêtre
 		# Le handler sera déconnecté si il échoue (en mode hardcore) ou si il gagne la partie
@@ -278,6 +276,4 @@ class PartieBuilder < TakuzuBuilder
 			end
 		end
 	end
-	
-	private_class_method :new
 end

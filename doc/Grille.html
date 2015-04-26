@@ -79,13 +79,21 @@
     
     <li ><a href="#method-i-estCorrecte-3F">#estCorrecte?</a>
     
+    <li ><a href="#method-i-getTempsMaxString">#getTempsMaxString</a>
+    
     <li ><a href="#method-i-jouer">#jouer</a>
+    
+    <li ><a href="#method-i-nbClicsMaxString">#nbClicsMaxString</a>
     
     <li ><a href="#method-i-obtenirAide">#obtenirAide</a>
     
     <li ><a href="#method-i-taille">#taille</a>
     
     <li ><a href="#method-i-to_s">#to_s</a>
+    
+    <li ><a href="#method-i-verifierNbClicsMax-3F">#verifierNbClicsMax?</a>
+    
+    <li ><a href="#method-i-verifierTempsMax-3F">#verifierTempsMax?</a>
     
   </ul>
 </nav>
@@ -101,6 +109,10 @@
   
     <li><a href="./Grille.html">Grille</a>
   
+    <li><a href="./GrilleHardcore.html">GrilleHardcore</a>
+  
+    <li><a href="./Partie.html">Partie</a>
+  
   </ul>
 </nav>
 
@@ -115,7 +127,7 @@
 <h2 id="label-Classe+Grille+%3A">Classe <a href="Grille.html">Grille</a> :<span><a href="#label-Classe+Grille+%3A">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <pre>- connaît son id, sa matrice départ, sa matrice courante, sa matrice correcte et son nombre minimum de clics pour arriver à résolution
-- sait dire si elle correcte, jouer sur une &lt;b&gt;Case&lt;/b&gt;, donner sa difficulté, donner sa taille, donner une aide</pre>
+- sait dire si elle correcte, jouer sur une Case, donner sa difficulté, donner sa taille, donner une aide</pre>
 
   </div><!-- description -->
 
@@ -240,7 +252,7 @@ nombre minimum de clics pour remplir correctement la
 
           
           <div class="method-source-code" id="creer-source">
-            <pre><span class="ruby-comment"># File Grille.rb, line 35</span>
+            <pre><span class="ruby-comment"># File Grille.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-constant">Grille</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-identifier">unIdGrille</span>, <span class="ruby-identifier">uneMatrice</span>=<span class="ruby-keyword">nil</span>)
         <span class="ruby-identifier">new</span>(<span class="ruby-identifier">unIdGrille</span>, <span class="ruby-identifier">uneMatrice</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -285,7 +297,7 @@ nombre minimum de clics pour remplir correctement la
 
           
           <div class="method-source-code" id="difficulte-source">
-            <pre><span class="ruby-comment"># File Grille.rb, line 103</span>
+            <pre><span class="ruby-comment"># File Grille.rb, line 104</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">difficulte</span>
         <span class="ruby-keyword">return</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getGrilleDifficulte</span>(<span class="ruby-ivar">@idGrille</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -323,7 +335,7 @@ nombre minimum de clics pour remplir correctement la
 
           
           <div class="method-source-code" id="estCorrecte-3F-source">
-            <pre><span class="ruby-comment"># File Grille.rb, line 79</span>
+            <pre><span class="ruby-comment"># File Grille.rb, line 80</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">estCorrecte?</span>
         <span class="ruby-keyword">return</span> <span class="ruby-ivar">@matrice</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@matriceCorrecte</span>
 <span class="ruby-keyword">end</span></pre>
@@ -335,6 +347,44 @@ nombre minimum de clics pour remplir correctement la
 
         
       </div><!-- estCorrecte-3F-method -->
+
+    
+      <div id="method-i-getTempsMaxString" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getTempsMaxString</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui retourne une chaine de caractères représentant
+le temps max de la <strong>Grille</strong></p>
+</li><li>
+<p>Retourne un <strong>String</strong> vide</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getTempsMaxString-source">
+            <pre><span class="ruby-comment"># File Grille.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getTempsMaxString</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getTempsMaxString-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getTempsMaxString-method -->
 
     
       <div id="method-i-jouer" class="method-detail ">
@@ -366,7 +416,7 @@ nombre minimum de clics pour remplir correctement la
 
           
           <div class="method-source-code" id="jouer-source">
-            <pre><span class="ruby-comment"># File Grille.rb, line 89</span>
+            <pre><span class="ruby-comment"># File Grille.rb, line 90</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">jouer</span>(<span class="ruby-identifier">unX</span>, <span class="ruby-identifier">unY</span>, <span class="ruby-identifier">rougeOuBleu</span>)
         <span class="ruby-keyword">case</span> <span class="ruby-identifier">rougeOuBleu</span>
                 <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;b&#39;</span>, <span class="ruby-string">&#39;bleu&#39;</span>
@@ -388,6 +438,44 @@ nombre minimum de clics pour remplir correctement la
       </div><!-- jouer-method -->
 
     
+      <div id="method-i-nbClicsMaxString" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">nbClicsMaxString</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui retourne une chaine de caractères représentant
+le nombre max de clics de la <strong>Grille</strong></p>
+</li><li>
+<p>Retourne un <strong>String</strong> vide</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="nbClicsMaxString-source">
+            <pre><span class="ruby-comment"># File Grille.rb, line 123</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">nbClicsMaxString</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- nbClicsMaxString-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- nbClicsMaxString-method -->
+
+    
       <div id="method-i-obtenirAide" class="method-detail ">
         
         <div class="method-heading">
@@ -405,14 +493,16 @@ nombre minimum de clics pour remplir correctement la
 <p>Méthode d&#39;instance qui retourne une aide possible en fonction de la
 matrice de la <strong>Grille</strong></p>
 </li><li>
-<p>Retourne un <strong>String</strong> représentant l&#39;aide</p>
+<p>Retourne un tableau contant un <strong>String</strong> représentant
+l&#39;aide et les coordonnées de la <strong>Case</strong> (ou de la
+colonne/ligne) [String, x, y]</p>
 </li></ul>
           
           
 
           
           <div class="method-source-code" id="obtenirAide-source">
-            <pre><span class="ruby-comment"># File Grille.rb, line 116</span>
+            <pre><span class="ruby-comment"># File Grille.rb, line 141</span>
         <span class="ruby-keyword">def</span> <span class="ruby-identifier">obtenirAide</span>
         
                 <span class="ruby-comment"># A compléter</span>
@@ -421,10 +511,10 @@ matrice de la <strong>Grille</strong></p>
                 <span class="ruby-identifier">colonnes</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">tailleMax</span>)       <span class="ruby-comment">#Tableau contenant les colonnes</span>
                 <span class="ruby-identifier">lignes</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">tailleMax</span>)         <span class="ruby-comment">#Tableau contenant les lignes</span>
 
-                <span class="ruby-comment">#Application des regles sur les colones</span>
+                <span class="ruby-comment">#Application des regles sur les lignes</span>
 
-                <span class="ruby-comment">#Deplacement d&#39;une colonne a l&#39;autre( de gauche a droite).</span>
-                <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">tailleMax</span>
+                <span class="ruby-comment">#Deplacement d&#39;une ligne a l&#39;autre( de haut en bas).</span>
+                <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
          
                         <span class="ruby-identifier">nbBleu</span>=<span class="ruby-value">0</span>
                         <span class="ruby-identifier">nbRouge</span>=<span class="ruby-value">0</span>
@@ -432,37 +522,9 @@ matrice de la <strong>Grille</strong></p>
                         <span class="ruby-identifier">colonne</span> =<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">tailleMax</span>) <span class="ruby-comment">#Colonne actuel contenant l&#39;etat des cases (R ouge , B leu     , V ide)</span>
 
 
-                        <span class="ruby-comment">#Parcours de la colonne ( de haut en bas).</span>
-                        <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">tailleMax</span>
+                        <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
                                 <span class="ruby-identifier">caseActuelle</span> = <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>]
-                
-                 
-                                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estVide?</span>
-                                        <span class="ruby-identifier">colonne</span>[<span class="ruby-identifier">j</span>]=<span class="ruby-string">&quot;V&quot;</span>
-
-                                        <span class="ruby-comment">#Test si il y a une case vide entre 2 case de la meme couleurs     (Peut etre utilisé )</span>
-                                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">j</span><span class="ruby-operator">&gt;</span><span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">j</span><span class="ruby-operator">&lt;</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
-                                                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>].<span class="ruby-identifier">estBleu?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>].<span class="ruby-identifier">estBleu?</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>].<span class="ruby-identifier">estRouge?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>].<span class="ruby-identifier">estRouge?</span> 
-                                                        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;Il n&#39;y a que une solution en &quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">i</span>.<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot; &quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">j</span>.<span class="ruby-identifier">to_s</span>
-                                                <span class="ruby-keyword">end</span>
-                                        <span class="ruby-keyword">end</span>
-
-                                        <span class="ruby-comment">#Test si il deux cases de la meme couleur d&#39;affillé a coté d&#39;une case vide</span>
-                                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">j</span><span class="ruby-operator">&lt;</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">-</span><span class="ruby-value">2</span>
-                                                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>].<span class="ruby-identifier">estBleu?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>].<span class="ruby-identifier">estBleu?</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>].<span class="ruby-identifier">estRouge?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>].<span class="ruby-identifier">estRouge?</span> 
-                                                        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;Il n&#39;y a que une solution en &quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">i</span>.<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot; &quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">j</span>.<span class="ruby-identifier">to_s</span>
-                                                <span class="ruby-keyword">end</span>
-                                        <span class="ruby-keyword">end</span>
-
-                                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">j</span><span class="ruby-operator">&gt;</span><span class="ruby-value">1</span>
-                                                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">-</span><span class="ruby-value">2</span>].<span class="ruby-identifier">estBleu?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>].<span class="ruby-identifier">estBleu?</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">-</span><span class="ruby-value">2</span>].<span class="ruby-identifier">estRouge?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>].<span class="ruby-identifier">estRouge?</span> 
-                                                        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;Il n&#39;y a que une solution en &quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">i</span>.<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot; &quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">j</span>.<span class="ruby-identifier">to_s</span>
-                                                <span class="ruby-keyword">end</span>
-                                        <span class="ruby-keyword">end</span>
-
-                                        <span class="ruby-comment">#Test la couleur de la case pour les compter.</span>
-                                <span class="ruby-keyword">end</span>
-
+                                <span class="ruby-comment">#Test la couleur de la case pour les compter.</span>
                                 <span class="ruby-keyword">if</span> <span class="ruby-identifier">caseActuelle</span>.<span class="ruby-identifier">estBleu?</span>
                                         <span class="ruby-identifier">colonne</span>[<span class="ruby-identifier">j</span>]=<span class="ruby-string">&quot;B&quot;</span>
                                         <span class="ruby-identifier">nbBleu</span><span class="ruby-operator">+=</span><span class="ruby-value">1</span>
@@ -471,15 +533,59 @@ matrice de la <strong>Grille</strong></p>
                                         <span class="ruby-identifier">colonne</span>[<span class="ruby-identifier">j</span>]=<span class="ruby-string">&quot;R&quot;</span>
                                         <span class="ruby-identifier">nbRouge</span><span class="ruby-operator">+=</span><span class="ruby-value">1</span>                 
                                 <span class="ruby-keyword">end</span>
-
                         <span class="ruby-keyword">end</span>
-                        <span class="ruby-identifier">colonnes</span>[<span class="ruby-identifier">i</span>]=<span class="ruby-identifier">colonne</span>
 
 
                         <span class="ruby-comment">#Verifie qu&#39;aucune des couleurs est en surnombre.</span>
                         <span class="ruby-keyword">if</span> <span class="ruby-identifier">nbRouge</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">/</span><span class="ruby-value">2</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">nbBleu</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>
-                                <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;Il y a trop de case de la meme couleur dans la ligne&quot;</span>
+                                <span class="ruby-keyword">return</span> [<span class="ruby-node">&quot;Il y a trop de case de la meme couleur dans la ligne #{i+1}&quot;</span>, <span class="ruby-value">-1</span>, <span class="ruby-value">-1</span>]
                         <span class="ruby-keyword">end</span>
+
+
+                        <span class="ruby-comment">#Parcours des  colonne ( de gauche a droite).</span>
+                        <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
+                                <span class="ruby-identifier">caseActuelle</span> = <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>]
+                
+                 
+                                <span class="ruby-keyword">if</span> <span class="ruby-identifier">caseActuelle</span>.<span class="ruby-identifier">estVide?</span>
+                                        <span class="ruby-identifier">colonne</span>[<span class="ruby-identifier">j</span>]=<span class="ruby-string">&quot;V&quot;</span>
+
+                                        <span class="ruby-comment">#Test si il y a une case vide entre 2 case de la meme couleurs     (Peut etre utilisé )</span>
+                                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">j</span><span class="ruby-operator">&gt;</span><span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">j</span><span class="ruby-operator">&lt;</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
+                                                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>].<span class="ruby-identifier">estBleu?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>].<span class="ruby-identifier">estBleu?</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>].<span class="ruby-identifier">estRouge?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>].<span class="ruby-identifier">estRouge?</span> 
+                                                        <span class="ruby-keyword">return</span> [<span class="ruby-string">&quot;Il y a une solution dans cette case&quot;</span>, <span class="ruby-identifier">i</span>, <span class="ruby-identifier">j</span>]
+                                                <span class="ruby-keyword">end</span>
+                                        <span class="ruby-keyword">end</span>
+
+                                        <span class="ruby-comment">#Test si il deux cases de la meme couleur d&#39;affillé a coté d&#39;une case vide</span>
+                                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">j</span><span class="ruby-operator">&lt;</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">-</span><span class="ruby-value">2</span>
+                                                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>].<span class="ruby-identifier">estBleu?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>].<span class="ruby-identifier">estBleu?</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>].<span class="ruby-identifier">estRouge?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>].<span class="ruby-identifier">estRouge?</span> 
+                                                        <span class="ruby-keyword">return</span> [<span class="ruby-string">&quot;Il y a une solution dans cette case&quot;</span>, <span class="ruby-identifier">i</span>, <span class="ruby-identifier">j</span>]
+                                                <span class="ruby-keyword">end</span>
+                                        <span class="ruby-keyword">end</span>
+
+                                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">j</span><span class="ruby-operator">&gt;</span><span class="ruby-value">1</span>
+                                                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">-</span><span class="ruby-value">2</span>].<span class="ruby-identifier">estBleu?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>].<span class="ruby-identifier">estBleu?</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">-</span><span class="ruby-value">2</span>].<span class="ruby-identifier">estRouge?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>].<span class="ruby-identifier">estRouge?</span> 
+                                                        <span class="ruby-keyword">return</span> [<span class="ruby-string">&quot;Il y a une solution dans cette case&quot;</span>, <span class="ruby-identifier">i</span>, <span class="ruby-identifier">j</span>]
+                                                <span class="ruby-keyword">end</span>
+                                        <span class="ruby-keyword">end</span>
+
+                                        
+                                <span class="ruby-keyword">end</span>
+
+                                
+
+                        <span class="ruby-keyword">end</span>
+                        
+                        <span class="ruby-comment">#Verifie si une couleur est complete</span>
+                        <span class="ruby-keyword">if</span> (<span class="ruby-identifier">nbRouge</span><span class="ruby-operator">==</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>  <span class="ruby-operator">||</span> <span class="ruby-identifier">nbBleu</span><span class="ruby-operator">==</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">nbBleu</span> <span class="ruby-operator">!=</span><span class="ruby-identifier">nbRouge</span>
+                                <span class="ruby-keyword">return</span> [<span class="ruby-node">&quot;Une couleur est complete dans la ligne #{i+1}&quot;</span>, <span class="ruby-value">-1</span>, <span class="ruby-value">-1</span>]
+                        <span class="ruby-keyword">end</span>
+
+                        <span class="ruby-identifier">colonnes</span>[<span class="ruby-identifier">i</span>]=<span class="ruby-identifier">colonne</span>
+
+
+                        
 
                 <span class="ruby-keyword">end</span>
         
@@ -488,46 +594,18 @@ matrice de la <strong>Grille</strong></p>
 
                 <span class="ruby-comment">#Application des regles sur les colonnes</span>
 
-                <span class="ruby-comment">#Deplacement d&#39;une ligne a l&#39;autre( de haut en bas).</span>
-                <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">tailleMax</span>
+                <span class="ruby-comment">#Deplacement d&#39;une colonne a l&#39;autre( de gauche a droite).</span>
+                <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
          
                         <span class="ruby-identifier">nbBleu</span>=<span class="ruby-value">0</span>
                         <span class="ruby-identifier">nbRouge</span>=<span class="ruby-value">0</span>
                 
                         <span class="ruby-identifier">ligne</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">tailleMax</span>)
 
-
-                        <span class="ruby-comment">#Parcours de la ligne ( de gauche a droite).</span>
-                        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">tailleMax</span>
+                        
+                        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
                                 <span class="ruby-identifier">caseActuelle</span> =<span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>]
-                
-                 
-                                <span class="ruby-keyword">if</span> <span class="ruby-identifier">caseActuelle</span>.<span class="ruby-identifier">estVide?</span>
-                                        <span class="ruby-identifier">ligne</span>[<span class="ruby-identifier">i</span>]=<span class="ruby-string">&quot;V&quot;</span>
-
-                                        <span class="ruby-comment">#Test si il y a une case vide entre 2 case de la meme couleurs     (Peut etre utilisé )</span>
-                                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">i</span><span class="ruby-operator">&gt;</span><span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">i</span><span class="ruby-operator">&lt;</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
-                                                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estBleu?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estBleu?</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estRouge?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estRouge?</span> 
-                                                        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;Il n&#39;y a que une solution en &quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">i</span>.<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot; &quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">j</span>.<span class="ruby-identifier">to_s</span>
-                                                <span class="ruby-keyword">end</span>
-                                        <span class="ruby-keyword">end</span>
-
-                                        <span class="ruby-comment">#Test si il deux cases de la meme couleur d&#39;affillé a coté d&#39;une case vide</span>
-                                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">i</span><span class="ruby-operator">&lt;</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">-</span><span class="ruby-value">2</span>
-                                                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estBleu?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estBleu?</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estRouge?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estRouge?</span> 
-                                                        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;Il n&#39;y a que une solution en &quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">i</span>.<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot; &quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">j</span>.<span class="ruby-identifier">to_s</span>
-                                                <span class="ruby-keyword">end</span>
-                                        <span class="ruby-keyword">end</span>
-
-                                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">i</span><span class="ruby-operator">&gt;</span><span class="ruby-value">1</span>
-                                                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-value">2</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estBleu?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estBleu?</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-value">2</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estRouge?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estRouge?</span> 
-                                                        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;Il n&#39;y a que une solution en &quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">i</span>.<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot; &quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">j</span>.<span class="ruby-identifier">to_s</span>
-                                                <span class="ruby-keyword">end</span>
-                                        <span class="ruby-keyword">end</span>
-
-                                        <span class="ruby-comment">#Test</span>
-                                <span class="ruby-keyword">end</span>
-
+                                <span class="ruby-comment">#Test la couleur de la case pour les compter.</span>
                                 <span class="ruby-keyword">if</span> <span class="ruby-identifier">caseActuelle</span>.<span class="ruby-identifier">estBleu?</span>
                                         <span class="ruby-identifier">ligne</span>[<span class="ruby-identifier">i</span>]=<span class="ruby-string">&quot;B&quot;</span>
                                         <span class="ruby-identifier">nbBleu</span><span class="ruby-operator">+=</span><span class="ruby-value">1</span>
@@ -537,25 +615,76 @@ matrice de la <strong>Grille</strong></p>
                                         <span class="ruby-identifier">nbRouge</span><span class="ruby-operator">+=</span><span class="ruby-value">1</span>                 
                                 <span class="ruby-keyword">end</span>
 
+                                <span class="ruby-keyword">if</span> <span class="ruby-identifier">caseActuelle</span>.<span class="ruby-identifier">estVide?</span>
+                                        <span class="ruby-identifier">ligne</span>[<span class="ruby-identifier">i</span>]=<span class="ruby-string">&quot;V&quot;</span>
+                                <span class="ruby-keyword">end</span>
                         <span class="ruby-keyword">end</span>
+                        <span class="ruby-identifier">lignes</span>[<span class="ruby-identifier">j</span>]=<span class="ruby-identifier">ligne</span>
+                        
+
+                        <span class="ruby-comment">#Verifie qu&#39;aucune des couleurs est en surnombre.</span>
                         <span class="ruby-keyword">if</span> <span class="ruby-identifier">nbRouge</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">/</span><span class="ruby-value">2</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">nbBleu</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>
-                                <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;Il y a trop de case de la meme couleur dans la colonne&quot;</span>
+                                <span class="ruby-keyword">return</span> [<span class="ruby-node">&quot;Il y a trop de case de la meme couleur dans la colonne #{j+1}&quot;</span>, <span class="ruby-value">-1</span>, <span class="ruby-value">-1</span>]
                         <span class="ruby-keyword">end</span>
 
-                        <span class="ruby-identifier">lignes</span>[<span class="ruby-identifier">j</span>]=<span class="ruby-identifier">ligne</span>
+
+                        <span class="ruby-comment">#Parcours des  ligne ( de haut en bas).</span>
+                        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
+                                <span class="ruby-identifier">caseActuelle</span> =<span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>]
+                
+                 
+                                <span class="ruby-keyword">if</span> <span class="ruby-identifier">caseActuelle</span>.<span class="ruby-identifier">estVide?</span>
+                                        <span class="ruby-identifier">ligne</span>[<span class="ruby-identifier">i</span>]=<span class="ruby-string">&quot;V&quot;</span>
+
+                                        <span class="ruby-comment">#Test si il y a une case vide entre 2 case de la meme couleurs     (Peut etre utilisé )</span>
+                                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">i</span><span class="ruby-operator">&gt;</span><span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">i</span><span class="ruby-operator">&lt;</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
+                                                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estBleu?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estBleu?</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estRouge?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estRouge?</span> 
+                                                        <span class="ruby-keyword">return</span> [<span class="ruby-string">&quot;Il y a une solution dans cette case&quot;</span>, <span class="ruby-identifier">i</span>, <span class="ruby-identifier">j</span>]
+                                                <span class="ruby-keyword">end</span>
+                                        <span class="ruby-keyword">end</span>
+
+                                        <span class="ruby-comment">#Test si il deux cases de la meme couleur d&#39;affillé a coté d&#39;une case vide</span>
+                                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">i</span><span class="ruby-operator">&lt;</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">-</span><span class="ruby-value">2</span>
+                                                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estBleu?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estBleu?</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estRouge?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estRouge?</span> 
+                                                        <span class="ruby-keyword">return</span> [<span class="ruby-string">&quot;Il y a une solution dans cette case&quot;</span>, <span class="ruby-identifier">i</span>, <span class="ruby-identifier">j</span>]
+                                                <span class="ruby-keyword">end</span>
+                                        <span class="ruby-keyword">end</span>
+
+                                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">i</span><span class="ruby-operator">&gt;</span><span class="ruby-value">1</span>
+                                                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-value">2</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estBleu?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estBleu?</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-value">2</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estRouge?</span><span class="ruby-operator">&amp;&amp;</span><span class="ruby-ivar">@matrice</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">estRouge?</span> 
+                                                        <span class="ruby-keyword">return</span> [<span class="ruby-string">&quot;Il y a une solution dans cette case&quot;</span>, <span class="ruby-identifier">i</span>, <span class="ruby-identifier">j</span>]
+                                                <span class="ruby-keyword">end</span>
+                                        <span class="ruby-keyword">end</span>
+
+                                        <span class="ruby-comment">#Test</span>
+                                <span class="ruby-keyword">end</span>
+                        <span class="ruby-keyword">end</span>
+
+                        <span class="ruby-comment">#Verifie si une couleur est complete</span>
+                        <span class="ruby-keyword">if</span> (<span class="ruby-identifier">nbRouge</span><span class="ruby-operator">==</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>  <span class="ruby-operator">||</span> <span class="ruby-identifier">nbBleu</span><span class="ruby-operator">==</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">nbBleu</span> <span class="ruby-operator">!=</span><span class="ruby-identifier">nbRouge</span>
+                                <span class="ruby-keyword">return</span> [<span class="ruby-node">&quot;Une couleur est complete dans la colonne #{j+1}&quot;</span>, <span class="ruby-value">-1</span>, <span class="ruby-value">-1</span>]
+                        <span class="ruby-keyword">end</span>
+                        
+                        
 
                 <span class="ruby-keyword">end</span>
 
-                <span class="ruby-keyword">for</span> <span class="ruby-identifier">x</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">tailleMax</span>
-                        <span class="ruby-keyword">for</span> <span class="ruby-identifier">y</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">tailleMax</span>
+
+
+
+
+
+<span class="ruby-comment">#Pour etre utile devrati etre fait avant les autre test mais lors des autres test j&#39;initialise les colonnes et lignes utilisé ici donc faudrait changer la strucutre de l&#39;aide</span>
+                <span class="ruby-keyword">for</span> <span class="ruby-identifier">x</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
+                        <span class="ruby-keyword">for</span> <span class="ruby-identifier">y</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">tailleMax</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
 
 <span class="ruby-comment">         
-         #Tentative d&#39;aide quand 2 case sont vide et que le reste est identique ou avec une seul case vide
+         #Tentative d&#39;aide quand 2 cases sont vide et que le reste est identique ou avec une seul case vide
 
 
                                 nbVide=0
 
-                                for z in 0..tailleMax
+                                for z in 0..tailleMax-1
                                         colonneActuel=colonnes[x]
                                  
                                         
@@ -569,14 +698,14 @@ matrice de la <strong>Grille</strong></p>
                                 end
 </span>
 
-        <span class="ruby-comment">#Aide si 2 colonnes ou lignes sont identiques</span>
+                                <span class="ruby-comment">#Aide si 2 colonnes ou lignes sont identiques</span>
 
                                 <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">y</span>
                                         <span class="ruby-keyword">if</span> <span class="ruby-identifier">colonnes</span>[<span class="ruby-identifier">x</span>]<span class="ruby-operator">==</span><span class="ruby-identifier">colonnes</span>[<span class="ruby-identifier">y</span>]
-                                                <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;Deux colonnes ne doivent pas etre identique.&quot;</span>
+                                                <span class="ruby-keyword">return</span> [<span class="ruby-string">&quot;Deux colonnes ne doivent pas etre identique colonne &quot;</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">x</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>).<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;et colonne &quot;</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">y</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>).<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;.&quot;</span>, <span class="ruby-value">-1</span>, <span class="ruby-value">-1</span>]
                                         <span class="ruby-keyword">end</span>
                                         <span class="ruby-keyword">if</span> <span class="ruby-identifier">lignes</span>[<span class="ruby-identifier">x</span>]<span class="ruby-operator">==</span><span class="ruby-identifier">lignes</span>[<span class="ruby-identifier">y</span>]
-                                                <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;Deux lignes ne doivent pas etre identique.&quot;</span>
+                                                <span class="ruby-keyword">return</span> [<span class="ruby-string">&quot;Deux lignes ne doivent pas etre identique ligne &quot;</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">x</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>).<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;et ligne &quot;</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">y</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>).<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;.&quot;</span>, <span class="ruby-value">-1</span>, <span class="ruby-value">-1</span>]
                                         <span class="ruby-keyword">end</span>
                                 <span class="ruby-keyword">end</span>
                         
@@ -589,7 +718,7 @@ matrice de la <strong>Grille</strong></p>
 
 
 
-                <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;Il n&#39;y a pas de regles applicable&quot;</span>
+                <span class="ruby-keyword">return</span> [<span class="ruby-string">&quot;Peut-être qu une hypothèse pourrait aider...&quot;</span>, <span class="ruby-value">-1</span>, <span class="ruby-value">-1</span>]
         <span class="ruby-keyword">end</span></pre>
           </div><!-- obtenirAide-source -->
           
@@ -625,7 +754,7 @@ matrice de la <strong>Grille</strong></p>
 
           
           <div class="method-source-code" id="taille-source">
-            <pre><span class="ruby-comment"># File Grille.rb, line 109</span>
+            <pre><span class="ruby-comment"># File Grille.rb, line 110</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">taille</span>
         <span class="ruby-comment">#return BaseDeDonnees.getGrilleTaille(@idGrille) # =&gt; Trop lent</span>
         <span class="ruby-keyword">return</span> <span class="ruby-ivar">@matriceDepart</span>.<span class="ruby-identifier">size</span>
@@ -664,7 +793,7 @@ matrice de la <strong>Grille</strong></p>
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File Grille.rb, line 299</span>
+            <pre><span class="ruby-comment"># File Grille.rb, line 363</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>()
         <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">taille</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
                 <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">taille</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
@@ -681,6 +810,82 @@ matrice de la <strong>Grille</strong></p>
 
         
       </div><!-- to_s-method -->
+
+    
+      <div id="method-i-verifierNbClicsMax-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">verifierNbClicsMax?</span><span
+            class="method-args">(unNbClics)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui permet de vérifier que le nombre de clics max de
+la <strong>Grille</strong> n&#39;est pas atteint</p>
+</li><li>
+<p>Retourne <strong>true</strong></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="verifierNbClicsMax-3F-source">
+            <pre><span class="ruby-comment"># File Grille.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">verifierNbClicsMax?</span>(<span class="ruby-identifier">unNbClics</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>           <span class="ruby-comment"># Pas de limite pour les grilles normales</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- verifierNbClicsMax-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- verifierNbClicsMax-3F-method -->
+
+    
+      <div id="method-i-verifierTempsMax-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">verifierTempsMax?</span><span
+            class="method-args">(unTemps)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>Méthode d&#39;instance qui permet de vérifier que le temps max de la
+<strong>Grille</strong> n&#39;est pas atteint</p>
+</li><li>
+<p>Retourne <strong>true</strong></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="verifierTempsMax-3F-source">
+            <pre><span class="ruby-comment"># File Grille.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">verifierTempsMax?</span>(<span class="ruby-identifier">unTemps</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>           <span class="ruby-comment"># Pas de limite pour les grilles normales</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- verifierTempsMax-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- verifierTempsMax-3F-method -->
 
     
     </section><!-- public-instance-method-details -->

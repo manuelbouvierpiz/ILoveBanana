@@ -43,7 +43,6 @@ class PartieMonde < Partie
 	# * Méthode d'instance qui "termine" la +Partie+
 	# * Retourne +self+
 	def gagner
-		
 		# On ne met à jour la BDD que si le score est meilleur
 		unScore = calculerScore()
 		if unScore > Compte.COMPTE.scorePourLaGrille(@grille)
@@ -59,7 +58,7 @@ class PartieMonde < Partie
 	
 			BaseDeDonnees.setGrilleTermine(Compte.COMPTE.pseudo, @grille.idGrille, getTemps, @nbClics, unNbEtoile, @nbHypotheses, @nbAides, unScore)
 		end
-		return self
+		return super()
 	end
 
 	def initialiseEtat

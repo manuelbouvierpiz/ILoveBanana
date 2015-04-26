@@ -25,9 +25,21 @@ class PartieLibre < Partie
 		return BaseDeDonnees.getDefis(Compte.COMPTE.pseudo)
 	end
 	
-	# * Méthode d'instance qui arrête la +PartieDidacticiel+
+	# * Méthode d'instance qui arrête la *PartieLibre*
 	def arreteToi
 		super()
 		arretChronometre()
 	end
+	
+	# * Méthode d'instance qui "termine" la *PartieLibre*
+	# * Retourne *self*
+	def gagner
+		# On ne met à jour la BDD que si le score est meilleur
+		unScore = calculerScore()
+		if unScore > Compte.COMPTE.scorePourLaGrille(@grille)
+			BaseDeDonnees.setGrilleTermine(Compte.COMPTE.pseudo, @grille.idGrille, getTemps, @nbClics, 0, @nbHypotheses, @nbAides, unScore)
+		end
+		return super()
+	end
+	
 end

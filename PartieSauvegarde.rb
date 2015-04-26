@@ -38,4 +38,15 @@ class PartieSauvegarde < Partie
 		super()
 		arretChronometre()
 	end
+	
+	# * Méthode d'instance qui "termine" la *PartieSauvegarde*
+	# * Retourne *self*
+	def gagner
+		# On ne met à jour la BDD que si le score est meilleur
+		unScore = calculerScore()
+		if unScore > Compte.COMPTE.scorePourLaGrille(@grille)
+			BaseDeDonnees.setGrilleTermine(Compte.COMPTE.pseudo, @grille.idGrille, getTemps, @nbClics, 0, @nbHypotheses, @nbAides, unScore)
+		end
+		return super()
+	end
 end

@@ -19,9 +19,9 @@ class Partie
 	# * Sont empilés dans ce sens : la *Grille*, le nombre de clics, et le temps courant
 	@listeHypotheses
 	
-	# * Variable d'instance accessible en lecture (un entier) représentant le nombre de clic que l'utilisateur a fait
+	# * Variable d'instance  nonaccessible (un entier) représentant le nombre de clic que l'utilisateur a fait
 	# * Elle s'incrémente durant la partie
-	attr :nbClics, false
+	@nbClics
 	
 	# * Variable d'instance non accessible (un entier) qui représente le nombre de fois que l'utilisateur a utilisé l'aide pendant la *Partie*
 	@nbAides
@@ -123,7 +123,7 @@ class Partie
 		return self
 	end
 
-	# * Méthode d'instance permettant de lancer le chronomètre
+	# * Méthode d'instance permettant de lancer le chronomètre et de supprimer la sauvegarde si il y en a une
 	# * Retourne *self*
 	def lanceToi()
 		if @debutChronometre == nil
@@ -132,6 +132,11 @@ class Partie
 		else
 			repriseChronometre
 		end
+		
+		if Compte.COMPTE.aUneSauvegarde?
+			Compte.COMPTE.supprimeSauvegarde
+		end
+		
 		return self
 	end
 	
@@ -191,14 +196,7 @@ class Partie
 		unTemps = self.getTemps
 		minute = sprintf("%02i", (unTemps % 3600) / 60)
 		seconde = sprintf("%02i", unTemps % 60)
-		if @grille.difficulte < 8	# Grille non-hardcore
-			return "#{minute}:#{seconde}"
-		else
-			unTempsMax = @grille.tempsMax
-			minuteMax = sprintf("%02i", (unTempsMax % 3600) / 60)
-			secondeMax = sprintf("%02i", unTempsMax % 60)
-			return "#{minute}:#{seconde}/#{minuteMax}:#{secondeMax}"
-		end
+		return "#{minute}:#{seconde}" + @grille.getTempsMaxString()
 	end
 	
 	# * Méthode d'instance qui permet de jouer usr la +Grille+
@@ -226,43 +224,26 @@ class Partie
 	# * Méthode d'instance qui permet de savoir si la *Partie* peut continuer en fonction de son temps
 	# * Retourne *true* si elle peut continuer, *false* sinon
 	def verifierTempsMax?
-		unResultat = true
-		if @grille.difficulte >= 8 && getTemps > @grille.tempsMax
-			unResultat = false
-		end
-		return unResultat
+		@grille.verifierTempsMax?(getTemps())
 	end
 	
 	# * Méthode d'instance qui permet de savoir si la *Partie* peut continuer en fonction de son nombre de clics
 	# * Retourne *true* si elle peut continuer, *false* sinon
 	def verifierNbClicsMax?
-		unResultat = true
-		if @grille.difficulte >= 8 && @nbClics > @grille.nbClicsMax
-			unResultat = false
-		end
-		return unResultat
+		@grille.verifierNbClicsMax?(@nbClics)
 	end
 	
 	# * Méthode d'instance qui "termine" la *Partie*
 	# * Retourne *self*
 	def gagner
-	
-		# On ne met à jour la BDD que si le score est meilleur
-		unScore = calculerScore()
-		if unScore > Compte.COMPTE.scorePourLaGrille(@grille)
-			BaseDeDonnees.setGrilleTermine(Compte.COMPTE.pseudo, @grille.idGrille, getTemps, @nbClics, 0, @nbHypotheses, @nbAides, unScore)
-		end
+		# Dans les cas normaux, ne fait rien
 		return self
 	end
 	
 	# * Méthode d'instance qui renvoie un String représentant le nombre de clics de la *Partie*
 	# * Retourne un *String* décrivant le nombre de clics de la *Partie*
 	def nbClicsString
-		if @grille.difficulte < 8	# Grille non-hardcore
-			return @nbClics.to_s
-		else
-			return @nbClics.to_s + "/" + @grille.nbClicsMax.to_s
-		end
+		return @nbClics.to_s + @grille.nbClicsMaxString
 	end
 	
 	# * Méthode d'instance qui joue un coup en arrière
