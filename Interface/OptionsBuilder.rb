@@ -87,4 +87,8 @@ class OptionsBuilder < TakuzuBuilder
 		print @colorbutton2.color
 		ouvrirFenetre(MenuPrincipalBuilder.new)
 	end
+
+	def on_buttonReinitialisation_clicked()
+		ouvrirFenetre(ReinitialisationConfirmationBuilder.new)
+	end
 end
