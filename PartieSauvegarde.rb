@@ -6,16 +6,26 @@
 
 # == Classe *PartieSauvegarde* :
 #		- est une *Partie*
+#		- connaît son temps sauvegardé
 #		- sait se charger
 class PartieSauvegarde < Partie
+	
+	# Variable d'instance
 
+	# * Variable d'instance non accessible qui représente le temps sauvegardé de la *PartieSauvegarde*
 	@tempsSauvegarde
 
+	# * Méthode de classe
+
+	# * Méthode de classe qui permet de créer une nouvelle *PartieSauvegarde*
 	def PartieSauvegarde.charger()
 		new()
 	end
 	
-	def initialize()
+	# Méthodes d'instance
+	
+	# Méthode d'instance qui initialise la *PartieSauvegarde*
+	def initialize()	# :nodoc:
 		unIdGrille = BaseDeDonnees.getSauvegardeIdGrille(Compte.COMPTE.pseudo)
 		super(unIdGrille)
 		@nbHypotheses = BaseDeDonnees.getSauvegardeNbHypotheses(Compte.COMPTE.pseudo)
@@ -28,15 +38,20 @@ class PartieSauvegarde < Partie
 		@tempsSauvegarde = BaseDeDonnees.getSauvegardeTemps(Compte.COMPTE.pseudo)
 	end
 
+	# * Méthode d'instance qui lance le chrono de la *PartieSauvegarde*
+	# * Retourne *self*
 	def lanceToi
 		super()
 		@debutChronometre -= @tempsSauvegarde
+		return self
 	end
 	
-	# * Méthode d'instance qui arrête la +PartieDidacticiel+
+	# * Méthode d'instance qui arrête la *PartieSauvegarde*
+	# * Retourne *self*
 	def arreteToi
 		super()
 		arretChronometre()
+		return self
 	end
 	
 	# * Méthode d'instance qui "termine" la *PartieSauvegarde*
