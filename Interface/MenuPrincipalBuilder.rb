@@ -69,17 +69,17 @@ class MenuPrincipalBuilder < TakuzuBuilder
 		0.upto(7) do |i|
             		if(Jeu.JEU.aventure.mondes[i].estDebloque?)
                 		0.upto(39) do |j|
-                    		if(Jeu.JEU.aventure.mondes[i].partie(j).estDebloque?)
-                        		Jeu.JEU.aventure.mondes[i].partie(j).etat=(false)
-                    		else
-                        		break
-                    		end
-                	end
-                	Jeu.JEU.aventure.mondes[i].etat=(false)
-            	else
-                	break
-            	end
-        end
+                    			if(Jeu.JEU.aventure.mondes[i].partie(j).estDebloque?)
+                        			Jeu.JEU.aventure.mondes[i].partie(j).etat=(false)
+                    			else
+                        			break
+                    			end
+                		end
+                		Jeu.JEU.aventure.mondes[i].etat=(false)
+            		else
+                		break
+            		end
+        	end
 		ouvrirFenetre(ConnexionBuilder.new)
 	end
 	
