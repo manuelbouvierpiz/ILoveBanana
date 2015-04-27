@@ -66,6 +66,20 @@ class MenuPrincipalBuilder < TakuzuBuilder
 	
 	# * Méthode d'instance qui ouvre la fenêtre de Connexion si l'utilisateur clique sur le bouton correspondant
 	def on_retourButton_clicked
+		0.upto(7) do |i|
+            		if(Jeu.JEU.aventure.mondes[i].estDebloque?)
+                		0.upto(39) do |j|
+                    		if(Jeu.JEU.aventure.mondes[i].partie(j).estDebloque?)
+                        		Jeu.JEU.aventure.mondes[i].partie(j).etat=(false)
+                    		else
+                        		break
+                    		end
+                	end
+                	Jeu.JEU.aventure.mondes[i].etat=(false)
+            	else
+                	break
+            	end
+        end
 		ouvrirFenetre(ConnexionBuilder.new)
 	end
 	
