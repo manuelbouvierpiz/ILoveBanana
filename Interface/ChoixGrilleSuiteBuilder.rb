@@ -20,7 +20,7 @@ class ChoixGrilleSuiteBuilder < TakuzuBuilder
 
 		unResultatIntermediaire = true
 		20.upto(39) do |x|
-			if unResultatIntermediaire
+			if unResultatIntermediaire  && !@monde.partie(x).estDebloque?
 				unResultatIntermediaire = @monde.partie(x).initialiseEtat
 			end
 			
