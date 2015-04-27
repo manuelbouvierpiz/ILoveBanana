@@ -1,12 +1,19 @@
 # Wilfried JOUSSE
 # Modifications apportées par Valentin CHAILLOU
 
-
+# == Classe Aventure
+#		- connaît ses mondes
 class Aventure
 
-	attr_reader :mondes
+	# Variable d'instance
 
-	def initialize()
+	# * Variable d'instance accessible en lecture qui représente un tableau des huit <b>Monde</b>s
+	attr_reader :mondes
+	
+	# Méthode d'instance
+
+	# Méthode d'instance qui initialise l'Aventure
+	def initialize()	# :nodoc:
 		@mondes = [Monde.creer(1,"Images/prairie.png"),
 				Monde.creer(2, "Images/foret.png"),
 				Monde.creer(3, "Images/mer.png"),
