@@ -139,34 +139,65 @@ class Grille
 	
 	# * Méthode d'instance qui retourne une aide possible en fonction de la matrice de la *Grille*
 	# * Retourne un tableau contant un *String* représentant l'aide et les coordonnées de la *Case* (ou de la colonne/ligne) [String, x, y]
-	def obtenirAide
+def obtenirAide
 	
-		# A compléter
 		tailleMax = @matrice.length
 	
-		colonnes = Array.new(tailleMax)	#Tableau contenant les colonnes
-		lignes = Array.new(tailleMax)		#Tableau contenant les lignes
-
-		#Application des regles sur les lignes
+		for x in 0..tailleMax-1
+			for y in 0..tailleMax-1
+				#Aide si deux colonnes sont identiques
+				for z in 0..tailleMax-1
+				caseCom=0
+					if x != Z
+						if @matrice[x][y]==@matrice[z][y]
+							caseCom+=1
+						end
+						if casCom == tailleMax-1
+							return "Les colonnes #{x+1} et #{z+1} sont identiques "
+						end
+					end
+				end
+			end
+		end
+		
+		
+		for y in 0..tailleMax-1
+			for x in 0..tailleMax-1
+				#Aide si deux lignes sont identiques
+				for z in 0..tailleMax-1
+				caseCom=0
+					if x != Z
+						if @matrice[x][y]==@matrice[x][z]
+							caseCom+=1
+						end
+						if casCom == tailleMax-1
+							return "Les lignes #{y+1} et #{z+1} sont identiques "
+						end
+					end
+				end
+			end
+		end
+		
+		
+		
+		
+		
+	#Application des regles sur les lignes
 
 		#Deplacement d'une ligne a l'autre( de haut en bas).
 		for i in 0..tailleMax-1
 	 
 			nbBleu=0
 			nbRouge=0
-	
-			colonne =Array.new(tailleMax) #Colonne actuel contenant l'etat des cases (R ouge , B leu	, V ide)
 
 
 			for j in 0..tailleMax-1
 				caseActuelle = @matrice[i][j]
 				#Test la couleur de la case pour les compter.
 				if caseActuelle.estBleu?
-					colonne[j]="B"
 					nbBleu+=1
 				end
 				if caseActuelle.estRouge?
-					colonne[j]="R"
 					nbRouge+=1			
 				end
 			end
@@ -184,7 +215,6 @@ class Grille
 		
 		 
 				if caseActuelle.estVide?
-					colonne[j]="V"
 
 					#Test si il y a une case vide entre 2 case de la meme couleurs	(Peut etre utilisé )
 					if j>0 && j<tailleMax-1
@@ -218,44 +248,33 @@ class Grille
 				return ["Une couleur est complete dans la ligne #{i+1}", -1, -1]
 			end
 
-			colonnes[i]=colonne
-
-
-			
 
 		end
 	
 
 
 
-		#Application des regles sur les colonnes
+	#Application des regles sur les colonnes
 
 		#Deplacement d'une colonne a l'autre( de gauche a droite).
 		for j in 0..tailleMax-1
 	 
 			nbBleu=0
 			nbRouge=0
-		
-			ligne = Array.new(tailleMax)
 
 			
 			for i in 0..tailleMax-1
 				caseActuelle =@matrice[i][j]
 				#Test la couleur de la case pour les compter.
 				if caseActuelle.estBleu?
-					ligne[i]="B"
 					nbBleu+=1
 				end
 				if caseActuelle.estRouge?
-					ligne[i]="R"
 					nbRouge+=1			
 				end
 
-				if caseActuelle.estVide?
-					ligne[i]="V"
-				end
 			end
-			lignes[j]=ligne
+			
 			
 
 			#Verifie qu'aucune des couleurs est en surnombre.
@@ -270,7 +289,6 @@ class Grille
 		
 		 
 				if caseActuelle.estVide?
-					ligne[i]="V"
 
 					#Test si il y a une case vide entre 2 case de la meme couleurs	(Peut etre utilisé )
 					if i>0 && i<tailleMax-1
@@ -305,36 +323,9 @@ class Grille
 
 		end
 
-
-
-
-
-
-#Pour etre utile devrati etre fait avant les autre test mais lors des autres test j'initialise les colonnes et lignes utilisé ici donc faudrait changer la strucutre de l'aide
-		for x in 0..tailleMax-1
-			for y in 0..tailleMax-1
-				#Aide si 2 colonnes ou lignes sont identiques
-				if x != y
-					if colonnes[x]==colonnes[y]
-						return ["Deux colonnes ne doivent pas etre identique colonne "+(x+1).to_s+"et colonne "+(y+1).to_s+".", -1, -1]
-					end
-					if lignes[x]==lignes[y]
-						return ["Deux lignes ne doivent pas etre identique ligne "+(x+1).to_s+"et ligne "+(y+1).to_s+".", -1, -1]
-					end
-				end
-			
-			end
-		end
-
-	
-
-
-
-
-
 		return ["Peut-être qu une hypothèse pourrait aider...", -1, -1]
 	end
-
+	
 	# * Méthode d'instance qui retourne une chaine de caractères décrivant la matrice de la *Grille*
 	# * Retourne un *String* décrivant la *Grille*
 	def to_s()
