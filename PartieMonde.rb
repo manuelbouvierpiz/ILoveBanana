@@ -13,6 +13,8 @@ class PartieMonde < Partie
 	# * Variable d'instance (un booléen) non accessible représentant l'état de la *PartieMonde*
 	@etat
 	
+	attr_writer :etat
+	
 	# Méthodes d'instance
 
 	# * Méthode d'instance qui permet de donner l'accès à la *PartieMonde*
