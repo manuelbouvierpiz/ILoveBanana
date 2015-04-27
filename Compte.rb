@@ -175,7 +175,7 @@ class Compte
     def reinitialiser()
     	BaseDeDonnees.viderFinir(@pseudo)
     	BaseDeDonnees.viderReussir(@pseudo)
-    	Compte.COMPTE.reinireinitialiserAventure()
+    	Compte.COMPTE.reinitialiserAventure()
     	return self
     end
     
