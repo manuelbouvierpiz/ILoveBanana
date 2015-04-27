@@ -144,17 +144,24 @@ def obtenirAide
 		tailleMax = @matrice.length
 	
 		for x in 0..tailleMax-1
-			for y in 0..tailleMax-1
-				#Aide si deux colonnes sont identiques
-				for z in 0..tailleMax-1
+			for z in 0..tailleMax-1
+				#Aide si deux lignes sont identiques
 				caseCom=0
-					if x != Z
+				caseVide=0
+				for y in 0..tailleMax-1
+					if @matrice[x][y].estVide?
+						caseVide+=1						
+					end
+					if x != z
 						if @matrice[x][y]==@matrice[z][y]
 							caseCom+=1
 						end
-						if casCom == tailleMax-1
-							return "Les colonnes #{x+1} et #{z+1} sont identiques "
-						end
+					end
+
+				end
+				if caseVide<3
+					if caseCom == tailleMax
+						return ["Les lignes #{x+1} et #{z+1} sont identiques ",-1,-1]
 					end
 				end
 			end
@@ -162,17 +169,22 @@ def obtenirAide
 		
 		
 		for y in 0..tailleMax-1
-			for x in 0..tailleMax-1
-				#Aide si deux lignes sont identiques
-				for z in 0..tailleMax-1
+			for z in 0..tailleMax-1
+				#Aide si deux colonnes sont identiques
 				caseCom=0
-					if x != Z
+				for x in 0..tailleMax-1
+					if @matrice[x][y].estVide?
+						caseVide+=1						
+					end
+					if y != z
 						if @matrice[x][y]==@matrice[x][z]
 							caseCom+=1
 						end
-						if casCom == tailleMax-1
-							return "Les lignes #{y+1} et #{z+1} sont identiques "
-						end
+					end
+				end
+				if caseVide<3
+					if caseCom == tailleMax
+							return ["Les colonnes #{y+1} et #{z+1} sont identiques ",-1,-1]
 					end
 				end
 			end
@@ -180,7 +192,7 @@ def obtenirAide
 		
 		
 		
-		
+	
 		
 	#Application des regles sur les lignes
 
@@ -325,7 +337,8 @@ def obtenirAide
 
 		return ["Peut-être qu une hypothèse pourrait aider...", -1, -1]
 	end
-	
+
+
 	# * Méthode d'instance qui retourne une chaine de caractères décrivant la matrice de la *Grille*
 	# * Retourne un *String* décrivant la *Grille*
 	def to_s()

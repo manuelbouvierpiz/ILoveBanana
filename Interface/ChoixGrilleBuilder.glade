@@ -1,17 +1,21 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <requires lib="gtk+" version="2.24"/>
   <!-- interface-naming-policy project-wide -->
   <object class="GtkWindow" id="window1">
+    <property name="can_focus">False</property>
     <property name="default_width">800</property>
+    <property name="default_height">700</property>
     <child>
       <object class="GtkFixed" id="fixed1">
         <property name="visible">True</property>
+        <property name="can_focus">False</property>
         <child>
           <object class="GtkTable" id="table1">
             <property name="width_request">528</property>
             <property name="height_request">415</property>
             <property name="visible">True</property>
+            <property name="can_focus">False</property>
             <property name="n_rows">4</property>
             <property name="n_columns">5</property>
             <child>
@@ -20,7 +24,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_niveauBouton_clicked"/>
+                <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
             </child>
             <child>
@@ -29,7 +33,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_niveauBouton_clicked"/>
+                <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">1</property>
@@ -42,7 +46,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_niveauBouton_clicked"/>
+                <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">2</property>
@@ -55,7 +59,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_niveauBouton_clicked"/>
+                <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">3</property>
@@ -68,7 +72,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_niveauBouton_clicked"/>
+                <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">4</property>
@@ -81,7 +85,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_niveauBouton_clicked"/>
+                <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="top_attach">1</property>
@@ -94,7 +98,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_niveauBouton_clicked"/>
+                <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">1</property>
@@ -109,7 +113,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_niveauBouton_clicked"/>
+                <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">2</property>
@@ -124,7 +128,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_niveauBouton_clicked"/>
+                <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">3</property>
@@ -139,7 +143,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_niveauBouton_clicked"/>
+                <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">4</property>
@@ -154,7 +158,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_niveauBouton_clicked"/>
+                <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="top_attach">2</property>
@@ -167,7 +171,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_niveauBouton_clicked"/>
+                <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="top_attach">3</property>
@@ -180,7 +184,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_niveauBouton_clicked"/>
+                <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">1</property>
@@ -195,7 +199,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_niveauBouton_clicked"/>
+                <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">1</property>
@@ -210,7 +214,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_niveauBouton_clicked"/>
+                <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">2</property>
@@ -225,7 +229,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_niveauBouton_clicked"/>
+                <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">2</property>
@@ -240,7 +244,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_niveauBouton_clicked"/>
+                <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">3</property>
@@ -255,7 +259,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_niveauBouton_clicked"/>
+                <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">3</property>
@@ -270,7 +274,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_niveauBouton_clicked"/>
+                <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">4</property>
@@ -285,7 +289,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_niveauBouton_clicked"/>
+                <signal name="clicked" handler="on_niveauBouton_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">4</property>
@@ -308,7 +312,7 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <signal name="clicked" handler="on_suivantBouton_clicked"/>
+            <signal name="clicked" handler="on_suivantBouton_clicked" swapped="no"/>
           </object>
           <packing>
             <property name="x">743</property>
@@ -320,6 +324,7 @@
             <property name="width_request">327</property>
             <property name="height_request">38</property>
             <property name="visible">True</property>
+            <property name="can_focus">False</property>
             <property name="label" translatable="yes">Page 1/2</property>
           </object>
           <packing>
@@ -332,6 +337,7 @@
             <property name="width_request">546</property>
             <property name="height_request">97</property>
             <property name="visible">True</property>
+            <property name="can_focus">False</property>
             <property name="label" translatable="yes">Nom du niveau actuel</property>
             <attributes>
               <attribute name="size" value="40000"/>
@@ -352,7 +358,7 @@ du monde</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <signal name="clicked" handler="on_retourBouton_clicked"/>
+            <signal name="clicked" handler="on_retourBouton_clicked" swapped="no"/>
           </object>
           <packing>
             <property name="x">34</property>
