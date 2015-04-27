@@ -38,10 +38,15 @@ class PartieMondeReussieBuilder < PartieReussieBuilder
 		end
 		
 		@partie.remiseAZero
+		@button4.show
 	end
 	
 	def on_button1_clicked
 		ouvrirFenetre(PartieMondeBuilder.creer(@partie, @monde))
+	end
+
+	def on_button4_clicked
+		ouvrirFenetre(ChoixGrilleBuilder.creer(@monde))
 	end
 	
 end
