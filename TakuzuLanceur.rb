@@ -45,6 +45,7 @@ class Chargement
 		'Interface/DefiBuilder.rb',
 		'Interface/MenuPrincipalBuilder.rb',
 		'Interface/OptionsBuilder.rb',
+		'Interface/ReinitialisationConfirmationBuilder.rb',
 		'Interface/PartieBuilder.rb',
 		'Interface/PartieLibreBuilder.rb',
 		'Interface/PartieMondeBuilder.rb',

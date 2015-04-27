@@ -10,13 +10,14 @@ class PartieReussieBuilder < TakuzuBuilder
 	@leScore
 
 	def initialize()
-        super(__FILE__)
-       	@leScore = Jeu.JEU.partie.calculerScore
-       	@idGrille = Jeu.JEU.partie.grille.idGrille
+		super(__FILE__)
+		@leScore = Jeu.JEU.partie.calculerScore
+		@idGrille = Jeu.JEU.partie.grille.idGrille
 		Jeu.JEU.partie.gagner
-      	@score.set_text("Score :" + @leScore.to_s)
-        @temps.set_text("Temps :" + Jeu.JEU.partie.getTempsString)
+		@score.set_text("Score :" + @leScore.to_s)
+		@temps.set_text("Temps :" + Jeu.JEU.partie.getTempsString)
 		Jeu.JEU.partie.remiseAZero
+		@button4.hide
 	end
 
 	def on_button1_clicked
