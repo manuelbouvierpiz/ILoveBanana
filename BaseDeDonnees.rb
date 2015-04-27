@@ -414,14 +414,14 @@ class BaseDeDonnees
     # Supprime tous les succès qu'à accompli le joueur
     # - pseudo le pseudo du joueur
     def BaseDeDonnees.viderReussir(pseudo)
-        SuccesAccomplis.where(:pseudo => pseudo).destroy_all
+        SuccesAccomplis.delete_all(["pseudo = ?", pseudo])
         return self
     end
     
     # Supprime tous les résultats des grilles du joueur
     # - pseudo le pseudo du joueur
     def BaseDeDonnees.viderFinir(pseudo)
-        GrilleFinis.where(:pseudo => pseudo).destroy_all
+        GrilleFinis.delete_all(["pseudo = ?", pseudo])
         return self
     end
     
