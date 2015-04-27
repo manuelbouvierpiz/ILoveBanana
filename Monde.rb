@@ -33,6 +33,8 @@ class Monde
 	# * Non accessible
 	# * Le tableau de parties est rempli dynamiquement par la méthode +partie+
 	@tableauParties
+	
+	attr_writer :etat
 
 	# Méthodes d'instance
 	
