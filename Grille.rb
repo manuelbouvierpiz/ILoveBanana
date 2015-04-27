@@ -313,31 +313,7 @@ class Grille
 #Pour etre utile devrati etre fait avant les autre test mais lors des autres test j'initialise les colonnes et lignes utilisé ici donc faudrait changer la strucutre de l'aide
 		for x in 0..tailleMax-1
 			for y in 0..tailleMax-1
-
-=begin
-	 
-	 #Tentative d'aide quand 2 cases sont vide et que le reste est identique ou avec une seul case vide
-
-
-				nbVide=0
-
-				for z in 0..tailleMax-1
-					colonneActuel=colonnes[x]
-				 
-					
-					if caseActuelle[z].estVide?
-						nbVide+=1
-					end
-					if nbVide>2
-						z=tailleMax
-						y=tailleMax
-					end
-				end
-=end
-
-
 				#Aide si 2 colonnes ou lignes sont identiques
-
 				if x != y
 					if colonnes[x]==colonnes[y]
 						return ["Deux colonnes ne doivent pas etre identique colonne "+(x+1).to_s+"et colonne "+(y+1).to_s+".", -1, -1]
