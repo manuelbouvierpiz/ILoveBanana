@@ -22,7 +22,7 @@ class InscriptionBuilder < TakuzuBuilder
         		Compte.creer(@entryPseudo.text, @entryPassword.text, @entryMail.text, @entryPrenom.text, @entryNom.text)
         		@labelReussite.set_text("L'incription est bien prise en compte\nVous pouvez vous logguer !")
         		@buttonValider.set_visible(false)
-        		@buttonRetour.label = "Se logguer"
+        		@buttonRetour.label = "Se loguer"
                 Options.premiereInitialisationOptions(@entryPseudo.text)
        		else
         		@labelReussite.set_text("Le pseudo est déjà pris.")
