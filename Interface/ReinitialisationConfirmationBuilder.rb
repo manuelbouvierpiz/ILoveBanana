@@ -11,8 +11,8 @@ class ReinitialisationConfirmationBuilder < TakuzuBuilder
     	ouvrirFenetre(OptionsBuilder.new)
     end
 
-	def on_boutonOui_clicked
-		Compte.COMPTE.reinitialiser
-    	ouvrirFenetre(MenuPrincipal.new)
+    def on_boutonOui_clicked
+	Compte.COMPTE.reinitialiser
+    	ouvrirFenetre(MenuPrincipalBuilder.new)
     end
 end
