@@ -175,6 +175,11 @@ class Compte
     def reinitialiser()
     	BaseDeDonnees.viderFinir(@pseudo)
     	BaseDeDonnees.viderReussir(@pseudo)
+    	Compte.COMPTE.reinireinitialiserAventure()
+    	return self
+    end
+    
+    def reinitialiserAventure()
     	0.upto(7) do |i|
             if(Jeu.JEU.aventure.mondes[i].estDebloque?)
                 0.upto(39) do |j|
@@ -188,7 +193,6 @@ class Compte
             else
                 break
             end
-        end
-    	return self
+       end
     end
 end
