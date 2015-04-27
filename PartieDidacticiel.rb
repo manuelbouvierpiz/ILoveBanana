@@ -8,8 +8,9 @@ class PartieDidacticiel < Partie
 	# * Méthode d'instance qui arrête la *PartieDidacticiel*
 	# * Retourne *self*
 	def arreteToi
+		super()
 		mettreEnPauseChronometre()
-		return super()
+		return self
 	end
 	
 end
