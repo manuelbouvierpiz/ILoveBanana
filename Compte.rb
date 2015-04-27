@@ -159,17 +159,22 @@ class Compte
     	BaseDeDonnees.getScore(@pseudo, uneGrille.idGrille)
     end
 	
-	# * Méthode d'instance qui permet de savoir si l'utilisateur avait une partie en cours
-	# * Retourne +true+ si il a une partie sauvegardée, +false+ sinon
-	def aUneSauvegarde?()
-		return BaseDeDonnees.estSauvegarde?(@pseudo)
-	end
-	
-	# * Méthode d'instance qui permet de supprimer la sauvegarde du joueur
-	# * Retourne +self+
-	def supprimeSauvegarde()
-		BaseDeDonnees.supprimeSauvegarde(@pseudo)
-		return self
-	end
-	
+    # * Méthode d'instance qui permet de savoir si l'utilisateur avait une partie en cours
+    # * Retourne +true+ si il a une partie sauvegardée, +false+ sinon
+    def aUneSauvegarde?()
+    	return BaseDeDonnees.estSauvegarde?(@pseudo)
+    end
+    
+    # * Méthode d'instance qui permet de supprimer la sauvegarde du joueur
+    # * Retourne +self+
+    def supprimeSauvegarde()
+    	BaseDeDonnees.supprimeSauvegarde(@pseudo)
+	return self
+    end
+    
+    def reinitialiser()
+    	BaseDeDonnees.viderFinir(@pseudo)
+    	BaseDeDonnees.viderReussir(@pseudo)
+    	return self
+    end
 end

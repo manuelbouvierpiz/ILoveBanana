@@ -20,12 +20,12 @@ class InscriptionBuilder < TakuzuBuilder
     	if @entryNom.text != "" && @entryPrenom.text != "" && @entryMail.text != "" && @entryPseudo.text != "" && @entryPassword.text != "" && @entryPassword.text == @entryConfirmation.text
     		if Compte.verifierIdentifiant?(@entryPseudo.text) && Compte.verifierMail?(@entryMail.text)
         		Compte.creer(@entryPseudo.text, @entryPassword.text, @entryMail.text, @entryPrenom.text, @entryNom.text)
-        		@labelReussite.set_text("L'incription est bien prise en compte\nVous pouvez vous logguer !")
+        		@labelReussite.set_text("L'incription est bien prise en compte\nVous pouvez vous loguer !")
         		@buttonValider.set_visible(false)
-        		@buttonRetour.label = "Se logguer"
+        		@buttonRetour.label = "Se loguer"
                 Options.premiereInitialisationOptions(@entryPseudo.text)
        		else
-        		@labelReussite.set_text("Le pseudo est déjà pris.")
+        		@labelReussite.set_text("Le pseudo ou le mail est déjà pris.")
         	end
         else
         	@labelReussite.set_text("Tout les champs ne sont pas remplis")
