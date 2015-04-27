@@ -34,4 +34,8 @@ class PartieReussieBuilder < TakuzuBuilder
 		ouvrirFenetre(MenuPrincipalBuilder.new)
 		Jeu.JEU.partie = nil
 	end
+	
+	def on_button4_clicked
+		
+	end
 end
