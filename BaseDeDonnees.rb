@@ -5,6 +5,8 @@
 require "digest/md5"
 require "active_record"
 
+# == Classe BaseDeDonnees :
+#		- sait donner accès en lecture et écriture à des tables de la base de données
 class BaseDeDonnees
 	ActiveRecord::Base.establish_connection(
 		:adapter => "mysql2",
@@ -14,11 +16,15 @@ class BaseDeDonnees
 	    	:host => "vps120906.ovh.net"
 	)
    
-    	private_class_method :new
+    private_class_method :new
     	
-	# Renvoie le score d'un joueur sur une grille
-	# - pseudo le pseudo du joueur
-	# - idGrille l'identifiant de la grille
+    # Méthodes de classe
+    	
+	# * Méthode de classe qui renvoie le score d'un joueur sur une grille
+	# * === Attributs :
+	#		- pseudo : un *String* représentant le pseudo du joueur
+	#		- idGrille : un entier représentant l'identifiant de la grille
+	# * Retourne un entier représentant le score du joueur sur la grille ou -1 si il n'a pas de score
 	def BaseDeDonnees.getScore(pseudo, idGrille)
 		if(BaseDeDonnees.estGrilleResolue?(pseudo, idGrille))
 			return GrilleFinis.select(:score).find_by(pseudo: pseudo, id_grille: idGrille).score
