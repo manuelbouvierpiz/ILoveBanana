@@ -82,13 +82,13 @@ class PartieMonde < Partie
 
 	# * Méthode d'instance qui renvoie le score pour deux étoiles
 	# * Retourne un entier représentant la valeur néssecaire a l'obtention de deux étoiles
-	def scoreEtoileUn
+	def scoreEtoileDeux
 		return BaseDeDonnees.getGrilleEtoileDeuxScore(@grille.idGrille)
 	end
 
 	# * Méthode d'instance qui renvoie le score pour trois étoiles
 	# * Retourne un entier représentant la valeur néssecaire a l'obtention de trois étoiles 
-	def scoreEtoileUn
+	def scoreEtoileTrois
 		return BaseDeDonnees.getGrilleEtoileTroisScore(@grille.idGrille)
 	end
 
