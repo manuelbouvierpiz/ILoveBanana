@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>search_index.js - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../BDD/takuzu_bdd_sql.html">takuzu_bdd.sql</a>
+  
+    <li class="file"><a href="../../Interface/AProposBuilder_glade.html">AProposBuilder.glade</a>
+  
+    <li class="file"><a href="../../Interface/ChargementBuilder_glade.html">ChargementBuilder.glade</a>
+  
+    <li class="file"><a href="../../Interface/ChargementSauvegardeBuilder_glade.html">ChargementSauvegardeBuilder.glade</a>
+  
+    <li class="file"><a href="../../Interface/ChoixGrilleBuilder_glade.html">ChoixGrilleBuilder.glade</a>
+  
+    <li class="file"><a href="../../Interface/ChoixGrilleSuiteBuilder_glade.html">ChoixGrilleSuiteBuilder.glade</a>
+  
+    <li class="file"><a href="../../Interface/ChoixMondeBuilder_glade.html">ChoixMondeBuilder.glade</a>
+  
+    <li class="file"><a href="../../Interface/ClassementBuilder_glade.html">ClassementBuilder.glade</a>
+  
+    <li class="file"><a href="../../Interface/ConnexionBuilder_glade.html">ConnexionBuilder.glade</a>
+  
+    <li class="file"><a href="../../Interface/DefiBuilder_glade.html">DefiBuilder.glade</a>
+  
+    <li class="file"><a href="../../Interface/InscriptionBuilder_glade.html">InscriptionBuilder.glade</a>
+  
+    <li class="file"><a href="../../Interface/MenuPrincipalBuilder_glade.html">MenuPrincipalBuilder.glade</a>
+  
+    <li class="file"><a href="../../Interface/OptionsBuilder_glade.html">OptionsBuilder.glade</a>
+  
+    <li class="file"><a href="../../Interface/OubliMotDePasseBuilder_glade.html">OubliMotDePasseBuilder.glade</a>
+  
+    <li class="file"><a href="../../Interface/Partie10Builder_glade.html">Partie10Builder.glade</a>
+  
+    <li class="file"><a href="../../Interface/Partie12Builder_glade.html">Partie12Builder.glade</a>
+  
+    <li class="file"><a href="../../Interface/Partie6Builder_glade.html">Partie6Builder.glade</a>
+  
+    <li class="file"><a href="../../Interface/Partie8Builder_glade.html">Partie8Builder.glade</a>
+  
+    <li class="file"><a href="../../Interface/PartieEchecBuilder_glade.html">PartieEchecBuilder.glade</a>
+  
+    <li class="file"><a href="../../Interface/PartieReussieBuilder_glade.html">PartieReussieBuilder.glade</a>
+  
+    <li class="file"><a href="../../Interface/ReglesBuilder_glade.html">ReglesBuilder.glade</a>
+  
+    <li class="file"><a href="../../Interface/ReinitialisationConfirmationBuilder_glade.html">ReinitialisationConfirmationBuilder.glade</a>
+  
+    <li class="file"><a href="../../Interface/StatistiquesBuilder_glade.html">StatistiquesBuilder.glade</a>
+  
+    <li class="file"><a href="../../Interface/SuccesBuilder_glade.html">SuccesBuilder.glade</a>
+  
+    <li class="file"><a href="../../Interface/TailleDifficulteBuilder_glade.html">TailleDifficulteBuilder.glade</a>
+  
+    <li class="file"><a href="../../README_md.html">README</a>
+  
+    <li class="file"><a href="../../doc/AProposBuilder_html.html">AProposBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/Aventure_html.html">Aventure.html</a>
+  
+    <li class="file"><a href="../../doc/BDD/takuzu_bdd_sql_html.html">takuzu_bdd_sql.html</a>
+  
+    <li class="file"><a href="../../doc/BaseDeDonnees_html.html">BaseDeDonnees.html</a>
+  
+    <li class="file"><a href="../../doc/BaseDeDonnees/ActiveRecord_html.html">ActiveRecord.html</a>
+  
+    <li class="file"><a href="../../doc/Case_html.html">Case.html</a>
+  
+    <li class="file"><a href="../../doc/Chargement_html.html">Chargement.html</a>
+  
+    <li class="file"><a href="../../doc/ChargementBuilder_html.html">ChargementBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/ChargementSauvegardeBuilder_html.html">ChargementSauvegardeBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/ChoixGrilleBuilder_html.html">ChoixGrilleBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/ChoixGrilleSuiteBuilder_html.html">ChoixGrilleSuiteBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/ChoixMondeBuilder_html.html">ChoixMondeBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/ClassementBuilder_html.html">ClassementBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/Compte_html.html">Compte.html</a>
+  
+    <li class="file"><a href="../../doc/Comptes_html.html">Comptes.html</a>
+  
+    <li class="file"><a href="../../doc/ConnexionBuilder_html.html">ConnexionBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/Defi_html.html">Defi.html</a>
+  
+    <li class="file"><a href="../../doc/DefiBuilder_html.html">DefiBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/Defis_html.html">Defis.html</a>
+  
+    <li class="file"><a href="../../doc/Didacticiel_html.html">Didacticiel.html</a>
+  
+    <li class="file"><a href="../../doc/Grille_html.html">Grille.html</a>
+  
+    <li class="file"><a href="../../doc/GrilleFinis_html.html">GrilleFinis.html</a>
+  
+    <li class="file"><a href="../../doc/GrilleHardcore_html.html">GrilleHardcore.html</a>
+  
+    <li class="file"><a href="../../doc/Grilles_html.html">Grilles.html</a>
+  
+    <li class="file"><a href="../../doc/InscriptionBuilder_html.html">InscriptionBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/AProposBuilder_glade_html.html">AProposBuilder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/ChargementBuilder_glade_html.html">ChargementBuilder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/ChargementSauvegardeBuilder_glade_html.html">ChargementSauvegardeBuilder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/ChoixGrilleBuilder_glade_html.html">ChoixGrilleBuilder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/ChoixGrilleSuiteBuilder_glade_html.html">ChoixGrilleSuiteBuilder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/ChoixMondeBuilder_glade_html.html">ChoixMondeBuilder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/ClassementBuilder_glade_html.html">ClassementBuilder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/ConnexionBuilder_glade_html.html">ConnexionBuilder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/DefiBuilder_glade_html.html">DefiBuilder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/InscriptionBuilder_glade_html.html">InscriptionBuilder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/ListeDefiBuilder_glade_html.html">ListeDefiBuilder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/MenuPrincipalBuilder_glade_html.html">MenuPrincipalBuilder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/OptionsBuilder_glade_html.html">OptionsBuilder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/OubliMotDePasseBuilder_glade_html.html">OubliMotDePasseBuilder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/Partie10Builder_glade_html.html">Partie10Builder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/Partie12Builder_glade_html.html">Partie12Builder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/Partie6Builder_glade_html.html">Partie6Builder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/Partie8Builder_glade_html.html">Partie8Builder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/PartieEchecBuilder_glade_html.html">PartieEchecBuilder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/PartieReussieBuilder_glade_html.html">PartieReussieBuilder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/ReglesBuilder_glade_html.html">ReglesBuilder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/StatistiquesBuilder_glade_html.html">StatistiquesBuilder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/SuccesBuilder_glade_html.html">SuccesBuilder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/Interface/TailleDifficulteBuilder_glade_html.html">TailleDifficulteBuilder_glade.html</a>
+  
+    <li class="file"><a href="../../doc/InterfaceMereBuilder_html.html">InterfaceMereBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/Jeu_html.html">Jeu.html</a>
+  
+    <li class="file"><a href="../../doc/ListeDefiBuilder_html.html">ListeDefiBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/MenuPrincipalBuilder_html.html">MenuPrincipalBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/Monde_html.html">Monde.html</a>
+  
+    <li class="file"><a href="../../doc/Mondes_html.html">Mondes.html</a>
+  
+    <li class="file"><a href="../../doc/Options_html.html">Options.html</a>
+  
+    <li class="file"><a href="../../doc/OptionsBuilder_html.html">OptionsBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/OubliMotDePasseBuilder_html.html">OubliMotDePasseBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/Partie_html.html">Partie.html</a>
+  
+    <li class="file"><a href="../../doc/PartieBuilder_html.html">PartieBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/PartieDefi_html.html">PartieDefi.html</a>
+  
+    <li class="file"><a href="../../doc/PartieDefiBuilder_html.html">PartieDefiBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/PartieDefiReussiBuilder_html.html">PartieDefiReussiBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/PartieDefiReussieBuilder_html.html">PartieDefiReussieBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/PartieDidacticiel_html.html">PartieDidacticiel.html</a>
+  
+    <li class="file"><a href="../../doc/PartieDidacticielBuilder_html.html">PartieDidacticielBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/PartieDidacticielReussieBuilder_html.html">PartieDidacticielReussieBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/PartieEchecBuilder_html.html">PartieEchecBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/PartieLibre_html.html">PartieLibre.html</a>
+  
+    <li class="file"><a href="../../doc/PartieLibreBuilder_html.html">PartieLibreBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/PartieLibreReussieBuilder_html.html">PartieLibreReussieBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/PartieMonde_html.html">PartieMonde.html</a>
+  
+    <li class="file"><a href="../../doc/PartieMondeBuilder_html.html">PartieMondeBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/PartieMondeReussieBuilder_html.html">PartieMondeReussieBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/PartieReussieBuilder_html.html">PartieReussieBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/PartieSauvegarde_html.html">PartieSauvegarde.html</a>
+  
+    <li class="file"><a href="../../doc/PartieSauvegardeBuilder_html.html">PartieSauvegardeBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/PartieSauvegardeReussieBuilder_html.html">PartieSauvegardeReussieBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/README_md_html.html">README_md.html</a>
+  
+    <li class="file"><a href="../../doc/RaccourciClavier_html.html">RaccourciClavier.html</a>
+  
+    <li class="file"><a href="../../doc/RaccourciComptes_html.html">RaccourciComptes.html</a>
+  
+    <li class="file"><a href="../../doc/ReglesBuilder_html.html">ReglesBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/Sauvegardes_html.html">Sauvegardes.html</a>
+  
+    <li class="file"><a href="../../doc/Statistiques_html.html">Statistiques.html</a>
+  
+    <li class="file"><a href="../../doc/StatistiquesBuilder_html.html">StatistiquesBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/Succes_html.html">Succes.html</a>
+  
+    <li class="file"><a href="../../doc/SuccesAccomplis_html.html">SuccesAccomplis.html</a>
+  
+    <li class="file"><a href="../../doc/SuccesBuilder_html.html">SuccesBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/SuccesIndividuel_html.html">SuccesIndividuel.html</a>
+  
+    <li class="file"><a href="../../doc/TailleDifficulteBuilder_html.html">TailleDifficulteBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/TakuzuBuilder_html.html">TakuzuBuilder.html</a>
+  
+    <li class="file"><a href="../../doc/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="../../doc/doc/created_rid_html.html">created_rid.html</a>
+  
+    <li class="file"><a href="../../doc/index_html.html">index.html</a>
+  
+    <li class="file"><a href="../../doc/js/darkfish_js.html">darkfish.js</a>
+  
+    <li class="file"><a href="../../doc/js/jquery_js.html">jquery.js</a>
+  
+    <li class="file"><a href="../../doc/js/navigation_js.html">navigation.js</a>
+  
+    <li class="file"><a href="../../doc/js/search_js.html">search.js</a>
+  
+    <li class="file"><a href="../../doc/js/search_index_js.html">search_index.js</a>
+  
+    <li class="file"><a href="../../doc/js/searcher_js.html">searcher.js</a>
+  
+    <li class="file"><a href="../../doc/rdoc_css.html">rdoc.css</a>
+  
+    <li class="file"><a href="../../doc/table_of_contents_html.html">table_of_contents.html</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../AProposBuilder.html">AProposBuilder</a>
+  
+    <li><a href="../../Aventure.html">Aventure</a>
+  
+    <li><a href="../../BaseDeDonnees.html">BaseDeDonnees</a>
+  
+    <li><a href="../../BaseDeDonnees/ActiveRecord.html">BaseDeDonnees::ActiveRecord</a>
+  
+    <li><a href="../../Case.html">Case</a>
+  
+    <li><a href="../../Chargement.html">Chargement</a>
+  
+    <li><a href="../../ChargementBuilder.html">ChargementBuilder</a>
+  
+    <li><a href="../../ChargementSauvegardeBuilder.html">ChargementSauvegardeBuilder</a>
+  
+    <li><a href="../../ChoixGrilleBuilder.html">ChoixGrilleBuilder</a>
+  
+    <li><a href="../../ChoixGrilleSuiteBuilder.html">ChoixGrilleSuiteBuilder</a>
+  
+    <li><a href="../../ChoixMondeBuilder.html">ChoixMondeBuilder</a>
+  
+    <li><a href="../../ClassementBuilder.html">ClassementBuilder</a>
+  
+    <li><a href="../../Compte.html">Compte</a>
+  
+    <li><a href="../../Comptes.html">Comptes</a>
+  
+    <li><a href="../../ConnexionBuilder.html">ConnexionBuilder</a>
+  
+    <li><a href="../../Defi.html">Defi</a>
+  
+    <li><a href="../../DefiBuilder.html">DefiBuilder</a>
+  
+    <li><a href="../../Defis.html">Defis</a>
+  
+    <li><a href="../../Didacticiel.html">Didacticiel</a>
+  
+    <li><a href="../../Grille.html">Grille</a>
+  
+    <li><a href="../../GrilleFinis.html">GrilleFinis</a>
+  
+    <li><a href="../../GrilleHardcore.html">GrilleHardcore</a>
+  
+    <li><a href="../../Grilles.html">Grilles</a>
+  
+    <li><a href="../../InscriptionBuilder.html">InscriptionBuilder</a>
+  
+    <li><a href="../../InterfaceMereBuilder.html">InterfaceMereBuilder</a>
+  
+    <li><a href="../../Jeu.html">Jeu</a>
+  
+    <li><a href="../../MenuPrincipalBuilder.html">MenuPrincipalBuilder</a>
+  
+    <li><a href="../../Monde.html">Monde</a>
+  
+    <li><a href="../../Mondes.html">Mondes</a>
+  
+    <li><a href="../../Options.html">Options</a>
+  
+    <li><a href="../../OptionsBuilder.html">OptionsBuilder</a>
+  
+    <li><a href="../../OubliMotDePasseBuilder.html">OubliMotDePasseBuilder</a>
+  
+    <li><a href="../../Partie.html">Partie</a>
+  
+    <li><a href="../../PartieBuilder.html">PartieBuilder</a>
+  
+    <li><a href="../../PartieDefi.html">PartieDefi</a>
+  
+    <li><a href="../../PartieDefiBuilder.html">PartieDefiBuilder</a>
+  
+    <li><a href="../../PartieDefiEchecBuilder.html">PartieDefiEchecBuilder</a>
+  
+    <li><a href="../../PartieDefiReussiBuilder.html">PartieDefiReussiBuilder</a>
+  
+    <li><a href="../../PartieDefiReussieBuilder.html">PartieDefiReussieBuilder</a>
+  
+    <li><a href="../../PartieDidacticiel.html">PartieDidacticiel</a>
+  
+    <li><a href="../../PartieDidacticielBuilder.html">PartieDidacticielBuilder</a>
+  
+    <li><a href="../../PartieDidacticielReussieBuilder.html">PartieDidacticielReussieBuilder</a>
+  
+    <li><a href="../../PartieEchecBuilder.html">PartieEchecBuilder</a>
+  
+    <li><a href="../../PartieLibre.html">PartieLibre</a>
+  
+    <li><a href="../../PartieLibreBuilder.html">PartieLibreBuilder</a>
+  
+    <li><a href="../../PartieLibreReussieBuilder.html">PartieLibreReussieBuilder</a>
+  
+    <li><a href="../../PartieMonde.html">PartieMonde</a>
+  
+    <li><a href="../../PartieMondeBuilder.html">PartieMondeBuilder</a>
+  
+    <li><a href="../../PartieMondeReussieBuilder.html">PartieMondeReussieBuilder</a>
+  
+    <li><a href="../../PartieReussieBuilder.html">PartieReussieBuilder</a>
+  
+    <li><a href="../../PartieSauvegarde.html">PartieSauvegarde</a>
+  
+    <li><a href="../../PartieSauvegardeBuilder.html">PartieSauvegardeBuilder</a>
+  
+    <li><a href="../../PartieSauvegardeReussieBuilder.html">PartieSauvegardeReussieBuilder</a>
+  
+    <li><a href="../../RaccourciClavier.html">RaccourciClavier</a>
+  
+    <li><a href="../../RaccourciComptes.html">RaccourciComptes</a>
+  
+    <li><a href="../../ReglesBuilder.html">ReglesBuilder</a>
+  
+    <li><a href="../../ReinitialisationConfirmationBuilder.html">ReinitialisationConfirmationBuilder</a>
+  
+    <li><a href="../../Sauvegardes.html">Sauvegardes</a>
+  
+    <li><a href="../../Statistiques.html">Statistiques</a>
+  
+    <li><a href="../../StatistiquesBuilder.html">StatistiquesBuilder</a>
+  
+    <li><a href="../../Succes.html">Succes</a>
+  
+    <li><a href="../../SuccesAccomplis.html">SuccesAccomplis</a>
+  
+    <li><a href="../../SuccesBuilder.html">SuccesBuilder</a>
+  
+    <li><a href="../../SuccesIndividuel.html">SuccesIndividuel</a>
+  
+    <li><a href="../../TailleDifficulteBuilder.html">TailleDifficulteBuilder</a>
+  
+    <li><a href="../../TakuzuBuilder.html">TakuzuBuilder</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<p>var search_data = {“index”:{“<a
+href="http://"basededonnees","activerecord","addgrille()","dernierniveaufini()","estbonsidentifiants?()","estfinimonde?()","estgrilleresolue?()","estidentifiantdisponible?()","estmaildisponible?()","estsauvegarde?()","estsuccesdebloque?()","getclassement()","getcouleurdeux()","getcouleurun()","getdefiscore()","getdefis()","getgrilledifficulte()","getgrilleetoiledeuxscore()","getgrilleetoiletroisscore()","getgrilleetoileunscore()","getgrilleidaleatoire()","getgrillematrice()","getgrillematriceresolue()","getgrillenbclicsmax()","getgrilletaille()","getgrilletempsmax()","getmail()","getmondegrilleid()","getmondenom()","getnbclics()","getnbdefigagne()","getnbetoileobtenu()","getnbgrilledifficultesansaidefini()","getnbgrillefini()","getnbgrilletailledouzemoinssoixante()","getnbgrilletaillefini()","getnom()","getnomsucces()","getnumeroniveau()","getplusgrandnombreclic()","getpluspetitnombreclic()","getprenom()","getraccourci()","getsauvegardegrillesauvegardee()","getsauvegardeidgrille()","getsauvegardenbaides()","getsauvegardenbclics()","getsauvegardenbhypotheses()","getsauvegardetemps()","getscore()","getscoredifficulte()","getscoretotal()","getsucces()","getsuccescondition()","getsuccesdescription()","gettemps()","gettempstotal()","gettotalnbetoile()","getvolumebruitage()","getvolumemusique()","setcompte()","setcouleurdeux()","setcouleurun()","setdefi()","setgrilletermine()","setmotdepasse()","setraccourci()","setsauvegarde()","setsuccesdebloque()","setvainqueurdefi()","setvolumebruitage()","setvolumemusique()","stringtogrille()","supprimedefi()","supprimesauvegarde()","viderfinir()","viderreussir()"">searchIndex”:</a>,“<a
+href=""basededonnees","basededonnees::activerecord","basededonnees::addgrille()","basededonnees::dernierniveaufini()","basededonnees::estbonsidentifiants?()","basededonnees::estfinimonde?()","basededonnees::estgrilleresolue?()","basededonnees::estidentifiantdisponible?()","basededonnees::estmaildisponible?()","basededonnees::estsauvegarde?()","basededonnees::estsuccesdebloque?()","basededonnees::getclassement()","basededonnees::getcouleurdeux()","basededonnees::getcouleurun()","basededonnees::getdefiscore()","basededonnees::getdefis()","basededonnees::getgrilledifficulte()","basededonnees::getgrilleetoiledeuxscore()","basededonnees::getgrilleetoiletroisscore()","basededonnees::getgrilleetoileunscore()","basededonnees::getgrilleidaleatoire()","basededonnees::getgrillematrice()","basededonnees::getgrillematriceresolue()","basededonnees::getgrillenbclicsmax()","basededonnees::getgrilletaille()","basededonnees::getgrilletempsmax()","basededonnees::getmail()","basededonnees::getmondegrilleid()","basededonnees::getmondenom()","basededonnees::getnbclics()","basededonnees::getnbdefigagne()","basededonnees::getnbetoileobtenu()","basededonnees::getnbgrilledifficultesansaidefini()","basededonnees::getnbgrillefini()","basededonnees::getnbgrilletailledouzemoinssoixante()","basededonnees::getnbgrilletaillefini()","basededonnees::getnom()","basededonnees::getnomsucces()","basededonnees::getnumeroniveau()","basededonnees::getplusgrandnombreclic()","basededonnees::getpluspetitnombreclic()","basededonnees::getprenom()","basededonnees::getraccourci()","basededonnees::getsauvegardegrillesauvegardee()","basededonnees::getsauvegardeidgrille()","basededonnees::getsauvegardenbaides()","basededonnees::getsauvegardenbclics()","basededonnees::getsauvegardenbhypotheses()","basededonnees::getsauvegardetemps()","basededonnees::getscore()","basededonnees::getscoredifficulte()","basededonnees::getscoretotal()","basededonnees::getsucces()","basededonnees::getsuccescondition()","basededonnees::getsuccesdescription()","basededonnees::gettemps()","basededonnees::gettempstotal()","basededonnees::gettotalnbetoile()","basededonnees::getvolumebruitage()","basededonnees::getvolumemusique()","basededonnees::setcompte()","basededonnees::setcouleurdeux()","basededonnees::setcouleurun()","basededonnees::setdefi()","basededonnees::setgrilletermine()","basededonnees::setmotdepasse()","basededonnees::setraccourci()","basededonnees::setsauvegarde()","basededonnees::setsuccesdebloque()","basededonnees::setvainqueurdefi()","basededonnees::setvolumebruitage()","basededonnees::setvolumemusique()","basededonnees::stringtogrille()","basededonnees::supprimedefi()","basededonnees::supprimesauvegarde()","basededonnees::viderfinir()","basededonnees::viderreussir()"">longSearchIndex”:</a>,“info”:[[“BaseDeDonnees”,“”,“BaseDeDonnees.html”,“”,“&lt;p&gt;Classe
+<a href="../../BaseDeDonnees.html">BaseDeDonnees</a> :nn&lt;pre&gt;- sait
+donner accès en lecture et écriture à des tables de la base de <a
+href=""BaseDeDonnees::ActiveRecord","","BaseDeDonnees/ActiveRecord.html","",""">données</pre>n”],</a>,[“addGrille”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-addGrille”,“(cheminFic)”,“&lt;p&gt;Méthode
+de classe qui permet l&amp;#39;insertion de
+&lt;strong&gt;Grille&lt;/strong&gt;sndans la base de
+donnéesn&lt;p&gt;&lt;p&gt;Attribut :nn&lt;pre&gt;- cheminFic
+…&lt;/pre&gt;n”],[“dernierNiveauFini”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-dernierNiveauFini”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui renvoie un tableau contenant l&amp;#39;identifiant
+dun&lt;strong&gt;Monde&lt;/strong&gt; et le numero_niveau les
+…n”],[“estBonsIdentifiants?”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-estBonsIdentifiants-3F”,“(pseudo,
+motDePasse)”,“&lt;p&gt;Méthode de classe qui permet de savoir si le mot de
+passe donné est bienncelui du &lt;strong&gt;Compte&lt;/strong&gt; dont on a
+donné
+…n”],[“estFiniMonde?”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-estFiniMonde-3F”,“(pseudo,
+idMonde)”,“&lt;p&gt;Méthode de classe qui permet de savoir si un
+&lt;strong&gt;Monde&lt;/strong&gt; estnterminén&lt;p&gt;&lt;p&gt;Attributs
+:nn&lt;pre&gt;- pseudo : un <strong>String</strong> représentant
+…&lt;/pre&gt;n”],[“estGrilleResolue?”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-estGrilleResolue-3F”,“(pseudo,
+idGrille)”,“&lt;p&gt;Méthode de classe qui indique si le joueur a fini une
+grille (vrai ou faux)n&lt;p&gt;&lt;p&gt;Attributs :nn&lt;pre&gt;- pseudo :
+un <strong>String</strong>
+…&lt;/pre&gt;n”],[“estIdentifiantDisponible?”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-estIdentifiantDisponible-3F”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui indique si un pseudo est
+disponiblen&lt;p&gt;&lt;p&gt;Attribut :nn&lt;pre&gt;- pseudo : un
+<strong>String</strong> représentant
+…&lt;/pre&gt;n”],[“estMailDisponible?”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-estMailDisponible-3F”,“(mail)”,“&lt;p&gt;Méthode
+de classe qui indique si une adresse mail est
+disponiblen&lt;p&gt;&lt;p&gt;Attribut :nn&lt;pre&gt;- mail : un
+<strong>String</strong> représentant
+…&lt;/pre&gt;n”],[“estSauvegarde?”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-estSauvegarde-3F”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui permet de savoir si le joueur a une
+sauvegarden&lt;p&gt;&lt;p&gt;Attribut :nn&lt;pre&gt;- pseudo : un
+<strong>String</strong>
+…&lt;/pre&gt;n”],[“estSuccesDebloque?”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-estSuccesDebloque-3F”,“(idSucces,
+pseudo)”,“&lt;p&gt;Méthode de classe qui indique si le joueur a débloqué
+unn&lt;strong&gt;SuccesIndividuel&lt;/strong&gt;n&lt;p&gt;&lt;p&gt;Attributs
+:nn&lt;pre&gt;- idSucces : un entier
+…&lt;/pre&gt;n”],[“getClassement”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getClassement”,“(taille,
+difficulte)”,“&lt;p&gt;Méthode de classe qui renvoie le classement des
+meilleurs scores ennfonction d&amp;#39;une taille de
+&lt;strong&gt;Grille&lt;/strong&gt;
+…n”],[“getCouleurDeux”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getCouleurDeux”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui renvoie la couleur associée à la seconde couleurn(bleu par
+défaut) du &lt;strong&gt;Compte&lt;/strong&gt; dont
+…n”],[“getCouleurUn”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getCouleurUn”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui renvoie le prénom du possesseur
+dun&lt;strong&gt;Compte&lt;/strong&gt;n&lt;p&gt;&lt;p&gt;Attribut
+:nn&lt;pre&gt;- pseudo : un <strong>String</strong> représentant
+…&lt;/pre&gt;n”],[“getDefiScore”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getDefiScore”,“(pseudoEnv,
+pseudoDest, idGrille)”,“&lt;p&gt;Méthode de classe qui renvoie le score
+d&amp;#39;un &lt;strong&gt;Defi&lt;/strong&gt;n&lt;p&gt;&lt;p&gt;Attributs
+:nn&lt;pre&gt;- pseudoEnv : un <strong>String</strong> représentant
+…&lt;/pre&gt;n”],[“getDefis”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getDefis”,“(pseudoDest)”,“&lt;p&gt;Méthode
+de classe qui permet de renvoyer les &lt;strong&gt;Defi&lt;/strong&gt;s
+quendoit effectuer le joueur sous forme de
+listen&lt;p&gt;&lt;p&gt;Attributs
+…n”],[“getGrilleDifficulte”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getGrilleDifficulte”,“(idGrille)”,“&lt;p&gt;Méthode
+de classe qui renvoie la difficulte
+d&amp;#39;unen&lt;strong&gt;Grille&lt;/strong&gt;n&lt;p&gt;&lt;p&gt;Attribut
+:nn&lt;pre&gt;- idGrille l&amp;#39;identifiant de la
+…&lt;/pre&gt;n”],[“getGrilleEtoileDeuxScore”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getGrilleEtoileDeuxScore”,“(idGrille)”,“&lt;p&gt;Méthode
+de classe qui renvoie le seuil pour obtenir la seconde
+étoilen&lt;p&gt;&lt;p&gt;Attribut :nn&lt;pre&gt;- idGrille : un entier
+…&lt;/pre&gt;n”],[“getGrilleEtoileTroisScore”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getGrilleEtoileTroisScore”,“(idGrille)”,“&lt;p&gt;Méthode
+de classe qui renvoie le seuil pour obtenir la troisième
+étoilen&lt;p&gt;&lt;p&gt;Attribut :nn&lt;pre&gt;- idGrille : un entier
+…&lt;/pre&gt;n”],[“getGrilleEtoileUnScore”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getGrilleEtoileUnScore”,“(idGrille)”,“&lt;p&gt;Méthode
+de classe qui renvoie le seuil pour obtenir la première
+étoilen&lt;p&gt;&lt;p&gt;Attribut :nn&lt;pre&gt;- idGrille : un entier
+…&lt;/pre&gt;n”],[“getGrilleIdAleatoire”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getGrilleIdAleatoire”,“(taille,
+difficulte)”,“&lt;p&gt;Méthode de classe qui renvoie l&amp;#39;identifiant
+d&amp;#39;unen&lt;strong&gt;Grille&lt;/strong&gt; de façon alétoire en
+fonction d&amp;#39;une
+…n”],[“getGrilleMatrice”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getGrilleMatrice”,“(idGrille)”,“&lt;p&gt;Méthode
+de classe qui renvoie la matrice de départ
+d&amp;#39;unen&lt;strong&gt;Grille&lt;/strong&gt;n&lt;p&gt;&lt;p&gt;Attribut
+:nn&lt;pre&gt;- idGrille l&amp;#39;identifiant
+…&lt;/pre&gt;n”],[“getGrilleMatriceResolue”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getGrilleMatriceResolue”,“(idGrille)”,“&lt;p&gt;Méthode
+de classe qui renvoie la matrice résolue
+d&amp;#39;unen&lt;strong&gt;Grille&lt;/strong&gt;n&lt;p&gt;&lt;p&gt;Attribut
+:nn&lt;pre&gt;- idGrille l&amp;#39;identifiant de
+…&lt;/pre&gt;n”],[“getGrilleNbClicsMax”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getGrilleNbClicsMax”,“(idGrille)”,“&lt;p&gt;Méthode
+de classe qui renvoie le nombre de clics max
+d&amp;#39;unen&lt;strong&gt;Grille&lt;/strong&gt;n&lt;p&gt;&lt;p&gt;Attribut
+:nn&lt;pre&gt;- idGrille l&amp;#39;identifiant
+…&lt;/pre&gt;n”],[“getGrilleTaille”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getGrilleTaille”,“(idGrille)”,“&lt;p&gt;Méthode
+de classe qui renvoie la taille d&amp;#39;une
+&lt;strong&gt;Grille&lt;/strong&gt;n&lt;p&gt;&lt;p&gt;Attribut
+:nn&lt;pre&gt;- idGrille l&amp;#39;identifiant de la
+<strong>Grille</strong>&lt;/pre&gt;n”],[“getGrilleTempsMax”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getGrilleTempsMax”,“(idGrille)”,“&lt;p&gt;Méthode
+de classe qui renvoie le temps max
+d&amp;#39;unen&lt;strong&gt;Grille&lt;/strong&gt;n&lt;p&gt;&lt;p&gt;Attribut
+:nn&lt;pre&gt;- idGrille l&amp;#39;identifiant de la
+<strong>Grille</strong>&lt;/pre&gt;n”],[“getMail”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getMail”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui renvoie l&amp;#39;adresse mail du possesseur
+dun&lt;strong&gt;Compte&lt;/strong&gt; dont on a donné le
+pseudon&lt;p&gt;&lt;p&gt;Attribut
+…n”],[“getMondeGrilleId”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getMondeGrilleId”,“(idMonde,
+numNiveau)”,“&lt;p&gt;Méthode de classe qui renvoie l&amp;#39;identifiant
+d&amp;#39;unen&lt;strong&gt;Grille&lt;/strong&gt; par rapport à un
+&lt;strong&gt;Monde&lt;/strong&gt; et numèronde
+…n”],[“getMondeNom”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getMondeNom”,“(idMonde)”,“&lt;p&gt;Méthode
+de classe qui renvoie le nom d&amp;#39;un
+&lt;strong&gt;Monde&lt;/strong&gt;n&lt;p&gt;&lt;p&gt;Attributs
+:nn&lt;pre&gt;- idMonde : un entier représentant l&amp;#39;unique
+…&lt;/pre&gt;n”],[“getNbClics”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getNbClics”,“(pseudo,
+idGrille)”,“&lt;p&gt;Méthode de classe qui renvoie le nombre de clics
+effectués par le joueurnsur une
+&lt;strong&gt;Grille&lt;/strong&gt;n&lt;p&gt;&lt;p&gt;Attributs
+:nn&lt;pre&gt;- pseudo
+…&lt;/pre&gt;n”],[“getNbDefiGagne”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getNbDefiGagne”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui renvoie le nombre de &lt;strong&gt;Defi&lt;/strong&gt;s
+gagnésnpar le joueurn&lt;p&gt;&lt;p&gt;Attribut :nn&lt;pre&gt;- pseudo : un
+<strong>String</strong>
+…&lt;/pre&gt;n”],[“getNbEtoileObtenu”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getNbEtoileObtenu”,“(pseudo,
+idGrille)”,“&lt;p&gt;Méthode de classe qui renvoie le nombre
+d&amp;#39;étoiles obtenues sur unen&lt;strong&gt;Grille&lt;/strong&gt; par
+le joueurn&lt;p&gt;&lt;p&gt;Attributs
+…n”],[“getNbGrilleDifficulteSansAideFini”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getNbGrilleDifficulteSansAideFini”,“(pseudo,
+difficulte)”,“&lt;p&gt;Méthode de classe qui renvoie le nombre de
+&lt;strong&gt;Grille&lt;/strong&gt;snaccomplies sans aide en fonction
+d&amp;#39;une taille
+…n”],[“getNbGrilleFini”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getNbGrilleFini”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui renvoie le nombre de
+&lt;strong&gt;Grille&lt;/strong&gt;snaccompliesn&lt;p&gt;&lt;p&gt;Attribut
+:nn&lt;pre&gt;- pseudo : un <strong>String</strong> représentant
+…&lt;/pre&gt;n”],[“getNbGrilleTailleDouzeMoinsSoixante”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getNbGrilleTailleDouzeMoinsSoixante”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui renvoie le nombre de &lt;strong&gt;Grille&lt;/strong&gt;s
+dentaille 12 accomplies en moins de 60 secondesn&lt;p&gt;&lt;p&gt;Attribut
+…n”],[“getNbGrilleTailleFini”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getNbGrilleTailleFini”,“(pseudo,
+taille)”,“&lt;p&gt;Méthode de classe qui renvoie le nombre de
+&lt;strong&gt;Grille&lt;/strong&gt;snaccomplies en fonction d&amp;#39;une
+taillen&lt;p&gt;&lt;p&gt;Attributs :
+…n”],[“getNom”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getNom”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui renvoie le nom du possesseur
+dun&lt;strong&gt;Compte&lt;/strong&gt; dont on a donné le
+pseudon&lt;p&gt;&lt;p&gt;Attribut :nn&lt;pre&gt;- pseudo
+…&lt;/pre&gt;n”],[“getNomSucces”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getNomSucces”,“(idSucces)”,“&lt;p&gt;Méthode
+de classe qui renvoie le nom
+d&amp;#39;unn&lt;strong&gt;SuccesIndividuel&lt;/strong&gt; à partir de son
+identifiantn&lt;p&gt;&lt;p&gt;Attribut :
+…n”],[“getNumeroNiveau”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getNumeroNiveau”,“(idGrille)”,“&lt;p&gt;Méthode
+de classe qui renvoie le numero de niveau
+d&amp;#39;unen&lt;strong&gt;Grille&lt;/strong&gt; appartenant à un
+&lt;strong&gt;Monde&lt;/strong&gt;n&lt;p&gt;&lt;p&gt;Attribut
+:nn&lt;pre&gt;-
+…&lt;/pre&gt;n”],[“getPlusGrandNombreClic”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getPlusGrandNombreClic”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui renvoie le plus grand nombre de clics effectuésntoutes
+&lt;strong&gt;Grille&lt;/strong&gt;s confondues par le
+…n”],[“getPlusPetitNombreClic”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getPlusPetitNombreClic”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui renvoie le plus petit nombre de clics effectuésntoutes
+&lt;strong&gt;Grille&lt;/strong&gt;s confondues par le
+…n”],[“getPrenom”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getPrenom”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui renvoie la couleur associée à la première couleurn(rouge par
+défaut) du &lt;strong&gt;Compte&lt;/strong&gt;
+…n”],[“getRaccourci”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getRaccourci”,“(pseudo,
+idRaccourci)”,“&lt;p&gt;Méthode de classe qui renvoie la touche attribué à
+unn&lt;strong&gt;RaccourciClavier&lt;/strong&gt;n&lt;p&gt;&lt;p&gt;Attributs
+:nn&lt;pre&gt;- pseudo : un <strong>String</strong>
+…&lt;/pre&gt;n”],[“getSauvegardeGrilleSauvegardee”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getSauvegardeGrilleSauvegardee”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui renvoie la &lt;strong&gt;Grille&lt;/strong&gt;
+d&amp;#39;unensauvegarde d&amp;#39;un joueurn&lt;p&gt;&lt;p&gt;Attribut
+:nn&lt;pre&gt;- pseudo : un <strong>String</strong>
+…&lt;/pre&gt;n”],[“getSauvegardeIdGrille”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getSauvegardeIdGrille”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui renvoie l&amp;#39;unique ID de la
+&lt;strong&gt;Grille&lt;/strong&gt;nd&amp;#39;une sauvegarde d&amp;#39;un
+joueurn&lt;p&gt;&lt;p&gt;Attribut
+…n”],[“getSauvegardeNbAides”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getSauvegardeNbAides”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui renvoie le nombre d&amp;#39;aides d&amp;#39;une
+sauvegardend&amp;#39;un joueurn&lt;p&gt;&lt;p&gt;Attribut :nn&lt;pre&gt;-
+pseudo
+…&lt;/pre&gt;n”],[“getSauvegardeNbClics”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getSauvegardeNbClics”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui renvoie le nombre de clics d&amp;#39;une
+sauvegardend&amp;#39;un joueurn&lt;p&gt;&lt;p&gt;Attribut :nn&lt;pre&gt;-
+pseudo
+…&lt;/pre&gt;n”],[“getSauvegardeNbHypotheses”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getSauvegardeNbHypotheses”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui renvoie le nombre d&amp;#39;hypothèses
+d&amp;#39;unensauvegarde d&amp;#39;un joueurn&lt;p&gt;&lt;p&gt;Attribut
+…n”],[“getSauvegardeTemps”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getSauvegardeTemps”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui renvoie le temps d&amp;#39;une sauvegarde d&amp;#39;un
+joueurn&lt;p&gt;&lt;p&gt;Attribut :nn&lt;pre&gt;- pseudo : un
+<strong>String</strong>
+…&lt;/pre&gt;n”],[“getScore”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getScore”,“(pseudo,
+idGrille)”,“&lt;p&gt;Méthode de classe qui renvoie le score d&amp;#39;un
+joueur sur
+unen&lt;strong&gt;Grille&lt;/strong&gt;n&lt;p&gt;&lt;p&gt;Attributs
+:nn&lt;pre&gt;- pseudo : un <strong>String</strong>
+…&lt;/pre&gt;n”],[“getScoreDifficulte”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getScoreDifficulte”,“(pseudo,
+taille, difficulte)”,“&lt;p&gt;Méthode de classe qui renvoie le score total
+d&amp;#39;un joueur en fonction denla taille et de la difficulté
+…n”],[“getScoreTotal”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getScoreTotal”,“(pseudo,
+taille)”,“&lt;p&gt;Méthode de classe qui renvoie le score total
+d&amp;#39;un joueur en fonction denla taille des
+&lt;strong&gt;Grille&lt;/strong&gt;sn&lt;p&gt;&lt;p&gt;Attributs
+…n”],[“getSucces”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getSucces”,“()”,“&lt;p&gt;Méthode
+de classe qui renvoie la liste de tous
+lesn&lt;strong&gt;SuccesIndividuel&lt;/strong&gt;sn&lt;p&gt;Retourne un
+tableau contenant tous
+…nn”],[“getSuccesCondition”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getSuccesCondition”,“(idSucces)”,“&lt;p&gt;Méthode
+de classe qui renvoie la condition de déblocage
+dun&lt;strong&gt;SuccesIndividuel&lt;/strong&gt;n&lt;p&gt;&lt;p&gt;Attribut
+:nn&lt;pre&gt;- idSucces : un
+…&lt;/pre&gt;n”],[“getSuccesDescription”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getSuccesDescription”,“(idSucces)”,“&lt;p&gt;Méthode
+de classe qui renvoie la description
+dun&lt;strong&gt;SuccesIndividuel&lt;/strong&gt;n&lt;p&gt;&lt;p&gt;Attribut
+:nn&lt;pre&gt;- idSucces : un entier qui
+…&lt;/pre&gt;n”],[“getTemps”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getTemps”,“(pseudo,
+idGrille)”,“&lt;p&gt;Méthode de classe qui renvoie le temps d&amp;#39;un
+joueur sur
+unen&lt;strong&gt;Grille&lt;/strong&gt;n&lt;p&gt;&lt;p&gt;Attributs
+:nn&lt;pre&gt;- pseudo : un <strong>String</strong>
+…&lt;/pre&gt;n”],[“getTempsTotal”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getTempsTotal”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui renvoie le temps total qu&amp;#39;a joué un
+joueurn&lt;p&gt;&lt;p&gt;Attributs :nn&lt;pre&gt;- pseudo : un
+<strong>String</strong>
+…&lt;/pre&gt;n”],[“getTotalNbEtoile”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getTotalNbEtoile”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui renvoie la somme des étoiles obtenues par le
+joueurn&lt;p&gt;&lt;p&gt;Attributnn&lt;pre&gt;- pseudo : un
+<strong>String</strong>
+…&lt;/pre&gt;n”],[“getVolumeBruitage”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getVolumeBruitage”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui renvoie le volume des bruitages
+dun&lt;strong&gt;Compte&lt;/strong&gt; dont on a donné le
+pseudon&lt;p&gt;&lt;p&gt;Attribut :nn&lt;pre&gt;-
+…&lt;/pre&gt;n”],[“getVolumeMusique”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-getVolumeMusique”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui renvoie le volume de la musique
+dun&lt;strong&gt;Compte&lt;/strong&gt; dont on a donné le
+pseudon&lt;p&gt;&lt;p&gt;Attribut :nn&lt;pre&gt;-
+…&lt;/pre&gt;n”],[“setCompte”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-setCompte”,“(pseudo,
+mdp, nom, prenom, mail)”,“&lt;p&gt;Méthode de classe qui permet
+l&amp;#39;insertion d&amp;#39;un
+nouveaun&lt;strong&gt;Compte&lt;/strong&gt;n&lt;p&gt;&lt;p&gt;Attributs
+:nn&lt;pre&gt;- pseudo : un <strong>String</strong>
+…&lt;/pre&gt;n”],[“setCouleurDeux”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-setCouleurDeux”,“(pseudo,
+couleur)”,“&lt;p&gt;Méthode de classe qui permet d&amp;#39;attribuer une
+couleur en tant quenpremière couleur du &lt;strong&gt;Compte&lt;/strong&gt;
+dont
+…n”],[“setCouleurUn”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-setCouleurUn”,“(pseudo,
+couleur)”,“&lt;p&gt;Méthode de classe qui permet d&amp;#39;attribuer une
+couleur en tant quenpremière couleur du &lt;strong&gt;Compte&lt;/strong&gt;
+dont
+…n”],[“setDefi”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-setDefi”,“(pseudoDest,
+pseudoEnv, idGrille, score)”,“&lt;p&gt;Méthode de classe qui permet
+d&amp;#39;insérer un nouveau
+&lt;strong&gt;Defi&lt;/strong&gt;n&lt;p&gt;&lt;p&gt;Attributs
+:nn&lt;pre&gt;- pseudoDest : un <strong>String</strong> représentant
+…&lt;/pre&gt;n”],[“setGrilleTermine”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-setGrilleTermine”,“(pseudo,
+idGrille, temps, nbClics, nbEtoiles, nbHypotheses, nbAides,
+score)”,“&lt;p&gt;Méthode de classe qui insert le résultat d&amp;#39;un
+joueur sur unen&lt;strong&gt;Grille&lt;/strong&gt; ou le met à jour si déjà
+fait
+…n”],[“setMotDePasse”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-setMotDePasse”,“(pseudo,
+motDePasse)”,“&lt;p&gt;Méthode de classe qui permet de changer le mot de
+passe dun&lt;strong&gt;Compte&lt;/strong&gt; dont on a donné le
+pseudon&lt;p&gt;&lt;p&gt;Attributs
+…n”],[“setRaccourci”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-setRaccourci”,“(pseudo,
+idRaccourci, touche)”,“&lt;p&gt;Méthode de classe qui permet
+l&amp;#39;insertion d&amp;#39;un
+nouveaun&lt;strong&gt;RaccourciClavier&lt;/strong&gt; ou la mise à jour
+s&amp;#39;il
+…n”],[“setSauvegarde”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-setSauvegarde”,“(pseudo,
+temps, nbClics, nbHypotheses, nbAides, idGrille,
+grilleSauvegarde)”,“&lt;p&gt;Méthode de classe qui permet
+l&amp;#39;insertion d&amp;#39;une sauvegarden&lt;p&gt;&lt;p&gt;Attributs
+:nn&lt;pre&gt;- pseudo : un <strong>String</strong> qui
+…&lt;/pre&gt;n”],[“setSuccesDebloque”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-setSuccesDebloque”,“(idSucces,
+pseudo)”,“&lt;p&gt;Méthode de classe qui permet d&amp;#39;insérer dans la
+base le fait que lenjoueur a débloqué un
+&lt;strong&gt;SuccesIndividuel&lt;/strong&gt;
+…n”],[“setVainqueurDefi”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-setVainqueurDefi”,“(joueurDefie,
+joueurDefiant, unIdGrille, pseudoVainqueur, unScore)”,“&lt;p&gt;Méthode de
+classe qui attribue un vainqueur à un
+&lt;strong&gt;Defi&lt;/strong&gt;n&lt;p&gt;&lt;p&gt;Attributs
+:nn&lt;pre&gt;- joueurDefie : un <strong>String</strong> représentant
+…&lt;/pre&gt;n”],[“setVolumeBruitage”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-setVolumeBruitage”,“(pseudo,
+volume)”,“&lt;p&gt;Méthode de classe qui permet de modifier le volume des
+bruitages dun&lt;strong&gt;Compte&lt;/strong&gt; dont on a donné le pseudo
+…n”],[“setVolumeMusique”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-setVolumeMusique”,“(pseudo,
+volume)”,“&lt;p&gt;Méthode de classe qui permet de modifier le volume de la
+musique dun&lt;strong&gt;Compte&lt;/strong&gt; dont on a donné le pseudo
+…n”],[“stringToGrille”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-stringToGrille”,“(grille)”,“&lt;p&gt;Méthode
+de classe qui transforme un chaine de cractère en grille de
+casesn&lt;p&gt;&lt;p&gt;Attribut :nn&lt;pre&gt;- grille : un
+<strong>String</strong>
+…&lt;/pre&gt;n”],[“supprimeDefi”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-supprimeDefi”,“(pseudoEnv,
+pseudoDest, idGrille)”,“&lt;p&gt;Méthode de classe qui supprime un
+&lt;strong&gt;Defi&lt;/strong&gt;n&lt;p&gt;&lt;p&gt;Attributs
+:nn&lt;pre&gt;- pseudoEnv : un <strong>String</strong> représentant le
+pseudo du
+…&lt;/pre&gt;n”],[“supprimeSauvegarde”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-supprimeSauvegarde”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui supprime la sauvegarde d&amp;#39;un
+joueurn&lt;p&gt;&lt;p&gt;Attribut :nn&lt;pre&gt;- pseudo : un
+<strong>String</strong> représentant
+…&lt;/pre&gt;n”],[“viderFinir”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-viderFinir”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui supprime tous les résultats qu&amp;#39;a accomplis lenjoueur
+sur les &lt;strong&gt;Grille&lt;/strong&gt;sn&lt;p&gt;&lt;p&gt;Attribut
+…n”],[“viderReussir”,“BaseDeDonnees”,“BaseDeDonnees.html#method-c-viderReussir”,“(pseudo)”,“&lt;p&gt;Méthode
+de classe qui supprime tous les succès qu&amp;#39;a accomplis le
+joueurn&lt;p&gt;&lt;p&gt;Attribut :nn&lt;pre&gt;- pseudo : un
+<strong>String</strong> …&lt;/pre&gt;n”]]}}</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,4 +1,4 @@
-	##
+##
 # Auteur RONAN YZEUX
 # Version 0.1 : Date : Sat Mar 14 15:57:38 CET 2015
 #
@@ -177,29 +177,36 @@ class BaseDeDonnees
 		return Comptes.select(:volume_musique).find_by_pseudo(pseudo).volume_musique
 	end
 	
-	# Modifie le volume de la musique du compte
-	# - pseudo le pseudo du joueur
-	# - volume le volume de la musique souhaité
+	# * Méthode de classe qui permet de modifier le volume de la musique du *Compte* dont on a donné le pseudo
+	# * === Attributs :
+	#		- pseudo : un *String* représentant le pseudo du joueur
+	#		- volume : un entier représentant le volume de la musique souhaité
+	# * Retourne *self*
 	def BaseDeDonnees.setVolumeMusique(pseudo, volume)
 		Comptes.where(:pseudo => pseudo).update_all(volume_musique: volume)
 		return self
 	end
 	
-	# Renvoie le volume des bruitages
-	# - pseudo le pseudo du joueur
+	# * Méthode de classe qui renvoie le volume des bruitages du *Compte* dont on a donné le pseudo
+	# * === Attribut :
+	#		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne un entier représentant le volume du *Compte*
 	def BaseDeDonnees.getVolumeBruitage(pseudo)
 		return Comptes.select(:volume_bruitage).find_by_pseudo(pseudo).volume_bruitage
 	end
 	
-	# Modifie le volume des bruitages du compte
-	# - pseudo le pseudo du joueur
-	# - volume le volume des bruitages souhaité
+	# * Méthode de classe qui permet de modifier le volume des bruitages du *Compte* dont on a donné le pseudo
+	# * === Attributs :
+	#		- pseudo : un *String* représentant le pseudo du joueur
+	#		- volume : un entier représentant le volume des bruitages souhaité
+	# * Retourne *self*
 	def BaseDeDonnees.setVolumeBruitage(pseudo, volume)
 		Comptes.where(:pseudo => pseudo).update_all(volume_bruitage: volume)
 		return self
 	end
     
-    # Rencoie la liste des succès
+    # * Méthode de classe qui renvoie la liste de tous les <b>SuccesIndividuel</b>s
+	# * Retourne un tableau contenant tous les <b>SuccesIndividuel</b>s
     def BaseDeDonnees.getSucces()
         res = Succes.all
         succes = Array.new
@@ -209,16 +216,20 @@ class BaseDeDonnees
         return succes
     end
     
-    # Indique si le joueur a débloqué un succès précis (vrai ou faux)
-    # - idSucces l'identifiant du succès
-    # - pseudo le pseudo du joueur
+    # * Méthode de classe qui indique si le joueur a débloqué un *SuccesIndividuel*
+	# * === Attributs :
+    #		- idSucces : un entier représentant l'identifiant du *SuccesIndividuel*
+    #		- pseudo : un *String* qui représente le pseudo du joueur
+	# * Retourne *true* si le *SuccesIndividuel* est débloqué pour le joueur, *false* sinon
     def BaseDeDonnees.estSuccesDebloque?(idSucces, pseudo)
         return SuccesAccomplis.exists?(:id_succes => idSucces, :pseudo => pseudo)
     end
     
-    # Insertion dans la base le fait que le joueur a débloqué un succès
-    # - idSucces l'identifiant du succès débloqué
-    # - pseudo le pseudo du joueur
+    # * Méthode de classe qui permet d'insérer dans la base le fait que le joueur a débloqué un *SuccesIndividuel*
+	# * === Attributs :
+    #		- idSucces : un entier représentant l'identifiant du *SuccesIndividuel* débloqué
+    #		- pseudo : un *String* qui représente le pseudo du joueur
+	# * Retourne *self*
     def BaseDeDonnees.setSuccesDebloque(idSucces, pseudo)
         newSucces = SuccesAccomplis.new
         newSucces.pseudo = pseudo
@@ -227,20 +238,26 @@ class BaseDeDonnees
         return self
     end
     
-    # Renvoie la description du succès
-    # - idSucces l'identifiant du succès
+    # * Méthode de classe qui renvoie la description du *SuccesIndividuel*
+	# * === Attribut :
+    #		- idSucces : un entier qui représente l'identifiant du *SuccesIndividuel*
+	# * Retourne un *String* représentant la description du *SuccesIndividuel*
     def BaseDeDonnees.getSuccesDescription(idSucces)
         return Succes.select(:description).find_by_id_succes(idSucces).description
     end
     
-    # Renvoie la condition du succès
-    # - idSucces l'identifiant du succès
+     # * Méthode de classe qui renvoie la condition de déblocage du *SuccesIndividuel*
+	# * === Attribut :
+    #		- idSucces : un entier qui représente l'identifiant du *SuccesIndividuel*
+	# * Retourne un *String* (à utiliser avec la méthode <t>eval</t>) représentant la condition de déblocage du *SuccesIndividuel*
     def BaseDeDonnees.getSuccesCondition(idSucces)
         return Succes.select(:condition).find_by_id_succes(idSucces).condition
     end
     
-    # Renvoie les défis sous forme de liste que doit effectuer le joueur
-    # - pseudoDest le pseudo du joueur
+    # * Méthode de classe qui permet de renvoyer les <b>Defi</b>s que doit effectuer le joueur sous forme de liste
+	# * === Attributs :
+    #		- pseudoDest : un *String* qui représente le pseudo du joueur destinataire
+	# * Retourne un tableau contenant les <b>Defi</b>s du joueur
     def BaseDeDonnees.getDefis(pseudoDest)     
         res = Defis.where(pseudo_defier: pseudoDest, pseudo_vainqueur: nil).all
         defis = Array.new  
@@ -250,11 +267,13 @@ class BaseDeDonnees
         return defis
     end
     
-    # Insertion d'un nouveau défi
-    # pseudoDest le pseudo du joueur qui reçoit le défi
-    # pseudoEnv le pseudo du joueur qui envoit le défi
-    # idGrille l'identifiant de la grille
-    # score le score effectué par le joueur qui envoit le défi
+    # * Méthode de classe qui permet d'insérer un nouveau *Defi*
+	# * === Attributs :
+    #		- pseudoDest : un *String* représentant le pseudo du joueur qui reçoit le défi
+    #		- pseudoEnv : un *String* représentant le pseudo du joueur qui envoie le défi
+    #		- idGrille : un entier qui représente l'unique identifiant de la grille
+    #		- score : un entier qui représente le score effectué par le joueur qui envoie le défi
+	# * Retourne *self* si la requête réussit, -1 sinon
     def BaseDeDonnees.setDefi(pseudoDest, pseudoEnv, idGrille, score)
     	if(Comptes.exists?(:pseudo => pseudoDest))
         	newDefis = Defis.new
@@ -268,26 +287,32 @@ class BaseDeDonnees
         return -1
     end
     
-    # Renvoie le nom d'un monde
-    # - idMonde l'identifiant du monde
+    # * Méthode de classe qui renvoie le nom d'un *Monde*
+	# * === Attributs :
+    #		- idMonde : un entier représentant l'unique identifiant du *Monde*
+	# * Retourne un *String* représentant le nom du *Monde*
     def BaseDeDonnees.getMondeNom(idMonde)
         return Mondes.select(:nom_monde).find_by(id_monde: idMonde).nom_monde
     end
     
-    # Renvoie le score d'un défi
-    # - pseudoEnv le pseudo du joueur qui a envoyé le défi
-    # - pseudoDest le pseudo du joueur qui a reçu le défi
-    # - idGrille l'identifiant de la grille
+    # * Méthode de classe qui renvoie le score d'un *Defi*
+	# * === Attributs :
+    #		- pseudoEnv : un *String* représentant le pseudo du joueur qui a envoyé le *Defi*
+    #		- pseudoDest : un *String* qui représente le pseudo du joueur qui a reçu le *Defi*
+    #		- idGrille : un entier représentant l'unique identifiant de la *Grille*
+	# * Retourne un entier représentant le score du *Defi*
     def BaseDeDonnees.getDefiScore(pseudoEnv, pseudoDest, idGrille)
         return Defis.select(:score).find_by(pseudo: pseudoEnv, pseudo_defier: pseudoDest, id_grille: idGrille).score
     end
     
-    # Insertion d'un nouveau compte
-    # - pseudo le pseudo du nouveau joueur
-    # - mdp le mot de passe du nouveau joueur
-    # - nom le nom du nouveau joueur
-    # - prenom le prénom du nouveau joueur
-    # - mail l'adresse mail du nouveau joueur
+    # * Méthode de classe qui permet l'insertion d'un nouveau *Compte*
+	# * === Attributs :
+    #		- pseudo : un *String* représentant le pseudo du nouveau joueur
+    #		- mdp : un *String* représentant le mot de passe du nouveau joueur
+    #		- nom : un *String* représentant le nom du nouveau joueur
+    #		- prenom : un *String* représentant le prénom du nouveau joueur
+    #		- mail : un *String* représentant l'adresse mail du nouveau joueur
+	# * Retourne *self*
     def BaseDeDonnees.setCompte(pseudo, mdp, nom, prenom, mail)
         newCompte = Comptes.new
         newCompte.pseudo = pseudo
@@ -296,13 +321,15 @@ class BaseDeDonnees
         newCompte.prenom = prenom
         newCompte.adresse_mail = mail
         newCompte.save
-	return self
+        return self
     end
     
-    # Insertion d'un nouveau raccourci ou mise à jour s'il existe déjà
-    # - pseudo le pseudo du joueur
-    # - idRaccourci l'identifiant du raccourci
-    # - touche la touche attribué pour le raccourci
+    # * Méthode de classe qui permet l'insertion d'un nouveau *RaccourciClavier* ou la mise à jour s'il existe déjà
+	# * === Attributs :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+    #		- idRaccourci : un entier représentant l'identifiant du *RaccourciClavier*
+    #		- touche : un *String* d'un seul caractère représentant la touche attribué pour le *RaccourciClavier*
+	# * Retourne *self*
     def BaseDeDonnees.setRaccourci(pseudo, idRaccourci, touche)
         if(RaccourciComptes.exists?(:pseudo => pseudo, :id_raccourci => idRaccourci))
             RaccourciComptes.where(:pseudo => pseudo, :id_raccourci => idRaccourci).update_all(touche: touche)
@@ -316,37 +343,47 @@ class BaseDeDonnees
         return self
     end
     
-    # Renvoie la touche attribué à un raccourci
-    # - pseudo le pseudo du joueur
-    # - idRaccourci l'identifiant du raccourci
+    # * Méthode de classe qui renvoie la touche attribué à un *RaccourciClavier*
+	# * === Attributs :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+    #		- idRaccourci : un entier représentant l'identifiant du *RaccourciClavier*
+	# * Retourne *self*
     def BaseDeDonnees.getRaccourci(pseudo, idRaccourci)
         return RaccourciComptes.select(:touche).find_by(pseudo: pseudo, id_raccourci: idRaccourci).touche
     end
     
-    # Renvoie le score total d'un joueur en fonction d'une taille de grille
-    # - pseudo le pseudo du joueur
-    # - taille la taille de la grille
+    # * Méthode de classe qui renvoie le score total d'un joueur en fonction de la taille des <b>Grille</b>s
+	# * === Attributs :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+    #		- taille : un entier représentant la taille des <b>Grille</b>s sur lesquelles chercher le score
+	# * Retourne un entier représentant le score
     def BaseDeDonnees.getScoreTotal(pseudo, taille)
         GrilleFinis.select(:score).joins("JOIN grille ON grille.id_grille = grille_fini.id_grille").where("pseudo = ? AND taille = ?", pseudo, taille).sum(:score)
     end
     
-    # Renvoie le temps total passé en jeu par un joueur
-    # - pseudo le pseudo du joueur
+    # * Méthode de classe qui renvoie le temps total qu'a joué un joueur
+	# * === Attributs :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne un entier représentant le temps total en secondes
     def BaseDeDonnees.getTempsTotal(pseudo)
         return GrilleFinis.where(pseudo: pseudo).sum(:temps)
     end
     
-    # Renvoie le score total d'un joueur en fonction d'une difficulté et d'une taille
-    # - pseudo le pseudo du joueur
-    # - taille la taille de la grille
-    # - difficulte la difficulté de la grille
+    # * Méthode de classe qui renvoie le score total d'un joueur en fonction de la taille et de la difficulté des <b>Grille</b>s
+	# * === Attributs :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+    #		- taille : un entier représentant la taille des <b>Grille</b>s sur lesquelles chercher le score
+	#		- difficulte : un entier représentant la difficulté des <b>Grille</b>s sur lesquelles chercher le score
+	# * Retourne un entier représentant le score
     def BaseDeDonnees.getScoreDifficulte(pseudo, taille, difficulte)
         GrilleFinis.select(:score).joins("JOIN grille ON grille.id_grille = grille_fini.id_grille").where("pseudo = ? AND taille = ? AND difficulte = ?", pseudo, taille, difficulte).sum(:score)
     end
     
-    # Renvoie le classement des meilleurs score en fonction d'une taille de grille et de la difficulté
-    # - taille la taille d'une grille
-    # - difficulte la difficulté d'une grille
+    # * Méthode de classe qui renvoie le classement des meilleurs scores en fonction d'une taille de *Grille* et de la difficulté
+	# * === Attributs :
+    #		- taille : un entier représentant la taille d'une grille
+    #		- difficulte : un entier représentant la difficulté d'une grille
+	# * Retourne un tableau contenant des tableaux du type [position dans le classement (entier), pseudo du joueur (<b>tring</b>), score du joueur (entier)]
     def BaseDeDonnees.getClassement(taille, difficulte)
         i = 1
         classement = Array.new
@@ -358,8 +395,10 @@ class BaseDeDonnees
         return classement
     end
     
-    # Insertion de grilles dans la base de données
-    # - cheminFic le chemin du fichier contenant les grilles
+    # * Méthode de classe qui permet l'insertion de <b>Grille</b>s dans la base de données
+	# * === Attribut :
+    #		- cheminFic : un *String* représentant le chemin du fichier contenant les <b>Grille</b>s
+	# * Retourne *self*
     def BaseDeDonnees.addGrille(cheminFic)
         fichier = File.new(cheminFic, "r")
         tabLigne = Array.new
@@ -378,106 +417,140 @@ class BaseDeDonnees
             newGrille.grille_solution = grilleSolution
             newGrille.save
         end
+		return self
     end
     
-    # Renvoie le nombre d'hypothèse d'une sauvegarde d'un joueur
-    # - pseudo le pseudo du joueur
+    # * Méthode de classe qui renvoie le nombre d'hypothèses d'une sauvegarde d'un joueur
+	# * === Attribut :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne un entier représentant le nombre d'hypothèses
     def BaseDeDonnees.getSauvegardeNbHypotheses(pseudo)
         return Sauvegardes.select(:nb_hypothese).find_by_pseudo(pseudo).nb_hypothese
     end
     
-    # Renvoie le nombre d'aides d'une sauvegarde d'un joueur
-    # - pseudo le pseudo du joueur
+    # * Méthode de classe qui renvoie le nombre d'aides d'une sauvegarde d'un joueur
+	# * === Attribut :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne un entier représentant le nombre d'aides
     def BaseDeDonnees.getSauvegardeNbAides(pseudo)
         return Sauvegardes.select(:nb_aide).find_by_pseudo(pseudo).nb_aide
     end
     
-    # Renvoie le nombre de clic d'une sauvegarde d'un joueur
-    # - pseudo le pseudo du joueur
+    # * Méthode de classe qui renvoie le nombre de clics d'une sauvegarde d'un joueur
+	# * === Attribut :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne un entier représentant le nombre de clics
     def BaseDeDonnees.getSauvegardeNbClics(pseudo)
         return Sauvegardes.select(:nb_clic).find_by_pseudo(pseudo).nb_clic
     end
     
-    # Renvoie le temps d'une sauvegarde d'un joueur
-    # - pseudo le pseudo du joueur
+    # * Méthode de classe qui renvoie le temps d'une sauvegarde d'un joueur
+	# * === Attribut :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne un entier représentant le temps en seconde
     def BaseDeDonnees.getSauvegardeTemps(pseudo)
         return Sauvegardes.select(:temps).find_by_pseudo(pseudo).temps
     end
     
-    # Renvoie la grille d'une sauvegarde d'un joueur
-    # - pseudo le pseudo du joueur
+    # * Méthode de classe qui renvoie la *Grille* d'une sauvegarde d'un joueur
+	# * === Attribut :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne la *Grille* de la sauvegarde
     def BaseDeDonnees.getSauvegardeGrilleSauvegardee(pseudo)
         grilleSauvegarde = Sauvegardes.select(:grille_sauvegarde).find_by_pseudo(pseudo).grille_sauvegarde
         return BaseDeDonnees.stringToGrille(grilleSauvegarde)
     end
     
-    # Indique si une sauvegarde existe pour un joueur (vrai ou faux)
-    # - pseudo le pseudo du joueur
+    # * Méthode de classe qui permet de savoir si le joueur a une sauvegarde
+	# * === Attribut :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne *true* si le joueur a une sauvegarde, *false* sinon
     def BaseDeDonnees.estSauvegarde?(pseudo)
         return Sauvegardes.exists?(:pseudo => pseudo)            
     end
     
-    # Renvoie l'identifiant de la grille de la sauvegarde du joueur
-    # - pseudo le pseudo du joueur
+    # * Méthode de classe qui renvoie l'unique ID de la *Grille* d'une sauvegarde d'un joueur
+	# * === Attribut :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne un entier représentant l'unique ID de la *Grille*
     def BaseDeDonnees.getSauvegardeIdGrille(pseudo)
         return Sauvegardes.select(:id_grille).find_by_pseudo(pseudo).id_grille 
     end
     
-    # Supprime la sauvegarde du joueur
-    # - pseudo le pseudo du joueur
+    # * Méthode de classe qui supprime la sauvegarde d'un joueur
+	# * === Attribut :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne *self*
     def BaseDeDonnees.supprimeSauvegarde(pseudo)
         Sauvegardes.where(:pseudo => pseudo).destroy_all
         return self
     end
     
-    # Supprime un défi
-    # - pseudoEnv le pseudo du joueur qui a envoyé le défi
-    # - pseudoDest le pseudo du joueur qui a reçu le défi
-    # - idGrille l'identifiant de la grille
+    # * Méthode de classe qui supprime un *Defi*
+	# * === Attributs :
+    #		- pseudoEnv : un *String* représentant le pseudo du joueur qui a envoyé le défi
+    #		- pseudoDest : un *String* le pseudo du joueur qui a reçu le défi
+    #		- idGrille : un entier représentant l'identifiant de la grille
+	# * Retourne *self*
     def BaseDeDonnees.supprimeDefi(pseudoEnv, pseudoDest, idGrille)
         Defis.delete_all(["pseudo = ? AND pseudo_defier = ? AND id_grille = ?", pseudoEnv, pseudoDest, idGrille])
         return self
     end
     
-    # Supprime tous les succès qu'à accompli le joueur
-    # - pseudo le pseudo du joueur
+    # * Méthode de classe qui supprime tous les succès qu'a accomplis le joueur
+	# * === Attribut :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne *self*
     def BaseDeDonnees.viderReussir(pseudo)
         SuccesAccomplis.delete_all(["pseudo = ?", pseudo])
         return self
     end
     
-    # Supprime tous les résultats des grilles du joueur
-    # - pseudo le pseudo du joueur
+    # * Méthode de classe qui supprime tous les résultats qu'a accomplis le joueur sur les <b>Grille</b>s
+	# * === Attribut :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne *self*
     def BaseDeDonnees.viderFinir(pseudo)
         GrilleFinis.delete_all(["pseudo = ?", pseudo])
         return self
     end
     
-    # Renvoie la taille d'une grille
-    # - idGrille l'identifiant de la grille 
+    # * Méthode de classe qui renvoie la taille d'une *Grille*
+	# * === Attribut :
+    #		- idGrille l'identifiant de la *Grille*
+	# * Retourne un entier représentant la taille de la *Grille*
     def BaseDeDonnees.getGrilleTaille(idGrille)
         return Grilles.select(:taille).find_by_id_grille(idGrille).taille
     end
     
-    # Renvoie la difficulté d'une grille
-    # - idGrille l'identifiant de la grille 
+    # * Méthode de classe qui renvoie la difficulte d'une *Grille*
+	# * === Attribut :
+    #		- idGrille l'identifiant de la *Grille*
+	# * Retourne un entier représentant la difficulte de la *Grille*
     def BaseDeDonnees.getGrilleDifficulte(idGrille)
         return Grilles.select(:difficulte).find_by_id_grille(idGrille).difficulte
     end
     
-    # Renvoie le nombre de clics maximum d'une grille
-    # - idGrille l'identifiant de la grille 
+    # * Méthode de classe qui renvoie le nombre de clics max d'une *Grille*
+	# * === Attribut :
+    #		- idGrille l'identifiant de la *Grille*
+	# * Retourne un entier représentant le nombre de clics max de la *Grille*
     def BaseDeDonnees.getGrilleNbClicsMax(idGrille)
         return Grilles.select(:nb_clic_max).find_by_id_grille(idGrille).nb_clic_max
     end
     
-    # Renvoie le temps maximum d'une grille
-    # - idGrille l'identifiant de la grille 
+    # * Méthode de classe qui renvoie le temps max d'une *Grille*
+	# * === Attribut :
+    #		- idGrille l'identifiant de la *Grille*
+	# * Retourne un entier représentant le temps max de la *Grille* en secondes
     def BaseDeDonnees.getGrilleTempsMax(idGrille)
         return Grilles.select(:temps_max).find_by_id_grille(idGrille).temps_max
     end
     
-    # Transforme un chaine de cractère en grille de cases
+    # * Méthode de classe qui transforme un chaine de cractère en grille de cases
+	# * === Attribut :
+	#		- grille : un *String* représentatif de la *Grille*
+	# * Retourne une matrice de <b>Case</b>s
     def BaseDeDonnees.stringToGrille(grille)
         matriceGrille = []
         j = 0
@@ -500,28 +573,34 @@ class BaseDeDonnees
         return matriceGrille
     end
     
-    # Renvoie la matrice de départ d'une grille
-    # - idGrille l'identifiant de la grille 
+    # * Méthode de classe qui renvoie la matrice de départ d'une *Grille*
+	# * === Attribut :
+    #		- idGrille l'identifiant de la *Grille*
+	# * Retourne une matrice de <b>Case</b>s de départ de la *Grille*
     def BaseDeDonnees.getGrilleMatrice(idGrille)
         grilleDepart = Grilles.select(:grille_depart).find_by_id_grille(idGrille).grille_depart
         return BaseDeDonnees.stringToGrille(grilleDepart)
     end
     
-    # Renvoie la matrice solution d'une grille
-    # - idGrille l'identifiant de la grille 
+    # * Méthode de classe qui renvoie la matrice résolue d'une *Grille*
+	# * === Attribut :
+    #		- idGrille l'identifiant de la *Grille*
+	# * Retourne une matrice de <b>Case</b>s non vides de la *Grille*
     def BaseDeDonnees.getGrilleMatriceResolue(idGrille)
         grilleSolution = Grilles.select(:grille_solution).find_by_id_grille(idGrille).grille_solution
         return BaseDeDonnees.stringToGrille(grilleSolution)
     end
     
-    # Insertion d'une sauvegarde
-    # - pseudo le pseudo du joueur
-    # - temps le temps effectué par le joueur sur la grille
-    # - nbClics le nombre de clics effectué par le joueur 
-    # - nbHypotheses le nombre d'hypothèses effectué par le joueur
-    # - nbAides le nombre d'aides demandé par le joueur
-    # - idGrille l'identifiant de la grille
-    # - grilleSauvegarde la sauvegarde la grille sous forme de chaine de caractères
+    # * Méthode de classe qui permet l'insertion d'une sauvegarde
+	# * === Attributs :
+    #		- pseudo : un *String* qui représente le pseudo du joueur
+    #		- temps : un entier représentant le temps effectué par le joueur sur la *Grille* en secondes
+    #		- nbClics : un entier représentant le nombre de clics effectués par le joueur 
+    #		- nbHypotheses : un entier représentant le nombre d'hypothèses effectuées par le joueur
+    #		- nbAides : un entier représentant le nombre d'aides demandées par le joueur
+    #		- idGrille : un entier représentant l'unique identifiant de la *Grille*
+    #		- grilleSauvegarde : un *String* représentatif de la *Grille* (de la forme "BBRR__RB_BB_R...")
+	# * Retourne *self*
     def BaseDeDonnees.setSauvegarde(pseudo, temps, nbClics, nbHypotheses, nbAides, idGrille, grilleSauvegarde)
         tabGrilleSauvegarde = Array.new
 
@@ -552,104 +631,136 @@ class BaseDeDonnees
         return self
     end
     
-    # Indique si un pseudo est disponible (vrai ou faux)
-    # - pseudo le pseudo à tester
+    # * Méthode de classe qui indique si un pseudo est disponible
+	# * === Attribut :
+    #		- pseudo : un *String* représentant le pseudo à tester
+	# * Retourne *true* si le pseudo est disponible, *false* sinon
     def BaseDeDonnees.estIdentifiantDisponible?(pseudo)
     	return !Comptes.exists?(:pseudo => pseudo)
     end
     
-    # Indique si une adresse mail est disponible (vrai ou faux)
-    # - mail l'adresse mail à tester
+    # * Méthode de classe qui indique si une adresse mail est disponible
+	# * === Attribut :
+    #		- mail : un *String* représentant l'adresse mail à tester
+	# * Retourne *true* si l'adresse mail est disponible, *false* sinon
     def BaseDeDonnees.estMailDisponible?(mail)
     	return !Comptes.exists?(:adresse_mail => mail)
     end
     
-    # Renvoie le seuil pour obtenir la première étoile
-    # - idGrille l'identifiant de la grille 
+    # * Méthode de classe qui renvoie le seuil pour obtenir la première étoile
+	# * === Attribut :
+    #		- idGrille : un entier représentant l'unique identifiant de la *Grille*
+	# * Retourne un entier représentant le seuil (en terme de score) pour la première étoile
     def BaseDeDonnees.getGrilleEtoileUnScore(idGrille)
     	return Grilles.select(:etoile_1).find_by_id_grille(idGrille).etoile_1
     end
     
-    # Renvoie le seuil pour obtenir la deuxième étoile
-    # - idGrille l'identifiant de la grille 
+    # * Méthode de classe qui renvoie le seuil pour obtenir la seconde étoile
+	# * === Attribut :
+    #		- idGrille : un entier représentant l'unique identifiant de la *Grille*
+	# * Retourne un entier représentant le seuil (en terme de score) pour la seconde étoile
     def BaseDeDonnees.getGrilleEtoileDeuxScore(idGrille)
     	return Grilles.select(:etoile_2).find_by_id_grille(idGrille).etoile_2
     end
     
-    # Renvoie le seuil pour obtenir la troisième étoile
-    # - idGrille l'identifiant de la grille 
+    # * Méthode de classe qui renvoie le seuil pour obtenir la troisième étoile
+	# * === Attribut :
+    #		- idGrille : un entier représentant l'unique identifiant de la *Grille*
+	# * Retourne un entier représentant le seuil (en terme de score) pour la troisième étoile
     def BaseDeDonnees.getGrilleEtoileTroisScore(idGrille)
     	return Grilles.select(:etoile_3).find_by_id_grille(idGrille).etoile_3
     end
     
-    # Renvoie l'identifiant d'une grille par rapport à un monde et numèro de niveau
-    # - idMonde l'identifiant du monde
-    # - numNiveau le numéro du niveau
+    # * Méthode de classe qui renvoie l'identifiant d'une *Grille* par rapport à un *Monde* et numèro de niveau
+	# * === Attributs :
+    #		- idMonde : un entier représentant l'unique identifiant du *Monde*
+    #		- numNiveau : un entier représentant le numéro du niveau dans le *Monde*
+	# * Retourne un entier représentant l'unique ID de la *Grille*
     def BaseDeDonnees.getMondeGrilleId(idMonde, numNiveau)
     	Grilles.select(:id_grille).where(:id_monde => idMonde, :numero_niveau => numNiveau).first.id_grille	
     end
     
-    # Renvoie le nom d'un monde par rapport à son identifiant
-    # - idMonde l'identifiant du monde
+    # * Méthode de classe qui renvoie le nom d'un *Monde*
+	# * === Attribut :
+    #		- idMonde : un entier représentant l'unique identifiant du *Monde*
+	# * Retourne un *String* représentant le nom du *Monde*
     def BaseDeDonnees.getMondeNom(idMonde)
-	return Mondes.select(:nom_monde).find_by_id_monde(idMonde).nom_monde   
+        return Mondes.select(:nom_monde).find_by_id_monde(idMonde).nom_monde   
     end
     
-    # Renvoie l'identifiant d'une grille de façon alétoire en fonction d'une taille et d'une difficulté
-    # - taille la taille de la grille
-    # - difficulte la difficulté de la grille
+    # * Méthode de classe qui renvoie l'identifiant d'une *Grille* de façon alétoire en fonction d'une taille et d'une difficulté
+	# * === Attributs :
+    #		- taille : un entier représentant la taille de la *Grille*
+    #		- difficulte : un entier représentant la difficulté de la *Grille*
+	# * Retourne un entier représentant un ID d'une *Grille* aléatoire
     def BaseDeDonnees.getGrilleIdAleatoire(taille, difficulte)
     	return Grilles.select(:id_grille).where(:taille => taille, :difficulte => difficulte, :numero_niveau => nil, :id_monde => nil).order("RAND()").first.id_grille
     end
     
-    # Renvoie le nombre de grilles accomplis en fonction d'une taille
-    # - pseudo le pseudo du joueur
-    # - taille la taille de la grille
+    # * Méthode de classe qui renvoie le nombre de <b>Grille</b>s accomplies en fonction d'une taille
+	# * === Attributs :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+    #		- taille : un entier représentant la taille de la *Grille*
+	# * Retourne un entier représentant le nombre de <b>Grille</b>s accomplies
     def BaseDeDonnees.getNbGrilleTailleFini(pseudo, taille)
     	return GrilleFinis.joins("JOIN grille ON grille.id_grille = grille_fini.id_grille").where("pseudo = ? AND taille = ?", pseudo, taille).count	
     end
     
-    # Renvoie le nombre de grilles accomplis sans aide en fonction d'une difficulte
-    # - pseudo le pseudo du joueur
-    # - difficulte la difficulte de la grille
+    # * Méthode de classe qui renvoie le nombre de <b>Grille</b>s accomplies sans aide en fonction d'une taille
+	# * === Attributs :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+    #		- taille : un entier représentant la taille de la *Grille*
+	# * Retourne un entier représentant le nombre de <b>Grille</b>s accomplies sans aide
     def BaseDeDonnees.getNbGrilleDifficulteSansAideFini(pseudo, difficulte)
     	return GrilleFinis.joins("JOIN grille ON grille.id_grille = grille_fini.id_grille").where("pseudo = ? AND difficulte = ? AND nb_aide = ?",pseudo, difficulte, 0).count 
     end
     
-    # Renvoie un booleen indiquant l'accomplissement total d'un monde ou non
-    # - pseudo le pseudo du joueur
-    # - idMonde l'identifiant du monde
+    # * Méthode de classe qui permet de savoir si un *Monde* est terminé
+	# * === Attributs :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+    #		- idMonde : un entier représentant l'unique identifiant du *Monde*
+	# * Retourne *true* si le *Monde* est fini, *false* sinon
     def BaseDeDonnees.estFiniMonde?(pseudo, idMonde)
     	idGrille = Grilles.select(:id_grille).where(:id_monde => idMonde).order(numero_niveau: :asc).last.id_grille
     	return GrilleFinis.exists?(:pseudo => pseudo, :id_grille => idGrille)
     end
     
-    # Renvoie le nombre de grille accomplis
-    # - pseudo le pseudo du joueur
+    # * Méthode de classe qui renvoie le nombre de <b>Grille</b>s accomplies
+	# * === Attribut :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne un entier représentant le nombre de <b>Grille</b>s terminées
     def BaseDeDonnees.getNbGrilleFini(pseudo)
     	return GrilleFinis.where(:pseudo => pseudo).count
     end
     
-    # Renvoie le nombre de grilles accompli en moins de 1 minute pour des grilles de taille 12
-    # - pseudo le pseudo du joueur
+    # * Méthode de classe qui renvoie le nombre de <b>Grille</b>s de taille 12 accomplies en moins de 60 secondes
+	# * === Attribut :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne un entier représentant le nombre de <b>Grille</b>s de taille 12 terminées en moins de 60 secondes
     def BaseDeDonnees.getNbGrilleTailleDouzeMoinsSoixante(pseudo)
     	return GrilleFinis.joins("JOIN grille ON grille.id_grille = grille_fini.id_grille").where("pseudo = ? AND taille = ? AND temps < ?",pseudo, 12, 60).count
     end
     
-    # Renvoie le nombre de défi gagné
-    # - pseudo le pseudo du joueur
+    # * Méthode de classe qui renvoie le nombre de <b>Defi</b>s gagnés par le joueur
+	# * === Attribut :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne un entier représentant le nombre de <b>Defi</b>s gagnés par le joueur
     def BaseDeDonnees.getNbDefiGagne(pseudo)
     	return Defis.where(:pseudo_vainqueur => pseudo).count
     end
     
-    # Renvoie le nom d'un succès à partir de son identifiant
-    # - idSucces l'identifiant du succès
+    # * Méthode de classe qui renvoie le nom d'un *SuccesIndividuel* à partir de son identifiant
+	# * === Attribut :
+    #		- idSucces : un entier représentant l'identifiant du *SuccesIndividuel*
+	# * Retourne un *String* qui représente le nom du *SuccesIndividuel*
     def BaseDeDonnees.getNomSucces(idSucces)
     	return Succes.select(:nom).find_by_id_succes(idSucces).nom 
     end
     
-    # Renvoie la somme des étoiles obtenus
-    # - pseudo le pseudo du joueur
+    # * Méthode de classe qui renvoie la somme des étoiles obtenues par le joueur
+	# * === Attribut
+    #		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne un entier représentant la somme des étoiles obtenues par le joueur
     def BaseDeDonnees.getTotalNbEtoile(pseudo)
     	if(GrilleFinis.exists?(:pseudo => pseudo))
     		return GrilleFinis.select(:nb_etoile).where(pseudo: pseudo).sum(:nb_etoile)
@@ -657,20 +768,26 @@ class BaseDeDonnees
     	return 0
     end
     
-    # Renvoie le plus petit nombre de clic effectué toute grille confondu
-    # - pseudo le pseudo du joueur
+    # * Méthode de classe qui renvoie le plus petit nombre de clics effectués toutes <b>Grille</b>s confondues par le joueur
+	# * === Attribut :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne un entier qui représente le plus petit nombre de clics
     def BaseDeDonnees.getPlusPetitNombreClic(pseudo)
     	return GrilleFinis.select(:nb_clic).where(pseudo: pseudo).minimum(:nb_clic)
     end
     
-    # Renvoie le plus grand nombre de clic effectué toute grille confondu
-    # - pseudo le pseudo du joueur
+    # * Méthode de classe qui renvoie le plus grand nombre de clics effectués toutes <b>Grille</b>s confondues par le joueur
+	# * === Attribut :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne un entier qui représente le plus grand nombre de clics
     def BaseDeDonnees.getPlusGrandNombreClic(pseudo)
     	return GrilleFinis.select(:nb_clic).where(pseudo: pseudo).maximum(:nb_clic)
     end
     
-    # Renvoie un tableau contenant l'identifiant du monde et le numero_niveau les plus avancés
-    # - pseudo le pseudo du joueur
+    # * Méthode de classe qui renvoie un tableau contenant l'identifiant du *Monde* et le numero_niveau les plus avancés
+	# * === Attribut :
+    #		- pseudo : un *String* qui représente le pseudo du joueur
+	# * Retourne un tableau contenant l'identifiant du *Monde* et le numero_niveau les plus avancés
     def BaseDeDonnees.dernierNiveauFini(pseudo)
         tabDernierNiveau = Array.new
         if(GrilleFinis.joins("JOIN grille ON grille.id_grille = grille_fini.id_grille").where("numero_niveau > ? AND id_monde > ?", 0, 0).exists?(:pseudo => pseudo))
@@ -682,26 +799,32 @@ class BaseDeDonnees
         return -1
     end
     
-    # Renvoie le numero de niveau d'une grille appartenant à un monde
-    # - idGrille l'identifiant de la grille
+    # * Méthode de classe qui renvoie le numero de niveau d'une *Grille* appartenant à un *Monde*
+	# * === Attribut :
+    #		- idGrille : un entier représentant l'unique identifiant de la *Grille*
+	# * Retourne un entier représentant le numero de niveau d'une *Grille* appartenant à un *Monde*
     def BaseDeDonnees.getNumeroNiveau(idGrille)
     	return Grilles.select(:numero_niveau).find_by_id_grille(idGrille).numero_niveau
     end
     
-    # Attribue un vainqueur à un défi
-    # - joueurDefie le joueur qui a été défié
-    # - joueurDefiant le joueur qui a défié
-    # - unIdGrille l'identifiant de la grille
-    # - pseudoVainqueur le pseudo du vainqueur du défi
-    # - unScore le score du vainqueur
+    # * Méthode de classe qui attribue un vainqueur à un *Defi*
+	# * === Attributs :
+    #		- joueurDefie : un *String* représentant le pseudo du joueur qui a été défié
+    #		- joueurDefiant : un *String* représentant le pseudo du joueur qui a défié
+    #		- unIdGrille : un entier représentant l'unique identifiant de la *Grille*
+    #		- pseudoVainqueur : un *String* représentant le pseudo du vainqueur du *Defi*
+    #		- unScore : un entier représentant le score du vainqueur
+	# * Retourne *self*
     def BaseDeDonnees.setVainqueurDefi(joueurDefie, joueurDefiant, unIdGrille, pseudoVainqueur, unScore)
         Defis.where(:pseudo => joueurDefiant, :pseudo_defier => joueurDefie, :id_grille => unIdGrille).update_all(score: unScore, pseudo_vainqueur: pseudoVainqueur)
         return self
     end
     
-    # Renvoie le nombre d'étoiles obtenus sur une grille
-    # - pseudo le pseudo du joueur
-    # - idGrille l'identifiant de la grille
+    # * Méthode de classe qui renvoie le nombre d'étoiles obtenues sur une *Grille* par le joueur
+	# * === Attributs :
+    #		- pseudo : un *String* représentant le pseudo du joueur
+    #		- idGrille : un entier représentant l'unqiue identifiant de la *Grille*
+	# * Retourne le nombre d'étoiles obtenues sur une *Grille* par le joueur
     def BaseDeDonnees.getNbEtoileObtenu(pseudo, idGrille)
     	if(GrilleFinis.exists?(:pseudo => pseudo, :id_grille => idGrille))
     		return GrilleFinis.select(:nb_etoile).find_by(pseudo: pseudo, id_grille: idGrille).nb_etoile	
