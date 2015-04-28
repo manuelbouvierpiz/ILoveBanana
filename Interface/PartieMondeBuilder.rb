@@ -39,6 +39,21 @@ class PartieMondeBuilder < PartieBuilder
 		else
 			@meilleurScore.set_text("Meilleur score :\nAucun")
 		end
+
+		# Mise à jour du temps toutes les secondes
+		GLib::Timeout.add(1000) do
+			begin
+				@temps.set_text("Temps :\n" + Jeu.JEU.partie.getTempsString)
+				if !Jeu.JEU.partie.verifierTempsMax?
+					self['window1'].signal_handler_disconnect(@handlerArret)
+					Jeu.JEU.partie.arretChronometre
+					ouvrirFenetre(PartieEchecBuilder.new)
+				end
+				true
+			rescue
+				false
+			end
+		end
 	end
 	
 	# * Méthode d'instance qui permet de modifier l'état d'une +Case+
@@ -56,6 +71,16 @@ class PartieMondeBuilder < PartieBuilder
 			Jeu.JEU.partie.arretChronometre()
 			ouvrirFenetre(PartieEchecBuilder.new)
 		end
+	end
+
+	# * Méthode d'instance qui vérifie le temps de la *PartieMonde*
+	# * Retourne *true* si le temps n'a pas atteint le temps max, *false* sinon
+	def verifierTemps?()
+		if(super())
+			return true
+		end
+		ouvrirFenetre(PartieEchecBuilder.new)
+		return false
 	end
 
 end

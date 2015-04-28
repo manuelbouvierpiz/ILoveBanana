@@ -10,7 +10,7 @@
 #	- est considérée comme une classe abstraite
 class PartieBuilder < TakuzuBuilder
 
-	# Variable d'instance
+	# Variables d'instance
 	
 	# * Variable d'instance non accessible qui représente l'ID du handler de l'arrêt du jeu
 	@handlerArret
@@ -72,12 +72,7 @@ class PartieBuilder < TakuzuBuilder
 		GLib::Timeout.add(1000) do
 			begin
 				@temps.set_text("Temps :\n" + Jeu.JEU.partie.getTempsString)
-				if !Jeu.JEU.partie.verifierTempsMax?
-					self['window1'].signal_handler_disconnect(@handlerArret)
-					Jeu.JEU.partie.arretChronometre
-					ouvrirFenetre(PartieEchecBuilder.new)
-				end
-				true
+				verifierTemps?
 			rescue
 				false
 			end
@@ -275,5 +270,17 @@ class PartieBuilder < TakuzuBuilder
 				on_hypothese_X_clicked(unNumero + 1)
 			end
 		end
+	end
+
+	# * Méthode d'instance qui vérifie le temps de la *Partie*
+	# * Retourne *true* si le temps n'a pas atteint le temps max, *false* sinon
+	def verifierTemps?()
+		if Jeu.JEU.partie.verifierTempsMax?
+			return true
+		end
+
+		self['window1'].signal_handler_disconnect(@handlerArret)
+		Jeu.JEU.partie.arretChronometre
+		return false
 	end
 end

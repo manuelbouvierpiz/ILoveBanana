@@ -36,5 +36,15 @@ class PartieDefiBuilder < PartieBuilder
 			ouvrirFenetre(PartieDefiEchecBuilder.new)
 		end
 	end
+
+	# * Méthode d'instance qui vérifie le temps de la *PartieDefi*
+	# * Retourne *true* si le temps n'a pas atteint le temps max, *false* sinon
+	def verifierTemps?()
+		if(super())
+			return true
+		end
+		ouvrirFenetre(PartieDefiEchecBuilder.new)
+		return false
+	end
 	
 end

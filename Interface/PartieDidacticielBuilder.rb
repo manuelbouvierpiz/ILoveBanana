@@ -133,7 +133,7 @@ class PartieDidacticielBuilder < PartieBuilder
                               Gtk::MessageDialog::BUTTONS_CLOSE,
                               "Et voilà, les trois règles n'ont plus aucun secret pour vous, il reste toutefois un dernier point à éclaircir, vous serez parfois amené à utiliser les hypothèses si aucune règle n'est applicable.\n
                               L'hypothèse est le bouton éponyme en dessous de la grille, il effectue une sauvegarde que vous pourrez récuperer si votre grille s'avère mauvaise en fin de compte, il suffit de cliquer sur l'hypothèse en question à gauche de la grille.\n
-                              il ne vous reste plus qu'à terminer la grille en sachant que le temps et vos clics sont comptés et influenceront votre score final.")
+                              Il ne vous reste plus qu'à terminer la grille en sachant que le nombre de clics, d'aides, d'hypohèses et le temps influenceront négativement votre score final.")
   					fenetreInfo.run
   					fenetreInfo.destroy
   					@etape = 5
@@ -152,5 +152,16 @@ class PartieDidacticielBuilder < PartieBuilder
 					ouvrirFenetre(PartieDidacticielReussieBuilder.new)
 				end
 		end
-	end	
+	end
+
+	# * Méthode d'instance qui vérifie le temps de la *PartieDidacticiel*
+	# * Cette méthode n'est théoriquement jamais utilisée
+	# * Retourne *true* si le temps n'a pas atteint le temps max, *false* sinon
+	def verifierTemps?()
+		if(super())
+			return true
+		end
+		ouvrirFenetre(PartieEchecBuilder.new)
+		return false
+	end
 end
