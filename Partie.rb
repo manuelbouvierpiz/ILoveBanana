@@ -108,8 +108,6 @@ class Partie
 		@listeHypotheses.push(@nbClics)
 		@listeHypotheses.push(getTemps)
 		@listeHypotheses.push(@mouvementsArriere.clone)
-		
-		@nbHypotheses += 1
 	end
 
 	# * Méthode d'instance qui permet de charger la dernière *Grille* sauvegardée
@@ -120,6 +118,9 @@ class Partie
 		@debutChronometre = Time.now - @listeHypotheses.pop()
 		@nbClics = @listeHypotheses.pop()
 		@grille = @listeHypotheses.pop()
+		
+		# Seules les hypothèses fausses pénalisent le score
+		@nbHypotheses += 1
 		return self
 	end
 
@@ -158,7 +159,7 @@ class Partie
 	end
 
 	# * Méthode d'instance permettant de mettre en pause le chronomètre
-	# * Retourne +self+
+	# * Retourne *self*
 	def mettreEnPauseChronometre()
 		@pause = Time.now
 		@tourne = false
@@ -199,7 +200,7 @@ class Partie
 		return "#{minute}:#{seconde}" + @grille.getTempsMaxString()
 	end
 	
-	# * Méthode d'instance qui permet de jouer usr la +Grille+
+	# * Méthode d'instance qui permet de jouer usr la *Grille*
 	# * === Attributs :
 	#		- unX : un entier représentant l'abscisse de la Case
 	#		- unY : un entier représentant l'ordonnée de la Case
