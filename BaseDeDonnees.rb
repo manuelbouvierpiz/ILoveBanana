@@ -32,29 +32,35 @@ class BaseDeDonnees
 		return -1
 	end
 	
-	# Renvoie le temps d'un joueur sur une grille
-	# - pseudo le pseudo du joueur
-	# - idGrille l'identifiant de la grille
+	# * Méthode de classe qui renvoie le temps d'un joueur sur une grille
+	# * === Attributs :
+	#		- pseudo : un *String* représentant le pseudo du joueur
+	#		- idGrille : un entier représentant l'identifiant de la grille
+	# * Retourne un entier représentant le temps en secondes du joueur sur la grille ou -1 si il n'a pas de temps enregistré
 	def BaseDeDonnees.getTemps(pseudo, idGrille)
 		return GrilleFinis.select(:temps).find_by(pseudo: pseudo, id_grille: idGrille).temps
 	end
 	
-	# Indique si le joueur a fini une grille (vrai ou faux)
-	# - pseudo le pseudo du joueur
-	# - idGrille l'identifiant de la grille
+	# * Méthode de classe qui indique si le joueur a fini une grille (vrai ou faux)
+	# * === Attributs :
+	#		- pseudo : un *String* représentant le pseudo du joueur
+	#		- idGrille : un entier représentant l'identifiant de la grille
+	# * Retourne *true* si le joueur a terminé la *Grille* dont l'ID a été passé en paramètre
 	def BaseDeDonnees.estGrilleResolue?(pseudo, idGrille)
 		return GrilleFinis.exists?(:pseudo => pseudo, :id_grille => idGrille)
 	end
 	
-	# Insertion du résultat d'un joueur sur une grille ou mise à jour si déjà fait au moins une fois
-	# - pseudo le pseudo du joueur
-	# - idGrille l'identifiant de la grille
-	# - temps le temps qu'à mis le joueur pour effectuer la grille
-	# - nbClics le nombre de clics qu'à fait le joueur
-	# - nbEtoiles le nombre d'étoiles obtenu par le joueur
-	# - nbHypotheses le nombre d'hypothèses effectué par le joueur
-	# - nbAides le nombre d'aides demandé par le joueur
-	# - score le score du joueur sur la grille
+	# * Méthode de classe qui insert le résultat d'un joueur sur une grille ou le met à jour si déjà fait au moins une fois
+	# * === Attributs :
+	#		- pseudo : un *String* représentant le pseudo du joueur
+	#		- idGrille : un entier représentant l'identifiant de la grille
+	#		- temps : un entier représentant le temps en seconde qu'a mis le joueur pour effectuer la grille
+	#		- nbClics : un entier représentant le nombre de clics qu'a faits le joueur
+	#		- nbEtoiles : un entier représentant le nombre d'étoiles obtenues par le joueur
+	#		- nbHypotheses : un entier qui représente le nombre d'hypothèses effectuées par le joueur
+	#		- nbAides : un entier représentant le nombre d'aides demandées par le joueur
+	#		- score : un entier représentant le score du joueur sur la grille
+	# * Retourne *self*
 	def BaseDeDonnees.setGrilleTermine(pseudo, idGrille, temps, nbClics, nbEtoiles, nbHypotheses, nbAides, score)
 		if(BaseDeDonnees.estGrilleResolue?(pseudo, idGrille))
 			GrilleFinis.where(:pseudo => pseudo, :id_grille => idGrille).update_all(nb_clic: nbClics, nb_etoile: nbEtoiles, nb_hypothese: nbHypotheses, nb_aide: nbAides, score: score)
@@ -73,7 +79,7 @@ class BaseDeDonnees
 		return self
 	end
 	
-	# Renvoie le nombre de clic effectué par le joueur sur une grille
+	# Renvoie le nombre de clics effectués par le joueur sur une grille
 	# - pseudo le pseudo du joueur
 	# - idGrille l'identifiant de la grille
 	def BaseDeDonnees.getNbClics(pseudo, idGrille)
