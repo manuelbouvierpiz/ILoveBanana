@@ -73,6 +73,26 @@ class PartieMonde < Partie
 		return super()
 	end
 
+
+	# * Méthode d'instance qui renvoie le score pour une étoile
+	# * Retourne un entier représentant la valeur néssecaire a l'obtention d'une étoile 
+	def scoreEtoileUn
+		return BaseDeDonnees.getGrilleEtoileUnScore(@grille.idGrille)
+	end
+
+	# * Méthode d'instance qui renvoie le score pour deux étoiles
+	# * Retourne un entier représentant la valeur néssecaire a l'obtention de deux étoiles
+	def scoreEtoileUn
+		return BaseDeDonnees.getGrilleEtoileDeuxScore(@grille.idGrille)
+	end
+
+	# * Méthode d'instance qui renvoie le score pour trois étoiles
+	# * Retourne un entier représentant la valeur néssecaire a l'obtention de trois étoiles 
+	def scoreEtoileUn
+		return BaseDeDonnees.getGrilleEtoileTroisScore(@grille.idGrille)
+	end
+
+
 	# * Méthode d'instance qui initialise l'état (bloqué/débloqué) de la *PartieMonde*
 	# * Retourne un booléen représentant l'état de la *PartieMonde* (<b>true</b> ou <b>false</b>)
 	def initialiseEtat
