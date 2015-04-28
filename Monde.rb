@@ -21,7 +21,7 @@ class Monde
 	# * Accessible en lecture uniquement
 	attr :nom, false
 
-	# * Variable d'instance (un <b>String</b>) qui représente le chemin d'accès à l'image du +Monde+
+	# * Variable d'instance (un <b>String</b>) qui représente le chemin d'accès à l'image du *Monde*
 	# * Accessible en lecture uniquement
 	attr :image, false
 	
@@ -31,7 +31,7 @@ class Monde
 	
 	# * Variable d'instance qui représente un tableau de niveaux
 	# * Non accessible
-	# * Le tableau de parties est rempli dynamiquement par la méthode +partie+
+	# * Le tableau de parties est rempli dynamiquement par la méthode *Partie*
 	@tableauParties
 	
 	attr_writer :etat
@@ -39,11 +39,17 @@ class Monde
 	# Méthodes d'instance
 	
 	# * Méthode d'instance qui crée un nouveau Monde
+	# * === Attributs :
+	#		- unIdMonde	: un entier representant le numero du monde
+	# 		- uneImage	: un string representant le chemin vers l'image
 	def Monde.creer(unIdMonde, uneImage)
 		new(unIdMonde, uneImage)
 	end
 
 	# Méthode d'instance qui initialise le Monde
+	# * === Attributs :
+	#		- unIdMonde	: un entier representant le numero du monde
+	# 		- uneImage	: un string representant le chemin vers l'image
 	def initialize(unIdMonde, uneImage)
 		@idMonde = unIdMonde
 		@image = uneImage
@@ -58,9 +64,11 @@ class Monde
 		end
 	end
 	
-	# * Méthode d'instance qui renvoie la +PartieMonde+ associée au numéro
-	# * Crée dynamiquement la +PartieMonde+ si besoin
-	# * Retourne une +PartieMonde+
+	# * Méthode d'instance qui renvoie la *PartieMonde* associée au numéro
+	# * === Attributs :
+	#		- unNumero	: un entier representant le numero d'une partie du monde compris entre 1 et 40
+	# * Crée dynamiquement la *PartieMonde* si besoin
+	# * Retourne une *PartieMonde*
 	def partie(unNumero)
 		if @tableauParties[unNumero] == nil
 			if @idMonde != 8
@@ -72,19 +80,23 @@ class Monde
 		return @tableauParties[unNumero]
 	end
 
-	# Méthode d'instance qui permet de donner l'accès à un Monde
+	# * Méthode d'instance qui permet de donner l'accès à un *Monde*
+	# * Retourne *self*
 	def debloquer()
 		if @etat == false
 			@etat = true
 		end
+		return self
 	end
 
-	# Méthode d'instance qui permet de savoir si le Monde est accessible
+	# * Méthode d'instance qui permet de savoir si le *Monde* est accessible
+	# *	Retourne un boolean qui represente l'etat du *Monde*
 	def estDebloque?()
 		return @etat == true
 	end
 
-	# * Méthode d'instance qui retourne une chaine de caractères décrivant le +Monde+
+	# * Méthode d'instance qui retourne une chaine de caractères décrivant le *Monde*
+	# * Retourne un String
 	def to_s()
 		unResultat = nom()
 		
@@ -95,6 +107,9 @@ class Monde
 		return unResultat
 	end
 	
+
+	# * Méthode d'instance qui initialise l'etat du *Monde*
+	# * Retourne un boolean representant l'etat du Monde
 	def initialiseEtat
 		if(@idMonde == 1)
 			@etat = true
