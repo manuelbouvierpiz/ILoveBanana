@@ -20,11 +20,11 @@ class BaseDeDonnees
     	
     # Méthodes de classe
     	
-	# * Méthode de classe qui renvoie le score d'un joueur sur une grille
+	# * Méthode de classe qui renvoie le score d'un joueur sur une *Grille*
 	# * === Attributs :
 	#		- pseudo : un *String* représentant le pseudo du joueur
-	#		- idGrille : un entier représentant l'identifiant de la grille
-	# * Retourne un entier représentant le score du joueur sur la grille ou -1 si il n'a pas de score
+	#		- idGrille : un entier représentant l'identifiant de la *Grille*
+	# * Retourne un entier représentant le score du joueur sur la *Grille* ou -1 si il n'a pas de score
 	def BaseDeDonnees.getScore(pseudo, idGrille)
 		if(BaseDeDonnees.estGrilleResolue?(pseudo, idGrille))
 			return GrilleFinis.select(:score).find_by(pseudo: pseudo, id_grille: idGrille).score
@@ -32,11 +32,11 @@ class BaseDeDonnees
 		return -1
 	end
 	
-	# * Méthode de classe qui renvoie le temps d'un joueur sur une grille
+	# * Méthode de classe qui renvoie le temps d'un joueur sur une *Grille*
 	# * === Attributs :
 	#		- pseudo : un *String* représentant le pseudo du joueur
-	#		- idGrille : un entier représentant l'identifiant de la grille
-	# * Retourne un entier représentant le temps en secondes du joueur sur la grille ou -1 si il n'a pas de temps enregistré
+	#		- idGrille : un entier représentant l'identifiant de la *Grille*
+	# * Retourne un entier représentant le temps en secondes du joueur sur la *Grille* ou -1 si il n'a pas de temps enregistré
 	def BaseDeDonnees.getTemps(pseudo, idGrille)
 		return GrilleFinis.select(:temps).find_by(pseudo: pseudo, id_grille: idGrille).temps
 	end
@@ -50,16 +50,16 @@ class BaseDeDonnees
 		return GrilleFinis.exists?(:pseudo => pseudo, :id_grille => idGrille)
 	end
 	
-	# * Méthode de classe qui insert le résultat d'un joueur sur une grille ou le met à jour si déjà fait au moins une fois
+	# * Méthode de classe qui insert le résultat d'un joueur sur une *Grille* ou le met à jour si déjà fait au moins une fois
 	# * === Attributs :
 	#		- pseudo : un *String* représentant le pseudo du joueur
-	#		- idGrille : un entier représentant l'identifiant de la grille
-	#		- temps : un entier représentant le temps en seconde qu'a mis le joueur pour effectuer la grille
+	#		- idGrille : un entier représentant l'identifiant de la *Grille*
+	#		- temps : un entier représentant le temps en seconde qu'a mis le joueur pour effectuer la *Grille*
 	#		- nbClics : un entier représentant le nombre de clics qu'a faits le joueur
 	#		- nbEtoiles : un entier représentant le nombre d'étoiles obtenues par le joueur
 	#		- nbHypotheses : un entier qui représente le nombre d'hypothèses effectuées par le joueur
 	#		- nbAides : un entier représentant le nombre d'aides demandées par le joueur
-	#		- score : un entier représentant le score du joueur sur la grille
+	#		- score : un entier représentant le score du joueur sur la *Grille*
 	# * Retourne *self*
 	def BaseDeDonnees.setGrilleTermine(pseudo, idGrille, temps, nbClics, nbEtoiles, nbHypotheses, nbAides, score)
 		if(BaseDeDonnees.estGrilleResolue?(pseudo, idGrille))
@@ -79,78 +79,100 @@ class BaseDeDonnees
 		return self
 	end
 	
-	# Renvoie le nombre de clics effectués par le joueur sur une grille
-	# - pseudo le pseudo du joueur
-	# - idGrille l'identifiant de la grille
+	# * Méthode de classe qui renvoie le nombre de clics effectués par le joueur sur une *Grille*
+	# * === Attributs :
+	#		- pseudo : un *String* représentant le pseudo du joueur
+	#		- idGrille : un entier représentant l'unique identifiant de la *Grille*
+	# * Retourne un entier représentant le nombre de clics effectués par le joueur sur la *Grille*
 	def BaseDeDonnees.getNbClics(pseudo, idGrille)
 		return GrilleFinis.select(:nb_clic).find_by(pseudo: pseudo, id_grille: idGrille).nb_clic
 	end
 	
-	# Renvoie l'adresse mail possesseur du compte
-	# - pseudo le pseudo du joueur
+	# * Méthode de classe qui renvoie l'adresse mail du possesseur du *Compte* dont on a donné le pseudo
+	# * === Attribut :
+	#		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne un *String* représentant le mail associé au *Compte*
 	def BaseDeDonnees.getMail(pseudo)
 		return Comptes.select(:adresse_mail).find_by_pseudo(pseudo).adresse_mail
 	end
 	
-	# Renvoie le nom du possesseur du compte
-	# - pseudo le pseudo du joueur
+	# * Méthode de classe qui renvoie le nom du possesseur du *Compte* dont on a donné le pseudo
+	# * === Attribut :
+	#		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne un *String* représentant le nom du possesseur du *Compte*
 	def BaseDeDonnees.getNom(pseudo)
 		return Comptes.select(:nom).find_by_pseudo(pseudo).nom
 	end
 	
-	# Renvoie le prenom du possesseur du compte
-	# - pseudo le pseudo du joueur
+	# * Méthode de classe qui renvoie la couleur associée à la première couleur (rouge par défaut) du *Compte* dont on a donné le pseudo
+	# * === Attribut :
+	#		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne un *String* de la forme "#RRGGBB"représentant la première couleur du possesseur du *Compte*
 	def BaseDeDonnees.getPrenom(pseudo)
 		return Comptes.select(:prenom).find_by_pseudo(pseudo).prenom
 	end
 	
-	# Renvoie la couleur du clic gauche
-	# - pseudo le pseudo du joueur
+	# * Méthode de classe qui renvoie le prénom du possesseur du *Compte*
+	# * === Attribut :
+	#		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne un *String* représentant le prénom du possesseur du *Compte*
 	def BaseDeDonnees.getCouleurUn(pseudo)
 		return Comptes.select(:couleur_1).find_by_pseudo(pseudo).couleur_1
 	end
 	
-	# Indique si un compte existe ou pas (vrai ou faux)
-	# - pseudo le pseudo du joueur
-	# - motDePasse le mot de passe du joueur
+	# * Méthode de classe qui permet de savoir si le mot de passe donné est bien celui du *Compte* dont on a donné le pseudo
+	# * === Attributs :
+	#		- pseudo : un *String* représentant le pseudo du joueur
+	#		- motDePasse : un *String* représentant le mot de passe du joueur
+	# * Retourne *true* si les identifiants sont corrects, *false* sinon
 	def BaseDeDonnees.estBonsIdentifiants?(pseudo, motDePasse)
 		mdpCrypte = Digest::MD5.hexdigest(motDePasse)
 		return Comptes.exists?(:pseudo => pseudo, :mot_de_passe => mdpCrypte)
 	end
 	
-	# Modifie dans la base la couleur du clic gauche du joueur
-	# - pseudo le pseudo du joueur
-	# - couleur la couleur souhaité
+	# * Méthode de classe qui permet d'attribuer une couleur en tant que première couleur du *Compte* dont on a donné le pseudo
+	# * === Attributs :
+	#		- pseudo : un *String* représentant le pseudo du joueur
+	#		- couleur : un *String* de la forme "#RRGBB" représentant la couleur du joueur
+	# * Retourne *self*
 	def BaseDeDonnees.setCouleurUn(pseudo, couleur)
 		Comptes.where(:pseudo => pseudo).update_all(couleur_1: couleur)
 		return self
 	end
 	
-	# Renvoie la couleur du clic droit
-	# - pseudo le pseudo du joueur
+	# * Méthode de classe qui renvoie la couleur associée à la seconde couleur (bleu par défaut) du *Compte* dont on a donné le pseudo
+	# * === Attribut :
+	#		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne un *String* de la forme "#RRGGBB"représentant la seconde couleur du possesseur du *Compte*
 	def BaseDeDonnees.getCouleurDeux(pseudo)
 		return Comptes.select(:couleur_2).find_by_pseudo(pseudo).couleur_2
 	end
 	
-	# Modifie dans la base la couleur du clic droit du joueur
-	# - pseudo le pseudo du joueur
-	# - couleur la couleur souhaité
+	# * Méthode de classe qui permet d'attribuer une couleur en tant que première couleur du *Compte* dont on a donné le pseudo
+	# * === Attributs :
+	#		- pseudo : un *String* représentant le pseudo du joueur
+	#		- couleur : un *String* de la forme "#RRGBB" représentant la couleur du joueur
+	# * Retourne *self*
 	def BaseDeDonnees.setCouleurDeux(pseudo, couleur)
 		Comptes.where(:pseudo => pseudo).update_all(couleur_2: couleur)
 		return self
 	end
 	
-	# Modifier le mot de passe du joueur
-	# - pseudo le pseudo du joueur
-	# - motDePasse le mot de passe souhaité
+	# * Méthode de classe qui permet de changer le mot de passe du *Compte* dont on a donné le pseudo
+	# * === Attributs :
+	#		- pseudo : un *String* représentant le pseudo du joueur
+	#		- motDePasse : un *String* représentant le nouveau mot de passe du joueur
+	# * Retourne *self*
 	def BaseDeDonnees.setMotDePasse(pseudo, motDePasse)
 		mdpCrypte = Digest::MD5.hexdigest(motDePasse)
 		Comptes.where(:pseudo => pseudo).update_all(mot_de_passe: mdpCrypte)
 		return self
 	end
 	
-	# Renvoie le volume de la musique du compte
-	# - pseudo le pseudo du joueur
+	# * Méthode de classe qui renvoie le volume de la musique du *Compte* dont on a donné le pseudo
+	# * === Attribut :
+	#		- pseudo : un *String* représentant le pseudo du joueur
+	# * Retourne un entier représentant le volume du *Compte*
 	def BaseDeDonnees.getVolumeMusique(pseudo)
 		return Comptes.select(:volume_musique).find_by_pseudo(pseudo).volume_musique
 	end

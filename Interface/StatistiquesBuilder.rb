@@ -25,7 +25,7 @@ class StatistiquesBuilder < TakuzuBuilder
     # * Cette méthode va chercher dans la base de données les différentes statistiques à afficher
 	def initialize
 		super(__FILE__)
-		@labelTempsJeu.set_text("Temps passé en jeu : " + "#{Compte.COMPTE.statistiques.tempsTotalJeu}")
+		@labelTempsJeu.set_text("Temps passé en jeu : " + "#{Compte.COMPTE.statistiques.tempsTotalJeu}" + " seconde(s)")
 		@labelPetitClic.set_text("Plus petit nombre de clics : " + "#{Compte.COMPTE.statistiques.plusPetitNombreClic}")
 		@labelGrandClic.set_text("Plus grand nombre de clics : " + "#{Compte.COMPTE.statistiques.plusGrandNombreClic}")
         @labelDefiGagne.set_text("Nombre de défi gagné : " + "#{Compte.COMPTE.statistiques.nbDefiGagne}")
