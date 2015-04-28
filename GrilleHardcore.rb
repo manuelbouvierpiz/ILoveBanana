@@ -8,9 +8,9 @@
 #		- sait donner sa difficulté
 class GrilleHardcore < Grille
 
-	# Variables
+	# Variables d'instance
 	
-	# * Variable d'instance représentant le temps maximum autorisé pour une *Partie* sur cette +GrilleHardcore+
+	# * Variable d'instance représentant le temps maximum autorisé pour une *Partie* sur cette *GrilleHardcore*
 	# * Accessible en lecture uniquement
 	# * Est intialisée lors de la création de la *GrilleHardcore*
 	attr :tempsMax, false
