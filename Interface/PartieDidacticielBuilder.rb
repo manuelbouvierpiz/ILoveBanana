@@ -164,4 +164,14 @@ class PartieDidacticielBuilder < PartieBuilder
 		ouvrirFenetre(PartieEchecBuilder.new)
 		return false
 	end
+
+	# * Méthode d'instance qui permet d'arrêter la *PartieDidacticiel* et de retourner au menu principal
+	# * Est automatiquement appelée par Gtk
+	def on_menu_clicked()
+		if Jeu.JEU.partie.tourne
+			unePartie = Jeu.JEU.partie
+			super()		# Jeu.JEU.partie = nil
+			unePartie.remiseAZero
+		end
+	end
 end

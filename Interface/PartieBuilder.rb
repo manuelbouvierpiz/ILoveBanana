@@ -182,21 +182,23 @@ class PartieBuilder < TakuzuBuilder
 	# * Méthode d'instance qui permet d'arrêter la +Partie+ et de retourner au menu principal
 	# * Est automatiquement appelée par Gtk
 	def on_menu_clicked()
-		if Jeu.JEU.partie.tourne
-			# La partie s'arrête quand la fenêtre reçoit le signal destroy dans ouvrirFenetre
-			ouvrirFenetre(MenuPrincipalBuilder.new)
-			Jeu.JEU.partie = nil
+		if !Jeu.JEU.partie.tourne
+			return
 		end
+		# La partie s'arrête quand la fenêtre reçoit le signal destroy dans ouvrirFenetre
+		ouvrirFenetre(MenuPrincipalBuilder.new)
+		Jeu.JEU.partie = nil
 	end
 	
 	# * Méthode d'instance qui permet d'ouvrir une fenêtre indiquant les règles
 	# * Est automatiquement appelée par Gtk
 	def on_regle_clicked()
-		if Jeu.JEU.partie.tourne
-			Jeu.JEU.partie.mettreEnPauseChronometre()
-			@grille.hide
-			ouvrirFenetreNonFermante(ReglesBuilder.new)
+		if !Jeu.JEU.partie.tourne
+			return
 		end
+		Jeu.JEU.partie.mettreEnPauseChronometre()
+		@grille.hide
+		ouvrirFenetreNonFermante(ReglesBuilder.new)
 	end
 	
 	# * Méthode d'instance qui permet d'afficher une aide
