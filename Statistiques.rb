@@ -48,7 +48,7 @@ class Statistiques
 # * === Attributs :
 #		- uneTaille	: un entier representant la taille de la *Grille*
 # 		- uneDifficulte : un entier representant la difficulté de la *Grille*
-# * Retourne un  representant le classement des joueurs
+# * Retourne un tableau contenant des tableaux du type [position dans le classement (entier), pseudo du joueur (<b>tring</b>), score du joueur (entier)]  representant le classement des joueurs
 	def classement(uneTaille, uneDifficulte)
 		return BaseDeDonnees.getClassement(uneTaille, uneDifficulte)
 	end
