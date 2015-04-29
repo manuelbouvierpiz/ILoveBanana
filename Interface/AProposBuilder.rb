@@ -1,8 +1,8 @@
 # encoding: UTF-8
 
 # Manuel Bouvier
-# == Classe +AProposBuilder+ :
-#	- est un +TakuzuBuilder+
+# == Classe *AProposBuilder* :
+#	- est un *TakuzuBuilder*
 class AProposBuilder < TakuzuBuilder
     # * Méthode d'instance qui initialise la fenêtre correspondante au +AProposBuilderr+
     def initialize
