@@ -5,21 +5,21 @@
 # Version 0.1 : Date : Mon Jul 01 10:17:02 CEST 2013
 #
 
-# == Classe +PartieMondeBuilder+ :
-#	- est un +PartieBuilder+
+# == Classe PartieMondeBuilder :
+#	- est un PartieBuilder
 class PartieMondeBuilder < PartieBuilder
 
 	# Variable d'instance
 	
-	# * Variable d'instance qui représente le +Monde+ la +PartieMonde+
+	# * Variable d'instance qui représente le *Monde* de la *PartieMonde*
 	@monde
 
 	# Méthode de classe
 
-	# * Méthode de classe qui permet de créer une +PartieBuilder+
+	# * Méthode de classe qui permet de créer une *PartieMondeBuilder*
 	# ===== Attributs :
-	#	- unMonde : un +Monde+ dans lequel se trouve la +Partie+
-	#	- unePartie : une +Partie+ à lancer 
+	#	- unMonde : un Monde dans lequel se trouve la PartieMonde
+	#	- unePartie : une PartieMonde à lancer 
 	def PartieMondeBuilder.creer(unePartie, unMonde)
 		new(unePartie, unMonde)
 	end
@@ -56,7 +56,10 @@ class PartieMondeBuilder < PartieBuilder
 		end
 	end
 	
-	# * Méthode d'instance qui permet de modifier l'état d'une +Case+
+	# * Méthode d'instance qui permet de modifier l'état d'une *Case*
+	# * === Attributs :
+	#		- unX : un entier représentant l'abscisse d'une Case
+	#		- unY : un entier représentant l'ordonnée d'une Case
 	# * Est automatiquement appelée par Gtk
 	def	on_bouton_clicked(unX, unY)
 		super(unX, unY)

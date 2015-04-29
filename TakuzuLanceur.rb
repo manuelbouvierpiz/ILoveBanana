@@ -2,7 +2,7 @@
 
 # Valentin CHAILLOU et Damien PARMENON
 
-# == Classe +Chargement+ :
+# == Classe Chargement :
 #	- connaît les gems et classes à charger
 #	- sait les charger
 class Chargement
@@ -80,17 +80,20 @@ class Chargement
 	private_class_method :new
 	
 	# * Méthode de classe qui permet d'accéder en lecture à la classe en train d'être chargée
+	# * Retourne un *String* représentant l'élément, ou *nil* si le *Chargement* est terminé
 	def Chargement.element
 		return @@element
 	end
 	
-	# * Méthode de classe qui permet d'accéder en lecture au pourcentage de chargement
+	# * Méthode de classe qui permet d'accéder en lecture au pourcentage de *Chargement*
+	# * Retourne un entier représentant le pourcentage du *Chargement*
 	def Chargement.pourcentage
 		return @@pourcentage
 	end
 	
 	# * Méthode de classe qui charge toutes les gems et toutes les classes
-	# * Est responsable de la création de la fenêtre de chargement
+	# * Est responsable de la création de la fenêtre de *Chargement*
+	# * Retourne *self*
 	def Chargement.charger
 	
 		### Test des gems ###
@@ -132,6 +135,7 @@ class Chargement
 			# On attend que la fenêtre de chargement se soit fermée
 		end
 		
+		return self
 	end
 	
 end

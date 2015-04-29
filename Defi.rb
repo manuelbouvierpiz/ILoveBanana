@@ -64,9 +64,9 @@ class Defi
 	
 	# * Méthode de classe permettant de créer un *Defi*
 	# ===== Attributs :
-	#		- unEnvoyeur : le *Compte* de l'envoyeur
-	#		- unDestinataire : le *Compte* du destinataire
-	#		- uneGrille : la *Grille* du Defi
+	#		- unEnvoyeur : le Compte de l'envoyeur
+	#		- unDestinataire : le Compte du destinataire
+	#		- uneGrille : la Grille du Defi
 	#		- unScore : un entier représentant le score réalisé par l'envoyeur
 	def Defi.creer(unDestinataire, unEnvoyeur, unIdGrille, unScore)
 		new(unDestinataire, unEnvoyeur, unIdGrille, unScore)

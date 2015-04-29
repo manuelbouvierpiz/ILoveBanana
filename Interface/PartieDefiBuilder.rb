@@ -3,8 +3,8 @@
 ##
 # Auteur : Parmenon Damien
 #
-# == Classe +PartieDefiBuilder+ :
-#	- est un +PartieBuilder+
+# == Classe PartieDefiBuilder :
+#	- est un PartieBuilder
 class PartieDefiBuilder < PartieBuilder
 	
 	# Méthode d'instance qui initialise la partie
@@ -12,10 +12,13 @@ class PartieDefiBuilder < PartieBuilder
 		super(unePartie)
 		@isDefi = true
 		@image1.set_file("Images/rien.png")
-		@meilleurScore.set_text("")
+		@meilleurScore.set_text("Score à battre :\n#{Jeu.JEU.partie.unScore}")
 	end
 	
-	# * Méthode d'instance qui permet de modifier l'état d'une +Case+
+	# * Méthode d'instance qui permet de modifier l'état d'une *Case*
+	# * === Attributs :
+	#		- unX : un entier représentant l'abscisse d'une Case
+	#		- unY : un entier représentant l'ordonnée d'une Case
 	# * Est automatiquement appelée par Gtk
 	def	on_bouton_clicked(unX, unY)
 		super(unX, unY)

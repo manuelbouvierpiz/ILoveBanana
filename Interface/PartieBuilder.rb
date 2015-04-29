@@ -5,8 +5,8 @@
 # Version 0.1 : Date : Mon Jul 01 10:17:02 CEST 2013
 #
 
-# == Classe +PartieBuilder+ :
-#	- est un +TakuzuBuilder+
+# == Classe PartieBuilder :
+#	- est un TakuzuBuilder
 #	- est considérée comme une classe abstraite
 class PartieBuilder < TakuzuBuilder
 
@@ -29,9 +29,9 @@ class PartieBuilder < TakuzuBuilder
 
 	# Méthode de classe
 
-	# * Méthode de classe qui permet de créer une +PartieBuilder+
+	# * Méthode de classe qui permet de créer une *PartieBuilder*
 	# ===== Attribut :
-	#	- unePartie : une +Partie+ à lancer
+	#	- unePartie : une Partie à lancer
 	def PartieBuilder.creer(unePartie)
 		new(unePartie)
 	end
@@ -120,7 +120,7 @@ class PartieBuilder < TakuzuBuilder
 			end
 		end
 		
-		# Trop lent
+		# Trop lent (la grille est actualisée dans la boucle juste ci-dessus)
 		#actualiserGrille()
 		
 		# Connexion des signaux pour les hypothèses
@@ -128,7 +128,7 @@ class PartieBuilder < TakuzuBuilder
 			eval("@hypothese_#{unNumero}.signal_connect(\"clicked\") { on_hypothese_X_clicked(#{unNumero}) }\n@hypothese_#{unNumero}.hide")
 		end		
 		
-		# Initialisation du bouton "back" (non disponible si c'eset le tout début d'une partie)
+		# Initialisation du bouton "back" (non disponible si c'est le tout début d'une partie)
 		if !Jeu.JEU.partie.peutRetourArriere?
 			@back.hide
 		end
@@ -140,7 +140,10 @@ class PartieBuilder < TakuzuBuilder
 		
 	end
 
-	# * Méthode d'instance qui permet de modifier l'état d'une +Case+
+	# * Méthode d'instance qui permet de modifier l'état d'une *Case*
+	# * === Attributs :
+	#		- unX : un entier représentant l'abscisse d'une Case
+	#		- unY : un entier représentant l'ordonnée d'une Case
 	# * Est automatiquement appelée par Gtk
 	def	on_bouton_clicked(unX, unY)
 		Jeu.JEU.partie.jouer(unX, unY)
@@ -163,7 +166,7 @@ class PartieBuilder < TakuzuBuilder
 		end
 	end
 
-	# * Méthode d'instance qui permet de rafraichir l'affichage de la +Grille+
+	# * Méthode d'instance qui permet de rafraichir l'affichage de la *Grille*
 	# * Ne doit être appelée que lors d'un chargement de sauvegarde temporaire
 	def actualiserGrille()
 		0.upto(Jeu.JEU.partie.grille.taille - 1) do |unX|
@@ -179,7 +182,7 @@ class PartieBuilder < TakuzuBuilder
 		end
 	end
 	
-	# * Méthode d'instance qui permet d'arrêter la +Partie+ et de retourner au menu principal
+	# * Méthode d'instance qui permet d'arrêter la *Partie* et de retourner au menu principal
 	# * Est automatiquement appelée par Gtk
 	def on_menu_clicked()
 		if !Jeu.JEU.partie.tourne
@@ -254,6 +257,8 @@ class PartieBuilder < TakuzuBuilder
 	end
 	
 	# * Méthode d'instance qui permet de revenir à un état sauvegardé/pré-hypothésé
+	# * === Attribut :
+	#		- unNumero : un entier représentant le numéro de l'hypothèse (de 1 à 5)
 	# * Est automatiquement appelée par Gtk
 	def on_hypothese_X_clicked(unNumero)
 		if Jeu.JEU.partie.tourne

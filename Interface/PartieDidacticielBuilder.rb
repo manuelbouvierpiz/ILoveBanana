@@ -5,11 +5,15 @@
 # Version 0.1 : Date : Mon Jul 01 10:17:02 CEST 2013
 #
 
-# == Classe +PartieDidacticielBuilder+ :
-#	- est un +PartieBuilder+
+# == Classe PartieDidacticielBuilder :
+#	- est un PartieBuilder
 class PartieDidacticielBuilder < PartieBuilder
 
+	# Variable d'instance
+
+	# * Variable d'instance non accessible qui représente l'étape du didacticiel
 	@etape
+	
 	# Méthodes d'instance
 
 	# Méthode d'instance qui initialise la partie
@@ -23,7 +27,10 @@ class PartieDidacticielBuilder < PartieBuilder
 		on_bouton_clicked(0,0)
 	end
 	
-	# * Méthode d'instance qui permet de modifier l'état d'une +Case+
+	# * Méthode d'instance qui permet de modifier l'état d'une *Case*
+	# * === Attributs :
+	#		- unX : un entier représentant l'abscisse d'une Case
+	#		- unY : un entier représentant l'ordonnée d'une Case
 	# * Est automatiquement appelée par Gtk
 	def	on_bouton_clicked(unX, unY)
 		case @etape

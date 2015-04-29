@@ -18,7 +18,7 @@ class Options
 
 	# * Méthode de classe qui permet de créer les *Options*
 	# * === Attribut :
-	#		- unPseudo : un *String* représentant un pseudo
+	#		- unPseudo : un String représentant un pseudo
 	def Options.creer(unPseudo)
 		new(unPseudo)
 	end 
@@ -27,7 +27,7 @@ class Options
 	
 	# * Méthode de classe qui permet d'initialiser les différents paramètres avec leurs valeurs par défaut
 	# * === Attribut :
-	#		- unPseudo : un *String* représentant un pseudo
+	#		- unPseudo : un String représentant un pseudo
 	# * Retourne *self*
 	def Options.premiereInitialisationOptions(unPseudo)
 		BaseDeDonnees.setVolumeBruitage(unPseudo, 50)
@@ -91,8 +91,8 @@ class Options
 
 	# * Méthode d'instance permettant de modifier un *RaccourciClavier*
 	# * === Attributs :
-	#		- unId : un entier représentant l'id d'un *RaccourciClavier* (de 1 à 4)
-	#		- unRaccourci : un *RaccourciClavier* par lequel le remplacer
+	#		- unId : un entier représentant l'id d'un RaccourciClavier (de 1 à 4)
+	#		- unRaccourci : un RaccourciClavier par lequel le remplacer
 	# * Retourne *self*
 	def changerRaccourci(unId, unRaccourci)
 		@tabRaccourciClavier[unId-1].changerTouche(unRaccourci)
@@ -100,7 +100,7 @@ class Options
 
 	# * Méthode d'instance qui renvoie un *RaccourciClavier*
 	# * === Attribut :
-	#		- unId : un entier représentant l'ID d'un *RaccourciClavier* (de 1 à 4)
+	#		- unId : un entier représentant l'ID d'un RaccourciClavier (de 1 à 4)
 	# * Retourne le *RaccourciClavier* correspondant à l'id
 	def getRaccourci(unId)
 		return BaseDeDonnees.getRaccourci(Compte.COMPTE.pseudo, unId)
@@ -125,7 +125,7 @@ class Options
 	# * Méthode d'instance qui permet de modifier les couleurs appliquées aux cases
 	# * === Attributs :
 	#		- unOuDeux : un entier qui indique si on modifie la première ou la seconde couleur (1 ou 2)
-	#		- uneCouleur : un *String* de la forme "#RRRRGGGGBBBB" qui représente la couleur
+	#		- uneCouleur : un String de la forme "#RRRRGGGGBBBB" qui représente la couleur
 	# * Retourne *self*
 	def changerCouleur(unOuDeux, uneCouleur)
 		if(unOuDeux == 1)
