@@ -8,7 +8,7 @@ class ReglesBuilder < TakuzuBuilder
 
 	
     # * Méthodes d'instance qui initialise *ReglesBuilder*
-    def initialize	
+    def initialize		# :nodoc:
 		super(__FILE__, "Règles")
 		
 		self['window1'].signal_connect("key-press-event") do |wdt, key|

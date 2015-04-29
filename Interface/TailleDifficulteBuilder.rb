@@ -15,7 +15,7 @@ class TailleDifficulteBuilder < TakuzuBuilder
 	@adjDifficulte
 	
 	# * Méthode d'instance qui intialise le *TailleDifficulteBuilder*
-	def initialize 
+	def initialize		# :nodoc:
         super(__FILE__)
         @adjDifficulte = Gtk::Adjustment.new(1, 1, 8, 1, 1, 0)
         @hscaleDifficulte.adjustment = @adjDifficulte
