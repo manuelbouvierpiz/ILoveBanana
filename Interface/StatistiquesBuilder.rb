@@ -21,7 +21,7 @@ class StatistiquesBuilder < TakuzuBuilder
 
     # Méthodes
 
-    # * Méthode d'instance qui initialise la fenêtre correspondante à +StatistiquesBuilder+
+    # * Méthode d'instance qui initialise la fenêtre correspondante à *StatistiquesBuilder*
     # * Cette méthode va chercher dans la base de données les différentes statistiques à afficher
 	def initialize
 		super(__FILE__)
@@ -46,17 +46,17 @@ class StatistiquesBuilder < TakuzuBuilder
 		
     end
 
-    # * Méthode d'instance qui ouvre +ClassementBuilder+ si l'utilisateur clique sur le bouton correspondant
+    # * Méthode d'instance qui ouvre *ClassementBuilder* si l'utilisateur clique sur le bouton correspondant
     def on_buttonClassement_clicked
     	ouvrirFenetre(ClassementBuilder.new)
     end
 
-    # * Méthode d'instance qui ouvre +SuccesBuilder+ si l'utilisateur clique sur le bouton correspondant
+    # * Méthode d'instance qui ouvre *SuccesBuilder* si l'utilisateur clique sur le bouton correspondant
     def on_buttonSucces_clicked
     	ouvrirFenetre(SuccesBuilder.new)
     end
 
-    # * Méthode d'instance qui ouvre +MenuPrincipalBuilder+ si l'utilisateur clique sur le bouton correspondant
+    # * Méthode d'instance qui ouvre *MenuPrincipalBuilder* si l'utilisateur clique sur le bouton correspondant
     def on_buttonMenuPrincipal_clicked
         ouvrirFenetre(MenuPrincipalBuilder.new)
     end
