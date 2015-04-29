@@ -10,7 +10,7 @@ class Statistiques
 
 # * Méthode d'instance retournant le score total du joueur
 # * === Attributs :
-#		- uneTaille	: un entier representant la taille de la *Grille*
+#		- uneTaille	: un entier representant la taille de la Grille
 # * Retourne un entier representant le score total dans la taille donnée
 	def scoreTaille(uneTaille)
 		return BaseDeDonnees.getScoreTotal(Compte.COMPTE.pseudo, uneTaille)
@@ -25,8 +25,8 @@ class Statistiques
 
 # * Méthode d'instance retournant le score total du joueur selon une taille et une difficulté
 # * === Attributs :
-#		- uneTaille	: un entier representant la taille de la *Grille*
-# 		- uneDifficulte : un entier representant la difficulté de la *Grille*
+#		- uneTaille	: un entier representant la taille de la Grille
+# 		- uneDifficulte : un entier representant la difficulté de la Grille
 # * Retourne un entier representant le score total dans la difficulté et la taille donnée
 	def scoreDifficulte(uneTaille, uneDifficulte)
 		return BaseDeDonnees.getScoreDifficulte(Compte.COMPTE.pseudo, uneTaille, uneDifficulte)
@@ -46,8 +46,8 @@ class Statistiques
 	
 # * Méthode d'instance retournant le classement des joueurs en fonction du score total sur des grilles de taille et difficulté données
 # * === Attributs :
-#		- uneTaille	: un entier representant la taille de la *Grille*
-# 		- uneDifficulte : un entier representant la difficulté de la *Grille*
+#		- uneTaille	: un entier representant la taille de la Grille
+# 		- uneDifficulte : un entier representant la difficulté de la Grille
 # * Retourne un tableau contenant des tableaux du type [position dans le classement (entier), pseudo du joueur (<b>tring</b>), score du joueur (entier)]  representant le classement des joueurs
 	def classement(uneTaille, uneDifficulte)
 		return BaseDeDonnees.getClassement(uneTaille, uneDifficulte)

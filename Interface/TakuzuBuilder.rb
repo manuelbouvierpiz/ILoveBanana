@@ -2,7 +2,7 @@
 # Valentin CHAILLOU
 
 
-# == Classe +TakuzuBuilder+ :
+# == Classe TakuzuBuilder :
 #	- est considérée comme une classe abstraite
 #	- est la classe mère de toute fenêtre
 #	- connaît sa fenêtre précédente
@@ -20,6 +20,7 @@ class TakuzuBuilder < Gtk::Builder
 	
 	# Méthodes d'instance
 	
+	# Méthode d'instance qui initialise la fenêtre
 	def initialize(unNom, unNomDeFenetre="Takuzu Avengers") # :nodoc:
 		super()
 	
@@ -42,14 +43,14 @@ class TakuzuBuilder < Gtk::Builder
 	end
 	
 	# * Méthode d'instance qui ouvre une nouvelle fenêtre et NE ferme PAS la précédente
-	# ===== Attributs :
+	# ===== Attribut :
 	#	- uneFenetre : une fenetre (telle que FenetreBuilder.new())
 	def ouvrirFenetreNonFermante(uneFenetre)
 		uneFenetre.fenetrePrecedente = self
 	end
 	
 	# * Méthode d'instance qui ouvre une nouvelle fenêtre et ferme la précédente
-	# ===== Attributs :
+	# ===== Attribut :
 	#	- uneFenetre : une fenetre (telle que FenetreBuilder.new())
 	def ouvrirFenetre(uneFenetre)
 		ouvrirFenetreNonFermante(uneFenetre)

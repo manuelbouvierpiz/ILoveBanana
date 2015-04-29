@@ -4,21 +4,24 @@
 # Auteur Parmenon Damien et Valentin CHAILLOU
 #
 
+# == Classe PartieMondeReussieBuilder :
+#		est un PartieReussieBuilder
 class PartieMondeReussieBuilder < PartieReussieBuilder
 
 	# Variable d'instance
 	
-	# * variable d'instance qui représente le +Monde+ de la +PartieMonde+
+	# * variable d'instance qui représente le *Monde* de la *PartieMonde*
 	@monde
 	
-	# * Variable d'instance qui représente la +PartieMonde+ qui vient d'être terminée
+	# * Variable d'instance qui représente la *PartieMonde* qui vient d'être terminée
 	@partie
 
-	# * Méthode de classe qui crée un nouveau +PartieMondeReussieBuilder+
+	# * Méthode de classe qui crée un nouveau *PartieMondeReussieBuilder*
 	def PartieMondeReussieBuilder.creer(unMonde)
 		new(unMonde)
 	end
 
+	# Méthode d'instance qui intialise le PartieMondeReussieBuilder
 	def initialize(unMonde) # :nodoc:
 	
 		@partie = Jeu.JEU.partie
@@ -45,10 +48,14 @@ class PartieMondeReussieBuilder < PartieReussieBuilder
 		@button4.show
 	end
 	
+	# * Méthode d'instance qui relance la *PartieMonde*
+	# * est automatiquement appelée par Gtk
 	def on_button1_clicked
 		ouvrirFenetre(PartieMondeBuilder.creer(@partie, @monde))
 	end
 
+	# * Méthode d'instance qui ouvre la fenetre du choix des niveaux dans le *Monde* de la *PartieMonde*
+	# * est automatiquement appelée par Gtk
 	def on_button4_clicked
 		ouvrirFenetre(ChoixGrilleBuilder.creer(@monde))
 	end

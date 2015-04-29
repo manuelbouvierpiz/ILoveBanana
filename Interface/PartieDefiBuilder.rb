@@ -27,7 +27,7 @@ class PartieDefiBuilder < PartieBuilder
 			Jeu.JEU.partie.arretChronometre()
 			if(Jeu.JEU.partie.calculerScore > Jeu.JEU.partie.unScore)
 				Jeu.JEU.partie.setVainqueur(Compte.COMPTE.pseudo, Jeu.JEU.partie.calculerScore)
-				ouvrirFenetre(PartieDefiReussiBuilder.new)
+				ouvrirFenetre(PartieDefiReussieBuilder.new)
 			else
 				Jeu.JEU.partie.setVainqueur(Jeu.JEU.partie.unJoueur, Jeu.JEU.partie.unScore)
 				ouvrirFenetre(PartieDefiEchecBuilder.new)

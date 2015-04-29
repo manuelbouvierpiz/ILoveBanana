@@ -4,15 +4,15 @@
 # Auteur Parmenon Damien et Valentin CHAILLOU
 #
 
-# == Classe +PartieSauvegardeReussieBuilder+ :
-#		- est un +PartieReussieBuilder+
-#		- affiche une fenêtre indiquant que la +PartieSauvegarde+ est réussie
+# == Classe PartieSauvegardeReussieBuilder :
+#		- est un PartieReussieBuilder
+#		- affiche une fenêtre indiquant que la PartieSauvegarde est réussie
 class PartieSauvegardeReussieBuilder < PartieReussieBuilder
 
 	# Méthode d'instance
 	
 	# * Méthode d'instance qui initialise la fenêtre
-	def initialize()
+	def initialize()	# :nodoc:
         super()
 		@nbEtoiles.file="Images/rien.png"
 		@button2.hide
