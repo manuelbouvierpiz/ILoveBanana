@@ -33,7 +33,7 @@ class Jeu
 	# Méthode d'instance
 
 	# Méthode d'instance qui initialise l'*Aventure* et le *Didactitiel*
-	def initialize()	# :nodoc
+	def initialize()		
 		@aventure = Aventure.new
 		@didacticiel = Didacticiel.new
 	end
