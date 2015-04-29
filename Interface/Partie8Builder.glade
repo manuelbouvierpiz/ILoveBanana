@@ -1,22 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <interface>
   <requires lib="gtk+" version="2.24"/>
   <!-- interface-naming-policy project-wide -->
   <object class="GtkWindow" id="window1">
     <property name="width_request">1100</property>
     <property name="height_request">780</property>
-    <property name="can_focus">False</property>
     <property name="resizable">False</property>
     <child>
       <object class="GtkFixed" id="panel">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
         <child>
           <object class="GtkImage" id="image1">
             <property name="width_request">1100</property>
             <property name="height_request">780</property>
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
             <property name="stock">gtk-missing-image</property>
           </object>
         </child>
@@ -25,7 +22,6 @@
             <property name="width_request">600</property>
             <property name="height_request">600</property>
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
             <property name="n_rows">8</property>
             <property name="n_columns">8</property>
             <child>
@@ -835,14 +831,14 @@
         </child>
         <child>
           <object class="GtkButton" id="hypothese">
-            <property name="label" translatable="yes">Hypothèse</property>
+            <property name="label" translatable="yes">Hypoth&#xE8;se</property>
             <property name="width_request">100</property>
             <property name="height_request">50</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="receives_default">True</property>
             <property name="no_show_all">True</property>
-            <signal name="clicked" handler="on_hypothese_clicked" swapped="no"/>
+            <signal name="clicked" handler="on_hypothese_clicked"/>
           </object>
           <packing>
             <property name="x">310</property>
@@ -851,14 +847,14 @@
         </child>
         <child>
           <object class="GtkButton" id="back">
-            <property name="label" translatable="yes">Back</property>
+            <property name="label" translatable="yes">Retour arri&#xE8;re</property>
             <property name="width_request">100</property>
             <property name="height_request">50</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="receives_default">True</property>
             <property name="no_show_all">True</property>
-            <signal name="clicked" handler="on_back_clicked" swapped="no"/>
+            <signal name="clicked" handler="on_back_clicked"/>
           </object>
           <packing>
             <property name="x">440</property>
@@ -867,13 +863,13 @@
         </child>
         <child>
           <object class="GtkButton" id="regle">
-            <property name="label" translatable="yes">Pause/règles</property>
+            <property name="label" translatable="yes">Pause/r&#xE8;gles</property>
             <property name="width_request">100</property>
             <property name="height_request">50</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="receives_default">True</property>
-            <signal name="clicked" handler="on_regle_clicked" swapped="no"/>
+            <signal name="clicked" handler="on_regle_clicked"/>
           </object>
           <packing>
             <property name="x">570</property>
@@ -888,7 +884,7 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="receives_default">True</property>
-            <signal name="clicked" handler="on_aide_clicked" swapped="no"/>
+            <signal name="clicked" handler="on_aide_clicked"/>
           </object>
           <packing>
             <property name="x">700</property>
@@ -903,7 +899,7 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="receives_default">True</property>
-            <signal name="clicked" handler="on_menu_clicked" swapped="no"/>
+            <signal name="clicked" handler="on_menu_clicked"/>
           </object>
           <packing>
             <property name="x">920</property>
@@ -915,8 +911,7 @@
             <property name="width_request">100</property>
             <property name="height_request">50</property>
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Hypothèses :</property>
+            <property name="label" translatable="yes">Hypoth&#xE8;ses :</property>
           </object>
           <packing>
             <property name="x">75</property>
@@ -928,7 +923,6 @@
             <property name="width_request">150</property>
             <property name="height_request">400</property>
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
             <property name="n_rows">5</property>
             <child>
               <object class="GtkButton" id="hypothese_1">
@@ -997,7 +991,6 @@
             <property name="width_request">100</property>
             <property name="height_request">80</property>
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
             <property name="xalign">0</property>
             <property name="xpad">14</property>
             <property name="label" translatable="yes">Clics :
@@ -1013,7 +1006,6 @@
             <property name="width_request">120</property>
             <property name="height_request">80</property>
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
             <property name="xalign">0</property>
             <property name="xpad">14</property>
             <property name="label" translatable="yes">Meilleur score :
@@ -1029,7 +1021,6 @@
             <property name="width_request">100</property>
             <property name="height_request">80</property>
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
             <property name="xalign">0</property>
             <property name="xpad">14</property>
             <property name="label" translatable="yes">Temps :
@@ -1045,7 +1036,6 @@
             <property name="width_request">800</property>
             <property name="height_request">80</property>
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
           </object>
           <packing>
             <property name="x">150</property>
