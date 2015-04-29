@@ -1,4 +1,6 @@
-#class succesIndividuel
+# == Classe SuccesIndividuel : 
+#	- connaît son identifiant
+#	- changer son état (debloquer), donner son état (estDebloque?), donner des informations sur elle (nom, description, condition), verifier son état (verifierUnSucces)
 class SuccesIndividuel 
 
     # * Variable d'instance qui représente l'identifiant du *SuccesIndividuel*
