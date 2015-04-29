@@ -5,17 +5,25 @@
 # Version 0.1 : Date : Fri Apr 03 17:52:21 CEST 2015
 #
 
-
+# == Classe OubliMotDePasseBuilder :
+#		- est un TakuzuBuilder
 class OubliMotDePasseBuilder < TakuzuBuilder
 
+	# Méthodes d'instance
+	
+	# Méthode d'instance qui initialise le OubliMotDePasseBuilder
     def initialize	# :nodoc:
 		super(__FILE__, "Mot de passe oublié")
     end
 
+	# * Méthode d'instance qui ouvre la fenêtre de *ConnexionBuilder*
+	# * Est automatiquement appelée par Gtk
     def on_buttonRetour_clicked
     	ouvrirFenetre(ConnexionBuilder.new)
     end
 
+	# * Méthode d'instance qui vérifie les informations et demande à *Compte* d'envoyer un mail
+	# * Est automatiquement appelée par Gtk
     def on_buttonValider_clicked
     	if @entryMail.text != "" && @entryPseudo.text != ""
     		if Compte.verifierAdressePseudo?(@entryPseudo.text, @entryMail.text)
