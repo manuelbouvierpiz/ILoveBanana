@@ -9,9 +9,9 @@
 #   - Permet également l'accès aux statistiques et au classement ainsi que de retourner sur le Menu Principal
 class SuccesBuilder < TakuzuBuilder
 
-    # * Méthode d'instance qui initialise la fenêtre correspondante au +SuccesBuilder+
+    # * Méthode d'instance qui initialise la fenêtre correspondante au *SuccesBuilder*
     # * Va chercher les succés dans la base de données et vérifie s'ils ont été réussis, affiche une image dans le cas où ils le sont
-	def initialize
+	def initialize		# :nodoc:
 		super(__FILE__)
 		lesSucces = Compte.COMPTE.succes.succes
 		lesSucces.each do |leSucces|
