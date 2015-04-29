@@ -2,7 +2,8 @@
 
 # encoding: UTF-8
 
-
+# == Classe +ChoixGrilleBuilderr+ :
+#	- est un +TakuzuBuilder+
 class ChoixGrilleBuilder < TakuzuBuilder
 
 	# * Variable d'instance qui représente un +Monde+ de l'Aventure
