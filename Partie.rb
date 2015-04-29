@@ -111,7 +111,7 @@ class Partie
 	end
 
 	# * Méthode d'instance qui permet de charger la dernière *Grille* sauvegardée
-	# * Retourne *elf*
+	# * Retourne *self*
 	def chargerPreHypo()
 		# /!\ @listeHypotheses est une pile, il faut dépiler dans le sens inverse
 		@mouvementsArriere = @listeHypotheses.pop()
