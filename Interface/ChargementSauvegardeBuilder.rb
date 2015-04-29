@@ -5,8 +5,8 @@
 # Version 0.1 : Date : Fri Apr 03 17:52:21 CEST 2015
 #
 
-# == Classe +ChargementSauvegardeBuilder+ :
-#		- est un +TakuzuBuilder+
+# == Classe ChargementSauvegardeBuilder :
+#		- est un TakuzuBuilder
 #		- affiche une fenêtre permettant au joueur de terminer sa partie
 class ChargementSauvegardeBuilder < TakuzuBuilder
 

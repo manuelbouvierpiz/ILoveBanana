@@ -1,10 +1,10 @@
 # encoding: UTF-8
 
-# Damien PARMENon et Valentin CHAILLOU
+# Damien PARMENON et Valentin CHAILLOU
 
-# == Classe +ChargementBuilder+ :
-#		- est un +TakuzuBuilder+
-#		- affiche l'élément et le pourcentage du +Chargement+
+# == Classe ChargementBuilder :
+#		- est un TakuzuBuilder
+#		- affiche l'élément et le pourcentage du Chargement
 class ChargementBuilder < TakuzuBuilder
 
 	# Méthode d'instance
@@ -32,7 +32,7 @@ class ChargementBuilder < TakuzuBuilder
 	# Méthode de classe
 
 	# * Méthode de classe qui lance l'interface graphique
-	# * Est appelée depuis +TakuzuLanceur.rb+
+	# * Est appelée depuis *TakuzuLanceur*
 	def ChargementBuilder.lancer
 		Gtk.init
 		ChargementBuilder.new()

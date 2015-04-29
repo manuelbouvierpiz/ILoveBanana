@@ -6,10 +6,14 @@
 #
 
 
-# == Classe +ConnexionBuilder+ :
-#	- sait connecter un utilisateur et créer un +Compte+
+# == Classe ConnexionBuilder :
+#	- est un TakuzuBuilder
+#	- sait connecter un utilisateur et créer un Compte
 class ConnexionBuilder < TakuzuBuilder
 
+	# Méthodes d'instance
+
+	# Méthode d'instance qui initialise le ConnexionBuilder
     def initialize	# :nodoc:
 		super(__FILE__, "Connexion")
 		@oubliMotDePasse.hide
@@ -43,8 +47,8 @@ class ConnexionBuilder < TakuzuBuilder
 
 	# Méthode de classe
 
-	# * Méthode de classe qui lance l'interface graphique
-	# * Est appelée depuis +Jeu.rb+
+	# * Méthode de classe qui lance la fenêtre de *ConnexionBuilder*
+	# * Est appelée depuis *TakuzuLanceur*
 	def ConnexionBuilder.lancer
 		Gtk.init
 		ConnexionBuilder.new()
@@ -52,6 +56,7 @@ class ConnexionBuilder < TakuzuBuilder
     end
 	
 	# * Méthode d'instance qui ouvre la fenêtre du mot de passe oublié
+	# * Est automatiquement appelée par Gtk
 	def on_oubliMotDePasse_clicked
 		ouvrirFenetre(OubliMotDePasseBuilder.new)
 	end

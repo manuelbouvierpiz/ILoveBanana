@@ -6,25 +6,26 @@
 #
 
 # == Classe ClassementBuilder : 
+#	- est un TakuzuBuilder
 #   - Permet l'affichage d'un classement en fonction d'une taille et d'une difficulté choisies par l'utilisateur
 #   - Permet également l'accès aux Statistiques et aux Succès ainsi que de retourner sur le Menu Principal
 class ClassementBuilder < TakuzuBuilder
 
-    # Variables
+    # Variables d'instance
     
-    # * Variable d'instance qui permet de savoir si la taille a déjà été choisie par l'utilisateur
+    # * Variable d'instance non accessible qui permet de savoir si la taille a déjà été choisie par l'utilisateur
     # * Le classement ne s'affichera que si la taille et la difficulté ont été choisies
 	@boolNiveau
 
-    # * Variable d'instance qui permet de savoir si la difficulté a déjà été choisie par l'utilisateur
+    # * Variable d'instance non accessible qui permet de savoir si la difficulté a déjà été choisie par l'utilisateur
     # * Le classement ne s'affichera que si la taille et la difficulté ont été choisies
 	@boolTaille
 
-    # Méthodes
+    # Méthodes d'instance
 
-    # * Méthode d'instance qui initialise la fenêtre correspondante au +ClassementBuilder+
+    # * Méthode d'instance qui initialise la fenêtre correspondante au *ClassementBuilder*
     # * Initialise les ComboBox pour la taille et la difficulté avec leurs models respectifs
-	def initialize
+	def initialize		# :nodoc:
 		super(__FILE__)
 		
 		tabNiveau = [1, 2, 3, 4, 5, 6, 7]
@@ -46,18 +47,18 @@ class ClassementBuilder < TakuzuBuilder
     	@labelScore.set_visible(false)
     end
 
-    # * Méthode d'instance qui ouvre la fenêtre Statistiques si l'utilisateur clique sur le bouton correspondant
+    # * Méthode d'instance qui ouvre la fenêtre des *Statistiques* si l'utilisateur clique sur le bouton correspondant
     def on_buttonStatistiques_clicked
     	ouvrirFenetre(StatistiquesBuilder.new)
     end
 
-    # * Méthode d'instance qui ouvre la fenêtre Succes si l'utilisateur clique sur le bouton correspondant
+    # * Méthode d'instance qui ouvre la fenêtre des *Succes* si l'utilisateur clique sur le bouton correspondant
     def on_buttonSucces_clicked
     	ouvrirFenetre(SuccesBuilder.new)
     end
 
-    # * Méthode d'instance qui met à la valeur true le booléen correspondant à la difficulté
-    # * Affiche le classement correspondant aux valeurs données par l'utilisateur si le booléen de la taille est à true aussi
+    # * Méthode d'instance qui met à la valeur *true* le booléen correspondant à la difficulté
+    # * Affiche le classement correspondant aux valeurs données par l'utilisateur si le booléen de la taille est à *true* aussi
     def on_boxNiveau_changed
         @vboxClassement.each do |child|
             @vboxClassement.remove(child)
@@ -81,8 +82,8 @@ class ClassementBuilder < TakuzuBuilder
     	end
     end
 
-    # * Méthode d'instance qui met à la valeur true le booléen correspondant à la taille
-    # * Affiche le classement correspondant aux valeurs données par l'utilisateur si le booléen de la difficulté est à true aussi
+    # * Méthode d'instance qui met à la valeur *true* le booléen correspondant à la taille
+    # * Affiche le classement correspondant aux valeurs données par l'utilisateur si le booléen de la difficulté est à *true* aussi
     def on_boxTaille_changed
         @vboxClassement.each do |child|
             @vboxClassement.remove(child)
