@@ -2,13 +2,13 @@
 
 # Valentin CHAILLOU
 
-# == Classe +ReglesBuilder+ :
+# == Classe *ReglesBuilder* :
 #	- sait afficher les règles
 class ReglesBuilder < TakuzuBuilder
 
-	# Méthodes d'instance
-
-    def initialize	# :nodoc:
+	
+    # * Méthodes d'instance qui initialise *ReglesBuilder*
+    def initialize	
 		super(__FILE__, "Règles")
 		
 		self['window1'].signal_connect("key-press-event") do |wdt, key|
