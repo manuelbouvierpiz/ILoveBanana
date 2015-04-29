@@ -56,7 +56,8 @@ class ChoixGrilleBuilder < TakuzuBuilder
 		ouvrirFenetre(ChoixGrilleSuiteBuilder.creer(@monde))
 	end
 	
-	# * Méthode d'instance qui permet de retourner au menu princiapl
+	# * Méthode d'instance qui permet de retourner à la fenêtre précédente
+	# * Est automatiquement appelée par Gtk
 	def on_retourBouton_clicked
 		ouvrirFenetre(ChoixMondeBuilder.new)
 	end
