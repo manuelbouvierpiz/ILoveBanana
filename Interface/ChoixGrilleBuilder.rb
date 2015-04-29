@@ -2,16 +2,16 @@
 
 # encoding: UTF-8
 
-# == Classe +ChoixGrilleBuilderr+ :
-#	- est un +TakuzuBuilder+
+# == Classe *ChoixGrilleBuilderr* :
+#	- est un *TakuzuBuilder*
 class ChoixGrilleBuilder < TakuzuBuilder
 
-	# * Variable d'instance qui représente un +Monde+ de l'Aventure
+	# * Variable d'instance qui représente un *Monde* de l'Aventure
 	@monde #Monde actuel
 	
-	# * Méthode de classe qui permet de créer un +ChoixGrilleBuilder+
+	# * Méthode de classe qui permet de créer un *ChoixGrilleBuilder*
 	# ===== Attribut :
-	#	- uneMond : un +Monde+ de l'Aventure
+	#	- uneMond : un *Monde* de l'Aventure
 	def ChoixGrilleBuilder.creer(unMonde)
 		new(unMonde)
 	end
@@ -42,7 +42,7 @@ class ChoixGrilleBuilder < TakuzuBuilder
 		end
 	end
 	
-	# * Méthode d'instance qui permet de lancer une +PartieMonde+ et d'ouvrir la fenêtre de la partie
+	# * Méthode d'instance qui permet de lancer une *PartieMonde* et d'ouvrir la fenêtre de la partie
 	# * Est automatiquement appelée par Gtk
 	def on_niveauBouton_clicked unLabel
 		i=unLabel.label.to_i - 1
@@ -50,7 +50,7 @@ class ChoixGrilleBuilder < TakuzuBuilder
 		ouvrirFenetre(PartieMondeBuilder.creer(laPartie, @monde))
    	end
 	
-	# * Méthode d'instance qui permet d'initialiser +ChoixGrilleSuiteBuilder+ et d'ouvrir la fênetre correspondante
+	# * Méthode d'instance qui permet d'initialiser *ChoixGrilleSuiteBuilder* et d'ouvrir la fênetre correspondante
 	# * Est automatiquement appelée par Gtk
 	def on_suivantBouton_clicked
 		ouvrirFenetre(ChoixGrilleSuiteBuilder.creer(@monde))
