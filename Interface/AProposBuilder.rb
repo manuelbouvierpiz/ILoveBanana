@@ -4,7 +4,7 @@
 # == Classe *AProposBuilder* :
 #	- est un *TakuzuBuilder*
 class AProposBuilder < TakuzuBuilder
-    # * Méthode d'instance qui initialise la fenêtre correspondante au +AProposBuilderr+
+    # * Méthode d'instance qui initialise la fenêtre correspondante au *AProposBuilder*
     def initialize
         super(__FILE__, "A Propos")
     end

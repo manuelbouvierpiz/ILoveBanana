@@ -7,15 +7,18 @@
 
 
 class InscriptionBuilder < TakuzuBuilder
-
+    
+    # * Méthode d'instance qui initialise la fenêtre correspondante à *InscriptionBuilder*
     def initialize	# :nodoc:
 		super(__FILE__, "Inscription")
     end
-
+    
+    # * Méthode d'instance qui ouvre la fenêtre précédente en l'occurence le *ConnexionBuilder*
     def on_buttonRetour_clicked
     	ouvrirFenetre(ConnexionBuilder.new)
     end
-
+    
+    # * Méthode d'instance qui créé un *Compte* si les champs sont remplis correctement
     def on_buttonValider_clicked
     	if @entryNom.text != "" && @entryPrenom.text != "" && @entryMail.text != "" && @entryPseudo.text != "" && @entryPassword.text != "" && @entryPassword.text == @entryConfirmation.text
     		if Compte.verifierIdentifiant?(@entryPseudo.text) && Compte.verifierMail?(@entryMail.text)

@@ -13,7 +13,7 @@ class SuccesIndividuel
         new(unIdSucces)
     end
 
-    # * Méthode d'instance qui initialise le +SuccesIndividuel+
+    # * Méthode d'instance qui initialise le *SuccesIndividuel*
     def initialize(unIdSucces)
         @idSucces = unIdSucces
     end

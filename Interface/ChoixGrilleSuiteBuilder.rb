@@ -11,7 +11,7 @@ class ChoixGrilleSuiteBuilder < TakuzuBuilder
 	
 	# * Méthode de classe qui permet de créer un *ChoixGrilleSuiteBuilder*
 	# ===== Attribut :
-	#	- uneMonde : un +Monde+ de l'Aventure
+	#	- uneMonde : un *Monde* de l'Aventure
 	def ChoixGrilleSuiteBuilder.creer(unMonde)
 		new(unMonde)
 	end
@@ -47,7 +47,7 @@ class ChoixGrilleSuiteBuilder < TakuzuBuilder
 		ouvrirFenetre(PartieMondeBuilder.creer(laPartie, @monde))
 	end
 
-	# * Méthode d'instance qui permet d'initialiser +ChoixGrilleBuilder+ et d'ouvrir la fênetre correspondante
+	# * Méthode d'instance qui permet d'initialiser *ChoixGrilleBuilder* et d'ouvrir la fênetre correspondante
 	# * Est automatiquement appelée par Gtk
 	def on_precedentBouton_clicked
 		ouvrirFenetre(ChoixGrilleBuilder.creer(@monde))
