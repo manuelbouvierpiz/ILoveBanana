@@ -4,9 +4,14 @@
 # Damien Parmenon
 #
 
+# == Classe PartieDefiEchecBuilder
+#		- est un PartieEchecBuilder
 class PartieDefiEchecBuilder < PartieEchecBuilder
 
-	def initialize
+	# Méthode d'instance
+
+	# Méthode qui initialise le PartieDefiEchecBuilder
+	def initialize	# :nodoc:
         super()
         @labelEchec.text = "Vous avez perdu le défi."
     end
