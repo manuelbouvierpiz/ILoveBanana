@@ -57,7 +57,7 @@ class Chargement
 		'Interface/PartieMondeReussieBuilder.rb',
 		'Interface/PartieDidacticielReussieBuilder.rb',
 		'Interface/PartieSauvegardeReussieBuilder.rb',
-		'Interface/PartieDefiReussiBuilder.rb',
+		'Interface/PartieDefiReussieBuilder.rb',
 		'Interface/PartieEchecBuilder.rb',
 		'Interface/PartieDefiEchecBuilder.rb',
 		'Interface/StatistiquesBuilder.rb',
