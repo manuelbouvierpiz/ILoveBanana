@@ -7,6 +7,8 @@ class SuccesIndividuel
     @idSucces
 
     # * Méthode de classe qui crée un nouveau *SuccesIndividuel*
+    # * === Attribut :
+	#		- unIdSucces : un entier représentant l'ID du *SuccesIndividuel*
     def SuccesIndividuel.creer(unIdSucces)
         new(unIdSucces)
     end
