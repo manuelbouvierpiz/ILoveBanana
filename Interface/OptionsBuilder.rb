@@ -27,7 +27,7 @@ class OptionsBuilder < TakuzuBuilder
 	
 	# Méthodes
 
-	# * Méthode d'instance qui initialise la fenêtre correspondante au +MenuPrincipalBuilder+
+	# * Méthode d'instance qui initialise la fenêtre correspondante au *MenuPrincipalBuilder*
 	# * Cette méthode va chercher dans la base de données les options actuelles du joueur qu'il pourra modifier ensuite
 	def initialize() 
 		super(__FILE__)
@@ -88,6 +88,8 @@ class OptionsBuilder < TakuzuBuilder
 		ouvrirFenetre(MenuPrincipalBuilder.new)
 	end
 
+	# * Méthode d'instance qui ouvre la fenêtre de *ReinitialisationConfirmationBuilder*
+	# * Est automatiquement appelée par Gtk
 	def on_buttonReinitialisation_clicked()
 		ouvrirFenetre(ReinitialisationConfirmationBuilder.new)
 	end

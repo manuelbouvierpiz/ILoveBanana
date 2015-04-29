@@ -6,17 +6,18 @@
 #
 
 # == Classe MenuPrincipalBuilder : 
+#	- est un TakuzuBuilder
 #   - Permet à l'utilisateur de pouvoir naviguer dans l'application en permettant l'accés aux différentes fonctionnalités de celle-ci
 class MenuPrincipalBuilder < TakuzuBuilder
 
-	# Méthodes
+	# Méthodes d'instance
 
-	# * Méthode d'instance qui initialise la fenêtre correspondante au +MenuPrincipalBuilder+
-	def initialize 
+	# * Méthode d'instance qui initialise la fenêtre correspondante au *MenuPrincipalBuilder*
+	def initialize 		# :nodoc:
         super(__FILE__)
 	end
 
-	# * Méthode d'instance qui ouvre la fenêtre TailleDifficulte si l'utilisateur clique sur le bouton correspondant afin de lancer une partie rapide
+	# * Méthode d'instance qui ouvre la fenêtre de *TailleDifficulteBuilder* si l'utilisateur clique sur le bouton correspondant afin de lancer une *PartieLibre* (ou partie rapide)
 	def on_partieRapideButton_clicked
 		lesDefis = BaseDeDonnees.getDefis(Compte.COMPTE.pseudo)
 		if(lesDefis.empty?)
@@ -38,33 +39,33 @@ class MenuPrincipalBuilder < TakuzuBuilder
   		end
 	end
 
-	# * Méthode d'instance qui ouvre la fenêtre Aventure si l'utilisateur clique sur le bouton correspondant
+	# * Méthode d'instance qui ouvre la fenêtre de *ChoixMondeBuilder* (feneêtre de l'aventure) si l'utilisateur clique sur le bouton correspondant
 	def on_aventureButton_clicked
 		ouvrirFenetre(ChoixMondeBuilder.new)
 	end
 	
-	# * Méthode d'instance qui ouvre la fenêtre correspondant à une partie permettant d'apprendre à jouer
+	# * Méthode d'instance qui ouvre la fenêtre correspondant à une partie permettant d'apprendre à jouer (<b>PartieDidacticielBuilder</b>)
 	def on_didacticielButton_clicked
 		ouvrirFenetre(PartieDidacticielBuilder.creer(Jeu.JEU.didacticiel.didacticielDeBase))
 	end
 	
-	# * Méthode d'instance qui ouvre la fenêtre Options si l'utilisateur clique sur le bouton correspondant
+	# * Méthode d'instance qui ouvre la fenêtre de *OptionsBuilder* si l'utilisateur clique sur le bouton correspondant
 	def on_optionButton_clicked
 		ouvrirFenetre(OptionsBuilder.new)
 	end
 	
-	# * Méthode d'instance qui ouvre la fenêtre Statistiques si l'utilisateur clique sur le bouton correspondant
+	# * Méthode d'instance qui ouvre la fenêtre de *StatistiquesBuilder* si l'utilisateur clique sur le bouton correspondant
 	def on_statistiquesButton_clicked
 		Compte.COMPTE.succes.verifierTousLesSucces()
 		ouvrirFenetre(StatistiquesBuilder.new)
 	end
 	
-	# * Méthode d'instance qui ouvre la fenêtre d'à propos si l'utilisateur clique sur le bouton correspondant
+	# * Méthode d'instance qui ouvre la fenêtre d'à propos (<b>AProposBuilder</b>) si l'utilisateur clique sur le bouton correspondant
 	def on_aProposButton_clicked
 		ouvrirFenetreNonFermante(AProposBuilder.new)
 	end
 	
-	# * Méthode d'instance qui ouvre la fenêtre de Connexion si l'utilisateur clique sur le bouton correspondant
+	# * Méthode d'instance qui ouvre la fenêtre de Connexion (<b>ConnexionBuilder</b>) si l'utilisateur clique sur le bouton correspondant
 	def on_retourButton_clicked
 		Compte.COMPTE.reinitialiserAventure()
 		ouvrirFenetre(ConnexionBuilder.new)
