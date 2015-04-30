@@ -45,12 +45,14 @@ class Monde
 	def Monde.creer(unIdMonde, uneImage)
 		new(unIdMonde, uneImage)
 	end
+	
+	private_class_method :new
 
 	# Méthode d'instance qui initialise le Monde
 	# * === Attributs :
 	#		- unIdMonde	: un entier representant le numero du monde
 	# 		- uneImage	: un string representant le chemin vers l'image
-	def initialize(unIdMonde, uneImage)
+	def initialize(unIdMonde, uneImage)		# :nodoc:
 		@idMonde = unIdMonde
 		@image = uneImage
 		@nom = BaseDeDonnees.getMondeNom(@idMonde)

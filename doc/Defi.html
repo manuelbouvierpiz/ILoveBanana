@@ -369,7 +369,7 @@ pseudo de l&#39;envoyeur du <strong>Defi</strong></p>
 
           
           <div class="method-source-code" id="creer-source">
-            <pre><span class="ruby-comment"># File Defi.rb, line 71</span>
+            <pre><span class="ruby-comment"># File Defi.rb, line 73</span>
 <span class="ruby-keyword">def</span> <span class="ruby-constant">Defi</span>.<span class="ruby-identifier">creer</span>(<span class="ruby-identifier">unDestinataire</span>, <span class="ruby-identifier">unEnvoyeur</span>, <span class="ruby-identifier">unIdGrille</span>, <span class="ruby-identifier">unScore</span>)
         <span class="ruby-identifier">new</span>(<span class="ruby-identifier">unDestinataire</span>, <span class="ruby-identifier">unEnvoyeur</span>, <span class="ruby-identifier">unIdGrille</span>, <span class="ruby-identifier">unScore</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -402,13 +402,17 @@ pseudo de l&#39;envoyeur du <strong>Defi</strong></p>
 
         <div class="method-description">
           
-          
+          <ul><li>
+<p>Méthode d&#39;instance qui envoie le <strong>Defi</strong></p>
+</li><li>
+<p>Retourne -1 si échoué</p>
+</li></ul>
           
           
 
           
           <div class="method-source-code" id="envoyerDefi-source">
-            <pre><span class="ruby-comment"># File Defi.rb, line 60</span>
+            <pre><span class="ruby-comment"># File Defi.rb, line 62</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">envoyerDefi</span>
         <span class="ruby-keyword">return</span> <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">setDefi</span>(<span class="ruby-ivar">@destinataire</span>, <span class="ruby-ivar">@envoyeur</span>, <span class="ruby-ivar">@idGrille</span>, <span class="ruby-ivar">@scoreEnvoi</span>)
 <span class="ruby-keyword">end</span></pre>

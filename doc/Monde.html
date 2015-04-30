@@ -75,8 +75,6 @@
     
     <li ><a href="#method-c-creer">::creer</a>
     
-    <li ><a href="#method-c-new">::new</a>
-    
     <li ><a href="#method-i-debloquer">#debloquer</a>
     
     <li ><a href="#method-i-estDebloque-3F">#estDebloque?</a>
@@ -378,55 +376,6 @@ du monde</p>
       </div><!-- creer-method -->
 
     
-      <div id="method-c-new" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">new</span><span
-            class="method-args">(unIdMonde, uneImage)</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Méthode d&#39;instance qui initialise le <a href="Monde.html">Monde</a></p>
-<ul><li>
-<h3 id="method-c-new-label-Attributs+%3A">Attributs :<span><a href="#method-c-new-label-Attributs+%3A">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
-
-<pre>- unIdMonde : un entier representant le numero du monde
-- uneImage : un string representant le chemin vers l&#39;image</pre>
-</li></ul>
-          
-          
-
-          
-          <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File Monde.rb, line 52</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">unIdMonde</span>, <span class="ruby-identifier">uneImage</span>)
-        <span class="ruby-ivar">@idMonde</span> = <span class="ruby-identifier">unIdMonde</span>
-        <span class="ruby-ivar">@image</span> = <span class="ruby-identifier">uneImage</span>
-        <span class="ruby-ivar">@nom</span> = <span class="ruby-constant">BaseDeDonnees</span>.<span class="ruby-identifier">getMondeNom</span>(<span class="ruby-ivar">@idMonde</span>)
-        <span class="ruby-ivar">@etat</span> = <span class="ruby-keyword">false</span>
-        
-        <span class="ruby-comment"># Création du tableau de parties</span>
-        <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@idMonde</span> <span class="ruby-operator">!=</span> <span class="ruby-value">8</span>)
-                <span class="ruby-ivar">@tableauParties</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">40</span>)
-        <span class="ruby-keyword">else</span>
-                <span class="ruby-ivar">@tableauParties</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">20</span>)
-        <span class="ruby-keyword">end</span>
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- new-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- new-method -->
-
-    
     </section><!-- public-class-method-details -->
   
      <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
@@ -457,7 +406,7 @@ du monde</p>
 
           
           <div class="method-source-code" id="debloquer-source">
-            <pre><span class="ruby-comment"># File Monde.rb, line 84</span>
+            <pre><span class="ruby-comment"># File Monde.rb, line 86</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">debloquer</span>()
         <span class="ruby-keyword">if</span> <span class="ruby-ivar">@etat</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
                 <span class="ruby-ivar">@etat</span> = <span class="ruby-keyword">true</span>
@@ -498,7 +447,7 @@ est accessible</p>
 
           
           <div class="method-source-code" id="estDebloque-3F-source">
-            <pre><span class="ruby-comment"># File Monde.rb, line 93</span>
+            <pre><span class="ruby-comment"># File Monde.rb, line 95</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">estDebloque?</span>()
         <span class="ruby-keyword">return</span> <span class="ruby-ivar">@etat</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
 <span class="ruby-keyword">end</span></pre>
@@ -536,7 +485,7 @@ href="Monde.html">Monde</a></p>
 
           
           <div class="method-source-code" id="initialiseEtat-source">
-            <pre><span class="ruby-comment"># File Monde.rb, line 112</span>
+            <pre><span class="ruby-comment"># File Monde.rb, line 114</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialiseEtat</span>
         <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@idMonde</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>)
                 <span class="ruby-ivar">@etat</span> = <span class="ruby-keyword">true</span>
@@ -600,7 +549,7 @@ au numéro</p>
 
           
           <div class="method-source-code" id="partie-source">
-            <pre><span class="ruby-comment"># File Monde.rb, line 71</span>
+            <pre><span class="ruby-comment"># File Monde.rb, line 73</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">partie</span>(<span class="ruby-identifier">unNumero</span>)
         <span class="ruby-keyword">if</span> <span class="ruby-ivar">@tableauParties</span>[<span class="ruby-identifier">unNumero</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
                 <span class="ruby-keyword">if</span> <span class="ruby-ivar">@idMonde</span> <span class="ruby-operator">!=</span> <span class="ruby-value">8</span>
@@ -645,7 +594,7 @@ au numéro</p>
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File Monde.rb, line 99</span>
+            <pre><span class="ruby-comment"># File Monde.rb, line 101</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>()
         <span class="ruby-identifier">unResultat</span> = <span class="ruby-identifier">nom</span>()
         

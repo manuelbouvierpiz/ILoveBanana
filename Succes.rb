@@ -8,7 +8,7 @@ class Succes
     
     # Variables
     
-    # * Variable d'instance qui contient tout les +SuccesIndividuel+
+    # * Variable d'instance qui contient tout les *SuccesIndividuel*
     # * Accessible en lecture uniquement
     # * Est intialisée lors de la création de *Succes*
     attr_reader :succes

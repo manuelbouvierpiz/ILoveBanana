@@ -57,6 +57,8 @@ class Defi
 		@envoyeur, @destinataire, @idGrille, @scoreEnvoi = unEnvoyeur, unDestinataire, unIdGrille, unScore
 	end
 	
+	# * Méthode d'instance qui envoie le *Defi*
+	# * Retourne -1 si échoué
 	def envoyerDefi
 		return BaseDeDonnees.setDefi(@destinataire, @envoyeur, @idGrille, @scoreEnvoi)
 	end
